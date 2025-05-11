@@ -229,6 +229,7 @@ CREATE TABLE medicamento (
 CREATE TABLE receta_medicamento (
     fid_receta INT,
     fid_medicamento INT,
+    cantidad INT,
     PRIMARY KEY(fid_receta,fid_medicamento),
     FOREIGN KEY (fid_receta) REFERENCES receta(id_receta),
     FOREIGN KEY (fid_medicamento) REFERENCES medicamento(id_medicamento)
