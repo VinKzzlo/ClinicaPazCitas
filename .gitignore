@@ -24,3 +24,8 @@ hs_err_pid*
 replay_pid*
 /PazCitas/PazCitasPersistance/target/
 /PazCitas/PazCitasBusiness/target/
+/ProgramaJava/PazCitasDomain/target/
+/ProgramaJava/PazCitasDBManager/target/
+/ProgramaJava/PazCitasPersistance/target/
+/ProgramaJava/PazCitasMain/target/
+/ProgramaJava/PazCitasBusiness/target/
