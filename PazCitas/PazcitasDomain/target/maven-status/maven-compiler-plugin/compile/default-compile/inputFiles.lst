@@ -4,7 +4,8 @@ D:\PUCP 2025-I\Programación 3\RepositorioPazCitas\ClinicaPazCitas\PazCitas\Pazc
 D:\PUCP 2025-I\Programación 3\RepositorioPazCitas\ClinicaPazCitas\PazCitas\PazcitasDomain\src\main\java\pe\edu\pucp\pazCitas\atencion\model\Receta.java
 D:\PUCP 2025-I\Programación 3\RepositorioPazCitas\ClinicaPazCitas\PazCitas\PazcitasDomain\src\main\java\pe\edu\pucp\pazCitas\atencion\model\Triaje.java
 D:\PUCP 2025-I\Programación 3\RepositorioPazCitas\ClinicaPazCitas\PazCitas\PazcitasDomain\src\main\java\pe\edu\pucp\pazCitas\cita\model\Cita.java
-D:\PUCP 2025-I\Programación 3\RepositorioPazCitas\ClinicaPazCitas\PazCitas\PazcitasDomain\src\main\java\pe\edu\pucp\pazCitas\cita\model\DetalleTurno.java
+D:\PUCP 2025-I\Programación 3\RepositorioPazCitas\ClinicaPazCitas\PazCitas\PazcitasDomain\src\main\java\pe\edu\pucp\pazCitas\cita\model\DiaSemana.java
+D:\PUCP 2025-I\Programación 3\RepositorioPazCitas\ClinicaPazCitas\PazCitas\PazcitasDomain\src\main\java\pe\edu\pucp\pazCitas\cita\model\Disponibilidad.java
 D:\PUCP 2025-I\Programación 3\RepositorioPazCitas\ClinicaPazCitas\PazCitas\PazcitasDomain\src\main\java\pe\edu\pucp\pazCitas\cita\model\Especialidad.java
 D:\PUCP 2025-I\Programación 3\RepositorioPazCitas\ClinicaPazCitas\PazCitas\PazcitasDomain\src\main\java\pe\edu\pucp\pazCitas\cita\model\EstadoCita.java
 D:\PUCP 2025-I\Programación 3\RepositorioPazCitas\ClinicaPazCitas\PazCitas\PazcitasDomain\src\main\java\pe\edu\pucp\pazCitas\cita\model\TurnoMedico.java

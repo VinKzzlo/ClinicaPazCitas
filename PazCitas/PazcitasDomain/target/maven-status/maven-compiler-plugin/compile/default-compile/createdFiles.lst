@@ -5,6 +5,7 @@ pe\edu\pucp\pazCitas\financiero\model\EstadoPago.class
 pe\edu\pucp\pazCitas\financiero\model\Pago.class
 pe\edu\pucp\pazCitas\cita\model\Especialidad.class
 pe\edu\pucp\pazCitas\atencion\model\Receta.class
+pe\edu\pucp\pazCitas\cita\model\Disponibilidad.class
 pe\edu\pucp\pazCitas\atencion\model\Medicamento.class
 pe\edu\pucp\pazCitas\usuario\model\AsistenteMedico.class
 pe\edu\pucp\pazCitas\atencion\model\Triaje.class
@@ -16,7 +17,7 @@ pe\edu\pucp\pazCitas\ubicacion\model\Consultorio.class
 pe\edu\pucp\pazCitas\usuario\model\Administrador.class
 pe\edu\pucp\pazCitas\atencion\model\HistorialMedico.class
 pe\edu\pucp\pazCitas\cita\model\Cita.class
-pe\edu\pucp\pazCitas\cita\model\DetalleTurno.class
+pe\edu\pucp\pazCitas\cita\model\DiaSemana.class
 pe\edu\pucp\pazCitas\cita\model\TurnoMedico.class
 pe\edu\pucp\pazCitas\usuario\model\Recepcionista.class
 pe\edu\pucp\pazCitas\usuario\model\Medico.class
