@@ -7,7 +7,7 @@ package pe.edu.pucp.pazcitas.usuario.bo;
 import java.util.ArrayList;
 import pe.edu.pucp.pazcitas.usuario.dao.AsistenteMedicoDAO;
 import pe.edu.pucp.pazcitas.usuario.model.AsistenteMedico;
-import pe.edu.pucp.usuario.impl.AsistenteMedicoImpl;
+import pe.edu.pucp.pazcitas.usuario.impl.AsistenteMedicoImpl;
 
 
 /**

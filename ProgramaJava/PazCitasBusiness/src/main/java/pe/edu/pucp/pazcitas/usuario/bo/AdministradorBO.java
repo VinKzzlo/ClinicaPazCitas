@@ -7,7 +7,7 @@ package pe.edu.pucp.pazcitas.usuario.bo;
 import java.util.ArrayList;
 import pe.edu.pucp.pazcitas.usuario.dao.AdministradorDAO;
 import pe.edu.pucp.pazcitas.usuario.model.Administrador;
-import pe.edu.pucp.usuario.impl.AdministradorImpl;
+import pe.edu.pucp.pazcitas.usuario.impl.AdministradorImpl;
 
 
 /**

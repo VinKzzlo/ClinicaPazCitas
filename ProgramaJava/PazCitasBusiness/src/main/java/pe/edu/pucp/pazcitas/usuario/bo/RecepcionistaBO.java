@@ -7,7 +7,7 @@ package pe.edu.pucp.pazcitas.usuario.bo;
 import java.util.ArrayList;
 import pe.edu.pucp.pazcitas.usuario.dao.RecepcionistaDAO;
 import pe.edu.pucp.pazcitas.usuario.model.Recepcionista;
-import pe.edu.pucp.usuario.impl.RecepcionistaImpl;
+import pe.edu.pucp.pazcitas.usuario.impl.RecepcionistaImpl;
 
 
 /**

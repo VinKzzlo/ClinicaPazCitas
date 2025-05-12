@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package pe.edu.pucp.usuario.impl;
+package pe.edu.pucp.pazcitas.usuario.impl;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
