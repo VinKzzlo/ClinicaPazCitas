@@ -8,9 +8,9 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Types;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
+import java.sql.Date;
 import pe.edu.pucp.pazcitas.config.DBManager;
 import pe.edu.pucp.pazcitas.ubicacion.model.Sede;
 import pe.edu.pucp.pazcitas.usuario.dao.AdministradorDAO;
@@ -24,6 +24,7 @@ public class AdministradorImpl implements AdministradorDAO{
 
     private ResultSet rs;
     
+    
     @Override
     public int insertar(Administrador administrador) {
         Map<Integer,Object> parametrosEntrada = new HashMap<>();
@@ -35,10 +36,9 @@ public class AdministradorImpl implements AdministradorDAO{
         parametrosEntrada.put(4, administrador.getApellidoPaterno());
         parametrosEntrada.put(5, String.valueOf(administrador.getDni()));
         parametrosEntrada.put(6, administrador.getEmail());
-        parametrosEntrada.put(7, new Date(administrador.getFechaNacimiento().getTime()));
+        parametrosEntrada.put(7, Date.valueOf(administrador.getFechaNacimiento()));
         parametrosEntrada.put(8, String.valueOf(administrador.getGenero()));
         parametrosEntrada.put(9, administrador.getHashPassword());
-
         parametrosEntrada.put(10, administrador.getSede().getIdSede());
         
         DBManager.getInstance().ejecutarProcedimiento("INSERTAR_ADMINISTRADOR", parametrosEntrada, parametrosSalida);
@@ -53,8 +53,7 @@ public class AdministradorImpl implements AdministradorDAO{
         parametrosEntrada.put(1, idAdministrador);
         int resultado = DBManager.getInstance().ejecutarProcedimiento("ELIMINAR_ADMINISTRADOR", parametrosEntrada, null);
         System.out.println("Se ha realizado la eliminacion del administrador");
-        return resultado;
-    }
+        return resultado;    }
 
     @Override
     public int modificar(Administrador modelo) {
@@ -75,7 +74,7 @@ public class AdministradorImpl implements AdministradorDAO{
                 e.setApellidoMaterno(rs.getString("apellido_materno"));
                 e.setDni(rs.getString("dni"));
                 e.setEmail(rs.getString("email"));
-                e.setFechaNacimiento(rs.getDate("fecha_nacimiento"));
+                e.setFechaNacimiento(rs.getDate("fecha_nacimiento").toLocalDate());
                 e.setGenero(rs.getString("genero").charAt(0));
                 e.setHashPassword(rs.getString("hash_password"));
                 

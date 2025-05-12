@@ -4,6 +4,10 @@
 
 package pe.edu.pucp.pazcitas.main;
 
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.Month;
+import java.util.ArrayList;
 import java.util.Date;
 import pe.edu.pucp.pazcitas.ubicacion.model.Sede;
 import pe.edu.pucp.pazcitas.usuario.bo.AdministradorBO;
@@ -20,19 +24,25 @@ public class PazCitasMain {
         Administrador admin = new Administrador();
         AdministradorBO boAdministrador = new AdministradorBO();
         
-        admin.setNombre("JUAN");
-        admin.setApellidoPaterno("GARCIA");
-        admin.setDni("72727272");
-        admin.setEmail("juan@gmail.com");
-        admin.setGenero('F');
-        admin.setFechaNacimiento(new Date(1900,05,05));
+        admin.setNombre("FREDDY");
+        admin.setApellidoPaterno("PAZ");
+        admin.setDni("12345678");
+        admin.setEmail("pfaz@gmail.com");
+        admin.setGenero('M');
+        admin.setFechaNacimiento(LocalDate.of(1990,11,1));
         admin.setHashPassword("password");
         Sede sede = new Sede();
         sede.setIdSede(1);
         admin.setSede(sede);
         
-        
-        
         boAdministrador.insertar(admin);
+        
+        ArrayList<Administrador> administradores = boAdministrador.listarTodos();
+        
+        for(Administrador a : administradores)
+            System.out.println(a.getNombre() + a.getApellidoPaterno()
+             + a.getDni());
+        
+        
     }
 }

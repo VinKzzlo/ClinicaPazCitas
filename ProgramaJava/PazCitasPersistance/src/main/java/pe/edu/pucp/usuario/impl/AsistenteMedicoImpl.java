@@ -8,12 +8,15 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.Types;
 import java.util.ArrayList;
-import java.util.Date;
+import java.sql.Date;
+import java.sql.SQLException;
 import java.util.HashMap;
 import java.util.Map;
 import pe.edu.pucp.pazcitas.config.DBManager;
+import pe.edu.pucp.pazcitas.ubicacion.model.Sede;
 import pe.edu.pucp.pazcitas.usuario.dao.AsistenteMedicoDAO;
 import pe.edu.pucp.pazcitas.usuario.model.AsistenteMedico;
+import pe.edu.pucp.pazcitas.usuario.model.Medico;
 
 /**
  *
@@ -34,10 +37,9 @@ public class AsistenteMedicoImpl implements AsistenteMedicoDAO{
         parametrosEntrada.put(4, asistente.getApellidoPaterno());
         parametrosEntrada.put(5, String.valueOf(asistente.getDni()));
         parametrosEntrada.put(6, asistente.getEmail());
-        parametrosEntrada.put(7, new Date(asistente.getFechaNacimiento().getTime()));
+        parametrosEntrada.put(7, Date.valueOf(asistente.getFechaNacimiento()));
         parametrosEntrada.put(8, String.valueOf(asistente.getGenero()));
         parametrosEntrada.put(9, asistente.getHashPassword());
-        
         
         parametrosEntrada.put(10, asistente.getCodigoPersonal());
         parametrosEntrada.put(11, asistente.getSede().getIdSede());
@@ -50,8 +52,12 @@ public class AsistenteMedicoImpl implements AsistenteMedicoDAO{
     }
 
     @Override
-    public int eliminar(int idModelo) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    public int eliminar(int idAsistente) {
+        Map<Integer,Object> parametrosEntrada = new HashMap<>();
+        parametrosEntrada.put(1, idAsistente);
+        int resultado = DBManager.getInstance().ejecutarProcedimiento("ELIMINAR_ASISTENTE_MEDICO", parametrosEntrada, null);
+        System.out.println("Se ha realizado la eliminacion del asistente");
+        return resultado;
     }
 
     @Override
@@ -61,7 +67,43 @@ public class AsistenteMedicoImpl implements AsistenteMedicoDAO{
 
     @Override
     public ArrayList<AsistenteMedico> listarTodos() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        ArrayList<AsistenteMedico> asistentes = new ArrayList<>();
+        rs = DBManager.getInstance().ejecutarProcedimientoLectura("LISTAR_ASISTENTE_MEDICO_TODOS", null);
+        System.out.println("Lectura de asistentes...");
+        try{
+            while(rs.next()){
+                AsistenteMedico e = new AsistenteMedico();
+                e.setIdUsuario(rs.getInt("id_usuario"));
+                e.setNombre(rs.getString("nombre"));
+                e.setApellidoPaterno(rs.getString("apellido_paterno"));
+                e.setApellidoMaterno(rs.getString("apellido_materno"));
+                e.setDni(rs.getString("dni"));
+                e.setEmail(rs.getString("email"));
+                e.setFechaNacimiento(rs.getDate("fecha_nacimiento").toLocalDate());
+                e.setGenero(rs.getString("genero").charAt(0));
+                e.setHashPassword(rs.getString("hash_password"));
+                e.setCodigoPersonal(rs.getString("codigo_personal"));
+                
+                Medico medico = new Medico();
+                medico.setIdUsuario(rs.getInt("id_medico"));
+                medico.setCodigoMedico(rs.getString("codigo_medico"));
+                
+                Sede sede = new Sede();
+                sede.setIdSede(rs.getInt("id_sede"));
+                sede.setNombre(rs.getString("nombre_sede"));
+                sede.setDireccion(rs.getString("direccion"));
+                
+                e.setSede(sede);
+                e.setMedico(medico);
+                
+                asistentes.add(e);
+            }
+        }catch(SQLException ex){
+            System.out.println(ex.getMessage());
+        }finally{
+            DBManager.getInstance().cerrarConexion();
+        }
+        return asistentes;
     }
     
 }

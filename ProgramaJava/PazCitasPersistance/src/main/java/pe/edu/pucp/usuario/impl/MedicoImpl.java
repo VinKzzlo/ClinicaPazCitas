@@ -4,7 +4,15 @@
  */
 package pe.edu.pucp.usuario.impl;
 
+import java.sql.SQLException;
+import java.sql.Types;
+import java.sql.Date;
+import java.sql.ResultSet;
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
+import pe.edu.pucp.pazcitas.config.DBManager;
+import pe.edu.pucp.pazcitas.ubicacion.model.Sede;
 import pe.edu.pucp.pazcitas.usuario.dao.MedicoDAO;
 import pe.edu.pucp.pazcitas.usuario.model.Medico;
 
@@ -14,14 +22,38 @@ import pe.edu.pucp.pazcitas.usuario.model.Medico;
  */
 public class MedicoImpl implements MedicoDAO{
 
+    private ResultSet rs;
+    
     @Override
-    public int insertar(Medico modelo) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    public int insertar(Medico medico) {
+        Map<Integer,Object> parametrosEntrada = new HashMap<>();
+        Map<Integer,Object> parametrosSalida = new HashMap<>();
+        parametrosSalida.put(1, Types.INTEGER);
+        
+        parametrosEntrada.put(2, medico.getNombre());
+        parametrosEntrada.put(3, medico.getApellidoPaterno());
+        parametrosEntrada.put(4, medico.getApellidoPaterno());
+        parametrosEntrada.put(5, String.valueOf(medico.getDni()));
+        parametrosEntrada.put(6, medico.getEmail());
+        parametrosEntrada.put(7, Date.valueOf(medico.getFechaNacimiento()));
+        parametrosEntrada.put(8, String.valueOf(medico.getGenero()));
+        parametrosEntrada.put(9, medico.getHashPassword());
+        parametrosEntrada.put(10, medico.getCodigoMedico());
+        parametrosEntrada.put(11, medico.getSede().getIdSede());
+        
+        DBManager.getInstance().ejecutarProcedimiento("INSERTAR_MEDICO", parametrosEntrada, parametrosSalida);
+        medico.setIdUsuario((int) parametrosSalida.get(1));
+        System.out.println("Se ha realizado el registro del medico");
+        return medico.getIdUsuario();
     }
 
     @Override
-    public int eliminar(int idModelo) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    public int eliminar(int idMedico) {
+        Map<Integer,Object> parametrosEntrada = new HashMap<>();
+        parametrosEntrada.put(1, idMedico);
+        int resultado = DBManager.getInstance().ejecutarProcedimiento("ELIMINAR_MEDICO", parametrosEntrada, null);
+        System.out.println("Se ha realizado la eliminacion del medico");
+        return resultado;
     }
 
     @Override
@@ -31,7 +63,39 @@ public class MedicoImpl implements MedicoDAO{
 
     @Override
     public ArrayList<Medico> listarTodos() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        ArrayList<Medico> medicos = new ArrayList<>();
+        rs = DBManager.getInstance().ejecutarProcedimientoLectura("LISTAR_MEDICO_TODOS", null);
+        System.out.println("Lectura de empleados...");
+        try{
+            while(rs.next()){
+                Medico e = new Medico();
+                e.setIdUsuario(rs.getInt("id_usuario"));
+                e.setNombre(rs.getString("nombre"));
+                e.setApellidoPaterno(rs.getString("apellido_paterno"));
+                e.setApellidoMaterno(rs.getString("apellido_materno"));
+                e.setDni(rs.getString("dni"));
+                e.setEmail(rs.getString("email"));
+                e.setFechaNacimiento(rs.getDate("fecha_nacimiento").toLocalDate());
+                e.setGenero(rs.getString("genero").charAt(0));
+                e.setHashPassword(rs.getString("hash_password"));
+                e.setCodigoMedico(rs.getString("codigo_medico"));
+                
+                Sede sede = new Sede();
+                sede.setIdSede(rs.getInt("id_sede"));
+                sede.setNombre(rs.getString("nombre_sede"));
+                sede.setDireccion(rs.getString("direccion"));
+                
+                e.setSede(sede);
+                
+                
+                medicos.add(e);
+            }
+        }catch(SQLException ex){
+            System.out.println(ex.getMessage());
+        }finally{
+            DBManager.getInstance().cerrarConexion();
+        }
+        return medicos;
     }
     
 }
