@@ -9,7 +9,6 @@ DROP TABLE IF EXISTS cita;
 DROP TABLE IF EXISTS disponibilidad;
 DROP TABLE IF EXISTS turno;
 DROP TABLE IF EXISTS medico_especialidad;
-DROP TABLE IF EXISTS sede_consultorio;
 DROP TABLE IF EXISTS asistente_medico;
 DROP TABLE IF EXISTS medico;
 DROP TABLE IF EXISTS recepcionista;
@@ -21,7 +20,6 @@ DROP TABLE IF EXISTS consultorio;
 DROP TABLE IF EXISTS sede_especialidad;
 DROP TABLE IF EXISTS especialidad;
 DROP TABLE IF EXISTS sede;
-
 
 -- Tabla: Sede
 CREATE TABLE sede (
@@ -128,17 +126,12 @@ CREATE TABLE consultorio (
     nombre_consultorio VARCHAR(20) NOT NULL,
     piso INT,
     capacidad INT,
-    activo TINYINT
+    activo TINYINT,
+    fid_sede INT,
+    FOREIGN KEY (fid_sede) REFERENCES sede(id_sede)
 )ENGINE=InnoDB;
 
--- Relacion de * - * entre Sede y Consultorio
-CREATE TABLE sede_consultorio (
-    fid_sede INT,
-    fid_consultorio INT,
-    PRIMARY KEY (fid_sede, fid_consultorio),
-    FOREIGN KEY (fid_sede) REFERENCES sede(id_sede),
-    FOREIGN KEY (fid_consultorio) REFERENCES consultorio(id_consultorio)
-)ENGINE=InnoDB;
+
 
 -- Relacion de * - * entre Medico y Especialidad
 CREATE TABLE medico_especialidad (
