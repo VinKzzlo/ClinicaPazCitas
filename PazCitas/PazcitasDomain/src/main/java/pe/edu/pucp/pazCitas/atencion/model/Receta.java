@@ -1,18 +1,14 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+
 package pe.edu.pucp.pazCitas.atencion.model;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 
-/**
- *
- * @author Joel
- */
+
 public class Receta {
     private int idReceta;
     private String indicaciones;
+    private LocalDate fechaPrescripcion;
     private ArrayList<Medicamento> medicamentos;
 
     public Receta() {
@@ -40,6 +36,14 @@ public class Receta {
 
     public void setMedicamentos(ArrayList<Medicamento> medicamentos) {
         this.medicamentos = medicamentos;
+    }
+
+    public LocalDate getFfechaPrescripcion() {
+        return fechaPrescripcion;
+    }
+
+    public void setFechaPrescripcion(LocalDate fechaPreinscripcion) {
+        this.fechaPrescripcion = fechaPreinscripcion;
     }
     
     

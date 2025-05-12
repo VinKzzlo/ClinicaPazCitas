@@ -1,7 +1,4 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+
 package pe.edu.pucp.pazCitas.cita.model;
 
 import java.time.LocalDate;
@@ -11,27 +8,24 @@ import java.util.Date;
 import pe.edu.pucp.pazCitas.ubicacion.model.Consultorio;
 import pe.edu.pucp.pazCitas.usuario.model.Medico;
 
-/**
- *
- * @author Joel
- */
+
 public class TurnoMedico {
     private int idTurno;
-    private LocalDate fecha;
+    private DiaSemana dia;
     private LocalTime horaInicio;
     private LocalTime horaFin;
     private Consultorio consultorio;
     private Medico medico;
-    private ArrayList<DetalleTurno> detalleTurnos;
+    private ArrayList<Disponibilidad> detalleTurnos;
     
     public TurnoMedico() {
     }
 
-    public ArrayList<DetalleTurno> getDetalleTurnos() {
+    public ArrayList<Disponibilidad> getDetalleTurnos() {
         return detalleTurnos;
     }
 
-    public void setDetalleTurnos(ArrayList<DetalleTurno> detalleTurnos) {
+    public void setDetalleTurnos(ArrayList<Disponibilidad> detalleTurnos) {
         this.detalleTurnos = detalleTurnos;
     }
 
@@ -61,13 +55,6 @@ public class TurnoMedico {
         this.medico = medico;
     }
 
-    public LocalDate getFecha() {
-        return fecha;
-    }
-
-    public void setFecha(LocalDate fecha) {
-        this.fecha = fecha;
-    }
 
     public LocalTime getHoraInicio() {
         return horaInicio;
@@ -83,6 +70,14 @@ public class TurnoMedico {
 
     public void setHoraFin(LocalTime horaFin) {
         this.horaFin = horaFin;
+    }
+
+    public DiaSemana getDia() {
+        return dia;
+    }
+
+    public void setDia(DiaSemana dia) {
+        this.dia = dia;
     }
 
    

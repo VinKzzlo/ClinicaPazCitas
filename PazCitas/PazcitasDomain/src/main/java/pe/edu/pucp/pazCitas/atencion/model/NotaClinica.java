@@ -1,15 +1,9 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+
 package pe.edu.pucp.pazCitas.atencion.model;
 
 import pe.edu.pucp.pazCitas.cita.model.Cita;
 
-/**
- *
- * @author Joel
- */
+
 public class NotaClinica {
     private int idNota;
     private String descripcion;

@@ -5,13 +5,7 @@
 package pe.edu.pucp.pazCitas.financiero.model;
 
 import java.time.LocalDateTime;
-import java.util.Date;
-import pe.edu.pucp.pazCitas.usuario.model.Administrador;
 
-/**
- *
- * @author Joel
- */
 public class Pago {
     private int idPago;
     private LocalDateTime fechaPago;
@@ -20,7 +14,7 @@ public class Pago {
     private double montoSubtotal;
     private Seguro seguro;
     private EstadoPago estado;
-    private Administrador administrador;
+    
 
     public Pago() {
     }
@@ -82,13 +76,7 @@ public class Pago {
         this.estado = estado;
     }
 
-    public Administrador getAdministrador() {
-        return administrador;
-    }
-
-    public void setAdministrador(Administrador administrador) {
-        this.administrador = administrador;
-    }
+    
     
     
 }

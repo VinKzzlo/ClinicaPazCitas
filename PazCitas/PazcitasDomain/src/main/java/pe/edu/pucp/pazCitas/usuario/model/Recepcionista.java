@@ -1,17 +1,11 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+
 package pe.edu.pucp.pazCitas.usuario.model;
 
 import java.util.ArrayList;
 import pe.edu.pucp.pazCitas.cita.model.Cita;
 import pe.edu.pucp.pazCitas.ubicacion.model.Sede;
 
-/**
- *
- * @author Joel
- */
+
 public class Recepcionista extends Usuario {
     private boolean activo;
     private Sede sede;

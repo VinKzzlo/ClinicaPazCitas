@@ -196,9 +196,7 @@ CREATE TABLE triaje (
     presion_arterial VARCHAR(20),
     temperatura DECIMAL(10,2),
     fecha_registro DATETIME,
-    activo TINYINT,
-    fid_asistente_medico INT,
-    FOREIGN KEY (fid_asistente_medico) REFERENCES asistente_medico(id_asistente_medico)
+    activo TINYINT
 )ENGINE=InnoDB;
 
 -- Tabla: HistorialMedico

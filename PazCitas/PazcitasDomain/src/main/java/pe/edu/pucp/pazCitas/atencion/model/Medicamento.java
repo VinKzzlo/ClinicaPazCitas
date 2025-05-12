@@ -1,18 +1,12 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+
 package pe.edu.pucp.pazCitas.atencion.model;
 
-/**
- *
- * @author Joel
- */
+
 public class Medicamento {
     private int idMedicamento;
     private String nombre;
     private String presentacion;
-    private int cantidad;
+    private int stock;
     
 
     public Medicamento() {
@@ -42,13 +36,15 @@ public class Medicamento {
         this.presentacion = presentacion;
     }
 
-    public int getCantidad() {
-        return cantidad;
+    public int getStock() {
+        return stock;
     }
 
-    public void setCantidad(int cantidad) {
-        this.cantidad = cantidad;
-    }
+    public void setStock(int stock) {
+        this.stock = stock;
+    } 
+
+    
 
     
     

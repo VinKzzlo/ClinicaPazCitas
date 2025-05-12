@@ -18,8 +18,25 @@ public class Usuario {
     private String Dni;
     private String email;
     private Date fechaNacimiento;
-    private String hashContrasenia;
-    private char rol;
+    private char genero;
+    private String hashPassword;
+
+    public String getHashPassword() {
+        return hashPassword;
+    }
+
+    public void setHashPassword(String hashPassword) {
+        this.hashPassword = hashPassword;
+    }
+    
+    public char getGenero() {
+        return genero;
+    }
+
+    public void setGenero(char genero) {
+        this.genero = genero;
+    }
+    
 
     public Usuario() {
     }
@@ -81,21 +98,6 @@ public class Usuario {
         this.fechaNacimiento = fechaNacimiento;
     }
 
-    public String getHashContrasenia() {
-        return hashContrasenia;
-    }
-
-    public void setHashContrasenia(String hashContrasenia) {
-        this.hashContrasenia = hashContrasenia;
-    }
-
-    public char getRol() {
-        return rol;
-    }
-
-    public void setRol(char rol) {
-        this.rol = rol;
-    }
     
     
     

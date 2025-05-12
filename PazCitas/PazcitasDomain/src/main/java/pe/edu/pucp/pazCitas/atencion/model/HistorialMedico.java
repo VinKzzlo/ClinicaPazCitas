@@ -1,7 +1,4 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+
 package pe.edu.pucp.pazCitas.atencion.model;
 
 import java.time.LocalDate;
@@ -15,7 +12,6 @@ import pe.edu.pucp.pazCitas.usuario.model.Paciente;
  */
 public class HistorialMedico {
     private int idhistorial;
-    private String notas;
     private LocalDate fechaActualizacion;
     private boolean activo;
     private ArrayList<NotaClinica> notasClinicas;
@@ -32,14 +28,7 @@ public class HistorialMedico {
         this.idhistorial = idhistorial;
     }
 
-    public String getNotas() {
-        return notas;
-    }
-
-    public void setNotas(String notas) {
-        this.notas = notas;
-    }
-
+    
     public LocalDate getFechaActualizacion() {
         return fechaActualizacion;
     }

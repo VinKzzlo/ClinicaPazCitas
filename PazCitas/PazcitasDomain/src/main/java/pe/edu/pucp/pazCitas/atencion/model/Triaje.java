@@ -1,17 +1,11 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+
 package pe.edu.pucp.pazCitas.atencion.model;
 
 import java.time.LocalDate;
 import java.util.Date;
 import pe.edu.pucp.pazCitas.usuario.model.AsistenteMedico;
 
-/**
- *
- * @author Joel
- */
+
 public class Triaje {
     private int idTriaje;
     private double peso;
@@ -19,10 +13,8 @@ public class Triaje {
     private String presionArterial;
     private int temperatura;
     private LocalDate fechaRegistro;
-    private String prioridad;
     private boolean activo;
-    private NotaClinica notaClinica;
-    private AsistenteMedico asistenteMedico;
+    private NotaClinica notaClinica; 
 
     public Triaje() {
     }
@@ -75,15 +67,6 @@ public class Triaje {
         this.fechaRegistro = fechaRegistro;
     }
 
-   
-
-    public String getPrioridad() {
-        return prioridad;
-    }
-
-    public void setPrioridad(String prioridad) {
-        this.prioridad = prioridad;
-    }
 
     public boolean isActivo() {
         return activo;
@@ -101,14 +84,5 @@ public class Triaje {
         this.notaClinica = notaClinica;
     }
 
-    public AsistenteMedico getAsistenteMedico() {
-        return asistenteMedico;
-    }
-
-    public void setAsistenteMedico(AsistenteMedico asistenteMedico) {
-        this.asistenteMedico = asistenteMedico;
-    }
-    
-    
-            
+       
 }

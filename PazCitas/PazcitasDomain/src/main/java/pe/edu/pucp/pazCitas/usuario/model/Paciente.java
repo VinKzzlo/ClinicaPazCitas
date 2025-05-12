@@ -16,7 +16,7 @@ import pe.edu.pucp.pazCitas.financiero.model.Seguro;
 public class Paciente extends Usuario{
     private String direccion;
     private int telefono;
-    private boolean  activo;
+    private boolean activo;
     private ArrayList<Cita> citas;
     private Seguro seguro;
     private HistorialMedico historialMedico;

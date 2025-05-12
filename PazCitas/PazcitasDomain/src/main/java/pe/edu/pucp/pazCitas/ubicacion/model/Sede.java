@@ -1,18 +1,10 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+
 package pe.edu.pucp.pazCitas.ubicacion.model;
 
 import java.util.ArrayList;
-import javax.print.attribute.standard.Media;
 import pe.edu.pucp.pazCitas.cita.model.Especialidad;
 import pe.edu.pucp.pazCitas.usuario.model.Medico;
 
-/**
- *
- * @author Joel
- */
 public class Sede {
     private int idSede;
     private String nombre;
@@ -20,7 +12,8 @@ public class Sede {
     private boolean activo;
     private ArrayList<Medico> medicos;
     private ArrayList<Especialidad> especialidades;
-
+    private ArrayList<Consultorio> consultorios;
+    
     public Sede() {
     }
 
@@ -70,6 +63,14 @@ public class Sede {
 
     public void setEspecialidades(ArrayList<Especialidad> especialidades) {
         this.especialidades = especialidades;
+    }
+
+    public ArrayList<Consultorio> getConsultorios() {
+        return consultorios;
+    }
+
+    public void setConsultorios(ArrayList<Consultorio> consultorios) {
+        this.consultorios = consultorios;
     }
     
     

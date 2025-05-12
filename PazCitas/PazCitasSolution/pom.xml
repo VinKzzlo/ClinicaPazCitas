@@ -9,6 +9,8 @@
         <module>../PazcitasDomain</module>
         <module>../PazCitasDBManager</module>
         <module>../PazCitasMain</module>
+        <module>PazCitasPersistance</module>
+        <module>PazCitasBusiness</module>
     </modules>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>

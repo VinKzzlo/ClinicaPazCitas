@@ -4,6 +4,7 @@
  */
 package pe.edu.pucp.pazCitas.cita.model;
 
+import java.time.LocalDate;
 import java.time.LocalTime;
 import java.util.Date;
 
@@ -11,22 +12,23 @@ import java.util.Date;
  *
  * @author Joel
  */
-public class DetalleTurno {
-    private int idDetalleTurno;
+public class Disponibilidad {
+    private int idDisponibilidad;
     private LocalTime hora;
-    private boolean estado;
+    private LocalDate fecha;
+    private boolean disponible;
     private Cita cita;
     private TurnoMedico turnoMedico;
 
-    public DetalleTurno() {
+    public Disponibilidad() {
     }
 
-    public int getIdDetalleTurno() {
-        return idDetalleTurno;
+    public int getIdDisponibilidad() {
+        return idDisponibilidad;
     }
 
-    public void setIdDetalleTurno(int idDetalleTurno) {
-        this.idDetalleTurno = idDetalleTurno;
+    public void setIdDisponibilidad(int idDisponibilidad) {
+        this.idDisponibilidad = idDisponibilidad;
     }
 
     public LocalTime getHora() {
@@ -37,14 +39,20 @@ public class DetalleTurno {
         this.hora = hora;
     }
 
-    
-
-    public boolean isEstado() {
-        return estado;
+    public LocalDate getFecha() {
+        return fecha;
     }
 
-    public void setEstado(boolean estado) {
-        this.estado = estado;
+    public void setFecha(LocalDate fecha) {
+        this.fecha = fecha;
+    }
+
+    public boolean isDisponible() {
+        return disponible;
+    }
+
+    public void setDisponible(boolean disponible) {
+        this.disponible = disponible;
     }
 
     public Cita getCita() {
@@ -62,6 +70,8 @@ public class DetalleTurno {
     public void setTurnoMedico(TurnoMedico turnoMedico) {
         this.turnoMedico = turnoMedico;
     }
+
+   
     
     
     

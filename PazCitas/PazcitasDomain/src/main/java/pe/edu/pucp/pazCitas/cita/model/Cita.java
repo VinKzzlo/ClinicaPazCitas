@@ -1,7 +1,4 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+
 package pe.edu.pucp.pazCitas.cita.model;
 
 import java.time.LocalDateTime;
@@ -20,10 +17,9 @@ public class Cita {
     private LocalDateTime fecha;
     private EstadoCita estadoCita;
     private String motivoConsulta;
-    private LocalTime fechaInicio;
-    private LocalTime fechaFin;
-    private boolean esReservRecep;
-    private DetalleTurno detalleTurno;
+    private LocalDateTime fechaActualizacion;
+    
+    private Disponibilidad disponibilidad;
     private Recepcionista recepcionista;
     private NotaClinica notaClinica;
     private Pago pago;
@@ -65,23 +61,16 @@ public class Cita {
         this.motivoConsulta = motivoConsulta;
     }
 
-    
-    public boolean isEsReservRecep() {
-        return esReservRecep;
+    public Disponibilidad getDisponibilidad() {
+        return disponibilidad;
     }
 
-    public void setEsReservRecep(boolean esReservRecep) {
-        this.esReservRecep = esReservRecep;
+    public void setDisponibilidad(Disponibilidad disponibilidad) {
+        this.disponibilidad = disponibilidad;
     }
 
-    public DetalleTurno getDetalleTurno() {
-        return detalleTurno;
-    }
 
-    public void setDetalleTurno(DetalleTurno detalleTurno) {
-        this.detalleTurno = detalleTurno;
-    }
-
+   
     
 
     public Recepcionista getRecepcionista() {
@@ -116,21 +105,15 @@ public class Cita {
         this.fecha = fecha;
     }
 
-    public LocalTime getFechaInicio() {
-        return fechaInicio;
+    public LocalDateTime getFechaActualizacion() {
+        return fechaActualizacion;
     }
 
-    public void setFechaInicio(LocalTime fechaInicio) {
-        this.fechaInicio = fechaInicio;
+    public void setFechaActualizacion(LocalDateTime fechaActualizacion) {
+        this.fechaActualizacion = fechaActualizacion;
     }
 
-    public LocalTime getFechaFin() {
-        return fechaFin;
-    }
-
-    public void setFechaFin(LocalTime fechaFin) {
-        this.fechaFin = fechaFin;
-    }
+    
     
     
 }
