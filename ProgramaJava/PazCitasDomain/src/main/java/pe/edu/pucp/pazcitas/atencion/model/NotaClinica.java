@@ -14,6 +14,7 @@ public class NotaClinica {
     private Cita cita;
     private Triaje triaje;
     private Receta receta;
+    private HistorialMedico historial;
 
     public NotaClinica() {
     }
@@ -73,6 +74,15 @@ public class NotaClinica {
     public void setReceta(Receta receta) {
         this.receta = receta;
     }
+
+    public HistorialMedico getHistorial() {
+        return historial;
+    }
+
+    public void setHistorial(HistorialMedico historial) {
+        this.historial = historial;
+    }
+    
     
     
 }

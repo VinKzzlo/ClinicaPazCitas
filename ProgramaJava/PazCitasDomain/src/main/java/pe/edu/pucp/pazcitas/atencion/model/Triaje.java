@@ -11,7 +11,7 @@ public class Triaje {
     private double peso;
     private double altura;
     private String presionArterial;
-    private int temperatura;
+    private double temperatura;
     private LocalDateTime fechaRegistro;
     private boolean activo;
     private NotaClinica notaClinica;
@@ -51,11 +51,11 @@ public class Triaje {
         this.presionArterial = presionArterial;
     }
 
-    public int getTemperatura() {
+    public double getTemperatura() {
         return temperatura;
     }
 
-    public void setTemperatura(int temperatura) {
+    public void setTemperatura(double temperatura) {
         this.temperatura = temperatura;
     }
 

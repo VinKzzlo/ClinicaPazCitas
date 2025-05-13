@@ -53,7 +53,8 @@ public class AdministradorImpl implements AdministradorDAO{
         parametrosEntrada.put(1, idAdministrador);
         int resultado = DBManager.getInstance().ejecutarProcedimiento("ELIMINAR_ADMINISTRADOR", parametrosEntrada, null);
         System.out.println("Se ha realizado la eliminacion del administrador");
-        return resultado;    }
+        return resultado;
+    }
 
     @Override
     public int modificar(Administrador modelo) {
@@ -64,7 +65,7 @@ public class AdministradorImpl implements AdministradorDAO{
     public ArrayList<Administrador> listarTodos() {
         ArrayList<Administrador> administradores = new ArrayList<>();
         rs = DBManager.getInstance().ejecutarProcedimientoLectura("LISTAR_ADMINISTRADOR_TODOS", null);
-        System.out.println("Lectura de empleados...");
+        System.out.println("Lectura de administradores...");
         try{
             while(rs.next()){
                 Administrador e = new Administrador();

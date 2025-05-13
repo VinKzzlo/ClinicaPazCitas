@@ -5,12 +5,13 @@
 package pe.edu.pucp.pazcitas.atencion.model;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import pe.edu.pucp.pazcitas.usuario.model.Paciente;
 
 public class HistorialMedico {
     private int idhistorial;
-    private LocalDate fechaActualizacion;
+    private LocalDateTime fechaActualizacion;
     private boolean activo;
     private ArrayList<NotaClinica> notasClinicas;
     private Paciente paciente;
@@ -27,11 +28,11 @@ public class HistorialMedico {
     }
 
     
-    public LocalDate getFechaActualizacion() {
+    public LocalDateTime getFechaActualizacion() {
         return fechaActualizacion;
     }
 
-    public void setFechaActualizacion(LocalDate fechaActualizacion) {
+    public void setFechaActualizacion(LocalDateTime fechaActualizacion) {
         this.fechaActualizacion = fechaActualizacion;
     }
 
