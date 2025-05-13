@@ -36,9 +36,9 @@ public class PacienteImpl implements PacienteDAO{
         parametrosEntrada.put(2, paciente.getNombre());
         parametrosEntrada.put(3, paciente.getApellidoPaterno());
         parametrosEntrada.put(4, paciente.getApellidoPaterno());
-        parametrosEntrada.put(5, String.valueOf(paciente.getDni()));
+        parametrosEntrada.put(5, paciente.getDni());
         parametrosEntrada.put(6, paciente.getEmail());
-        parametrosEntrada.put(7, Date.valueOf(paciente.getFechaNacimiento()));
+        parametrosEntrada.put(7, paciente.getFechaNacimiento());
         parametrosEntrada.put(8, String.valueOf(paciente.getGenero()));
         parametrosEntrada.put(9, paciente.getHashPassword());
         parametrosEntrada.put(10, paciente.getDireccion());

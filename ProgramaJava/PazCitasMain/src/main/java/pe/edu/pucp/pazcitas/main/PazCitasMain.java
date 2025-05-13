@@ -11,6 +11,8 @@ import java.util.ArrayList;
 import pe.edu.pucp.pazcitas.atencion.bo.MedicamentoBO;
 import pe.edu.pucp.pazcitas.atencion.model.Medicamento;
 import pe.edu.pucp.pazcitas.cita.bo.CitaBO;
+import pe.edu.pucp.pazcitas.cita.bo.EspecialidadBO;
+import pe.edu.pucp.pazcitas.cita.bo.TurnoMedicoBO;
 import pe.edu.pucp.pazcitas.cita.dao.CitaDAO;
 import pe.edu.pucp.pazcitas.cita.dao.DisponibilidadDAO;
 import pe.edu.pucp.pazcitas.cita.dao.EspecialidadDAO;
@@ -30,6 +32,8 @@ import pe.edu.pucp.pazcitas.financiero.dao.SeguroDAO;
 import pe.edu.pucp.pazcitas.financiero.impl.SeguroImpl;
 import pe.edu.pucp.pazcitas.financiero.model.Seguro;
 import pe.edu.pucp.pazcitas.financiero.model.TipoSeguro;
+import pe.edu.pucp.pazcitas.ubicacion.bo.ConsultorioBO;
+import pe.edu.pucp.pazcitas.ubicacion.bo.SedeBO;
 import pe.edu.pucp.pazcitas.ubicacion.dao.ConsultorioDAO;
 import pe.edu.pucp.pazcitas.ubicacion.dao.SedeDAO;
 import pe.edu.pucp.pazcitas.ubicacion.impl.ConsultorioImpl;
@@ -52,180 +56,108 @@ public class PazCitasMain {
 
     public static void main(String[] args) {
 
-        
-//        Administrador admin = new Administrador();
-//        AdministradorBO boAdministrador = new AdministradorBO();
-//
-//        admin.setNombre("FREDDY");
-//        admin.setApellidoPaterno("PAZ");
-//        admin.setApellidoMaterno("ESPINOZA");
-//        admin.setDni("21211212");
-//        admin.setEmail("pfaz@gmail.com");
-//        admin.setGenero('M');
-//        admin.setFechaNacimiento(LocalDate.of(1990, 11, 1));
-//        admin.setHashPassword("password");
-//        Sede sede = new Sede();
-//        sede.setIdSede(1);
-//        admin.setSede(sede);
-//
-//        boAdministrador.insertar(admin);
-//
-//        ArrayList<Administrador> administradores = boAdministrador.listarTodos();
-//
-//        for (Administrador a : administradores) {
-//            System.out.println(a.getNombre() + a.getApellidoPaterno()
-//                    + a.getDni());
-//        }
-//
 //        Medicamento med = new Medicamento();
-//        med.setNombre("Omeprazol");
-//        med.setPresentacion("Blister x10 Tabletas - 10mg");
-//        med.setStock(15);
+//        med.setNombre("Paracetamol");
+//        med.setPresentacion("Blister x10 Tabletas - 500mg");
+//        med.setStock(20);
 //
 //        MedicamentoBO boMed = new MedicamentoBO();
 //        boMed.insertar(med);
-//
-//        ArrayList<Medicamento> meds = boMed.listarTodos();
-//
-//        for (Medicamento m : meds) {
-//            System.out.println(m.getIdMedicamento() + ". - " + m.getNombre()
-//                    + " - " + m.getPresentacion() + " - " + m.getStock());
-//        }
-//
-//        meds.get(2).setStock(100);
-//
-//        boMed.modificar(meds.get(2));
-//        meds = boMed.listarTodos();
-//
-//        for (Medicamento m : meds) {
-//            System.out.println(m.getIdMedicamento() + ". - " + m.getNombre()
-//                    + " - " + m.getPresentacion() + " - " + m.getStock());
-//        }
-//
-//        sede = new Sede();
-//        sede.setDireccion("GINO DASSADSA 34");
-//        sede.setNombre("MASDASD");
-//        SedeDAO daoSede = new SedeImpl();
-//        daoSede.insertar(sede);
-////        
-//
-//        AsistenteMedico asistente = new AsistenteMedico();
-//        asistente.setApellidoMaterno("GOMEZ");
-//        asistente.setApellidoPaterno("LARA");
-//        asistente.setDni("aeaaeae");
-//        asistente.setEmail("A34243232@");
-//        asistente.setFechaNacimiento(LocalDate.of(2003, 12, 11));
-//        asistente.setGenero('M');
-//        asistente.setHashPassword("ASDASD");
-//        asistente.setNombre("Maria");
-//        asistente.setCodigoPersonal("aeaea");
-//
-//        Medico medico = new Medico();
-//
-//        MedicoBO medicoBO = new MedicoBO();
-//        medico.setApellidoMaterno("GOMEZ");
-//        medico.setApellidoPaterno("LARA");
-//        medico.setDni("daeda");
-//        medico.setEmail("A34243232@");
-//        medico.setFechaNacimiento(LocalDate.of(2003, 12, 11));
-//        medico.setGenero('M');
-//        medico.setHashPassword("ASDASD");
-//        medico.setNombre("Maria");
-//        medico.setCodigoMedico("fafa");
-//
-//        medico.setSede(sede);
-//
-//        medicoBO.insertar(medico);
-//
+        
+//        Especialidad esp = new Especialidad();
+//        esp.setNombre("Oftamologia");
+//        esp.setDescripcion("OJO");
+//        EspecialidadBO boEsp = new EspecialidadBO();
+//        boEsp.insertar(esp);
+
 //        Seguro seguro = new Seguro();
-//        seguro.setNombreSeguro("Rimac Total");
+//        seguro.setIdSeguro(1);
+//        seguro.setNombreSeguro("Rimac Oncologico");
 //        seguro.setPorcentajeCobertura(10.00);
 //        seguro.setTipo(TipoSeguro.TOTAL);
 //        seguro.setVigencia(LocalDate.of(2003, 11, 1));
 //        SeguroBO boSeguro = new SeguroBO();
 //        boSeguro.insertar(seguro);
 //
+//        ArrayList<Seguro> seguros = boSeguro.listarTodos();
+//        
+//        for(Seguro s : seguros){
+//            System.out.println(s.getIdSeguro() +" - " + s.getNombreSeguro());
+//        }
+        
 //        PacienteBO pacienteBO = new PacienteBO();
 //        Paciente paciente = new Paciente();
-//        paciente.setApellidoMaterno("GOMEZ");
-//        paciente.setApellidoPaterno("LARA");
-//        paciente.setDni("abgdsg");
+//        paciente.setApellidoMaterno("SANTE");
+//        paciente.setApellidoPaterno("VEGA");
+//        paciente.setDni("80809090");
 //        paciente.setEmail("A34243232@");
-//        paciente.setFechaNacimiento(LocalDate.of(2003, 12, 11));
+//        paciente.setFechaNacimiento(LocalDate.of(2004, 05, 01));
 //        paciente.setGenero('M');
 //        paciente.setHashPassword("ASDASD");
-//        paciente.setNombre("Maria");
+//        paciente.setNombre("Salvador");
 //        paciente.setDireccion("203das2");
 //        paciente.setTelefono(21321321);
-//        paciente.setSeguro(seguro);
-//
+//        paciente.setSeguro(seguros.g);
+//        
 //        pacienteBO.insertar(paciente);
+        
+//        Sede sede = new Sede();
+//        sede.setDireccion("Avenida Universitaria Nº 2020");
+//        sede.setNombre("Sede Los Olivos");
+//        SedeDAO daoSede = new SedeImpl();
+//        daoSede.insertar(sede);
+//        Consultorio
+//        SedeBO boSede = new SedeBO();
+//        ArrayList<Sede> sedes = boSede.listarTodos();
+//
 //        Consultorio con = new Consultorio();
-//        con.setCapacidad(12);
-//        con.setNombreConsultorio("numer");
-//        con.setPiso(1);
-//        con.setSede(sede);
-//
-//        ConsultorioDAO daoCon = new ConsultorioImpl();
-//        daoCon.insertar(con);
-//        Especialidad esp = new Especialidad();
-//        esp.setNombre("Oftalmologia");
-//        esp.setDescripcion("Numero1");
-//        EspecialidadDAO daoEsp = new EspecialidadImpl();
-//        daoEsp.insertar(esp);
-//
-//        Cita cita = new Cita();
-//
-//        cita.setEspecialidad(esp);
-//        cita.setEstadoCita(EstadoCita.ATENDIDA);
-//        cita.setFecha(LocalDateTime.MIN);
-//        cita.setFechaActualizacion(LocalDateTime.MIN);
-//        cita.setMotivoConsulta("Dolor de estomago");
-//        cita.setPaciente(paciente);
-//
-//        TurnoMedico turnoMed = new TurnoMedico();
-//        turnoMed.setDia(DiaSemana.LUNES);
-//        turnoMed.setHoraInicio(LocalTime.of(12, 0));
-//        turnoMed.setHoraFin(LocalTime.of(16, 0));
-//        turnoMed.setMedico(medico);
-//        turnoMed.setConsultorio(con);
-//        
-//        TurnoMedicoDAO daoTurno = new TurnoMedicoImpl();
-//        daoTurno.insertar(turnoMed);
-//        
-//        Disponibilidad dispo = new Disponibilidad();
-//        dispo.setFecha(LocalDate.of(2025, 04, 28));
-//        dispo.setHora(LocalTime.of(14, 0));
-//        dispo.setDisponible(true);
-//        dispo.setTurnoMedico(turnoMed);
-//        DisponibilidadDAO daoDispo = new DisponibilidadImpl();
-//        daoDispo.insertar(dispo);
-//        
-//        cita.setDisponibilidad(dispo);
-//        CitaDAO daocita = new CitaImpl();
-//        daocita.insertar(cita);
+//        con.setCapacidad(5);
+//        con.setNombreConsultorio("A101");
+//        con.setPiso(2);
+//        con.setSede(sedes.get(sedes.size()-1));
         
-//        PacienteBO boPaciente = new PacienteBO();
-//        
-//        Paciente paciente = new Paciente();
-//        paciente.setIdUsuario(2);
+        ConsultorioBO boCons = new ConsultorioBO();
+//        MedicoBO boMed = new MedicoBO();
         
+//        boCons.insertar(con);
         
+        Medico medico = new Medico();
+
+        MedicoBO medicoBO = new MedicoBO();
+//        medico.setApellidoMaterno("GOMEZ");
+//        medico.setApellidoPaterno("LARA");
+//        medico.setDni("323232");
+//        medico.setEmail("A34243232@");
+//        medico.setFechaNacimiento(LocalDate.of(2003, 12, 11));
+//        medico.setGenero('M');
+//        medico.setHashPassword("ASDASD");
+//        medico.setNombre("Maria");
+//        medico.setCodigoMedico("fafaa");
+//
+//        medico.setSede(sedes.get(sedes.size()-1));
+//
+//        medicoBO.insertar(medico);
         
-//        Disponibilidad dispo = new Disponibilidad();
-//        dispo.setIdDisponibilidad(1);
-//        CitaBO boCita = new CitaBO();
-//        Especialidad esp = new Especialidad();
-//        esp.setIdEspecialidad(1);
-//        
-//        Cita cita = new Cita();
-//        cita.setFecha(LocalDateTime.of(2025, 5, 12, 14, 30, 0));
-//        cita.setEstadoCita(EstadoCita.PROGRAMADA);
-//        cita.setMotivoConsulta("Malestar general");
-//        cita.setPaciente(paciente);
-//        cita.setDisponibilidad(dispo);
-//        cita.setEspecialidad(esp);
-//        boCita.insertar(cita);
+        ArrayList<Consultorio> cons = boCons.listarTodos();
+        ArrayList<Medico> meds = medicoBO.listarTodos();
+        
+        for(Consultorio c : cons){
+            System.out.println(c.getIdConsultorio() + "  " + c.getNombreConsultorio());
+        }
+        
+        for(Medico m : meds){
+            System.out.println(m.getIdUsuario() + "  " + m.getNombre());
+        }
+        
+        TurnoMedicoBO boTurno= new TurnoMedicoBO();
+        TurnoMedico turno = new TurnoMedico();
+        turno.setDia(DiaSemana.MARTES);
+        turno.setHoraInicio(LocalTime.of(12, 30, 0));
+        turno.setHoraFin(LocalTime.of(15,0,0));
+        turno.setConsultorio(cons.get(cons.size()-1));
+        turno.setMedico(meds.get(meds.size()-1));
+        
+        boTurno.insertar(turno);
         
     }
 }

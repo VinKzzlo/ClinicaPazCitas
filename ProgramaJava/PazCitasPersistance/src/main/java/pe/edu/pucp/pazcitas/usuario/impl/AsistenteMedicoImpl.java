@@ -35,9 +35,9 @@ public class AsistenteMedicoImpl implements AsistenteMedicoDAO{
         parametrosEntrada.put(2, asistente.getNombre());
         parametrosEntrada.put(3, asistente.getApellidoPaterno());
         parametrosEntrada.put(4, asistente.getApellidoPaterno());
-        parametrosEntrada.put(5, String.valueOf(asistente.getDni()));
+        parametrosEntrada.put(5, asistente.getDni());
         parametrosEntrada.put(6, asistente.getEmail());
-        parametrosEntrada.put(7, Date.valueOf(asistente.getFechaNacimiento()));
+        parametrosEntrada.put(7, asistente.getFechaNacimiento());
         parametrosEntrada.put(8, String.valueOf(asistente.getGenero()));
         parametrosEntrada.put(9, asistente.getHashPassword());
         

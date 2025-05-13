@@ -33,9 +33,9 @@ public class MedicoImpl implements MedicoDAO{
         parametrosEntrada.put(2, medico.getNombre());
         parametrosEntrada.put(3, medico.getApellidoPaterno());
         parametrosEntrada.put(4, medico.getApellidoPaterno());
-        parametrosEntrada.put(5, String.valueOf(medico.getDni()));
+        parametrosEntrada.put(5, medico.getDni());
         parametrosEntrada.put(6, medico.getEmail());
-        parametrosEntrada.put(7, Date.valueOf(medico.getFechaNacimiento()));
+        parametrosEntrada.put(7, medico.getFechaNacimiento());
         parametrosEntrada.put(8, String.valueOf(medico.getGenero()));
         parametrosEntrada.put(9, medico.getHashPassword());
         parametrosEntrada.put(10, medico.getCodigoMedico());

@@ -34,9 +34,9 @@ public class AdministradorImpl implements AdministradorDAO{
         parametrosEntrada.put(2, administrador.getNombre());
         parametrosEntrada.put(3, administrador.getApellidoPaterno());
         parametrosEntrada.put(4, administrador.getApellidoPaterno());
-        parametrosEntrada.put(5, String.valueOf(administrador.getDni()));
+        parametrosEntrada.put(5, administrador.getDni());
         parametrosEntrada.put(6, administrador.getEmail());
-        parametrosEntrada.put(7, Date.valueOf(administrador.getFechaNacimiento()));
+        parametrosEntrada.put(7, administrador.getFechaNacimiento());
         parametrosEntrada.put(8, String.valueOf(administrador.getGenero()));
         parametrosEntrada.put(9, administrador.getHashPassword());
         parametrosEntrada.put(10, administrador.getSede().getIdSede());

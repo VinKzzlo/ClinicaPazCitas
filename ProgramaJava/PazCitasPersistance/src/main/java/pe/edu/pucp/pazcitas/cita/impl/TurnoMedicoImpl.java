@@ -33,8 +33,8 @@ public class TurnoMedicoImpl implements TurnoMedicoDAO {
         Map<Integer, Object> parametrosEntrada = new HashMap<>();
         parametrosSalida.put(1, Types.INTEGER);
         parametrosEntrada.put(2, turno.getDia().name());
-        parametrosEntrada.put(3, Time.valueOf(turno.getHoraInicio()));
-        parametrosEntrada.put(4, Time.valueOf(turno.getHoraFin()));
+        parametrosEntrada.put(3, turno.getHoraInicio());
+        parametrosEntrada.put(4, turno.getHoraFin());
         parametrosEntrada.put(5, turno.getConsultorio().getIdConsultorio());
         parametrosEntrada.put(6, turno.getMedico().getIdUsuario());
 
@@ -86,7 +86,7 @@ public class TurnoMedicoImpl implements TurnoMedicoDAO {
 
                 t.setConsultorio(cons);
                 t.setMedico(med);
-                
+
                 turnos.add(t);
             }
         } catch (SQLException ex) {

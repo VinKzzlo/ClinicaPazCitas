@@ -55,7 +55,7 @@ public class SeguroImpl implements SeguroDAO{
     @Override
     public ArrayList<Seguro> listarTodos() {
         ArrayList<Seguro> seguros = new ArrayList<>();
-        rs = DBManager.getInstance().ejecutarProcedimientoLectura("LISTAR_ADMINISTRADOR_TODOS", null);
+        rs = DBManager.getInstance().ejecutarProcedimientoLectura("LISTAR_TODOS_SEGURO", null);
         System.out.println("Lectura de seguros...");
         try{
             while(rs.next()){

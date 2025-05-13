@@ -72,6 +72,7 @@ public class ConsultorioImpl implements ConsultorioDAO {
                 e.setSede(sede);
 
                 e.setSede(sede);
+                consultorios.add(e);
             }
         } catch (SQLException ex) {
             System.out.println(ex.getMessage());

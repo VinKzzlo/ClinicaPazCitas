@@ -33,8 +33,8 @@ public class DisponibilidadImpl implements DisponibilidadDAO {
         Map<Integer, Object> parametrosSalida = new HashMap<>();
         Map<Integer, Object> parametrosEntrada = new HashMap<>();
         parametrosSalida.put(1, Types.INTEGER);
-        parametrosEntrada.put(2, Date.valueOf(disponibilidad.getFecha()));
-        parametrosEntrada.put(3, Time.valueOf(disponibilidad.getHora()));
+        parametrosEntrada.put(2, disponibilidad.getFecha());
+        parametrosEntrada.put(3, disponibilidad.getHora());
         parametrosEntrada.put(4, disponibilidad.getTurnoMedico().getIdTurno());
         DBManager.getInstance().ejecutarProcedimiento("INSERTAR_DISPONIBILIDAD", parametrosEntrada, parametrosSalida);
         disponibilidad.setIdDisponibilidad((int) parametrosSalida.get(1));
