@@ -6,6 +6,7 @@ package pe.edu.pucp.pazcitas.ubicacion.impl;
 
 import java.sql.Connection;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.sql.Types;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -25,14 +26,12 @@ public class SedeImpl implements SedeDAO {
 
     @Override
     public int insertar(Sede sede) {
-        Map<Integer,Object> parametrosEntrada = new HashMap<>();
-        Map<Integer,Object> parametrosSalida = new HashMap<>();
-        
-        parametrosSalida.put(1, Types.INTEGER);
+        Map<Integer, Object> parametrosEntrada = new HashMap<>();
         parametrosEntrada.put(2, sede.getNombre());
         parametrosEntrada.put(3, sede.getDireccion());
-        
-        
+
+        Map<Integer, Object> parametrosSalida = new HashMap<>();
+        parametrosSalida.put(1, Types.INTEGER);
         DBManager.getInstance().ejecutarProcedimiento("INSERTAR_SEDE", parametrosEntrada, parametrosSalida);
         sede.setIdSede((int) parametrosSalida.get(1));
         System.out.println("Se ha realizado el registro de la sede");
@@ -51,7 +50,24 @@ public class SedeImpl implements SedeDAO {
 
     @Override
     public ArrayList<Sede> listarTodos() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        ArrayList<Sede> sedes = new ArrayList<>();
+        rs = DBManager.getInstance().ejecutarProcedimientoLectura("LISTAR_SEDES_TODAS", null);
+        System.out.println("Lectura de sedes...");
+        try {
+            while (rs.next()) {
+                Sede e = new Sede();
+                e.setIdSede(rs.getInt("id_sede"));
+                e.setNombre(rs.getString("nombre"));
+                e.setDireccion(rs.getString("direccion"));
+
+                sedes.add(e);
+            }
+        } catch (SQLException ex) {
+            System.out.println(ex.getMessage());
+        } finally {
+            DBManager.getInstance().cerrarConexion();
+        }
+        return sedes;
     }
 
 }

@@ -5,6 +5,7 @@
 package pe.edu.pucp.pazcitas.financiero.model;
 
 import java.time.LocalDateTime;
+import pe.edu.pucp.pazcitas.cita.model.Cita;
 
 /**
  *
@@ -18,7 +19,7 @@ public class Pago {
     private double montoSubtotal;
     private Seguro seguro;
     private EstadoPago estado;
-    
+    private Cita cita;
 
     public Pago() {
     }
@@ -78,6 +79,14 @@ public class Pago {
 
     public void setEstado(EstadoPago estado) {
         this.estado = estado;
+    }
+
+    public Cita getCita() {
+        return cita;
+    }
+
+    public void setCita(Cita cita) {
+        this.cita = cita;
     }
 
     

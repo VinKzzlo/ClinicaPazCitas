@@ -16,8 +16,7 @@ public class Cita {
     
     private Disponibilidad disponibilidad;
     private Recepcionista recepcionista;
-    private NotaClinica notaClinica;
-    private Pago pago;
+    private NotaClinica notaClinica;    
     private Especialidad especialidad;
     
     public Cita() {
@@ -84,13 +83,6 @@ public class Cita {
         this.notaClinica = notaClinica;
     }
 
-    public Pago getPago() {
-        return pago;
-    }
-
-    public void setPago(Pago pago) {
-        this.pago = pago;
-    }
 
     public LocalDateTime getFecha() {
         return fecha;

@@ -42,8 +42,8 @@ public class AsistenteMedicoImpl implements AsistenteMedicoDAO{
         parametrosEntrada.put(9, asistente.getHashPassword());
         
         parametrosEntrada.put(10, asistente.getCodigoPersonal());
-        parametrosEntrada.put(11, asistente.getSede().getIdSede());
-        parametrosEntrada.put(12, asistente.getMedico().getIdUsuario());
+        parametrosEntrada.put(11, asistente.getMedico().getIdUsuario());
+        parametrosEntrada.put(12, asistente.getSede().getIdSede());
 
         DBManager.getInstance().ejecutarProcedimiento("INSERTAR_ASISTENTE_MEDICO", parametrosEntrada, parametrosSalida);
         asistente.setIdUsuario((int) parametrosSalida.get(1));
