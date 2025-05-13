@@ -4,10 +4,33 @@
  */
 package pe.edu.pucp.pazcitas.atencion.bo;
 
+import java.util.ArrayList;
+import pe.edu.pucp.pazcitas.atencion.dao.MedicamentoDAO;
+import pe.edu.pucp.pazcitas.atencion.impl.MedicamentoImpl;
+import pe.edu.pucp.pazcitas.atencion.model.Medicamento;
+
 /**
  *
  * @author asant
  */
 public class MedicamentoBO {
+
+    private MedicamentoDAO daoMedicamento;
+
+    public MedicamentoBO() {
+        daoMedicamento = new MedicamentoImpl();
+    }
     
+    public int insertar(Medicamento medicamento){
+        return daoMedicamento.insertar(medicamento);
+    }
+    
+    public int modificar(Medicamento medicamento){
+        return daoMedicamento.modificar(medicamento);
+    }
+    
+    public ArrayList<Medicamento> listarTodos(){
+        return daoMedicamento.listarTodos();
+    }
+
 }

@@ -47,7 +47,7 @@ public class NotaClinicaImpl implements NotaClinicaDAO {
     }
 
     @Override
-    public int eliminar(int idModelo) {
+    public int eliminar(int idNota) {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
