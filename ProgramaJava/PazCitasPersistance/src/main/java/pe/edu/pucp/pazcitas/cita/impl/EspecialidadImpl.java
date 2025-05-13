@@ -40,9 +40,9 @@ public class EspecialidadImpl implements EspecialidadDAO {
     }
 
     @Override
-    public int eliminar(int idModelo) {
+    public int eliminar(int idEspecialidad) {
         Map<Integer,Object> parametrosEntrada = new HashMap<>();
-        parametrosEntrada.put(1, idModelo);
+        parametrosEntrada.put(1, idEspecialidad);
         int resultado = DBManager.getInstance().ejecutarProcedimiento("ELIMINAR_ESPECIALIDAD", parametrosEntrada, null);
         return resultado;
     }

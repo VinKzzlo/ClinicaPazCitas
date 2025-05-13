@@ -4,10 +4,27 @@
  */
 package pe.edu.pucp.pazcitas.ubicacion.bo;
 
+import java.util.ArrayList;
+import pe.edu.pucp.pazcitas.ubicacion.dao.ConsultorioDAO;
+import pe.edu.pucp.pazcitas.ubicacion.impl.ConsultorioImpl;
+import pe.edu.pucp.pazcitas.ubicacion.model.Consultorio;
+
 /**
  *
  * @author asant
  */
 public class ConsultorioBO {
+    private final ConsultorioDAO daoConsultorio;
     
+    public ConsultorioBO(){
+        daoConsultorio = new ConsultorioImpl();
+    }
+    
+    public int insertar(Consultorio consultorio) {
+        return daoConsultorio.insertar(consultorio);
+    }
+    
+    public ArrayList<Consultorio> listarTodos() {
+        return daoConsultorio.listarTodos();
+    }
 }

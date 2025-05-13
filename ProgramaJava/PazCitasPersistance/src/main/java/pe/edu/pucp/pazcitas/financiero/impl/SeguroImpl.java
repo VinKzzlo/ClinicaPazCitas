@@ -32,7 +32,7 @@ public class SeguroImpl implements SeguroDAO{
         parametrosEntrada.put(1, seguro.getIdSeguro());
         parametrosEntrada.put(2, seguro.getNombreSeguro());
         parametrosEntrada.put(3, seguro.getTipo().name());
-        parametrosEntrada.put(4, java.sql.Date.valueOf(seguro.getVigencia()));
+        parametrosEntrada.put(4, seguro.getVigencia());
         parametrosEntrada.put(5, seguro.getPorcentajeCobertura());
         
        

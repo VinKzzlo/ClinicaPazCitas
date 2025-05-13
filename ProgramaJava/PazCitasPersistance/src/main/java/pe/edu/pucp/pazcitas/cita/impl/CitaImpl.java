@@ -7,7 +7,6 @@ package pe.edu.pucp.pazcitas.cita.impl;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Timestamp;
 import java.sql.Types;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -20,7 +19,8 @@ import pe.edu.pucp.pazcitas.cita.model.Especialidad;
 import pe.edu.pucp.pazcitas.cita.model.EstadoCita;
 import pe.edu.pucp.pazcitas.config.DBManager;
 import pe.edu.pucp.pazcitas.usuario.model.Paciente;
-
+import java.sql.Time;
+import java.sql.Timestamp;
 /**
  *
  * @author asant
@@ -36,13 +36,12 @@ public class CitaImpl implements CitaDAO {
         Map<Integer,Object> parametrosSalida = new HashMap<>();
         parametrosSalida.put(1, Types.INTEGER);
         
-        parametrosEntrada.put(2, Timestamp.valueOf(cita.getFecha()));
+        parametrosEntrada.put(2, cita.getFecha());
         parametrosEntrada.put(3, cita.getEstadoCita().name());
         parametrosEntrada.put(4, cita.getMotivoConsulta());
-        parametrosEntrada.put(5, Timestamp.valueOf(cita.getFechaActualizacion()));
-        parametrosEntrada.put(6, cita.getPaciente().getIdUsuario());
-        parametrosEntrada.put(7, cita.getDisponibilidad().getIdDisponibilidad());
-        parametrosEntrada.put(8, cita.getEspecialidad().getIdEspecialidad());
+        parametrosEntrada.put(5, cita.getPaciente().getIdUsuario());
+        parametrosEntrada.put(6, cita.getDisponibilidad().getIdDisponibilidad());
+        parametrosEntrada.put(7, cita.getEspecialidad().getIdEspecialidad());
         
 
         DBManager.getInstance().ejecutarProcedimiento("INSERTAR_CITA", parametrosEntrada, parametrosSalida);

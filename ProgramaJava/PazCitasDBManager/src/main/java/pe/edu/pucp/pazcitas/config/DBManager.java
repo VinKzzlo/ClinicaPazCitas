@@ -10,6 +10,9 @@ import java.util.Properties;
 import java.sql.CallableStatement;
 import java.sql.ResultSet;
 import java.sql.Types;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.LocalTime;
 import java.util.Map;
 
 
@@ -156,7 +159,9 @@ public class DBManager {
                 case String cadena -> cs.setString(key, cadena);
                 case Double decimal -> cs.setDouble(key, decimal);
                 case Boolean booleano -> cs.setBoolean(key, booleano);
-                case java.util.Date fecha -> cs.setDate(key, new java.sql.Date(fecha.getTime()));
+                case LocalDate localDate -> cs.setDate(key, java.sql.Date.valueOf(localDate));
+                case LocalTime localTime -> cs.setTime(key, java.sql.Time.valueOf(localTime));
+                case LocalDateTime localDateTime -> cs.setTimestamp(key, java.sql.Timestamp.valueOf(localDateTime));
                 case byte[] archivo -> cs.setBytes(key, archivo);
                 default -> {
                 }
@@ -183,8 +188,20 @@ public class DBManager {
                 case Types.VARCHAR -> value = cst.getString(posicion);
                 case Types.DOUBLE -> value = cst.getDouble(posicion);
                 case Types.BOOLEAN -> value = cst.getBoolean(posicion);
-                case Types.DATE -> value = cst.getDate(posicion);
+                case Types.DATE -> {
+                    java.sql.Date sqlDate = cst.getDate(posicion);
+                    value = (sqlDate != null) ? sqlDate.toLocalDate() : null;
+                }
+                case Types.TIME -> {
+                    java.sql.Time sqlTime = cst.getTime(posicion);
+                    value = (sqlTime != null) ? sqlTime.toLocalTime() : null;
+                }
+                case Types.TIMESTAMP -> {
+                     java.sql.Timestamp sqlTimestamp = cst.getTimestamp(posicion);
+                      value = (sqlTimestamp != null) ? sqlTimestamp.toLocalDateTime() : null;
+                }
                 case Types.BLOB -> value = cst.getBytes(posicion);
+                
                 // Agregar más tipos según sea necesario
             }
             parametrosSalida.put(posicion, value);
