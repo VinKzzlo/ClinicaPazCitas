@@ -26,14 +26,6 @@ public class TurnoMedico {
     public TurnoMedico() {
     }
 
-    public ArrayList<Disponibilidad> getDetalleTurnos() {
-        return detalleTurnos;
-    }
-
-    public void setDetalleTurnos(ArrayList<Disponibilidad> detalleTurnos) {
-        this.detalleTurnos = detalleTurnos;
-    }
-
     public int getIdTurno() {
         return idTurno;
     }
@@ -42,30 +34,12 @@ public class TurnoMedico {
         this.idTurno = idTurno;
     }
 
-    
-
-    public Consultorio getConsultorio() {
-        return consultorio;
-    }
-
-    public void setConsultorio(Consultorio consultorio) {
-        this.consultorio = consultorio;
-    }
-
-    public Medico getMedico() {
-        return medico;
-    }
-
-    public void setMedico(Medico medico) {
-        this.medico = medico;
-    }
-
     public DiaSemana getDia() {
         return dia;
     }
 
-    public void setDia(DiaSemana fecha) {
-        this.dia = fecha;
+    public void setDia(DiaSemana dia) {
+        this.dia = dia;
     }
 
     public LocalTime getHoraInicio() {
@@ -84,7 +58,30 @@ public class TurnoMedico {
         this.horaFin = horaFin;
     }
 
-   
-    
+    public Consultorio getConsultorio() {
+        return consultorio;
+    }
+
+    public void setConsultorio(Consultorio consultorio) {
+        this.consultorio = consultorio;
+    }
+
+    public Medico getMedico() {
+        return medico;
+    }
+
+    public void setMedico(Medico medico) {
+        this.medico = medico;
+    }
+
+    public ArrayList<Disponibilidad> getDetalleTurnos() {
+        return detalleTurnos;
+    }
+
+    public void setDetalleTurnos(ArrayList<Disponibilidad> detalleTurnos) {
+        this.detalleTurnos = detalleTurnos;
+    }
+
+       
     
 }
