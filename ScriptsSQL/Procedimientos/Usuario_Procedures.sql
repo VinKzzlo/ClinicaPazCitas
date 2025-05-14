@@ -46,7 +46,7 @@ BEGIN
 END$
 CREATE PROCEDURE LISTAR_MEDICO_TODOS()
 BEGIN
-	SELECT u.id_persona,u.nombre,u.apellido_paterno,u.apellido_materno, u.dni, u.email, u.fecha_nacimiento, u.genero,u.hash_password,
+	SELECT u.id_usuario,u.nombre,u.apellido_paterno,u.apellido_materno, u.dni, u.email, u.fecha_nacimiento, u.genero,u.hash_password,
     m.codigo_medico, s.id_sede, s.nombre as nombre_sede, s.direccion FROM medico m INNER JOIN usuario u ON m.id_medico = u.id_usuario INNER JOIN sede s ON s.id_sede = m.fid_sede WHERE m.activo = 1;
 END$
 /*PACIENTE*/
@@ -150,7 +150,7 @@ END$
 $
 CREATE PROCEDURE LISTAR_ASISTENTE_MEDICO_TODOS()
 BEGIN
-	SELECT u.id_persona,u.nombre,u.apellido_paterno,u.apellido_materno, u.dni, u.email, u.fecha_nacimiento, u.genero,u.hash_password,
+	SELECT u.id_usuario,u.nombre,u.apellido_paterno,u.apellido_materno, u.dni, u.email, u.fecha_nacimiento, u.genero,u.hash_password,
 	a.codigo_personal,m.id_medico, m.codigo_medico, s.id_sede, s.nombre as nombre_sede, s.direccion FROM asistente_medico a INNER JOIN usuario u ON a.id_asistente_medico = u.id_usuario 
     INNER JOIN sede s ON s.id_sede = a.fid_sede inner join medico m on m.id_medico = a.fid_medico WHERE a.activo = 1;
 END$
@@ -182,7 +182,8 @@ BEGIN
 END$
 CREATE PROCEDURE LISTAR_RECEPCIONISTA_TODOS()
 BEGIN
-	SELECT u.id_persona,u.nombre,u.apellido_paterno,u.apellido_materno, u.dni, u.email, u.fecha_nacimiento, u.genero,u.hash_password,
+	SELECT u.id_usuario ,u.nombre,
+    u.apellido_paterno,u.apellido_materno, u.dni, u.email, u.fecha_nacimiento, u.genero,u.hash_password,
 	s.id_sede, s.nombre as nombre_sede, s.direccion FROM recepcionista r INNER JOIN usuario u ON r.id_recepcionista = u.id_usuario INNER JOIN sede s ON s.id_sede = r.fid_sede WHERE r.activo = 1;
 END$
 cREATE PROCEDURE ELIMINAR_RECEPCIONISTA(

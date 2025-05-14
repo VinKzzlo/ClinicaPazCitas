@@ -42,14 +42,12 @@ CREATE PROCEDURE INSERTAR_SEGURO(
 	OUT _id_seguro INT,
 	IN _nombre_seguro VARCHAR(100),
 	IN _tipo ENUM('TOTAL','PARCIAL','NINGUNO'),
-    in _vigencia date,
+	IN _vigencia date,
 	IN _porcentaje_cobertura decimal(10,2)
-	
 )
-
 BEGIN
-	INSERT INTO seguro(id_seguro,nombre_seguro,tipo,porcentaje_cobertura,vigencia,activo)
-	VALUES (_id_seguro,_nombre_seguro,_tipo,_porcentaje_cobertura,_vigencia, 1);
+	INSERT INTO seguro(nombre_seguro,tipo,porcentaje_cobertura,vigencia,activo)
+	VALUES (_nombre_seguro,_tipo,_porcentaje_cobertura,_vigencia, 1);
 	SET _id_seguro = @@last_insert_id;
 END$
 ------------------------------------------------------------------------

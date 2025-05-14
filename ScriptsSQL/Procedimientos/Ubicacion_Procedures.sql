@@ -23,7 +23,7 @@ CREATE PROCEDURE INSERTAR_SEDE(
 
 )
 BEGIN
-    INSERT INTO sede(nombre, direccion, activo)
+    INSERT INTO sede(nombre, direccion, activa)
     VALUES(_nombre, _direccion, 1);
     SET _id_sede = @@last_insert_id;
 END$
@@ -36,7 +36,7 @@ CREATE PROCEDURE MODIFICAR_SEDE(
     IN _activo tinyint
 )
 BEGIN
-    UPDATE sede SET nombre = _nombre, direccion = _direccion, activo = _activo
+    UPDATE sede SET nombre = _nombre, direccion = _direccion, activa = _activo
     WHERE id_sede = _id_sede;
 END$
 -- - - Obtener
@@ -53,7 +53,7 @@ DELIMITER $
 CREATE PROCEDURE LISTAR_SEDES_TODAS()
 BEGIN
     SELECT id_sede, nombre, direccion
-    FROM sede where activo = 1;
+    FROM sede where activa = 1;
 END$
 -- - - Eliminar
 DELIMITER $
@@ -61,7 +61,7 @@ CREATE PROCEDURE ELIMINAR_SEDE(
     IN _id_sede INT
 )
 BEGIN
-    UPDATE sede SET activo = 0 WHERE id_sede = _id_sede;
+    UPDATE sede SET activa = 0 WHERE id_sede = _id_sede;
 END$
 
 sELECT *FROM seguro;
@@ -80,7 +80,7 @@ CREATE PROCEDURE INSERTAR_CONSULTORIO(
 )
 BEGIN
     INSERT INTO consultorio(nombre_consultorio, piso, capacidad, activo, fid_sede)
-    VALUES(_nombre_consultorio, _piso, _capacidad, _activo, _fid_sede);
+    VALUES(_nombre_consultorio, _piso, _capacidad, 1, _fid_sede);
     SET _id_consultorio = @@last_insert_id;
 END$
 -- - - Modificar

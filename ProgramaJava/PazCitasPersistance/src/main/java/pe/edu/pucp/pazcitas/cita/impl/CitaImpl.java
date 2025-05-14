@@ -41,7 +41,7 @@ public class CitaImpl implements CitaDAO {
         parametrosEntrada.put(5, cita.getPaciente().getIdUsuario());
         parametrosEntrada.put(6, cita.getDisponibilidad().getIdDisponibilidad());
         parametrosEntrada.put(7, cita.getEspecialidad().getIdEspecialidad());
-        
+        parametrosEntrada.put(8, cita.getRecepcionista().getIdUsuario());
 
         DBManager.getInstance().ejecutarProcedimiento("INSERTAR_CITA", parametrosEntrada, parametrosSalida);
         cita.setIdCita((int) parametrosSalida.get(1));

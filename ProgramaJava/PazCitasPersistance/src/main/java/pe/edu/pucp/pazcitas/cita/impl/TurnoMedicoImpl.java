@@ -66,7 +66,7 @@ public class TurnoMedicoImpl implements TurnoMedicoDAO {
         ArrayList<TurnoMedico> turnos = null;
 
         rs = DBManager.getInstance().ejecutarProcedimientoLectura("LISTAR_TURNOS_TODOS", null);
-        System.out.println("Lectura de recetas...");
+        System.out.println("Lectura de turnos...");
 
         try {
             while (rs.next()) {

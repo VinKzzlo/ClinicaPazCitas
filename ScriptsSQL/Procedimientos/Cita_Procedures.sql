@@ -10,14 +10,14 @@ DROP PROCEDURE IF EXISTS ELIMINAR_CITA$
 DROP PROCEDURE IF EXISTS INSERTAR_DISPONIBILIDAD$
 DROP PROCEDURE IF EXISTS MODIFICAR_DISPONIBILIDAD$
 DROP PROCEDURE IF EXISTS OBTENER_DISPONIBILIDAD_X_ID$
-DROP PROCEDURE IF EXISTS LISTAR_DISPONIBILIDAD_TODOS$
+DROP PROCEDURE IF EXISTS LISTAR_DISPONIBILIDADES_TODAS$
 DROP PROCEDURE IF EXISTS ELIMINAR_DISPONIBILIDAD$
 
 -- Eliminar Procedimientos de TurnoMedico
 DROP PROCEDURE IF EXISTS INSERTAR_TURNO_MEDICO$
-DROP PROCEDURE IF EXISTS MODIFICAR_TURNO_MEDICO$
+DROP PROCEDURE IF EXISTS MODIFICAR_TURNO_FECHA_HORA$
 DROP PROCEDURE IF EXISTS OBTENER_TURNO_MEDICO_X_ID$
-DROP PROCEDURE IF EXISTS LISTAR_TURNOS_MEDICOS_TODOS$
+DROP PROCEDURE IF EXISTS LISTAR_TURNOS_TODOS$
 
 -- Eliminar Procedimientos de Especialidad
 DROP PROCEDURE IF EXISTS INSERTAR_ESPECIALIDAD$
@@ -40,11 +40,12 @@ CREATE PROCEDURE INSERTAR_CITA(
     IN _motivo_consulta VARCHAR(50),
     IN _fid_paciente INT,
     IN _fid_disponibilidad INT,
-    IN _fid_especialidad INT
+    IN _fid_especialidad INT,
+    IN _fid_recepcionista INT
 )
 BEGIN
-	INSERT INTO cita( fecha,estado_cita, motivo_consulta,fecha_actualizacion,fid_paciente,fid_disponibilidad,fid_especialidad)
-    VALUES(_fecha,estado_cita,_motivo_consulta,SYSDATE(),_fid_paciente,_fid_disponibilidad,_fid_especialidad);
+	INSERT INTO cita( fecha,estado_cita, motivo_consulta,fecha_actualizacion,fid_paciente,fid_disponibilidad,fid_especialidad,fid_recepcionista)
+    VALUES(_fecha,_estado_cita,_motivo_consulta,SYSDATE(),_fid_paciente,_fid_disponibilidad,_fid_especialidad,_fid_recepcionista);
     SET _id_cita = @@last_insert_id;
 END$
 -- - - Modificar

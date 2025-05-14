@@ -31,13 +31,12 @@ public class SeguroImpl implements SeguroDAO {
         Map<Integer, Object> parametrosEntrada = new HashMap<>();
         Map<Integer, Object> parametrosSalida = new HashMap<>();
         parametrosSalida.put(1, Types.INTEGER);
-        parametrosEntrada.put(2, seguro.getIdSeguro());
-        parametrosEntrada.put(3, seguro.getNombreSeguro());
-        parametrosEntrada.put(4, seguro.getTipo().name());
-        parametrosEntrada.put(5, seguro.getVigencia());
-        parametrosEntrada.put(6, seguro.getPorcentajeCobertura());
+        parametrosEntrada.put(2, seguro.getNombreSeguro());
+        parametrosEntrada.put(3, seguro.getTipo().name());
+        parametrosEntrada.put(4, seguro.getVigencia());
+        parametrosEntrada.put(5, seguro.getPorcentajeCobertura());
 
-        DBManager.getInstance().ejecutarProcedimiento("INSERTAR_SEGURO", parametrosEntrada, null);
+        DBManager.getInstance().ejecutarProcedimiento("INSERTAR_SEGURO", parametrosEntrada, parametrosSalida);
         seguro.setIdSeguro((int) parametrosSalida.get(1));
         System.out.println("Se ha realizado el registro de la SEGURO");
         return seguro.getIdSeguro();

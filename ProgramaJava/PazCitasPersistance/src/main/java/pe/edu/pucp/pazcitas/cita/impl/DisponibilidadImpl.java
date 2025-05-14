@@ -63,7 +63,7 @@ public class DisponibilidadImpl implements DisponibilidadDAO {
         ArrayList<Disponibilidad> dispos = null;
 
         rs = DBManager.getInstance().ejecutarProcedimientoLectura("LISTAR_DISPONIBILIDADES_TODAS", null);
-        System.out.println("Lectura de recetas...");
+        System.out.println("Lectura de disponibilidades...");
 
         try {
             while (rs.next()) {

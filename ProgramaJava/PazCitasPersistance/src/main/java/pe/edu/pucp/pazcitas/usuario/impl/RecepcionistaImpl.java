@@ -86,7 +86,7 @@ public class RecepcionistaImpl implements RecepcionistaDAO {
         try{
             while(rs.next()){
                 Recepcionista e = new Recepcionista();
-                e.setIdUsuario(rs.getInt("id_persona"));
+                e.setIdUsuario(rs.getInt("id_usuario"));
                 e.setNombre(rs.getString("nombre"));
                 e.setApellidoPaterno(rs.getString("apellido_paterno"));
                 e.setApellidoMaterno(rs.getString("apellido_materno"));
