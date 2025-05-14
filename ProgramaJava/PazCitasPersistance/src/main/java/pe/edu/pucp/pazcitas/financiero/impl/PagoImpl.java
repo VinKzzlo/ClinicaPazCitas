@@ -37,7 +37,7 @@ public class PagoImpl implements PagoDAO{
         parametrosEntrada.put(3, pago.getMontoTotal());
         parametrosEntrada.put(4, pago.getMontoCubiertoSeguro());
         parametrosEntrada.put(5, pago.getMontoSubtotal());
-        parametrosEntrada.put(6, pago.getEstado());
+        parametrosEntrada.put(6, pago.getEstado().name());
         parametrosEntrada.put(7, pago.getSeguro().getIdSeguro());
         parametrosEntrada.put(8, pago.getCita().getIdCita());
         

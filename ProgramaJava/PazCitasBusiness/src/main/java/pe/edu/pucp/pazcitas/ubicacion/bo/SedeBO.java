@@ -25,6 +25,14 @@ public class SedeBO {
         return daoSede.insertar(sede);
     }
     
+    public int modificar(Sede sede){
+        return daoSede.modificar(sede);
+    }
+    
+    public int eliminar(int idSede){
+        return daoSede.eliminar(idSede);
+    }
+    
     public ArrayList<Sede> listarTodos() {
         return daoSede.listarTodos();
     }

@@ -29,6 +29,9 @@ public class RecepcionistaBO {
         {
             return daoRecepcionista.eliminar(idRecep);
         }
+        public int modificar(Recepcionista recep){
+            return daoRecepcionista.modificar(recep);
+        }
         public ArrayList<Recepcionista> listarTodos()
         {
             return daoRecepcionista.listarTodos();

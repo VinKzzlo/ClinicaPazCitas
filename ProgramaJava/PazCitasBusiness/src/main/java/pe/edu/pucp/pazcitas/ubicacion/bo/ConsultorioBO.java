@@ -24,6 +24,14 @@ public class ConsultorioBO {
         return daoConsultorio.insertar(consultorio);
     }
     
+    public int modificar(Consultorio consultorio) {
+        return daoConsultorio.modificar(consultorio);
+    }
+    
+    public int eliminar(int idHincha) {
+        return daoConsultorio.eliminar(idHincha);
+    }
+    
     public ArrayList<Consultorio> listarTodos() {
         return daoConsultorio.listarTodos();
     }

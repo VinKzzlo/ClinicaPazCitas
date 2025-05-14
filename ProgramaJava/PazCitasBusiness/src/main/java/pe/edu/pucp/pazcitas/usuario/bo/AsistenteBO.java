@@ -29,6 +29,11 @@ public class AsistenteBO {
         {
             return daoAsistente.eliminar(idAsistente);
         }
+        
+        public int modificar(AsistenteMedico asistente){
+            return daoAsistente.modificar(asistente);
+        }
+        
         public ArrayList<AsistenteMedico> listarTodos()
         {
             return daoAsistente.listarTodos();

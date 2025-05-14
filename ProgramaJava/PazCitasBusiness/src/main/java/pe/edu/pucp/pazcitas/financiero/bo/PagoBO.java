@@ -24,6 +24,14 @@ public class PagoBO {
         return daoPago.insertar(pago);
     }
     
+    public int modificar(Pago pago){
+        return daoPago.modificar(pago);
+    }
+    
+    
+    public int eliminar(int idPago){
+        return daoPago.eliminar(idPago);
+    }
     public ArrayList<Pago> listarTodos() {
         return daoPago.listarTodos();
     }

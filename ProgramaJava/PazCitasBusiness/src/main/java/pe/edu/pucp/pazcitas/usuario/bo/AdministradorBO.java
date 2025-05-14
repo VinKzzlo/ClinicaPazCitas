@@ -16,7 +16,7 @@ import pe.edu.pucp.pazcitas.usuario.impl.AdministradorImpl;
  */
 public class AdministradorBO {
     
-        private  AdministradorDAO daoAdmi;
+        private final AdministradorDAO daoAdmi;
         public AdministradorBO()
         {
             daoAdmi = new AdministradorImpl();
@@ -30,6 +30,13 @@ public class AdministradorBO {
         {
             return daoAdmi.eliminar(idAdmi);
         }
+        
+        public int modificar(Administrador admi){
+            return daoAdmi.modificar(admi);
+        }
+        
+
+        
         public ArrayList<Administrador> listarTodos()
         {
             return daoAdmi.listarTodos();

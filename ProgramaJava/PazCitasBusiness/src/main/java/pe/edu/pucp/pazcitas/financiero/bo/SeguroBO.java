@@ -25,6 +25,14 @@ public class SeguroBO {
         return daoSeguro.insertar(seguro);
     }
     
+    public int modificar(Seguro seguro){
+        return daoSeguro.modificar(seguro);
+    }
+    
+    public int eliminar(int idSeguro){
+        return daoSeguro.eliminar(idSeguro);
+    }
+    
     public ArrayList<Seguro> listarTodos() {
         return daoSeguro.listarTodos();
     }

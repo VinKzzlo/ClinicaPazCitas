@@ -25,6 +25,10 @@ public class EspecialidadBO {
         return daoEspecialidad.insertar(especialidad);
     }
     
+    public int modificar(Especialidad especialidad){
+        return daoEspecialidad.modificar(especialidad);
+    }
+    
     public int eliminar(int idEspecialidad) {
         return daoEspecialidad.eliminar(idEspecialidad);
     }

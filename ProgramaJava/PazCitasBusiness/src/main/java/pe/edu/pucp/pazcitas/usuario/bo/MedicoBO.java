@@ -29,6 +29,11 @@ public class MedicoBO {
         {
             return daoMedico.eliminar(idMedico);
         }
+        
+        public int modificar(Medico med){
+            return daoMedico.modificar(med);
+        }
+        
         public ArrayList<Medico> listarTodos()
         {
             return daoMedico.listarTodos();

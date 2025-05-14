@@ -29,6 +29,9 @@ public class PacienteBO {
         {
             return daoPaciente.eliminar(idPaciente);
         }
+        public int modificar(Paciente paciente){
+            return daoPaciente.modificar(paciente);
+        }
         public ArrayList<Paciente> listarTodos()
         {
             return daoPaciente.listarTodos();

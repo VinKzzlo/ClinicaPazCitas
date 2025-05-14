@@ -27,6 +27,14 @@ public class CitaBO {
         return daoCita.insertar(cita);
     }
     
+    public int modificar(Cita cita){
+        return daoCita.modificar(cita);
+    }
+    
+    public int eliminar(int idCita){
+        return daoCita.eliminar(idCita);
+    }
+    
     public ArrayList<Cita>listarTodos(){
         return daoCita.listarTodos();
     }
