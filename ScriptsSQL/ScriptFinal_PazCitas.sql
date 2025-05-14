@@ -61,7 +61,7 @@ CREATE TABLE usuario (
 
 -- Tabla: Seguro
 CREATE TABLE seguro (
-    id_seguro INT PRIMARY KEY,
+    id_seguro INT PRIMARY KEY AUTO_INCREMENT,
     nombre_seguro VARCHAR(100) NOT NULL,
     tipo ENUM('NINGUNO','PARCIAL','TOTAL'),
     porcentaje_cobertura DECIMAL(10,2) NOT NULL, 

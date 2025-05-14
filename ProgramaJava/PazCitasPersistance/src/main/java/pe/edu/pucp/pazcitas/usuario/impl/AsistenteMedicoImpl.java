@@ -22,15 +22,15 @@ import pe.edu.pucp.pazcitas.usuario.model.Medico;
  *
  * @author asant
  */
-public class AsistenteMedicoImpl implements AsistenteMedicoDAO{
+public class AsistenteMedicoImpl implements AsistenteMedicoDAO {
 
     private Connection con;
     private ResultSet rs;
-    
+
     @Override
     public int insertar(AsistenteMedico asistente) {
-        Map<Integer,Object> parametrosEntrada = new HashMap<>();
-        Map<Integer,Object> parametrosSalida = new HashMap<>();
+        Map<Integer, Object> parametrosEntrada = new HashMap<>();
+        Map<Integer, Object> parametrosSalida = new HashMap<>();
         parametrosSalida.put(1, Types.INTEGER);
         parametrosEntrada.put(2, asistente.getNombre());
         parametrosEntrada.put(3, asistente.getApellidoPaterno());
@@ -40,7 +40,7 @@ public class AsistenteMedicoImpl implements AsistenteMedicoDAO{
         parametrosEntrada.put(7, asistente.getFechaNacimiento());
         parametrosEntrada.put(8, String.valueOf(asistente.getGenero()));
         parametrosEntrada.put(9, asistente.getHashPassword());
-        
+
         parametrosEntrada.put(10, asistente.getCodigoPersonal());
         parametrosEntrada.put(11, asistente.getMedico().getIdUsuario());
         parametrosEntrada.put(12, asistente.getSede().getIdSede());
@@ -48,12 +48,12 @@ public class AsistenteMedicoImpl implements AsistenteMedicoDAO{
         DBManager.getInstance().ejecutarProcedimiento("INSERTAR_ASISTENTE_MEDICO", parametrosEntrada, parametrosSalida);
         asistente.setIdUsuario((int) parametrosSalida.get(1));
         System.out.println("Se ha realizado el registro del asistente");
-        return asistente.getIdUsuario();  
+        return asistente.getIdUsuario();
     }
 
     @Override
     public int eliminar(int idAsistente) {
-        Map<Integer,Object> parametrosEntrada = new HashMap<>();
+        Map<Integer, Object> parametrosEntrada = new HashMap<>();
         parametrosEntrada.put(1, idAsistente);
         int resultado = DBManager.getInstance().ejecutarProcedimiento("ELIMINAR_ASISTENTE_MEDICO", parametrosEntrada, null);
         System.out.println("Se ha realizado la eliminacion del asistente");
@@ -61,8 +61,26 @@ public class AsistenteMedicoImpl implements AsistenteMedicoDAO{
     }
 
     @Override
-    public int modificar(AsistenteMedico modelo) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    public int modificar(AsistenteMedico asistente) {
+        Map<Integer, Object> parametrosEntrada = new HashMap<>();
+
+        parametrosEntrada.put(1, asistente.getIdUsuario());
+        parametrosEntrada.put(2, asistente.getNombre());
+        parametrosEntrada.put(3, asistente.getApellidoPaterno());
+        parametrosEntrada.put(4, asistente.getApellidoPaterno());
+        parametrosEntrada.put(5, asistente.getDni());
+        parametrosEntrada.put(6, asistente.getEmail());
+        parametrosEntrada.put(7, asistente.getFechaNacimiento());
+        parametrosEntrada.put(8, String.valueOf(asistente.getGenero()));
+        parametrosEntrada.put(9, asistente.getHashPassword());
+
+        parametrosEntrada.put(10, asistente.getCodigoPersonal());
+        parametrosEntrada.put(11, asistente.getMedico().getIdUsuario());
+        parametrosEntrada.put(12, asistente.getSede().getIdSede());
+
+        DBManager.getInstance().ejecutarProcedimiento("MODIFICAR_ASISTENTE_MEDICO", parametrosEntrada, null);
+        System.out.println("Se ha realizado el modifico del asistente");
+        return asistente.getIdUsuario();
     }
 
     @Override
@@ -70,8 +88,8 @@ public class AsistenteMedicoImpl implements AsistenteMedicoDAO{
         ArrayList<AsistenteMedico> asistentes = new ArrayList<>();
         rs = DBManager.getInstance().ejecutarProcedimientoLectura("LISTAR_ASISTENTE_MEDICO_TODOS", null);
         System.out.println("Lectura de asistentes...");
-        try{
-            while(rs.next()){
+        try {
+            while (rs.next()) {
                 AsistenteMedico e = new AsistenteMedico();
                 e.setIdUsuario(rs.getInt("id_usuario"));
                 e.setNombre(rs.getString("nombre"));
@@ -83,27 +101,27 @@ public class AsistenteMedicoImpl implements AsistenteMedicoDAO{
                 e.setGenero(rs.getString("genero").charAt(0));
                 e.setHashPassword(rs.getString("hash_password"));
                 e.setCodigoPersonal(rs.getString("codigo_personal"));
-                
+
                 Medico medico = new Medico();
                 medico.setIdUsuario(rs.getInt("id_medico"));
                 medico.setCodigoMedico(rs.getString("codigo_medico"));
-                
+
                 Sede sede = new Sede();
                 sede.setIdSede(rs.getInt("id_sede"));
                 sede.setNombre(rs.getString("nombre_sede"));
                 sede.setDireccion(rs.getString("direccion"));
-                
+
                 e.setSede(sede);
                 e.setMedico(medico);
-                
+
                 asistentes.add(e);
             }
-        }catch(SQLException ex){
+        } catch (SQLException ex) {
             System.out.println(ex.getMessage());
-        }finally{
+        } finally {
             DBManager.getInstance().cerrarConexion();
         }
         return asistentes;
     }
-    
+
 }

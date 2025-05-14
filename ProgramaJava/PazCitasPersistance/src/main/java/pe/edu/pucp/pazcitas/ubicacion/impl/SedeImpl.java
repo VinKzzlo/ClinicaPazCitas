@@ -39,13 +39,24 @@ public class SedeImpl implements SedeDAO {
     }
 
     @Override
-    public int eliminar(int idModelo) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    public int eliminar(int idSede) {
+        Map<Integer,Object> parametrosEntrada = new HashMap<>();
+        parametrosEntrada.put(1, idSede);
+        int resultado = DBManager.getInstance().ejecutarProcedimiento("ELIMINAR_SEDE", parametrosEntrada, null);
+        System.out.println("Se ha realizado la eliminacion de la sede");
+        return resultado;
     }
 
     @Override
-    public int modificar(Sede modelo) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    public int modificar(Sede sede) {
+        Map<Integer, Object> parametrosEntrada = new HashMap<>();
+        parametrosEntrada.put(1, sede.getIdSede());
+        parametrosEntrada.put(2, sede.getNombre());
+        parametrosEntrada.put(3, sede.getDireccion());
+
+        DBManager.getInstance().ejecutarProcedimiento("MODIFICAR_SEDE", parametrosEntrada, null);
+        System.out.println("Se ha realizado el modificar de la sede");
+        return sede.getIdSede();   
     }
 
     @Override

@@ -22,7 +22,6 @@ import pe.edu.pucp.pazcitas.ubicacion.model.Sede;
  */
 public class ConsultorioImpl implements ConsultorioDAO {
 
-    private Connection con;
     private ResultSet rs;
 
     @Override
@@ -43,13 +42,28 @@ public class ConsultorioImpl implements ConsultorioDAO {
     }
 
     @Override
-    public int eliminar(int idModelo) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    public int eliminar(int idConsultorio) {
+        Map<Integer,Object> parametrosEntrada = new HashMap<>();
+        parametrosEntrada.put(1, idConsultorio);
+        int resultado = DBManager.getInstance().ejecutarProcedimiento("ELIMINAR_CONSULTORIO", parametrosEntrada, null);
+        System.out.println("Se ha realizado la eliminacion del consultorio");
+        return resultado;
     }
 
     @Override
-    public int modificar(Consultorio modelo) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    public int modificar(Consultorio consultorio) {
+        Map<Integer, Object> parametrosEntrada = new HashMap<>();
+        
+        parametrosEntrada.put(1, consultorio.getIdConsultorio());
+
+        parametrosEntrada.put(2, consultorio.getNombreConsultorio());
+        parametrosEntrada.put(3, consultorio.getPiso());
+        parametrosEntrada.put(4, consultorio.getCapacidad());
+        parametrosEntrada.put(5, consultorio.getSede().getIdSede());
+
+        DBManager.getInstance().ejecutarProcedimiento("MODIFICAR_CONSULTORIO", parametrosEntrada, null);
+        System.out.println("Se ha realizado el modificar del consultorio");
+        return consultorio.getIdConsultorio();
     }
 
     @Override

@@ -27,12 +27,12 @@ public class EspecialidadImpl implements EspecialidadDAO {
     @Override
     public int insertar(Especialidad especialidad) {
         Map<Integer,Object> parametrosEntrada = new HashMap<>();
+        Map<Integer,Object> parametrosSalida = new HashMap<>();
+        parametrosSalida.put(1, Types.INTEGER);
+        
         parametrosEntrada.put(2, especialidad.getNombre());
         parametrosEntrada.put(3, especialidad.getDescripcion());
         
-        
-        Map<Integer,Object> parametrosSalida = new HashMap<>();
-        parametrosSalida.put(1, Types.INTEGER);
         DBManager.getInstance().ejecutarProcedimiento("INSERTAR_ESPECIALIDAD", parametrosEntrada, parametrosSalida);
         especialidad.setIdEspecialidad((int) parametrosSalida.get(1));
         System.out.println("Se ha realizado el registro de la especialidad");
@@ -48,8 +48,16 @@ public class EspecialidadImpl implements EspecialidadDAO {
     }
 
     @Override
-    public int modificar(Especialidad modelo) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    public int modificar(Especialidad especialidad) {
+        Map<Integer,Object> parametrosEntrada = new HashMap<>();
+        parametrosEntrada.put(1, especialidad.getIdEspecialidad());
+        parametrosEntrada.put(2, especialidad.getNombre());
+        parametrosEntrada.put(3, especialidad.getDescripcion());
+            
+        DBManager.getInstance().ejecutarProcedimiento("MODIFICAR_ESPECIALIDAD", parametrosEntrada, null);
+
+        System.out.println("Se ha realizado el registro de la especialidad");
+        return especialidad.getIdEspecialidad();
     }
 
     @Override

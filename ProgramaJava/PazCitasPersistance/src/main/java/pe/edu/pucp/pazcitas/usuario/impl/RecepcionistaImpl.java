@@ -58,8 +58,24 @@ public class RecepcionistaImpl implements RecepcionistaDAO {
     }
 
     @Override
-    public int modificar(Recepcionista modelo) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    public int modificar(Recepcionista recepcionista) {
+        Map<Integer,Object> parametrosEntrada = new HashMap<>();
+        parametrosEntrada.put(1, recepcionista.getIdUsuario());
+        
+        parametrosEntrada.put(2, recepcionista.getNombre());
+        parametrosEntrada.put(3, recepcionista.getApellidoPaterno());
+        parametrosEntrada.put(4, recepcionista.getApellidoPaterno());
+        parametrosEntrada.put(5, String.valueOf(recepcionista.getDni()));
+        parametrosEntrada.put(6, recepcionista.getEmail());
+        parametrosEntrada.put(7, Date.valueOf(recepcionista.getFechaNacimiento()));
+        parametrosEntrada.put(8, String.valueOf(recepcionista.getGenero()));
+        parametrosEntrada.put(9, recepcionista.getHashPassword());
+        parametrosEntrada.put(10, recepcionista.getSede().getIdSede());
+        
+        DBManager.getInstance().ejecutarProcedimiento("MODIFICAR_RECEPCIONISTA", parametrosEntrada, null);
+
+        System.out.println("Se ha realizado la modificacion del recepcionista");
+        return recepcionista.getIdUsuario();
     }
 
     @Override

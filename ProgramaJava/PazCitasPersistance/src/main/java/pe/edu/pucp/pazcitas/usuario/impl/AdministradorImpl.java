@@ -57,8 +57,22 @@ public class AdministradorImpl implements AdministradorDAO{
     }
 
     @Override
-    public int modificar(Administrador modelo) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    public int modificar(Administrador administrador) {
+        Map<Integer,Object> parametrosEntrada = new HashMap<>();
+        parametrosEntrada.put(1,administrador.getIdUsuario() );
+        parametrosEntrada.put(2, administrador.getNombre());
+        parametrosEntrada.put(3, administrador.getApellidoPaterno());
+        parametrosEntrada.put(4, administrador.getApellidoPaterno());
+        parametrosEntrada.put(5, String.valueOf(administrador.getDni()));
+        parametrosEntrada.put(6, administrador.getEmail());
+        parametrosEntrada.put(7, Date.valueOf(administrador.getFechaNacimiento()));
+        parametrosEntrada.put(8, String.valueOf(administrador.getGenero()));
+        parametrosEntrada.put(9, administrador.getHashPassword());
+        parametrosEntrada.put(10, administrador.getSede().getIdSede());
+        
+        DBManager.getInstance().ejecutarProcedimiento("MODIFICAR_ADMINISTRADOR", parametrosEntrada, null);
+        System.out.println("Se ha realizado el modificacion del administrador");
+        return administrador.getIdUsuario();
     }
 
     @Override

@@ -20,16 +20,16 @@ import pe.edu.pucp.pazcitas.usuario.model.Medico;
  *
  * @author asant
  */
-public class MedicoImpl implements MedicoDAO{
+public class MedicoImpl implements MedicoDAO {
 
     private ResultSet rs;
-    
+
     @Override
     public int insertar(Medico medico) {
-        Map<Integer,Object> parametrosEntrada = new HashMap<>();
-        Map<Integer,Object> parametrosSalida = new HashMap<>();
+        Map<Integer, Object> parametrosEntrada = new HashMap<>();
+        Map<Integer, Object> parametrosSalida = new HashMap<>();
         parametrosSalida.put(1, Types.INTEGER);
-        
+
         parametrosEntrada.put(2, medico.getNombre());
         parametrosEntrada.put(3, medico.getApellidoPaterno());
         parametrosEntrada.put(4, medico.getApellidoPaterno());
@@ -40,7 +40,7 @@ public class MedicoImpl implements MedicoDAO{
         parametrosEntrada.put(9, medico.getHashPassword());
         parametrosEntrada.put(10, medico.getCodigoMedico());
         parametrosEntrada.put(11, medico.getSede().getIdSede());
-        
+
         DBManager.getInstance().ejecutarProcedimiento("INSERTAR_MEDICO", parametrosEntrada, parametrosSalida);
         medico.setIdUsuario((int) parametrosSalida.get(1));
         System.out.println("Se ha realizado el registro del medico");
@@ -49,7 +49,7 @@ public class MedicoImpl implements MedicoDAO{
 
     @Override
     public int eliminar(int idMedico) {
-        Map<Integer,Object> parametrosEntrada = new HashMap<>();
+        Map<Integer, Object> parametrosEntrada = new HashMap<>();
         parametrosEntrada.put(1, idMedico);
         int resultado = DBManager.getInstance().ejecutarProcedimiento("ELIMINAR_MEDICO", parametrosEntrada, null);
         System.out.println("Se ha realizado la eliminacion del medico");
@@ -57,8 +57,24 @@ public class MedicoImpl implements MedicoDAO{
     }
 
     @Override
-    public int modificar(Medico modelo) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    public int modificar(Medico medico) {
+        Map<Integer, Object> parametrosEntrada = new HashMap<>();
+        parametrosEntrada.put(1, medico.getIdUsuario());
+
+        parametrosEntrada.put(2, medico.getNombre());
+        parametrosEntrada.put(3, medico.getApellidoPaterno());
+        parametrosEntrada.put(4, medico.getApellidoPaterno());
+        parametrosEntrada.put(5, medico.getDni());
+        parametrosEntrada.put(6, medico.getEmail());
+        parametrosEntrada.put(7, Date.valueOf(medico.getFechaNacimiento()));
+        parametrosEntrada.put(8, medico.getGenero());
+        parametrosEntrada.put(9, medico.getHashPassword());
+        parametrosEntrada.put(10, medico.getCodigoMedico());
+        parametrosEntrada.put(11, medico.getSede().getIdSede());
+
+        DBManager.getInstance().ejecutarProcedimiento("MODIFICAR_MEDICO", parametrosEntrada, null);
+        System.out.println("Se ha realizado el modificacion del medico");
+        return medico.getIdUsuario();
     }
 
     @Override
@@ -66,8 +82,8 @@ public class MedicoImpl implements MedicoDAO{
         ArrayList<Medico> medicos = new ArrayList<>();
         rs = DBManager.getInstance().ejecutarProcedimientoLectura("LISTAR_MEDICO_TODOS", null);
         System.out.println("Lectura de empleados...");
-        try{
-            while(rs.next()){
+        try {
+            while (rs.next()) {
                 Medico e = new Medico();
                 e.setIdUsuario(rs.getInt("id_usuario"));
                 e.setNombre(rs.getString("nombre"));
@@ -79,23 +95,22 @@ public class MedicoImpl implements MedicoDAO{
                 e.setGenero(rs.getString("genero").charAt(0));
                 e.setHashPassword(rs.getString("hash_password"));
                 e.setCodigoMedico(rs.getString("codigo_medico"));
-                
+
                 Sede sede = new Sede();
                 sede.setIdSede(rs.getInt("id_sede"));
                 sede.setNombre(rs.getString("nombre_sede"));
                 sede.setDireccion(rs.getString("direccion"));
-                
+
                 e.setSede(sede);
-                
-                
+
                 medicos.add(e);
             }
-        }catch(SQLException ex){
+        } catch (SQLException ex) {
             System.out.println(ex.getMessage());
-        }finally{
+        } finally {
             DBManager.getInstance().cerrarConexion();
         }
         return medicos;
     }
-    
+
 }

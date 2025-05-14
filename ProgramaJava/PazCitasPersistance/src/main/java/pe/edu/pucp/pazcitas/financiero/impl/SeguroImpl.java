@@ -21,13 +21,38 @@ import pe.edu.pucp.pazcitas.financiero.model.TipoSeguro;
  *
  * @author asant
  */
-public class SeguroImpl implements SeguroDAO{
-    
+public class SeguroImpl implements SeguroDAO {
+
     private Connection con;
     private ResultSet rs;
 
     @Override
     public int insertar(Seguro seguro) {
+        Map<Integer, Object> parametrosEntrada = new HashMap<>();
+        Map<Integer, Object> parametrosSalida = new HashMap<>();
+        parametrosSalida.put(1, Types.INTEGER);
+        parametrosEntrada.put(2, seguro.getIdSeguro());
+        parametrosEntrada.put(3, seguro.getNombreSeguro());
+        parametrosEntrada.put(4, seguro.getTipo().name());
+        parametrosEntrada.put(5, seguro.getVigencia());
+        parametrosEntrada.put(6, seguro.getPorcentajeCobertura());
+
+        DBManager.getInstance().ejecutarProcedimiento("INSERTAR_SEGURO", parametrosEntrada, null);
+        seguro.setIdSeguro((int) parametrosSalida.get(1));
+        System.out.println("Se ha realizado el registro de la SEGURO");
+        return seguro.getIdSeguro();
+    }
+
+    @Override
+    public int eliminar(int idSeguro) {
+        Map<Integer, Object> parametrosEntrada = new HashMap<>();
+        parametrosEntrada.put(1, idSeguro);
+        int resultado = DBManager.getInstance().ejecutarProcedimiento("ELIMINAR_SEGURO", parametrosEntrada, null);
+        return resultado;
+    }
+
+    @Override
+    public int modificar(Seguro seguro) {
         Map<Integer,Object> parametrosEntrada = new HashMap<>();
         parametrosEntrada.put(1, seguro.getIdSeguro());
         parametrosEntrada.put(2, seguro.getNombreSeguro());
@@ -36,20 +61,10 @@ public class SeguroImpl implements SeguroDAO{
         parametrosEntrada.put(5, seguro.getPorcentajeCobertura());
         
        
-        DBManager.getInstance().ejecutarProcedimiento("INSERTAR_SEGURO", parametrosEntrada, null);
+        DBManager.getInstance().ejecutarProcedimiento("MODIFICAR_SEGURO", parametrosEntrada, null);
         
-        System.out.println("Se ha realizado el registro de la SEGURO");
+        System.out.println("Se ha realizado el modificar de la SEGURO");
         return seguro.getIdSeguro();
-    }
-
-    @Override
-    public int eliminar(int idModelo) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
-
-    @Override
-    public int modificar(Seguro modelo) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
     @Override
@@ -57,8 +72,8 @@ public class SeguroImpl implements SeguroDAO{
         ArrayList<Seguro> seguros = new ArrayList<>();
         rs = DBManager.getInstance().ejecutarProcedimientoLectura("LISTAR_TODOS_SEGURO", null);
         System.out.println("Lectura de seguros...");
-        try{
-            while(rs.next()){
+        try {
+            while (rs.next()) {
                 Seguro seguro = new Seguro();
                 seguro.setIdSeguro(rs.getInt("id_seguro"));
                 seguro.setNombreSeguro(rs.getString("nombre_seguro"));
@@ -68,12 +83,12 @@ public class SeguroImpl implements SeguroDAO{
 
                 seguros.add(seguro);
             }
-        }catch(SQLException ex){
+        } catch (SQLException ex) {
             System.out.println(ex.getMessage());
-        }finally{
+        } finally {
             DBManager.getInstance().cerrarConexion();
         }
         return seguros;
     }
-    
+
 }

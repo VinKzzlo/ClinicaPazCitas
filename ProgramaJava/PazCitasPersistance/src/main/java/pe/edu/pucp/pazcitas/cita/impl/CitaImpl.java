@@ -27,7 +27,6 @@ import java.sql.Timestamp;
  */
 public class CitaImpl implements CitaDAO {
 
-    private Connection con;
     private ResultSet rs;
 
     @Override
@@ -51,13 +50,27 @@ public class CitaImpl implements CitaDAO {
     }
 
     @Override
-    public int eliminar(int cita) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    public int eliminar(int idCita) {
+        Map<Integer,Object> parametrosEntrada = new HashMap<>();
+        parametrosEntrada.put(1, idCita);
+        int resultado = DBManager.getInstance().ejecutarProcedimiento("ELIMINAR_CITA", parametrosEntrada, null);
+        return resultado;
     }
 
     @Override
-    public int modificar(Cita modelo) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    public int modificar(Cita cita) {
+        Map<Integer,Object> parametrosEntrada = new HashMap<>();
+        parametrosEntrada.put(1, cita.getIdCita());
+        
+        parametrosEntrada.put(2, cita.getFecha());
+        parametrosEntrada.put(3, cita.getEstadoCita().name());
+        parametrosEntrada.put(4, cita.getMotivoConsulta());
+        
+
+        DBManager.getInstance().ejecutarProcedimiento("MODIFICAR_CITA", parametrosEntrada, null);
+        
+        System.out.println("Se ha realizado el modifiacar del cita");
+        return cita.getIdCita();
     }
 
     @Override

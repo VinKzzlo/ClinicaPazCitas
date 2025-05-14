@@ -48,13 +48,28 @@ public class PagoImpl implements PagoDAO{
     }
 
     @Override
-    public int eliminar(int idModelo) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    public int eliminar(int idPago) {
+        Map<Integer,Object> parametrosEntrada = new HashMap<>();
+        parametrosEntrada.put(1, idPago);
+        int resultado = DBManager.getInstance().ejecutarProcedimiento("ELIMINAR_PAGO", parametrosEntrada, null);
+        return resultado;
     }
 
     @Override
-    public int modificar(Pago modelo) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    public int modificar(Pago pago) {
+        Map<Integer,Object> parametrosEntrada = new HashMap<>();
+        parametrosEntrada.put(1, pago.getIdPago());
+        
+        parametrosEntrada.put(2, pago.getFechaPago());
+        parametrosEntrada.put(3, pago.getMontoTotal());
+        parametrosEntrada.put(4, pago.getMontoCubiertoSeguro());
+        parametrosEntrada.put(5, pago.getMontoSubtotal());
+        parametrosEntrada.put(6, pago.getEstado().name());
+
+        
+        DBManager.getInstance().ejecutarProcedimiento("MODIFICAR_PAGO", parametrosEntrada, null);
+        System.out.println("Se ha realizado el modificar el pago");
+        return pago.getIdPago();
     }
 
     @Override

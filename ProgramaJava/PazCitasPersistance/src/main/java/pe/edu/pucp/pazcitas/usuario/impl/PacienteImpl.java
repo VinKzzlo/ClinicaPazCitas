@@ -62,8 +62,25 @@ public class PacienteImpl implements PacienteDAO{
     }
 
     @Override
-    public int modificar(Paciente modelo) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    public int modificar(Paciente paciente) {
+        Map<Integer,Object> parametrosEntrada = new HashMap<>();
+        parametrosEntrada.put(1, paciente.getIdUsuario());
+        
+        parametrosEntrada.put(2, paciente.getNombre());
+        parametrosEntrada.put(3, paciente.getApellidoPaterno());
+        parametrosEntrada.put(4, paciente.getApellidoPaterno());
+        parametrosEntrada.put(5, String.valueOf(paciente.getDni()));
+        parametrosEntrada.put(6, paciente.getEmail());
+        parametrosEntrada.put(7, Date.valueOf(paciente.getFechaNacimiento()));
+        parametrosEntrada.put(8, String.valueOf(paciente.getGenero()));
+        parametrosEntrada.put(9, paciente.getHashPassword());
+        parametrosEntrada.put(10, paciente.getDireccion());
+        parametrosEntrada.put(11, paciente.getTelefono());
+        parametrosEntrada.put(12, paciente.getSeguro().getIdSeguro());
+
+        DBManager.getInstance().ejecutarProcedimiento("MODIFICAR_PACIENTE", parametrosEntrada, null);
+        System.out.println("Se ha realizado la modificacion del paciente");
+        return paciente.getIdUsuario();
     }
 
     @Override
