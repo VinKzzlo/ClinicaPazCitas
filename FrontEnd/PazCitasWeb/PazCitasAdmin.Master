@@ -1,0 +1,350 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="PazCitasAdmin.Master.cs" Inherits="PazCitasWA.PazCitas" %>
+
+<!DOCTYPE html>
+<html lang="es">
+<head runat="server">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <link href="Content/bootstrap.css" rel="stylesheet" />
+    <link href="Content/Fonts/css/all.css" rel="stylesheet" />
+    <link href="Content/style.css" rel="stylesheet" />
+
+    <script src="Scripts/bootstrap.js"></script>
+    <script src="Scripts/bootstrap.bundle.js"></script>
+    <script src="Scripts/jquery-3.7.1.js"></script>
+
+    <style>
+        /* ===== 1 · Global ======================================================== */
+        html, body {
+            height: 100%;
+            width: 100%;
+        }
+
+        body {
+            overflow-x: hidden;
+        }
+        /* sin scroll X  */
+        .navbar .dropdown-menu {
+            right: 0;
+            left: auto;
+        }
+        /* menú usuario  */
+
+
+        /* ===== 2 · Barra superior =============================================== */
+        .navbar-clinica {
+            /*background: linear-gradient(135deg,#2196f3 0%,#1976d2 100%) !important;*/
+            background: linear-gradient(135deg,#34a853 0%,#4ba851 100%) !important;
+        }
+
+            .navbar-clinica .container-fluid {
+                flex-wrap: nowrap;
+            }
+        /* 1 sola fila   */
+
+
+        /* ===== 3 · Barra lateral ================================================= */
+        .sidebar-clinica {
+            background: #fff !important;
+            border-right: 2px solid #e9ecef;
+            box-shadow: 2px 0 5px rgba(0,0,0,.1);
+            flex: 0 0 240px; /* ancho normal ≥ lg          */
+            width: 240px;
+            transition: width .25s ease;
+        }
+
+            /* — link — ---------------------------------------------------- */
+            .sidebar-clinica .nav-link {
+                display: grid; /* icono en col 1, texto en col 2       */
+                grid-template-columns: 24px 1fr;
+                column-gap: .75rem;
+                align-items: center; /* centra verticalmente                 */
+                color: #495057 !important;
+                padding: 12px 16px;
+                border-radius: 8px;
+                margin-bottom: 4px;
+                line-height: 1.25;
+                transition: background .3s, color .3s, transform .3s;
+            }
+
+                .sidebar-clinica .nav-link:hover {
+                    background: #e3f2fd !important;
+                    /*color: #1976d2 !important;*/
+                    color: #34a853 !important;
+                    transform: translateX(5px);
+                }
+
+                .sidebar-clinica .nav-link.active {
+                    /*background: #2196f3 !important;*/
+                    background: #34a853 !important;
+                    color: #fff !important;
+                }
+
+            .sidebar-clinica .link-text {
+                white-space: normal;
+            }
+            /* 2 líneas ok   */
+
+            .sidebar-clinica hr {
+                border-color: #dee2e6;
+                margin: 1rem 0;
+            }
+
+        /* — logo (hover color) — ------------------------------------- */
+        .clinica-brand {
+            color: #4ba851 !important;
+            font-weight: bold;
+            font-size: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: .5rem;
+        }
+
+            .clinica-brand:hover {
+                color: #34a853 !important;
+            }
+
+            .clinica-brand i {
+                color: inherit;
+            }
+        /* icono usa color del enlace       */
+
+        /* — footer — -------------------------------------------------- */
+        .clinica-footer {
+            color: #6c757d;
+            font-size: .9rem;
+        }
+
+
+        /* ===== 4 · Colapsado (solo ≥ 768 px) ========================= */
+        @media (min-width:768px) {
+            .sidebar-clinica.collapsed {
+                flex: 0 0 70px !important;
+                width: 70px !important;
+            }
+
+                .sidebar-clinica.collapsed .nav-link {
+                    justify-items: center; /* icono centrado en la celda          */
+                    grid-template-columns: 1fr; /* solo icono visible                  */
+                    padding-left: 0;
+                    padding-right: 0;
+                }
+
+                .sidebar-clinica.collapsed .link-text,
+                .sidebar-clinica.collapsed .clinica-footer {
+                    display: none !important;
+                }
+        }
+        /* === Animación sidebar ================================================ */
+        .sidebar-clinica {
+            transition: width .25s ease, transform .25s ease; /* suaviza ancho  */
+        }
+
+            /* Texto e información del pie con fade-out/fade-in */
+            .sidebar-clinica .link-text,
+            .sidebar-clinica .clinica-footer {
+                transition: opacity .2s ease;
+            }
+
+            /* Cuando está colapsada oculta con opacidad en lugar de display:none  */
+            .sidebar-clinica.collapsed .link-text,
+            .sidebar-clinica.collapsed .clinica-footer {
+                opacity: 0;
+                pointer-events: none; /* evita clics sobre texto invisible        */
+            }
+
+        /* ===== 5 · Sidebar más angosta en 768-991 px ================= */
+        @media (min-width:768px) and (max-width:991.98px) {
+            .sidebar-clinica {
+                flex: 0 0 200px;
+                width: 200px;
+            }
+
+                .sidebar-clinica.collapsed {
+                    flex: 0 0 64px;
+                    width: 64px;
+                }
+        }
+    </style>
+
+
+    <title>
+        <asp:ContentPlaceHolder ID="cph_Title" runat="server">
+        </asp:ContentPlaceHolder>
+    </title>
+    <asp:ContentPlaceHolder ID="cph_Scripts" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <div class="container-fluid d-flex p-0 h-100">
+        <!-- Barra lateral de la clínica -->
+        <div id="bdSidebar" class="d-flex flex-column flex-shrink-0 p-3 sidebar-clinica offcanvas-md offcanvas-start">
+            <a href="Home.aspx" class="clinica-brand navbar-brand">
+                <i class="fa-solid fa-heartbeat" style="font-size: 2rem; color: #e91e63;"></i>
+                <span class="link-text">
+                    <div style="font-size: 1.8rem; line-height: 1;">Pazcitas</div>
+                    <small style="font-size: .8rem; color: #6c757d;">Clínica Médica</small>
+                </span>
+            </a>
+            <hr />
+            <ul class="mynav nav nav-pills flex-column mb-auto">
+                <li class="nav-item mb-1">
+                    <a href="ListarPacientes.aspx" class="nav-link" data-bs-toggle="tooltip" data-bs-placement="right">
+                        <i class="fa-solid fa-user-injured pe-2"></i>
+                        <span class="link-text">Gestionar Pacientes</span>
+                    </a>
+                </li>
+                <li class="nav-item mb-1">
+                    <a href="ListarSedes.aspx" class="nav-link" data-bs-toggle="tooltip" data-bs-placement="right">
+                        <i class="fa-solid fa-calendar-check pe-2"></i>
+                        <span class="link-text">Gestionar Sedes</span>
+                    </a>
+                </li>
+                <li class="nav-item mb-1">
+                    <a href="GestionarEmpleados.aspx" class="nav-link" data-bs-toggle="tooltip" data-bs-placement="right">
+                        <i class="fa-solid fa-user-doctor pe-2"></i>
+                        <span class="link-text">Gestionar Empleados</span>
+                    </a>
+                </li>
+                <li class="nav-item mb-1">
+                    <a href="ListarEspecialidades.aspx" class="nav-link" data-bs-toggle="tooltip" data-bs-placement="right">
+                        <i class="fa-solid fa-stethoscope pe-2"></i>
+                        <span class="link-text">Gestionar Especialidades</span>
+                    </a>
+                </li>
+                <li class="nav-item mb-1">
+                    <a href="ListarSeguros.aspx" class="nav-link" data-bs-toggle="tooltip" data-bs-placement="right">
+                        <i class="fa-solid fa-badge-percent pe-2"></i>
+                        <span class="link-text">Gestionar Seguros</span>
+                    </a>
+                </li>
+                <li class="nav-item mb-1">
+                    <a href="ListarTratamientos.aspx" class="nav-link" data-bs-toggle="tooltip" data-bs-placement="right">
+                        <i class="fa-solid fa-pills pe-2"></i>
+                        <span class="link-text">Tratamientos</span>
+                    </a>
+                </li>
+                <li class="nav-item mb-1">
+                    <a href="HistorialMedico.aspx" class="nav-link" data-bs-toggle="tooltip" data-bs-placement="right">
+                        <i class="fa-solid fa-file-medical pe-2"></i>
+                        <span class="link-text">Historial Médico</span>
+                    </a>
+                </li>
+                <li class="nav-item mb-1">
+                    <a href="Reportes.aspx" class="nav-link" data-bs-toggle="tooltip" data-bs-placement="right">
+                        <i class="fa-solid fa-chart-line pe-2"></i>
+                        <span class="link-text">Reportes</span>
+                    </a>
+                </li>
+            </ul>
+            <hr />
+            <div class="d-flex align-items-center clinica-footer">
+                <i class="fa-solid fa-hospital me-2"></i>
+                <div>
+                    <h6 class="mt-1 mb-0">Sistema Clínico</h6>
+                    <small>Pazcitas v2.0</small>
+                </div>
+            </div>
+        </div>
+
+        <!-- Contenido principal -->
+        <div class="bg-light flex-fill overflow-auto">
+
+            <!-- Barra de usuario -->
+            <nav class="navbar navbar-dark navbar-clinica">
+                <div class="container-fluid">
+                    <!-- A. Botón colapsar (solo ≥ md) -->
+                    <button class="btn btn-outline-light me-3 d-none d-md-inline-flex"
+                        id="btnToggleSidebar">
+                        <i class="fa-solid fa-bars"></i>
+                    </button>
+
+                    <!-- B. Botón off-canvas + logo (solo < md) -->
+                    <a class="navbar-brand d-flex align-items-center d-md-none"
+                        data-bs-toggle="offcanvas" href="#bdSidebar">
+                        <i class="fa-solid fa-bars me-2"></i>Pazcitas
+                    </a>
+
+                    <!-- C. Título grande (solo ≥ md) -->
+                    <a class="navbar-brand d-none d-md-flex align-items-center flex-grow-1 overflow-hidden"
+                        href="#">
+                        <i class="fa-solid fa-heartbeat me-2 flex-shrink-0"></i>
+
+                        <!-- Parte larga solo visible ≥ lg (≥ 992 px) -->
+                        <span class="d-none d-lg-inline">Sistema de Gestión Clínica&nbsp;–&nbsp;</span>
+                        <!-- Siempre visible -->
+                        <span>Clínica Pazcitas</span>
+                    </a>
+                    </a>
+                    <form class="d-flex ms-auto">
+                        <div class="dropdown">
+                            <button class="btn btn-outline-light dropdown-toggle" id="btnUsuario" data-bs-toggle="dropdown">
+                                <i class="fa-solid fa-user-gear"></i>
+                                <asp:Label ID="lblNombreCompleto" runat="server" Text="Adm. Kiwi"></asp:Label>
+                            </button>
+                            <ul class="dropdown-menu fade" aria-labelledby="btnUsuario">
+                                <li><a class="dropdown-item" href="#"><i class="fa-solid fa-user me-2"></i>Mi Perfil</a></li>
+                                <li><a class="dropdown-item" href="#"><i class="fa-solid fa-key me-2"></i>Cambiar Contraseña</a></li>
+                                <li><a class="dropdown-item" href="#"><i class="fa-solid fa-cog me-2"></i>Configuración</a></li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li><a class="dropdown-item" href="#"><i class="fa-solid fa-sign-out-alt me-2"></i>Cerrar Sesión</a></li>
+                            </ul>
+                        </div>
+                    </form>
+                </div>
+            </nav>
+
+            <!-- Contenido de la Página web -->
+            <div class="p-4">
+                <form runat="server">
+                    <asp:ContentPlaceHolder ID="cph_Contenido" runat="server">
+                    </asp:ContentPlaceHolder>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const sidebar = document.getElementById('bdSidebar');
+        const btnToggle = document.getElementById('btnToggleSidebar');
+
+        /* —  tooltips — */
+        document.querySelectorAll('#bdSidebar .nav-link').forEach(a => {
+            const t = a.querySelector('.link-text').textContent.trim();
+            a.setAttribute('title', t);
+            const tip = new bootstrap.Tooltip(a);
+            tip.disable();                       // inactivos por defecto
+        });
+
+        /* —  colapsar / off-canvas — */
+        btnToggle.addEventListener('click', () => {
+            const desktop = matchMedia('(min-width:768px)').matches;
+
+            if (desktop) {
+                /* lógica de colapso (igual que antes) */
+                sidebar.classList.toggle('collapsed');
+                const enable = sidebar.classList.contains('collapsed');
+                document.querySelectorAll('#bdSidebar .nav-link')
+                    .forEach(l => bootstrap.Tooltip.getInstance(l)[enable ? 'enable' : 'disable']());
+            } else {
+                /* --- MÓVIL ---  */
+                sidebar.classList.remove('collapsed');                // ① asegura ancho completo
+                document.querySelectorAll('#bdSidebar .nav-link')     // ② tooltips siempre off en móvil
+                    .forEach(l => bootstrap.Tooltip.getInstance(l).disable());
+
+                bootstrap.Offcanvas.getOrCreateInstance(sidebar).toggle(); // ③ un solo toggle
+            }
+        });
+
+        /* —  marcar link activo — */
+        document.addEventListener('DOMContentLoaded', () => {
+            const current = location.pathname.split('/').pop();
+            document.querySelectorAll('.sidebar-clinica .nav-link')
+                .forEach(l => l.href.includes(current) && l.classList.add('active'));
+        });
+    </script>
+</body>
+</html>

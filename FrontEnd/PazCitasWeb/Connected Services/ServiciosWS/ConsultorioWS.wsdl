@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsp="http://www.w3.org/ns/ws-policy" xmlns:wsp1_2="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://services.pucp.edu.pe" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" name="ConsultorioWS" targetNamespace="http://services.pucp.edu.pe" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types>
+    <xsd:schema>
+      <xsd:import schemaLocation="http://localhost:8080/PazCitasWeb/ConsultorioWS?xsd=1" namespace="http://services.pucp.edu.pe" />
+    </xsd:schema>
+  </types>
+  <message name="listarConsultorio">
+    <part name="parameters" element="tns:listarConsultorio" />
+  </message>
+  <message name="listarConsultorioResponse">
+    <part name="parameters" element="tns:listarConsultorioResponse" />
+  </message>
+  <message name="insertarConsultorio">
+    <part name="parameters" element="tns:insertarConsultorio" />
+  </message>
+  <message name="insertarConsultorioResponse">
+    <part name="parameters" element="tns:insertarConsultorioResponse" />
+  </message>
+  <message name="modificarConsultorio">
+    <part name="parameters" element="tns:modificarConsultorio" />
+  </message>
+  <message name="modificarConsultorioResponse">
+    <part name="parameters" element="tns:modificarConsultorioResponse" />
+  </message>
+  <message name="eliminarConsultorio">
+    <part name="parameters" element="tns:eliminarConsultorio" />
+  </message>
+  <message name="eliminarConsultorioResponse">
+    <part name="parameters" element="tns:eliminarConsultorioResponse" />
+  </message>
+  <portType name="ConsultorioWS">
+    <operation name="listarConsultorio">
+      <input wsam:Action="http://services.pucp.edu.pe/ConsultorioWS/listarConsultorioRequest" message="tns:listarConsultorio" />
+      <output wsam:Action="http://services.pucp.edu.pe/ConsultorioWS/listarConsultorioResponse" message="tns:listarConsultorioResponse" />
+    </operation>
+    <operation name="insertarConsultorio">
+      <input wsam:Action="http://services.pucp.edu.pe/ConsultorioWS/insertarConsultorioRequest" message="tns:insertarConsultorio" />
+      <output wsam:Action="http://services.pucp.edu.pe/ConsultorioWS/insertarConsultorioResponse" message="tns:insertarConsultorioResponse" />
+    </operation>
+    <operation name="modificarConsultorio">
+      <input wsam:Action="http://services.pucp.edu.pe/ConsultorioWS/modificarConsultorioRequest" message="tns:modificarConsultorio" />
+      <output wsam:Action="http://services.pucp.edu.pe/ConsultorioWS/modificarConsultorioResponse" message="tns:modificarConsultorioResponse" />
+    </operation>
+    <operation name="eliminarConsultorio">
+      <input wsam:Action="http://services.pucp.edu.pe/ConsultorioWS/eliminarConsultorioRequest" message="tns:eliminarConsultorio" />
+      <output wsam:Action="http://services.pucp.edu.pe/ConsultorioWS/eliminarConsultorioResponse" message="tns:eliminarConsultorioResponse" />
+    </operation>
+  </portType>
+  <binding name="ConsultorioWSPortBinding" type="tns:ConsultorioWS">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <operation name="listarConsultorio">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="insertarConsultorio">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="modificarConsultorio">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="eliminarConsultorio">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+  </binding>
+  <service name="ConsultorioWS">
+    <port name="ConsultorioWSPort" binding="tns:ConsultorioWSPortBinding">
+      <soap:address location="http://localhost:8080/PazCitasWeb/ConsultorioWS" />
+    </port>
+  </service>
+</definitions>

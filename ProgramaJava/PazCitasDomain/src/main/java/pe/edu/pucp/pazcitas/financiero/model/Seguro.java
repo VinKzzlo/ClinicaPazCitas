@@ -4,14 +4,14 @@
  */
 package pe.edu.pucp.pazcitas.financiero.model;
 
-import java.time.LocalDate;
+import java.util.Date;
 
 public class Seguro {
     private int idSeguro;
     private String nombreSeguro;
     private TipoSeguro tipo;
     private double porcentajeCobertura;
-    private LocalDate vigencia;
+    private Date vigencia;
     private boolean activo;
 
     public Seguro() {
@@ -49,13 +49,7 @@ public class Seguro {
         this.porcentajeCobertura = porcentajeCobertura;
     }
 
-    public LocalDate getVigencia() {
-        return vigencia;
-    }
-
-    public void setVigencia(LocalDate vigencia) {
-        this.vigencia = vigencia;
-    }
+    
 
    
 
@@ -65,6 +59,14 @@ public class Seguro {
 
     public void setActivo(boolean activo) {
         this.activo = activo;
+    }
+
+    public Date getVigencia() {
+        return vigencia;
+    }
+
+    public void setVigencia(Date vigencia) {
+        this.vigencia = vigencia;
     }
     
     

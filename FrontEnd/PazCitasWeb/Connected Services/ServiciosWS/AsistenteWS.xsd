@@ -1,0 +1,274 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://services.pucp.edu.pe" targetNamespace="http://services.pucp.edu.pe" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="eliminarAsistente" type="tns:eliminarAsistente" />
+  <xs:element name="eliminarAsistenteResponse" type="tns:eliminarAsistenteResponse" />
+  <xs:element name="insertarAsistente" type="tns:insertarAsistente" />
+  <xs:element name="insertarAsistenteResponse" type="tns:insertarAsistenteResponse" />
+  <xs:element name="listarAsistente" type="tns:listarAsistente" />
+  <xs:element name="listarAsistenteResponse" type="tns:listarAsistenteResponse" />
+  <xs:element name="modificarAsistente" type="tns:modificarAsistente" />
+  <xs:element name="modificarAsistenteResponse" type="tns:modificarAsistenteResponse" />
+  <xs:complexType name="insertarAsistente">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="asistente" type="tns:asistenteMedico" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="asistenteMedico">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:usuario">
+        <xs:sequence>
+          <xs:element name="activo" type="xs:boolean" />
+          <xs:element minOccurs="0" name="codigoPersonal" type="xs:string" />
+          <xs:element minOccurs="0" name="medico" type="tns:medico" />
+          <xs:element minOccurs="0" name="sede" type="tns:sede" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="usuario">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="apellidoMaterno" type="xs:string" />
+      <xs:element minOccurs="0" name="apellidoPaterno" type="xs:string" />
+      <xs:element minOccurs="0" name="dni" type="xs:string" />
+      <xs:element minOccurs="0" name="email" type="xs:string" />
+      <xs:element minOccurs="0" name="fechaNacimiento" type="tns:localDate" />
+      <xs:element name="genero" type="xs:unsignedShort" />
+      <xs:element minOccurs="0" name="hashPassword" type="xs:string" />
+      <xs:element name="idUsuario" type="xs:int" />
+      <xs:element minOccurs="0" name="nombre" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="medico">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:usuario">
+        <xs:sequence>
+          <xs:element name="activo" type="xs:boolean" />
+          <xs:element minOccurs="0" name="asistenteMedico" type="tns:asistenteMedico" />
+          <xs:element minOccurs="0" name="codigoMedico" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="especialidades" nillable="true" type="tns:especialidad" />
+          <xs:element minOccurs="0" name="sede" type="tns:sede" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="turnosMedico" nillable="true" type="tns:turnoMedico" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="especialidad">
+    <xs:sequence>
+      <xs:element name="activo" type="xs:boolean" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="citas" nillable="true" type="tns:cita" />
+      <xs:element minOccurs="0" name="descripcion" type="xs:string" />
+      <xs:element name="idEspecialidad" type="xs:int" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="medicos" nillable="true" type="tns:medico" />
+      <xs:element minOccurs="0" name="nombre" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="sedes" nillable="true" type="tns:sede" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="cita">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="disponibilidad" type="tns:disponibilidad" />
+      <xs:element minOccurs="0" name="especialidad" type="tns:especialidad" />
+      <xs:element minOccurs="0" name="estadoCita" type="tns:estadoCita" />
+      <xs:element minOccurs="0" name="fecha" type="tns:localDateTime" />
+      <xs:element minOccurs="0" name="fechaActualizacion" type="tns:localDateTime" />
+      <xs:element name="idCita" type="xs:int" />
+      <xs:element minOccurs="0" name="motivoConsulta" type="xs:string" />
+      <xs:element minOccurs="0" name="notaClinica" type="tns:notaClinica" />
+      <xs:element minOccurs="0" name="paciente" type="tns:paciente" />
+      <xs:element minOccurs="0" name="recepcionista" type="tns:recepcionista" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="disponibilidad">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="cita" type="tns:cita" />
+      <xs:element name="disponible" type="xs:boolean" />
+      <xs:element minOccurs="0" name="fecha" type="tns:localDate" />
+      <xs:element minOccurs="0" name="hora" type="tns:localTime" />
+      <xs:element name="idDisponibilidad" type="xs:int" />
+      <xs:element minOccurs="0" name="turnoMedico" type="tns:turnoMedico" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="localDate" final="extension restriction">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="localTime" final="extension restriction">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="turnoMedico">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="consultorio" type="tns:consultorio" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="detalleTurnos" nillable="true" type="tns:disponibilidad" />
+      <xs:element minOccurs="0" name="dia" type="tns:diaSemana" />
+      <xs:element minOccurs="0" name="horaFin" type="tns:localTime" />
+      <xs:element minOccurs="0" name="horaInicio" type="tns:localTime" />
+      <xs:element name="idTurno" type="xs:int" />
+      <xs:element minOccurs="0" name="medico" type="tns:medico" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="consultorio">
+    <xs:sequence>
+      <xs:element name="activo" type="xs:boolean" />
+      <xs:element name="capacidad" type="xs:int" />
+      <xs:element name="idConsultorio" type="xs:int" />
+      <xs:element minOccurs="0" name="nombreConsultorio" type="xs:string" />
+      <xs:element name="piso" type="xs:int" />
+      <xs:element minOccurs="0" name="sede" type="tns:sede" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="turnosMedicos" nillable="true" type="tns:turnoMedico" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="sede">
+    <xs:sequence>
+      <xs:element name="activo" type="xs:boolean" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="consultorios" nillable="true" type="tns:consultorio" />
+      <xs:element minOccurs="0" name="direccion" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="especialidades" nillable="true" type="tns:especialidad" />
+      <xs:element name="idSede" type="xs:int" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="medicos" nillable="true" type="tns:medico" />
+      <xs:element minOccurs="0" name="nombre" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="localDateTime" final="extension restriction">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="notaClinica">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="cita" type="tns:cita" />
+      <xs:element minOccurs="0" name="descripcion" type="xs:string" />
+      <xs:element minOccurs="0" name="diagnostico" type="xs:string" />
+      <xs:element minOccurs="0" name="historial" type="tns:historialMedico" />
+      <xs:element name="idNota" type="xs:int" />
+      <xs:element minOccurs="0" name="observaciones" type="xs:string" />
+      <xs:element minOccurs="0" name="receta" type="tns:receta" />
+      <xs:element minOccurs="0" name="triaje" type="tns:triaje" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="historialMedico">
+    <xs:sequence>
+      <xs:element name="activo" type="xs:boolean" />
+      <xs:element minOccurs="0" name="fechaActualizacion" type="tns:localDateTime" />
+      <xs:element name="idhistorial" type="xs:int" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="notasClinicas" nillable="true" type="tns:notaClinica" />
+      <xs:element minOccurs="0" name="paciente" type="tns:paciente" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="paciente">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:usuario">
+        <xs:sequence>
+          <xs:element name="activo" type="xs:boolean" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="citas" nillable="true" type="tns:cita" />
+          <xs:element minOccurs="0" name="direccion" type="xs:string" />
+          <xs:element minOccurs="0" name="historialMedico" type="tns:historialMedico" />
+          <xs:element minOccurs="0" name="seguro" type="tns:seguro" />
+          <xs:element name="telefono" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="seguro">
+    <xs:sequence>
+      <xs:element name="activo" type="xs:boolean" />
+      <xs:element name="idSeguro" type="xs:int" />
+      <xs:element minOccurs="0" name="nombreSeguro" type="xs:string" />
+      <xs:element name="porcentajeCobertura" type="xs:double" />
+      <xs:element minOccurs="0" name="tipo" type="tns:tipoSeguro" />
+      <xs:element minOccurs="0" name="vigencia" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="receta">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="fechaPrescripcion" type="tns:localDate" />
+      <xs:element name="idReceta" type="xs:int" />
+      <xs:element minOccurs="0" name="indicaciones" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="medicamentos" nillable="true" type="tns:medicamento" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="medicamento">
+    <xs:sequence>
+      <xs:element name="idMedicamento" type="xs:int" />
+      <xs:element minOccurs="0" name="nombre" type="xs:string" />
+      <xs:element minOccurs="0" name="presentacion" type="xs:string" />
+      <xs:element name="stock" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="triaje">
+    <xs:sequence>
+      <xs:element name="activo" type="xs:boolean" />
+      <xs:element name="altura" type="xs:double" />
+      <xs:element minOccurs="0" name="fechaRegistro" type="tns:localDateTime" />
+      <xs:element name="idTriaje" type="xs:int" />
+      <xs:element minOccurs="0" name="notaClinica" type="tns:notaClinica" />
+      <xs:element name="peso" type="xs:double" />
+      <xs:element minOccurs="0" name="presionArterial" type="xs:string" />
+      <xs:element name="temperatura" type="xs:double" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="recepcionista">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:usuario">
+        <xs:sequence>
+          <xs:element name="activo" type="xs:boolean" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="citas" nillable="true" type="tns:cita" />
+          <xs:element minOccurs="0" name="sede" type="tns:sede" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="insertarAsistenteResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="eliminarAsistente">
+    <xs:sequence>
+      <xs:element name="idasistente" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="eliminarAsistenteResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="modificarAsistente">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="asistente" type="tns:asistenteMedico" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="modificarAsistenteResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="listarAsistente">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="listarAsistenteResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:asistenteMedico" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="diaSemana">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="LUNES" />
+      <xs:enumeration value="MARTES" />
+      <xs:enumeration value="MIERCOLES" />
+      <xs:enumeration value="JUEVES" />
+      <xs:enumeration value="VIERNES" />
+      <xs:enumeration value="SABADO" />
+      <xs:enumeration value="DOMINGO" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="estadoCita">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="PROGRAMADA" />
+      <xs:enumeration value="CANCELADA" />
+      <xs:enumeration value="ATENDIDA" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="tipoSeguro">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="NINGUNO" />
+      <xs:enumeration value="PARCIAL" />
+      <xs:enumeration value="TOTAL" />
+    </xs:restriction>
+  </xs:simpleType>
+</xs:schema>

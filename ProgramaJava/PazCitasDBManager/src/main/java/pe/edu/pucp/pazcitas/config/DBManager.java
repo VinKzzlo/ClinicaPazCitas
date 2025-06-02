@@ -3,6 +3,9 @@ package pe.edu.pucp.pazcitas.config;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.UnsupportedEncodingException;
+import java.security.InvalidKeyException;
+import java.security.NoSuchAlgorithmException;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
@@ -13,17 +16,24 @@ import java.sql.Types;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
+import java.util.Base64;
 import java.util.Map;
-
+import javax.crypto.BadPaddingException;
+import javax.crypto.Cipher;
+import javax.crypto.IllegalBlockSizeException;
+import javax.crypto.NoSuchPaddingException;
+import javax.crypto.spec.SecretKeySpec;
 
 public class DBManager {
+    //Patrón Singleton
     //Patrón Singleton
     private static DBManager dbManager;
     
     private Properties datos;
     private final String hostname;
     private final String usuario;
-    private final String password;
+    private String password;
+    private final String clave;
     private final String database;
     private final String puerto;
     private final String url;
@@ -44,18 +54,36 @@ public class DBManager {
         //Asignamos valores del archivo leido
         hostname = datos.getProperty("hostname");
         usuario = datos.getProperty("usuario");
-        password = datos.getProperty("password");
+        //password = datos.getProperty("password");
+        password = datos.getProperty("passwordencryptado");
+        clave = datos.getProperty("clave");
+        password = desencriptar(password,clave);
         puerto = datos.getProperty("puerto");
         database = datos.getProperty("database");
         tipoBD = datos.getProperty("tipoBD");
         
         if(tipoBD.equals("mysql"))
             //Formamos la URL de conexión        
-            this.url = "jdbc:mysql://" + hostname + ":" + puerto + "/" + database;
+            this.url = "jdbc:mysql://" + hostname + ":" + puerto + "/" + database + "?useSSL=false";
         else 
             this.url = "jdbc:sqlserver://" + hostname + 
                     ";encrypt=false;trustServerCertificate=true;databaseName=" + database + 
                     ";integratedSecurity=false;";
+    }
+    
+    public String desencriptar(String textoEncriptado, String base64Key) {
+        String desencriptado = "";
+        try{
+            byte[] decodedKey = Base64.getDecoder().decode(base64Key);
+            SecretKeySpec secretKey = new SecretKeySpec(decodedKey, "AES");
+            Cipher cipher = Cipher.getInstance("AES");
+            cipher.init(Cipher.DECRYPT_MODE, secretKey);
+            byte[] descifrado = cipher.doFinal(Base64.getDecoder().decode(textoEncriptado));
+            desencriptado = new String(descifrado, "UTF-8");
+        }catch(UnsupportedEncodingException | InvalidKeyException | NoSuchAlgorithmException | BadPaddingException | IllegalBlockSizeException | NoSuchPaddingException ex){
+            System.out.println(ex.getMessage());
+        }
+        return desencriptado;
     }
     
     public static synchronized DBManager getInstance(){

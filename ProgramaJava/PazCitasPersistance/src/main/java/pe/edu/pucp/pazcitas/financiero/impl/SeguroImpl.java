@@ -5,7 +5,6 @@
 package pe.edu.pucp.pazcitas.financiero.impl;
 
 import java.sql.Connection;
-import java.sql.Date;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Types;
@@ -79,7 +78,7 @@ public class SeguroImpl implements SeguroDAO {
                 TipoSeguro tipo = TipoSeguro.valueOf(rs.getString("tipo").toUpperCase());
                 seguro.setTipo(tipo);
                 seguro.setPorcentajeCobertura(rs.getDouble("porcentaje_cobertura"));
-
+                seguro.setVigencia(rs.getDate("vigencia"));
                 seguros.add(seguro);
             }
         } catch (SQLException ex) {

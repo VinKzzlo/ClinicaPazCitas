@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ID="f556369d-ae62-464e-a1c9-c493291cf66a" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:8080/PazCitasWeb/servicios.disco" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="CitaWS.wsdl" MetadataType="Wsdl" ID="20da6558-f148-4cac-a776-b158e4d685f8" SourceId="1" SourceUrl="http://localhost:8080/PazCitasWeb/CitaWS?WSDL" />
+    <MetadataFile FileName="RecetaWS.xsd" MetadataType="Schema" ID="0ec09137-edb9-4883-afa8-50ed1f31df8e" SourceId="1" SourceUrl="http://localhost:8080/PazCitasWeb/RecetaWS?xsd=1" />
+    <MetadataFile FileName="TriajeWS.wsdl" MetadataType="Wsdl" ID="fd61d62c-7f7a-447c-8da2-2365023dcd6e" SourceId="1" SourceUrl="http://localhost:8080/PazCitasWeb/TriajeWS?WSDL" />
+    <MetadataFile FileName="MedicoWS.wsdl" MetadataType="Wsdl" ID="847ae633-9075-4eac-aa6b-7209768902b7" SourceId="1" SourceUrl="http://localhost:8080/PazCitasWeb/MedicoWS?WSDL" />
+    <MetadataFile FileName="AdministradorWS.wsdl" MetadataType="Wsdl" ID="41b4f983-4c9c-460a-bd65-6603e7ab54f8" SourceId="1" SourceUrl="http://localhost:8080/PazCitasWeb/AdministradorWS?WSDL" />
+    <MetadataFile FileName="HistorialMedicoWS.xsd" MetadataType="Schema" ID="b966cc26-851e-4624-93ba-2a2b115cfaba" SourceId="1" SourceUrl="http://localhost:8080/PazCitasWeb/HistorialMedicoWS?xsd=1" />
+    <MetadataFile FileName="PagoWS.wsdl" MetadataType="Wsdl" ID="6f757d84-fb59-47db-b8d1-3aed8dd782f5" SourceId="1" SourceUrl="http://localhost:8080/PazCitasWeb/PagoWS?WSDL" />
+    <MetadataFile FileName="RecepcionistaWS.xsd" MetadataType="Schema" ID="ccd0b55f-e243-41d6-b447-c56e9b4c9e11" SourceId="1" SourceUrl="http://localhost:8080/PazCitasWeb/RecepcionistaWS?xsd=1" />
+    <MetadataFile FileName="RecetaWS.wsdl" MetadataType="Wsdl" ID="1bb4ff1b-8e00-4a45-a090-3bb9de3361c2" SourceId="1" SourceUrl="http://localhost:8080/PazCitasWeb/RecetaWS?WSDL" />
+    <MetadataFile FileName="TriajeWS.xsd" MetadataType="Schema" ID="01945724-32c2-4a39-8f3a-dd1da5796bbe" SourceId="1" SourceUrl="http://localhost:8080/PazCitasWeb/TriajeWS?xsd=1" />
+    <MetadataFile FileName="RecepcionistaWS.wsdl" MetadataType="Wsdl" ID="05217f58-6b1e-4b38-b7d6-473add4fc2e2" SourceId="1" SourceUrl="http://localhost:8080/PazCitasWeb/RecepcionistaWS?WSDL" />
+    <MetadataFile FileName="servicios.disco" MetadataType="Disco" ID="7f7f3860-eab2-49eb-98e3-dbbfda79e077" SourceId="1" SourceUrl="http://localhost:8080/PazCitasWeb/servicios.disco" />
+    <MetadataFile FileName="TurnoMedicoWS.wsdl" MetadataType="Wsdl" ID="2972ca56-17c6-418a-ba51-886721946ebc" SourceId="1" SourceUrl="http://localhost:8080/PazCitasWeb/TurnoMedicoWS?WSDL" />
+    <MetadataFile FileName="PacienteWS.xsd" MetadataType="Schema" ID="a374b3ab-96a6-4c91-829f-be19e72e435e" SourceId="1" SourceUrl="http://localhost:8080/PazCitasWeb/PacienteWS?xsd=1" />
+    <MetadataFile FileName="EspecialidadWS.xsd" MetadataType="Schema" ID="b48497d9-bd4a-4222-b937-f61b7ab6e9ff" SourceId="1" SourceUrl="http://localhost:8080/PazCitasWeb/EspecialidadWS?xsd=1" />
+    <MetadataFile FileName="MedicamentoWS.wsdl" MetadataType="Wsdl" ID="25cc2ec6-c57f-47aa-98c5-ab47e8815d64" SourceId="1" SourceUrl="http://localhost:8080/PazCitasWeb/MedicamentoWS?WSDL" />
+    <MetadataFile FileName="NotaClinicaWS.wsdl" MetadataType="Wsdl" ID="e52b1fc8-be48-4ce5-92b7-d913368a6cea" SourceId="1" SourceUrl="http://localhost:8080/PazCitasWeb/NotaClinicaWS?WSDL" />
+    <MetadataFile FileName="SeguroWS.wsdl" MetadataType="Wsdl" ID="fce9632e-b702-433e-9687-cbb8e94109fa" SourceId="1" SourceUrl="http://localhost:8080/PazCitasWeb/SeguroWS?WSDL" />
+    <MetadataFile FileName="CitaWS.xsd" MetadataType="Schema" ID="2dd02c20-73ea-4486-859a-5b7c905265db" SourceId="1" SourceUrl="http://localhost:8080/PazCitasWeb/CitaWS?xsd=1" />
+    <MetadataFile FileName="DisponibilidadWS.xsd" MetadataType="Schema" ID="e659ef22-edb1-473b-aa11-a073651de62f" SourceId="1" SourceUrl="http://localhost:8080/PazCitasWeb/DisponibilidadWS?xsd=1" />
+    <MetadataFile FileName="MedicamentoWS.xsd" MetadataType="Schema" ID="0bf4d05c-bf46-4cf1-8170-e3ac8e5b8c1e" SourceId="1" SourceUrl="http://localhost:8080/PazCitasWeb/MedicamentoWS?xsd=1" />
+    <MetadataFile FileName="MedicoWS.xsd" MetadataType="Schema" ID="6146ba7d-2046-4479-8098-93150ed00aed" SourceId="1" SourceUrl="http://localhost:8080/PazCitasWeb/MedicoWS?xsd=1" />
+    <MetadataFile FileName="ConsultorioWS.wsdl" MetadataType="Wsdl" ID="ca279cf4-f9f1-46de-aa2d-7485b8e1b31c" SourceId="1" SourceUrl="http://localhost:8080/PazCitasWeb/ConsultorioWS?WSDL" />
+    <MetadataFile FileName="DisponibilidadWS.wsdl" MetadataType="Wsdl" ID="008c8a25-e8cf-4d12-9f46-8d9190686bbc" SourceId="1" SourceUrl="http://localhost:8080/PazCitasWeb/DisponibilidadWS?WSDL" />
+    <MetadataFile FileName="SedeWS.wsdl" MetadataType="Wsdl" ID="12fa4067-7303-4c2a-a72b-5936add57b0a" SourceId="1" SourceUrl="http://localhost:8080/PazCitasWeb/SedeWS?WSDL" />
+    <MetadataFile FileName="AsistenteWS.xsd" MetadataType="Schema" ID="fd865304-584c-43a6-a49a-e4691255fb04" SourceId="1" SourceUrl="http://localhost:8080/PazCitasWeb/AsistenteWS?xsd=1" />
+    <MetadataFile FileName="SeguroWS.xsd" MetadataType="Schema" ID="651d4d4c-3f61-457f-8835-790c5c8e28de" SourceId="1" SourceUrl="http://localhost:8080/PazCitasWeb/SeguroWS?xsd=1" />
+    <MetadataFile FileName="PacienteWS.wsdl" MetadataType="Wsdl" ID="2defa459-e0aa-46c0-9c39-450ab561c7fe" SourceId="1" SourceUrl="http://localhost:8080/PazCitasWeb/PacienteWS?WSDL" />
+    <MetadataFile FileName="TurnoMedicoWS.xsd" MetadataType="Schema" ID="db531098-7a13-43bb-acfa-674d6787a373" SourceId="1" SourceUrl="http://localhost:8080/PazCitasWeb/TurnoMedicoWS?xsd=1" />
+    <MetadataFile FileName="AdministradorWS.xsd" MetadataType="Schema" ID="d22d55cd-e90b-4ab8-b800-02d6951e4d1c" SourceId="1" SourceUrl="http://localhost:8080/PazCitasWeb/AdministradorWS?xsd=1" />
+    <MetadataFile FileName="PagoWS.xsd" MetadataType="Schema" ID="2642e498-420e-4c58-820e-cb64fb571abf" SourceId="1" SourceUrl="http://localhost:8080/PazCitasWeb/PagoWS?xsd=1" />
+    <MetadataFile FileName="HistorialMedicoWS.wsdl" MetadataType="Wsdl" ID="ae18bed9-6416-4866-8bf4-e4b387967c55" SourceId="1" SourceUrl="http://localhost:8080/PazCitasWeb/HistorialMedicoWS?WSDL" />
+    <MetadataFile FileName="NotaClinicaWS.xsd" MetadataType="Schema" ID="f0d562bd-cc3e-4971-9fa7-da8d880dfdaa" SourceId="1" SourceUrl="http://localhost:8080/PazCitasWeb/NotaClinicaWS?xsd=1" />
+    <MetadataFile FileName="ConsultorioWS.xsd" MetadataType="Schema" ID="9d123c7b-c925-4b21-876e-2387830d23f7" SourceId="1" SourceUrl="http://localhost:8080/PazCitasWeb/ConsultorioWS?xsd=1" />
+    <MetadataFile FileName="AsistenteWS.wsdl" MetadataType="Wsdl" ID="f8086e63-9273-4ae8-a3de-072bf329ca45" SourceId="1" SourceUrl="http://localhost:8080/PazCitasWeb/AsistenteWS?WSDL" />
+    <MetadataFile FileName="EspecialidadWS.wsdl" MetadataType="Wsdl" ID="f19e3986-dedb-4989-976d-3d2cae224f19" SourceId="1" SourceUrl="http://localhost:8080/PazCitasWeb/EspecialidadWS?WSDL" />
+    <MetadataFile FileName="SedeWS.xsd" MetadataType="Schema" ID="d3f599db-23b2-4bac-8244-66942214314d" SourceId="1" SourceUrl="http://localhost:8080/PazCitasWeb/SedeWS?xsd=1" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

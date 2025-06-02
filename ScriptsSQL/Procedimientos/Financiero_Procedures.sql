@@ -121,7 +121,7 @@ END$
 DELIMITER $
 CREATE PROCEDURE LISTAR_TODOS_SEGURO()
 BEGIN
-	SELECT s.id_seguro,s.nombre_seguro,s.tipo,s.porcentaje_cobertura,s.activo
+	SELECT s.id_seguro,s.nombre_seguro,s.tipo,s.porcentaje_cobertura,s.vigencia,s.activo
 	FROM seguro s
 	WHERE s.activo=1;
 END$

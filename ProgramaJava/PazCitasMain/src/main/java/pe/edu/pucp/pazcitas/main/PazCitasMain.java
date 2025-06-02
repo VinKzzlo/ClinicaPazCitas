@@ -135,14 +135,14 @@ public class PazCitasMain {
         seguro.setNombreSeguro("Rimac Oncologico");
         seguro.setPorcentajeCobertura(10.00);
         seguro.setTipo(TipoSeguro.PARCIAL);
-        seguro.setVigencia(LocalDate.of(2025, 12, 31));
+        //seguro.setVigencia(LocalDate.of(2025, 12, 31));
         SeguroBO boSeguro = new SeguroBO();
         boSeguro.insertar(seguro);
         
         seguro.setNombreSeguro("Pacifico Integral");
         seguro.setPorcentajeCobertura(100.00);
         seguro.setTipo(TipoSeguro.TOTAL);
-        seguro.setVigencia(LocalDate.of(2025, 12, 31));
+        //seguro.setVigencia(LocalDate.of(2025, 12, 31));
         boSeguro.insertar(seguro);
         
         ArrayList<Seguro> seguros = boSeguro.listarTodos();
