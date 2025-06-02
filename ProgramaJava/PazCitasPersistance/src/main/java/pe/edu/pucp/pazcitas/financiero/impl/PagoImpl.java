@@ -81,7 +81,7 @@ public class PagoImpl implements PagoDAO{
             while(rs.next()){
                 Pago e = new Pago();
                 e.setIdPago(rs.getInt("id_pago"));
-                e.setFechaPago(rs.getTimestamp("fecha_pago").toLocalDateTime());
+                e.setFechaPago(rs.getDate("fecha_pago"));
                 e.setMontoTotal(rs.getDouble("monto_total"));
                 e.setMontoCubiertoSeguro(rs.getDouble("monto_cubierto"));
                 e.setMontoSubtotal(rs.getDouble("subototal"));

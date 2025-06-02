@@ -65,7 +65,7 @@ public class RecetaImpl implements RecetaDAO {
                 }
                 Receta r = new Receta();
                 r.setIdReceta(rs.getInt("id_receta"));
-                r.setFechaPrescripcion(rs.getDate("fecha_prescripcion").toLocalDate());
+                r.setFechaPrescripcion(rs.getDate("fecha_prescripcion"));
                 r.setIndicaciones(rs.getString("indicaciones"));
                 recetas.add(r);
             }

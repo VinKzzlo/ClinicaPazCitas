@@ -17,6 +17,7 @@ import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
 import java.util.Base64;
+import java.util.Date;
 import java.util.Map;
 import javax.crypto.BadPaddingException;
 import javax.crypto.Cipher;
@@ -187,6 +188,7 @@ public class DBManager {
                 case String cadena -> cs.setString(key, cadena);
                 case Double decimal -> cs.setDouble(key, decimal);
                 case Boolean booleano -> cs.setBoolean(key, booleano);
+                case Date fecha -> cs.setDate(key, new java.sql.Date(fecha.getTime()));
                 case LocalDate localDate -> cs.setDate(key, java.sql.Date.valueOf(localDate));
                 case LocalTime localTime -> cs.setTime(key, java.sql.Time.valueOf(localTime));
                 case LocalDateTime localDateTime -> cs.setTimestamp(key, java.sql.Timestamp.valueOf(localDateTime));

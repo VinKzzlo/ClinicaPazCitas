@@ -82,12 +82,12 @@ public class CitaImpl implements CitaDAO {
             while(rs.next()){
                 Cita e = new Cita();
                 e.setIdCita(rs.getInt("id_cita"));
-                e.setFecha(rs.getTimestamp("fecha").toLocalDateTime());
+                e.setFecha(rs.getDate("fecha"));
                 EstadoCita estadoCita = EstadoCita.valueOf(rs.getString("estado_cita").toUpperCase());
                 e.setEstadoCita(estadoCita);
                 
                 e.setMotivoConsulta(rs.getString("motivo_consulta"));
-                e.setFechaActualizacion(rs.getTimestamp("fecha_actualizacion").toLocalDateTime());
+                e.setFechaActualizacion(rs.getDate("fecha_actualizacion"));
                 
                 Paciente paciente = new Paciente();
                 paciente.setIdUsuario(rs.getInt("fid_paciente"));

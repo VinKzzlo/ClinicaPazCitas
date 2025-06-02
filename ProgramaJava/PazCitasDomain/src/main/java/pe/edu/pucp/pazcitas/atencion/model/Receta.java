@@ -4,13 +4,13 @@
  */
 package pe.edu.pucp.pazcitas.atencion.model;
 
-import java.time.LocalDate;
+import java.util.Date;
 import java.util.ArrayList;
 
 public class Receta {
     private int idReceta;
     private String indicaciones;
-    private LocalDate fechaPrescripcion;
+    private Date fechaPrescripcion;
     private ArrayList<Medicamento> medicamentos;
 
     public Receta() {
@@ -40,13 +40,14 @@ public class Receta {
         this.medicamentos = medicamentos;
     }
 
-    public LocalDate getFechaPrescripcion() {
+    public Date getFechaPrescripcion() {
         return fechaPrescripcion;
     }
 
-    public void setFechaPrescripcion(LocalDate fechaPrescripcion) {
+    public void setFechaPrescripcion(Date fechaPrescripcion) {
         this.fechaPrescripcion = fechaPrescripcion;
     }
-    
+
+       
     
 }

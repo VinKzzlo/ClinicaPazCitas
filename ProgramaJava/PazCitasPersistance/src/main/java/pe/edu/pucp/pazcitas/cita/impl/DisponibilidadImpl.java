@@ -72,15 +72,15 @@ public class DisponibilidadImpl implements DisponibilidadDAO {
                 }
                 Disponibilidad d = new Disponibilidad();
                 d.setIdDisponibilidad(rs.getInt("id_disponibilidad"));
-                d.setFecha(rs.getDate("fecha").toLocalDate());
-                d.setHora(rs.getTime("hora").toLocalTime());
+                d.setFecha(rs.getDate("fecha"));
+                d.setHora(rs.getTime("hora"));
                 
                 TurnoMedico turno = new TurnoMedico();
                 turno.setIdTurno(rs.getInt("turno_id"));
                 DiaSemana dia = DiaSemana.valueOf(rs.getString("turno_dia").toUpperCase());
                 turno.setDia(dia);
-                turno.setHoraInicio(rs.getTime("turno_hora_inicio").toLocalTime());
-                turno.setHoraFin(rs.getTime("turno_hora_fin").toLocalTime());
+                turno.setHoraInicio(rs.getDate("turno_hora_inicio"));
+                turno.setHoraFin(rs.getDate("turno_hora_fin"));
                 
                 Medico med = new Medico();
                 med.setIdUsuario(rs.getInt("turno_id_medico"));

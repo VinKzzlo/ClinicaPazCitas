@@ -66,7 +66,7 @@ public class HistorialMedicoImpl implements HistorialMedicoDAO {
                 if(historiales == null) historiales = new ArrayList<>();
                 HistorialMedico h = new HistorialMedico();
                 h.setIdhistorial(rs.getInt("id_historial"));
-                h.setFechaActualizacion(rs.getTimestamp("fecha_actualizacion").toLocalDateTime());
+                h.setFechaActualizacion(rs.getDate("fecha_actualizacion"));
                 Paciente p = new Paciente();
                 p.setIdUsuario(rs.getInt("id_paciente"));
                 p.setNombre(rs.getString("nombre"));

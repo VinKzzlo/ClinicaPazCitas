@@ -1,19 +1,18 @@
 package pe.edu.pucp.pazcitas.cita.model;
 
-import java.time.LocalDateTime;
-import java.time.LocalTime;
+
+import java.util.Date;
 import pe.edu.pucp.pazcitas.atencion.model.NotaClinica;
-import pe.edu.pucp.pazcitas.financiero.model.Pago;
 import pe.edu.pucp.pazcitas.usuario.model.Paciente;
 import pe.edu.pucp.pazcitas.usuario.model.Recepcionista;
 
 public class Cita {
 
     private int idCita;
-    private LocalDateTime fecha;
+    private Date fecha;
     private EstadoCita estadoCita;
     private String motivoConsulta;
-    private LocalDateTime fechaActualizacion;
+    private Date fechaActualizacion;
 
     private Disponibilidad disponibilidad;
     private Recepcionista recepcionista;
@@ -80,21 +79,6 @@ public class Cita {
         this.notaClinica = notaClinica;
     }
 
-    public LocalDateTime getFecha() {
-        return fecha;
-    }
-
-    public void setFecha(LocalDateTime fecha) {
-        this.fecha = fecha;
-    }
-
-    public LocalDateTime getFechaActualizacion() {
-        return fechaActualizacion;
-    }
-
-    public void setFechaActualizacion(LocalDateTime fechaActualizacion) {
-        this.fechaActualizacion = fechaActualizacion;
-    }
 
     public Paciente getPaciente() {
         return paciente;
@@ -102,6 +86,22 @@ public class Cita {
 
     public void setPaciente(Paciente paciente) {
         this.paciente = paciente;
+    }
+
+    public Date getFecha() {
+        return fecha;
+    }
+
+    public void setFecha(Date fecha) {
+        this.fecha = fecha;
+    }
+
+    public Date getFechaActualizacion() {
+        return fechaActualizacion;
+    }
+
+    public void setFechaActualizacion(Date fechaActualizacion) {
+        this.fechaActualizacion = fechaActualizacion;
     }
 
 }

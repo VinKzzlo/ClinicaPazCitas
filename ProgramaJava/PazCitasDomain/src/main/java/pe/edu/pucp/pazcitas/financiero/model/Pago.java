@@ -4,7 +4,7 @@
  */
 package pe.edu.pucp.pazcitas.financiero.model;
 
-import java.time.LocalDateTime;
+import java.util.Date;
 import pe.edu.pucp.pazcitas.cita.model.Cita;
 
 /**
@@ -13,7 +13,7 @@ import pe.edu.pucp.pazcitas.cita.model.Cita;
  */
 public class Pago {
     private int idPago;
-    private LocalDateTime fechaPago;
+    private Date fechaPago;
     private double montoTotal;
     private double montoCubiertoSeguro;
     private double montoSubtotal;
@@ -32,15 +32,6 @@ public class Pago {
         this.idPago = idPago;
     }
 
-    public LocalDateTime getFechaPago() {
-        return fechaPago;
-    }
-
-    public void setFechaPago(LocalDateTime fechaPago) {
-        this.fechaPago = fechaPago;
-    }
-
-    
     public double getMontoTotal() {
         return montoTotal;
     }
@@ -89,7 +80,12 @@ public class Pago {
         this.cita = cita;
     }
 
-    
-    
-    
+    public Date getFechaPago() {
+        return fechaPago;
+    }
+
+    public void setFechaPago(Date fechaPago) {
+        this.fechaPago = fechaPago;
+    }
+
 }

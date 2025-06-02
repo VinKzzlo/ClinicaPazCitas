@@ -97,7 +97,7 @@ public class AsistenteMedicoImpl implements AsistenteMedicoDAO {
                 e.setApellidoMaterno(rs.getString("apellido_materno"));
                 e.setDni(rs.getString("dni"));
                 e.setEmail(rs.getString("email"));
-                e.setFechaNacimiento(rs.getDate("fecha_nacimiento").toLocalDate());
+                e.setFechaNacimiento(rs.getDate("fecha_nacimiento"));
                 e.setGenero(rs.getString("genero").charAt(0));
                 e.setHashPassword(rs.getString("hash_password"));
                 e.setCodigoPersonal(rs.getString("codigo_personal"));

@@ -67,7 +67,7 @@ public class RecepcionistaImpl implements RecepcionistaDAO {
         parametrosEntrada.put(4, recepcionista.getApellidoPaterno());
         parametrosEntrada.put(5, String.valueOf(recepcionista.getDni()));
         parametrosEntrada.put(6, recepcionista.getEmail());
-        parametrosEntrada.put(7, Date.valueOf(recepcionista.getFechaNacimiento()));
+        parametrosEntrada.put(7, recepcionista.getFechaNacimiento());
         parametrosEntrada.put(8, String.valueOf(recepcionista.getGenero()));
         parametrosEntrada.put(9, recepcionista.getHashPassword());
         parametrosEntrada.put(10, recepcionista.getSede().getIdSede());
@@ -92,7 +92,7 @@ public class RecepcionistaImpl implements RecepcionistaDAO {
                 e.setApellidoMaterno(rs.getString("apellido_materno"));
                 e.setDni(rs.getString("dni"));
                 e.setEmail(rs.getString("email"));
-                e.setFechaNacimiento(rs.getDate("fecha_nacimiento").toLocalDate());
+                e.setFechaNacimiento(rs.getDate("fecha_nacimiento"));
                 e.setGenero(rs.getString("genero").charAt(0));
                 e.setHashPassword(rs.getString("hash_password"));
              

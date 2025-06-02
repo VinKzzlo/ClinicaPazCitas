@@ -78,7 +78,7 @@ public class TriajeImpl implements TriajeDAO{
                 t.setAltura(rs.getDouble("altura"));
                 t.setPresionArterial(rs.getString("presion_arterial"));
                 t.setTemperatura(rs.getDouble("temperatura"));
-                t.setFechaRegistro(rs.getTimestamp("fecha_registro").toLocalDateTime());
+                t.setFechaRegistro(rs.getDate("fecha_registro"));
                 triajes.add(t);
             }
         } catch (SQLException ex)

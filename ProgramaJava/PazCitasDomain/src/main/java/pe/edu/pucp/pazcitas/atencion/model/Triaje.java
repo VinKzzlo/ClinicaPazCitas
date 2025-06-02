@@ -4,7 +4,7 @@
  */
 package pe.edu.pucp.pazcitas.atencion.model;
 
-import java.time.LocalDateTime;
+import java.util.Date;
 
 public class Triaje {
     private int idTriaje;
@@ -12,7 +12,7 @@ public class Triaje {
     private double altura;
     private String presionArterial;
     private double temperatura;
-    private LocalDateTime fechaRegistro;
+    private Date fechaRegistro;
     private boolean activo;
     private NotaClinica notaClinica;
 
@@ -59,15 +59,6 @@ public class Triaje {
         this.temperatura = temperatura;
     }
 
-    public LocalDateTime getFechaRegistro() {
-        return fechaRegistro;
-    }
-
-    public void setFechaRegistro(LocalDateTime fechaRegistro) {
-        this.fechaRegistro = fechaRegistro;
-    }
-
-
     public boolean isActivo() {
         return activo;
     }
@@ -83,6 +74,16 @@ public class Triaje {
     public void setNotaClinica(NotaClinica notaClinica) {
         this.notaClinica = notaClinica;
     }
+
+    public Date getFechaRegistro() {
+        return fechaRegistro;
+    }
+
+    public void setFechaRegistro(Date fechaRegistro) {
+        this.fechaRegistro = fechaRegistro;
+    }
+    
+    
 
        
 }

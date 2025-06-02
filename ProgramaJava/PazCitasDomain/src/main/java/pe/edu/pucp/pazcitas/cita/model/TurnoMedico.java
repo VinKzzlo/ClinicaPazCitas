@@ -4,9 +4,8 @@
  */
 package pe.edu.pucp.pazcitas.cita.model;
 
-import java.time.LocalDate;
-import java.time.LocalTime;
 import java.util.ArrayList;
+import java.util.Date;
 import pe.edu.pucp.pazcitas.ubicacion.model.Consultorio;
 import pe.edu.pucp.pazcitas.usuario.model.Medico;
 
@@ -17,8 +16,8 @@ import pe.edu.pucp.pazcitas.usuario.model.Medico;
 public class TurnoMedico {
     private int idTurno;
     private DiaSemana dia;
-    private LocalTime horaInicio;
-    private LocalTime horaFin;
+    private Date horaInicio;
+    private Date horaFin;
     private Consultorio consultorio;
     private Medico medico;
     private ArrayList<Disponibilidad> detalleTurnos;
@@ -42,21 +41,6 @@ public class TurnoMedico {
         this.dia = dia;
     }
 
-    public LocalTime getHoraInicio() {
-        return horaInicio;
-    }
-
-    public void setHoraInicio(LocalTime horaInicio) {
-        this.horaInicio = horaInicio;
-    }
-
-    public LocalTime getHoraFin() {
-        return horaFin;
-    }
-
-    public void setHoraFin(LocalTime horaFin) {
-        this.horaFin = horaFin;
-    }
 
     public Consultorio getConsultorio() {
         return consultorio;
@@ -80,6 +64,22 @@ public class TurnoMedico {
 
     public void setDetalleTurnos(ArrayList<Disponibilidad> detalleTurnos) {
         this.detalleTurnos = detalleTurnos;
+    }
+
+    public Date getHoraInicio() {
+        return horaInicio;
+    }
+
+    public void setHoraInicio(Date horaInicio) {
+        this.horaInicio = horaInicio;
+    }
+
+    public Date getHoraFin() {
+        return horaFin;
+    }
+
+    public void setHoraFin(Date horaFin) {
+        this.horaFin = horaFin;
     }
 
        

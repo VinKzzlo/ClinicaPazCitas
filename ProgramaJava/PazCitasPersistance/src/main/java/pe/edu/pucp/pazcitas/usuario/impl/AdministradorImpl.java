@@ -65,7 +65,7 @@ public class AdministradorImpl implements AdministradorDAO{
         parametrosEntrada.put(4, administrador.getApellidoPaterno());
         parametrosEntrada.put(5, String.valueOf(administrador.getDni()));
         parametrosEntrada.put(6, administrador.getEmail());
-        parametrosEntrada.put(7, Date.valueOf(administrador.getFechaNacimiento()));
+        parametrosEntrada.put(7, administrador.getFechaNacimiento());
         parametrosEntrada.put(8, String.valueOf(administrador.getGenero()));
         parametrosEntrada.put(9, administrador.getHashPassword());
         parametrosEntrada.put(10, administrador.getSede().getIdSede());
@@ -89,7 +89,7 @@ public class AdministradorImpl implements AdministradorDAO{
                 e.setApellidoMaterno(rs.getString("apellido_materno"));
                 e.setDni(rs.getString("dni"));
                 e.setEmail(rs.getString("email"));
-                e.setFechaNacimiento(rs.getDate("fecha_nacimiento").toLocalDate());
+                e.setFechaNacimiento(rs.getDate("fecha_nacimiento"));
                 e.setGenero(rs.getString("genero").charAt(0));
                 e.setHashPassword(rs.getString("hash_password"));
                 

@@ -1,13 +1,14 @@
 
 package pe.edu.pucp.pazcitas.cita.model;
 
-import java.time.LocalDate;
-import java.time.LocalTime;
+import java.util.Date;
+
+
 
 public class Disponibilidad {
     private int idDisponibilidad;
-    private LocalTime hora;
-    private LocalDate fecha;
+    private Date hora;
+    private Date fecha;
     private boolean disponible;
     private Cita cita;
     private TurnoMedico turnoMedico;
@@ -23,21 +24,6 @@ public class Disponibilidad {
         this.idDisponibilidad = idDisponibilidad;
     }
 
-    public LocalTime getHora() {
-        return hora;
-    }
-
-    public void setHora(LocalTime hora) {
-        this.hora = hora;
-    }
-
-    public LocalDate getFecha() {
-        return fecha;
-    }
-
-    public void setFecha(LocalDate fecha) {
-        this.fecha = fecha;
-    }
 
     public boolean isDisponible() {
         return disponible;
@@ -63,8 +49,21 @@ public class Disponibilidad {
         this.turnoMedico = turnoMedico;
     }
 
-   
-    
-    
+    public Date getHora() {
+        return hora;
+    }
+
+    public void setHora(Date hora) {
+        this.hora = hora;
+    }
+
+    public Date getFecha() {
+        return fecha;
+    }
+
+    public void setFecha(Date fecha) {
+        this.fecha = fecha;
+    }
+
     
 }

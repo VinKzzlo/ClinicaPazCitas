@@ -4,8 +4,8 @@
  */
 package pe.edu.pucp.pazcitas.usuario.model;
 
-import java.time.LocalDate;
 import java.util.Date;
+
 
 /**
  *
@@ -18,7 +18,7 @@ public class Usuario {
     private String apellidoMaterno;
     private String Dni;
     private String email;
-    private LocalDate fechaNacimiento;
+    private Date fechaNacimiento;
     private char genero;
     private String hashPassword;
 
@@ -91,15 +91,13 @@ public class Usuario {
         this.email = email;
     }
 
-    public LocalDate getFechaNacimiento() {
+    public Date getFechaNacimiento() {
         return fechaNacimiento;
     }
 
-    public void setFechaNacimiento(LocalDate fechaNacimiento) {
+    public void setFechaNacimiento(Date fechaNacimiento) {
         this.fechaNacimiento = fechaNacimiento;
     }
-
-    
     
     
 }

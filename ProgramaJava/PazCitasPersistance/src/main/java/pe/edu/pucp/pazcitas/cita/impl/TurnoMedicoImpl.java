@@ -77,8 +77,8 @@ public class TurnoMedicoImpl implements TurnoMedicoDAO {
                 t.setIdTurno(rs.getInt("id_turno"));
                 DiaSemana dia = DiaSemana.valueOf(rs.getString("dia").toUpperCase());
                 t.setDia(dia);
-                t.setHoraInicio(rs.getTime("hora_inicio").toLocalTime());
-                t.setHoraFin(rs.getTime("hora_fin").toLocalTime());
+                t.setHoraInicio(rs.getDate("hora_inicio"));
+                t.setHoraFin(rs.getDate("hora_fin"));
                 Consultorio cons = new Consultorio();
                 cons.setIdConsultorio(rs.getInt("id_consultorio"));
                 Medico med = new Medico();
