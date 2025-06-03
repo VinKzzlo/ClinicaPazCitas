@@ -43,4 +43,9 @@ public class EspecialidadWS {
         boespecialidad = new EspecialidadBO();
         return boespecialidad.eliminar(idepecialidad);
     }
+    @WebMethod(operationName = "listarXSede")
+    public ArrayList<Especialidad>  listarXSede(@WebParam(name = "idSede") int idSede) {
+        boespecialidad = new EspecialidadBO();
+        return boespecialidad.listarxSede(idSede);
+    }
 }

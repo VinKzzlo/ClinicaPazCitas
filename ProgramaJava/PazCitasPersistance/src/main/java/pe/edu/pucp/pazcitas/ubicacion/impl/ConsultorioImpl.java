@@ -82,9 +82,7 @@ public class ConsultorioImpl implements ConsultorioDAO {
 
                 Sede sede = new Sede();
                 sede.setIdSede(rs.getInt("fid_sede"));
-
-                e.setSede(sede);
-
+                sede.setNombre(rs.getString("nombre_sede"));
                 e.setSede(sede);
                 consultorios.add(e);
             }

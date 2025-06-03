@@ -5,12 +5,6 @@
       <xsd:import schemaLocation="http://localhost:8080/PazCitasWeb/RecetaWS?xsd=1" namespace="http://services.pucp.edu.pe" />
     </xsd:schema>
   </types>
-  <message name="listarReceta">
-    <part name="parameters" element="tns:listarReceta" />
-  </message>
-  <message name="listarRecetaResponse">
-    <part name="parameters" element="tns:listarRecetaResponse" />
-  </message>
   <message name="modificarReceta">
     <part name="parameters" element="tns:modificarReceta" />
   </message>
@@ -23,11 +17,13 @@
   <message name="insertarRecetaResponse">
     <part name="parameters" element="tns:insertarRecetaResponse" />
   </message>
+  <message name="listarReceta">
+    <part name="parameters" element="tns:listarReceta" />
+  </message>
+  <message name="listarRecetaResponse">
+    <part name="parameters" element="tns:listarRecetaResponse" />
+  </message>
   <portType name="RecetaWS">
-    <operation name="listarReceta">
-      <input wsam:Action="http://services.pucp.edu.pe/RecetaWS/listarRecetaRequest" message="tns:listarReceta" />
-      <output wsam:Action="http://services.pucp.edu.pe/RecetaWS/listarRecetaResponse" message="tns:listarRecetaResponse" />
-    </operation>
     <operation name="modificarReceta">
       <input wsam:Action="http://services.pucp.edu.pe/RecetaWS/modificarRecetaRequest" message="tns:modificarReceta" />
       <output wsam:Action="http://services.pucp.edu.pe/RecetaWS/modificarRecetaResponse" message="tns:modificarRecetaResponse" />
@@ -36,18 +32,13 @@
       <input wsam:Action="http://services.pucp.edu.pe/RecetaWS/insertarRecetaRequest" message="tns:insertarReceta" />
       <output wsam:Action="http://services.pucp.edu.pe/RecetaWS/insertarRecetaResponse" message="tns:insertarRecetaResponse" />
     </operation>
+    <operation name="listarReceta">
+      <input wsam:Action="http://services.pucp.edu.pe/RecetaWS/listarRecetaRequest" message="tns:listarReceta" />
+      <output wsam:Action="http://services.pucp.edu.pe/RecetaWS/listarRecetaResponse" message="tns:listarRecetaResponse" />
+    </operation>
   </portType>
   <binding name="RecetaWSPortBinding" type="tns:RecetaWS">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
-    <operation name="listarReceta">
-      <soap:operation soapAction="" />
-      <input>
-        <soap:body use="literal" />
-      </input>
-      <output>
-        <soap:body use="literal" />
-      </output>
-    </operation>
     <operation name="modificarReceta">
       <soap:operation soapAction="" />
       <input>
@@ -58,6 +49,15 @@
       </output>
     </operation>
     <operation name="insertarReceta">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="listarReceta">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />

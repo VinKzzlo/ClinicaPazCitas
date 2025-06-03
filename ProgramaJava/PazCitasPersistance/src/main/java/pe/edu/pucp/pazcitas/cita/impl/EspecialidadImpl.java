@@ -82,4 +82,30 @@ public class EspecialidadImpl implements EspecialidadDAO {
         return especialidades;
     }
 
+    @Override
+    public ArrayList<Especialidad> listarEspxSede(int idSede) {
+        ArrayList<Especialidad> especialidades = new ArrayList<>();
+        Map<Integer, Object> parametros = new HashMap<>();
+        parametros.put(1, idSede);
+
+        rs = DBManager.getInstance().ejecutarProcedimientoLectura("LISTAR_ESPXSEDE", parametros);
+        System.out.println("Lectura de especialidades por sede...");
+
+        try {
+            while (rs.next()) {
+                Especialidad e = new Especialidad();
+                e.setIdEspecialidad(rs.getInt("id_especialidad"));
+                e.setNombre(rs.getString("nombre"));
+                e.setDescripcion(rs.getString("descripcion"));
+                especialidades.add(e);
+            }
+        } catch (SQLException ex) {
+            System.out.println(ex.getMessage());
+        } finally {
+            DBManager.getInstance().cerrarConexion();
+        }
+
+        return especialidades;
+    }
+
 }

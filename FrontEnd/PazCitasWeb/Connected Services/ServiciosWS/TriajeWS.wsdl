@@ -5,18 +5,6 @@
       <xsd:import schemaLocation="http://localhost:8080/PazCitasWeb/TriajeWS?xsd=1" namespace="http://services.pucp.edu.pe" />
     </xsd:schema>
   </types>
-  <message name="eliminarTriaje">
-    <part name="parameters" element="tns:eliminarTriaje" />
-  </message>
-  <message name="eliminarTriajeResponse">
-    <part name="parameters" element="tns:eliminarTriajeResponse" />
-  </message>
-  <message name="listarTriaje">
-    <part name="parameters" element="tns:listarTriaje" />
-  </message>
-  <message name="listarTriajeResponse">
-    <part name="parameters" element="tns:listarTriajeResponse" />
-  </message>
   <message name="modificarTriaje">
     <part name="parameters" element="tns:modificarTriaje" />
   </message>
@@ -29,15 +17,19 @@
   <message name="insertarTriajeResponse">
     <part name="parameters" element="tns:insertarTriajeResponse" />
   </message>
+  <message name="listarTriaje">
+    <part name="parameters" element="tns:listarTriaje" />
+  </message>
+  <message name="listarTriajeResponse">
+    <part name="parameters" element="tns:listarTriajeResponse" />
+  </message>
+  <message name="eliminarTriaje">
+    <part name="parameters" element="tns:eliminarTriaje" />
+  </message>
+  <message name="eliminarTriajeResponse">
+    <part name="parameters" element="tns:eliminarTriajeResponse" />
+  </message>
   <portType name="TriajeWS">
-    <operation name="eliminarTriaje">
-      <input wsam:Action="http://services.pucp.edu.pe/TriajeWS/eliminarTriajeRequest" message="tns:eliminarTriaje" />
-      <output wsam:Action="http://services.pucp.edu.pe/TriajeWS/eliminarTriajeResponse" message="tns:eliminarTriajeResponse" />
-    </operation>
-    <operation name="listarTriaje">
-      <input wsam:Action="http://services.pucp.edu.pe/TriajeWS/listarTriajeRequest" message="tns:listarTriaje" />
-      <output wsam:Action="http://services.pucp.edu.pe/TriajeWS/listarTriajeResponse" message="tns:listarTriajeResponse" />
-    </operation>
     <operation name="modificarTriaje">
       <input wsam:Action="http://services.pucp.edu.pe/TriajeWS/modificarTriajeRequest" message="tns:modificarTriaje" />
       <output wsam:Action="http://services.pucp.edu.pe/TriajeWS/modificarTriajeResponse" message="tns:modificarTriajeResponse" />
@@ -46,10 +38,27 @@
       <input wsam:Action="http://services.pucp.edu.pe/TriajeWS/insertarTriajeRequest" message="tns:insertarTriaje" />
       <output wsam:Action="http://services.pucp.edu.pe/TriajeWS/insertarTriajeResponse" message="tns:insertarTriajeResponse" />
     </operation>
+    <operation name="listarTriaje">
+      <input wsam:Action="http://services.pucp.edu.pe/TriajeWS/listarTriajeRequest" message="tns:listarTriaje" />
+      <output wsam:Action="http://services.pucp.edu.pe/TriajeWS/listarTriajeResponse" message="tns:listarTriajeResponse" />
+    </operation>
+    <operation name="eliminarTriaje">
+      <input wsam:Action="http://services.pucp.edu.pe/TriajeWS/eliminarTriajeRequest" message="tns:eliminarTriaje" />
+      <output wsam:Action="http://services.pucp.edu.pe/TriajeWS/eliminarTriajeResponse" message="tns:eliminarTriajeResponse" />
+    </operation>
   </portType>
   <binding name="TriajeWSPortBinding" type="tns:TriajeWS">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
-    <operation name="eliminarTriaje">
+    <operation name="modificarTriaje">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="insertarTriaje">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />
@@ -67,16 +76,7 @@
         <soap:body use="literal" />
       </output>
     </operation>
-    <operation name="modificarTriaje">
-      <soap:operation soapAction="" />
-      <input>
-        <soap:body use="literal" />
-      </input>
-      <output>
-        <soap:body use="literal" />
-      </output>
-    </operation>
-    <operation name="insertarTriaje">
+    <operation name="eliminarTriaje">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />

@@ -22,7 +22,7 @@
             /*Foto de mi lord*/
             /*
 
-                background-image: url('Imagenes/PazCantante.PNG');
+                background-image: url('Images/PazCantante.PNG');
                 background-size: cover;
                 background-position: center;
                 background-repeat: no-repeat;

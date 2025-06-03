@@ -8,16 +8,16 @@
 <asp:Content ID="Content3" ContentPlaceHolderID="cph_Contenido" runat="server">
     <div class="container">
         <div class="card">
-            <div class="card-header">
-                <h5 class="fw-bold m-0">
+            <div class="card-header text-center">
+                <h4 class="fw-bold m-0">
                     <asp:Label ID="lblTitulo" runat="server" Text="Label"></asp:Label>
-                </h5>
+                </h4>
             </div>
             <div class="card-body">
                 <div class="mb-3 row align-items-center">
-                    <asp:Label ID="lblIDArea" CssClass="col-form-label col-sm-auto pe-sm-2 fw-bold" runat="server" Text="Id Area:"></asp:Label>
+                    <asp:Label ID="lblIDEspecialidad" CssClass="col-form-label col-sm-auto pe-sm-2 fw-bold" runat="server" Text="Id Especialidad:"></asp:Label>
                     <div class="col-sm-2">
-                        <asp:TextBox ID="txtIDArea" CssClass="form-control" Enabled="false" runat="server"></asp:TextBox>
+                        <asp:TextBox ID="txtIDEspecialidad" CssClass="form-control" Enabled="false" runat="server"></asp:TextBox>
                     </div>
                 </div>
                 <div class="mb-3 row align-items-center">

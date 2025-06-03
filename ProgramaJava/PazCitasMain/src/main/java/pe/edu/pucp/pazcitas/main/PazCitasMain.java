@@ -50,13 +50,13 @@ public class PazCitasMain {
     public static void main(String[] args) throws Exception{
         
         
-//        //Primero insertamos varias sedes
+        //Primero insertamos varias sedes
 //        Sede sede = new Sede();
 //        sede.setDireccion("Avenida Universitaria Nº 2020");
 //        sede.setNombre("Sede Los Olivos");
         SedeBO boSede = new SedeBO();
 //        boSede.insertar(sede);
-//
+
 //        sede = new Sede();
 //        sede.setDireccion("Calle Las Magnolias Nº 20");
 //        sede.setNombre("Sede Magdalena");
@@ -66,20 +66,20 @@ public class PazCitasMain {
 //        sede.setDireccion("Calle Ultima Esperanza Nº 20");
 //        sede.setNombre("Sede Miraflores");
 //        boSede.insertar(sede);
-//        
-//        //Listamos las sedes ingresadas
+        
+        //Listamos las sedes ingresadas
         ArrayList<Sede> sedes = boSede.listarTodos();
-//
-//        //Creamos un consultorio
+
+        //Creamos un consultorio
 //        Consultorio con = new Consultorio();
 //        con.setNombreConsultorio("A101");
 //        con.setCapacidad(5);
 //        con.setPiso(1);
 //        //Listamos sedes
 //        con.setSede(sedes.get(sedes.size()-1));
-//        ConsultorioBO boCons = new ConsultorioBO();
+        ConsultorioBO boCons = new ConsultorioBO();
 //        boCons.insertar(con); //Insertamos consultorio
-//        
+        
 //        con = new Consultorio();
 //        con.setNombreConsultorio("A201");
 //        con.setCapacidad(10);
@@ -87,14 +87,14 @@ public class PazCitasMain {
 //        //Listamos sedes
 //        con.setSede(sedes.get(sedes.size()-1));
 //        boCons.insertar(con);//Insertamos consultorio
-//        
-//        //Insertamos especialidades
+        
+        //Insertamos especialidades
 //        Especialidad esp = new Especialidad();
 //        esp.setNombre("Gastroenterologia");
 //        esp.setDescripcion("Especialidad medica que trata enfermedades del sistema digestvo");
-//        EspecialidadBO boEsp = new EspecialidadBO();
+        EspecialidadBO boEsp = new EspecialidadBO();
 //        boEsp.insertar(esp);
-//        
+        
 //        esp.setNombre("Nutricion");
 //        esp.setDescripcion("Especialidad medica que trata sobre nutricion");
 //        boEsp.insertar(esp);
@@ -102,8 +102,8 @@ public class PazCitasMain {
 //        esp.setNombre("Neumologia");
 //        esp.setDescripcion("Especialidad medica que trata enfermedades del sistema respiratorio");
 //        boEsp.insertar(esp);
-//        
-//        ArrayList<Especialidad> especialidades = boEsp.listarTodos();
+        
+        ArrayList<Especialidad> especialidades = boEsp.listarTodos();
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
         //Insertamos medico
         MedicoBO boMed = new MedicoBO();
@@ -111,40 +111,42 @@ public class PazCitasMain {
         medico.setNombre("Martin");
         medico.setApellidoPaterno("Torres");
         medico.setApellidoMaterno("Palacios");
-        medico.setDni("20202030");
+        medico.setDni("32d32");
         medico.setEmail("mtpalacios@pazcitas.pe");
         medico.setFechaNacimiento(sdf.parse("1992-09-10"));
         medico.setGenero('F');
-        medico.setHashPassword("password");
-        medico.setCodigoMedico("mt123");
-        medico.setSede(sedes.get(sedes.size()-1));
+        medico.setHashPassword("passwordw2");
+        medico.setCodigoMedico("123321");
+        medico.setSede(sedes.get(0));
+        medico.setEspecialidad(especialidades.get(0));
         boMed.insertar(medico);
         
-//        medico.setNombre("Pablo");
-//        medico.setApellidoPaterno("Gran");
-//        medico.setApellidoMaterno("Pastor");
-//        medico.setDni("45612389");
-//        medico.setEmail("pgpastor@pazcitas.pe");
-//        medico.setFechaNacimiento(LocalDate.of(2003, 12, 11));
-//        medico.setGenero('M');
-//        medico.setHashPassword("password");
-//        medico.setCodigoMedico("pg123");
-//        medico.setSede(sedes.get(sedes.size()-1));
-//        boMed.insertar(medico);
-//        
-//        //Insertamos seguros
+        medico.setNombre("Pablo");
+        medico.setApellidoPaterno("Gran");
+        medico.setApellidoMaterno("Pastor");
+        medico.setDni("323d2");
+        medico.setEmail("pgpastor@pazcitas.pe");
+        medico.setFechaNacimiento(sdf.parse("1992-09-10"));
+        medico.setGenero('M');
+        medico.setHashPassword("password2");
+        medico.setCodigoMedico("1232232");
+        medico.setSede(sedes.get(0));
+        medico.setEspecialidad(especialidades.get(0));
+        boMed.insertar(medico);
+        
+        //Insertamos seguros
 //        Seguro seguro = new Seguro();
 //        seguro.setNombreSeguro("Rimac Oncologico");
 //        seguro.setPorcentajeCobertura(10.00);
 //        seguro.setTipo(TipoSeguro.PARCIAL);
-//        //seguro.setVigencia(LocalDate.of(2025, 12, 31));
+//        seguro.setVigencia(sdf.parse("1992-09-10"));
 //        SeguroBO boSeguro = new SeguroBO();
 //        boSeguro.insertar(seguro);
 //        
 //        seguro.setNombreSeguro("Pacifico Integral");
 //        seguro.setPorcentajeCobertura(100.00);
 //        seguro.setTipo(TipoSeguro.TOTAL);
-//        //seguro.setVigencia(LocalDate.of(2025, 12, 31));
+//        //seguro.setVigencia(sdf.parse("1992-09-10"));
 //        boSeguro.insertar(seguro);
 //        
 //        ArrayList<Seguro> seguros = boSeguro.listarTodos();
@@ -157,7 +159,7 @@ public class PazCitasMain {
 //        paciente.setApellidoPaterno("Fuertes");
 //        paciente.setDni("87654321");
 //        paciente.setEmail("mdfuertes@gmail.com");
-//        paciente.setFechaNacimiento(LocalDate.of(2005, 12, 3));
+//        paciente.setFechaNacimiento(sdf.parse("1992-09-10"));
 //        paciente.setGenero('F');
 //        paciente.setHashPassword("fuertes123");
 //        paciente.setDireccion("Calle Ultima Agonia Nº 123");
@@ -170,7 +172,7 @@ public class PazCitasMain {
 //        paciente.setApellidoPaterno("Torres");
 //        paciente.setDni("25361485");
 //        paciente.setEmail("jbtorres@gmail.com");
-//        paciente.setFechaNacimiento(LocalDate.of(2000, 11, 14));
+//        paciente.setFechaNacimiento(sdf.parse("1992-09-10"));
 //        paciente.setGenero('M');
 //        paciente.setHashPassword("fuertes123");
 //        paciente.setDireccion("Calle Apocalipsis Nº 999");
@@ -187,15 +189,15 @@ public class PazCitasMain {
 //        TurnoMedicoBO boTurno= new TurnoMedicoBO();
 //        TurnoMedico turno = new TurnoMedico();
 //        turno.setDia(DiaSemana.MARTES);
-//        turno.setHoraInicio(LocalTime.of(12, 30, 0));
-//        turno.setHoraFin(LocalTime.of(15,0,0));
+//        turno.setHoraInicio(java.sql.Time.valueOf("08:30:00"));
+//        turno.setHoraFin(java.sql.Time.valueOf("08:30:00"));
 //        turno.setConsultorio(cons.get(cons.size()-1));
 //        turno.setMedico(meds.get(meds.size()-1));
 //        boTurno.insertar(turno);
 //        
 //        turno.setDia(DiaSemana.MIERCOLES);
-//        turno.setHoraInicio(LocalTime.of(10, 00, 0));
-//        turno.setHoraFin(LocalTime.of(13,0,0));
+//        turno.setHoraInicio(java.sql.Time.valueOf("08:30:00"));
+//        turno.setHoraFin(java.sql.Time.valueOf("08:30:00"));
 //        turno.setConsultorio(cons.get(cons.size()-1));
 //        turno.setMedico(meds.get(meds.size()-1));
 //        boTurno.insertar(turno);
@@ -203,8 +205,8 @@ public class PazCitasMain {
 //        ArrayList<TurnoMedico> turnos = boTurno.listarTodos();
 //        
 //        Disponibilidad dispo = new Disponibilidad();
-//        dispo.setFecha(LocalDate.of(2025, 04, 28));
-//        dispo.setHora(LocalTime.of(10, 10));
+//        dispo.setFecha(sdf.parse("1992-09-10"));
+//        dispo.setHora(java.sql.Time.valueOf("08:30:00"));
 //        dispo.setDisponible(true);
 //        dispo.setTurnoMedico(turnos.get(turnos.size()-1));
 //        DisponibilidadBO boDispo = new DisponibilidadBO();
@@ -218,7 +220,7 @@ public class PazCitasMain {
 //        recepcionista.setApellidoPaterno("Palacios");
 //        recepcionista.setDni("64821937");
 //        recepcionista.setEmail("dfpalacios@gmail.com");
-//        recepcionista.setFechaNacimiento(LocalDate.of(2000, 11, 14));
+//        recepcionista.setFechaNacimiento(sdf.parse("1992-09-10"));
 //        recepcionista.setGenero('M');
 //        recepcionista.setHashPassword("fuertes123");
 //        recepcionista.setSede(sedes.get(sedes.size()-1));
@@ -228,7 +230,7 @@ public class PazCitasMain {
 //        ArrayList<Recepcionista> receps = boRecepcionista.listarTodos();    
 //        
 //        Cita cita = new Cita();
-//        cita.setFecha(LocalDateTime.of(2025, 5, 14, 13, 00, 0));
+//        cita.setFecha(sdf.parse("1992-09-10"));
 //        cita.setEstadoCita(EstadoCita.PROGRAMADA);
 //        cita.setMotivoConsulta("Dolor abdominal y nauseas");
 //        cita.setPaciente(pacs.get(0));

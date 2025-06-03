@@ -3,20 +3,16 @@
   "WorkspaceRootPath": "D:\\PUCP 2025-I\\ProyectoProgra3\\ClinicaPazCitas\\FrontEnd\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{2E4BD478-8240-4E43-BFFE-88276C463D15}|PazCitasWeb\\PazCitasWA.csproj|d:\\pucp 2025-i\\proyectoprogra3\\clinicapazcitas\\frontend\\pazcitasweb\\listarseguros.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
-      "RelativeMoniker": "D:0:0:{2E4BD478-8240-4E43-BFFE-88276C463D15}|PazCitasWeb\\PazCitasWA.csproj|solutionrelative:pazcitasweb\\listarseguros.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+      "AbsoluteMoniker": "D:0:0:{2E4BD478-8240-4E43-BFFE-88276C463D15}|PazCitasWeb\\PazCitasWA.csproj|d:\\pucp 2025-i\\proyectoprogra3\\clinicapazcitas\\frontend\\pazcitasweb\\registrarmedico.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{2E4BD478-8240-4E43-BFFE-88276C463D15}|PazCitasWeb\\PazCitasWA.csproj|solutionrelative:pazcitasweb\\registrarmedico.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2E4BD478-8240-4E43-BFFE-88276C463D15}|PazCitasWeb\\PazCitasWA.csproj|d:\\pucp 2025-i\\proyectoprogra3\\clinicapazcitas\\frontend\\pazcitasweb\\listarespecialidades.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
-      "RelativeMoniker": "D:0:0:{2E4BD478-8240-4E43-BFFE-88276C463D15}|PazCitasWeb\\PazCitasWA.csproj|solutionrelative:pazcitasweb\\listarespecialidades.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+      "AbsoluteMoniker": "D:0:0:{2E4BD478-8240-4E43-BFFE-88276C463D15}|PazCitasWeb\\PazCitasWA.csproj|d:\\pucp 2025-i\\proyectoprogra3\\clinicapazcitas\\frontend\\pazcitasweb\\registrarmedico.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2E4BD478-8240-4E43-BFFE-88276C463D15}|PazCitasWeb\\PazCitasWA.csproj|solutionrelative:pazcitasweb\\registrarmedico.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2E4BD478-8240-4E43-BFFE-88276C463D15}|PazCitasWeb\\PazCitasWA.csproj|d:\\pucp 2025-i\\proyectoprogra3\\clinicapazcitas\\frontend\\pazcitasweb\\listarseguros.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2E4BD478-8240-4E43-BFFE-88276C463D15}|PazCitasWeb\\PazCitasWA.csproj|solutionrelative:pazcitasweb\\listarseguros.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2E4BD478-8240-4E43-BFFE-88276C463D15}|PazCitasWeb\\PazCitasWA.csproj|d:\\pucp 2025-i\\proyectoprogra3\\clinicapazcitas\\frontend\\pazcitasweb\\listarespecialidades.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2E4BD478-8240-4E43-BFFE-88276C463D15}|PazCitasWeb\\PazCitasWA.csproj|solutionrelative:pazcitasweb\\listarespecialidades.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{2E4BD478-8240-4E43-BFFE-88276C463D15}|PazCitasWeb\\PazCitasWA.csproj|d:\\pucp 2025-i\\proyectoprogra3\\clinicapazcitas\\frontend\\pazcitasweb\\registrarespecialidad.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{2E4BD478-8240-4E43-BFFE-88276C463D15}|PazCitasWeb\\PazCitasWA.csproj|solutionrelative:pazcitasweb\\registrarespecialidad.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,7 +22,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Bookmark",
@@ -38,54 +34,41 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "ListarEspecialidades.aspx.cs",
-              "DocumentMoniker": "D:\\PUCP 2025-I\\ProyectoProgra3\\ClinicaPazCitas\\FrontEnd\\PazCitasWeb\\ListarEspecialidades.aspx.cs",
-              "RelativeDocumentMoniker": "PazCitasWeb\\ListarEspecialidades.aspx.cs",
-              "ToolTip": "D:\\PUCP 2025-I\\ProyectoProgra3\\ClinicaPazCitas\\FrontEnd\\PazCitasWeb\\ListarEspecialidades.aspx.cs",
-              "RelativeToolTip": "PazCitasWeb\\ListarEspecialidades.aspx.cs",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAAACUAAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-02T17:21:28.661Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "ListarSeguros.aspx.cs",
-              "DocumentMoniker": "D:\\PUCP 2025-I\\ProyectoProgra3\\ClinicaPazCitas\\FrontEnd\\PazCitasWeb\\ListarSeguros.aspx.cs",
-              "RelativeDocumentMoniker": "PazCitasWeb\\ListarSeguros.aspx.cs",
-              "ToolTip": "D:\\PUCP 2025-I\\ProyectoProgra3\\ClinicaPazCitas\\FrontEnd\\PazCitasWeb\\ListarSeguros.aspx.cs",
-              "RelativeToolTip": "PazCitasWeb\\ListarSeguros.aspx.cs",
-              "ViewState": "AgIAAAwAAAAAAAAAAAAAABQAAAArAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-02T17:21:12.687Z",
+              "Title": "RegistrarEspecialidad.aspx",
+              "DocumentMoniker": "D:\\PUCP 2025-I\\ProyectoProgra3\\ClinicaPazCitas\\FrontEnd\\PazCitasWeb\\RegistrarEspecialidad.aspx",
+              "RelativeDocumentMoniker": "PazCitasWeb\\RegistrarEspecialidad.aspx",
+              "ToolTip": "D:\\PUCP 2025-I\\ProyectoProgra3\\ClinicaPazCitas\\FrontEnd\\PazCitasWeb\\RegistrarEspecialidad.aspx",
+              "RelativeToolTip": "PazCitasWeb\\RegistrarEspecialidad.aspx",
+              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
+              "WhenOpened": "2025-06-03T16:40:20.558Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "ListarEspecialidades.aspx",
-              "DocumentMoniker": "D:\\PUCP 2025-I\\ProyectoProgra3\\ClinicaPazCitas\\FrontEnd\\PazCitasWeb\\ListarEspecialidades.aspx",
-              "RelativeDocumentMoniker": "PazCitasWeb\\ListarEspecialidades.aspx",
-              "ToolTip": "D:\\PUCP 2025-I\\ProyectoProgra3\\ClinicaPazCitas\\FrontEnd\\PazCitasWeb\\ListarEspecialidades.aspx",
-              "RelativeToolTip": "PazCitasWeb\\ListarEspecialidades.aspx",
-              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
-              "WhenOpened": "2025-06-02T17:20:29.957Z",
+              "Title": "RegistrarMedico.aspx.cs",
+              "DocumentMoniker": "D:\\PUCP 2025-I\\ProyectoProgra3\\ClinicaPazCitas\\FrontEnd\\PazCitasWeb\\RegistrarMedico.aspx.cs",
+              "RelativeDocumentMoniker": "PazCitasWeb\\RegistrarMedico.aspx.cs",
+              "ToolTip": "D:\\PUCP 2025-I\\ProyectoProgra3\\ClinicaPazCitas\\FrontEnd\\PazCitasWeb\\RegistrarMedico.aspx.cs",
+              "RelativeToolTip": "PazCitasWeb\\RegistrarMedico.aspx.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-03T16:24:54.079Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "ListarSeguros.aspx",
-              "DocumentMoniker": "D:\\PUCP 2025-I\\ProyectoProgra3\\ClinicaPazCitas\\FrontEnd\\PazCitasWeb\\ListarSeguros.aspx",
-              "RelativeDocumentMoniker": "PazCitasWeb\\ListarSeguros.aspx",
-              "ToolTip": "D:\\PUCP 2025-I\\ProyectoProgra3\\ClinicaPazCitas\\FrontEnd\\PazCitasWeb\\ListarSeguros.aspx",
-              "RelativeToolTip": "PazCitasWeb\\ListarSeguros.aspx",
+              "Title": "RegistrarMedico.aspx",
+              "DocumentMoniker": "D:\\PUCP 2025-I\\ProyectoProgra3\\ClinicaPazCitas\\FrontEnd\\PazCitasWeb\\RegistrarMedico.aspx",
+              "RelativeDocumentMoniker": "PazCitasWeb\\RegistrarMedico.aspx",
+              "ToolTip": "D:\\PUCP 2025-I\\ProyectoProgra3\\ClinicaPazCitas\\FrontEnd\\PazCitasWeb\\RegistrarMedico.aspx",
+              "RelativeToolTip": "PazCitasWeb\\RegistrarMedico.aspx",
               "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
-              "WhenOpened": "2025-06-02T17:20:09.513Z",
+              "WhenOpened": "2025-06-03T16:24:54.388Z",
               "EditorCaption": ""
             }
           ]

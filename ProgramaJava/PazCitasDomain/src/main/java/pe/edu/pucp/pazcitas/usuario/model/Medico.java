@@ -14,9 +14,8 @@ public class Medico extends Usuario {
     private boolean activo;
     private ArrayList<TurnoMedico> turnosMedico;
     private Sede sede;
-    private ArrayList<Especialidad> especialidades;
     private AsistenteMedico asistenteMedico;
-    
+    private Especialidad especialidad;
     
     public Medico() {
     }
@@ -53,13 +52,15 @@ public class Medico extends Usuario {
         this.sede = sede;
     }
 
-    public ArrayList<Especialidad> getEspecialidades() {
-        return especialidades;
+    public Especialidad getEspecialidad() {
+        return especialidad;
     }
 
-    public void setEspecialidades(ArrayList<Especialidad> especialidades) {
-        this.especialidades = especialidades;
+    public void setEspecialidad(Especialidad especialidad) {
+        this.especialidad = especialidad;
     }
+    
+    
 
     public AsistenteMedico getAsistenteMedico() {
         return asistenteMedico;

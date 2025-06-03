@@ -11,6 +11,7 @@ import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
+import pe.edu.pucp.pazcitas.cita.model.Especialidad;
 import pe.edu.pucp.pazcitas.config.DBManager;
 import pe.edu.pucp.pazcitas.ubicacion.model.Sede;
 import pe.edu.pucp.pazcitas.usuario.dao.MedicoDAO;
@@ -40,7 +41,8 @@ public class MedicoImpl implements MedicoDAO {
         parametrosEntrada.put(9, medico.getHashPassword());
         parametrosEntrada.put(10, medico.getCodigoMedico());
         parametrosEntrada.put(11, medico.getSede().getIdSede());
-
+        parametrosEntrada.put(12, medico.getEspecialidad().getIdEspecialidad());
+        
         DBManager.getInstance().ejecutarProcedimiento("INSERTAR_MEDICO", parametrosEntrada, parametrosSalida);
         medico.setIdUsuario((int) parametrosSalida.get(1));
         System.out.println("Se ha realizado el registro del medico");
@@ -71,7 +73,8 @@ public class MedicoImpl implements MedicoDAO {
         parametrosEntrada.put(9, medico.getHashPassword());
         parametrosEntrada.put(10, medico.getCodigoMedico());
         parametrosEntrada.put(11, medico.getSede().getIdSede());
-
+        parametrosEntrada.put(12, medico.getEspecialidad().getIdEspecialidad());
+        
         DBManager.getInstance().ejecutarProcedimiento("MODIFICAR_MEDICO", parametrosEntrada, null);
         System.out.println("Se ha realizado el modificacion del medico");
         return medico.getIdUsuario();
@@ -95,13 +98,66 @@ public class MedicoImpl implements MedicoDAO {
                 e.setGenero(rs.getString("genero").charAt(0));
                 e.setHashPassword(rs.getString("hash_password"));
                 e.setCodigoMedico(rs.getString("codigo_medico"));
+                
+                Sede sede = new Sede();
+                sede.setIdSede(rs.getInt("id_sede"));
+                sede.setNombre(rs.getString("nombre_sede"));
+                sede.setDireccion(rs.getString("direccion"));
+                
+                Especialidad especialidad = new Especialidad();
+                especialidad.setIdEspecialidad(rs.getInt("id_especialidad"));
+                especialidad.setNombre(rs.getString("nombre_especialidad"));
+                especialidad.setDescripcion(rs.getString("descripcion"));
+                
+                e.setSede(sede);
+                e.setEspecialidad(especialidad);
+                
+                medicos.add(e);
+            }
+        } catch (SQLException ex) {
+            System.out.println(ex.getMessage());
+        } finally {
+            DBManager.getInstance().cerrarConexion();
+        }
+        return medicos;
+    }
+
+    @Override
+    public ArrayList<Medico> listarXEspXSede(int idSede, int idEsp) {
+        ArrayList<Medico> medicos = new ArrayList<>();
+        Map<Integer, Object> parametros = new HashMap<>();
+        parametros.put(1, idSede);
+        parametros.put(2, idEsp);
+
+        rs = DBManager.getInstance().ejecutarProcedimientoLectura("LISTAR_MEDICO_POR_SEDE_Y_ESPECIALIDAD", parametros);
+        System.out.println("Lectura de médicos por especialidad y sede...");
+
+        try {
+            while (rs.next()) {
+                Medico e = new Medico();
+                e.setIdUsuario(rs.getInt("id_usuario"));
+                e.setNombre(rs.getString("nombre"));
+                e.setApellidoPaterno(rs.getString("apellido_paterno"));
+                e.setApellidoMaterno(rs.getString("apellido_materno"));
+                e.setDni(rs.getString("dni"));
+                e.setEmail(rs.getString("email"));
+                e.setFechaNacimiento(rs.getDate("fecha_nacimiento"));
+                e.setGenero(rs.getString("genero").charAt(0));
+                e.setHashPassword(rs.getString("hash_password"));
+                e.setCodigoMedico(rs.getString("codigo_medico"));
 
                 Sede sede = new Sede();
                 sede.setIdSede(rs.getInt("id_sede"));
                 sede.setNombre(rs.getString("nombre_sede"));
                 sede.setDireccion(rs.getString("direccion"));
 
+                Especialidad especialidad = new Especialidad();
+                especialidad.setIdEspecialidad(rs.getInt("id_especialidad"));
+                especialidad.setNombre(rs.getString("nombre_especialidad"));
+                especialidad.setDescripcion(rs.getString("descripcion"));
+
                 e.setSede(sede);
+                e.setEspecialidad(especialidad);
 
                 medicos.add(e);
             }
@@ -110,6 +166,7 @@ public class MedicoImpl implements MedicoDAO {
         } finally {
             DBManager.getInstance().cerrarConexion();
         }
+
         return medicos;
     }
 

@@ -38,4 +38,8 @@ public class MedicoBO {
         {
             return daoMedico.listarTodos();
         }
+        public ArrayList<Medico> listarxEspecialidad(int idEsp, int idSed)
+        {
+            return daoMedico.listarXEspXSede(idEsp, idSed);
+        }
 }

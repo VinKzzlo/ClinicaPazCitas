@@ -35,12 +35,17 @@ namespace PazCitasWA
 
         protected void btnModificar_Click(object sender, EventArgs e)
         {
-
+            int idSeguro = Int32.Parse(((LinkButton)sender).CommandArgument);
+            seguro seg = seguros.SingleOrDefault(x=>x.idSeguro == idSeguro);
+            Session["seguroSeleccionado"] = seg;
+            Response.Redirect("RegistrarSeguro.aspx?accion=modificar");
         }
 
         protected void btnEliminar_Click(object sender, EventArgs e)
         {
-
+            int idSeguro = Int32.Parse(((LinkButton)sender).CommandArgument);
+            wsSeguro.eliminarSeguro(idSeguro);
+            Response.Redirect("ListarSeguros.aspx");
         }
     }
 }

@@ -5,11 +5,11 @@
       <xsd:import schemaLocation="http://localhost:8080/PazCitasWeb/TurnoMedicoWS?xsd=1" namespace="http://services.pucp.edu.pe" />
     </xsd:schema>
   </types>
-  <message name="listarTurnoMedico">
-    <part name="parameters" element="tns:listarTurnoMedico" />
+  <message name="modificarTurnoMedico">
+    <part name="parameters" element="tns:modificarTurnoMedico" />
   </message>
-  <message name="listarTurnoMedicoResponse">
-    <part name="parameters" element="tns:listarTurnoMedicoResponse" />
+  <message name="modificarTurnoMedicoResponse">
+    <part name="parameters" element="tns:modificarTurnoMedicoResponse" />
   </message>
   <message name="insertarTurnoMedico">
     <part name="parameters" element="tns:insertarTurnoMedico" />
@@ -17,29 +17,29 @@
   <message name="insertarTurnoMedicoResponse">
     <part name="parameters" element="tns:insertarTurnoMedicoResponse" />
   </message>
-  <message name="modificarTurnoMedico">
-    <part name="parameters" element="tns:modificarTurnoMedico" />
+  <message name="listarTurnoMedico">
+    <part name="parameters" element="tns:listarTurnoMedico" />
   </message>
-  <message name="modificarTurnoMedicoResponse">
-    <part name="parameters" element="tns:modificarTurnoMedicoResponse" />
+  <message name="listarTurnoMedicoResponse">
+    <part name="parameters" element="tns:listarTurnoMedicoResponse" />
   </message>
   <portType name="TurnoMedicoWS">
-    <operation name="listarTurnoMedico">
-      <input wsam:Action="http://services.pucp.edu.pe/TurnoMedicoWS/listarTurnoMedicoRequest" message="tns:listarTurnoMedico" />
-      <output wsam:Action="http://services.pucp.edu.pe/TurnoMedicoWS/listarTurnoMedicoResponse" message="tns:listarTurnoMedicoResponse" />
+    <operation name="modificarTurnoMedico">
+      <input wsam:Action="http://services.pucp.edu.pe/TurnoMedicoWS/modificarTurnoMedicoRequest" message="tns:modificarTurnoMedico" />
+      <output wsam:Action="http://services.pucp.edu.pe/TurnoMedicoWS/modificarTurnoMedicoResponse" message="tns:modificarTurnoMedicoResponse" />
     </operation>
     <operation name="insertarTurnoMedico">
       <input wsam:Action="http://services.pucp.edu.pe/TurnoMedicoWS/insertarTurnoMedicoRequest" message="tns:insertarTurnoMedico" />
       <output wsam:Action="http://services.pucp.edu.pe/TurnoMedicoWS/insertarTurnoMedicoResponse" message="tns:insertarTurnoMedicoResponse" />
     </operation>
-    <operation name="modificarTurnoMedico">
-      <input wsam:Action="http://services.pucp.edu.pe/TurnoMedicoWS/modificarTurnoMedicoRequest" message="tns:modificarTurnoMedico" />
-      <output wsam:Action="http://services.pucp.edu.pe/TurnoMedicoWS/modificarTurnoMedicoResponse" message="tns:modificarTurnoMedicoResponse" />
+    <operation name="listarTurnoMedico">
+      <input wsam:Action="http://services.pucp.edu.pe/TurnoMedicoWS/listarTurnoMedicoRequest" message="tns:listarTurnoMedico" />
+      <output wsam:Action="http://services.pucp.edu.pe/TurnoMedicoWS/listarTurnoMedicoResponse" message="tns:listarTurnoMedicoResponse" />
     </operation>
   </portType>
   <binding name="TurnoMedicoWSPortBinding" type="tns:TurnoMedicoWS">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
-    <operation name="listarTurnoMedico">
+    <operation name="modificarTurnoMedico">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />
@@ -57,7 +57,7 @@
         <soap:body use="literal" />
       </output>
     </operation>
-    <operation name="modificarTurnoMedico">
+    <operation name="listarTurnoMedico">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />

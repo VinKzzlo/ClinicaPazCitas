@@ -29,7 +29,7 @@ namespace PazCitasWA
                 objEspecialidad = (especialidad)Session["espSeleccionada"];
                 if (!IsPostBack)
                 {
-                    txtIDArea.Text = objEspecialidad.idEspecialidad.ToString();
+                    txtIDEspecialidad.Text = objEspecialidad.idEspecialidad.ToString();
                     txtNombre.Text = objEspecialidad.nombre;
                     txtDescripcion.Text = objEspecialidad.descripcion;
                 }

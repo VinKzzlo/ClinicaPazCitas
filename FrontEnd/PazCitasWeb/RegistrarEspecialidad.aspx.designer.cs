@@ -24,22 +24,22 @@ namespace PazCitasWA
         protected global::System.Web.UI.WebControls.Label lblTitulo;
 
         /// <summary>
-        /// Control lblIDArea.
+        /// Control lblIDEspecialidad.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblIDArea;
+        protected global::System.Web.UI.WebControls.Label lblIDEspecialidad;
 
         /// <summary>
-        /// Control txtIDArea.
+        /// Control txtIDEspecialidad.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtIDArea;
+        protected global::System.Web.UI.WebControls.TextBox txtIDEspecialidad;
 
         /// <summary>
         /// Control lblNombre.

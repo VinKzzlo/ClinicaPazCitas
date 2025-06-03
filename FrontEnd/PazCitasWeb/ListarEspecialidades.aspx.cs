@@ -36,15 +36,17 @@ namespace PazCitasWA
 
         protected void btnModificar_Click(object sender, EventArgs e)
         {
-            int idArea = Int32.Parse(((LinkButton)sender).CommandArgument);
-            especialidad espSeleccionada = especialidades.SingleOrDefault(x => x.idEspecialidad == idArea);
+            int idEspecialidad = Int32.Parse(((LinkButton)sender).CommandArgument);
+            especialidad espSeleccionada = especialidades.SingleOrDefault(x => x.idEspecialidad == idEspecialidad);
             Session["espSeleccionada"] = espSeleccionada;
             Response.Redirect("RegistrarEspecialidad.aspx?accion=modificar");
         }
 
         protected void btnEliminar_Click(object sender, EventArgs e)
         {
-
+            int idEspecialidad = Int32.Parse(((LinkButton)sender).CommandArgument);
+            wsEspecialidad.eliminarEspecialidad(idEspecialidad);
+            Response.Redirect("ListarEspecialidades.aspx");
         }
     }
 }

@@ -11,30 +11,30 @@
   <message name="listarNotaClinicaResponse">
     <part name="parameters" element="tns:listarNotaClinicaResponse" />
   </message>
-  <message name="modificarNotaClinica">
-    <part name="parameters" element="tns:modificarNotaClinica" />
-  </message>
-  <message name="modificarNotaClinicaResponse">
-    <part name="parameters" element="tns:modificarNotaClinicaResponse" />
-  </message>
   <message name="insertarNotaClinica">
     <part name="parameters" element="tns:insertarNotaClinica" />
   </message>
   <message name="insertarNotaClinicaResponse">
     <part name="parameters" element="tns:insertarNotaClinicaResponse" />
   </message>
+  <message name="modificarNotaClinica">
+    <part name="parameters" element="tns:modificarNotaClinica" />
+  </message>
+  <message name="modificarNotaClinicaResponse">
+    <part name="parameters" element="tns:modificarNotaClinicaResponse" />
+  </message>
   <portType name="NotaClinicaWS">
     <operation name="listarNotaClinica">
       <input wsam:Action="http://services.pucp.edu.pe/NotaClinicaWS/listarNotaClinicaRequest" message="tns:listarNotaClinica" />
       <output wsam:Action="http://services.pucp.edu.pe/NotaClinicaWS/listarNotaClinicaResponse" message="tns:listarNotaClinicaResponse" />
     </operation>
-    <operation name="modificarNotaClinica">
-      <input wsam:Action="http://services.pucp.edu.pe/NotaClinicaWS/modificarNotaClinicaRequest" message="tns:modificarNotaClinica" />
-      <output wsam:Action="http://services.pucp.edu.pe/NotaClinicaWS/modificarNotaClinicaResponse" message="tns:modificarNotaClinicaResponse" />
-    </operation>
     <operation name="insertarNotaClinica">
       <input wsam:Action="http://services.pucp.edu.pe/NotaClinicaWS/insertarNotaClinicaRequest" message="tns:insertarNotaClinica" />
       <output wsam:Action="http://services.pucp.edu.pe/NotaClinicaWS/insertarNotaClinicaResponse" message="tns:insertarNotaClinicaResponse" />
+    </operation>
+    <operation name="modificarNotaClinica">
+      <input wsam:Action="http://services.pucp.edu.pe/NotaClinicaWS/modificarNotaClinicaRequest" message="tns:modificarNotaClinica" />
+      <output wsam:Action="http://services.pucp.edu.pe/NotaClinicaWS/modificarNotaClinicaResponse" message="tns:modificarNotaClinicaResponse" />
     </operation>
   </portType>
   <binding name="NotaClinicaWSPortBinding" type="tns:NotaClinicaWS">
@@ -48,7 +48,7 @@
         <soap:body use="literal" />
       </output>
     </operation>
-    <operation name="modificarNotaClinica">
+    <operation name="insertarNotaClinica">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />
@@ -57,7 +57,7 @@
         <soap:body use="literal" />
       </output>
     </operation>
-    <operation name="insertarNotaClinica">
+    <operation name="modificarNotaClinica">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />

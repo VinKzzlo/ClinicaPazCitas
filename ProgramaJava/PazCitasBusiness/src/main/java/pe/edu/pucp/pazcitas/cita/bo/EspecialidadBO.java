@@ -36,5 +36,7 @@ public class EspecialidadBO {
     public ArrayList<Especialidad> listarTodos() {
         return daoEspecialidad.listarTodos();
     }
-    
+    public ArrayList<Especialidad> listarxSede(int idSede) {
+        return daoEspecialidad.listarEspxSede(idSede);
+    }
 }

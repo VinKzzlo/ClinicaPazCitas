@@ -44,4 +44,10 @@ public class MedicoWS {
         bomedico = new MedicoBO();
         return bomedico.eliminar(idmedico);
     }
+    @WebMethod(operationName = "listarMedicoXEspXSede")
+    public ArrayList<Medico> listarMedicoXEspXSede(@WebParam(name = "idSede") int idSede, 
+            @WebParam(name = "idEsp") int idEsp) {
+        bomedico = new MedicoBO();
+        return bomedico.listarxEspecialidad(idSede, idEsp);
+    }
 }

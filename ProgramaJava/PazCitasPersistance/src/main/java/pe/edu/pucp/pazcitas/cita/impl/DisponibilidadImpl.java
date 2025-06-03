@@ -12,6 +12,7 @@ import java.sql.Types;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
+import java.sql.Time;
 import pe.edu.pucp.pazcitas.cita.dao.DisponibilidadDAO;
 import pe.edu.pucp.pazcitas.cita.model.DiaSemana;
 import pe.edu.pucp.pazcitas.cita.model.Disponibilidad;
@@ -34,7 +35,7 @@ public class DisponibilidadImpl implements DisponibilidadDAO {
         Map<Integer, Object> parametrosEntrada = new HashMap<>();
         parametrosSalida.put(1, Types.INTEGER);
         parametrosEntrada.put(2, disponibilidad.getFecha());
-        parametrosEntrada.put(3, disponibilidad.getHora());
+        parametrosEntrada.put(3, new java.sql.Time(disponibilidad.getHora().getTime()));
         parametrosEntrada.put(4, disponibilidad.getTurnoMedico().getIdTurno());
         DBManager.getInstance().ejecutarProcedimiento("INSERTAR_DISPONIBILIDAD", parametrosEntrada, parametrosSalida);
         disponibilidad.setIdDisponibilidad((int) parametrosSalida.get(1));

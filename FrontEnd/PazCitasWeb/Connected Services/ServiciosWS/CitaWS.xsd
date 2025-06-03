@@ -18,8 +18,8 @@
       <xs:element minOccurs="0" name="disponibilidad" type="tns:disponibilidad" />
       <xs:element minOccurs="0" name="especialidad" type="tns:especialidad" />
       <xs:element minOccurs="0" name="estadoCita" type="tns:estadoCita" />
-      <xs:element minOccurs="0" name="fecha" type="tns:localDateTime" />
-      <xs:element minOccurs="0" name="fechaActualizacion" type="tns:localDateTime" />
+      <xs:element minOccurs="0" name="fecha" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="fechaActualizacion" type="xs:dateTime" />
       <xs:element name="idCita" type="xs:int" />
       <xs:element minOccurs="0" name="motivoConsulta" type="xs:string" />
       <xs:element minOccurs="0" name="notaClinica" type="tns:notaClinica" />
@@ -31,25 +31,19 @@
     <xs:sequence>
       <xs:element minOccurs="0" name="cita" type="tns:cita" />
       <xs:element name="disponible" type="xs:boolean" />
-      <xs:element minOccurs="0" name="fecha" type="tns:localDate" />
-      <xs:element minOccurs="0" name="hora" type="tns:localTime" />
+      <xs:element minOccurs="0" name="fecha" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="hora" type="xs:dateTime" />
       <xs:element name="idDisponibilidad" type="xs:int" />
       <xs:element minOccurs="0" name="turnoMedico" type="tns:turnoMedico" />
     </xs:sequence>
-  </xs:complexType>
-  <xs:complexType name="localDate" final="extension restriction">
-    <xs:sequence />
-  </xs:complexType>
-  <xs:complexType name="localTime" final="extension restriction">
-    <xs:sequence />
   </xs:complexType>
   <xs:complexType name="turnoMedico">
     <xs:sequence>
       <xs:element minOccurs="0" name="consultorio" type="tns:consultorio" />
       <xs:element minOccurs="0" maxOccurs="unbounded" name="detalleTurnos" nillable="true" type="tns:disponibilidad" />
       <xs:element minOccurs="0" name="dia" type="tns:diaSemana" />
-      <xs:element minOccurs="0" name="horaFin" type="tns:localTime" />
-      <xs:element minOccurs="0" name="horaInicio" type="tns:localTime" />
+      <xs:element minOccurs="0" name="horaFin" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="horaInicio" type="xs:dateTime" />
       <xs:element name="idTurno" type="xs:int" />
       <xs:element minOccurs="0" name="medico" type="tns:medico" />
     </xs:sequence>
@@ -94,7 +88,7 @@
           <xs:element name="activo" type="xs:boolean" />
           <xs:element minOccurs="0" name="asistenteMedico" type="tns:asistenteMedico" />
           <xs:element minOccurs="0" name="codigoMedico" type="xs:string" />
-          <xs:element minOccurs="0" maxOccurs="unbounded" name="especialidades" nillable="true" type="tns:especialidad" />
+          <xs:element minOccurs="0" name="especialidad" type="tns:especialidad" />
           <xs:element minOccurs="0" name="sede" type="tns:sede" />
           <xs:element minOccurs="0" maxOccurs="unbounded" name="turnosMedico" nillable="true" type="tns:turnoMedico" />
         </xs:sequence>
@@ -107,7 +101,7 @@
       <xs:element minOccurs="0" name="apellidoPaterno" type="xs:string" />
       <xs:element minOccurs="0" name="dni" type="xs:string" />
       <xs:element minOccurs="0" name="email" type="xs:string" />
-      <xs:element minOccurs="0" name="fechaNacimiento" type="tns:localDate" />
+      <xs:element minOccurs="0" name="fechaNacimiento" type="xs:dateTime" />
       <xs:element name="genero" type="xs:unsignedShort" />
       <xs:element minOccurs="0" name="hashPassword" type="xs:string" />
       <xs:element name="idUsuario" type="xs:int" />
@@ -126,9 +120,6 @@
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
-  <xs:complexType name="localDateTime" final="extension restriction">
-    <xs:sequence />
-  </xs:complexType>
   <xs:complexType name="notaClinica">
     <xs:sequence>
       <xs:element minOccurs="0" name="cita" type="tns:cita" />
@@ -144,7 +135,7 @@
   <xs:complexType name="historialMedico">
     <xs:sequence>
       <xs:element name="activo" type="xs:boolean" />
-      <xs:element minOccurs="0" name="fechaActualizacion" type="tns:localDateTime" />
+      <xs:element minOccurs="0" name="fechaActualizacion" type="xs:dateTime" />
       <xs:element name="idhistorial" type="xs:int" />
       <xs:element minOccurs="0" maxOccurs="unbounded" name="notasClinicas" nillable="true" type="tns:notaClinica" />
       <xs:element minOccurs="0" name="paciente" type="tns:paciente" />
@@ -176,7 +167,7 @@
   </xs:complexType>
   <xs:complexType name="receta">
     <xs:sequence>
-      <xs:element minOccurs="0" name="fechaPrescripcion" type="tns:localDate" />
+      <xs:element minOccurs="0" name="fechaPrescripcion" type="xs:dateTime" />
       <xs:element name="idReceta" type="xs:int" />
       <xs:element minOccurs="0" name="indicaciones" type="xs:string" />
       <xs:element minOccurs="0" maxOccurs="unbounded" name="medicamentos" nillable="true" type="tns:medicamento" />
@@ -194,7 +185,7 @@
     <xs:sequence>
       <xs:element name="activo" type="xs:boolean" />
       <xs:element name="altura" type="xs:double" />
-      <xs:element minOccurs="0" name="fechaRegistro" type="tns:localDateTime" />
+      <xs:element minOccurs="0" name="fechaRegistro" type="xs:dateTime" />
       <xs:element name="idTriaje" type="xs:int" />
       <xs:element minOccurs="0" name="notaClinica" type="tns:notaClinica" />
       <xs:element name="peso" type="xs:double" />

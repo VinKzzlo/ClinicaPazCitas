@@ -188,10 +188,10 @@ public class DBManager {
                 case String cadena -> cs.setString(key, cadena);
                 case Double decimal -> cs.setDouble(key, decimal);
                 case Boolean booleano -> cs.setBoolean(key, booleano);
-                case Date fecha -> cs.setDate(key, new java.sql.Date(fecha.getTime()));
-                case LocalDate localDate -> cs.setDate(key, java.sql.Date.valueOf(localDate));
-                case LocalTime localTime -> cs.setTime(key, java.sql.Time.valueOf(localTime));
-                case LocalDateTime localDateTime -> cs.setTimestamp(key, java.sql.Timestamp.valueOf(localDateTime));
+                case java.sql.Time hora -> cs.setTime(key, hora);
+                case java.sql.Timestamp timestamp -> cs.setTimestamp(key, timestamp);
+                case java.sql.Date fechaSQL -> cs.setDate(key, fechaSQL);
+                case java.util.Date fecha -> cs.setDate(key, new java.sql.Date(fecha.getTime())); // solo si usas Date normal
                 case byte[] archivo -> cs.setBytes(key, archivo);
                 default -> {
                 }

@@ -5,17 +5,17 @@
       <xsd:import schemaLocation="http://localhost:8080/PazCitasWeb/PacienteWS?xsd=1" namespace="http://services.pucp.edu.pe" />
     </xsd:schema>
   </types>
-  <message name="eliminarPaciente">
-    <part name="parameters" element="tns:eliminarPaciente" />
-  </message>
-  <message name="eliminarPacienteResponse">
-    <part name="parameters" element="tns:eliminarPacienteResponse" />
-  </message>
   <message name="listarPaciente">
     <part name="parameters" element="tns:listarPaciente" />
   </message>
   <message name="listarPacienteResponse">
     <part name="parameters" element="tns:listarPacienteResponse" />
+  </message>
+  <message name="eliminarPaciente">
+    <part name="parameters" element="tns:eliminarPaciente" />
+  </message>
+  <message name="eliminarPacienteResponse">
+    <part name="parameters" element="tns:eliminarPacienteResponse" />
   </message>
   <message name="insertarPaciente">
     <part name="parameters" element="tns:insertarPaciente" />
@@ -30,13 +30,13 @@
     <part name="parameters" element="tns:modificarPacienteResponse" />
   </message>
   <portType name="PacienteWS">
-    <operation name="eliminarPaciente">
-      <input wsam:Action="http://services.pucp.edu.pe/PacienteWS/eliminarPacienteRequest" message="tns:eliminarPaciente" />
-      <output wsam:Action="http://services.pucp.edu.pe/PacienteWS/eliminarPacienteResponse" message="tns:eliminarPacienteResponse" />
-    </operation>
     <operation name="listarPaciente">
       <input wsam:Action="http://services.pucp.edu.pe/PacienteWS/listarPacienteRequest" message="tns:listarPaciente" />
       <output wsam:Action="http://services.pucp.edu.pe/PacienteWS/listarPacienteResponse" message="tns:listarPacienteResponse" />
+    </operation>
+    <operation name="eliminarPaciente">
+      <input wsam:Action="http://services.pucp.edu.pe/PacienteWS/eliminarPacienteRequest" message="tns:eliminarPaciente" />
+      <output wsam:Action="http://services.pucp.edu.pe/PacienteWS/eliminarPacienteResponse" message="tns:eliminarPacienteResponse" />
     </operation>
     <operation name="insertarPaciente">
       <input wsam:Action="http://services.pucp.edu.pe/PacienteWS/insertarPacienteRequest" message="tns:insertarPaciente" />
@@ -49,7 +49,7 @@
   </portType>
   <binding name="PacienteWSPortBinding" type="tns:PacienteWS">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
-    <operation name="eliminarPaciente">
+    <operation name="listarPaciente">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />
@@ -58,7 +58,7 @@
         <soap:body use="literal" />
       </output>
     </operation>
-    <operation name="listarPaciente">
+    <operation name="eliminarPaciente">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />

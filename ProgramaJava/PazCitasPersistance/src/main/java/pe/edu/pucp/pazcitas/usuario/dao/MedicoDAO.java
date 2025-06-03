@@ -4,6 +4,7 @@
  */
 package pe.edu.pucp.pazcitas.usuario.dao;
 
+import java.util.ArrayList;
 import pe.edu.pucp.pazcitas.dao.ICrud;
 import pe.edu.pucp.pazcitas.usuario.model.Medico;
 
@@ -12,5 +13,5 @@ import pe.edu.pucp.pazcitas.usuario.model.Medico;
  * @author asant
  */
 public interface MedicoDAO extends ICrud<Medico>{
-    
+    public ArrayList<Medico> listarXEspXSede(int idEsp, int idSede);
 }
