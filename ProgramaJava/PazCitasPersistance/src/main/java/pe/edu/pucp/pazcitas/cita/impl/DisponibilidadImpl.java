@@ -103,5 +103,41 @@ public class DisponibilidadImpl implements DisponibilidadDAO {
 
         return dispos;
     }
+    
+    // Nuevo metodo añadido
+    @Override
+    public ArrayList<String> listarFechasDisponiblesPorMedico(int idMedico) {
+        ArrayList<String> fechas = null;
+        Map<Integer, Object> parametros = new HashMap<>();
+        parametros.put(1, idMedico);
+
+        ResultSet rs = DBManager.getInstance().ejecutarProcedimientoLectura(
+                "obtener_fechas_disponibles_por_medico", parametros
+        );
+
+        System.out.println("Leyendo fechas disponibles del médico con ID: " + idMedico);
+
+        try {
+            while (rs.next()) {
+                if (fechas == null) {
+                    fechas = new ArrayList<>();
+                }
+
+                // Obtener la fecha como java.sql.Date
+                java.sql.Date fecha = rs.getDate("fecha");
+
+                // Convertir a String en formato yyyy-MM-dd
+                if (fecha != null) {
+                    fechas.add(fecha.toString());
+                }
+            }
+        } catch (SQLException ex) {
+            System.out.println("Error al leer fechas: " + ex.getMessage());
+        } finally {
+            DBManager.getInstance().cerrarConexion();
+        }
+
+        return fechas;
+    }
 
 }

@@ -4,6 +4,8 @@
   <xs:element name="insertarDisponibilidadResponse" type="tns:insertarDisponibilidadResponse" />
   <xs:element name="listarDisponibilidad" type="tns:listarDisponibilidad" />
   <xs:element name="listarDisponibilidadResponse" type="tns:listarDisponibilidadResponse" />
+  <xs:element name="listarFechasDisponiblesPorMedico" type="tns:listarFechasDisponiblesPorMedico" />
+  <xs:element name="listarFechasDisponiblesPorMedicoResponse" type="tns:listarFechasDisponiblesPorMedicoResponse" />
   <xs:element name="modificarDisponibilidad" type="tns:modificarDisponibilidad" />
   <xs:element name="modificarDisponibilidadResponse" type="tns:modificarDisponibilidadResponse" />
   <xs:complexType name="insertarDisponibilidad">
@@ -148,7 +150,7 @@
           <xs:element minOccurs="0" name="direccion" type="xs:string" />
           <xs:element minOccurs="0" name="historialMedico" type="tns:historialMedico" />
           <xs:element minOccurs="0" name="seguro" type="tns:seguro" />
-          <xs:element name="telefono" type="xs:int" />
+          <xs:element minOccurs="0" name="telefono" type="xs:string" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -205,6 +207,16 @@
   <xs:complexType name="insertarDisponibilidadResponse">
     <xs:sequence>
       <xs:element name="return" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="listarFechasDisponiblesPorMedico">
+    <xs:sequence>
+      <xs:element name="idMedico" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="listarFechasDisponiblesPorMedicoResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="xs:string" />
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="listarDisponibilidad">

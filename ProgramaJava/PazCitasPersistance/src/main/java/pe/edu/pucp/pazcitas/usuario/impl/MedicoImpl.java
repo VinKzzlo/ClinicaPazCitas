@@ -33,15 +33,14 @@ public class MedicoImpl implements MedicoDAO {
 
         parametrosEntrada.put(2, medico.getNombre());
         parametrosEntrada.put(3, medico.getApellidoPaterno());
-        parametrosEntrada.put(4, medico.getApellidoPaterno());
+        parametrosEntrada.put(4, medico.getApellidoMaterno());
         parametrosEntrada.put(5, medico.getDni());
         parametrosEntrada.put(6, medico.getEmail());
         parametrosEntrada.put(7, medico.getFechaNacimiento());
         parametrosEntrada.put(8, String.valueOf(medico.getGenero()));
-        parametrosEntrada.put(9, medico.getHashPassword());
-        parametrosEntrada.put(10, medico.getCodigoMedico());
-        parametrosEntrada.put(11, medico.getSede().getIdSede());
-        parametrosEntrada.put(12, medico.getEspecialidad().getIdEspecialidad());
+        parametrosEntrada.put(9, medico.getCodigoMedico());
+        parametrosEntrada.put(10, medico.getSede().getIdSede());
+        parametrosEntrada.put(11, medico.getEspecialidad().getIdEspecialidad());
         
         DBManager.getInstance().ejecutarProcedimiento("INSERTAR_MEDICO", parametrosEntrada, parametrosSalida);
         medico.setIdUsuario((int) parametrosSalida.get(1));
@@ -65,15 +64,14 @@ public class MedicoImpl implements MedicoDAO {
 
         parametrosEntrada.put(2, medico.getNombre());
         parametrosEntrada.put(3, medico.getApellidoPaterno());
-        parametrosEntrada.put(4, medico.getApellidoPaterno());
+        parametrosEntrada.put(4, medico.getApellidoMaterno());
         parametrosEntrada.put(5, medico.getDni());
         parametrosEntrada.put(6, medico.getEmail());
         parametrosEntrada.put(7, medico.getFechaNacimiento());
-        parametrosEntrada.put(8, medico.getGenero());
-        parametrosEntrada.put(9, medico.getHashPassword());
-        parametrosEntrada.put(10, medico.getCodigoMedico());
-        parametrosEntrada.put(11, medico.getSede().getIdSede());
-        parametrosEntrada.put(12, medico.getEspecialidad().getIdEspecialidad());
+        parametrosEntrada.put(8, String.valueOf(medico.getGenero()));
+        parametrosEntrada.put(9, medico.getCodigoMedico());
+        parametrosEntrada.put(10, medico.getSede().getIdSede());
+        parametrosEntrada.put(11, medico.getEspecialidad().getIdEspecialidad());
         
         DBManager.getInstance().ejecutarProcedimiento("MODIFICAR_MEDICO", parametrosEntrada, null);
         System.out.println("Se ha realizado el modificacion del medico");

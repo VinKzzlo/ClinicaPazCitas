@@ -56,6 +56,29 @@ namespace PazCitasWA
             }
         }
 
+        protected void btnLogin_Click(object sender, EventArgs e)
+        {
+            string rol = Request.QueryString["rol"];
+            switch (rol)
+            {
+                case "paciente":
+                    Response.Redirect("HomePaciente.aspx");
+                    break;
+
+                case "medico":
+                    Response.Redirect("HomeMedico.aspx");
+                    break;
+
+                case "admin":
+                    Response.Redirect("HomeAdmin.aspx");
+                    break;
+
+                default:
+                    Response.Redirect("Home.aspx");
+                    break;
+            }
+        }
+
         //Aqui falta el boton para ingresar
 
 

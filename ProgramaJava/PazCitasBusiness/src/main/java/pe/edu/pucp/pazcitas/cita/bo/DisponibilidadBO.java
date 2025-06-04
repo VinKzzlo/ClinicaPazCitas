@@ -33,4 +33,8 @@ public class DisponibilidadBO {
         return daoDispo.listarTodos();
     }
     
+    public ArrayList<String> listarFechasDisponiblesPorMedico(int idMedico) {
+        return daoDispo.listarFechasDisponiblesPorMedico(idMedico);
+    }
+    
 }

@@ -25,15 +25,15 @@ CREATE procedure INSERTAR_MEDICO(
     in _email varchar(30),
     in _fecha_nacimiento date,
     in _genero char,
-    in _hash_password varchar(15),
     in _codigo_medico varchar(15),
-    in _fid_sede int
+    in _fid_sede int,
+    in _fid_especialidad int
 )
 BEGIN
-	INSERT INTO usuario(nombre,apellido_paterno,apellido_materno, dni, email, fecha_nacimiento, genero,hash_password) 
-    VALUES(_nombre,_apellido_paterno,_apellido_materno,_dni, _email, _fecha_nacimiento, _genero,hash_password);
+	INSERT INTO usuario(nombre,apellido_paterno,apellido_materno, dni, email, fecha_nacimiento, genero) 
+    VALUES(_nombre,_apellido_paterno,_apellido_materno,_dni, _email, _fecha_nacimiento, _genero);
     SET _id_medico = @@last_insert_id;
-    INSERT INTO medico(id_medico,codigo_medico,activo,fid_sede) VALUES(_id_medico,_codigo_medico,1,_fid_sede);
+    INSERT INTO medico(id_medico,codigo_medico,activo,fid_sede, fid_especialidad) VALUES(_id_medico,_codigo_medico,1,_fid_sede, _fid_especialidad);
 END$
 $
 select *from cita;

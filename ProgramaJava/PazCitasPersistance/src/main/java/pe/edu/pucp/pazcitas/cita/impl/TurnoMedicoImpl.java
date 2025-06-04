@@ -98,5 +98,60 @@ public class TurnoMedicoImpl implements TurnoMedicoDAO {
 
         return turnos;
     }
+    
+    //NUEVOS PROCEDMIENTOS AÑADIDOS MAX
+    @Override
+    public ArrayList<String> listarDiasAtencionPorMedico(int idMedico) {
+        ArrayList<String> dias = null;
+        Map<Integer, Object> parametros = new HashMap<>();
+        parametros.put(1, idMedico);
+
+        ResultSet rs = DBManager.getInstance().ejecutarProcedimientoLectura("listar_dias_turno_por_medico", parametros);
+
+        try {
+            while (rs.next()) {
+                if (dias == null) {
+                    dias = new ArrayList<>();
+                }
+                dias.add(rs.getString("dia")); // debe coincidir con el alias del campo en el SELECT
+            }
+        } catch (SQLException ex) {
+            System.out.println("Error al leer días de atención: " + ex.getMessage());
+        } finally {
+            DBManager.getInstance().cerrarConexion();
+        }
+
+        return dias;
+    }
+
+    @Override
+    public ArrayList<String> listarHorariosPorMedicoYDia(int idMedico, String dia) {
+        ArrayList<String> horarios = null;
+        Map<Integer, Object> parametros = new HashMap<>();
+        parametros.put(1, idMedico);
+        parametros.put(2, dia);  // ej. 'MARTES'
+
+        ResultSet rs = DBManager.getInstance().ejecutarProcedimientoLectura(
+                "listar_horarios_por_medico_y_dia", parametros
+        );
+
+        try {
+            while (rs.next()) {
+                if (horarios == null) {
+                    horarios = new ArrayList<>();
+                }
+                // Combinar hora_inicio y hora_fin en una sola cadena
+                String horario = rs.getString("hora_inicio") + " - " + rs.getString("hora_fin");
+                horarios.add(horario);
+            }
+        } catch (SQLException ex) {
+            System.out.println("Error al leer horarios: " + ex.getMessage());
+        } finally {
+            DBManager.getInstance().cerrarConexion();
+        }
+
+        return horarios;
+    }
+    
 
 }

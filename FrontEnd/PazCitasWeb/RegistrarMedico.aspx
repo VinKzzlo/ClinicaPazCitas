@@ -44,7 +44,7 @@
                 <div class="mb-3 row align-items-center">
                     <!-- Id Área -->
                     <asp:Label ID="lblIDUsuario" runat="server"
-                        Text="Id Área:" CssClass="col-form-label fw-bold col-auto pe-2" />
+                        Text="Id Médico:" CssClass="col-form-label fw-bold col-auto pe-2" />
                     <div class="col-2">
                         <asp:TextBox ID="txtIDUsuario" CssClass="form-control" Enabled="false" runat="server" />
                     </div>
@@ -111,22 +111,30 @@
                         </div>
                     </div>
                 </div>
+                <div class="mb-3 row align-items-center">
+                    <asp:Label ID="lblEmail" CssClass="col-form-label col-sm-auto pe-sm-2 fw-bold" runat="server" Text="E-mail:"></asp:Label>
+                    <div class="col-sm-6">
+                        <asp:TextBox ID="txtEmail" CssClass="form-control" runat="server"></asp:TextBox>
+                    </div>
+                </div>
                 <!-- Especialidad + Sede -->
                 <div class="mb-3 row align-items-center">
-                    <!-- Especialidad -->
-                    <asp:Label ID="lblEspecialidad" runat="server"
-                        Text="Especialidad:" CssClass="col-form-label fw-bold col-auto pe-2" />
-                    <div class="col-4 col-lg-3">
-                        <asp:DropDownList ID="ddlEspecialidad" runat="server" CssClass="form-select" />
-                    </div>
 
                     <!-- Sede -->
                     <asp:Label ID="lblSede" runat="server"
-                        Text="Sede:" CssClass="col-form-label fw-bold col-auto ps-lg-4 pe-2" />
+                        Text="Sede:" CssClass="col-form-label col-sm-auto pe-sm-2 fw-bold" />
                     <div class="col-4 col-lg-3">
-                        <asp:DropDownList ID="ddlSede" runat="server" CssClass="form-select" />
+                        <asp:DropDownList ID="ddlSede" runat="server" CssClass="form-select" AutoPostBack="true"
+                            OnSelectedIndexChanged="ddlSede_SelectedIndexChanged" />
+                    </div>
+                    <!-- Especialidad -->
+                    <asp:Label ID="lblEspecialidad" runat="server"
+                        Text="Especialidad:" CssClass="col-form-label col-sm-auto pe-sm-2 fw-bold" />
+                    <div class="col-4 col-lg-3">
+                        <asp:DropDownList ID="ddlEspecialidad" runat="server" CssClass="form-select" />
                     </div>
                 </div>
+
             </div>
             <div class="card-footer clearfix">
                 <asp:LinkButton ID="btnRegresar" runat="server" Text="<i class='fa-solid fa-rotate-left'></i> Regresar" CssClass="float-start btn btn-secondary" OnClick="btnRegresar_Click" />

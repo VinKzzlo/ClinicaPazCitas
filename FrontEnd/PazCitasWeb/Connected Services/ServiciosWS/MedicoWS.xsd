@@ -155,7 +155,7 @@
           <xs:element minOccurs="0" name="direccion" type="xs:string" />
           <xs:element minOccurs="0" name="historialMedico" type="tns:historialMedico" />
           <xs:element minOccurs="0" name="seguro" type="tns:seguro" />
-          <xs:element name="telefono" type="xs:int" />
+          <xs:element minOccurs="0" name="telefono" type="xs:string" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -219,6 +219,17 @@
       <xs:element name="return" type="xs:int" />
     </xs:sequence>
   </xs:complexType>
+  <xs:complexType name="listarMedicoXEspXSede">
+    <xs:sequence>
+      <xs:element name="idSede" type="xs:int" />
+      <xs:element name="idEsp" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="listarMedicoXEspXSedeResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:medico" />
+    </xs:sequence>
+  </xs:complexType>
   <xs:complexType name="insertarMedico">
     <xs:sequence>
       <xs:element minOccurs="0" name="medico" type="tns:medico" />
@@ -237,17 +248,6 @@
   <xs:complexType name="eliminarMedicoResponse">
     <xs:sequence>
       <xs:element name="return" type="xs:int" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:complexType name="listarMedicoXEspXSede">
-    <xs:sequence>
-      <xs:element name="idSede" type="xs:int" />
-      <xs:element name="idEsp" type="xs:int" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:complexType name="listarMedicoXEspXSedeResponse">
-    <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:medico" />
     </xs:sequence>
   </xs:complexType>
   <xs:simpleType name="estadoCita">

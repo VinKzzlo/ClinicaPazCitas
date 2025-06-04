@@ -4,6 +4,7 @@
  */
 package pe.edu.pucp.pazcitas.cita.dao;
 
+import java.util.ArrayList;
 import pe.edu.pucp.pazcitas.cita.model.TurnoMedico;
 import pe.edu.pucp.pazcitas.dao.ICrud;
 
@@ -12,5 +13,6 @@ import pe.edu.pucp.pazcitas.dao.ICrud;
  * @author asant
  */
 public interface TurnoMedicoDAO extends ICrud<TurnoMedico>{
-    
+    public ArrayList<String> listarDiasAtencionPorMedico(int idMedico);
+    public ArrayList<String> listarHorariosPorMedicoYDia(int idMedico, String dia);
 }

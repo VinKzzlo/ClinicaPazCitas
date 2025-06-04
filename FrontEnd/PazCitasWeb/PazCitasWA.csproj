@@ -362,6 +362,15 @@
     <Content Include="Connected Services\ServiciosWS\PazCitasWA.ServiciosWS.listarXSedeResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
+    <Content Include="Connected Services\ServiciosWS\PazCitasWA.ServiciosWS.listarDiasAtencionPorMedicoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServiciosWS\PazCitasWA.ServiciosWS.listarFechasDisponiblesPorMedicoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServiciosWS\PazCitasWA.ServiciosWS.listarHorariosPorMedicoYDiaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
     <None Include="Connected Services\ServiciosWS\SedeWS.wsdl" />
     <None Include="Connected Services\ServiciosWS\SedeWS.xsd">
       <SubType>Designer</SubType>
@@ -478,26 +487,43 @@
     <Content Include="Content\Fonts\css\v5-font-face.css" />
     <Content Include="Content\Fonts\css\v5-font-face.min.css" />
     <Content Include="Content\sidebars.css" />
+    <Content Include="DetalleEspecialidadPaciente.aspx" />
+    <Content Include="EmitirExamen.aspx" />
+    <Content Include="EmitirReceta.aspx" />
     <Content Include="GestionarEmpleados.aspx" />
     <Content Include="GestionarSedesConsultorios.aspx" />
+    <Content Include="HistorialesMedicos.aspx" />
     <Content Include="HomeAdmin.aspx" />
+    <Content Include="HomeMedico.aspx" />
     <Content Include="HomePaciente.aspx" />
+    <Content Include="Images\doctorGenericImage.png" />
+    <Content Include="Images\genericDoctor.png" />
     <Content Include="Images\PazCantante.PNG" />
     <Content Include="Inicio.aspx" />
     <Content Include="ListarAsistentes.aspx" />
+    <Content Include="ListarCitasPaciente.aspx" />
     <Content Include="ListarConsultorios.aspx" />
     <Content Include="ListarEspecialidades.aspx" />
+    <Content Include="ListarEspecialidadesPaciente.aspx" />
     <Content Include="ListarMedicos.aspx" />
+    <Content Include="ListarMedicosPaciente.aspx" />
     <Content Include="ListarPacientes.aspx" />
     <Content Include="ListarRecepcionistas.aspx" />
     <Content Include="ListarSedes.aspx" />
+    <Content Include="ListarSedesPaciente.aspx" />
     <Content Include="ListarSeguros.aspx" />
+    <Content Include="ListarTratamientos.aspx" />
+    <Content Include="ListarTurnos.aspx" />
     <Content Include="Login.aspx" />
+    <Content Include="RegistrarCita.aspx" />
     <Content Include="RegistrarConsultorio.aspx" />
     <Content Include="RegistrarEspecialidad.aspx" />
     <Content Include="RegistrarMedico.aspx" />
+    <Content Include="RegistrarPaciente.aspx" />
     <Content Include="RegistrarSede.aspx" />
     <Content Include="RegistrarSeguro.aspx" />
+    <Content Include="RegistrarTratamiento.aspx" />
+    <Content Include="Reportes.aspx" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
     <Content Include="Scripts\bootstrap.esm.js" />
@@ -512,6 +538,7 @@
     <Content Include="Scripts\bootstrap.bundle.js.map" />
     <Content Include="PazCitasAdmin.Master" />
     <Content Include="PazCitasPaciente.Master" />
+    <Content Include="PazCitasMedico.Master" />
     <None Include="Scripts\jquery-3.7.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.7.1.js" />
     <Content Include="Scripts\jquery-3.7.1.min.js" />
@@ -528,6 +555,27 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="DetalleEspecialidadPaciente.aspx.cs">
+      <DependentUpon>DetalleEspecialidadPaciente.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DetalleEspecialidadPaciente.aspx.designer.cs">
+      <DependentUpon>DetalleEspecialidadPaciente.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EmitirExamen.aspx.cs">
+      <DependentUpon>EmitirExamen.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EmitirExamen.aspx.designer.cs">
+      <DependentUpon>EmitirExamen.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EmitirReceta.aspx.cs">
+      <DependentUpon>EmitirReceta.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EmitirReceta.aspx.designer.cs">
+      <DependentUpon>EmitirReceta.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Estado.cs" />
     <Compile Include="GestionarEmpleados.aspx.cs">
       <DependentUpon>GestionarEmpleados.aspx</DependentUpon>
@@ -543,12 +591,26 @@
     <Compile Include="GestionarSedesConsultorios.aspx.designer.cs">
       <DependentUpon>GestionarSedesConsultorios.aspx</DependentUpon>
     </Compile>
+    <Compile Include="HistorialesMedicos.aspx.cs">
+      <DependentUpon>HistorialesMedicos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HistorialesMedicos.aspx.designer.cs">
+      <DependentUpon>HistorialesMedicos.aspx</DependentUpon>
+    </Compile>
     <Compile Include="HomeAdmin.aspx.cs">
       <DependentUpon>HomeAdmin.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="HomeAdmin.aspx.designer.cs">
       <DependentUpon>HomeAdmin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HomeMedico.aspx.cs">
+      <DependentUpon>HomeMedico.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HomeMedico.aspx.designer.cs">
+      <DependentUpon>HomeMedico.aspx</DependentUpon>
     </Compile>
     <Compile Include="HomePaciente.aspx.cs">
       <DependentUpon>HomePaciente.aspx</DependentUpon>
@@ -571,6 +633,13 @@
     <Compile Include="ListarAsistentes.aspx.designer.cs">
       <DependentUpon>ListarAsistentes.aspx</DependentUpon>
     </Compile>
+    <Compile Include="ListarCitasPaciente.aspx.cs">
+      <DependentUpon>ListarCitasPaciente.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ListarCitasPaciente.aspx.designer.cs">
+      <DependentUpon>ListarCitasPaciente.aspx</DependentUpon>
+    </Compile>
     <Compile Include="ListarConsultorios.aspx.cs">
       <DependentUpon>ListarConsultorios.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -585,12 +654,26 @@
     <Compile Include="ListarEspecialidades.aspx.designer.cs">
       <DependentUpon>ListarEspecialidades.aspx</DependentUpon>
     </Compile>
+    <Compile Include="ListarEspecialidadesPaciente.aspx.cs">
+      <DependentUpon>ListarEspecialidadesPaciente.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ListarEspecialidadesPaciente.aspx.designer.cs">
+      <DependentUpon>ListarEspecialidadesPaciente.aspx</DependentUpon>
+    </Compile>
     <Compile Include="ListarMedicos.aspx.cs">
       <DependentUpon>ListarMedicos.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="ListarMedicos.aspx.designer.cs">
       <DependentUpon>ListarMedicos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ListarMedicosPaciente.aspx.cs">
+      <DependentUpon>ListarMedicosPaciente.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ListarMedicosPaciente.aspx.designer.cs">
+      <DependentUpon>ListarMedicosPaciente.aspx</DependentUpon>
     </Compile>
     <Compile Include="ListarPacientes.aspx.cs">
       <DependentUpon>ListarPacientes.aspx</DependentUpon>
@@ -613,12 +696,33 @@
     <Compile Include="ListarSedes.aspx.designer.cs">
       <DependentUpon>ListarSedes.aspx</DependentUpon>
     </Compile>
+    <Compile Include="ListarSedesPaciente.aspx.cs">
+      <DependentUpon>ListarSedesPaciente.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ListarSedesPaciente.aspx.designer.cs">
+      <DependentUpon>ListarSedesPaciente.aspx</DependentUpon>
+    </Compile>
     <Compile Include="ListarSeguros.aspx.cs">
       <DependentUpon>ListarSeguros.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="ListarSeguros.aspx.designer.cs">
       <DependentUpon>ListarSeguros.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ListarTratamientos.aspx.cs">
+      <DependentUpon>ListarTratamientos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ListarTratamientos.aspx.designer.cs">
+      <DependentUpon>ListarTratamientos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ListarTurnos.aspx.cs">
+      <DependentUpon>ListarTurnos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ListarTurnos.aspx.designer.cs">
+      <DependentUpon>ListarTurnos.aspx</DependentUpon>
     </Compile>
     <Compile Include="Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>
@@ -634,6 +738,13 @@
     <Compile Include="PazCitasAdmin.Master.designer.cs">
       <DependentUpon>PazCitasAdmin.Master</DependentUpon>
     </Compile>
+    <Compile Include="PazCitasMedico.Master.cs">
+      <DependentUpon>PazCitasMedico.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PazCitasMedico.Master.designer.cs">
+      <DependentUpon>PazCitasMedico.Master</DependentUpon>
+    </Compile>
     <Compile Include="PazCitasPaciente.Master.cs">
       <DependentUpon>PazCitasPaciente.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -642,6 +753,13 @@
       <DependentUpon>PazCitasPaciente.Master</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RegistrarCita.aspx.cs">
+      <DependentUpon>RegistrarCita.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RegistrarCita.aspx.designer.cs">
+      <DependentUpon>RegistrarCita.aspx</DependentUpon>
+    </Compile>
     <Compile Include="RegistrarConsultorio.aspx.cs">
       <DependentUpon>RegistrarConsultorio.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -663,6 +781,13 @@
     <Compile Include="RegistrarMedico.aspx.designer.cs">
       <DependentUpon>RegistrarMedico.aspx</DependentUpon>
     </Compile>
+    <Compile Include="RegistrarPaciente.aspx.cs">
+      <DependentUpon>RegistrarPaciente.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RegistrarPaciente.aspx.designer.cs">
+      <DependentUpon>RegistrarPaciente.aspx</DependentUpon>
+    </Compile>
     <Compile Include="RegistrarSede.aspx.cs">
       <DependentUpon>RegistrarSede.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -676,6 +801,20 @@
     </Compile>
     <Compile Include="RegistrarSeguro.aspx.designer.cs">
       <DependentUpon>RegistrarSeguro.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="RegistrarTratamiento.aspx.cs">
+      <DependentUpon>RegistrarTratamiento.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RegistrarTratamiento.aspx.designer.cs">
+      <DependentUpon>RegistrarTratamiento.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes.aspx.cs">
+      <DependentUpon>Reportes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reportes.aspx.designer.cs">
+      <DependentUpon>Reportes.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

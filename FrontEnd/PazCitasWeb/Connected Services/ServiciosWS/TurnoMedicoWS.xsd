@@ -2,6 +2,10 @@
 <xs:schema xmlns:tns="http://services.pucp.edu.pe" targetNamespace="http://services.pucp.edu.pe" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   <xs:element name="insertarTurnoMedico" type="tns:insertarTurnoMedico" />
   <xs:element name="insertarTurnoMedicoResponse" type="tns:insertarTurnoMedicoResponse" />
+  <xs:element name="listarDiasAtencionPorMedico" type="tns:listarDiasAtencionPorMedico" />
+  <xs:element name="listarDiasAtencionPorMedicoResponse" type="tns:listarDiasAtencionPorMedicoResponse" />
+  <xs:element name="listarHorariosPorMedicoYDia" type="tns:listarHorariosPorMedicoYDia" />
+  <xs:element name="listarHorariosPorMedicoYDiaResponse" type="tns:listarHorariosPorMedicoYDiaResponse" />
   <xs:element name="listarTurnoMedico" type="tns:listarTurnoMedico" />
   <xs:element name="listarTurnoMedicoResponse" type="tns:listarTurnoMedicoResponse" />
   <xs:element name="modificarTurnoMedico" type="tns:modificarTurnoMedico" />
@@ -109,7 +113,7 @@
           <xs:element minOccurs="0" name="direccion" type="xs:string" />
           <xs:element minOccurs="0" name="historialMedico" type="tns:historialMedico" />
           <xs:element minOccurs="0" name="seguro" type="tns:seguro" />
-          <xs:element name="telefono" type="xs:int" />
+          <xs:element minOccurs="0" name="telefono" type="xs:string" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -223,6 +227,27 @@
   <xs:complexType name="listarTurnoMedicoResponse">
     <xs:sequence>
       <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:turnoMedico" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="listarDiasAtencionPorMedico">
+    <xs:sequence>
+      <xs:element name="idMedico" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="listarDiasAtencionPorMedicoResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="listarHorariosPorMedicoYDia">
+    <xs:sequence>
+      <xs:element name="idMedico" type="xs:int" />
+      <xs:element minOccurs="0" name="dia" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="listarHorariosPorMedicoYDiaResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="xs:string" />
     </xs:sequence>
   </xs:complexType>
   <xs:simpleType name="estadoCita">

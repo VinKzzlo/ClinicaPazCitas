@@ -153,7 +153,7 @@
           <xs:element minOccurs="0" name="direccion" type="xs:string" />
           <xs:element minOccurs="0" name="historialMedico" type="tns:historialMedico" />
           <xs:element minOccurs="0" name="seguro" type="tns:seguro" />
-          <xs:element name="telefono" type="xs:int" />
+          <xs:element minOccurs="0" name="telefono" type="xs:string" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>

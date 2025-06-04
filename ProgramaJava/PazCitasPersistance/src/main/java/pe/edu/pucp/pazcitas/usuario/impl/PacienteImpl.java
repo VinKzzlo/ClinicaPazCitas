@@ -35,15 +35,14 @@ public class PacienteImpl implements PacienteDAO{
         
         parametrosEntrada.put(2, paciente.getNombre());
         parametrosEntrada.put(3, paciente.getApellidoPaterno());
-        parametrosEntrada.put(4, paciente.getApellidoPaterno());
+        parametrosEntrada.put(4, paciente.getApellidoMaterno());
         parametrosEntrada.put(5, paciente.getDni());
         parametrosEntrada.put(6, paciente.getEmail());
         parametrosEntrada.put(7, paciente.getFechaNacimiento());
         parametrosEntrada.put(8, String.valueOf(paciente.getGenero()));
-        parametrosEntrada.put(9, paciente.getHashPassword());
-        parametrosEntrada.put(10, paciente.getDireccion());
-        parametrosEntrada.put(11, paciente.getTelefono());
-        parametrosEntrada.put(12, paciente.getSeguro().getIdSeguro());
+        parametrosEntrada.put(9, paciente.getDireccion());
+        parametrosEntrada.put(10, paciente.getTelefono());
+        parametrosEntrada.put(11, paciente.getSeguro().getIdSeguro());
 
         DBManager.getInstance().ejecutarProcedimiento("INSERTAR_PACIENTE", parametrosEntrada, parametrosSalida);
         paciente.setIdUsuario((int) parametrosSalida.get(1));
@@ -68,15 +67,14 @@ public class PacienteImpl implements PacienteDAO{
         
         parametrosEntrada.put(2, paciente.getNombre());
         parametrosEntrada.put(3, paciente.getApellidoPaterno());
-        parametrosEntrada.put(4, paciente.getApellidoPaterno());
-        parametrosEntrada.put(5, String.valueOf(paciente.getDni()));
+        parametrosEntrada.put(4, paciente.getApellidoMaterno());
+        parametrosEntrada.put(5, paciente.getDni());
         parametrosEntrada.put(6, paciente.getEmail());
         parametrosEntrada.put(7, paciente.getFechaNacimiento());
         parametrosEntrada.put(8, String.valueOf(paciente.getGenero()));
-        parametrosEntrada.put(9, paciente.getHashPassword());
-        parametrosEntrada.put(10, paciente.getDireccion());
-        parametrosEntrada.put(11, paciente.getTelefono());
-        parametrosEntrada.put(12, paciente.getSeguro().getIdSeguro());
+        parametrosEntrada.put(9, paciente.getDireccion());
+        parametrosEntrada.put(10, paciente.getTelefono());
+        parametrosEntrada.put(11, paciente.getSeguro().getIdSeguro());
 
         DBManager.getInstance().ejecutarProcedimiento("MODIFICAR_PACIENTE", parametrosEntrada, null);
         System.out.println("Se ha realizado la modificacion del paciente");
@@ -101,7 +99,7 @@ public class PacienteImpl implements PacienteDAO{
                 e.setGenero(rs.getString("genero").charAt(0));
                 e.setHashPassword(rs.getString("hash_password"));
                 e.setDireccion(rs.getString("direccion"));
-                e.setTelefono(rs.getInt("telefono"));
+                e.setTelefono(rs.getString("telefono"));
                 
                 Seguro seguro = new Seguro();
                 seguro.setIdSeguro(rs.getInt("id_seguro"));
@@ -111,7 +109,6 @@ public class PacienteImpl implements PacienteDAO{
                 seguro.setPorcentajeCobertura(rs.getDouble("porcentaje_cobertura"));
                 
                 e.setSeguro(seguro);
-                
                 
                 pacientes.add(e);
             }

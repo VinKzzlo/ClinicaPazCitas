@@ -160,7 +160,7 @@
                 </div>
 
                 <div class="d-grid">
-                    <asp:Button ID="btnLogin" runat="server" CssClass="btn btn-warning btn-login" Text="Iniciar sesión" />
+                    <asp:Button ID="btnLogin" runat="server" CssClass="btn btn-warning btn-login" Text="Iniciar sesión" OnClick="btnLogin_Click"/>
                 </div>
 
                 <div class="login-footer">

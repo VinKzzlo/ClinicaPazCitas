@@ -23,6 +23,12 @@
   <message name="modificarDisponibilidadResponse">
     <part name="parameters" element="tns:modificarDisponibilidadResponse" />
   </message>
+  <message name="listarFechasDisponiblesPorMedico">
+    <part name="parameters" element="tns:listarFechasDisponiblesPorMedico" />
+  </message>
+  <message name="listarFechasDisponiblesPorMedicoResponse">
+    <part name="parameters" element="tns:listarFechasDisponiblesPorMedicoResponse" />
+  </message>
   <portType name="DisponibilidadWS">
     <operation name="listarDisponibilidad">
       <input wsam:Action="http://services.pucp.edu.pe/DisponibilidadWS/listarDisponibilidadRequest" message="tns:listarDisponibilidad" />
@@ -35,6 +41,10 @@
     <operation name="modificarDisponibilidad">
       <input wsam:Action="http://services.pucp.edu.pe/DisponibilidadWS/modificarDisponibilidadRequest" message="tns:modificarDisponibilidad" />
       <output wsam:Action="http://services.pucp.edu.pe/DisponibilidadWS/modificarDisponibilidadResponse" message="tns:modificarDisponibilidadResponse" />
+    </operation>
+    <operation name="listarFechasDisponiblesPorMedico">
+      <input wsam:Action="http://services.pucp.edu.pe/DisponibilidadWS/listarFechasDisponiblesPorMedicoRequest" message="tns:listarFechasDisponiblesPorMedico" />
+      <output wsam:Action="http://services.pucp.edu.pe/DisponibilidadWS/listarFechasDisponiblesPorMedicoResponse" message="tns:listarFechasDisponiblesPorMedicoResponse" />
     </operation>
   </portType>
   <binding name="DisponibilidadWSPortBinding" type="tns:DisponibilidadWS">
@@ -58,6 +68,15 @@
       </output>
     </operation>
     <operation name="modificarDisponibilidad">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="listarFechasDisponiblesPorMedico">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />

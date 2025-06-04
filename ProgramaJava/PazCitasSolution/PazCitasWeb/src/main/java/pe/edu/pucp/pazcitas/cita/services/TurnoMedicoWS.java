@@ -38,4 +38,20 @@ public class TurnoMedicoWS {
         boturno = new TurnoMedicoBO();
         return boturno.modificar(turno);
     }
+    
+    //Añadido por Max
+    @WebMethod(operationName = "listarDiasAtencionPorMedico")
+    public ArrayList<String> listarDiasAtencionPorMedico(@WebParam(name = "idMedico") int idMedico) {
+        boturno = new TurnoMedicoBO();
+        return boturno.listarDiasAtencionPorMedico(idMedico);
+    }
+
+    @WebMethod(operationName = "listarHorariosPorMedicoYDia")
+    public ArrayList<String> listarHorariosPorMedicoYDia(
+            @WebParam(name = "idMedico") int idMedico,
+            @WebParam(name = "dia") String dia
+    ) {
+        boturno = new TurnoMedicoBO();
+        return boturno.listarHorariosPorMedicoYDia(idMedico, dia);
+    }
 }

@@ -5,6 +5,12 @@
       <xsd:import schemaLocation="http://localhost:8080/PazCitasWeb/CitaWS?xsd=1" namespace="http://services.pucp.edu.pe" />
     </xsd:schema>
   </types>
+  <message name="listarCita">
+    <part name="parameters" element="tns:listarCita" />
+  </message>
+  <message name="listarCitaResponse">
+    <part name="parameters" element="tns:listarCitaResponse" />
+  </message>
   <message name="eliminarCita">
     <part name="parameters" element="tns:eliminarCita" />
   </message>
@@ -23,13 +29,11 @@
   <message name="modificarCitaResponse">
     <part name="parameters" element="tns:modificarCitaResponse" />
   </message>
-  <message name="listarCita">
-    <part name="parameters" element="tns:listarCita" />
-  </message>
-  <message name="listarCitaResponse">
-    <part name="parameters" element="tns:listarCitaResponse" />
-  </message>
   <portType name="CitaWS">
+    <operation name="listarCita">
+      <input wsam:Action="http://services.pucp.edu.pe/CitaWS/listarCitaRequest" message="tns:listarCita" />
+      <output wsam:Action="http://services.pucp.edu.pe/CitaWS/listarCitaResponse" message="tns:listarCitaResponse" />
+    </operation>
     <operation name="eliminarCita">
       <input wsam:Action="http://services.pucp.edu.pe/CitaWS/eliminarCitaRequest" message="tns:eliminarCita" />
       <output wsam:Action="http://services.pucp.edu.pe/CitaWS/eliminarCitaResponse" message="tns:eliminarCitaResponse" />
@@ -42,13 +46,18 @@
       <input wsam:Action="http://services.pucp.edu.pe/CitaWS/modificarCitaRequest" message="tns:modificarCita" />
       <output wsam:Action="http://services.pucp.edu.pe/CitaWS/modificarCitaResponse" message="tns:modificarCitaResponse" />
     </operation>
-    <operation name="listarCita">
-      <input wsam:Action="http://services.pucp.edu.pe/CitaWS/listarCitaRequest" message="tns:listarCita" />
-      <output wsam:Action="http://services.pucp.edu.pe/CitaWS/listarCitaResponse" message="tns:listarCitaResponse" />
-    </operation>
   </portType>
   <binding name="CitaWSPortBinding" type="tns:CitaWS">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <operation name="listarCita">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
     <operation name="eliminarCita">
       <soap:operation soapAction="" />
       <input>
@@ -68,15 +77,6 @@
       </output>
     </operation>
     <operation name="modificarCita">
-      <soap:operation soapAction="" />
-      <input>
-        <soap:body use="literal" />
-      </input>
-      <output>
-        <soap:body use="literal" />
-      </output>
-    </operation>
-    <operation name="listarCita">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />

@@ -34,7 +34,8 @@
 
         /* ===== 2 · Barra superior =============================================== */
         .navbar-clinica {
-            background: linear-gradient(135deg,#2196f3 0%,#1976d2 100%) !important;
+            /*background: linear-gradient(135deg,#2196f3 0%,#1976d2 100%) !important;*/
+            background: linear-gradient(135deg,#FFC300 0%,#FFB000 100%) !important;
         }
 
             .navbar-clinica .container-fluid {
@@ -68,13 +69,15 @@
             }
 
                 .sidebar-clinica .nav-link:hover {
-                    background: #e3f2fd !important;
-                    color: #1976d2 !important;
+                    background: #fff3cd !important;
+                    /*color: #1976d2 !important;*/
+                    color: #FFC300 !important;
                     transform: translateX(5px);
                 }
 
                 .sidebar-clinica .nav-link.active {
-                    background: #2196f3 !important;
+                    /*background: #2196f3 !important;*/
+                    background: #FFC300 !important;
                     color: #fff !important;
                 }
 
@@ -90,7 +93,7 @@
 
         /* — logo (hover color) — ------------------------------------- */
         .clinica-brand {
-            color: #2196f3 !important;
+            color: #FFC300 !important;
             font-weight: bold;
             font-size: 1.5rem;
             display: flex;
@@ -99,7 +102,7 @@
         }
 
             .clinica-brand:hover {
-                color: #1976d2 !important;
+                color: #FFB000 !important;
             }
 
             .clinica-brand i {
@@ -177,7 +180,7 @@
     <div class="container-fluid d-flex p-0 h-100">
         <!-- Barra lateral de la clínica -->
         <div id="bdSidebar" class="d-flex flex-column flex-shrink-0 p-3 sidebar-clinica offcanvas-md offcanvas-start">
-            <a href="Home.aspx" class="clinica-brand navbar-brand">
+            <a href="HomePaciente.aspx" class="clinica-brand navbar-brand">
                 <i class="fa-solid fa-heartbeat" style="font-size: 2rem; color: #e91e63;"></i>
                 <span class="link-text">
                     <div style="font-size: 1.8rem; line-height: 1;">Pazcitas</div>
@@ -193,13 +196,13 @@
                     </a>
                 </li>
                 <li class="nav-item mb-1">
-                    <a href="RegistrarCitaPaciente.aspx" class="nav-link" data-bs-toggle="tooltip" data-bs-placement="right">
+                    <a href="RegistrarCita.aspx" class="nav-link" data-bs-toggle="tooltip" data-bs-placement="right">
                         <i class="fa-solid fa-calendar-check pe-2"></i>
                         <span class="link-text">Registrar Citas</span>
                     </a>
                 </li>
                 <li class="nav-item mb-1">
-                    <a href="ListarCitasPaciente.aspx" class="nav-link" data-bs-toggle="tooltip" data-bs-placement="right">
+                    <a href="ListarSedesPaciente.aspx" class="nav-link" data-bs-toggle="tooltip" data-bs-placement="right">
                         <i class="fa-solid fa-user-doctor pe-2"></i>
                         <span class="link-text">Ver Sedes</span>
                     </a>
@@ -255,12 +258,11 @@
                         <!-- Siempre visible -->
                         <span>Clínica Pazcitas</span>
                     </a>
-                    </a>
                     <form class="d-flex ms-auto">
                         <div class="dropdown">
                             <button class="btn btn-outline-light dropdown-toggle" id="btnUsuario" data-bs-toggle="dropdown">
-                                <i class="fas fa-user-md me-2"></i>
-                                <asp:Label ID="lblNombreCompleto" runat="server" Text="Dr. Usuario"></asp:Label>
+                                <i class="fa-solid fa-user-gear"></i>
+                                <asp:Label ID="lblNombreCompleto" runat="server" Text="Pct. Manzana"></asp:Label>
                             </button>
                             <ul class="dropdown-menu fade" aria-labelledby="btnUsuario">
                                 <li><a class="dropdown-item" href="#"><i class="fa-solid fa-user me-2"></i>Mi Perfil</a></li>

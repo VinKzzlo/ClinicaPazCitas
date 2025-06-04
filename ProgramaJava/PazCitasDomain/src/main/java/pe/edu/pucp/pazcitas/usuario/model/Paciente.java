@@ -11,7 +11,7 @@ import pe.edu.pucp.pazcitas.financiero.model.Seguro;
 
 public class Paciente extends Usuario{
     private String direccion;
-    private int telefono;
+    private String telefono;
     private boolean activo;
     private ArrayList<Cita> citas;
     private Seguro seguro;
@@ -26,14 +26,6 @@ public class Paciente extends Usuario{
 
     public void setDireccion(String direccion) {
         this.direccion = direccion;
-    }
-
-    public int getTelefono() {
-        return telefono;
-    }
-
-    public void setTelefono(int telefono) {
-        this.telefono = telefono;
     }
 
     public boolean isActivo() {
@@ -67,7 +59,14 @@ public class Paciente extends Usuario{
     public void setHistorialMedico(HistorialMedico historialMedico) {
         this.historialMedico = historialMedico;
     }
-    
+
+    public String getTelefono() {
+        return telefono;
+    }
+
+    public void setTelefono(String telefono) {
+        this.telefono = telefono;
+    }
     
 }
 

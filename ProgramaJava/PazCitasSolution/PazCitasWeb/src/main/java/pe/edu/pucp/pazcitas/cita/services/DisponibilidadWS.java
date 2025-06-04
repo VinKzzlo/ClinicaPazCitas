@@ -39,4 +39,10 @@ public class DisponibilidadWS {
         return bodisponibilidad.modificar(disponibilidad);
     }
     
+    @WebMethod(operationName = "listarFechasDisponiblesPorMedico")
+    public ArrayList<String> listarFechasDisponiblesPorMedico(@WebParam(name = "idMedico") int idMedico) {
+        DisponibilidadBO bodisponibilidad = new DisponibilidadBO();
+        return bodisponibilidad.listarFechasDisponiblesPorMedico(idMedico);
+    }
+    
 }

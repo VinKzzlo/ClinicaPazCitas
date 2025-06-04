@@ -180,7 +180,7 @@
     <div class="container-fluid d-flex p-0 h-100">
         <!-- Barra lateral de la clínica -->
         <div id="bdSidebar" class="d-flex flex-column flex-shrink-0 p-3 sidebar-clinica offcanvas-md offcanvas-start">
-            <a href="Home.aspx" class="clinica-brand navbar-brand">
+            <a href="HomeAdmin.aspx" class="clinica-brand navbar-brand">
                 <i class="fa-solid fa-heartbeat" style="font-size: 2rem; color: #e91e63;"></i>
                 <span class="link-text">
                     <div style="font-size: 1.8rem; line-height: 1;">Pazcitas</div>
@@ -226,7 +226,7 @@
                     </a>
                 </li>
                 <li class="nav-item mb-1">
-                    <a href="HistorialMedico.aspx" class="nav-link" data-bs-toggle="tooltip" data-bs-placement="right">
+                    <a href="HistorialesMedicos.aspx" class="nav-link" data-bs-toggle="tooltip" data-bs-placement="right">
                         <i class="fa-solid fa-file-medical pe-2"></i>
                         <span class="link-text">Historial Médico</span>
                     </a>

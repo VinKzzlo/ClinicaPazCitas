@@ -4,6 +4,7 @@
  */
 package pe.edu.pucp.pazcitas.cita.dao;
 
+import java.util.ArrayList;
 import pe.edu.pucp.pazcitas.cita.model.Disponibilidad;
 import pe.edu.pucp.pazcitas.dao.ICrud;
 
@@ -12,5 +13,5 @@ import pe.edu.pucp.pazcitas.dao.ICrud;
  * @author asant
  */
 public interface DisponibilidadDAO extends ICrud<Disponibilidad>{
-    
+    public ArrayList<String> listarFechasDisponiblesPorMedico(int idMedico);
 }

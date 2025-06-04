@@ -32,4 +32,14 @@ public class TurnoMedicoBO {
     public ArrayList<TurnoMedico> listarTodos() {
         return daoTurnoMedico.listarTodos();
     }
+    
+    //Añadido por Max
+    public ArrayList<String> listarDiasAtencionPorMedico(int idMedico) {
+        return daoTurnoMedico.listarDiasAtencionPorMedico(idMedico);
+    }
+
+    public ArrayList<String> listarHorariosPorMedicoYDia(int idMedico, String dia) {
+        return daoTurnoMedico.listarHorariosPorMedicoYDia(idMedico, dia);
+    }
+    
 }

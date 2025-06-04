@@ -5,11 +5,11 @@
       <xsd:import schemaLocation="http://localhost:8080/PazCitasWeb/SedeWS?xsd=1" namespace="http://services.pucp.edu.pe" />
     </xsd:schema>
   </types>
-  <message name="eliminarSede">
-    <part name="parameters" element="tns:eliminarSede" />
+  <message name="listarSede">
+    <part name="parameters" element="tns:listarSede" />
   </message>
-  <message name="eliminarSedeResponse">
-    <part name="parameters" element="tns:eliminarSedeResponse" />
+  <message name="listarSedeResponse">
+    <part name="parameters" element="tns:listarSedeResponse" />
   </message>
   <message name="insertarSede">
     <part name="parameters" element="tns:insertarSede" />
@@ -17,39 +17,39 @@
   <message name="insertarSedeResponse">
     <part name="parameters" element="tns:insertarSedeResponse" />
   </message>
+  <message name="eliminarSede">
+    <part name="parameters" element="tns:eliminarSede" />
+  </message>
+  <message name="eliminarSedeResponse">
+    <part name="parameters" element="tns:eliminarSedeResponse" />
+  </message>
   <message name="modificarSede">
     <part name="parameters" element="tns:modificarSede" />
   </message>
   <message name="modificarSedeResponse">
     <part name="parameters" element="tns:modificarSedeResponse" />
   </message>
-  <message name="listarSede">
-    <part name="parameters" element="tns:listarSede" />
-  </message>
-  <message name="listarSedeResponse">
-    <part name="parameters" element="tns:listarSedeResponse" />
-  </message>
   <portType name="SedeWS">
-    <operation name="eliminarSede">
-      <input wsam:Action="http://services.pucp.edu.pe/SedeWS/eliminarSedeRequest" message="tns:eliminarSede" />
-      <output wsam:Action="http://services.pucp.edu.pe/SedeWS/eliminarSedeResponse" message="tns:eliminarSedeResponse" />
+    <operation name="listarSede">
+      <input wsam:Action="http://services.pucp.edu.pe/SedeWS/listarSedeRequest" message="tns:listarSede" />
+      <output wsam:Action="http://services.pucp.edu.pe/SedeWS/listarSedeResponse" message="tns:listarSedeResponse" />
     </operation>
     <operation name="insertarSede">
       <input wsam:Action="http://services.pucp.edu.pe/SedeWS/insertarSedeRequest" message="tns:insertarSede" />
       <output wsam:Action="http://services.pucp.edu.pe/SedeWS/insertarSedeResponse" message="tns:insertarSedeResponse" />
     </operation>
+    <operation name="eliminarSede">
+      <input wsam:Action="http://services.pucp.edu.pe/SedeWS/eliminarSedeRequest" message="tns:eliminarSede" />
+      <output wsam:Action="http://services.pucp.edu.pe/SedeWS/eliminarSedeResponse" message="tns:eliminarSedeResponse" />
+    </operation>
     <operation name="modificarSede">
       <input wsam:Action="http://services.pucp.edu.pe/SedeWS/modificarSedeRequest" message="tns:modificarSede" />
       <output wsam:Action="http://services.pucp.edu.pe/SedeWS/modificarSedeResponse" message="tns:modificarSedeResponse" />
     </operation>
-    <operation name="listarSede">
-      <input wsam:Action="http://services.pucp.edu.pe/SedeWS/listarSedeRequest" message="tns:listarSede" />
-      <output wsam:Action="http://services.pucp.edu.pe/SedeWS/listarSedeResponse" message="tns:listarSedeResponse" />
-    </operation>
   </portType>
   <binding name="SedeWSPortBinding" type="tns:SedeWS">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
-    <operation name="eliminarSede">
+    <operation name="listarSede">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />
@@ -67,7 +67,7 @@
         <soap:body use="literal" />
       </output>
     </operation>
-    <operation name="modificarSede">
+    <operation name="eliminarSede">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />
@@ -76,7 +76,7 @@
         <soap:body use="literal" />
       </output>
     </operation>
-    <operation name="listarSede">
+    <operation name="modificarSede">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />
