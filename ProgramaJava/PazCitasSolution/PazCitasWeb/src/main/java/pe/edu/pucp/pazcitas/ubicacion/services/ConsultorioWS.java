@@ -43,4 +43,10 @@ public class ConsultorioWS {
         boconsultorio = new ConsultorioBO();
         return boconsultorio.eliminar(idconsultorio);
     }
+    
+    @WebMethod(operationName = "obtenerConsultorioPorId")
+    public Consultorio obtenerConsultorioPorId(@WebParam(name = "idConsultorio") int idConsultorio) {
+        boconsultorio = new ConsultorioBO();
+        return boconsultorio.obtenerPorId(idConsultorio);
+    }
 }

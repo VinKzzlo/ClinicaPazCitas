@@ -12,5 +12,5 @@ import pe.edu.pucp.pazcitas.ubicacion.model.Sede;
  * @author asant
  */
 public interface SedeDAO extends ICrud<Sede>{
-    
+    Sede obtenerPorId(int idSede);
 }

@@ -39,4 +39,8 @@ public class EspecialidadBO {
     public ArrayList<Especialidad> listarxSede(int idSede) {
         return daoEspecialidad.listarEspxSede(idSede);
     }
+    
+     public Especialidad obtenerPorId(int idEspecialidad){
+        return daoEspecialidad.obtenerPorId(idEspecialidad);
+    }
 }

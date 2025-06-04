@@ -5,12 +5,6 @@
       <xsd:import schemaLocation="http://localhost:8080/PazCitasWeb/DisponibilidadWS?xsd=1" namespace="http://services.pucp.edu.pe" />
     </xsd:schema>
   </types>
-  <message name="listarDisponibilidad">
-    <part name="parameters" element="tns:listarDisponibilidad" />
-  </message>
-  <message name="listarDisponibilidadResponse">
-    <part name="parameters" element="tns:listarDisponibilidadResponse" />
-  </message>
   <message name="insertarDisponibilidad">
     <part name="parameters" element="tns:insertarDisponibilidad" />
   </message>
@@ -23,6 +17,12 @@
   <message name="modificarDisponibilidadResponse">
     <part name="parameters" element="tns:modificarDisponibilidadResponse" />
   </message>
+  <message name="listarDisponibilidad">
+    <part name="parameters" element="tns:listarDisponibilidad" />
+  </message>
+  <message name="listarDisponibilidadResponse">
+    <part name="parameters" element="tns:listarDisponibilidadResponse" />
+  </message>
   <message name="listarFechasDisponiblesPorMedico">
     <part name="parameters" element="tns:listarFechasDisponiblesPorMedico" />
   </message>
@@ -30,10 +30,6 @@
     <part name="parameters" element="tns:listarFechasDisponiblesPorMedicoResponse" />
   </message>
   <portType name="DisponibilidadWS">
-    <operation name="listarDisponibilidad">
-      <input wsam:Action="http://services.pucp.edu.pe/DisponibilidadWS/listarDisponibilidadRequest" message="tns:listarDisponibilidad" />
-      <output wsam:Action="http://services.pucp.edu.pe/DisponibilidadWS/listarDisponibilidadResponse" message="tns:listarDisponibilidadResponse" />
-    </operation>
     <operation name="insertarDisponibilidad">
       <input wsam:Action="http://services.pucp.edu.pe/DisponibilidadWS/insertarDisponibilidadRequest" message="tns:insertarDisponibilidad" />
       <output wsam:Action="http://services.pucp.edu.pe/DisponibilidadWS/insertarDisponibilidadResponse" message="tns:insertarDisponibilidadResponse" />
@@ -42,6 +38,10 @@
       <input wsam:Action="http://services.pucp.edu.pe/DisponibilidadWS/modificarDisponibilidadRequest" message="tns:modificarDisponibilidad" />
       <output wsam:Action="http://services.pucp.edu.pe/DisponibilidadWS/modificarDisponibilidadResponse" message="tns:modificarDisponibilidadResponse" />
     </operation>
+    <operation name="listarDisponibilidad">
+      <input wsam:Action="http://services.pucp.edu.pe/DisponibilidadWS/listarDisponibilidadRequest" message="tns:listarDisponibilidad" />
+      <output wsam:Action="http://services.pucp.edu.pe/DisponibilidadWS/listarDisponibilidadResponse" message="tns:listarDisponibilidadResponse" />
+    </operation>
     <operation name="listarFechasDisponiblesPorMedico">
       <input wsam:Action="http://services.pucp.edu.pe/DisponibilidadWS/listarFechasDisponiblesPorMedicoRequest" message="tns:listarFechasDisponiblesPorMedico" />
       <output wsam:Action="http://services.pucp.edu.pe/DisponibilidadWS/listarFechasDisponiblesPorMedicoResponse" message="tns:listarFechasDisponiblesPorMedicoResponse" />
@@ -49,15 +49,6 @@
   </portType>
   <binding name="DisponibilidadWSPortBinding" type="tns:DisponibilidadWS">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
-    <operation name="listarDisponibilidad">
-      <soap:operation soapAction="" />
-      <input>
-        <soap:body use="literal" />
-      </input>
-      <output>
-        <soap:body use="literal" />
-      </output>
-    </operation>
     <operation name="insertarDisponibilidad">
       <soap:operation soapAction="" />
       <input>
@@ -68,6 +59,15 @@
       </output>
     </operation>
     <operation name="modificarDisponibilidad">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="listarDisponibilidad">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />

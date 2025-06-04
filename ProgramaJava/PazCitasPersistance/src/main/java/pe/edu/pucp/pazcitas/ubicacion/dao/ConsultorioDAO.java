@@ -12,5 +12,5 @@ import pe.edu.pucp.pazcitas.ubicacion.model.Consultorio;
  * @author asant
  */
 public interface ConsultorioDAO extends ICrud<Consultorio>{
-    
+    Consultorio obtenerPorId(int idConsultorio);
 }

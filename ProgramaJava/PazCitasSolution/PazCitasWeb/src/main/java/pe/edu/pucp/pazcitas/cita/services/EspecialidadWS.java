@@ -48,4 +48,11 @@ public class EspecialidadWS {
         boespecialidad = new EspecialidadBO();
         return boespecialidad.listarxSede(idSede);
     }
+    
+    @WebMethod(operationName = "obtenerEspecialidadPorId")
+    public Especialidad obtenerEspecialidadPorId(@WebParam(name = "idEspecialidad") int idEspecialidad) {
+        boespecialidad = new EspecialidadBO();
+        return boespecialidad.obtenerPorId(idEspecialidad);
+    }
+    
 }

@@ -5,12 +5,6 @@
       <xsd:import schemaLocation="http://localhost:8080/PazCitasWeb/AdministradorWS?xsd=1" namespace="http://services.pucp.edu.pe" />
     </xsd:schema>
   </types>
-  <message name="listarAdministrador">
-    <part name="parameters" element="tns:listarAdministrador" />
-  </message>
-  <message name="listarAdministradorResponse">
-    <part name="parameters" element="tns:listarAdministradorResponse" />
-  </message>
   <message name="modificarAdministrador">
     <part name="parameters" element="tns:modificarAdministrador" />
   </message>
@@ -29,11 +23,13 @@
   <message name="eliminarAdministradorResponse">
     <part name="parameters" element="tns:eliminarAdministradorResponse" />
   </message>
+  <message name="listarAdministrador">
+    <part name="parameters" element="tns:listarAdministrador" />
+  </message>
+  <message name="listarAdministradorResponse">
+    <part name="parameters" element="tns:listarAdministradorResponse" />
+  </message>
   <portType name="AdministradorWS">
-    <operation name="listarAdministrador">
-      <input wsam:Action="http://services.pucp.edu.pe/AdministradorWS/listarAdministradorRequest" message="tns:listarAdministrador" />
-      <output wsam:Action="http://services.pucp.edu.pe/AdministradorWS/listarAdministradorResponse" message="tns:listarAdministradorResponse" />
-    </operation>
     <operation name="modificarAdministrador">
       <input wsam:Action="http://services.pucp.edu.pe/AdministradorWS/modificarAdministradorRequest" message="tns:modificarAdministrador" />
       <output wsam:Action="http://services.pucp.edu.pe/AdministradorWS/modificarAdministradorResponse" message="tns:modificarAdministradorResponse" />
@@ -46,18 +42,13 @@
       <input wsam:Action="http://services.pucp.edu.pe/AdministradorWS/eliminarAdministradorRequest" message="tns:eliminarAdministrador" />
       <output wsam:Action="http://services.pucp.edu.pe/AdministradorWS/eliminarAdministradorResponse" message="tns:eliminarAdministradorResponse" />
     </operation>
+    <operation name="listarAdministrador">
+      <input wsam:Action="http://services.pucp.edu.pe/AdministradorWS/listarAdministradorRequest" message="tns:listarAdministrador" />
+      <output wsam:Action="http://services.pucp.edu.pe/AdministradorWS/listarAdministradorResponse" message="tns:listarAdministradorResponse" />
+    </operation>
   </portType>
   <binding name="AdministradorWSPortBinding" type="tns:AdministradorWS">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
-    <operation name="listarAdministrador">
-      <soap:operation soapAction="" />
-      <input>
-        <soap:body use="literal" />
-      </input>
-      <output>
-        <soap:body use="literal" />
-      </output>
-    </operation>
     <operation name="modificarAdministrador">
       <soap:operation soapAction="" />
       <input>
@@ -77,6 +68,15 @@
       </output>
     </operation>
     <operation name="eliminarAdministrador">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="listarAdministrador">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />

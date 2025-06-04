@@ -3,8 +3,8 @@
   "WorkspaceRootPath": "D:\\PUCP 2025-I\\ProyectoProgra3\\ClinicaPazCitas\\FrontEnd\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{2E4BD478-8240-4E43-BFFE-88276C463D15}|PazCitasWeb\\PazCitasWA.csproj|d:\\pucp 2025-i\\proyectoprogra3\\clinicapazcitas\\frontend\\pazcitasweb\\listarturnos.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
-      "RelativeMoniker": "D:0:0:{2E4BD478-8240-4E43-BFFE-88276C463D15}|PazCitasWeb\\PazCitasWA.csproj|solutionrelative:pazcitasweb\\listarturnos.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+      "AbsoluteMoniker": "D:0:0:{2E4BD478-8240-4E43-BFFE-88276C463D15}|PazCitasWeb\\PazCitasWA.csproj|d:\\pucp 2025-i\\proyectoprogra3\\clinicapazcitas\\frontend\\pazcitasweb\\listarturnos.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2E4BD478-8240-4E43-BFFE-88276C463D15}|PazCitasWeb\\PazCitasWA.csproj|solutionrelative:pazcitasweb\\listarturnos.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -23,14 +23,14 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "ListarTurnos.aspx",
-              "DocumentMoniker": "D:\\PUCP 2025-I\\ProyectoProgra3\\ClinicaPazCitas\\FrontEnd\\PazCitasWeb\\ListarTurnos.aspx",
-              "RelativeDocumentMoniker": "PazCitasWeb\\ListarTurnos.aspx",
-              "ToolTip": "D:\\PUCP 2025-I\\ProyectoProgra3\\ClinicaPazCitas\\FrontEnd\\PazCitasWeb\\ListarTurnos.aspx",
-              "RelativeToolTip": "PazCitasWeb\\ListarTurnos.aspx",
-              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
-              "WhenOpened": "2025-06-04T04:59:22.178Z",
+              "Title": "ListarTurnos.aspx.cs",
+              "DocumentMoniker": "D:\\PUCP 2025-I\\ProyectoProgra3\\ClinicaPazCitas\\FrontEnd\\PazCitasWeb\\ListarTurnos.aspx.cs",
+              "RelativeDocumentMoniker": "PazCitasWeb\\ListarTurnos.aspx.cs",
+              "ToolTip": "D:\\PUCP 2025-I\\ProyectoProgra3\\ClinicaPazCitas\\FrontEnd\\PazCitasWeb\\ListarTurnos.aspx.cs",
+              "RelativeToolTip": "PazCitasWeb\\ListarTurnos.aspx.cs",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAkwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-04T08:03:39.381Z",
               "EditorCaption": ""
             }
           ]

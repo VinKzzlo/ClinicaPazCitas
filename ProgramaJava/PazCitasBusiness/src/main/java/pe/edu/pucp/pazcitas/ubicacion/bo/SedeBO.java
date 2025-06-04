@@ -37,4 +37,8 @@ public class SedeBO {
         return daoSede.listarTodos();
     }
     
+    public Sede obtenerPorId(int idSede){
+        return daoSede.obtenerPorId(idSede);
+    }
+    
 }

@@ -8,6 +8,8 @@
   <xs:element name="listarConsultorioResponse" type="tns:listarConsultorioResponse" />
   <xs:element name="modificarConsultorio" type="tns:modificarConsultorio" />
   <xs:element name="modificarConsultorioResponse" type="tns:modificarConsultorioResponse" />
+  <xs:element name="obtenerConsultorioPorId" type="tns:obtenerConsultorioPorId" />
+  <xs:element name="obtenerConsultorioPorIdResponse" type="tns:obtenerConsultorioPorIdResponse" />
   <xs:complexType name="modificarConsultorio">
     <xs:sequence>
       <xs:element minOccurs="0" name="Consultorio" type="tns:consultorio" />
@@ -225,6 +227,16 @@
   <xs:complexType name="eliminarConsultorioResponse">
     <xs:sequence>
       <xs:element name="return" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="obtenerConsultorioPorId">
+    <xs:sequence>
+      <xs:element name="idConsultorio" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="obtenerConsultorioPorIdResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:consultorio" />
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="insertarConsultorio">

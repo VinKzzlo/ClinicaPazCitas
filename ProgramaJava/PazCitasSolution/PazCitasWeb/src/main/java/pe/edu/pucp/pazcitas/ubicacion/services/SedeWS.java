@@ -43,4 +43,10 @@ public class SedeWS {
         bosede = new SedeBO();
         return bosede.eliminar(idSede);
     }
+    
+    @WebMethod(operationName = "obtenerSedePorId")
+    public Sede obtenerSedePorId(@WebParam(name = "idSede")int idSede) {
+        bosede = new SedeBO();
+        return bosede.obtenerPorId(idSede);
+    }
 }

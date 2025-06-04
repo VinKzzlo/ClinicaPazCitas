@@ -35,4 +35,8 @@ public class ConsultorioBO {
     public ArrayList<Consultorio> listarTodos() {
         return daoConsultorio.listarTodos();
     }
+    
+    public Consultorio obtenerPorId(int idConsultorio){
+        return daoConsultorio.obtenerPorId(idConsultorio);
+    }
 }

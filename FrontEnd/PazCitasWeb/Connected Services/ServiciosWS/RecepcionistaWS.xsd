@@ -219,6 +219,14 @@
       <xs:element name="return" type="xs:int" />
     </xs:sequence>
   </xs:complexType>
+  <xs:complexType name="listarRecepcionista">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="listarRecepcionistaResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:recepcionista" />
+    </xs:sequence>
+  </xs:complexType>
   <xs:complexType name="modificarRecepcionista">
     <xs:sequence>
       <xs:element minOccurs="0" name="recepcionista" type="tns:recepcionista" />
@@ -227,14 +235,6 @@
   <xs:complexType name="modificarRecepcionistaResponse">
     <xs:sequence>
       <xs:element name="return" type="xs:int" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:complexType name="listarRecepcionista">
-    <xs:sequence />
-  </xs:complexType>
-  <xs:complexType name="listarRecepcionistaResponse">
-    <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:recepcionista" />
     </xs:sequence>
   </xs:complexType>
   <xs:simpleType name="diaSemana">

@@ -371,6 +371,15 @@
     <Content Include="Connected Services\ServiciosWS\PazCitasWA.ServiciosWS.listarHorariosPorMedicoYDiaResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
+    <Content Include="Connected Services\ServiciosWS\PazCitasWA.ServiciosWS.obtenerConsultorioPorIdResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServiciosWS\PazCitasWA.ServiciosWS.obtenerEspecialidadPorIdResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServiciosWS\PazCitasWA.ServiciosWS.obtenerSedePorIdResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
     <None Include="Connected Services\ServiciosWS\SedeWS.wsdl" />
     <None Include="Connected Services\ServiciosWS\SedeWS.xsd">
       <SubType>Designer</SubType>

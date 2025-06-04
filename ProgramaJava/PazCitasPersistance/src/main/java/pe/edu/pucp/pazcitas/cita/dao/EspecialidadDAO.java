@@ -14,4 +14,5 @@ import pe.edu.pucp.pazcitas.dao.ICrud;
  */
 public interface EspecialidadDAO extends ICrud<Especialidad>{
     public ArrayList<Especialidad> listarEspxSede(int idSede);
+    public Especialidad obtenerPorId(int idEspecialidad);
 }

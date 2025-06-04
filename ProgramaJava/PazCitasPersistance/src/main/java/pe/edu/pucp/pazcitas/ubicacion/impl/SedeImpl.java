@@ -81,4 +81,27 @@ public class SedeImpl implements SedeDAO {
         return sedes;
     }
 
+    @Override
+    public Sede obtenerPorId(int idSede) {
+        Sede sede = null;
+        Map<Integer, Object> parametrosEntrada = new HashMap<>();
+        parametrosEntrada.put(1, idSede);
+        rs = DBManager.getInstance().ejecutarProcedimientoLectura("OBTENER_SEDE_X_ID", parametrosEntrada);
+        System.out.println("Lectura de sede...");
+        try {
+            if (rs.next()) {
+                sede = new Sede();
+                sede.setIdSede(rs.getInt("id_sede"));
+                sede.setNombre(rs.getString("nombre"));
+                sede.setDireccion(rs.getString("direccion"));
+                sede.setActivo(rs.getBoolean("activo"));
+            }
+        } catch (SQLException ex) {
+            System.out.println("ERROR: " + ex.getMessage());
+        } finally {
+            DBManager.getInstance().cerrarConexion();
+        }
+        return sede;
+    }
+    
 }

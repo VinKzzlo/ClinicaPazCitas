@@ -11,6 +11,12 @@
   <message name="listarPagoResponse">
     <part name="parameters" element="tns:listarPagoResponse" />
   </message>
+  <message name="modificarPago">
+    <part name="parameters" element="tns:modificarPago" />
+  </message>
+  <message name="modificarPagoResponse">
+    <part name="parameters" element="tns:modificarPagoResponse" />
+  </message>
   <message name="eliminarPago">
     <part name="parameters" element="tns:eliminarPago" />
   </message>
@@ -23,16 +29,14 @@
   <message name="insertarPagoResponse">
     <part name="parameters" element="tns:insertarPagoResponse" />
   </message>
-  <message name="modificarPago">
-    <part name="parameters" element="tns:modificarPago" />
-  </message>
-  <message name="modificarPagoResponse">
-    <part name="parameters" element="tns:modificarPagoResponse" />
-  </message>
   <portType name="PagoWS">
     <operation name="listarPago">
       <input wsam:Action="http://services.pucp.edu.pe/PagoWS/listarPagoRequest" message="tns:listarPago" />
       <output wsam:Action="http://services.pucp.edu.pe/PagoWS/listarPagoResponse" message="tns:listarPagoResponse" />
+    </operation>
+    <operation name="modificarPago">
+      <input wsam:Action="http://services.pucp.edu.pe/PagoWS/modificarPagoRequest" message="tns:modificarPago" />
+      <output wsam:Action="http://services.pucp.edu.pe/PagoWS/modificarPagoResponse" message="tns:modificarPagoResponse" />
     </operation>
     <operation name="eliminarPago">
       <input wsam:Action="http://services.pucp.edu.pe/PagoWS/eliminarPagoRequest" message="tns:eliminarPago" />
@@ -41,10 +45,6 @@
     <operation name="insertarPago">
       <input wsam:Action="http://services.pucp.edu.pe/PagoWS/insertarPagoRequest" message="tns:insertarPago" />
       <output wsam:Action="http://services.pucp.edu.pe/PagoWS/insertarPagoResponse" message="tns:insertarPagoResponse" />
-    </operation>
-    <operation name="modificarPago">
-      <input wsam:Action="http://services.pucp.edu.pe/PagoWS/modificarPagoRequest" message="tns:modificarPago" />
-      <output wsam:Action="http://services.pucp.edu.pe/PagoWS/modificarPagoResponse" message="tns:modificarPagoResponse" />
     </operation>
   </portType>
   <binding name="PagoWSPortBinding" type="tns:PagoWS">
@@ -58,6 +58,15 @@
         <soap:body use="literal" />
       </output>
     </operation>
+    <operation name="modificarPago">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
     <operation name="eliminarPago">
       <soap:operation soapAction="" />
       <input>
@@ -68,15 +77,6 @@
       </output>
     </operation>
     <operation name="insertarPago">
-      <soap:operation soapAction="" />
-      <input>
-        <soap:body use="literal" />
-      </input>
-      <output>
-        <soap:body use="literal" />
-      </output>
-    </operation>
-    <operation name="modificarPago">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />

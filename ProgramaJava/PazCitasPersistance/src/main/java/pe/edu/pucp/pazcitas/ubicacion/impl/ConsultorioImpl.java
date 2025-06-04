@@ -94,4 +94,32 @@ public class ConsultorioImpl implements ConsultorioDAO {
         return consultorios;
     }
 
+    
+    @Override  
+    public Consultorio obtenerPorId(int idConsultorio) {
+        Consultorio consultorio = null;
+        Map<Integer, Object> parametrosEntrada = new HashMap<>();
+        parametrosEntrada.put(1, idConsultorio);
+        rs = DBManager.getInstance().ejecutarProcedimientoLectura("OBTENER_CONSULTORIO_X_ID", parametrosEntrada);
+        System.out.println("Lectura de consultorio...");
+        try {
+            if (rs.next()) {
+                consultorio = new Consultorio();
+                consultorio.setIdConsultorio(rs.getInt("id_consultorio"));
+                consultorio.setNombreConsultorio(rs.getString("nombre_consultorio"));
+                consultorio.setPiso(rs.getInt("piso"));
+                consultorio.setCapacidad(rs.getInt("capacidad"));
+                consultorio.setActivo(rs.getBoolean("activo"));
+
+                // Si quieres, puedes también recuperar la sede asociada con otro DAO
+                // int idSede = rs.getInt("fid_sede");
+            }
+        } catch (SQLException ex) {
+            System.out.println("ERROR: " + ex.getMessage());
+        } finally {
+            DBManager.getInstance().cerrarConexion();
+        }
+        return consultorio;
+    }
+    
 }
