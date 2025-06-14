@@ -230,22 +230,22 @@
       <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:medico" />
     </xs:sequence>
   </xs:complexType>
-  <xs:complexType name="insertarMedico">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="medico" type="tns:medico" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:complexType name="insertarMedicoResponse">
-    <xs:sequence>
-      <xs:element name="return" type="xs:int" />
-    </xs:sequence>
-  </xs:complexType>
   <xs:complexType name="eliminarMedico">
     <xs:sequence>
       <xs:element name="idmedico" type="xs:int" />
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="eliminarMedicoResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="insertarMedico">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="medico" type="tns:medico" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="insertarMedicoResponse">
     <xs:sequence>
       <xs:element name="return" type="xs:int" />
     </xs:sequence>

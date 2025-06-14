@@ -3,8 +3,16 @@
   "WorkspaceRootPath": "D:\\PUCP 2025-I\\ProyectoProgra3\\ClinicaPazCitas\\FrontEnd\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{2E4BD478-8240-4E43-BFFE-88276C463D15}|PazCitasWeb\\PazCitasWA.csproj|d:\\pucp 2025-i\\proyectoprogra3\\clinicapazcitas\\frontend\\pazcitasweb\\listarturnos.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2E4BD478-8240-4E43-BFFE-88276C463D15}|PazCitasWeb\\PazCitasWA.csproj|solutionrelative:pazcitasweb\\listarturnos.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{2E4BD478-8240-4E43-BFFE-88276C463D15}|PazCitasWeb\\PazCitasWA.csproj|d:\\pucp 2025-i\\proyectoprogra3\\clinicapazcitas\\frontend\\pazcitasweb\\emitirreceta.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{2E4BD478-8240-4E43-BFFE-88276C463D15}|PazCitasWeb\\PazCitasWA.csproj|solutionrelative:pazcitasweb\\emitirreceta.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2E4BD478-8240-4E43-BFFE-88276C463D15}|PazCitasWeb\\PazCitasWA.csproj|d:\\pucp 2025-i\\proyectoprogra3\\clinicapazcitas\\frontend\\pazcitasweb\\estado.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2E4BD478-8240-4E43-BFFE-88276C463D15}|PazCitasWeb\\PazCitasWA.csproj|solutionrelative:pazcitasweb\\estado.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2E4BD478-8240-4E43-BFFE-88276C463D15}|PazCitasWeb\\PazCitasWA.csproj|d:\\pucp 2025-i\\proyectoprogra3\\clinicapazcitas\\frontend\\pazcitasweb\\emitirexamen.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{2E4BD478-8240-4E43-BFFE-88276C463D15}|PazCitasWeb\\PazCitasWA.csproj|solutionrelative:pazcitasweb\\emitirexamen.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
     }
   ],
   "DocumentGroupContainers": [
@@ -14,23 +22,49 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 0,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "EmitirReceta.aspx",
+              "DocumentMoniker": "D:\\PUCP 2025-I\\ProyectoProgra3\\ClinicaPazCitas\\FrontEnd\\PazCitasWeb\\EmitirReceta.aspx",
+              "RelativeDocumentMoniker": "PazCitasWeb\\EmitirReceta.aspx",
+              "ToolTip": "D:\\PUCP 2025-I\\ProyectoProgra3\\ClinicaPazCitas\\FrontEnd\\PazCitasWeb\\EmitirReceta.aspx",
+              "RelativeToolTip": "PazCitasWeb\\EmitirReceta.aspx",
+              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
+              "WhenOpened": "2025-06-11T05:17:07.124Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "ListarTurnos.aspx.cs",
-              "DocumentMoniker": "D:\\PUCP 2025-I\\ProyectoProgra3\\ClinicaPazCitas\\FrontEnd\\PazCitasWeb\\ListarTurnos.aspx.cs",
-              "RelativeDocumentMoniker": "PazCitasWeb\\ListarTurnos.aspx.cs",
-              "ToolTip": "D:\\PUCP 2025-I\\ProyectoProgra3\\ClinicaPazCitas\\FrontEnd\\PazCitasWeb\\ListarTurnos.aspx.cs",
-              "RelativeToolTip": "PazCitasWeb\\ListarTurnos.aspx.cs",
-              "ViewState": "AgIAAAsAAAAAAAAAAAAkwAAAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 1,
+              "Title": "Estado.cs",
+              "DocumentMoniker": "D:\\PUCP 2025-I\\ProyectoProgra3\\ClinicaPazCitas\\FrontEnd\\PazCitasWeb\\Estado.cs",
+              "RelativeDocumentMoniker": "PazCitasWeb\\Estado.cs",
+              "ToolTip": "D:\\PUCP 2025-I\\ProyectoProgra3\\ClinicaPazCitas\\FrontEnd\\PazCitasWeb\\Estado.cs",
+              "RelativeToolTip": "PazCitasWeb\\Estado.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-04T08:03:39.381Z",
+              "WhenOpened": "2025-06-11T05:17:05.688Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "EmitirExamen.aspx",
+              "DocumentMoniker": "D:\\PUCP 2025-I\\ProyectoProgra3\\ClinicaPazCitas\\FrontEnd\\PazCitasWeb\\EmitirExamen.aspx",
+              "RelativeDocumentMoniker": "PazCitasWeb\\EmitirExamen.aspx",
+              "ToolTip": "D:\\PUCP 2025-I\\ProyectoProgra3\\ClinicaPazCitas\\FrontEnd\\PazCitasWeb\\EmitirExamen.aspx",
+              "RelativeToolTip": "PazCitasWeb\\EmitirExamen.aspx",
+              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
+              "WhenOpened": "2025-06-11T05:16:53.883Z",
               "EditorCaption": ""
             }
           ]

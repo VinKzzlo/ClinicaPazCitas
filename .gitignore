@@ -29,3 +29,10 @@ replay_pid*
 /ProgramaJava/PazCitasPersistance/target/
 /ProgramaJava/PazCitasMain/target/
 /ProgramaJava/PazCitasBusiness/target/
+/PazCitasDomain/target/
+/BackEnd/PazCitasDBManager/target/
+/BackEnd/PazCitasPersistance/target/
+/BackEnd/PazCitasBusiness/target/
+/BackEnd/PazCitasWeb/target/
+/BackEnd/PazCitasMain/target/
+/BackEnd/PazCitasSolution/PazCitasWeb/target/

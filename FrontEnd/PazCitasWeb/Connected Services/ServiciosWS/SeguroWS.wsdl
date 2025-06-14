@@ -5,6 +5,12 @@
       <xsd:import schemaLocation="http://localhost:8080/PazCitasWeb/SeguroWS?xsd=1" namespace="http://services.pucp.edu.pe" />
     </xsd:schema>
   </types>
+  <message name="listarSeguro">
+    <part name="parameters" element="tns:listarSeguro" />
+  </message>
+  <message name="listarSeguroResponse">
+    <part name="parameters" element="tns:listarSeguroResponse" />
+  </message>
   <message name="modificarSeguro">
     <part name="parameters" element="tns:modificarSeguro" />
   </message>
@@ -23,13 +29,11 @@
   <message name="eliminarSeguroResponse">
     <part name="parameters" element="tns:eliminarSeguroResponse" />
   </message>
-  <message name="listarSeguro">
-    <part name="parameters" element="tns:listarSeguro" />
-  </message>
-  <message name="listarSeguroResponse">
-    <part name="parameters" element="tns:listarSeguroResponse" />
-  </message>
   <portType name="SeguroWS">
+    <operation name="listarSeguro">
+      <input wsam:Action="http://services.pucp.edu.pe/SeguroWS/listarSeguroRequest" message="tns:listarSeguro" />
+      <output wsam:Action="http://services.pucp.edu.pe/SeguroWS/listarSeguroResponse" message="tns:listarSeguroResponse" />
+    </operation>
     <operation name="modificarSeguro">
       <input wsam:Action="http://services.pucp.edu.pe/SeguroWS/modificarSeguroRequest" message="tns:modificarSeguro" />
       <output wsam:Action="http://services.pucp.edu.pe/SeguroWS/modificarSeguroResponse" message="tns:modificarSeguroResponse" />
@@ -42,13 +46,18 @@
       <input wsam:Action="http://services.pucp.edu.pe/SeguroWS/eliminarSeguroRequest" message="tns:eliminarSeguro" />
       <output wsam:Action="http://services.pucp.edu.pe/SeguroWS/eliminarSeguroResponse" message="tns:eliminarSeguroResponse" />
     </operation>
-    <operation name="listarSeguro">
-      <input wsam:Action="http://services.pucp.edu.pe/SeguroWS/listarSeguroRequest" message="tns:listarSeguro" />
-      <output wsam:Action="http://services.pucp.edu.pe/SeguroWS/listarSeguroResponse" message="tns:listarSeguroResponse" />
-    </operation>
   </portType>
   <binding name="SeguroWSPortBinding" type="tns:SeguroWS">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <operation name="listarSeguro">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
     <operation name="modificarSeguro">
       <soap:operation soapAction="" />
       <input>
@@ -68,15 +77,6 @@
       </output>
     </operation>
     <operation name="eliminarSeguro">
-      <soap:operation soapAction="" />
-      <input>
-        <soap:body use="literal" />
-      </input>
-      <output>
-        <soap:body use="literal" />
-      </output>
-    </operation>
-    <operation name="listarSeguro">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />

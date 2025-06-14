@@ -8,9 +8,12 @@
   <xs:element name="listarSeguroResponse" type="tns:listarSeguroResponse" />
   <xs:element name="modificarSeguro" type="tns:modificarSeguro" />
   <xs:element name="modificarSeguroResponse" type="tns:modificarSeguroResponse" />
-  <xs:complexType name="modificarSeguro">
+  <xs:complexType name="listarSeguro">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="listarSeguroResponse">
     <xs:sequence>
-      <xs:element minOccurs="0" name="seguro" type="tns:seguro" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:seguro" />
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="seguro">
@@ -23,17 +26,14 @@
       <xs:element minOccurs="0" name="vigencia" type="xs:dateTime" />
     </xs:sequence>
   </xs:complexType>
+  <xs:complexType name="modificarSeguro">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="seguro" type="tns:seguro" />
+    </xs:sequence>
+  </xs:complexType>
   <xs:complexType name="modificarSeguroResponse">
     <xs:sequence>
       <xs:element name="return" type="xs:int" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:complexType name="listarSeguro">
-    <xs:sequence />
-  </xs:complexType>
-  <xs:complexType name="listarSeguroResponse">
-    <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:seguro" />
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="insertarSeguro">

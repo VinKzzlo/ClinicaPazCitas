@@ -211,6 +211,14 @@
       <xs:element name="return" type="xs:int" />
     </xs:sequence>
   </xs:complexType>
+  <xs:complexType name="listarTurnoMedico">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="listarTurnoMedicoResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:turnoMedico" />
+    </xs:sequence>
+  </xs:complexType>
   <xs:complexType name="modificarTurnoMedico">
     <xs:sequence>
       <xs:element minOccurs="0" name="disponibilidad" type="tns:turnoMedico" />
@@ -219,14 +227,6 @@
   <xs:complexType name="modificarTurnoMedicoResponse">
     <xs:sequence>
       <xs:element name="return" type="xs:int" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:complexType name="listarTurnoMedico">
-    <xs:sequence />
-  </xs:complexType>
-  <xs:complexType name="listarTurnoMedicoResponse">
-    <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:turnoMedico" />
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="listarDiasAtencionPorMedico">

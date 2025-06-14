@@ -11,11 +11,11 @@
   <message name="listarMedicoXEspXSedeResponse">
     <part name="parameters" element="tns:listarMedicoXEspXSedeResponse" />
   </message>
-  <message name="insertarMedico">
-    <part name="parameters" element="tns:insertarMedico" />
+  <message name="eliminarMedico">
+    <part name="parameters" element="tns:eliminarMedico" />
   </message>
-  <message name="insertarMedicoResponse">
-    <part name="parameters" element="tns:insertarMedicoResponse" />
+  <message name="eliminarMedicoResponse">
+    <part name="parameters" element="tns:eliminarMedicoResponse" />
   </message>
   <message name="modificarMedico">
     <part name="parameters" element="tns:modificarMedico" />
@@ -29,20 +29,20 @@
   <message name="listarMedicoResponse">
     <part name="parameters" element="tns:listarMedicoResponse" />
   </message>
-  <message name="eliminarMedico">
-    <part name="parameters" element="tns:eliminarMedico" />
+  <message name="insertarMedico">
+    <part name="parameters" element="tns:insertarMedico" />
   </message>
-  <message name="eliminarMedicoResponse">
-    <part name="parameters" element="tns:eliminarMedicoResponse" />
+  <message name="insertarMedicoResponse">
+    <part name="parameters" element="tns:insertarMedicoResponse" />
   </message>
   <portType name="MedicoWS">
     <operation name="listarMedicoXEspXSede">
       <input wsam:Action="http://services.pucp.edu.pe/MedicoWS/listarMedicoXEspXSedeRequest" message="tns:listarMedicoXEspXSede" />
       <output wsam:Action="http://services.pucp.edu.pe/MedicoWS/listarMedicoXEspXSedeResponse" message="tns:listarMedicoXEspXSedeResponse" />
     </operation>
-    <operation name="insertarMedico">
-      <input wsam:Action="http://services.pucp.edu.pe/MedicoWS/insertarMedicoRequest" message="tns:insertarMedico" />
-      <output wsam:Action="http://services.pucp.edu.pe/MedicoWS/insertarMedicoResponse" message="tns:insertarMedicoResponse" />
+    <operation name="eliminarMedico">
+      <input wsam:Action="http://services.pucp.edu.pe/MedicoWS/eliminarMedicoRequest" message="tns:eliminarMedico" />
+      <output wsam:Action="http://services.pucp.edu.pe/MedicoWS/eliminarMedicoResponse" message="tns:eliminarMedicoResponse" />
     </operation>
     <operation name="modificarMedico">
       <input wsam:Action="http://services.pucp.edu.pe/MedicoWS/modificarMedicoRequest" message="tns:modificarMedico" />
@@ -52,9 +52,9 @@
       <input wsam:Action="http://services.pucp.edu.pe/MedicoWS/listarMedicoRequest" message="tns:listarMedico" />
       <output wsam:Action="http://services.pucp.edu.pe/MedicoWS/listarMedicoResponse" message="tns:listarMedicoResponse" />
     </operation>
-    <operation name="eliminarMedico">
-      <input wsam:Action="http://services.pucp.edu.pe/MedicoWS/eliminarMedicoRequest" message="tns:eliminarMedico" />
-      <output wsam:Action="http://services.pucp.edu.pe/MedicoWS/eliminarMedicoResponse" message="tns:eliminarMedicoResponse" />
+    <operation name="insertarMedico">
+      <input wsam:Action="http://services.pucp.edu.pe/MedicoWS/insertarMedicoRequest" message="tns:insertarMedico" />
+      <output wsam:Action="http://services.pucp.edu.pe/MedicoWS/insertarMedicoResponse" message="tns:insertarMedicoResponse" />
     </operation>
   </portType>
   <binding name="MedicoWSPortBinding" type="tns:MedicoWS">
@@ -68,7 +68,7 @@
         <soap:body use="literal" />
       </output>
     </operation>
-    <operation name="insertarMedico">
+    <operation name="eliminarMedico">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />
@@ -95,7 +95,7 @@
         <soap:body use="literal" />
       </output>
     </operation>
-    <operation name="eliminarMedico">
+    <operation name="insertarMedico">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />

@@ -5,17 +5,17 @@
       <xsd:import schemaLocation="http://localhost:8080/PazCitasWeb/AsistenteWS?xsd=1" namespace="http://services.pucp.edu.pe" />
     </xsd:schema>
   </types>
+  <message name="eliminarAsistente">
+    <part name="parameters" element="tns:eliminarAsistente" />
+  </message>
+  <message name="eliminarAsistenteResponse">
+    <part name="parameters" element="tns:eliminarAsistenteResponse" />
+  </message>
   <message name="listarAsistente">
     <part name="parameters" element="tns:listarAsistente" />
   </message>
   <message name="listarAsistenteResponse">
     <part name="parameters" element="tns:listarAsistenteResponse" />
-  </message>
-  <message name="modificarAsistente">
-    <part name="parameters" element="tns:modificarAsistente" />
-  </message>
-  <message name="modificarAsistenteResponse">
-    <part name="parameters" element="tns:modificarAsistenteResponse" />
   </message>
   <message name="insertarAsistente">
     <part name="parameters" element="tns:insertarAsistente" />
@@ -23,33 +23,33 @@
   <message name="insertarAsistenteResponse">
     <part name="parameters" element="tns:insertarAsistenteResponse" />
   </message>
-  <message name="eliminarAsistente">
-    <part name="parameters" element="tns:eliminarAsistente" />
+  <message name="modificarAsistente">
+    <part name="parameters" element="tns:modificarAsistente" />
   </message>
-  <message name="eliminarAsistenteResponse">
-    <part name="parameters" element="tns:eliminarAsistenteResponse" />
+  <message name="modificarAsistenteResponse">
+    <part name="parameters" element="tns:modificarAsistenteResponse" />
   </message>
   <portType name="AsistenteWS">
+    <operation name="eliminarAsistente">
+      <input wsam:Action="http://services.pucp.edu.pe/AsistenteWS/eliminarAsistenteRequest" message="tns:eliminarAsistente" />
+      <output wsam:Action="http://services.pucp.edu.pe/AsistenteWS/eliminarAsistenteResponse" message="tns:eliminarAsistenteResponse" />
+    </operation>
     <operation name="listarAsistente">
       <input wsam:Action="http://services.pucp.edu.pe/AsistenteWS/listarAsistenteRequest" message="tns:listarAsistente" />
       <output wsam:Action="http://services.pucp.edu.pe/AsistenteWS/listarAsistenteResponse" message="tns:listarAsistenteResponse" />
-    </operation>
-    <operation name="modificarAsistente">
-      <input wsam:Action="http://services.pucp.edu.pe/AsistenteWS/modificarAsistenteRequest" message="tns:modificarAsistente" />
-      <output wsam:Action="http://services.pucp.edu.pe/AsistenteWS/modificarAsistenteResponse" message="tns:modificarAsistenteResponse" />
     </operation>
     <operation name="insertarAsistente">
       <input wsam:Action="http://services.pucp.edu.pe/AsistenteWS/insertarAsistenteRequest" message="tns:insertarAsistente" />
       <output wsam:Action="http://services.pucp.edu.pe/AsistenteWS/insertarAsistenteResponse" message="tns:insertarAsistenteResponse" />
     </operation>
-    <operation name="eliminarAsistente">
-      <input wsam:Action="http://services.pucp.edu.pe/AsistenteWS/eliminarAsistenteRequest" message="tns:eliminarAsistente" />
-      <output wsam:Action="http://services.pucp.edu.pe/AsistenteWS/eliminarAsistenteResponse" message="tns:eliminarAsistenteResponse" />
+    <operation name="modificarAsistente">
+      <input wsam:Action="http://services.pucp.edu.pe/AsistenteWS/modificarAsistenteRequest" message="tns:modificarAsistente" />
+      <output wsam:Action="http://services.pucp.edu.pe/AsistenteWS/modificarAsistenteResponse" message="tns:modificarAsistenteResponse" />
     </operation>
   </portType>
   <binding name="AsistenteWSPortBinding" type="tns:AsistenteWS">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
-    <operation name="listarAsistente">
+    <operation name="eliminarAsistente">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />
@@ -58,7 +58,7 @@
         <soap:body use="literal" />
       </output>
     </operation>
-    <operation name="modificarAsistente">
+    <operation name="listarAsistente">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />
@@ -76,7 +76,7 @@
         <soap:body use="literal" />
       </output>
     </operation>
-    <operation name="eliminarAsistente">
+    <operation name="modificarAsistente">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />
