@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://services.pucp.edu.pe" targetNamespace="http://services.pucp.edu.pe" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="insertarCuenta" type="tns:insertarCuenta" />
+  <xs:element name="insertarCuentaResponse" type="tns:insertarCuentaResponse" />
+  <xs:element name="verificarCuentaAdministrador" type="tns:verificarCuentaAdministrador" />
+  <xs:element name="verificarCuentaAdministradorResponse" type="tns:verificarCuentaAdministradorResponse" />
+  <xs:element name="verificarCuentaMedico" type="tns:verificarCuentaMedico" />
+  <xs:element name="verificarCuentaMedicoResponse" type="tns:verificarCuentaMedicoResponse" />
+  <xs:element name="verificarCuentaPaciente" type="tns:verificarCuentaPaciente" />
+  <xs:element name="verificarCuentaPacienteResponse" type="tns:verificarCuentaPacienteResponse" />
+  <xs:complexType name="verificarCuentaAdministrador">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="username" type="xs:string" />
+      <xs:element minOccurs="0" name="contra" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="verificarCuentaAdministradorResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="verificarCuentaMedico">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="username" type="xs:string" />
+      <xs:element minOccurs="0" name="contra" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="verificarCuentaMedicoResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="insertarCuenta">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="cuenta" type="tns:cuentaUsuario" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="cuentaUsuario">
+    <xs:sequence>
+      <xs:element name="activo" type="xs:boolean" />
+      <xs:element name="idCuentaUsuario" type="xs:int" />
+      <xs:element minOccurs="0" name="password" type="xs:string" />
+      <xs:element minOccurs="0" name="rol" type="tns:rol" />
+      <xs:element minOccurs="0" name="username" type="xs:string" />
+      <xs:element minOccurs="0" name="usuario" type="tns:usuario" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="usuario">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="apellidoMaterno" type="xs:string" />
+      <xs:element minOccurs="0" name="apellidoPaterno" type="xs:string" />
+      <xs:element minOccurs="0" name="dni" type="xs:string" />
+      <xs:element minOccurs="0" name="email" type="xs:string" />
+      <xs:element minOccurs="0" name="fechaNacimiento" type="xs:dateTime" />
+      <xs:element name="genero" type="xs:unsignedShort" />
+      <xs:element name="idUsuario" type="xs:int" />
+      <xs:element minOccurs="0" name="nombre" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="insertarCuentaResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="verificarCuentaPaciente">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="username" type="xs:string" />
+      <xs:element minOccurs="0" name="contra" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="verificarCuentaPacienteResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="rol">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="PACIENTE" />
+      <xs:enumeration value="MÉDICO" />
+      <xs:enumeration value="ADMINISTRADOR" />
+    </xs:restriction>
+  </xs:simpleType>
+</xs:schema>

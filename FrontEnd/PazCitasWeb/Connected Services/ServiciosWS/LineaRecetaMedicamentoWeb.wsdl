@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsp="http://www.w3.org/ns/ws-policy" xmlns:wsp1_2="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://services.pucp.edu.pe" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" name="LineaRecetaMedicamentoWeb" targetNamespace="http://services.pucp.edu.pe" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types>
+    <xsd:schema>
+      <xsd:import schemaLocation="http://localhost:8080/PazCitasWeb/LineaRecetaMedicamentoWeb?xsd=1" namespace="http://services.pucp.edu.pe" />
+    </xsd:schema>
+  </types>
+  <message name="eliminarLineaReceta">
+    <part name="parameters" element="tns:eliminarLineaReceta" />
+  </message>
+  <message name="eliminarLineaRecetaResponse">
+    <part name="parameters" element="tns:eliminarLineaRecetaResponse" />
+  </message>
+  <message name="insertarLineaReceta">
+    <part name="parameters" element="tns:insertarLineaReceta" />
+  </message>
+  <message name="insertarLineaRecetaResponse">
+    <part name="parameters" element="tns:insertarLineaRecetaResponse" />
+  </message>
+  <portType name="LineaRecetaMedicamentoWeb">
+    <operation name="eliminarLineaReceta">
+      <input wsam:Action="http://services.pucp.edu.pe/LineaRecetaMedicamentoWeb/eliminarLineaRecetaRequest" message="tns:eliminarLineaReceta" />
+      <output wsam:Action="http://services.pucp.edu.pe/LineaRecetaMedicamentoWeb/eliminarLineaRecetaResponse" message="tns:eliminarLineaRecetaResponse" />
+    </operation>
+    <operation name="insertarLineaReceta">
+      <input wsam:Action="http://services.pucp.edu.pe/LineaRecetaMedicamentoWeb/insertarLineaRecetaRequest" message="tns:insertarLineaReceta" />
+      <output wsam:Action="http://services.pucp.edu.pe/LineaRecetaMedicamentoWeb/insertarLineaRecetaResponse" message="tns:insertarLineaRecetaResponse" />
+    </operation>
+  </portType>
+  <binding name="LineaRecetaMedicamentoWebPortBinding" type="tns:LineaRecetaMedicamentoWeb">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <operation name="eliminarLineaReceta">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="insertarLineaReceta">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+  </binding>
+  <service name="LineaRecetaMedicamentoWeb">
+    <port name="LineaRecetaMedicamentoWebPort" binding="tns:LineaRecetaMedicamentoWebPortBinding">
+      <soap:address location="http://localhost:8080/PazCitasWeb/LineaRecetaMedicamentoWeb" />
+    </port>
+  </service>
+</definitions>

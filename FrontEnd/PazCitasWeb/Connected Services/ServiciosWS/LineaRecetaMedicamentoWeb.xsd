@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://services.pucp.edu.pe" targetNamespace="http://services.pucp.edu.pe" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="eliminarLineaReceta" type="tns:eliminarLineaReceta" />
+  <xs:element name="eliminarLineaRecetaResponse" type="tns:eliminarLineaRecetaResponse" />
+  <xs:element name="insertarLineaReceta" type="tns:insertarLineaReceta" />
+  <xs:element name="insertarLineaRecetaResponse" type="tns:insertarLineaRecetaResponse" />
+  <xs:complexType name="eliminarLineaReceta">
+    <xs:sequence>
+      <xs:element name="idLinea" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="eliminarLineaRecetaResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="insertarLineaReceta">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="linea" type="tns:lineaRecetaMedicamento" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="lineaRecetaMedicamento">
+    <xs:sequence>
+      <xs:element name="activo" type="xs:boolean" />
+      <xs:element name="cantidad" type="xs:int" />
+      <xs:element name="idLineaRecetaMedicamento" type="xs:int" />
+      <xs:element minOccurs="0" name="medicamento" type="tns:medicamento" />
+      <xs:element minOccurs="0" name="receta" type="tns:receta" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="medicamento">
+    <xs:sequence>
+      <xs:element name="activo" type="xs:boolean" />
+      <xs:element name="idMedicamento" type="xs:int" />
+      <xs:element minOccurs="0" name="nombre" type="xs:string" />
+      <xs:element minOccurs="0" name="presentacion" type="xs:string" />
+      <xs:element name="stock" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="receta">
+    <xs:sequence>
+      <xs:element name="activo" type="xs:boolean" />
+      <xs:element minOccurs="0" name="fechaPrescripcion" type="xs:dateTime" />
+      <xs:element name="idReceta" type="xs:int" />
+      <xs:element minOccurs="0" name="indicaciones" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="lineasReceta" nillable="true" type="tns:lineaRecetaMedicamento" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="insertarLineaRecetaResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

@@ -66,10 +66,7 @@
     <None Include="Connected Services\ServiciosWS\AdministradorWS.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Connected Services\ServiciosWS\AsistenteWS.wsdl" />
-    <None Include="Connected Services\ServiciosWS\AsistenteWS.xsd">
-      <SubType>Designer</SubType>
-    </None>
+    <None Include="Connected Services\ServiciosWS\CitaWS.wsdl" />
     <None Include="Connected Services\ServiciosWS\CitaWS.xsd">
       <SubType>Designer</SubType>
     </None>
@@ -77,8 +74,8 @@
     <None Include="Connected Services\ServiciosWS\ConsultorioWS.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Connected Services\ServiciosWS\DisponibilidadWS.wsdl" />
-    <None Include="Connected Services\ServiciosWS\DisponibilidadWS.xsd">
+    <None Include="Connected Services\ServiciosWS\CuentaUsuarioWS.wsdl" />
+    <None Include="Connected Services\ServiciosWS\CuentaUsuarioWS.xsd">
       <SubType>Designer</SubType>
     </None>
     <None Include="Connected Services\ServiciosWS\EspecialidadWS.wsdl" />
@@ -86,6 +83,11 @@
       <SubType>Designer</SubType>
     </None>
     <None Include="Connected Services\ServiciosWS\HistorialMedicoWS.wsdl" />
+    <None Include="Connected Services\ServiciosWS\HorarioTrabajoWS.wsdl" />
+    <None Include="Connected Services\ServiciosWS\HorarioTrabajoWS.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ServiciosWS\LineaRecetaMedicamentoWeb.wsdl" />
     <None Include="Connected Services\ServiciosWS\MedicamentoWS.wsdl" />
     <None Include="Connected Services\ServiciosWS\MedicamentoWS.xsd">
       <SubType>Designer</SubType>
@@ -107,22 +109,13 @@
     <Content Include="Connected Services\ServiciosWS\PazCitasWA.ServiciosWS.administrador.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
-    <Content Include="Connected Services\ServiciosWS\PazCitasWA.ServiciosWS.asistenteMedico.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
     <Content Include="Connected Services\ServiciosWS\PazCitasWA.ServiciosWS.cita.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
     <Content Include="Connected Services\ServiciosWS\PazCitasWA.ServiciosWS.consultorio.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
-    <Content Include="Connected Services\ServiciosWS\PazCitasWA.ServiciosWS.disponibilidad.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
     <Content Include="Connected Services\ServiciosWS\PazCitasWA.ServiciosWS.eliminarAdministradorResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
-    <Content Include="Connected Services\ServiciosWS\PazCitasWA.ServiciosWS.eliminarAsistenteResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
     <Content Include="Connected Services\ServiciosWS\PazCitasWA.ServiciosWS.eliminarCitaResponse.datasource">
@@ -137,6 +130,12 @@
     <Content Include="Connected Services\ServiciosWS\PazCitasWA.ServiciosWS.eliminarHistorialResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
+    <Content Include="Connected Services\ServiciosWS\PazCitasWA.ServiciosWS.eliminarHorarioResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServiciosWS\PazCitasWA.ServiciosWS.eliminarLineaRecetaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
     <Content Include="Connected Services\ServiciosWS\PazCitasWA.ServiciosWS.eliminarMedicoResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
@@ -146,7 +145,7 @@
     <Content Include="Connected Services\ServiciosWS\PazCitasWA.ServiciosWS.eliminarPagoResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
-    <Content Include="Connected Services\ServiciosWS\PazCitasWA.ServiciosWS.eliminarRecepcionistaResponse.datasource">
+    <Content Include="Connected Services\ServiciosWS\PazCitasWA.ServiciosWS.eliminarSedeEspecialidadResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
     <Content Include="Connected Services\ServiciosWS\PazCitasWA.ServiciosWS.eliminarSedeResponse.datasource">
@@ -155,7 +154,7 @@
     <Content Include="Connected Services\ServiciosWS\PazCitasWA.ServiciosWS.eliminarSeguroResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
-    <Content Include="Connected Services\ServiciosWS\PazCitasWA.ServiciosWS.eliminarTriajeResponse.datasource">
+    <Content Include="Connected Services\ServiciosWS\PazCitasWA.ServiciosWS.eliminarTurnoResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
     <Content Include="Connected Services\ServiciosWS\PazCitasWA.ServiciosWS.especialidad.datasource">
@@ -164,10 +163,10 @@
     <Content Include="Connected Services\ServiciosWS\PazCitasWA.ServiciosWS.historialMedico.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
-    <Content Include="Connected Services\ServiciosWS\PazCitasWA.ServiciosWS.insertarAdministradorResponse.datasource">
+    <Content Include="Connected Services\ServiciosWS\PazCitasWA.ServiciosWS.insertaHorarioResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
-    <Content Include="Connected Services\ServiciosWS\PazCitasWA.ServiciosWS.insertarAsistenteResponse.datasource">
+    <Content Include="Connected Services\ServiciosWS\PazCitasWA.ServiciosWS.insertarAdministradorResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
     <Content Include="Connected Services\ServiciosWS\PazCitasWA.ServiciosWS.insertarCitaResponse.datasource">
@@ -176,13 +175,16 @@
     <Content Include="Connected Services\ServiciosWS\PazCitasWA.ServiciosWS.insertarConsultorioResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
-    <Content Include="Connected Services\ServiciosWS\PazCitasWA.ServiciosWS.insertarDisponibilidadResponse.datasource">
+    <Content Include="Connected Services\ServiciosWS\PazCitasWA.ServiciosWS.insertarCuentaResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
     <Content Include="Connected Services\ServiciosWS\PazCitasWA.ServiciosWS.insertarEspecialidadResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
     <Content Include="Connected Services\ServiciosWS\PazCitasWA.ServiciosWS.insertarHistorialResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServiciosWS\PazCitasWA.ServiciosWS.insertarLineaRecetaResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
     <Content Include="Connected Services\ServiciosWS\PazCitasWA.ServiciosWS.insertarMedicamentoResponse.datasource">
@@ -200,10 +202,10 @@
     <Content Include="Connected Services\ServiciosWS\PazCitasWA.ServiciosWS.insertarPagoResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
-    <Content Include="Connected Services\ServiciosWS\PazCitasWA.ServiciosWS.insertarRecepcionistaResponse.datasource">
+    <Content Include="Connected Services\ServiciosWS\PazCitasWA.ServiciosWS.insertarRecetaResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
-    <Content Include="Connected Services\ServiciosWS\PazCitasWA.ServiciosWS.insertarRecetaResponse.datasource">
+    <Content Include="Connected Services\ServiciosWS\PazCitasWA.ServiciosWS.insertarSedeEspecialidadResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
     <Content Include="Connected Services\ServiciosWS\PazCitasWA.ServiciosWS.insertarSedeResponse.datasource">
@@ -212,16 +214,10 @@
     <Content Include="Connected Services\ServiciosWS\PazCitasWA.ServiciosWS.insertarSeguroResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
-    <Content Include="Connected Services\ServiciosWS\PazCitasWA.ServiciosWS.insertarTriajeResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
-    <Content Include="Connected Services\ServiciosWS\PazCitasWA.ServiciosWS.insertarTurnoMedicoResponse.datasource">
+    <Content Include="Connected Services\ServiciosWS\PazCitasWA.ServiciosWS.insertaTurnoResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
     <Content Include="Connected Services\ServiciosWS\PazCitasWA.ServiciosWS.listarAdministradorResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
-    <Content Include="Connected Services\ServiciosWS\PazCitasWA.ServiciosWS.listarAsistenteResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
     <Content Include="Connected Services\ServiciosWS\PazCitasWA.ServiciosWS.listarCitaResponse.datasource">
@@ -230,19 +226,22 @@
     <Content Include="Connected Services\ServiciosWS\PazCitasWA.ServiciosWS.listarConsultorioResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
-    <Content Include="Connected Services\ServiciosWS\PazCitasWA.ServiciosWS.listarDisponibilidadResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
     <Content Include="Connected Services\ServiciosWS\PazCitasWA.ServiciosWS.listarEspecialidadResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
     <Content Include="Connected Services\ServiciosWS\PazCitasWA.ServiciosWS.listarHistorialResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
+    <Content Include="Connected Services\ServiciosWS\PazCitasWA.ServiciosWS.listarHorarioResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
     <Content Include="Connected Services\ServiciosWS\PazCitasWA.ServiciosWS.listarMedicamentoResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
     <Content Include="Connected Services\ServiciosWS\PazCitasWA.ServiciosWS.listarMedicoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServiciosWS\PazCitasWA.ServiciosWS.listarMedicoXEspXSedeResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
     <Content Include="Connected Services\ServiciosWS\PazCitasWA.ServiciosWS.listarNotaClinicaResponse.datasource">
@@ -254,9 +253,6 @@
     <Content Include="Connected Services\ServiciosWS\PazCitasWA.ServiciosWS.listarPagoResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
-    <Content Include="Connected Services\ServiciosWS\PazCitasWA.ServiciosWS.listarRecepcionistaResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
     <Content Include="Connected Services\ServiciosWS\PazCitasWA.ServiciosWS.listarRecetaResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
@@ -266,10 +262,10 @@
     <Content Include="Connected Services\ServiciosWS\PazCitasWA.ServiciosWS.listarSeguroResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
-    <Content Include="Connected Services\ServiciosWS\PazCitasWA.ServiciosWS.listarTriajeResponse.datasource">
+    <Content Include="Connected Services\ServiciosWS\PazCitasWA.ServiciosWS.listarTurnoResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
-    <Content Include="Connected Services\ServiciosWS\PazCitasWA.ServiciosWS.listarTurnoMedicoResponse.datasource">
+    <Content Include="Connected Services\ServiciosWS\PazCitasWA.ServiciosWS.listarXSedeResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
     <Content Include="Connected Services\ServiciosWS\PazCitasWA.ServiciosWS.medicamento.datasource">
@@ -281,19 +277,16 @@
     <Content Include="Connected Services\ServiciosWS\PazCitasWA.ServiciosWS.modificarAdministradorResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
-    <Content Include="Connected Services\ServiciosWS\PazCitasWA.ServiciosWS.modificarAsistenteResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
     <Content Include="Connected Services\ServiciosWS\PazCitasWA.ServiciosWS.modificarCitaResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
     <Content Include="Connected Services\ServiciosWS\PazCitasWA.ServiciosWS.modificarConsultorioResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
-    <Content Include="Connected Services\ServiciosWS\PazCitasWA.ServiciosWS.modificarDisponibilidadResponse.datasource">
+    <Content Include="Connected Services\ServiciosWS\PazCitasWA.ServiciosWS.modificarEspecialidadResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
-    <Content Include="Connected Services\ServiciosWS\PazCitasWA.ServiciosWS.modificarEspecialidadResponse.datasource">
+    <Content Include="Connected Services\ServiciosWS\PazCitasWA.ServiciosWS.modificarHorarioResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
     <Content Include="Connected Services\ServiciosWS\PazCitasWA.ServiciosWS.modificarMedicamentoResponse.datasource">
@@ -311,9 +304,6 @@
     <Content Include="Connected Services\ServiciosWS\PazCitasWA.ServiciosWS.modificarPagoResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
-    <Content Include="Connected Services\ServiciosWS\PazCitasWA.ServiciosWS.modificarRecepcionistaResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
     <Content Include="Connected Services\ServiciosWS\PazCitasWA.ServiciosWS.modificarRecetaResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
@@ -323,22 +313,34 @@
     <Content Include="Connected Services\ServiciosWS\PazCitasWA.ServiciosWS.modificarSeguroResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
-    <Content Include="Connected Services\ServiciosWS\PazCitasWA.ServiciosWS.modificarTriajeResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
-    <Content Include="Connected Services\ServiciosWS\PazCitasWA.ServiciosWS.modificarTurnoMedicoResponse.datasource">
+    <Content Include="Connected Services\ServiciosWS\PazCitasWA.ServiciosWS.modificarTurnoResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
     <Content Include="Connected Services\ServiciosWS\PazCitasWA.ServiciosWS.notaClinica.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServiciosWS\PazCitasWA.ServiciosWS.obtenerCitaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServiciosWS\PazCitasWA.ServiciosWS.obtenerConsultorioPorIdResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServiciosWS\PazCitasWA.ServiciosWS.obtenerEspecialidadPorIdResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServiciosWS\PazCitasWA.ServiciosWS.obtenerMedicoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServiciosWS\PazCitasWA.ServiciosWS.obtenerPacienteResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServiciosWS\PazCitasWA.ServiciosWS.obtenerSedePorIdResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
     <Content Include="Connected Services\ServiciosWS\PazCitasWA.ServiciosWS.paciente.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
     <Content Include="Connected Services\ServiciosWS\PazCitasWA.ServiciosWS.pago.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
-    <Content Include="Connected Services\ServiciosWS\PazCitasWA.ServiciosWS.recepcionista.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
     <Content Include="Connected Services\ServiciosWS\PazCitasWA.ServiciosWS.receta.datasource">
@@ -350,36 +352,26 @@
     <Content Include="Connected Services\ServiciosWS\PazCitasWA.ServiciosWS.seguro.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
-    <Content Include="Connected Services\ServiciosWS\PazCitasWA.ServiciosWS.triaje.datasource">
+    <Content Include="Connected Services\ServiciosWS\PazCitasWA.ServiciosWS.verificarCuentaAdministradorResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
-    <Content Include="Connected Services\ServiciosWS\PazCitasWA.ServiciosWS.turnoMedico.datasource">
+    <Content Include="Connected Services\ServiciosWS\PazCitasWA.ServiciosWS.verificarCuentaMedicoResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
-    <Content Include="Connected Services\ServiciosWS\PazCitasWA.ServiciosWS.listarMedicoXEspXSedeResponse.datasource">
+    <Content Include="Connected Services\ServiciosWS\PazCitasWA.ServiciosWS.verificarCuentaPacienteResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
-    <Content Include="Connected Services\ServiciosWS\PazCitasWA.ServiciosWS.listarXSedeResponse.datasource">
+    <Content Include="Connected Services\ServiciosWS\PazCitasWA.ServiciosWS.horarioTrabajo.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
-    <Content Include="Connected Services\ServiciosWS\PazCitasWA.ServiciosWS.listarDiasAtencionPorMedicoResponse.datasource">
+    <Content Include="Connected Services\ServiciosWS\PazCitasWA.ServiciosWS.turno.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
-    <Content Include="Connected Services\ServiciosWS\PazCitasWA.ServiciosWS.listarFechasDisponiblesPorMedicoResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
-    <Content Include="Connected Services\ServiciosWS\PazCitasWA.ServiciosWS.listarHorariosPorMedicoYDiaResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
-    <Content Include="Connected Services\ServiciosWS\PazCitasWA.ServiciosWS.obtenerConsultorioPorIdResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
-    <Content Include="Connected Services\ServiciosWS\PazCitasWA.ServiciosWS.obtenerEspecialidadPorIdResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
-    <Content Include="Connected Services\ServiciosWS\PazCitasWA.ServiciosWS.obtenerSedePorIdResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
+    <None Include="Connected Services\ServiciosWS\RecetaWS.wsdl" />
+    <None Include="Connected Services\ServiciosWS\SedeEspecialidadWS.wsdl" />
+    <None Include="Connected Services\ServiciosWS\SedeEspecialidadWS.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Connected Services\ServiciosWS\SedeWS.wsdl" />
     <None Include="Connected Services\ServiciosWS\SedeWS.xsd">
       <SubType>Designer</SubType>
@@ -448,26 +440,19 @@
     <Content Include="Content\Fonts\webfonts\fa-v4compatibility.ttf" />
     <Content Include="Content\Fonts\webfonts\fa-v4compatibility.woff2" />
     <None Include="Connected Services\ServiciosWS\AdministradorWS.wsdl" />
-    <None Include="Connected Services\ServiciosWS\CitaWS.wsdl" />
     <None Include="Connected Services\ServiciosWS\HistorialMedicoWS.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ServiciosWS\LineaRecetaMedicamentoWeb.xsd">
       <SubType>Designer</SubType>
     </None>
     <None Include="Connected Services\ServiciosWS\MedicoWS.wsdl" />
     <None Include="Connected Services\ServiciosWS\PagoWS.wsdl" />
-    <None Include="Connected Services\ServiciosWS\RecepcionistaWS.wsdl" />
-    <None Include="Connected Services\ServiciosWS\RecepcionistaWS.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Connected Services\ServiciosWS\RecetaWS.wsdl" />
     <None Include="Connected Services\ServiciosWS\RecetaWS.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Connected Services\ServiciosWS\TriajeWS.wsdl" />
-    <None Include="Connected Services\ServiciosWS\TriajeWS.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Connected Services\ServiciosWS\TurnoMedicoWS.wsdl" />
-    <None Include="Connected Services\ServiciosWS\TurnoMedicoWS.xsd">
+    <None Include="Connected Services\ServiciosWS\TurnoWS.wsdl" />
+    <None Include="Connected Services\ServiciosWS\TurnoWS.xsd">
       <SubType>Designer</SubType>
     </None>
     <None Include="packages.config" />
@@ -842,7 +827,6 @@
   <ItemGroup>
     <WCFMetadataStorage Include="Connected Services\ServiciosWS\" />
   </ItemGroup>
-  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

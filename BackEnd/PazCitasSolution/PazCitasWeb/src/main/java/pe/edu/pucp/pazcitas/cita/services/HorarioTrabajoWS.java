@@ -15,7 +15,8 @@ import pe.edu.pucp.pazcitas.cita.model.HorarioTrabajo;
  *
  * @author Joel
  */
-@WebService(serviceName = "HorarioTrabajoWS")
+@WebService(serviceName = "HorarioTrabajoWS",
+        targetNamespace = "http://services.pucp.edu.pe")
 public class HorarioTrabajoWS {
 
     private HorarioTrabajoBO bohorario;

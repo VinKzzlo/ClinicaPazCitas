@@ -17,6 +17,12 @@
   <message name="obtenerConsultorioPorIdResponse">
     <part name="parameters" element="tns:obtenerConsultorioPorIdResponse" />
   </message>
+  <message name="modificarConsultorio">
+    <part name="parameters" element="tns:modificarConsultorio" />
+  </message>
+  <message name="modificarConsultorioResponse">
+    <part name="parameters" element="tns:modificarConsultorioResponse" />
+  </message>
   <message name="insertarConsultorio">
     <part name="parameters" element="tns:insertarConsultorio" />
   </message>
@@ -29,12 +35,6 @@
   <message name="eliminarConsultorioResponse">
     <part name="parameters" element="tns:eliminarConsultorioResponse" />
   </message>
-  <message name="modificarConsultorio">
-    <part name="parameters" element="tns:modificarConsultorio" />
-  </message>
-  <message name="modificarConsultorioResponse">
-    <part name="parameters" element="tns:modificarConsultorioResponse" />
-  </message>
   <portType name="ConsultorioWS">
     <operation name="listarConsultorio">
       <input wsam:Action="http://services.pucp.edu.pe/ConsultorioWS/listarConsultorioRequest" message="tns:listarConsultorio" />
@@ -44,6 +44,10 @@
       <input wsam:Action="http://services.pucp.edu.pe/ConsultorioWS/obtenerConsultorioPorIdRequest" message="tns:obtenerConsultorioPorId" />
       <output wsam:Action="http://services.pucp.edu.pe/ConsultorioWS/obtenerConsultorioPorIdResponse" message="tns:obtenerConsultorioPorIdResponse" />
     </operation>
+    <operation name="modificarConsultorio">
+      <input wsam:Action="http://services.pucp.edu.pe/ConsultorioWS/modificarConsultorioRequest" message="tns:modificarConsultorio" />
+      <output wsam:Action="http://services.pucp.edu.pe/ConsultorioWS/modificarConsultorioResponse" message="tns:modificarConsultorioResponse" />
+    </operation>
     <operation name="insertarConsultorio">
       <input wsam:Action="http://services.pucp.edu.pe/ConsultorioWS/insertarConsultorioRequest" message="tns:insertarConsultorio" />
       <output wsam:Action="http://services.pucp.edu.pe/ConsultorioWS/insertarConsultorioResponse" message="tns:insertarConsultorioResponse" />
@@ -51,10 +55,6 @@
     <operation name="eliminarConsultorio">
       <input wsam:Action="http://services.pucp.edu.pe/ConsultorioWS/eliminarConsultorioRequest" message="tns:eliminarConsultorio" />
       <output wsam:Action="http://services.pucp.edu.pe/ConsultorioWS/eliminarConsultorioResponse" message="tns:eliminarConsultorioResponse" />
-    </operation>
-    <operation name="modificarConsultorio">
-      <input wsam:Action="http://services.pucp.edu.pe/ConsultorioWS/modificarConsultorioRequest" message="tns:modificarConsultorio" />
-      <output wsam:Action="http://services.pucp.edu.pe/ConsultorioWS/modificarConsultorioResponse" message="tns:modificarConsultorioResponse" />
     </operation>
   </portType>
   <binding name="ConsultorioWSPortBinding" type="tns:ConsultorioWS">
@@ -77,6 +77,15 @@
         <soap:body use="literal" />
       </output>
     </operation>
+    <operation name="modificarConsultorio">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
     <operation name="insertarConsultorio">
       <soap:operation soapAction="" />
       <input>
@@ -87,15 +96,6 @@
       </output>
     </operation>
     <operation name="eliminarConsultorio">
-      <soap:operation soapAction="" />
-      <input>
-        <soap:body use="literal" />
-      </input>
-      <output>
-        <soap:body use="literal" />
-      </output>
-    </operation>
-    <operation name="modificarConsultorio">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />

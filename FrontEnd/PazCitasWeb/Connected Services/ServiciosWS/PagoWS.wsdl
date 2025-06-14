@@ -5,23 +5,11 @@
       <xsd:import schemaLocation="http://localhost:8080/PazCitasWeb/PagoWS?xsd=1" namespace="http://services.pucp.edu.pe" />
     </xsd:schema>
   </types>
-  <message name="listarPago">
-    <part name="parameters" element="tns:listarPago" />
-  </message>
-  <message name="listarPagoResponse">
-    <part name="parameters" element="tns:listarPagoResponse" />
-  </message>
   <message name="insertarPago">
     <part name="parameters" element="tns:insertarPago" />
   </message>
   <message name="insertarPagoResponse">
     <part name="parameters" element="tns:insertarPagoResponse" />
-  </message>
-  <message name="modificarPago">
-    <part name="parameters" element="tns:modificarPago" />
-  </message>
-  <message name="modificarPagoResponse">
-    <part name="parameters" element="tns:modificarPagoResponse" />
   </message>
   <message name="eliminarPago">
     <part name="parameters" element="tns:eliminarPago" />
@@ -29,27 +17,39 @@
   <message name="eliminarPagoResponse">
     <part name="parameters" element="tns:eliminarPagoResponse" />
   </message>
+  <message name="modificarPago">
+    <part name="parameters" element="tns:modificarPago" />
+  </message>
+  <message name="modificarPagoResponse">
+    <part name="parameters" element="tns:modificarPagoResponse" />
+  </message>
+  <message name="listarPago">
+    <part name="parameters" element="tns:listarPago" />
+  </message>
+  <message name="listarPagoResponse">
+    <part name="parameters" element="tns:listarPagoResponse" />
+  </message>
   <portType name="PagoWS">
-    <operation name="listarPago">
-      <input wsam:Action="http://services.pucp.edu.pe/PagoWS/listarPagoRequest" message="tns:listarPago" />
-      <output wsam:Action="http://services.pucp.edu.pe/PagoWS/listarPagoResponse" message="tns:listarPagoResponse" />
-    </operation>
     <operation name="insertarPago">
       <input wsam:Action="http://services.pucp.edu.pe/PagoWS/insertarPagoRequest" message="tns:insertarPago" />
       <output wsam:Action="http://services.pucp.edu.pe/PagoWS/insertarPagoResponse" message="tns:insertarPagoResponse" />
-    </operation>
-    <operation name="modificarPago">
-      <input wsam:Action="http://services.pucp.edu.pe/PagoWS/modificarPagoRequest" message="tns:modificarPago" />
-      <output wsam:Action="http://services.pucp.edu.pe/PagoWS/modificarPagoResponse" message="tns:modificarPagoResponse" />
     </operation>
     <operation name="eliminarPago">
       <input wsam:Action="http://services.pucp.edu.pe/PagoWS/eliminarPagoRequest" message="tns:eliminarPago" />
       <output wsam:Action="http://services.pucp.edu.pe/PagoWS/eliminarPagoResponse" message="tns:eliminarPagoResponse" />
     </operation>
+    <operation name="modificarPago">
+      <input wsam:Action="http://services.pucp.edu.pe/PagoWS/modificarPagoRequest" message="tns:modificarPago" />
+      <output wsam:Action="http://services.pucp.edu.pe/PagoWS/modificarPagoResponse" message="tns:modificarPagoResponse" />
+    </operation>
+    <operation name="listarPago">
+      <input wsam:Action="http://services.pucp.edu.pe/PagoWS/listarPagoRequest" message="tns:listarPago" />
+      <output wsam:Action="http://services.pucp.edu.pe/PagoWS/listarPagoResponse" message="tns:listarPagoResponse" />
+    </operation>
   </portType>
   <binding name="PagoWSPortBinding" type="tns:PagoWS">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
-    <operation name="listarPago">
+    <operation name="insertarPago">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />
@@ -58,7 +58,7 @@
         <soap:body use="literal" />
       </output>
     </operation>
-    <operation name="insertarPago">
+    <operation name="eliminarPago">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />
@@ -76,7 +76,7 @@
         <soap:body use="literal" />
       </output>
     </operation>
-    <operation name="eliminarPago">
+    <operation name="listarPago">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />

@@ -14,7 +14,8 @@ import pe.edu.pucp.pazcitas.atencion.model.LineaRecetaMedicamento;
  *
  * @author Joel
  */
-@WebService(serviceName = "LineaRecetaMedicamentoWeb")
+@WebService(serviceName = "LineaRecetaMedicamentoWeb",
+        targetNamespace = "http://services.pucp.edu.pe")
 public class LineaRecetaMedicamentoWeb {
     
     private LineaRecetaMedicamentoBO bolinea;

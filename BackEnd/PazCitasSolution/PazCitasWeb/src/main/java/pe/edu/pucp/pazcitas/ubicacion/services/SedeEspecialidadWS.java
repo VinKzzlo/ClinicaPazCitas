@@ -14,7 +14,8 @@ import pe.edu.pucp.pazcitas.ubicacion.model.SedeEspecialidad;
  *
  * @author Joel
  */
-@WebService(serviceName = "SedeEspecialidadWS")
+@WebService(serviceName = "SedeEspecialidadWS",
+        targetNamespace = "http://services.pucp.edu.pe")
 public class SedeEspecialidadWS {
 
     private SedeEspecialidadBO bosedeesp;

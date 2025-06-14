@@ -14,7 +14,8 @@ import pe.edu.pucp.pazcitas.usuario.model.CuentaUsuario;
  *
  * @author Joel
  */
-@WebService(serviceName = "CuentaUsuarioWS")
+@WebService(serviceName = "CuentaUsuarioWS",
+        targetNamespace = "http://services.pucp.edu.pe")
 public class CuentaUsuarioWS {
 
     private CuentaUsuarioBO cuentabo;

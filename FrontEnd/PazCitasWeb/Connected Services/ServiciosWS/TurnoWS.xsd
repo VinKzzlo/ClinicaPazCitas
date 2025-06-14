@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://services.pucp.edu.pe" targetNamespace="http://services.pucp.edu.pe" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="eliminarTurno" type="tns:eliminarTurno" />
+  <xs:element name="eliminarTurnoResponse" type="tns:eliminarTurnoResponse" />
+  <xs:element name="insertaTurno" type="tns:insertaTurno" />
+  <xs:element name="insertaTurnoResponse" type="tns:insertaTurnoResponse" />
+  <xs:element name="listarTurno" type="tns:listarTurno" />
+  <xs:element name="listarTurnoResponse" type="tns:listarTurnoResponse" />
+  <xs:element name="modificarTurno" type="tns:modificarTurno" />
+  <xs:element name="modificarTurnoResponse" type="tns:modificarTurnoResponse" />
+  <xs:complexType name="eliminarTurno">
+    <xs:sequence>
+      <xs:element name="idturno" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="eliminarTurnoResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="insertaTurno">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="turno" type="tns:turno" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="turno">
+    <xs:sequence>
+      <xs:element name="activo" type="xs:boolean" />
+      <xs:element minOccurs="0" name="dia" type="tns:diaSemana" />
+      <xs:element minOccurs="0" name="horaFin" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="horaInicio" type="xs:dateTime" />
+      <xs:element name="idTurno" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="insertaTurnoResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="listarTurno">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="listarTurnoResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:turno" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="modificarTurno">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="turno" type="tns:turno" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="modificarTurnoResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="diaSemana">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="LUNES" />
+      <xs:enumeration value="MARTES" />
+      <xs:enumeration value="MIERCOLES" />
+      <xs:enumeration value="JUEVES" />
+      <xs:enumeration value="VIERNES" />
+      <xs:enumeration value="SABADO" />
+      <xs:enumeration value="DOMINGO" />
+    </xs:restriction>
+  </xs:simpleType>
+</xs:schema>

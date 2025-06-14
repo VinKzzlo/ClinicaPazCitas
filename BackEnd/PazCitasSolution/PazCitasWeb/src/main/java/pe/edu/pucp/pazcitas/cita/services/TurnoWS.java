@@ -15,7 +15,8 @@ import pe.edu.pucp.pazcitas.cita.model.Turno;
  *
  * @author Joel
  */
-@WebService(serviceName = "TurnoWS")
+@WebService(serviceName = "TurnoWS",
+        targetNamespace = "http://services.pucp.edu.pe")
 public class TurnoWS {
     
     private TurnoBO boturno;

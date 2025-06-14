@@ -18,6 +18,7 @@ namespace PazCitasWA
         protected void Page_Load(object sender, EventArgs e)
         {
             wsMedico = new MedicoWSClient();
+            medico[] medicos1 = wsMedico.listarMedico();
             medicos = new BindingList<medico>(wsMedico.listarMedico());
             gvMedicos.DataSource = medicos;
             gvMedicos.DataBind();

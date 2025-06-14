@@ -5,11 +5,11 @@
       <xsd:import schemaLocation="http://localhost:8080/PazCitasWeb/SedeWS?xsd=1" namespace="http://services.pucp.edu.pe" />
     </xsd:schema>
   </types>
-  <message name="listarSede">
-    <part name="parameters" element="tns:listarSede" />
+  <message name="eliminarSede">
+    <part name="parameters" element="tns:eliminarSede" />
   </message>
-  <message name="listarSedeResponse">
-    <part name="parameters" element="tns:listarSedeResponse" />
+  <message name="eliminarSedeResponse">
+    <part name="parameters" element="tns:eliminarSedeResponse" />
   </message>
   <message name="modificarSede">
     <part name="parameters" element="tns:modificarSede" />
@@ -23,22 +23,22 @@
   <message name="insertarSedeResponse">
     <part name="parameters" element="tns:insertarSedeResponse" />
   </message>
-  <message name="eliminarSede">
-    <part name="parameters" element="tns:eliminarSede" />
-  </message>
-  <message name="eliminarSedeResponse">
-    <part name="parameters" element="tns:eliminarSedeResponse" />
-  </message>
   <message name="obtenerSedePorId">
     <part name="parameters" element="tns:obtenerSedePorId" />
   </message>
   <message name="obtenerSedePorIdResponse">
     <part name="parameters" element="tns:obtenerSedePorIdResponse" />
   </message>
+  <message name="listarSede">
+    <part name="parameters" element="tns:listarSede" />
+  </message>
+  <message name="listarSedeResponse">
+    <part name="parameters" element="tns:listarSedeResponse" />
+  </message>
   <portType name="SedeWS">
-    <operation name="listarSede">
-      <input wsam:Action="http://services.pucp.edu.pe/SedeWS/listarSedeRequest" message="tns:listarSede" />
-      <output wsam:Action="http://services.pucp.edu.pe/SedeWS/listarSedeResponse" message="tns:listarSedeResponse" />
+    <operation name="eliminarSede">
+      <input wsam:Action="http://services.pucp.edu.pe/SedeWS/eliminarSedeRequest" message="tns:eliminarSede" />
+      <output wsam:Action="http://services.pucp.edu.pe/SedeWS/eliminarSedeResponse" message="tns:eliminarSedeResponse" />
     </operation>
     <operation name="modificarSede">
       <input wsam:Action="http://services.pucp.edu.pe/SedeWS/modificarSedeRequest" message="tns:modificarSede" />
@@ -48,18 +48,18 @@
       <input wsam:Action="http://services.pucp.edu.pe/SedeWS/insertarSedeRequest" message="tns:insertarSede" />
       <output wsam:Action="http://services.pucp.edu.pe/SedeWS/insertarSedeResponse" message="tns:insertarSedeResponse" />
     </operation>
-    <operation name="eliminarSede">
-      <input wsam:Action="http://services.pucp.edu.pe/SedeWS/eliminarSedeRequest" message="tns:eliminarSede" />
-      <output wsam:Action="http://services.pucp.edu.pe/SedeWS/eliminarSedeResponse" message="tns:eliminarSedeResponse" />
-    </operation>
     <operation name="obtenerSedePorId">
       <input wsam:Action="http://services.pucp.edu.pe/SedeWS/obtenerSedePorIdRequest" message="tns:obtenerSedePorId" />
       <output wsam:Action="http://services.pucp.edu.pe/SedeWS/obtenerSedePorIdResponse" message="tns:obtenerSedePorIdResponse" />
     </operation>
+    <operation name="listarSede">
+      <input wsam:Action="http://services.pucp.edu.pe/SedeWS/listarSedeRequest" message="tns:listarSede" />
+      <output wsam:Action="http://services.pucp.edu.pe/SedeWS/listarSedeResponse" message="tns:listarSedeResponse" />
+    </operation>
   </portType>
   <binding name="SedeWSPortBinding" type="tns:SedeWS">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
-    <operation name="listarSede">
+    <operation name="eliminarSede">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />
@@ -86,7 +86,7 @@
         <soap:body use="literal" />
       </output>
     </operation>
-    <operation name="eliminarSede">
+    <operation name="obtenerSedePorId">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />
@@ -95,7 +95,7 @@
         <soap:body use="literal" />
       </output>
     </operation>
-    <operation name="obtenerSedePorId">
+    <operation name="listarSede">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />

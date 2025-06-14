@@ -11,7 +11,7 @@ namespace PazCitasWA
         private SedeWSClient boSede;
         private EspecialidadWSClient boEspecialidad;
         private MedicoWSClient boMedico;
-        private TurnoMedicoWSClient boTurno;
+        //private TurnoMedicoWSClient boTurno;
 
         protected System.Web.UI.HtmlControls.HtmlGenericControl barraProgreso;
 
@@ -74,8 +74,8 @@ namespace PazCitasWA
         protected void btnPaso3_Click(object sender, EventArgs e)
         {
             Session["idMedico"] = int.Parse(ddlMedico.SelectedValue);
-            boTurno = new TurnoMedicoWSClient();
-            ddlDias.DataSource = boTurno.listarDiasAtencionPorMedico((int)Session["idMedico"]);
+            //boTurno = new TurnoMedicoWSClient();
+            //ddlDias.DataSource = boTurno.listarDiasAtencionPorMedico((int)Session["idMedico"]);
             ddlDias.DataBind();
             ddlDias.Items.Insert(0, new System.Web.UI.WebControls.ListItem("<Seleccione un día>", ""));
             pnlPaso3.Visible = false;
@@ -93,9 +93,9 @@ namespace PazCitasWA
         protected void btnPaso4_Click(object sender, EventArgs e)
         {
             string dia = ddlDias.SelectedValue;
-            boTurno = new TurnoMedicoWSClient();
-            int idMedico = (int)Session["idMedico"];
-            ddlHorarios.DataSource = boTurno.listarHorariosPorMedicoYDia(idMedico, dia);
+            //boTurno = new TurnoMedicoWSClient();
+            //int idMedico = (int)Session["idMedico"];
+            //ddlHorarios.DataSource = boTurno.listarHorariosPorMedicoYDia(idMedico, dia);
             ddlHorarios.DataBind();
             ddlHorarios.Items.Insert(0, new System.Web.UI.WebControls.ListItem("<Seleccione un horario>", ""));
             pnlPaso4.Visible = false;

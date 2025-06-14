@@ -6,30 +6,31 @@
   <xs:element name="listarMedicamentoResponse" type="tns:listarMedicamentoResponse" />
   <xs:element name="modificarMedicamento" type="tns:modificarMedicamento" />
   <xs:element name="modificarMedicamentoResponse" type="tns:modificarMedicamentoResponse" />
-  <xs:complexType name="modificarMedicamento">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="medicamento" type="tns:medicamento" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:complexType name="medicamento">
-    <xs:sequence>
-      <xs:element name="idMedicamento" type="xs:int" />
-      <xs:element minOccurs="0" name="nombre" type="xs:string" />
-      <xs:element minOccurs="0" name="presentacion" type="xs:string" />
-      <xs:element name="stock" type="xs:int" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:complexType name="modificarMedicamentoResponse">
-    <xs:sequence>
-      <xs:element name="return" type="xs:int" />
-    </xs:sequence>
-  </xs:complexType>
   <xs:complexType name="listarMedicamento">
     <xs:sequence />
   </xs:complexType>
   <xs:complexType name="listarMedicamentoResponse">
     <xs:sequence>
       <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:medicamento" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="medicamento">
+    <xs:sequence>
+      <xs:element name="activo" type="xs:boolean" />
+      <xs:element name="idMedicamento" type="xs:int" />
+      <xs:element minOccurs="0" name="nombre" type="xs:string" />
+      <xs:element minOccurs="0" name="presentacion" type="xs:string" />
+      <xs:element name="stock" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="modificarMedicamento">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="medicamento" type="tns:medicamento" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="modificarMedicamentoResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:int" />
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="insertarMedicamento">

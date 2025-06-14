@@ -16,14 +16,25 @@
   </xs:complexType>
   <xs:complexType name="receta">
     <xs:sequence>
+      <xs:element name="activo" type="xs:boolean" />
       <xs:element minOccurs="0" name="fechaPrescripcion" type="xs:dateTime" />
       <xs:element name="idReceta" type="xs:int" />
       <xs:element minOccurs="0" name="indicaciones" type="xs:string" />
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="medicamentos" nillable="true" type="tns:medicamento" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="lineasReceta" nillable="true" type="tns:lineaRecetaMedicamento" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="lineaRecetaMedicamento">
+    <xs:sequence>
+      <xs:element name="activo" type="xs:boolean" />
+      <xs:element name="cantidad" type="xs:int" />
+      <xs:element name="idLineaRecetaMedicamento" type="xs:int" />
+      <xs:element minOccurs="0" name="medicamento" type="tns:medicamento" />
+      <xs:element minOccurs="0" name="receta" type="tns:receta" />
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="medicamento">
     <xs:sequence>
+      <xs:element name="activo" type="xs:boolean" />
       <xs:element name="idMedicamento" type="xs:int" />
       <xs:element minOccurs="0" name="nombre" type="xs:string" />
       <xs:element minOccurs="0" name="presentacion" type="xs:string" />
