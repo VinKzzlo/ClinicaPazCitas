@@ -1,11 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xs:schema xmlns:tns="http://services.pucp.edu.pe" targetNamespace="http://services.pucp.edu.pe" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   <xs:element name="eliminarHorario" type="tns:eliminarHorario" />
+  <xs:element name="eliminarHorarioPorMedico" type="tns:eliminarHorarioPorMedico" />
+  <xs:element name="eliminarHorarioPorMedicoResponse" type="tns:eliminarHorarioPorMedicoResponse" />
   <xs:element name="eliminarHorarioResponse" type="tns:eliminarHorarioResponse" />
   <xs:element name="insertaHorario" type="tns:insertaHorario" />
   <xs:element name="insertaHorarioResponse" type="tns:insertaHorarioResponse" />
   <xs:element name="listarHorario" type="tns:listarHorario" />
   <xs:element name="listarHorarioResponse" type="tns:listarHorarioResponse" />
+  <xs:element name="listarPorMedico" type="tns:listarPorMedico" />
+  <xs:element name="listarPorMedicoResponse" type="tns:listarPorMedicoResponse" />
   <xs:element name="modificarHorario" type="tns:modificarHorario" />
   <xs:element name="modificarHorarioResponse" type="tns:modificarHorarioResponse" />
   <xs:complexType name="insertaHorario">
@@ -195,6 +199,26 @@
       <xs:element name="return" type="xs:int" />
     </xs:sequence>
   </xs:complexType>
+  <xs:complexType name="eliminarHorarioPorMedico">
+    <xs:sequence>
+      <xs:element name="idMedico" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="eliminarHorarioPorMedicoResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="listarPorMedico">
+    <xs:sequence>
+      <xs:element name="idMedico" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="listarPorMedicoResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:horarioTrabajo" />
+    </xs:sequence>
+  </xs:complexType>
   <xs:complexType name="eliminarHorario">
     <xs:sequence>
       <xs:element name="idhorario" type="xs:int" />
@@ -207,10 +231,9 @@
   </xs:complexType>
   <xs:simpleType name="estadoAtencion">
     <xs:restriction base="xs:string">
-      <xs:enumeration value="PENDIENTE" />
-      <xs:enumeration value="CITADO" />
       <xs:enumeration value="EN_ESPERA" />
       <xs:enumeration value="EN_CONSULTORIO" />
+      <xs:enumeration value="ATENDIDO" />
     </xs:restriction>
   </xs:simpleType>
   <xs:simpleType name="estadoCita">

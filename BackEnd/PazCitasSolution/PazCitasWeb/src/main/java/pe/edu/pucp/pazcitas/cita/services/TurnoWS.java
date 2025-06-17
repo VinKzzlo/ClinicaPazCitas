@@ -41,4 +41,9 @@ public class TurnoWS {
         boturno = new TurnoBO();
         return boturno.eliminar(idturno);
     }
+    @WebMethod(operationName = "obtenerXId")
+    public Turno obtenerXId(@WebParam(name = "idturno") int idturno) {
+        boturno = new TurnoBO();
+        return boturno.obtenerXId(idturno);
+    }
 }

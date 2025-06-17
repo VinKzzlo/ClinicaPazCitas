@@ -49,4 +49,10 @@ public class SedeWS {
         bosede = new SedeBO();
         return bosede.obtenerPorId(idSede);
     }
+    @WebMethod(operationName = "listarXEspecialidad")
+    public ArrayList<Sede>  listarXEspecialidad(@WebParam(name = "idEspecialidad") int idEspecialidad) {
+        bosede = new SedeBO();
+        return bosede.listarxEspecialidad(idEspecialidad);
+    }
+    
 }

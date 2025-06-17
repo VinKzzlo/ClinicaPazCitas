@@ -32,4 +32,7 @@ public class TurnoBO {
     public ArrayList<Turno> listarTodos(){
         return daoTurno.listarTodos();
     }
+    public Turno obtenerXId(int idTurno){
+        return daoTurno.obtenerPorId(idTurno);
+    }
 }

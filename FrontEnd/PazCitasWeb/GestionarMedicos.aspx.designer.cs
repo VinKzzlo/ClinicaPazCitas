@@ -11,7 +11,7 @@ namespace PazCitasWA
 {
 
 
-    public partial class ListarAsistentes
+    public partial class GestionarMedicos
     {
     }
 }

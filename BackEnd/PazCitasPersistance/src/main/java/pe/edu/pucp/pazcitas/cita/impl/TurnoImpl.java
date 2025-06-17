@@ -57,8 +57,8 @@ public class TurnoImpl implements TurnoDAO{
                 t.setIdTurno(rs.getInt("id_turno"));
                 DiaSemana dia=DiaSemana.valueOf(rs.getString("dia").toUpperCase());
                 t.setDia(dia);
-                t.setHoraInicio(rs.getDate("hora_inicio"));
-                t.setHoraFin(rs.getDate("hora_fin"));
+                t.setHoraInicio(rs.getTime("hora_inicio"));
+                t.setHoraFin(rs.getTime("hora_fin"));
                 turnos.add(t);
             }
         }catch(SQLException ex){
@@ -81,8 +81,8 @@ public class TurnoImpl implements TurnoDAO{
                 t.setIdTurno(rs.getInt("id_turno"));
                 DiaSemana dia=DiaSemana.valueOf(rs.getString("dia").toUpperCase());
                 t.setDia(dia);
-                t.setHoraInicio(rs.getDate("hora_inicio"));
-                t.setHoraFin(rs.getDate("hora_fin"));
+                t.setHoraInicio(rs.getTime("hora_inicio"));
+                t.setHoraFin(rs.getTime("hora_fin"));
             }
         }catch(SQLException ex){
             System.out.println(ex.getMessage());

@@ -40,5 +40,7 @@ public class SedeBO {
     public Sede obtenerPorId(int idSede){
         return daoSede.obtenerPorId(idSede);
     }
-    
+    public ArrayList<Sede> listarxEspecialidad(int idEspecialidad) {
+        return daoSede.listarSedePorEspecialidad(idEspecialidad);
+    }
 }

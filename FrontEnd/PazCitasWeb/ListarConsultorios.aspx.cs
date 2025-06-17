@@ -1,11 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using PazCitasWA.ServiciosWS;
+using System;
 using System.ComponentModel;
 using System.Linq;
-using System.Web;
-using System.Web.UI;
 using System.Web.UI.WebControls;
-using PazCitasWA.ServiciosWS;
 
 namespace PazCitasWA
 {
@@ -35,7 +32,7 @@ namespace PazCitasWA
         protected void btnModificar_Click(object sender, EventArgs e)
         {
             int idConsultorio = Int32.Parse(((LinkButton)sender).CommandArgument);
-            consultorio consultSeleccionado = consultorios.SingleOrDefault(x=>x.idConsultorio == idConsultorio);
+            consultorio consultSeleccionado = consultorios.SingleOrDefault(x => x.idConsultorio == idConsultorio);
             Session["consultSeleccionado"] = consultSeleccionado;
             Response.Redirect("RegistrarConsultorio.aspx?accion=modificar");
         }

@@ -4,6 +4,7 @@
  */
 package pe.edu.pucp.pazcitas.cita.dao;
 
+import java.util.ArrayList;
 import pe.edu.pucp.pazcitas.cita.model.HorarioTrabajo;
 import pe.edu.pucp.pazcitas.dao.ICrud;
 
@@ -13,4 +14,6 @@ import pe.edu.pucp.pazcitas.dao.ICrud;
  */
 public interface HorarioTrabajoDAO extends ICrud<HorarioTrabajo>{
     public HorarioTrabajo obtenerPorId(int idHorario);
+    ArrayList<HorarioTrabajo> listarPorMedico(int idMedico);
+    int eliminarPorMedico(int idMedico);
 }

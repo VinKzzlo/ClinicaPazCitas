@@ -110,5 +110,51 @@ public class HorarioTrabajoImpl implements HorarioTrabajoDAO{
         }
         return h;     
     }
+
+    @Override
+    public ArrayList<HorarioTrabajo> listarPorMedico(int idMedico) {
+        ArrayList<HorarioTrabajo> horarios = null;
+        Map<Integer, Object> parametrosEntrada = new HashMap<>();
+        parametrosEntrada.put(1, idMedico);
+        rs = DBManager.getInstance().ejecutarProcedimientoLectura("LISTAR_HORARIO_X_MEDICO", parametrosEntrada);
+        try{
+            while(rs.next()){
+                if(horarios == null) horarios = new ArrayList<>();
+                HorarioTrabajo h = new HorarioTrabajo();
+                h.setIdHorarioTrabajo(rs.getInt("id_horario_trabajo"));
+                
+                Turno t=new Turno();
+                t.setIdTurno(rs.getInt("fid_turno"));
+                DiaSemana dia = DiaSemana.valueOf(rs.getString("dia").toUpperCase());
+                t.setDia(dia);
+                t.setHoraInicio(rs.getTime("hora_inicio"));
+                t.setHoraInicio(rs.getTime("hora_fin"));
+                
+                Medico m=new Medico();
+                m.setIdUsuario(rs.getInt("fid_medico"));
+                
+                h.setTurno(t);
+                h.setMedico(m);
+                
+                horarios.add(h);
+            }
+        }catch(SQLException ex){
+            System.out.println(ex.getMessage());
+        }finally{
+            DBManager.getInstance().cerrarConexion();
+        }
+        return horarios;     
+    }
+
+    @Override
+    public int eliminarPorMedico(int idMedico) {
+        Map<Integer,Object> parametrosEntrada = new HashMap<>();
+        parametrosEntrada.put(1, idMedico);
+        int resultado = DBManager.getInstance().ejecutarProcedimiento("ELIMINAR_HORARIO_X_MEDICO", parametrosEntrada, null);
+        return resultado;
+    }
+    
+    
+
     
 }

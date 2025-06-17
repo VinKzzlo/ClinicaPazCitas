@@ -152,7 +152,7 @@ CREATE TABLE cita (
     id_cita INT PRIMARY KEY AUTO_INCREMENT,
     fecha DATE NOT NULL,
     estado_cita ENUM('PROGRAMADA','CANCELADA','ATENDIDA'),
-    estado_atencion ENUM('PENDIENTE','CITADO','EN ESPERA','EN CONSULTORIO'),
+    estado_atencion ENUM('EN_ESPERA','EN_CONSULTORIO','ATENDIDO'),
     motivo_consulta VARCHAR(100),
     fid_paciente INT,
     fid_horario_trabajo INT,

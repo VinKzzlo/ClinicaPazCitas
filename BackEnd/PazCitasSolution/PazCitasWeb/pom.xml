@@ -35,12 +35,6 @@
             <artifactId>jakarta.xml.ws-api</artifactId>
             <version>4.0.2</version>
         </dependency>
-        
-        <dependency>
-            <groupId>${project.groupId}</groupId>
-            <artifactId>PazCitasDBManager</artifactId>
-            <version>${project.version}</version>
-        </dependency>
         <dependency>
             <groupId>${project.groupId}</groupId>
             <artifactId>PazCitasDomain</artifactId>
@@ -48,7 +42,7 @@
         </dependency>
         <dependency>
             <groupId>${project.groupId}</groupId>
-            <artifactId>PazCitasBusiness</artifactId>
+            <artifactId>PazCitasDBManager</artifactId>
             <version>${project.version}</version>
         </dependency>
         <dependency>
@@ -56,7 +50,11 @@
             <artifactId>PazCitasPersistance</artifactId>
             <version>${project.version}</version>
         </dependency>
-        
+        <dependency>
+            <groupId>${project.groupId}</groupId>
+            <artifactId>PazCitasBusiness</artifactId>
+            <version>${project.version}</version>
+        </dependency>
     </dependencies>
     
     <build>

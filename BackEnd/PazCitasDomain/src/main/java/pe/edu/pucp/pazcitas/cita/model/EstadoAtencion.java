@@ -9,8 +9,7 @@ package pe.edu.pucp.pazcitas.cita.model;
  * @author asant
  */
 public enum EstadoAtencion {
-    PENDIENTE,
-    CITADO,
     EN_ESPERA,
-    EN_CONSULTORIO
+    EN_CONSULTORIO,
+    ATENDIDO
 }

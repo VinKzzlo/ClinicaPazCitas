@@ -103,5 +103,29 @@ public class SedeImpl implements SedeDAO {
         }
         return sede;
     }
+
+    @Override
+    public ArrayList<Sede> listarSedePorEspecialidad(int idEsp) {
+        ArrayList<Sede> sedes = new ArrayList<>();
+        Map<Integer, Object> parametrosEntrada = new HashMap<>();
+        parametrosEntrada.put(1, idEsp);
+        rs = DBManager.getInstance().ejecutarProcedimientoLectura("LISTAR_SEDE_X_ESPECIALIDAD", parametrosEntrada);
+        System.out.println("Lectura de sede...");
+        try {
+            if (rs.next()) {
+                if(sedes == null) sedes = new ArrayList<>();
+                Sede s = new Sede();
+                s.setIdSede(rs.getInt("id_sede"));
+                s.setNombre(rs.getString("nombre"));
+                s.setDireccion(rs.getString("direccion"));
+                sedes.add(s);
+            }
+        } catch (SQLException ex) {
+            System.out.println("ERROR: " + ex.getMessage());
+        } finally {
+            DBManager.getInstance().cerrarConexion();
+        }
+        return sedes;
+    }
     
 }

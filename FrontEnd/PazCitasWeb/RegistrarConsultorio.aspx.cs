@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
+﻿using PazCitasWA.ServiciosWS;
+using System;
 using System.Web.UI.WebControls;
-using PazCitasWA.ServiciosWS;
 
 namespace PazCitasWA
 {
@@ -23,7 +19,7 @@ namespace PazCitasWA
                 ddlSede.DataSource = wsSede.listarSede();
                 ddlSede.DataTextField = "nombre";
                 ddlSede.DataValueField = "idSede";
-                
+
                 ddlSede.DataBind();
 
                 ddlSede.Items.Insert(0, new ListItem("-- Seleccione Sede --", ""));

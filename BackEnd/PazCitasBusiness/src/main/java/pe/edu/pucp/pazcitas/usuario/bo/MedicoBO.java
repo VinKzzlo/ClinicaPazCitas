@@ -38,7 +38,7 @@ public class MedicoBO {
         {
             return daoMedico.listarTodos();
         }
-        public ArrayList<Medico> listarxEspecialidad(int idEsp, int idSed)
+        public ArrayList<Medico> listarxEspecialidadxSede(int idEsp, int idSed)
         {
             return daoMedico.listarXEspXSede(idEsp, idSed);
         }
@@ -46,4 +46,5 @@ public class MedicoBO {
         public Medico obtenerXId(int idMedico){
             return daoMedico.obtenerPorID(idMedico);
         }
+        
 }

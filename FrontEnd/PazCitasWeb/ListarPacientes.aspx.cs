@@ -1,11 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using PazCitasWA.ServiciosWS;
+using System;
 using System.ComponentModel;
 using System.Linq;
-using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using PazCitasWA.ServiciosWS;
 
 namespace PazCitasWA
 {
@@ -36,11 +34,11 @@ namespace PazCitasWA
         }
         protected void gvPacientes_PageIndexChanging(object sender, GridViewPageEventArgs e)
         {
-            gvPacientes.PageIndex = e.NewPageIndex; 
+            gvPacientes.PageIndex = e.NewPageIndex;
             gvPacientes.DataBind();
         }
 
-        
+
 
 
         protected void btnModificar_Click(object sender, EventArgs e)

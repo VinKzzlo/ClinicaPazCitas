@@ -1,13 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using PazCitasWA.ServiciosWS;
+using System;
 using System.ComponentModel;
 using System.Linq;
-using System.Security.Cryptography;
-using System.ServiceModel.Channels;
-using System.Web;
-using System.Web.UI;
 using System.Web.UI.WebControls;
-using PazCitasWA.ServiciosWS;
 
 namespace PazCitasWA
 {

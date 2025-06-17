@@ -33,4 +33,12 @@ public class HorarioTrabajoBO {
     public ArrayList<HorarioTrabajo> listarTodos(){
         return daoHorario.listarTodos();
     }
+    
+    public ArrayList<HorarioTrabajo> listarPorMedico(int idMedico){
+        return daoHorario.listarPorMedico(idMedico);
+    }
+    
+    public int eliminarPorMedico(int idMedico){
+        return daoHorario.eliminarPorMedico(idMedico);
+    }
 }

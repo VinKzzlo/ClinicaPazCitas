@@ -104,7 +104,7 @@
             <div class="row row-cols-1 row-cols-md-3 g-4 justify-content-center">
                 <!-- 1 · Médicos -->
                 <div class="col card-col-xl">
-                    <a href="ListarMedicos.aspx" class="text-decoration-none">
+                    <a href="GestionarMedicos.aspx" class="text-decoration-none">
                         <div class="card shadow-sm h-100 border-0 hover-shadow card-medicos">
                             <div class="card-body text-center">
                                 <i class="fa-solid fa-user-doctor fa-3x mb-3"></i>
@@ -119,33 +119,19 @@
 
                 <!-- 2 · Asistentes -->
                 <div class="col card-col-xl">
-                    <a href="ListarAsistentes.aspx" class="text-decoration-none">
+                    <a href="ListarAdministradores.aspx" class="text-decoration-none">
                         <div class="card shadow-sm h-100 border-0 hover-shadow card-asistentes">
                             <div class="card-body text-center">
                                 <i class="fa-solid fa-user-nurse fa-3x mb-3"></i>
-                                <h4 class="fw-bold mb-0">Gestionar Asistentes</h4>
+                                <h4 class="fw-bold mb-0">Gestionar Administradores</h4>
                                 <p class="card-desc">
-                                    Añadir, modificar y eliminar asistentes
+                                    Añadir, modificar y eliminar administradores
                                 </p>
                             </div>
                         </div>
                     </a>
                 </div>
 
-                <!-- 3 · Recepcionistas -->
-                <div class="col card-col-xl">
-                    <a href="ListarRecepcionistas.aspx" class="text-decoration-none">
-                        <div class="card shadow-sm h-100 border-0 hover-shadow card-recepcion">
-                            <div class="card-body text-center">
-                                <i class="fa-solid fa-hospital-user fa-3x mb-3"></i>
-                                <h4 class="fw-bold mb-0">Gestionar Recepcionistas</h4>
-                                <p class="card-desc">
-                                    Añadir, modificar y eliminar recepcionistas
-                                </p>
-                            </div>
-                        </div>
-                    </a>
-                </div>
             </div>
         </div>
     </div>

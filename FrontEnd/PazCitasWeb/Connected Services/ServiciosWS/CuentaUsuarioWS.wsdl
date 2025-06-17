@@ -5,23 +5,11 @@
       <xsd:import schemaLocation="http://localhost:8080/PazCitasWeb/CuentaUsuarioWS?xsd=1" namespace="http://services.pucp.edu.pe" />
     </xsd:schema>
   </types>
-  <message name="verificarCuentaAdministrador">
-    <part name="parameters" element="tns:verificarCuentaAdministrador" />
-  </message>
-  <message name="verificarCuentaAdministradorResponse">
-    <part name="parameters" element="tns:verificarCuentaAdministradorResponse" />
-  </message>
   <message name="insertarCuenta">
     <part name="parameters" element="tns:insertarCuenta" />
   </message>
   <message name="insertarCuentaResponse">
     <part name="parameters" element="tns:insertarCuentaResponse" />
-  </message>
-  <message name="verificarCuentaPaciente">
-    <part name="parameters" element="tns:verificarCuentaPaciente" />
-  </message>
-  <message name="verificarCuentaPacienteResponse">
-    <part name="parameters" element="tns:verificarCuentaPacienteResponse" />
   </message>
   <message name="verificarCuentaMedico">
     <part name="parameters" element="tns:verificarCuentaMedico" />
@@ -29,27 +17,39 @@
   <message name="verificarCuentaMedicoResponse">
     <part name="parameters" element="tns:verificarCuentaMedicoResponse" />
   </message>
+  <message name="verificarCuentaPaciente">
+    <part name="parameters" element="tns:verificarCuentaPaciente" />
+  </message>
+  <message name="verificarCuentaPacienteResponse">
+    <part name="parameters" element="tns:verificarCuentaPacienteResponse" />
+  </message>
+  <message name="verificarCuentaAdministrador">
+    <part name="parameters" element="tns:verificarCuentaAdministrador" />
+  </message>
+  <message name="verificarCuentaAdministradorResponse">
+    <part name="parameters" element="tns:verificarCuentaAdministradorResponse" />
+  </message>
   <portType name="CuentaUsuarioWS">
-    <operation name="verificarCuentaAdministrador">
-      <input wsam:Action="http://services.pucp.edu.pe/CuentaUsuarioWS/verificarCuentaAdministradorRequest" message="tns:verificarCuentaAdministrador" />
-      <output wsam:Action="http://services.pucp.edu.pe/CuentaUsuarioWS/verificarCuentaAdministradorResponse" message="tns:verificarCuentaAdministradorResponse" />
-    </operation>
     <operation name="insertarCuenta">
       <input wsam:Action="http://services.pucp.edu.pe/CuentaUsuarioWS/insertarCuentaRequest" message="tns:insertarCuenta" />
       <output wsam:Action="http://services.pucp.edu.pe/CuentaUsuarioWS/insertarCuentaResponse" message="tns:insertarCuentaResponse" />
-    </operation>
-    <operation name="verificarCuentaPaciente">
-      <input wsam:Action="http://services.pucp.edu.pe/CuentaUsuarioWS/verificarCuentaPacienteRequest" message="tns:verificarCuentaPaciente" />
-      <output wsam:Action="http://services.pucp.edu.pe/CuentaUsuarioWS/verificarCuentaPacienteResponse" message="tns:verificarCuentaPacienteResponse" />
     </operation>
     <operation name="verificarCuentaMedico">
       <input wsam:Action="http://services.pucp.edu.pe/CuentaUsuarioWS/verificarCuentaMedicoRequest" message="tns:verificarCuentaMedico" />
       <output wsam:Action="http://services.pucp.edu.pe/CuentaUsuarioWS/verificarCuentaMedicoResponse" message="tns:verificarCuentaMedicoResponse" />
     </operation>
+    <operation name="verificarCuentaPaciente">
+      <input wsam:Action="http://services.pucp.edu.pe/CuentaUsuarioWS/verificarCuentaPacienteRequest" message="tns:verificarCuentaPaciente" />
+      <output wsam:Action="http://services.pucp.edu.pe/CuentaUsuarioWS/verificarCuentaPacienteResponse" message="tns:verificarCuentaPacienteResponse" />
+    </operation>
+    <operation name="verificarCuentaAdministrador">
+      <input wsam:Action="http://services.pucp.edu.pe/CuentaUsuarioWS/verificarCuentaAdministradorRequest" message="tns:verificarCuentaAdministrador" />
+      <output wsam:Action="http://services.pucp.edu.pe/CuentaUsuarioWS/verificarCuentaAdministradorResponse" message="tns:verificarCuentaAdministradorResponse" />
+    </operation>
   </portType>
   <binding name="CuentaUsuarioWSPortBinding" type="tns:CuentaUsuarioWS">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
-    <operation name="verificarCuentaAdministrador">
+    <operation name="insertarCuenta">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />
@@ -58,7 +58,7 @@
         <soap:body use="literal" />
       </output>
     </operation>
-    <operation name="insertarCuenta">
+    <operation name="verificarCuentaMedico">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />
@@ -76,7 +76,7 @@
         <soap:body use="literal" />
       </output>
     </operation>
-    <operation name="verificarCuentaMedico">
+    <operation name="verificarCuentaAdministrador">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />

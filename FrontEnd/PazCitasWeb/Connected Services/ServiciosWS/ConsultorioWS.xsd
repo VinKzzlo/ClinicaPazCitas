@@ -4,6 +4,8 @@
   <xs:element name="eliminarConsultorioResponse" type="tns:eliminarConsultorioResponse" />
   <xs:element name="insertarConsultorio" type="tns:insertarConsultorio" />
   <xs:element name="insertarConsultorioResponse" type="tns:insertarConsultorioResponse" />
+  <xs:element name="listarConsultPorSede" type="tns:listarConsultPorSede" />
+  <xs:element name="listarConsultPorSedeResponse" type="tns:listarConsultPorSedeResponse" />
   <xs:element name="listarConsultorio" type="tns:listarConsultorio" />
   <xs:element name="listarConsultorioResponse" type="tns:listarConsultorioResponse" />
   <xs:element name="modificarConsultorio" type="tns:modificarConsultorio" />
@@ -197,6 +199,16 @@
       <xs:element name="return" type="xs:int" />
     </xs:sequence>
   </xs:complexType>
+  <xs:complexType name="listarConsultPorSede">
+    <xs:sequence>
+      <xs:element name="idSede" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="listarConsultPorSedeResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:consultorio" />
+    </xs:sequence>
+  </xs:complexType>
   <xs:complexType name="obtenerConsultorioPorId">
     <xs:sequence>
       <xs:element name="idConsultorio" type="xs:int" />
@@ -219,10 +231,9 @@
   </xs:complexType>
   <xs:simpleType name="estadoAtencion">
     <xs:restriction base="xs:string">
-      <xs:enumeration value="PENDIENTE" />
-      <xs:enumeration value="CITADO" />
       <xs:enumeration value="EN_ESPERA" />
       <xs:enumeration value="EN_CONSULTORIO" />
+      <xs:enumeration value="ATENDIDO" />
     </xs:restriction>
   </xs:simpleType>
   <xs:simpleType name="estadoCita">

@@ -4,6 +4,7 @@
  */
 package pe.edu.pucp.pazcitas.ubicacion.dao;
 
+import java.util.ArrayList;
 import pe.edu.pucp.pazcitas.dao.ICrud;
 import pe.edu.pucp.pazcitas.ubicacion.model.Consultorio;
 
@@ -13,4 +14,5 @@ import pe.edu.pucp.pazcitas.ubicacion.model.Consultorio;
  */
 public interface ConsultorioDAO extends ICrud<Consultorio>{
     Consultorio obtenerPorId(int idConsultorio);
+    ArrayList<Consultorio> listarConsultoriosXSede(int idSede);
 }

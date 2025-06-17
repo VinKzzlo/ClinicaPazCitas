@@ -8,6 +8,8 @@
   <xs:element name="listarTurnoResponse" type="tns:listarTurnoResponse" />
   <xs:element name="modificarTurno" type="tns:modificarTurno" />
   <xs:element name="modificarTurnoResponse" type="tns:modificarTurnoResponse" />
+  <xs:element name="obtenerXId" type="tns:obtenerXId" />
+  <xs:element name="obtenerXIdResponse" type="tns:obtenerXIdResponse" />
   <xs:complexType name="eliminarTurno">
     <xs:sequence>
       <xs:element name="idturno" type="xs:int" />
@@ -53,6 +55,16 @@
   <xs:complexType name="modificarTurnoResponse">
     <xs:sequence>
       <xs:element name="return" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="obtenerXId">
+    <xs:sequence>
+      <xs:element name="idturno" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="obtenerXIdResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:turno" />
     </xs:sequence>
   </xs:complexType>
   <xs:simpleType name="diaSemana">

@@ -11,17 +11,17 @@
   <message name="eliminarSedeResponse">
     <part name="parameters" element="tns:eliminarSedeResponse" />
   </message>
-  <message name="modificarSede">
-    <part name="parameters" element="tns:modificarSede" />
-  </message>
-  <message name="modificarSedeResponse">
-    <part name="parameters" element="tns:modificarSedeResponse" />
-  </message>
   <message name="insertarSede">
     <part name="parameters" element="tns:insertarSede" />
   </message>
   <message name="insertarSedeResponse">
     <part name="parameters" element="tns:insertarSedeResponse" />
+  </message>
+  <message name="modificarSede">
+    <part name="parameters" element="tns:modificarSede" />
+  </message>
+  <message name="modificarSedeResponse">
+    <part name="parameters" element="tns:modificarSedeResponse" />
   </message>
   <message name="obtenerSedePorId">
     <part name="parameters" element="tns:obtenerSedePorId" />
@@ -35,18 +35,24 @@
   <message name="listarSedeResponse">
     <part name="parameters" element="tns:listarSedeResponse" />
   </message>
+  <message name="listarXEspecialidad">
+    <part name="parameters" element="tns:listarXEspecialidad" />
+  </message>
+  <message name="listarXEspecialidadResponse">
+    <part name="parameters" element="tns:listarXEspecialidadResponse" />
+  </message>
   <portType name="SedeWS">
     <operation name="eliminarSede">
       <input wsam:Action="http://services.pucp.edu.pe/SedeWS/eliminarSedeRequest" message="tns:eliminarSede" />
       <output wsam:Action="http://services.pucp.edu.pe/SedeWS/eliminarSedeResponse" message="tns:eliminarSedeResponse" />
     </operation>
-    <operation name="modificarSede">
-      <input wsam:Action="http://services.pucp.edu.pe/SedeWS/modificarSedeRequest" message="tns:modificarSede" />
-      <output wsam:Action="http://services.pucp.edu.pe/SedeWS/modificarSedeResponse" message="tns:modificarSedeResponse" />
-    </operation>
     <operation name="insertarSede">
       <input wsam:Action="http://services.pucp.edu.pe/SedeWS/insertarSedeRequest" message="tns:insertarSede" />
       <output wsam:Action="http://services.pucp.edu.pe/SedeWS/insertarSedeResponse" message="tns:insertarSedeResponse" />
+    </operation>
+    <operation name="modificarSede">
+      <input wsam:Action="http://services.pucp.edu.pe/SedeWS/modificarSedeRequest" message="tns:modificarSede" />
+      <output wsam:Action="http://services.pucp.edu.pe/SedeWS/modificarSedeResponse" message="tns:modificarSedeResponse" />
     </operation>
     <operation name="obtenerSedePorId">
       <input wsam:Action="http://services.pucp.edu.pe/SedeWS/obtenerSedePorIdRequest" message="tns:obtenerSedePorId" />
@@ -55,6 +61,10 @@
     <operation name="listarSede">
       <input wsam:Action="http://services.pucp.edu.pe/SedeWS/listarSedeRequest" message="tns:listarSede" />
       <output wsam:Action="http://services.pucp.edu.pe/SedeWS/listarSedeResponse" message="tns:listarSedeResponse" />
+    </operation>
+    <operation name="listarXEspecialidad">
+      <input wsam:Action="http://services.pucp.edu.pe/SedeWS/listarXEspecialidadRequest" message="tns:listarXEspecialidad" />
+      <output wsam:Action="http://services.pucp.edu.pe/SedeWS/listarXEspecialidadResponse" message="tns:listarXEspecialidadResponse" />
     </operation>
   </portType>
   <binding name="SedeWSPortBinding" type="tns:SedeWS">
@@ -68,7 +78,7 @@
         <soap:body use="literal" />
       </output>
     </operation>
-    <operation name="modificarSede">
+    <operation name="insertarSede">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />
@@ -77,7 +87,7 @@
         <soap:body use="literal" />
       </output>
     </operation>
-    <operation name="insertarSede">
+    <operation name="modificarSede">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />
@@ -96,6 +106,15 @@
       </output>
     </operation>
     <operation name="listarSede">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="listarXEspecialidad">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />

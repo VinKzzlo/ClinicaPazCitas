@@ -11,17 +11,11 @@
   <message name="listarPacienteResponse">
     <part name="parameters" element="tns:listarPacienteResponse" />
   </message>
-  <message name="modificarPaciente">
-    <part name="parameters" element="tns:modificarPaciente" />
+  <message name="obtenerPaciente">
+    <part name="parameters" element="tns:obtenerPaciente" />
   </message>
-  <message name="modificarPacienteResponse">
-    <part name="parameters" element="tns:modificarPacienteResponse" />
-  </message>
-  <message name="insertarPaciente">
-    <part name="parameters" element="tns:insertarPaciente" />
-  </message>
-  <message name="insertarPacienteResponse">
-    <part name="parameters" element="tns:insertarPacienteResponse" />
+  <message name="obtenerPacienteResponse">
+    <part name="parameters" element="tns:obtenerPacienteResponse" />
   </message>
   <message name="eliminarPaciente">
     <part name="parameters" element="tns:eliminarPaciente" />
@@ -29,32 +23,38 @@
   <message name="eliminarPacienteResponse">
     <part name="parameters" element="tns:eliminarPacienteResponse" />
   </message>
-  <message name="obtenerPaciente">
-    <part name="parameters" element="tns:obtenerPaciente" />
+  <message name="insertarPaciente">
+    <part name="parameters" element="tns:insertarPaciente" />
   </message>
-  <message name="obtenerPacienteResponse">
-    <part name="parameters" element="tns:obtenerPacienteResponse" />
+  <message name="insertarPacienteResponse">
+    <part name="parameters" element="tns:insertarPacienteResponse" />
+  </message>
+  <message name="modificarPaciente">
+    <part name="parameters" element="tns:modificarPaciente" />
+  </message>
+  <message name="modificarPacienteResponse">
+    <part name="parameters" element="tns:modificarPacienteResponse" />
   </message>
   <portType name="PacienteWS">
     <operation name="listarPaciente">
       <input wsam:Action="http://services.pucp.edu.pe/PacienteWS/listarPacienteRequest" message="tns:listarPaciente" />
       <output wsam:Action="http://services.pucp.edu.pe/PacienteWS/listarPacienteResponse" message="tns:listarPacienteResponse" />
     </operation>
-    <operation name="modificarPaciente">
-      <input wsam:Action="http://services.pucp.edu.pe/PacienteWS/modificarPacienteRequest" message="tns:modificarPaciente" />
-      <output wsam:Action="http://services.pucp.edu.pe/PacienteWS/modificarPacienteResponse" message="tns:modificarPacienteResponse" />
-    </operation>
-    <operation name="insertarPaciente">
-      <input wsam:Action="http://services.pucp.edu.pe/PacienteWS/insertarPacienteRequest" message="tns:insertarPaciente" />
-      <output wsam:Action="http://services.pucp.edu.pe/PacienteWS/insertarPacienteResponse" message="tns:insertarPacienteResponse" />
+    <operation name="obtenerPaciente">
+      <input wsam:Action="http://services.pucp.edu.pe/PacienteWS/obtenerPacienteRequest" message="tns:obtenerPaciente" />
+      <output wsam:Action="http://services.pucp.edu.pe/PacienteWS/obtenerPacienteResponse" message="tns:obtenerPacienteResponse" />
     </operation>
     <operation name="eliminarPaciente">
       <input wsam:Action="http://services.pucp.edu.pe/PacienteWS/eliminarPacienteRequest" message="tns:eliminarPaciente" />
       <output wsam:Action="http://services.pucp.edu.pe/PacienteWS/eliminarPacienteResponse" message="tns:eliminarPacienteResponse" />
     </operation>
-    <operation name="obtenerPaciente">
-      <input wsam:Action="http://services.pucp.edu.pe/PacienteWS/obtenerPacienteRequest" message="tns:obtenerPaciente" />
-      <output wsam:Action="http://services.pucp.edu.pe/PacienteWS/obtenerPacienteResponse" message="tns:obtenerPacienteResponse" />
+    <operation name="insertarPaciente">
+      <input wsam:Action="http://services.pucp.edu.pe/PacienteWS/insertarPacienteRequest" message="tns:insertarPaciente" />
+      <output wsam:Action="http://services.pucp.edu.pe/PacienteWS/insertarPacienteResponse" message="tns:insertarPacienteResponse" />
+    </operation>
+    <operation name="modificarPaciente">
+      <input wsam:Action="http://services.pucp.edu.pe/PacienteWS/modificarPacienteRequest" message="tns:modificarPaciente" />
+      <output wsam:Action="http://services.pucp.edu.pe/PacienteWS/modificarPacienteResponse" message="tns:modificarPacienteResponse" />
     </operation>
   </portType>
   <binding name="PacienteWSPortBinding" type="tns:PacienteWS">
@@ -68,16 +68,7 @@
         <soap:body use="literal" />
       </output>
     </operation>
-    <operation name="modificarPaciente">
-      <soap:operation soapAction="" />
-      <input>
-        <soap:body use="literal" />
-      </input>
-      <output>
-        <soap:body use="literal" />
-      </output>
-    </operation>
-    <operation name="insertarPaciente">
+    <operation name="obtenerPaciente">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />
@@ -95,7 +86,16 @@
         <soap:body use="literal" />
       </output>
     </operation>
-    <operation name="obtenerPaciente">
+    <operation name="insertarPaciente">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="modificarPaciente">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />

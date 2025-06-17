@@ -1,11 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
 using System.Web.UI.WebControls;
-using PazCitasWA.ServiciosWS;
 
 namespace PazCitasWA
 {
@@ -29,7 +23,7 @@ namespace PazCitasWA
         {
             //if (IdPacienteLogueado == 0)
             //{
-                
+
             //    // Manejar caso de no estar logueado (ya se haría en la propiedad IdPacienteLogueado)
             //    lblMensajeGeneral.Text = "Debe iniciar sesión para ver sus citas.";
             //    lblMensajeGeneral.Visible = true;

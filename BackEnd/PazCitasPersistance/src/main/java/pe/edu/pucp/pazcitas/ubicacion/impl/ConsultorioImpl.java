@@ -137,5 +137,33 @@ public class ConsultorioImpl implements ConsultorioDAO {
         }
         return consultorio;
     }
+
+    @Override
+    public ArrayList<Consultorio> listarConsultoriosXSede(int idSede) {
+        ArrayList<Consultorio> consultorios = new ArrayList<>();
+        Map<Integer, Object> parametrosEntrada = new HashMap<>();
+        parametrosEntrada.put(1, idSede);
+        rs = DBManager.getInstance().ejecutarProcedimientoLectura("LISTAR_CONSULTORIOS_X_SEDE", parametrosEntrada);
+        System.out.println("Lectura de consultorios por sede...");
+        try {
+            if (rs.next()) {
+                if(consultorios == null) consultorios = new ArrayList<>();
+                Consultorio c = new Consultorio();
+                c.setIdConsultorio(rs.getInt("id_consultorio"));
+                c.setNombreConsultorio(rs.getString("nombre_consultorio"));
+                c.setPiso(rs.getInt("piso"));
+                c.setCapacidad(rs.getInt("capacidad"));
+                if(rs.getInt("asignado") == 1)c.setAsignado(true);
+                else c.setAsignado(false);
+                c.setActivo(true);
+                consultorios.add(c);
+            }
+        } catch (SQLException ex) {
+            System.out.println("ERROR: " + ex.getMessage());
+        } finally {
+            DBManager.getInstance().cerrarConexion();
+        }
+        return consultorios;
+    }
     
 }

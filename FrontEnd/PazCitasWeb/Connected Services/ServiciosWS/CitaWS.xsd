@@ -6,6 +6,8 @@
   <xs:element name="insertarCitaResponse" type="tns:insertarCitaResponse" />
   <xs:element name="listarCita" type="tns:listarCita" />
   <xs:element name="listarCitaResponse" type="tns:listarCitaResponse" />
+  <xs:element name="listarXPaciente" type="tns:listarXPaciente" />
+  <xs:element name="listarXPacienteResponse" type="tns:listarXPacienteResponse" />
   <xs:element name="modificarCita" type="tns:modificarCita" />
   <xs:element name="modificarCitaResponse" type="tns:modificarCitaResponse" />
   <xs:element name="obtenerCita" type="tns:obtenerCita" />
@@ -207,6 +209,16 @@
       <xs:element name="return" type="xs:int" />
     </xs:sequence>
   </xs:complexType>
+  <xs:complexType name="listarXPaciente">
+    <xs:sequence>
+      <xs:element name="idPaciente" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="listarXPacienteResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:cita" />
+    </xs:sequence>
+  </xs:complexType>
   <xs:complexType name="insertarCita">
     <xs:sequence>
       <xs:element minOccurs="0" name="cita" type="tns:cita" />
@@ -219,10 +231,9 @@
   </xs:complexType>
   <xs:simpleType name="estadoAtencion">
     <xs:restriction base="xs:string">
-      <xs:enumeration value="PENDIENTE" />
-      <xs:enumeration value="CITADO" />
       <xs:enumeration value="EN_ESPERA" />
       <xs:enumeration value="EN_CONSULTORIO" />
+      <xs:enumeration value="ATENDIDO" />
     </xs:restriction>
   </xs:simpleType>
   <xs:simpleType name="estadoCita">

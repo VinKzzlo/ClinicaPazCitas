@@ -11,30 +11,30 @@
   <message name="listarMedicamentoResponse">
     <part name="parameters" element="tns:listarMedicamentoResponse" />
   </message>
-  <message name="insertarMedicamento">
-    <part name="parameters" element="tns:insertarMedicamento" />
-  </message>
-  <message name="insertarMedicamentoResponse">
-    <part name="parameters" element="tns:insertarMedicamentoResponse" />
-  </message>
   <message name="modificarMedicamento">
     <part name="parameters" element="tns:modificarMedicamento" />
   </message>
   <message name="modificarMedicamentoResponse">
     <part name="parameters" element="tns:modificarMedicamentoResponse" />
   </message>
+  <message name="insertarMedicamento">
+    <part name="parameters" element="tns:insertarMedicamento" />
+  </message>
+  <message name="insertarMedicamentoResponse">
+    <part name="parameters" element="tns:insertarMedicamentoResponse" />
+  </message>
   <portType name="MedicamentoWS">
     <operation name="listarMedicamento">
       <input wsam:Action="http://services.pucp.edu.pe/MedicamentoWS/listarMedicamentoRequest" message="tns:listarMedicamento" />
       <output wsam:Action="http://services.pucp.edu.pe/MedicamentoWS/listarMedicamentoResponse" message="tns:listarMedicamentoResponse" />
     </operation>
-    <operation name="insertarMedicamento">
-      <input wsam:Action="http://services.pucp.edu.pe/MedicamentoWS/insertarMedicamentoRequest" message="tns:insertarMedicamento" />
-      <output wsam:Action="http://services.pucp.edu.pe/MedicamentoWS/insertarMedicamentoResponse" message="tns:insertarMedicamentoResponse" />
-    </operation>
     <operation name="modificarMedicamento">
       <input wsam:Action="http://services.pucp.edu.pe/MedicamentoWS/modificarMedicamentoRequest" message="tns:modificarMedicamento" />
       <output wsam:Action="http://services.pucp.edu.pe/MedicamentoWS/modificarMedicamentoResponse" message="tns:modificarMedicamentoResponse" />
+    </operation>
+    <operation name="insertarMedicamento">
+      <input wsam:Action="http://services.pucp.edu.pe/MedicamentoWS/insertarMedicamentoRequest" message="tns:insertarMedicamento" />
+      <output wsam:Action="http://services.pucp.edu.pe/MedicamentoWS/insertarMedicamentoResponse" message="tns:insertarMedicamentoResponse" />
     </operation>
   </portType>
   <binding name="MedicamentoWSPortBinding" type="tns:MedicamentoWS">
@@ -48,7 +48,7 @@
         <soap:body use="literal" />
       </output>
     </operation>
-    <operation name="insertarMedicamento">
+    <operation name="modificarMedicamento">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />
@@ -57,7 +57,7 @@
         <soap:body use="literal" />
       </output>
     </operation>
-    <operation name="modificarMedicamento">
+    <operation name="insertarMedicamento">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />

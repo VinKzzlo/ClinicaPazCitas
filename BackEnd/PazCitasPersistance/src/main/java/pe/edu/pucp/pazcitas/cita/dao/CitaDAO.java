@@ -4,6 +4,7 @@
  */
 package pe.edu.pucp.pazcitas.cita.dao;
 
+import java.util.ArrayList;
 import pe.edu.pucp.pazcitas.cita.model.Cita;
 import pe.edu.pucp.pazcitas.dao.ICrud;
 
@@ -13,4 +14,5 @@ import pe.edu.pucp.pazcitas.dao.ICrud;
  */
 public interface CitaDAO extends ICrud<Cita>{
     public Cita obtenerPorId(int idCita);
+    public ArrayList<Cita> obtenerCitaPorPaciente(int idPaciente);
 }

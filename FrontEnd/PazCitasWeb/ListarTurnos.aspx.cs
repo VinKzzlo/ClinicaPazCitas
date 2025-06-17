@@ -1,11 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using PazCitasWA.ServiciosWS;
+using System;
 using System.ComponentModel;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
 using System.Web.UI.WebControls;
-using PazCitasWA.ServiciosWS;
 
 
 namespace PazCitasWA
@@ -34,7 +30,7 @@ namespace PazCitasWA
             //    rptTurnosMedico.DataBind();
             //}
 
-            
+
             ////boMedico = new MedicoWSClient();
             ////BindingList<medico> medicos = new BindingList<medico>(boMedico.listarMedico());
             ////dgvMedicos.DataSource = medicos;
@@ -47,7 +43,7 @@ namespace PazCitasWA
             ///*            boEmpleado = new EmpleadoBO();
             //            empleados = boEmpleado.listarTodos();
             //            dgvMedicos.DataSource = medicos;
-                        //dgvMedicos.DataBind();*/
+            //dgvMedicos.DataBind();*/
         }
 
         protected void rptTurnosMedico_ItemDataBound(object sender, RepeaterItemEventArgs e)

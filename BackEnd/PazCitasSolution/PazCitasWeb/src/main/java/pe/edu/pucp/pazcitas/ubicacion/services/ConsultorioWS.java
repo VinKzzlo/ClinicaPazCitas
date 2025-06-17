@@ -49,4 +49,10 @@ public class ConsultorioWS {
         boconsultorio = new ConsultorioBO();
         return boconsultorio.obtenerPorId(idConsultorio);
     }
+    
+    @WebMethod(operationName = "listarConsultPorSede")
+    public ArrayList<Consultorio> listarConsulPorSede(@WebParam(name = "idSede")int idSede){
+        boconsultorio = new ConsultorioBO();
+        return boconsultorio.listarXSede(idSede);
+    }
 }

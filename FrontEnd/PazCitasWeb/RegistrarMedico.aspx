@@ -41,103 +41,141 @@
             </div>
             <div class="card-body">
                 <!-- Id Área + DNI + CMP -->
-                <div class="mb-3 row align-items-center">
-                    <!-- Id Área -->
-                    <asp:Label ID="lblIDUsuario" runat="server"
-                        Text="Id Médico:" CssClass="col-form-label fw-bold col-auto pe-2" />
-                    <div class="col-2">
-                        <asp:TextBox ID="txtIDUsuario" CssClass="form-control" Enabled="false" runat="server" />
+                <div class="mb-3 row align-items-start">
+                    <!-- Id Médico -->
+                    <div class="col-4">
+                        <asp:Label ID="lblIDUsuario" runat="server"
+                            Text="Id Médico:" CssClass="col-form-label fw-medium pe-2" />
+                        <asp:TextBox ID="txtIDUsuario" CssClass="form-control w-75" Enabled="false" runat="server" />
+                        <div style="min-height: 1.25rem;"></div>
+                        <!-- Para mantener alineado con los otros -->
                     </div>
 
                     <!-- DNI -->
-                    <asp:Label ID="lblDNI" runat="server"
-                        Text="DNI:" CssClass="col-form-label fw-bold col-auto ps-lg-4 pe-2" />
-                    <div class="col-2">
-                        <asp:TextBox ID="txtDNI" CssClass="form-control" runat="server" />
+                    <div class="col-4">
+                        <asp:Label ID="lblDNI" runat="server"
+                            Text="DNI:" CssClass="col-form-label fw-medium pe-2" />
+                        <asp:TextBox ID="txtDNI" CssClass="form-control w-75" runat="server" MaxLength="8" />
+                        <div style="min-height: 1.25rem;">
+                            <asp:RegularExpressionValidator
+                                ID="revDNI" runat="server" ControlToValidate="txtDNI"
+                                ErrorMessage="El DNI solo debe contener 8 números."
+                                ValidationExpression="^\d{8}$"
+                                CssClass="text-danger small"
+                                Display="Dynamic" />
+                        </div>
                     </div>
 
                     <!-- CMP -->
-                    <asp:Label ID="lblCMP" runat="server"
-                        Text="CMP:" CssClass="col-form-label fw-bold col-auto ps-lg-4 pe-2" />
-                    <div class="col-2">
-                        <asp:TextBox ID="txtCMP" CssClass="form-control" runat="server" />
+                    <div class="col-4">
+                        <asp:Label ID="lblCMP" runat="server"
+                            Text="CMP:" CssClass="col-form-label fw-medium pe-2" />
+                        <asp:TextBox ID="txtCMP" CssClass="form-control w-75" runat="server" />
+                        <div style="min-height: 1.25rem;"></div>
+                        <!-- Para mantener alineado con los otros -->
                     </div>
                 </div>
+
                 <div class="mb-3 row align-items-center">
-                    <asp:Label ID="lblNombre" CssClass="col-form-label col-sm-auto pe-sm-2 fw-bold" runat="server" Text="Nombre:"></asp:Label>
-                    <div class="col-sm-6">
+                    <div class="col-6">
+                        <asp:Label ID="lblNombre" CssClass="col-form-label fw-medium pe-2" runat="server" Text="Nombres:"></asp:Label>
                         <asp:TextBox ID="txtNombre" CssClass="form-control" runat="server"></asp:TextBox>
+                        <div style="min-height: 1.25rem;">
+                            <asp:RegularExpressionValidator
+                                ID="revNombres" runat="server" ControlToValidate="txtNombre"
+                                ErrorMessage="Solo se permiten letras y espacios."
+                                ValidationExpression="^[A-Za-zÁÉÍÓÚáéíóúÑñ\s]{2,50}$"
+                                CssClass="text-danger small"
+                                Display="Dynamic" />
+                        </div>
                     </div>
-                </div>
-                <div class="mb-3 row align-items-center">
-                    <asp:Label ID="lblPaterno" CssClass="col-form-label col-sm-auto pe-sm-2 fw-bold" runat="server" Text="Apellido Paterno:"></asp:Label>
-                    <div class="col-sm-6">
+                    <div class="col-3">
+                        <asp:Label ID="lblPaterno" CssClass="col-form-label fw-medium pe-2" runat="server" Text="Apellido Paterno:"></asp:Label>
                         <asp:TextBox ID="txtPaterno" CssClass="form-control" runat="server"></asp:TextBox>
+                        <div style="min-height: 1.25rem;">
+                            <asp:RegularExpressionValidator
+                                ID="revPaterno" runat="server" ControlToValidate="txtPaterno"
+                                ErrorMessage="Solo se permiten letras y espacios."
+                                ValidationExpression="^[A-Za-zÁÉÍÓÚáéíóúÑñ\s]{2,50}$"
+                                CssClass="text-danger small"
+                                Display="Dynamic" />
+                        </div>
                     </div>
-                </div>
-                <div class="mb-3 row align-items-center">
-                    <asp:Label ID="lblMaterno" CssClass="col-form-label col-sm-auto pe-sm-2 fw-bold" runat="server" Text="Apellido Materno:"></asp:Label>
-                    <div class="col-sm-6">
+                    <div class="col-3">
+                        <asp:Label ID="lblMaterno" CssClass="col-form-label fw-medium pe-2" runat="server" Text="Apellido Materno:"></asp:Label>
                         <asp:TextBox ID="txtMaterno" CssClass="form-control" runat="server"></asp:TextBox>
+                        <div style="min-height: 1.25rem;">
+                            <asp:RegularExpressionValidator
+                                ID="revMaterno" runat="server" ControlToValidate="txtMaterno"
+                                ErrorMessage="Solo se permiten letras y espacios."
+                                ValidationExpression="^[A-Za-zÁÉÍÓÚáéíóúÑñ\s]{2,50}$"
+                                CssClass="text-danger small"
+                                Display="Dynamic" />
+                        </div>
                     </div>
                 </div>
+
                 <div class="mb-3 row align-items-start">
-                    <asp:Label ID="lblFechaNacimiento" CssClass="col-form-label col-sm-auto pe-sm-2 fw-bold " runat="server" Text="Fecha de nacimiento:"></asp:Label>
-                    <div class="col-sm-8">
-                        <input id="dtpFechaNacimiento" class="form-control" type="date" runat="server" />
+                    <div class="col-4">
+                        <asp:Label ID="lblFechaNacimiento" CssClass="col-form-label fw-medium pe-2" runat="server" Text="Fecha de nacimiento:"></asp:Label>
+                        <input id="dtpFechaNacimiento" runat="server" class="form-control" type="date" />
                     </div>
-                </div>
-                <div class="mb-3 row align-items-center">
-                    <asp:Label ID="lblGenero" runat="server"
-                        Text="Género:" CssClass="col-form-label fw-bold col-auto pe-2" />
-                    <div class="col-auto">
-                        <div class="form-check form-check-inline">
-                            <input runat="server" id="rbMasculino"
-                                type="radio" name="genero"
-                                class="form-check-input custom-radio-md" />
-                            <label runat="server"
-                                for="cphContenido_rbMasculino"
-                                class="form-check-label custom-radio-md">
-                                Masculino</label>
-                        </div>
-                        <div class="form-check form-check-inline">
-                            <input runat="server" id="rbFemenino"
-                                type="radio" name="genero"
-                                class="form-check-input custom-radio-md" />
-                            <label runat="server"
-                                for="cphContenido_rbFemenino"
-                                class="form-check-label custom-radio-md">
-                                Femenino</label>
+                    <div class="col-3">
+                        <asp:Label ID="lblGenero" runat="server"
+                            Text="Género:" CssClass="col-form-label fw-medium pe-2" />
+                        <div class="col-auto">
+                            <div class="form-check form-check-inline">
+                                <input runat="server" id="rbMasculino"
+                                    type="radio" name="genero"
+                                    class="form-check-input custom-radio-md" />
+                                <label runat="server"
+                                    for="cphContenido_rbMasculino"
+                                    class="form-check-label custom-radio-md">
+                                    Masculino</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input runat="server" id="rbFemenino"
+                                    type="radio" name="genero"
+                                    class="form-check-input custom-radio-md" />
+                                <label runat="server"
+                                    for="cphContenido_rbFemenino"
+                                    class="form-check-label custom-radio-md">
+                                    Femenino</label>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="mb-3 row align-items-center">
-                    <asp:Label ID="lblEmail" CssClass="col-form-label col-sm-auto pe-sm-2 fw-bold" runat="server" Text="E-mail:"></asp:Label>
-                    <div class="col-sm-6">
+                    <div class="col-5">
+                        <asp:Label ID="lblEmail" CssClass="col-form-label fw-medium pe-2" runat="server" Text="E-mail:"></asp:Label>
                         <asp:TextBox ID="txtEmail" CssClass="form-control" runat="server"></asp:TextBox>
                     </div>
                 </div>
-                <!-- Especialidad + Sede -->
+                <!--  Sede + Consultorio + Especialidad -->
                 <div class="mb-3 row align-items-center">
 
                     <!-- Sede -->
-                    <asp:Label ID="lblSede" runat="server"
-                        Text="Sede:" CssClass="col-form-label col-sm-auto pe-sm-2 fw-bold" />
-                    <div class="col-4 col-lg-3">
+                    <div class="col-4">
+                        <asp:Label ID="lblSede" runat="server"
+                            Text="Sede:" CssClass="col-form-label fw-medium pe-2" />
                         <asp:DropDownList ID="ddlSede" runat="server" CssClass="form-select" AutoPostBack="true"
                             OnSelectedIndexChanged="ddlSede_SelectedIndexChanged" />
                     </div>
+                    <!-- Consultorio -->
+                    <div class="col-4">
+                        <asp:Label ID="lblConsultorio" runat="server"
+                            Text="Consultorio:" CssClass="col-form-label fw-medium pe-2" />
+                        <asp:DropDownList ID="ddlConsultorio" runat="server" CssClass="form-select" />
+                    </div>
                     <!-- Especialidad -->
-                    <asp:Label ID="lblEspecialidad" runat="server"
-                        Text="Especialidad:" CssClass="col-form-label col-sm-auto pe-sm-2 fw-bold" />
-                    <div class="col-4 col-lg-3">
+                    <div class="col-4">
+                        <asp:Label ID="lblEspecialidad" runat="server"
+                            Text="Especialidad:" CssClass="col-form-label fw-medium pe-2" />
                         <asp:DropDownList ID="ddlEspecialidad" runat="server" CssClass="form-select" />
                     </div>
                 </div>
 
             </div>
             <div class="card-footer clearfix">
-                <asp:LinkButton ID="btnRegresar" runat="server" Text="<i class='fa-solid fa-rotate-left'></i> Regresar" CssClass="float-start btn btn-secondary" OnClick="btnRegresar_Click" />
+                <asp:LinkButton ID="btnRegresar" runat="server" CausesValidation="false" Text="<i class='fa-solid fa-rotate-left'></i> Regresar" CssClass="float-start btn btn-secondary" OnClick="btnRegresar_Click" />
                 <asp:LinkButton ID="btnGuardar" CssClass="float-end btn btn-success" runat="server" Text="<i class='fa-solid fa-floppy-disk pe-2'></i> Guardar" OnClick="btnGuardar_Click" />
             </div>
         </div>

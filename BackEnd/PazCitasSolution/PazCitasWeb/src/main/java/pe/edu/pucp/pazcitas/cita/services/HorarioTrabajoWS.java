@@ -26,6 +26,13 @@ public class HorarioTrabajoWS {
         bohorario = new HorarioTrabajoBO();
         return bohorario.listarTodos();
     }
+    
+    @WebMethod(operationName = "listarPorMedico")
+    public ArrayList<HorarioTrabajo> listarPorMedico(@WebParam(name = "idMedico") int idMedico) {
+        bohorario = new HorarioTrabajoBO();
+        return bohorario.listarPorMedico(idMedico);
+    }
+    
     @WebMethod(operationName = "insertaHorario")
     public int insertaHorario(@WebParam(name = "horario") HorarioTrabajo horario) {
         bohorario = new HorarioTrabajoBO();
@@ -40,5 +47,11 @@ public class HorarioTrabajoWS {
     public int eliminarHorario(@WebParam(name = "idhorario") int idhorario) {
         bohorario = new HorarioTrabajoBO();
         return bohorario.eliminar(idhorario);
+    }
+    
+    @WebMethod(operationName = "eliminarHorarioPorMedico")
+    public int eliminarHorarioPorMedico(@WebParam(name = "idMedico") int idMedico) {
+        bohorario = new HorarioTrabajoBO();
+        return bohorario.eliminarPorMedico(idMedico);
     }
 }

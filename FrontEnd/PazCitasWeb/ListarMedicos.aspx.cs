@@ -1,12 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using PazCitasWA.ServiciosWS;
+using System;
 using System.ComponentModel;
 using System.Linq;
-using System.ServiceModel.Channels;
-using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using PazCitasWA.ServiciosWS;
 
 namespace PazCitasWA
 {
@@ -14,12 +11,13 @@ namespace PazCitasWA
     {
         private MedicoWSClient wsMedico;
         private BindingList<medico> medicos;
-        
+
         protected void Page_Load(object sender, EventArgs e)
         {
             wsMedico = new MedicoWSClient();
             medico[] medicos1 = wsMedico.listarMedico();
             medicos = new BindingList<medico>(wsMedico.listarMedico());
+
             gvMedicos.DataSource = medicos;
             gvMedicos.DataBind();
 
@@ -38,6 +36,7 @@ namespace PazCitasWA
                     DataBinder.Eval(e.Row.DataItem, "apellidoMaterno").ToString();
                 e.Row.Cells[3].Text = DataBinder.Eval(e.Row.DataItem, "especialidad.nombre").ToString();
                 e.Row.Cells[4].Text = DataBinder.Eval(e.Row.DataItem, "sede.nombre").ToString();
+                e.Row.Cells[5].Text = DataBinder.Eval(e.Row.DataItem, "consultorio.nombreConsultorio").ToString();
             }
         }
 
@@ -66,6 +65,9 @@ namespace PazCitasWA
             Response.Redirect("ListarMedicos.aspx");
         }
 
-        
+        protected void btnVer_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

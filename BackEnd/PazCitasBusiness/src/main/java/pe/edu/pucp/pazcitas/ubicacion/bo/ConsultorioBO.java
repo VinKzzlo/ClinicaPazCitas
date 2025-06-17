@@ -39,4 +39,8 @@ public class ConsultorioBO {
     public Consultorio obtenerPorId(int idConsultorio){
         return daoConsultorio.obtenerPorId(idConsultorio);
     }
+    
+    public ArrayList<Consultorio> listarXSede(int idSede) {
+        return daoConsultorio.listarConsultoriosXSede(idSede);
+    }
 }

@@ -1,11 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data.SqlClient;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
+﻿using PazCitasWA.ServiciosWS;
+using System;
+using System.ComponentModel;
 using System.Web.UI.WebControls;
-using PazCitasWA.ServiciosWS;
 
 namespace PazCitasWA
 {
@@ -14,6 +10,7 @@ namespace PazCitasWA
         private SedeWSClient wsSede;
         private EspecialidadWSClient wsEspecialidad;
         private MedicoWSClient wsMedico;
+        private ConsultorioWSClient wsConsultorio;
         private Estado estado;
         private medico medico;
         protected void Page_Load(object sender, EventArgs e)
@@ -21,6 +18,9 @@ namespace PazCitasWA
             if (!IsPostBack)
             {
                 LoadDropDowns();
+                // Fecha máxima: hoy menos 18 años
+                DateTime maxDate = DateTime.Today.AddYears(-18);
+                dtpFechaNacimiento.Attributes["max"] = maxDate.ToString("yyyy-MM-dd");
             }
             string accion = Request.QueryString["accion"];
             if (accion == null)
@@ -47,11 +47,15 @@ namespace PazCitasWA
                     dtpFechaNacimiento.Value = medico.fechaNacimiento.ToString("yyyy-MM-dd");
                     txtEmail.Text = medico.email;
 
-                    // Preseleccionamos sede y especialidad:
+                    // Preseleccionamos sede consultorioy especialidad:
                     ddlSede.SelectedValue = medico.sede.idSede.ToString();
+                    ddlSede.Enabled = false;
+                    CargarConsultoriosPorMedico(medico.consultorio.idConsultorio);
                     CargarEspecialidadesPorSede(medico.sede.idSede);
                     ddlEspecialidad.SelectedValue = medico.especialidad.idEspecialidad.ToString();
                     ddlEspecialidad.Enabled = true;
+
+                    
                 }
             }
 
@@ -68,10 +72,14 @@ namespace PazCitasWA
             ddlSede.Items.Insert(0, new ListItem("-- Seleccione --", ""));
 
             // Poner placeholder en especialidades
+            ddlConsultorio.Items.Clear();
+            ddlConsultorio.Items.Add(new ListItem("-- Seleccione sede primero --", ""));
+            ddlConsultorio.Enabled = false;
+
+            // Poner placeholder en especialidades
             ddlEspecialidad.Items.Clear();
             ddlEspecialidad.Items.Add(new ListItem("-- Seleccione sede primero --", ""));
             ddlEspecialidad.Enabled = false;
-
 
         }
 
@@ -82,7 +90,7 @@ namespace PazCitasWA
 
         protected void btnGuardar_Click(object sender, EventArgs e)
         {
-           
+
             wsMedico = new MedicoWSClient();
             if (estado == Estado.Modificar)
             {
@@ -102,15 +110,17 @@ namespace PazCitasWA
             objSede.idSede = Int32.Parse(ddlSede.SelectedValue);
             especialidad objEspecialidad = new especialidad();
             objEspecialidad.idEspecialidad = Int32.Parse(ddlEspecialidad.SelectedValue);
+            consultorio objConsultorio = new consultorio();
+            objConsultorio.idConsultorio = Int32.Parse(ddlConsultorio.SelectedValue);
             medico.email = txtEmail.Text;
             medico.sede = objSede;
             medico.especialidad = objEspecialidad;
-
+            medico.consultorio = objConsultorio;
             try
             {
                 if (estado == Estado.Nuevo)
                 {
-                    wsMedico.insertarMedico(medico);    
+                    wsMedico.insertarMedico(medico);
                 }
                 else if (estado == Estado.Modificar)
                 {
@@ -130,11 +140,16 @@ namespace PazCitasWA
             if (!string.IsNullOrEmpty(ddlSede.SelectedValue))
             {
                 int idSede = int.Parse(ddlSede.SelectedValue);
+                CargarConsultoriosPorSede(idSede);
                 CargarEspecialidadesPorSede(idSede);
-                ddlEspecialidad.Enabled = true;
             }
             else
             {
+                // Poner placeholder en especialidades
+                ddlConsultorio.Items.Clear();
+                ddlConsultorio.Items.Add(new ListItem("-- Seleccione sede primero --", ""));
+                ddlConsultorio.Enabled = false;
+
                 ddlEspecialidad.Items.Clear();
                 ddlEspecialidad.Items.Add(new ListItem("-- Seleccione sede primero --", ""));
                 ddlEspecialidad.Enabled = false;
@@ -145,17 +160,79 @@ namespace PazCitasWA
         {
             wsEspecialidad = new EspecialidadWSClient();
 
-            // Supongamos que tienes este método en tu WS:
-            // listarXSede(int idSede)
+            //Si no tiene especialidades
+            especialidad[] listaEspecialidades = wsEspecialidad.listarXSede(idSede);
 
-            ddlEspecialidad.DataSource = wsEspecialidad.listarXSede(idSede);
-            ddlEspecialidad.DataTextField = "nombre";
-            ddlEspecialidad.DataValueField = "idEspecialidad";
-            ddlEspecialidad.DataBind();
+            if(listaEspecialidades == null)
+            {
+                ddlEspecialidad.Items.Clear();
+                ddlEspecialidad.Items.Add(new ListItem("-- Esta sede no tiene Espe....--", ""));
+                ddlEspecialidad.Enabled = false;
+            }
+            else
+            {
+                ddlEspecialidad.DataSource = listaEspecialidades;
+                ddlEspecialidad.DataTextField = "nombre";
+                ddlEspecialidad.DataValueField = "idEspecialidad";
+                ddlEspecialidad.DataBind();
+                ddlEspecialidad.Enabled = true;
+            }
 
-            ddlEspecialidad.Items.RemoveAt(0);
-            ddlEspecialidad.Items.Insert(0, new ListItem("-- Seleccione --", ""));
         }
+
+        private void CargarConsultoriosPorSede(int idSede)
+        {
+            wsConsultorio = new ConsultorioWSClient();
+
+            //Si no tiene especialidades
+            consultorio[] listaConsultorios = wsConsultorio.listarConsultPorSede(idSede);
+
+            if (listaConsultorios == null)
+            {
+                ddlConsultorio.Items.Clear();
+                ddlConsultorio.Items.Add(new ListItem("-- Esta sede no tiene Consultorios --", ""));
+                ddlConsultorio.Enabled = false;
+            }
+            else
+            {
+                ddlConsultorio.DataSource = listaConsultorios;
+                ddlConsultorio.DataTextField = "nombreConsultorio";
+                ddlConsultorio.DataValueField = "idConsultorio";
+                ddlConsultorio.DataBind();
+                ddlConsultorio.Enabled = true;
+            }
+
+        }
+
+        private void CargarConsultoriosPorMedico(int idMedico)
+        {
+            wsConsultorio = new ConsultorioWSClient();
+            medico medicoCons = new medico();
+            wsMedico = new MedicoWSClient();
+            medicoCons = wsMedico.obtenerMedico(idMedico);
+
+            //Si no tiene especialidades
+            consultorio consultorio = wsConsultorio.obtenerConsultorioPorId(medicoCons.consultorio.idConsultorio);
+            BindingList<consultorio> consultoriosLoad = new BindingList<consultorio>();
+            consultoriosLoad.Add(consultorio);
+
+            if (consultoriosLoad == null)
+            {
+                ddlConsultorio.Items.Clear();
+                ddlConsultorio.Items.Add(new ListItem("-- Esta sede no tiene Consultorios --", ""));
+                ddlConsultorio.Enabled = false;
+            }
+            else
+            {
+                ddlConsultorio.DataSource = consultoriosLoad;
+                ddlConsultorio.DataTextField = "nombreConsultorio";
+                ddlConsultorio.DataValueField = "idConsultorio";
+                ddlConsultorio.DataBind();
+                ddlConsultorio.Enabled = false;
+            }
+
+        }
+
 
     }
 }

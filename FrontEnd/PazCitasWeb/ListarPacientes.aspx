@@ -5,6 +5,14 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="cph_Scripts" runat="server">
     <style>
+        /* Header verde principal */
+        .header-medicos {
+            background: linear-gradient(135deg, #3add5f 0%, #10ab33 100%);
+            color: white;
+            padding: 1.5rem;
+            border-radius: 8px 8px 0 0;
+            margin-bottom: 0;
+        }
         /* ---------------- Tabla de Especialidades ---------------- */
 
         /* Cabecera verde */
@@ -84,15 +92,19 @@
     </style>
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="cph_Contenido" runat="server">
-    <div class="container">
-        <div class="row align-items-center">
-            <div class="row align-items-center mb-3">
-                <div class="col d-flex justify-content-between align-items-center">
-                    <h5 class="fw-bold m-0">Pacientes Registrados</h5>
-                    <asp:LinkButton ID="btnRegistrar" CssClass="btn btn-success"
-                        runat="server" OnClick="btnRegistrar_Click"
-                        Text="Registrar Paciente <i class='fa-solid fa-square-plus ms-1'></i>" />
-                </div>
+    <div class="container fluid">
+        <!-- Header Principal -->
+        <div class="header-medicos">
+            <div class="d-flex justify-content-between align-items-center">
+                <h4 class="mb-0 fw-bold">
+                    <i class="fa-solid fa-user-doctor me-2"></i>
+                    Pacientes
+                </h4>
+                <asp:LinkButton ID="btnRegistrar" CssClass="btn btn-light fw-semibold"
+                    runat="server" OnClick="btnRegistrar_Click">
+                    <i class="fa-solid fa-users-medical me-1"></i>
+                    Nuevo Paciente
+                </asp:LinkButton>
             </div>
         </div>
         <div class="container row">

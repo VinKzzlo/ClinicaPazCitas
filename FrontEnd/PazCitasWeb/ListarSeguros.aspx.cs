@@ -1,12 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using PazCitasWA.ServiciosWS;
+using System;
 using System.ComponentModel;
 using System.Linq;
-using System.Web;
-using System.Web.UI;
 using System.Web.UI.WebControls;
-using System.Xml;
-using PazCitasWA.ServiciosWS;
 
 namespace PazCitasWA
 {
@@ -36,7 +32,7 @@ namespace PazCitasWA
         protected void btnModificar_Click(object sender, EventArgs e)
         {
             int idSeguro = Int32.Parse(((LinkButton)sender).CommandArgument);
-            seguro seg = seguros.SingleOrDefault(x=>x.idSeguro == idSeguro);
+            seguro seg = seguros.SingleOrDefault(x => x.idSeguro == idSeguro);
             Session["seguroSeleccionado"] = seg;
             Response.Redirect("RegistrarSeguro.aspx?accion=modificar");
         }

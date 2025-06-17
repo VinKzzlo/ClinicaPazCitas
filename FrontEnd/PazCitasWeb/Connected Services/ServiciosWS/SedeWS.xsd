@@ -6,6 +6,8 @@
   <xs:element name="insertarSedeResponse" type="tns:insertarSedeResponse" />
   <xs:element name="listarSede" type="tns:listarSede" />
   <xs:element name="listarSedeResponse" type="tns:listarSedeResponse" />
+  <xs:element name="listarXEspecialidad" type="tns:listarXEspecialidad" />
+  <xs:element name="listarXEspecialidadResponse" type="tns:listarXEspecialidadResponse" />
   <xs:element name="modificarSede" type="tns:modificarSede" />
   <xs:element name="modificarSedeResponse" type="tns:modificarSedeResponse" />
   <xs:element name="obtenerSedePorId" type="tns:obtenerSedePorId" />
@@ -197,6 +199,16 @@
       <xs:element name="return" type="xs:int" />
     </xs:sequence>
   </xs:complexType>
+  <xs:complexType name="listarXEspecialidad">
+    <xs:sequence>
+      <xs:element name="idEspecialidad" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="listarXEspecialidadResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:sede" />
+    </xs:sequence>
+  </xs:complexType>
   <xs:complexType name="insertarSede">
     <xs:sequence>
       <xs:element minOccurs="0" name="Sede" type="tns:sede" />
@@ -219,10 +231,9 @@
   </xs:complexType>
   <xs:simpleType name="estadoAtencion">
     <xs:restriction base="xs:string">
-      <xs:enumeration value="PENDIENTE" />
-      <xs:enumeration value="CITADO" />
       <xs:enumeration value="EN_ESPERA" />
       <xs:enumeration value="EN_CONSULTORIO" />
+      <xs:enumeration value="ATENDIDO" />
     </xs:restriction>
   </xs:simpleType>
   <xs:simpleType name="estadoCita">

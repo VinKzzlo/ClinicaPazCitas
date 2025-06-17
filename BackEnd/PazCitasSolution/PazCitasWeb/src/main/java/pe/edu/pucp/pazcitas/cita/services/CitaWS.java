@@ -47,4 +47,9 @@ public class CitaWS {
         bocita = new CitaBO();
         return bocita.obtnerXId(idcita);
     }
+    @WebMethod(operationName = "listarXPaciente")
+    public ArrayList<Cita> listarXPaciente(@WebParam(name = "idPaciente") int idPaciente) {
+        bocita = new CitaBO();
+        return bocita.listarXPaciente(idPaciente);
+    }
 }

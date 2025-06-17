@@ -89,7 +89,26 @@ public class EspecialidadImpl implements EspecialidadDAO{
 
     @Override
     public ArrayList<Especialidad> listarEspxSede(int idSede) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        ArrayList<Especialidad> especialidades = new ArrayList<>();
+        Map<Integer, Object> parametrosEntrada = new HashMap<>();
+        parametrosEntrada.put(1, idSede);
+        rs = DBManager.getInstance().ejecutarProcedimientoLectura("LISTAR_ESPECIALIDAD_X_SEDE", parametrosEntrada);
+        System.out.println("Lectura de sede...");
+        try {
+            if (rs.next()) {
+                if(especialidades == null) especialidades = new ArrayList<>();
+                Especialidad c = new Especialidad();
+                c.setIdEspecialidad(rs.getInt("id_especialidad"));
+                c.setNombre(rs.getString("nombre"));
+                c.setDescripcion(rs.getString("descripcion"));
+                especialidades.add(c);
+            }
+        } catch (SQLException ex) {
+            System.out.println("ERROR: " + ex.getMessage());
+        } finally {
+            DBManager.getInstance().cerrarConexion();
+        }
+        return especialidades;    
     }
     
 }

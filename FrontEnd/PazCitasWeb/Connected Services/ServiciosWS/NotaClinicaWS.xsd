@@ -195,10 +195,9 @@
   </xs:complexType>
   <xs:simpleType name="estadoAtencion">
     <xs:restriction base="xs:string">
-      <xs:enumeration value="PENDIENTE" />
-      <xs:enumeration value="CITADO" />
       <xs:enumeration value="EN_ESPERA" />
       <xs:enumeration value="EN_CONSULTORIO" />
+      <xs:enumeration value="ATENDIDO" />
     </xs:restriction>
   </xs:simpleType>
   <xs:simpleType name="estadoCita">
