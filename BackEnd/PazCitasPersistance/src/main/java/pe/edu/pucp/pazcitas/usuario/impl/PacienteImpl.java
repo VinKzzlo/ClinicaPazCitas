@@ -137,6 +137,6 @@ public class PacienteImpl implements PacienteDAO{
             DBManager.getInstance().cerrarConexion();
         }
         return p; 
-    }
+    }///ola
     
 }//ola
