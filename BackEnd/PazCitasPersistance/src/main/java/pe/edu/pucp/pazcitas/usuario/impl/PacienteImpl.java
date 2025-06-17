@@ -14,7 +14,7 @@ import pe.edu.pucp.pazcitas.usuario.model.Paciente;
 
 public class PacienteImpl implements PacienteDAO{
     private ResultSet rs;
-
+    //ola
     @Override
     public int insertar(Paciente p) {
         Map<Integer,Object> parametrosSalida = new HashMap<>();   
@@ -137,6 +137,6 @@ public class PacienteImpl implements PacienteDAO{
             DBManager.getInstance().cerrarConexion();
         }
         return p; 
-    }
+    }///ola
     
-}
+}//ola
