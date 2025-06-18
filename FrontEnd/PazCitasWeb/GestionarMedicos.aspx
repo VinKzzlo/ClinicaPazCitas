@@ -119,7 +119,7 @@
 
                 <!-- 2 · Asistentes -->
                 <div class="col card-col-xl">
-                    <a href="AsignarTurnosMedicos.aspx" class="text-decoration-none">
+                    <a href="AsignarTurnos.aspx" class="text-decoration-none">
                         <div class="card shadow-sm h-100 border-0 hover-shadow card-asistentes">
                             <div class="card-body text-center">
                                 <i class="fa-solid fa-calendar-days"></i>

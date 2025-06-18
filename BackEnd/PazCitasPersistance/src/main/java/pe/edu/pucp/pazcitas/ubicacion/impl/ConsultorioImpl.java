@@ -146,7 +146,7 @@ public class ConsultorioImpl implements ConsultorioDAO {
         rs = DBManager.getInstance().ejecutarProcedimientoLectura("LISTAR_CONSULTORIOS_X_SEDE", parametrosEntrada);
         System.out.println("Lectura de consultorios por sede...");
         try {
-            if (rs.next()) {
+            while (rs.next()) {
                 if(consultorios == null) consultorios = new ArrayList<>();
                 Consultorio c = new Consultorio();
                 c.setIdConsultorio(rs.getInt("id_consultorio"));
@@ -156,6 +156,7 @@ public class ConsultorioImpl implements ConsultorioDAO {
                 if(rs.getInt("asignado") == 1)c.setAsignado(true);
                 else c.setAsignado(false);
                 c.setActivo(true);
+                
                 consultorios.add(c);
             }
         } catch (SQLException ex) {

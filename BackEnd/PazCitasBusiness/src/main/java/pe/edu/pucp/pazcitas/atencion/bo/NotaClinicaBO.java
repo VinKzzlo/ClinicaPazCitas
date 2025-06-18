@@ -33,4 +33,8 @@ public class NotaClinicaBO {
         return daoNotaClinica.listarTodos();
     }
     
+    public ArrayList<NotaClinica>listarXHistorial(int idHis){
+        return daoNotaClinica.listarXhistorial(idHis);
+    }
+    
 }

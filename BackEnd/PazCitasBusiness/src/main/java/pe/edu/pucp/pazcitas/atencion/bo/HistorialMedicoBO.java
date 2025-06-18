@@ -34,4 +34,8 @@ public class HistorialMedicoBO {
     public ArrayList<HistorialMedico> listarTodos(){
         return daoHistorial.listarTodos();
     }
+    
+    public HistorialMedico obtenerHistorial(int idPaciente){
+        return daoHistorial.obtenerHistorial(idPaciente);
+    }
 }

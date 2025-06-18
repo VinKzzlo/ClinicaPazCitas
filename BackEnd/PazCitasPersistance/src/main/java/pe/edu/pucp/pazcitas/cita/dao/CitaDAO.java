@@ -15,4 +15,5 @@ import pe.edu.pucp.pazcitas.dao.ICrud;
 public interface CitaDAO extends ICrud<Cita>{
     public Cita obtenerPorId(int idCita);
     public ArrayList<Cita> obtenerCitaPorPaciente(int idPaciente);
+    ArrayList<Cita> listarXMedico(int idMed);
 }

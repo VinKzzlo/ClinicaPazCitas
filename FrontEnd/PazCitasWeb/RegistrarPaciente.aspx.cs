@@ -20,6 +20,15 @@ namespace PazCitasWA
                 ddlSeguro.DataValueField = "idSeguro";
                 ddlSeguro.DataBind();
                 ddlSeguro.Items.Insert(0, new ListItem("-- Seleccione --", ""));
+
+                DateTime maxDate = DateTime.Today.AddYears(-18);
+                DateTime minDate = new DateTime(1940, 1, 1);
+
+                dtpFechaNacimiento.Attributes["min"] = minDate.ToString("yyyy-MM-dd");
+                dtpFechaNacimiento.Attributes["max"] = maxDate.ToString("yyyy-MM-dd");
+
+                // Establecer el valor máximo de la fecha como la fecha actual
+                rvFechaNacimiento.MaximumValue = DateTime.Today.ToString("yyyy-MM-dd");
             }
 
             string accion = Request.QueryString["accion"];
@@ -48,6 +57,9 @@ namespace PazCitasWA
                     ddlSeguro.SelectedValue = paciente.seguro.idSeguro.ToString();
                     txtDireccion.Text = paciente.direccion;
                     txtTelefono.Text = paciente.telefono.ToString();
+
+                    txtUsername.Enabled = false;
+                    txtPassword.Enabled = false;
                 }
             }
 
@@ -82,11 +94,21 @@ namespace PazCitasWA
             paciente.direccion = txtDireccion.Text;
             paciente.telefono = txtTelefono.Text;
 
+            CuentaUsuarioWSClient wsCuenta = new CuentaUsuarioWSClient();
+            cuentaUsuario cuenta = new cuentaUsuario();
+            cuenta.username = txtUsername.Text;
+            cuenta.password = txtPassword.Text;
+            cuenta.rol = rol.PACIENTE;
+            cuenta.rolSpecified = true;
+            cuenta.usuario = paciente;
+
             try
             {
                 if (estado == Estado.Nuevo)
                 {
-                    wsPaciente.insertarPaciente(paciente);
+                    int idInsertado = wsPaciente.insertarPaciente(paciente);
+                    cuenta.usuario.idUsuario = idInsertado;
+                    wsCuenta.insertarCuenta(cuenta);
                 }
                 else if (estado == Estado.Modificar)
                 {
@@ -100,5 +122,8 @@ namespace PazCitasWA
 
             Response.Redirect("ListarPacientes.aspx");
         }
+
+
+
     }
 }

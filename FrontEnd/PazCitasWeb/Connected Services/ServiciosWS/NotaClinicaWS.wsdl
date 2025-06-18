@@ -23,6 +23,12 @@
   <message name="modificarNotaClinicaResponse">
     <part name="parameters" element="tns:modificarNotaClinicaResponse" />
   </message>
+  <message name="listarNotaClinicaXHistorial">
+    <part name="parameters" element="tns:listarNotaClinicaXHistorial" />
+  </message>
+  <message name="listarNotaClinicaXHistorialResponse">
+    <part name="parameters" element="tns:listarNotaClinicaXHistorialResponse" />
+  </message>
   <portType name="NotaClinicaWS">
     <operation name="listarNotaClinica">
       <input wsam:Action="http://services.pucp.edu.pe/NotaClinicaWS/listarNotaClinicaRequest" message="tns:listarNotaClinica" />
@@ -35,6 +41,10 @@
     <operation name="modificarNotaClinica">
       <input wsam:Action="http://services.pucp.edu.pe/NotaClinicaWS/modificarNotaClinicaRequest" message="tns:modificarNotaClinica" />
       <output wsam:Action="http://services.pucp.edu.pe/NotaClinicaWS/modificarNotaClinicaResponse" message="tns:modificarNotaClinicaResponse" />
+    </operation>
+    <operation name="listarNotaClinicaXHistorial">
+      <input wsam:Action="http://services.pucp.edu.pe/NotaClinicaWS/listarNotaClinicaXHistorialRequest" message="tns:listarNotaClinicaXHistorial" />
+      <output wsam:Action="http://services.pucp.edu.pe/NotaClinicaWS/listarNotaClinicaXHistorialResponse" message="tns:listarNotaClinicaXHistorialResponse" />
     </operation>
   </portType>
   <binding name="NotaClinicaWSPortBinding" type="tns:NotaClinicaWS">
@@ -58,6 +68,15 @@
       </output>
     </operation>
     <operation name="modificarNotaClinica">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="listarNotaClinicaXHistorial">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />

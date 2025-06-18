@@ -41,4 +41,9 @@ public class AdministradorBO {
         {
             return daoAdmi.listarTodos();
         }
+        
+        public Administrador obtenerPorID(int idAdmin){
+            
+            return daoAdmi.obtenerPorID(idAdmin);
+        }
 }

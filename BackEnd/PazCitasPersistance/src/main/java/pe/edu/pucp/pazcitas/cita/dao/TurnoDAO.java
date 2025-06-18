@@ -4,7 +4,10 @@
  */
 package pe.edu.pucp.pazcitas.cita.dao;
 
+import java.util.ArrayList;
+import java.util.Date;
 import pe.edu.pucp.pazcitas.cita.model.Turno;
+import pe.edu.pucp.pazcitas.cita.model.TurnoDisponibleDTO;
 import pe.edu.pucp.pazcitas.dao.ICrud;
 
 /**
@@ -13,4 +16,5 @@ import pe.edu.pucp.pazcitas.dao.ICrud;
  */
 public interface TurnoDAO extends ICrud<Turno>{
     public Turno obtenerPorId(int idTurno);
+    public ArrayList<TurnoDisponibleDTO> listarTurnosDisponiblesSemana(int idMedico, Date fechaInicio);
 }

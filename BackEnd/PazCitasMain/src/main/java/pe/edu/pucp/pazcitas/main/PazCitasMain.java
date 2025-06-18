@@ -293,14 +293,19 @@ public class PazCitasMain {
 ///
 ///
 ///
-        TurnoBO boTurno = new TurnoBO();
+//        TurnoBO boTurno = new TurnoBO();
+//        
+//
+//        ArrayList<Turno> turnos = boTurno.listarTodos();
+//
+//        for(Turno t : turnos){
+//            
+//        }
+
+        ConsultorioBO boCons = new ConsultorioBO();
         
-
-        ArrayList<Turno> turnos = boTurno.listarTodos();
-
-        for(Turno t : turnos){
-            
-        }
+        ArrayList<Consultorio> consultorios = new ArrayList<>();
+        consultorios = boCons.listarXSede(1);
         
     }
 }

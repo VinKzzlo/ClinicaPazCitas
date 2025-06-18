@@ -66,7 +66,7 @@
                     Médicos
                 </h4>
                 <asp:LinkButton ID="btnRegistrar"
-                    CssClass="btn btn-light btn-sm"
+                    CssClass="btn btn-light fw-semibold"
                     runat="server"
                     OnClick="btnRegistrar_Click">
                     <i class="fa-solid fa-plus me-1"></i>
@@ -101,20 +101,18 @@
                             HeaderStyle-CssClass="bg-success text-white align-middle"
                             ItemStyle-Width="10%" ItemStyle-CssClass="text-wrap align-middle" />
 
-                        <asp:TemplateField HeaderText="Acciones" HeaderStyle-CssClass="bg-success text-white Center"
+                        <asp:TemplateField HeaderText="Acciones" HeaderStyle-CssClass="bg-success text-white align-middle"
                             ItemStyle-CssClass="align-middle">
                             <ItemTemplate>
-                                <div class="d-flex gap-2 align-items-center">
-                                    <asp:LinkButton ID="btnModificar" runat="server" CssClass="btn btn-success btn-sm btn-modificar"
+                                <div class="d-flex gap-2">
+                                    <asp:LinkButton runat="server" ID="btnModificar" CssClass="btn btn-success btn-sm btn-modificar"
                                         Text="<i class='fa-solid fa-pen'></i>"
                                         OnClick="btnModificar_Click"
                                         CommandArgument='<%# Eval("idUsuario") %>' />
-
-                                    <asp:LinkButton ID="btnEliminar" runat="server" CssClass="btn btn-danger btn-sm"
+                                    <asp:LinkButton runat="server" ID="btnEliminar" CssClass="btn btn-danger btn-sm"
                                         Text="<i class='fa-solid fa-trash'></i>"
                                         OnClick="btnEliminar_Click"
                                         CommandArgument='<%# Eval("idUsuario") %>' />
-
                                     <asp:LinkButton ID="btnVer" runat="server" CssClass="btn btn-primary btn-sm"
                                         Text="<i class='fa-solid fa-eye'></i>"
                                         OnClick="btnVer_Click"

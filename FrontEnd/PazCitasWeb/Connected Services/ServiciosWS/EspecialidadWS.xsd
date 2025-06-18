@@ -181,22 +181,22 @@
       <xs:element name="stock" type="xs:int" />
     </xs:sequence>
   </xs:complexType>
-  <xs:complexType name="eliminarEspecialidad">
-    <xs:sequence>
-      <xs:element name="idepecialidad" type="xs:int" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:complexType name="eliminarEspecialidadResponse">
-    <xs:sequence>
-      <xs:element name="return" type="xs:int" />
-    </xs:sequence>
-  </xs:complexType>
   <xs:complexType name="insertarEspecialidad">
     <xs:sequence>
       <xs:element minOccurs="0" name="especialidad" type="tns:especialidad" />
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="insertarEspecialidadResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="eliminarEspecialidad">
+    <xs:sequence>
+      <xs:element name="idepecialidad" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="eliminarEspecialidadResponse">
     <xs:sequence>
       <xs:element name="return" type="xs:int" />
     </xs:sequence>

@@ -8,16 +8,13 @@
   <xs:element name="listarPacienteResponse" type="tns:listarPacienteResponse" />
   <xs:element name="modificarPaciente" type="tns:modificarPaciente" />
   <xs:element name="modificarPacienteResponse" type="tns:modificarPacienteResponse" />
-  <xs:element name="obtenerPaciente" type="tns:obtenerPaciente" />
-  <xs:element name="obtenerPacienteResponse" type="tns:obtenerPacienteResponse" />
-  <xs:complexType name="obtenerPaciente">
+  <xs:element name="obtenerPacienteXiD" type="tns:obtenerPacienteXiD" />
+  <xs:element name="obtenerPacienteXiDResponse" type="tns:obtenerPacienteXiDResponse" />
+  <xs:element name="obtenerPacientexDNI" type="tns:obtenerPacientexDNI" />
+  <xs:element name="obtenerPacientexDNIResponse" type="tns:obtenerPacientexDNIResponse" />
+  <xs:complexType name="insertarPaciente">
     <xs:sequence>
-      <xs:element name="idpaciente" type="xs:int" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:complexType name="obtenerPacienteResponse">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="return" type="tns:paciente" />
+      <xs:element minOccurs="0" name="paciente" type="tns:paciente" />
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="paciente">
@@ -179,11 +176,6 @@
       <xs:element minOccurs="0" name="vigencia" type="xs:dateTime" />
     </xs:sequence>
   </xs:complexType>
-  <xs:complexType name="insertarPaciente">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="paciente" type="tns:paciente" />
-    </xs:sequence>
-  </xs:complexType>
   <xs:complexType name="insertarPacienteResponse">
     <xs:sequence>
       <xs:element name="return" type="xs:int" />
@@ -215,6 +207,26 @@
   <xs:complexType name="eliminarPacienteResponse">
     <xs:sequence>
       <xs:element name="return" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="obtenerPacienteXiD">
+    <xs:sequence>
+      <xs:element name="idpaciente" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="obtenerPacienteXiDResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:paciente" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="obtenerPacientexDNI">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="dni" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="obtenerPacientexDNIResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:paciente" />
     </xs:sequence>
   </xs:complexType>
   <xs:simpleType name="estadoAtencion">

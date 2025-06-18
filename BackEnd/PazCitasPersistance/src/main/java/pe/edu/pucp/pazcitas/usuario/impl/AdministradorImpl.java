@@ -6,9 +6,13 @@ import java.sql.Types;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
+import pe.edu.pucp.pazcitas.cita.model.Especialidad;
 import pe.edu.pucp.pazcitas.config.DBManager;
+import pe.edu.pucp.pazcitas.ubicacion.model.Consultorio;
+import pe.edu.pucp.pazcitas.ubicacion.model.Sede;
 import pe.edu.pucp.pazcitas.usuario.dao.AdministradorDAO;
 import pe.edu.pucp.pazcitas.usuario.model.Administrador;
+import pe.edu.pucp.pazcitas.usuario.model.Medico;
 
 
 public class AdministradorImpl implements AdministradorDAO{
@@ -80,5 +84,35 @@ public class AdministradorImpl implements AdministradorDAO{
         }
         return administradores;
     }
+
+    @Override
+    public Administrador obtenerPorID(int idAdmin) {
+        Administrador a = null;
+        Map<Integer, Object> parametrosEntrada = new HashMap<>();
+        parametrosEntrada.put(1, idAdmin);
+        rs = DBManager.getInstance().ejecutarProcedimientoLectura("OBTENER_ADMINISTRADOR_X_ID", parametrosEntrada);
+        try{
+            while(rs.next()){
+                if(a == null) a = new Administrador();
+                a.setIdUsuario(rs.getInt("id_usuario"));
+                a.setNombre(rs.getString("nombre"));
+                a.setApellidoPaterno(rs.getString("apellido_paterno"));
+                a.setApellidoMaterno(rs.getString("apellido_materno"));
+                a.setDni(rs.getString("dni"));
+                a.setEmail(rs.getString("email"));
+                a.setFechaNacimiento(rs.getDate("fecha_nacimiento"));
+                a.setGenero(rs.getString("genero").charAt(0));
+                a.setActivo(true);
+                
+            }
+        }catch(SQLException ex){
+            System.out.println(ex.getMessage());
+        }finally{
+            DBManager.getInstance().cerrarConexion();
+        }
+        return a; 
+    }
+    
+    
     
 }

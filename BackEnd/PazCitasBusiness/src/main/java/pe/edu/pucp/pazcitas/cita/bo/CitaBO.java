@@ -45,4 +45,8 @@ public class CitaBO {
     public ArrayList<Cita>listarXPaciente(int idPaciente){
         return daoCita.obtenerCitaPorPaciente(idPaciente);
     }
+    
+    public ArrayList<Cita>listarXMedico(int idMedico){
+        return daoCita.listarXMedico(idMedico);
+    }
 }

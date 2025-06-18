@@ -5,23 +5,17 @@
       <xsd:import schemaLocation="http://localhost:8080/PazCitasWeb/SeguroWS?xsd=1" namespace="http://services.pucp.edu.pe" />
     </xsd:schema>
   </types>
-  <message name="eliminarSeguro">
-    <part name="parameters" element="tns:eliminarSeguro" />
-  </message>
-  <message name="eliminarSeguroResponse">
-    <part name="parameters" element="tns:eliminarSeguroResponse" />
-  </message>
   <message name="listarSeguro">
     <part name="parameters" element="tns:listarSeguro" />
   </message>
   <message name="listarSeguroResponse">
     <part name="parameters" element="tns:listarSeguroResponse" />
   </message>
-  <message name="insertarSeguro">
-    <part name="parameters" element="tns:insertarSeguro" />
+  <message name="eliminarSeguro">
+    <part name="parameters" element="tns:eliminarSeguro" />
   </message>
-  <message name="insertarSeguroResponse">
-    <part name="parameters" element="tns:insertarSeguroResponse" />
+  <message name="eliminarSeguroResponse">
+    <part name="parameters" element="tns:eliminarSeguroResponse" />
   </message>
   <message name="modificarSeguro">
     <part name="parameters" element="tns:modificarSeguro" />
@@ -29,35 +23,32 @@
   <message name="modificarSeguroResponse">
     <part name="parameters" element="tns:modificarSeguroResponse" />
   </message>
+  <message name="insertarSeguro">
+    <part name="parameters" element="tns:insertarSeguro" />
+  </message>
+  <message name="insertarSeguroResponse">
+    <part name="parameters" element="tns:insertarSeguroResponse" />
+  </message>
   <portType name="SeguroWS">
-    <operation name="eliminarSeguro">
-      <input wsam:Action="http://services.pucp.edu.pe/SeguroWS/eliminarSeguroRequest" message="tns:eliminarSeguro" />
-      <output wsam:Action="http://services.pucp.edu.pe/SeguroWS/eliminarSeguroResponse" message="tns:eliminarSeguroResponse" />
-    </operation>
     <operation name="listarSeguro">
       <input wsam:Action="http://services.pucp.edu.pe/SeguroWS/listarSeguroRequest" message="tns:listarSeguro" />
       <output wsam:Action="http://services.pucp.edu.pe/SeguroWS/listarSeguroResponse" message="tns:listarSeguroResponse" />
     </operation>
-    <operation name="insertarSeguro">
-      <input wsam:Action="http://services.pucp.edu.pe/SeguroWS/insertarSeguroRequest" message="tns:insertarSeguro" />
-      <output wsam:Action="http://services.pucp.edu.pe/SeguroWS/insertarSeguroResponse" message="tns:insertarSeguroResponse" />
+    <operation name="eliminarSeguro">
+      <input wsam:Action="http://services.pucp.edu.pe/SeguroWS/eliminarSeguroRequest" message="tns:eliminarSeguro" />
+      <output wsam:Action="http://services.pucp.edu.pe/SeguroWS/eliminarSeguroResponse" message="tns:eliminarSeguroResponse" />
     </operation>
     <operation name="modificarSeguro">
       <input wsam:Action="http://services.pucp.edu.pe/SeguroWS/modificarSeguroRequest" message="tns:modificarSeguro" />
       <output wsam:Action="http://services.pucp.edu.pe/SeguroWS/modificarSeguroResponse" message="tns:modificarSeguroResponse" />
     </operation>
+    <operation name="insertarSeguro">
+      <input wsam:Action="http://services.pucp.edu.pe/SeguroWS/insertarSeguroRequest" message="tns:insertarSeguro" />
+      <output wsam:Action="http://services.pucp.edu.pe/SeguroWS/insertarSeguroResponse" message="tns:insertarSeguroResponse" />
+    </operation>
   </portType>
   <binding name="SeguroWSPortBinding" type="tns:SeguroWS">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
-    <operation name="eliminarSeguro">
-      <soap:operation soapAction="" />
-      <input>
-        <soap:body use="literal" />
-      </input>
-      <output>
-        <soap:body use="literal" />
-      </output>
-    </operation>
     <operation name="listarSeguro">
       <soap:operation soapAction="" />
       <input>
@@ -67,7 +58,7 @@
         <soap:body use="literal" />
       </output>
     </operation>
-    <operation name="insertarSeguro">
+    <operation name="eliminarSeguro">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />
@@ -77,6 +68,15 @@
       </output>
     </operation>
     <operation name="modificarSeguro">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="insertarSeguro">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />

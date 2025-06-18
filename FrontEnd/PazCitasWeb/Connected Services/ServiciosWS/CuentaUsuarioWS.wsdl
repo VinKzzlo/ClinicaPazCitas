@@ -11,17 +11,17 @@
   <message name="insertarCuentaResponse">
     <part name="parameters" element="tns:insertarCuentaResponse" />
   </message>
-  <message name="verificarCuentaMedico">
-    <part name="parameters" element="tns:verificarCuentaMedico" />
-  </message>
-  <message name="verificarCuentaMedicoResponse">
-    <part name="parameters" element="tns:verificarCuentaMedicoResponse" />
-  </message>
   <message name="verificarCuentaPaciente">
     <part name="parameters" element="tns:verificarCuentaPaciente" />
   </message>
   <message name="verificarCuentaPacienteResponse">
     <part name="parameters" element="tns:verificarCuentaPacienteResponse" />
+  </message>
+  <message name="verificarCuentaMedico">
+    <part name="parameters" element="tns:verificarCuentaMedico" />
+  </message>
+  <message name="verificarCuentaMedicoResponse">
+    <part name="parameters" element="tns:verificarCuentaMedicoResponse" />
   </message>
   <message name="verificarCuentaAdministrador">
     <part name="parameters" element="tns:verificarCuentaAdministrador" />
@@ -34,13 +34,13 @@
       <input wsam:Action="http://services.pucp.edu.pe/CuentaUsuarioWS/insertarCuentaRequest" message="tns:insertarCuenta" />
       <output wsam:Action="http://services.pucp.edu.pe/CuentaUsuarioWS/insertarCuentaResponse" message="tns:insertarCuentaResponse" />
     </operation>
-    <operation name="verificarCuentaMedico">
-      <input wsam:Action="http://services.pucp.edu.pe/CuentaUsuarioWS/verificarCuentaMedicoRequest" message="tns:verificarCuentaMedico" />
-      <output wsam:Action="http://services.pucp.edu.pe/CuentaUsuarioWS/verificarCuentaMedicoResponse" message="tns:verificarCuentaMedicoResponse" />
-    </operation>
     <operation name="verificarCuentaPaciente">
       <input wsam:Action="http://services.pucp.edu.pe/CuentaUsuarioWS/verificarCuentaPacienteRequest" message="tns:verificarCuentaPaciente" />
       <output wsam:Action="http://services.pucp.edu.pe/CuentaUsuarioWS/verificarCuentaPacienteResponse" message="tns:verificarCuentaPacienteResponse" />
+    </operation>
+    <operation name="verificarCuentaMedico">
+      <input wsam:Action="http://services.pucp.edu.pe/CuentaUsuarioWS/verificarCuentaMedicoRequest" message="tns:verificarCuentaMedico" />
+      <output wsam:Action="http://services.pucp.edu.pe/CuentaUsuarioWS/verificarCuentaMedicoResponse" message="tns:verificarCuentaMedicoResponse" />
     </operation>
     <operation name="verificarCuentaAdministrador">
       <input wsam:Action="http://services.pucp.edu.pe/CuentaUsuarioWS/verificarCuentaAdministradorRequest" message="tns:verificarCuentaAdministrador" />
@@ -58,7 +58,7 @@
         <soap:body use="literal" />
       </output>
     </operation>
-    <operation name="verificarCuentaMedico">
+    <operation name="verificarCuentaPaciente">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />
@@ -67,7 +67,7 @@
         <soap:body use="literal" />
       </output>
     </operation>
-    <operation name="verificarCuentaPaciente">
+    <operation name="verificarCuentaMedico">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />

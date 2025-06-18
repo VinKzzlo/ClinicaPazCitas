@@ -39,4 +39,11 @@ public class HistorialMedicoWS {
         bohistorial = new HistorialMedicoBO();
         return bohistorial.eliminar(idhistorial);
     }
+    
+    @WebMethod(operationName = "obtenerHistorial")
+    public HistorialMedico obtenerHistorial(@WebParam(name = "idPaciente") int idPaciente) {
+        bohistorial = new HistorialMedicoBO();
+        return bohistorial.obtenerHistorial(idPaciente);
+    }
+    
 }

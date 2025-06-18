@@ -228,7 +228,6 @@
                             ToolTip="Ver Detalle">
                             <i class="fa-solid fa-eye"></i>
                         </asp:LinkButton>
-
                     </div>
                 </div>
             </ItemTemplate>

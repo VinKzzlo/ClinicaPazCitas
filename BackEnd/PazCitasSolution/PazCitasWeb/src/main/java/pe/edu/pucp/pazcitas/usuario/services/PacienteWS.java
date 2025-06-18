@@ -45,9 +45,16 @@ public class PacienteWS {
         bopaciente = new PacienteBO();
         return bopaciente.eliminar(idpaciente);
     }
-    @WebMethod(operationName = "obtenerPaciente")
-    public Paciente obtenerPaciente(@WebParam(name = "idpaciente") int idpaciente) {
+    @WebMethod(operationName = "obtenerPacienteXiD")
+    public Paciente obtenerPacienteXiD(@WebParam(name = "idpaciente") int idpaciente) {
         bopaciente = new PacienteBO();
         return bopaciente.obtenerXId(idpaciente);
     }
+    
+    @WebMethod(operationName = "obtenerPacientexDNI")
+    public Paciente obtenerPacientexDNI(@WebParam(name = "dni") String dni) {
+        bopaciente = new PacienteBO();
+        return bopaciente.obtenerXDNI(dni);
+    }
+    
 }

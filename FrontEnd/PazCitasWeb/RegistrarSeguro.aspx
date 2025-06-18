@@ -39,6 +39,12 @@
                     <asp:Label ID="lblNombreSeguro" CssClass="col-form-label col-sm-auto pe-sm-2 fw-bold" runat="server" Text="Nombre:"></asp:Label>
                     <div class="col-sm-6">
                         <asp:TextBox ID="txtNombreSeguro" CssClass="form-control" runat="server"></asp:TextBox>
+                        <asp:RegularExpressionValidator
+                            ID="revNombres" runat="server" ControlToValidate="txtNombreSeguro"
+                            ErrorMessage="Solo se permiten letras y espacios."
+                            ValidationExpression="^[A-Za-zÁÉÍÓÚáéíóúÑñ\s]{2,50}$"
+                            CssClass="text-danger small"
+                            Display="Dynamic" />
                     </div>
                 </div>
                 <div class="mb-3 row align-items-center">
@@ -57,6 +63,16 @@
                     <asp:Label ID="lblVigencia" CssClass="col-form-label col-sm-auto pe-sm-2 fw-bold " runat="server" Text="Vigente hasta:"></asp:Label>
                     <div class="col-sm-8">
                         <input id="dtpVigencia" class="form-control" type="date" runat="server" />
+                        <asp:RangeValidator
+                            ID="rvVigencia"
+                            runat="server"
+                            ControlToValidate="dtpVigencia"
+                            MinimumValue="2025-01-01"
+                            MaximumValue="2030-12-01"
+                            Type="Date"
+                            ErrorMessage="La fecha debe estar entre 2025 y 2030."
+                            CssClass="text-danger small"
+                            Display="Dynamic" />
                     </div>
                 </div>
             </div>

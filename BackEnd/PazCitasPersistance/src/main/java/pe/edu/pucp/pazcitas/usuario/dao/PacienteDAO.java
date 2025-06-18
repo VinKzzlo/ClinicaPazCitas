@@ -13,4 +13,5 @@ import pe.edu.pucp.pazcitas.usuario.model.Paciente;
  */
 public interface PacienteDAO extends ICrud<Paciente>{
     public Paciente obtenerPorID(int idPaciente);
+    public Paciente obtenerPorDNI(String dni);
 }

@@ -291,7 +291,7 @@
                                 <li>
                                     <hr class="dropdown-divider">
                                 </li>
-                                <li><a class="dropdown-item" href="#"><i class="fa-solid fa-sign-out-alt me-2"></i>Cerrar Sesión</a></li>
+                                 <li><a href="Inicio.aspx?logout=true" class="nav-link text-danger"><i class="fa-solid fa-right-from-bracket pe-2"></i><span class="link-text">Cerrar Sesión</span></a></li>
                             </ul>
                         </div>
                     </form>

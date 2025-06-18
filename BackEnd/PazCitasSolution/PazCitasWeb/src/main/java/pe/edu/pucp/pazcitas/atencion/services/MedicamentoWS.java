@@ -39,4 +39,16 @@ public class MedicamentoWS {
         bomedicamento = new MedicamentoBO();
         return bomedicamento.modificar(medicamento);
     }
+    
+    @WebMethod(operationName = "eliminarMedicamento")
+    public int eliminarMedicamento(@WebParam(name="idMedicamento")int idMedicamento){
+        bomedicamento = new MedicamentoBO();
+        return bomedicamento.eliminar(idMedicamento);
+    }
+    
+    @WebMethod(operationName = "listarMedicamentoXnombre")
+    public ArrayList<Medicamento> listarMedicamentoXnombre(@WebParam(name = "nombre") String nombre) {
+        bomedicamento = new MedicamentoBO();
+        return bomedicamento.listarXNombre(nombre);
+    }
 }

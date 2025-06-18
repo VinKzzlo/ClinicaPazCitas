@@ -42,94 +42,164 @@
             <div class="card-body">
                 <!-- Id Área + DNI + CMP -->
                 <div class="mb-3 row align-items-center">
-                    <!-- Id Área -->
-                    <asp:Label ID="lblIDUsuario" runat="server"
-                        Text="Id Médico:" CssClass="col-form-label fw-bold col-auto pe-2" />
-                    <div class="col-2">
-                        <asp:TextBox ID="txtIDUsuario" CssClass="form-control" Enabled="false" runat="server" />
+                    <div class="col-6">
+                        <!-- Id Área -->
+                        <asp:Label ID="lblIDUsuario" runat="server"
+                            Text="Id Paciente:" CssClass="col-form-label fw-medium pe-2" />
+                        <asp:TextBox ID="txtIDUsuario" CssClass="form-control w-75" Enabled="false" runat="server" />
+                        <div style="min-height: 1.25rem;"></div>
                     </div>
-
-                    <!-- DNI -->
-                    <asp:Label ID="lblDNI" runat="server"
-                        Text="DNI:" CssClass="col-form-label fw-bold col-auto ps-lg-4 pe-2" />
-                    <div class="col-2">
-                        <asp:TextBox ID="txtDNI" CssClass="form-control" runat="server" />
+                    <div class="col-6">
+                        <!-- DNI -->
+                        <asp:Label ID="lblDNI" runat="server"
+                            Text="DNI:" CssClass="col-form-label fw-medium pe-2" />
+                        <asp:TextBox ID="txtDNI" CssClass="form-control" runat="server" MaxLength="8"/>
+                        <div style="min-height: 1.25rem;">
+                            <asp:RegularExpressionValidator
+                                ID="revDNI" runat="server" ControlToValidate="txtDNI"
+                                ErrorMessage="El DNI solo debe contener 8 números."
+                                ValidationExpression="^\d{8}$"
+                                CssClass="text-danger small"
+                                Display="Dynamic" />
+                        </div>
                     </div>
-
                 </div>
+
+                <!-- NOMBRE + APELLIDOS -->
                 <div class="mb-3 row align-items-center">
-                    <asp:Label ID="lblNombre" CssClass="col-form-label col-sm-auto pe-sm-2 fw-bold" runat="server" Text="Nombre:"></asp:Label>
-                    <div class="col-sm-6">
+                    <div class="col-6">
+                        <asp:Label ID="lblNombre" CssClass="col-form-label fw-medium pe-2" runat="server" Text="Nombres:"></asp:Label>
                         <asp:TextBox ID="txtNombre" CssClass="form-control" runat="server"></asp:TextBox>
+                        <div style="min-height: 1.25rem;">
+                            <asp:RegularExpressionValidator
+                                ID="revNombres" runat="server" ControlToValidate="txtNombre"
+                                ErrorMessage="Solo se permiten letras y espacios."
+                                ValidationExpression="^[A-Za-zÁÉÍÓÚáéíóúÑñ\s]{2,50}$"
+                                CssClass="text-danger small"
+                                Display="Dynamic" />
+                        </div>
                     </div>
-                </div>
-                <div class="mb-3 row align-items-center">
-                    <asp:Label ID="lblPaterno" CssClass="col-form-label col-sm-auto pe-sm-2 fw-bold" runat="server" Text="Apellido Paterno:"></asp:Label>
-                    <div class="col-sm-6">
+                    <div class="col-3">
+                        <asp:Label ID="lblPaterno" CssClass="col-form-label fw-medium pe-2" runat="server" Text="Apellido Paterno:"></asp:Label>
                         <asp:TextBox ID="txtPaterno" CssClass="form-control" runat="server"></asp:TextBox>
+                        <div style="min-height: 1.25rem;">
+                            <asp:RegularExpressionValidator
+                                ID="revPaterno" runat="server" ControlToValidate="txtPaterno"
+                                ErrorMessage="Solo se permiten letras y espacios."
+                                ValidationExpression="^[A-Za-zÁÉÍÓÚáéíóúÑñ\s]{2,50}$"
+                                CssClass="text-danger small"
+                                Display="Dynamic" />
+                        </div>
                     </div>
-                </div>
-                <div class="mb-3 row align-items-center">
-                    <asp:Label ID="lblMaterno" CssClass="col-form-label col-sm-auto pe-sm-2 fw-bold" runat="server" Text="Apellido Materno:"></asp:Label>
-                    <div class="col-sm-6">
+                    <div class="col-3">
+                        <asp:Label ID="lblMaterno" CssClass="col-form-label fw-medium pe-2" runat="server" Text="Apellido Materno:"></asp:Label>
                         <asp:TextBox ID="txtMaterno" CssClass="form-control" runat="server"></asp:TextBox>
+                        <div style="min-height: 1.25rem;">
+                            <asp:RegularExpressionValidator
+                                ID="revMaterno" runat="server" ControlToValidate="txtMaterno"
+                                ErrorMessage="Solo se permiten letras y espacios."
+                                ValidationExpression="^[A-Za-zÁÉÍÓÚáéíóúÑñ\s]{2,50}$"
+                                CssClass="text-danger small"
+                                Display="Dynamic" />
+                        </div>
                     </div>
                 </div>
+
                 <div class="mb-3 row align-items-start">
-                    <asp:Label ID="lblFechaNacimiento" CssClass="col-form-label col-sm-auto pe-sm-2 fw-bold " runat="server" Text="Fecha de nacimiento:"></asp:Label>
-                    <div class="col-sm-8">
-                        <input id="dtpFechaNacimiento" class="form-control" type="date" runat="server" />
+                    <div class="col-4">
+                        <asp:Label ID="lblFechaNacimiento" CssClass="col-form-label fw-medium pe-2" runat="server" Text="Fecha de nacimiento:"></asp:Label>
+                        <input id="dtpFechaNacimiento" runat="server" class="form-control" type="date" />
+                        <div style="min-height: 1.25rem;">
+                            <asp:RangeValidator
+                                ID="rvFechaNacimiento"
+                                runat="server"
+                                ControlToValidate="dtpFechaNacimiento"
+                                MinimumValue="1940-01-01"
+                                Type="Date"
+                                ErrorMessage="La fecha debe estar entre 01/01/1940 y hoy."
+                                CssClass="text-danger small"
+                                Display="Dynamic" />
+                        </div>
                     </div>
-                </div>
-                <div class="mb-3 row align-items-center">
-                    <asp:Label ID="lblEmail" CssClass="col-form-label col-sm-auto pe-sm-2 fw-bold" runat="server" Text="E-mail:"></asp:Label>
-                    <div class="col-sm-6">
+                    <div class="col-3">
+                        <asp:Label ID="lblGenero" runat="server"
+                            Text="Género:" CssClass="col-form-label fw-medium pe-2" />
+                        <div class="col-auto">
+                            <div class="form-check form-check-inline">
+                                <input runat="server" id="rbMasculino"
+                                    type="radio" name="genero"
+                                    class="form-check-input custom-radio-md" />
+                                <label runat="server"
+                                    for="cphContenido_rbMasculino"
+                                    class="form-check-label custom-radio-md">
+                                    Masculino</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input runat="server" id="rbFemenino"
+                                    type="radio" name="genero"
+                                    class="form-check-input custom-radio-md" />
+                                <label runat="server"
+                                    for="cphContenido_rbFemenino"
+                                    class="form-check-label custom-radio-md">
+                                    Femenino</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-5">
+                        <asp:Label ID="lblEmail" CssClass="col-form-label fw-medium pe-2" runat="server" Text="E-mail:"></asp:Label>
                         <asp:TextBox ID="txtEmail" CssClass="form-control" runat="server"></asp:TextBox>
                     </div>
                 </div>
-                <div class="mb-3 row align-items-center">
-                    <asp:Label ID="lblGenero" runat="server"
-                        Text="Género:" CssClass="col-form-label col-sm-auto fw-bold col-auto pe-2" />
-                    <div class="col-auto">
-                        <div class="form-check form-check-inline">
-                            <input runat="server" id="rbMasculino"
-                                type="radio" name="genero"
-                                class="form-check-input custom-radio-md" />
-                            <label runat="server"
-                                for="cphContenido_rbMasculino"
-                                class="form-check-label custom-radio-md">
-                                Masculino</label>
-                        </div>
-                        <div class="form-check form-check-inline">
-                            <input runat="server" id="rbFemenino"
-                                type="radio" name="genero"
-                                class="form-check-input custom-radio-md" />
-                            <label runat="server"
-                                for="cphContenido_rbFemenino"
-                                class="form-check-label custom-radio-md">
-                                Femenino</label>
+                <!-- Direccion + Telefono + Seguro -->
+                <div class="mb-3 row align-items-start">
+                    <div class="col-5">
+                        <asp:Label ID="lblDireccion" CssClass="col-form-label fw-medium pe-2" runat="server" Text="Dirección:"></asp:Label>
+                        <asp:TextBox ID="txtDireccion" CssClass="form-control" runat="server"></asp:TextBox>
+                    </div>
+                    <div class="col-4">
+                        <asp:Label ID="lblTelefono" CssClass="col-form-label fw-medium pe-2" runat="server" Text="Teléfono:"></asp:Label>
+                        <asp:TextBox ID="txtTelefono" CssClass="form-control" runat="server"  MaxLength="9"></asp:TextBox>
+                        <div style="min-height: 1.25rem;">
+                            <asp:RegularExpressionValidator
+                                ID="revTelefono" runat="server" ControlToValidate="txtTelefono"
+                                ErrorMessage="El Telefono debe contener 9 números."
+                                ValidationExpression="^\d{9}$"
+                                CssClass="text-danger small"
+                                Display="Dynamic" />
                         </div>
                     </div>
-                </div>
-                <!-- Seguro -->
-                <div class="mb-3 row align-items-center">
-
-                    <asp:Label ID="lblSeguro" runat="server"
-                        Text="Seguro:" CssClass="col-form-label col-sm-auto pe-sm-2 fw-bold" />
-                    <div class="col-4 col-lg-3">
+                    <div class="col-3">
+                        <asp:Label ID="lblSeguro" runat="server" Text="Seguro:" CssClass="col-form-label fw-medium pe-2" />
                         <asp:DropDownList ID="ddlSeguro" runat="server" CssClass="form-select" />
                     </div>
                 </div>
+
                 <div class="mb-3 row align-items-center">
-                    <asp:Label ID="lblDireccion" CssClass="col-form-label col-sm-auto pe-sm-2 fw-bold" runat="server" Text="Dirección:"></asp:Label>
-                    <div class="col-sm-6">
-                        <asp:TextBox ID="txtDireccion" CssClass="form-control" runat="server"></asp:TextBox>
+                    <div class="col-6">
+                        <asp:Label ID="lblUsername" CssClass="col-form-label fw-medium pe-2" runat="server" Text="Nombre de usuario:"></asp:Label>
+                        <asp:TextBox ID="txtUsername" CssClass="form-control" runat="server"></asp:TextBox>
+                        <div style="min-height: 1.25rem;">
+                            <asp:RegularExpressionValidator
+                                ID="revUsuario"
+                                runat="server"
+                                ControlToValidate="txtUsername"
+                                ValidationExpression="^[a-zA-Z0-9_]{5,15}$"
+                                ForeColor="Red"
+                                ErrorMessage="El nombre de usuario debe contener entre 5 y 15 caracteres, y solo puede tener letras, números y guiones bajos."></asp:RegularExpressionValidator>
+                        </div>
                     </div>
-                </div>
-                <div class="mb-3 row align-items-center">
-                    <asp:Label ID="lblTelefono" CssClass="col-form-label col-sm-auto pe-sm-2 fw-bold" runat="server" Text="Teléfono:"></asp:Label>
-                    <div class="col-sm-6">
-                        <asp:TextBox ID="txtTelefono" CssClass="form-control" runat="server"></asp:TextBox>
+                    <div class="col-6">
+                        <asp:Label ID="lblPassword" CssClass="col-form-label fw-medium pe-2" runat="server" Text="Contraseña:"></asp:Label>
+                        <asp:TextBox ID="txtPassword" CssClass="form-control" runat="server"></asp:TextBox>
+                        <div style="min-height: 1.25rem;">
+                            <asp:RegularExpressionValidator
+                                ID="revPassword"
+                                runat="server"
+                                ControlToValidate="txtPassword"
+                                ValidationExpression="^[A-Za-z0-9]{8,}$"
+                                ForeColor="Red"
+                                ErrorMessage="La contraseña debe tener al menos 8 caracteres y solo permitir letras y números."></asp:RegularExpressionValidator>
+                        </div>
                     </div>
                 </div>
             </div>

@@ -6,325 +6,470 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <link href="Content/bootstrap.css" rel="stylesheet" />
-    <link href="Content/Fonts/css/all.css" rel="stylesheet" />
-    <link href="Content/style.css" rel="stylesheet" />
-
-    <script src="Scripts/bootstrap.js"></script>
-    <script src="Scripts/bootstrap.bundle.js"></script>
-    <script src="Scripts/jquery-3.7.1.js"></script>
-
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
-        /* ===== 1 · Global ======================================================== */
+        /* ======================================================================== */
+        /*             PARÁMETROS DE DISEÑO (MODIFICAR SOLO AQUÍ)                   */
+        /* ======================================================================== */
+        :root {
+            /* --- Controla la apariencia del contenedor estilizado --- */
+            --contenedor-border-radius: 1.25rem; /* Controla el redondeado de los contenedores */
+            /* --- Color de fondo y transparencia del contenedor --- */
+            /* rgba(R, G, B, A) -> A (Alfa) es la transparencia: 1=opaco, 0=transparente */
+            --contenedor-bg-color: rgba(255, 255, 255, 0.8); /* Blanco con 98% de opacidad */
+            /* --- Controla el espaciado general del layout --- */
+            --layout-padding: 1.25rem; /* Espacio en los bordes de la ventana */
+            --layout-gap: 1.25rem; /* Espacio entre los contenedores */
+            /* --- Paleta de Colores de la Marca --- */
+            --color-principal: #FFC300;
+            --color-principal-hover: #FFB000;
+            --color-principal-claro: #fff9e6;
+            /* --- Fondo de la página con degradado de 3 colores --- */
+            --color-fondo-pagina: linear-gradient( 135deg, rgb(246, 192, 19, 0.50) 0%, /* Color 1: Azulado sutil en la esquina superior izquierda */
+            rgba(240, 240, 240, 0.8) 50%, /* Color 2: Blanco neutro en el centro */
+            rgb(246, 192, 19, 0.2) 100% /* Color 3: Amarillo sutil en la esquina inferior derecha */
+            );
+            /* --- Otros colores --- */
+            --color-texto-primario: #343a40;
+            --color-texto-secundario: #6c757d;
+            --color-borde-suave: #e9ecef;
+        }
+
+        /* ======================================================================== */
+        /*                  LA CLASE MÁGICA: CONTENEDOR ESTILIZADO                  */
+        /* ======================================================================== */
+        .contenedor-estilizado {
+            background-color: var(--contenedor-bg-color);
+            border-radius: var(--contenedor-border-radius);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.07);
+        }
+
+        /* Previene bordes extra de Bootstrap en modo offcanvas */
+        .offcanvas.sidebar {
+            border-right: none;
+        }
+
+        /* 
+            ========================================================================
+            MEJORA DE ANIMACIÓN PARA OFF-CANVAS (VERSIÓN SÚPER AGRESIVA):
+            Esta regla intenta forzar la animación anulando cualquier posible
+            configuración de 'prefers-reduced-motion' que pudiera desactivarla.
+            ========================================================================
+        */
+        @media (prefers-reduced-motion: no-preference) {
+            .offcanvas {
+                /*
+               Aplicamos la transición solo si el usuario NO ha solicitado
+               movimiento reducido.
+               - 'transform': propiedad a animar.
+               - '0.4s': Duración razonable (puedes poner '5s' para probar).
+               - 'ease-in-out': Curva suave.
+            */
+                transition: transform 0.4s ease-in-out !important;
+            }
+        }
+
+        /* 
+           En algunos casos, Bootstrap también desactiva la transición directamente.
+           Esta regla es un "seguro" adicional.
+        */
+        .offcanvas {
+            transition: transform 0.4s ease-in-out !important;
+        }
+
+        /* ======================================================================== */
+        /*           ESTILOS DE ESTRUCTURA Y COMPONENTES (NO TOCAR)                 */
+        /* ======================================================================== */
+
+        /* --- Base del Documento --- */
         html, body {
             height: 100%;
             width: 100%;
         }
 
         body {
-            overflow-x: hidden;
-        }
-        /* sin scroll X  */
-        .navbar .dropdown-menu {
-            right: 0;
-            left: auto;
-        }
-        /* menú usuario  */
-
-
-        /* ===== 2 · Barra superior =============================================== */
-        .navbar-clinica {
-            /*background: linear-gradient(135deg,#2196f3 0%,#1976d2 100%) !important;*/
-            background: linear-gradient(135deg,#FFC300 0%,#FFB000 100%) !important;
+            /* Se usa 'background' en lugar de 'background-color' para que acepte degradados */
+            background: var(--color-fondo-pagina);
+            font-family: 'Segoe UI', 'Roboto', 'Helvetica Neue', sans-serif;
+            overflow: hidden; /* Evita barras de scroll innecesarias en el body */
         }
 
-            .navbar-clinica .container-fluid {
-                flex-wrap: nowrap;
-            }
-        /* 1 sola fila   */
-
-
-        /* ===== 3 · Barra lateral ================================================= */
-        .sidebar-clinica {
-            background: #fff !important;
-            border-right: 2px solid #e9ecef;
-            box-shadow: 2px 0 5px rgba(0,0,0,.1);
-            flex: 0 0 240px; /* ancho normal ≥ lg          */
-            width: 240px;
-            transition: width .25s ease;
+        /* --- Estructura Principal del Layout --- */
+        .page-wrapper {
+            display: flex;
+            height: 100%;
+            width: 100%;
+            padding: var(--layout-padding);
+            gap: var(--layout-gap);
         }
 
-            /* — link — ---------------------------------------------------- */
-            .sidebar-clinica .nav-link {
-                display: grid; /* icono en col 1, texto en col 2       */
-                grid-template-columns: 24px 1fr;
-                column-gap: .75rem;
-                align-items: center; /* centra verticalmente                 */
-                color: #495057 !important;
-                padding: 12px 16px;
-                border-radius: 8px;
-                margin-bottom: 4px;
-                line-height: 1.25;
-                transition: background .3s, color .3s, transform .3s;
+        /* --- Barra Lateral (Sidebar) --- */
+        .sidebar {
+            width: 260px;
+            flex-shrink: 0;
+            /* Eliminamos el padding de aquí porque ahora está en el div interno */
+            padding: 0;
+            transition: width 0.3s ease;
+            /* Hacemos que el contenedor sea transparente, ya que el hijo tendrá el color */
+            background-color: transparent;
+            border: none; /* Quitamos cualquier borde que pudiera tener */
+        }
+
+            .sidebar.collapsed {
+                width: calc(68px + var(--layout-gap)); /* Ajusta el ancho colapsado */
             }
 
-                .sidebar-clinica .nav-link:hover {
-                    background: #fff3cd !important;
-                    /*color: #1976d2 !important;*/
-                    color: #FFC300 !important;
-                    transform: translateX(5px);
+                .sidebar.collapsed .sidebar-brand-text,
+                .sidebar.collapsed .nav-link .link-text {
+                    opacity: 0;
+                    pointer-events: none; /*Evita interacción con texto invisible */
+                    transition: opacity 0.2s ease;
                 }
 
-                .sidebar-clinica .nav-link.active {
-                    /*background: #2196f3 !important;*/
-                    background: #FFC300 !important;
-                    color: #fff !important;
+                .sidebar.collapsed .sidebar-brand,
+                .sidebar.collapsed .nav-link {
+                    /*justify-content: center;
+            padding-left: 0;
+            padding-right: 0;*/
                 }
 
-            .sidebar-clinica .link-text {
-                white-space: normal;
-            }
-            /* 2 líneas ok   */
+        /* --- Contenido Principal y sus componentes --- */
+        .main-content {
+            flex-grow: 1; /* Hace que ocupe el espacio vertical restante */
+            display: flex;
+            flex-direction: column;
+            overflow: hidden; /* Importante para que el contenido respete los bordes redondeados */
+        }
 
-            .sidebar-clinica hr {
-                border-color: #dee2e6;
-                margin: 1rem 0;
-            }
+        .page-content {
+            /*padding: 0 2rem 2rem 2rem;*/
+            overflow-y: auto; /* Scroll solo para esta área si el contenido es largo */
+            flex-grow: 1; /* Asegura que el área de contenido llene el espacio */
+        }
 
-        /* — logo (hover color) — ------------------------------------- */
-        .clinica-brand {
-            color: #FFC300 !important;
-            font-weight: bold;
-            font-size: 1.5rem;
+        /* --- Estilos de componentes específicos (Logo, Navegación, etc.) --- */
+        .sidebar-brand {
             display: flex;
             align-items: center;
-            gap: .5rem;
+            gap: 0.75rem;
+            padding: 0 0.5rem 1.5rem 0.5rem;
+            color: var(--color-principal) !important;
+            font-size: 1.75rem;
+            font-weight: 700;
+            text-decoration: none;
         }
 
-            .clinica-brand:hover {
-                color: #FFB000 !important;
+            .sidebar-brand:hover {
+                color: var(--color-principal-hover) !important;
             }
 
-            .clinica-brand i {
-                color: inherit;
+            .sidebar-brand .fa-book-medical {
+                font-size: 2rem;
             }
-        /* icono usa color del enlace       */
 
-        /* — footer — -------------------------------------------------- */
-        .clinica-footer {
-            color: #6c757d;
-            font-size: .9rem;
+        .sidebar-nav {
+            list-style: none;
+            padding-left: 0;
+            margin: 0;
         }
 
-
-        /* ===== 4 · Colapsado (solo ≥ 768 px) ========================= */
-        @media (min-width:768px) {
-            .sidebar-clinica.collapsed {
-                flex: 0 0 70px !important;
-                width: 70px !important;
+            .sidebar-nav .nav-link {
+                display: flex;
+                align-items: center;
+                gap: 0.85rem;
+                padding: 12px 16px;
+                color: var(--color-texto-secundario);
+                font-weight: 500;
+                border-radius: 8px;
+                margin-bottom: 0.25rem;
+                transition: all 0.2s ease;
             }
 
-                .sidebar-clinica.collapsed .nav-link {
-                    justify-items: center; /* icono centrado en la celda          */
-                    grid-template-columns: 1fr; /* solo icono visible                  */
-                    padding-left: 0;
-                    padding-right: 0;
+                .sidebar-nav .nav-link .link-icon {
+                    width: 20px;
+                    text-align: center;
+                    font-size: 1.1rem;
                 }
 
-                .sidebar-clinica.collapsed .link-text,
-                .sidebar-clinica.collapsed .clinica-footer {
-                    display: none !important;
+                .sidebar-nav .nav-link:hover {
+                    background-color: var(--color-principal-claro);
+                    color: var(--color-principal-hover);
                 }
-        }
-        /* === Animación sidebar ================================================ */
-        .sidebar-clinica {
-            transition: width .25s ease, transform .25s ease; /* suaviza ancho  */
-        }
 
-            /* Texto e información del pie con fade-out/fade-in */
-            .sidebar-clinica .link-text,
-            .sidebar-clinica .clinica-footer {
-                transition: opacity .2s ease;
-            }
-
-            /* Cuando está colapsada oculta con opacidad en lugar de display:none  */
-            .sidebar-clinica.collapsed .link-text,
-            .sidebar-clinica.collapsed .clinica-footer {
-                opacity: 0;
-                pointer-events: none; /* evita clics sobre texto invisible        */
-            }
-
-        /* ===== 5 · Sidebar más angosta en 768-991 px ================= */
-        @media (min-width:768px) and (max-width:991.98px) {
-            .sidebar-clinica {
-                flex: 0 0 200px;
-                width: 200px;
-            }
-
-                .sidebar-clinica.collapsed {
-                    flex: 0 0 64px;
-                    width: 64px;
+                .sidebar-nav .nav-link.active {
+                    background-color: var(--color-principal);
+                    color: white;
+                    box-shadow: 0 4px 10px -2px rgba(255, 195, 0, 0.5);
                 }
+
+        .sidebar-footer {
+            margin-top: auto; /* Empuja el footer del sidebar hacia abajo */
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--color-texto-secundario);
+        }
+
+        .top-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+            flex-shrink: 0; /* Evita que se encoja verticalmente */
+        }
+
+            .top-bar .page-title {
+                font-size: 1.5rem;
+                font-weight: 600;
+                color: var(--color-texto-primario);
+            }
+
+        .sidebar-toggle-btn {
+            background: none;
+            border: 1px solid var(--color-borde-suave);
+            color: var(--color-texto-secundario);
+            border-radius: 8px;
+            width: 40px;
+            height: 40px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s ease;
+        }
+
+            .sidebar-toggle-btn:hover {
+                background-color: var(--color-principal-claro);
+                border-color: var(--color-principal);
+                color: var(--color-principal-hover);
+            }
+
+        .user-profile .dropdown-toggle {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            text-decoration: none;
+            color: var(--color-texto-primario);
+        }
+
+            .user-profile .dropdown-toggle::after {
+                display: none;
+            }
+
+        .user-profile img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .user-profile .user-info {
+            line-height: 1.2;
+            text-align: right;
+        }
+
+        .user-profile .user-name {
+            font-weight: 600;
+        }
+
+        .user-profile .user-role {
+            font-size: 0.8rem;
+            color: var(--color-texto-secundario);
+        }
+
+        .user-profile .dropdown-menu {
+            border: 1px solid var(--color-borde-suave);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            border-radius: 8px;
+            padding: 0.5rem 0;
+        }
+
+        .user-profile .dropdown-item {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 0.5rem 1rem;
+        }
+
+
+
+        /* ======================================================================== */
+        /*      ESTILO CONDICIONAL PARA EL OFF-CANVAS EN MODO MÓVIL (NUEVO)         */
+        /* ======================================================================== */
+
+        /*
+           Bootstrap 5 usa 768px como el punto de ruptura 'md'.
+           Esta regla se aplicará a pantallas MÁS PEQUEÑAS que 768px.
+           (Es decir, cuando el sidebar se convierte en un off-canvas real).
+        */
+        @media (max-width: 767.98px) {
+
+            /* Apuntamos al div .contenedor-estilizado que está DENTRO del .sidebar */
+            .sidebar .contenedor-estilizado {
+                /* ¡AQUÍ PONES EL COLOR QUE QUIERES SOLO PARA EL MÓVIL! */
+                background-color: #ffffff; /* Ejemplo: un gris oscuro */
+                /* 
+                   IMPORTANTE: Si usas un fondo oscuro, probablemente necesites
+                   cambiar también el color de los textos y los íconos para que
+                   sean legibles.
+                */
+                /* Cambia el color del logo y el texto principal */
+                /*.sidebar-brand, .sidebar-footer {
+                    color: #f8f9fa !important;*/ /* Un blanco suave */
+                /*}*/
+                /* Cambia el color de los enlaces de navegación */
+                /*.sidebar-nav .nav-link {
+                    color: #adb5bd;*/ /* Un gris claro para los enlaces inactivos */
+                /*}*/
+                /* Cambia el color del enlace activo para que contraste con el fondo oscuro */
+                /*.sidebar-nav .nav-link.active {
+                    background-color: var(--color-principal);*/ /* Mantenemos el amarillo de la marca */
+                /*color: #343a40;*/ /* Texto oscuro para el botón activo */
+                /*}*/
+                /* Cambia el color del hover para que se vea bien en fondo oscuro */
+                /*.sidebar-nav .nav-link:hover {
+                    background-color: rgba(255, 255, 255, 0.1);
+                    color: white;
+                }*/
+            }
         }
     </style>
 
-
     <title>
-        <asp:ContentPlaceHolder ID="cph_Title" runat="server">
-        </asp:ContentPlaceHolder>
+        <asp:ContentPlaceHolder ID="cph_Title" runat="server"></asp:ContentPlaceHolder>
     </title>
-    <asp:ContentPlaceHolder ID="cph_Scripts" runat="server">
-    </asp:ContentPlaceHolder>
+    <asp:ContentPlaceHolder ID="cph_Scripts" runat="server"></asp:ContentPlaceHolder>
 </head>
 <body>
-    <div class="container-fluid d-flex p-0 h-100">
-        <!-- Barra lateral de la clínica -->
-        <div id="bdSidebar" class="d-flex flex-column flex-shrink-0 p-3 sidebar-clinica offcanvas-md offcanvas-start">
-            <a href="HomePaciente.aspx" class="clinica-brand navbar-brand">
-                <i class="fa-solid fa-heartbeat" style="font-size: 2rem; color: #e91e63;"></i>
-                <span class="link-text">
-                    <div style="font-size: 1.8rem; line-height: 1;">Pazcitas</div>
-                    <small style="font-size: .8rem; color: #6c757d;">Clínica Médica</small>
-                </span>
-            </a>
-            <hr />
-            <ul class="mynav nav nav-pills flex-column mb-auto">
-                <li class="nav-item mb-1">
-                    <a href="ListarCitasPaciente.aspx" class="nav-link" data-bs-toggle="tooltip" data-bs-placement="right">
-                        <i class="fa-solid fa-user-injured pe-2"></i>
-                        <span class="link-text">Mis Citas</span>
-                    </a>
-                </li>
-                <li class="nav-item mb-1">
-                    <a href="RegistrarCita.aspx" class="nav-link" data-bs-toggle="tooltip" data-bs-placement="right">
-                        <i class="fa-solid fa-calendar-check pe-2"></i>
-                        <span class="link-text">Registrar Citas</span>
-                    </a>
-                </li>
-                <li class="nav-item mb-1">
-                    <a href="ListarSedesPaciente.aspx" class="nav-link" data-bs-toggle="tooltip" data-bs-placement="right">
-                        <i class="fa-solid fa-user-doctor pe-2"></i>
-                        <span class="link-text">Ver Sedes</span>
-                    </a>
-                </li>
-                <li class="nav-item mb-1">
-                    <a href="ListarEspecialidadesPaciente.aspx" class="nav-link" data-bs-toggle="tooltip" data-bs-placement="right">
-                        <i class="fa-solid fa-stethoscope pe-2"></i>
-                        <span class="link-text">Ver Especialidades</span>
-                    </a>
-                </li>
-                <li class="nav-item mb-1">
-                    <a href="ListarMedicosPaciente.aspx" class="nav-link" data-bs-toggle="tooltip" data-bs-placement="right">
-                        <i class="fa-solid fa-pills pe-2"></i>
-                        <span class="link-text">Ver Médicos</span>
-                    </a>
-                </li>
-            </ul>
-            <hr />
-            <div class="d-flex align-items-center clinica-footer">
-                <i class="fa-solid fa-hospital me-2"></i>
-                <div>
-                    <h6 class="mt-1 mb-0">Sistema Clínico</h6>
-                    <small>Pazcitas v2.0</small>
+    <!-- El page-wrapper es el contenedor principal que establece el padding y el gap general -->
+    <div class="page-wrapper">
+        <!-- ========================== BARRA LATERAL ========================== -->
+        <!-- El 'aside' ahora solo maneja la lógica de offcanvas y posicionamiento -->
+        <aside id="sidebar" class="sidebar offcanvas-md offcanvas-start">
+            <!-- ESTE ES EL NUEVO DIV INTERNO -->
+            <!-- Lleva la clase 'contenedor-estilizado' y se asegura de que el estilo siempre sea visible -->
+            <div class="contenedor-estilizado d-flex flex-column h-100" style="padding: 1.5rem 1rem;">
+
+                <!-- Mueve TODO el contenido que estaba en el aside aquí dentro -->
+                <a href="Home.aspx" class="sidebar-brand">
+                    <%--<i class="fa-solid fa-book-medical"></i>--%>
+                    <i class="fa-solid fa-heartbeat" style="font-size: 2rem; color: #e91e63;"></i>
+                    <span class="sidebar-brand-text">PazCitas</span>
+                </a>
+
+                <ul class="sidebar-nav nav flex-column">
+                    <!-- ... tus li ... -->
+                    <li class="nav-item"><a href="ListarCitasPaciente.aspx" class="nav-link"><i class="fa-solid fa-calendar-days link-icon"></i><span class="link-text">Mis Citas</span></a></li>
+                    <li class="nav-item"><a href="RegistrarCitaPaciente.aspx" class="nav-link"><i class="fa-solid fa-calendar-plus link-icon"></i><span class="link-text">Registrar Cita</span></a></li>
+                    <li class="nav-item"><a href="ListarSedesPaciente.aspx" class="nav-link"><i class="fa-solid fa-hospital link-icon"></i><span class="link-text">Ver Sedes</span></a></li>
+                    <li class="nav-item"><a href="ListarEspecialidadesPaciente.aspx" class="nav-link"><i class="fa-solid fa-stethoscope link-icon"></i><span class="link-text">Especialidades</span></a></li>
+                    <li class="nav-item"><a href="ListarMedicosPaciente.aspx" class="nav-link"><i class="fa-solid fa-user-doctor link-icon"></i><span class="link-text">Ver Médicos</span></a></li>
+                </ul>
+
+                <div class="sidebar-footer">
+                    <i class="fa-solid fa-hospital"></i>
+                    <div>
+                        <h6 class="mt-1 mb-0">Sistema Clínico</h6>
+                        <small>Pazcitas v2.0</small>
+                    </div>
                 </div>
+
             </div>
-        </div>
+        </aside>
 
-        <!-- Contenido principal -->
-        <div class="bg-light flex-fill overflow-auto">
+        <!-- ========================== CONTENIDO PRINCIPAL ========================== -->
+        <div class="flex-grow-1 d-flex flex-column" style="gap: var(--layout-gap)">
+            <!-- Barra Superior con los DOS botones -->
+            <header class="top-bar contenedor-estilizado">
+                <div class="d-flex align-items-center gap-3">
 
-            <!-- Barra de usuario -->
-            <nav class="navbar navbar-dark navbar-clinica">
-                <div class="container-fluid">
-                    <!-- A. Botón colapsar (solo ≥ md) -->
-                    <button class="btn btn-outline-light me-3 d-none d-md-inline-flex"
-                        id="btnToggleSidebar">
+                    <!-- ========= BOTÓN 1: PARA ESCRITORIO (md y superior) ========= -->
+                    <!-- Se muestra solo en 'md' y más grandes (d-none d-md-inline-flex) -->
+                    <button id="sidebar-toggle-btn-desktop" class="sidebar-toggle-btn d-none d-md-inline-flex">
                         <i class="fa-solid fa-bars"></i>
                     </button>
 
-                    <!-- B. Botón off-canvas + logo (solo < md) -->
-                    <a class="navbar-brand d-flex align-items-center d-md-none"
-                        data-bs-toggle="offcanvas" href="#bdSidebar">
-                        <i class="fa-solid fa-bars me-2"></i>Pazcitas
-                    </a>
+                    <!-- ========= BOTÓN 2: PARA MÓVIL (sm e inferior) ========= -->
+                    <!-- Se muestra solo en pantallas más pequeñas que 'md' (d-md-none) -->
+                    <!-- Apunta al off-canvas #sidebar -->
+                    <button id="sidebar-toggle-btn-mobile" class="sidebar-toggle-btn d-md-none" data-bs-toggle="offcanvas" data-bs-target="#sidebar">
+                        <i class="fa-solid fa-bars"></i>
+                    </button>
 
-                    <!-- C. Título grande (solo ≥ md) -->
-                    <a class="navbar-brand d-none d-md-flex align-items-center flex-grow-1 overflow-hidden"
-                        href="#">
-                        <i class="fa-solid fa-heartbeat me-2 flex-shrink-0"></i>
+                    <!-- Título de la página -->
+                    <h1 class="page-title mb-0">
+                        <asp:ContentPlaceHolder ID="cph_PageTitle" runat="server">Dashboard</asp:ContentPlaceHolder>
+                    </h1>
+                </div>
 
-                        <!-- Parte larga solo visible ≥ lg (≥ 992 px) -->
-                        <span class="d-none d-lg-inline">Sistema de Gestión Clínica&nbsp;–&nbsp;</span>
-                        <!-- Siempre visible -->
-                        <span>Clínica Pazcitas</span>
-                    </a>
-                    <form class="d-flex ms-auto">
-                        <div class="dropdown">
-                            <button class="btn btn-outline-light dropdown-toggle" id="btnUsuario" data-bs-toggle="dropdown">
-                                <i class="fa-solid fa-user-gear"></i>
-                                <asp:Label ID="lblNombreCompleto" runat="server" Text="Pct. Manzana"></asp:Label>
-                            </button>
-                            <ul class="dropdown-menu fade" aria-labelledby="btnUsuario">
-                                <li><a class="dropdown-item" href="#"><i class="fa-solid fa-user me-2"></i>Mi Perfil</a></li>
-                                <li><a class="dropdown-item" href="#"><i class="fa-solid fa-key me-2"></i>Cambiar Contraseña</a></li>
-                                <li><a class="dropdown-item" href="#"><i class="fa-solid fa-cog me-2"></i>Configuración</a></li>
-                                <li>
-                                    <hr class="dropdown-divider">
-                                </li>
-                                <li><a class="dropdown-item" href="#"><i class="fa-solid fa-sign-out-alt me-2"></i>Cerrar Sesión</a></li>
-                            </ul>
+                <!-- Perfil de Usuario (sin cambios) -->
+                <div class="dropdown user-profile">
+                    <!-- ... tu código de perfil de usuario aquí ... -->
+                    <a href="#" class="dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <img src="https://i.pravatar.cc/40?u=paciente" alt="Avatar de usuario">
+                        <div class="user-info d-none d-md-block">
+                            <div class="user-name">
+                                <asp:Label ID="lblNombreCompleto" runat="server" Text="Paciente Manzana"></asp:Label>
+                            </div>
+                            <div class="user-role">Paciente</div>
                         </div>
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-end">
+                        <li><a class="dropdown-item" href="#"><i class="fa-solid fa-user me-2"></i>Mi Perfil</a></li>
+                        <li><a class="dropdown-item" href="#"><i class="fa-solid fa-key me-2"></i>Cambiar Contraseña</a></li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+                        <%--<li><a class="dropdown-item text-danger" href="#"><i class="fa-solid fa-sign-out-alt me-2"></i>Cerrar Sesión</a></li>--%>
+                        <li><a href="Inicio.aspx?logout=true" class="nav-link text-danger"><i class="fa-solid fa-right-from-bracket pe-2"></i><span class="link-text">Cerrar Sesión</span></a></li>
+
+                    </ul>
+                </div>
+            </header>
+
+            <!-- Área de Contenido Principal -->
+            <!-- La clase 'main-content' define su estructura y 'contenedor-estilizado' su apariencia -->
+            <main class="main-content contenedor-estilizado">
+                <div class="page-content">
+                    <form id="form1" runat="server">
+                        <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
+
+                        <asp:ContentPlaceHolder ID="cph_Contenido" runat="server">
+                        </asp:ContentPlaceHolder>
                     </form>
                 </div>
-            </nav>
-
-            <!-- Contenido de la Página web -->
-            <div class="p-4">
-                <form runat="server">
-                    <asp:ContentPlaceHolder ID="cph_Contenido" runat="server">
-                    </asp:ContentPlaceHolder>
-                </form>
-            </div>
+            </main>
         </div>
     </div>
 
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script>
-        const sidebar = document.getElementById('bdSidebar');
-        const btnToggle = document.getElementById('btnToggleSidebar');
+        document.addEventListener('DOMContentLoaded', function () {
+            const sidebar = document.getElementById('sidebar');
+            // Apuntamos específicamente al botón de ESCRITORIO
+            const desktopToggleButton = document.getElementById('sidebar-toggle-btn-desktop');
 
-        /* —  tooltips — */
-        document.querySelectorAll('#bdSidebar .nav-link').forEach(a => {
-            const t = a.querySelector('.link-text').textContent.trim();
-            a.setAttribute('title', t);
-            const tip = new bootstrap.Tooltip(a);
-            tip.disable();                       // inactivos por defecto
-        });
-
-        /* —  colapsar / off-canvas — */
-        btnToggle.addEventListener('click', () => {
-            const desktop = matchMedia('(min-width:768px)').matches;
-
-            if (desktop) {
-                /* lógica de colapso (igual que antes) */
-                sidebar.classList.toggle('collapsed');
-                const enable = sidebar.classList.contains('collapsed');
-                document.querySelectorAll('#bdSidebar .nav-link')
-                    .forEach(l => bootstrap.Tooltip.getInstance(l)[enable ? 'enable' : 'disable']());
-            } else {
-                /* --- MÓVIL ---  */
-                sidebar.classList.remove('collapsed');                // ① asegura ancho completo
-                document.querySelectorAll('#bdSidebar .nav-link')     // ② tooltips siempre off en móvil
-                    .forEach(l => bootstrap.Tooltip.getInstance(l).disable());
-
-                bootstrap.Offcanvas.getOrCreateInstance(sidebar).toggle(); // ③ un solo toggle
+            // La lógica de colapso ahora solo se aplica al botón de escritorio.
+            if (desktopToggleButton) {
+                desktopToggleButton.addEventListener('click', function () {
+                    sidebar.classList.toggle('collapsed');
+                });
             }
-        });
 
-        /* —  marcar link activo — */
-        document.addEventListener('DOMContentLoaded', () => {
-            const current = location.pathname.split('/').pop();
-            document.querySelectorAll('.sidebar-clinica .nav-link')
-                .forEach(l => l.href.includes(current) && l.classList.add('active'));
+            // --- Marcar el Link Activo en la Barra Lateral (sin cambios) ---
+            const currentPage = location.pathname.split('/').pop();
+            if (currentPage) {
+                document.querySelectorAll('.sidebar-nav .nav-link').forEach(link => {
+                    if (link.getAttribute('href').includes(currentPage)) {
+                        link.classList.add('active');
+                    }
+                });
+            }
         });
     </script>
 </body>

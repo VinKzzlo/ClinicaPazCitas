@@ -58,11 +58,12 @@ public class HistorialMedicoImpl implements HistorialMedicoDAO {
 
         rs = DBManager.getInstance().ejecutarProcedimientoLectura("LISTAR_HISTORIALES_TODOS", null);
         System.out.println("Lectura de historiales...");
-        
-        try
-        {
-            while(rs.next()){
-                if(historiales == null) historiales = new ArrayList<>();
+
+        try {
+            while (rs.next()) {
+                if (historiales == null) {
+                    historiales = new ArrayList<>();
+                }
                 HistorialMedico h = new HistorialMedico();
                 h.setIdhistorial(rs.getInt("id_historial"));
                 h.setFechaActualizacion(rs.getDate("fecha_actualizacion"));
@@ -75,15 +76,43 @@ public class HistorialMedicoImpl implements HistorialMedicoDAO {
                 h.setPaciente(p);
                 historiales.add(h);
             }
-        } catch (SQLException ex)
-        {
+        } catch (SQLException ex) {
             System.out.println(ex.getMessage());
-            
+
         } finally {
             DBManager.getInstance().cerrarConexion();
         }
-        
+
         return historiales;
+    }
+
+    @Override
+    public HistorialMedico obtenerHistorial(int idPaciente) {
+        Map<Integer, Object> parametrosEntrada = new HashMap<>();
+        parametrosEntrada.put(1, idPaciente);
+        rs = DBManager.getInstance().ejecutarProcedimientoLectura("OBTENER_HISTORIAL", parametrosEntrada);
+        HistorialMedico h = new HistorialMedico();
+        try {
+            if (rs.next()) {
+
+                h.setIdhistorial(rs.getInt("id_historial"));
+                h.setFechaActualizacion(rs.getDate("fecha_actualizacion"));
+                Paciente p = new Paciente();
+                p.setIdUsuario(rs.getInt("id_paciente"));
+                p.setNombre(rs.getString("nombre"));
+                p.setApellidoPaterno(rs.getString("apellido_paterno"));
+                p.setApellidoMaterno(rs.getString("apellido_materno"));
+                p.setDni(rs.getString("dni"));
+                h.setPaciente(p);
+            }
+        } catch (SQLException ex) {
+            System.out.println(ex.getMessage());
+
+        } finally {
+            DBManager.getInstance().cerrarConexion();
+        }
+
+        return h;
     }
 
 }

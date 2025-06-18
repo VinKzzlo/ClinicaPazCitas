@@ -1,6 +1,7 @@
 ﻿using PazCitasWA.ServiciosWS;
 using System;
 using System.ComponentModel;
+using System.Linq;
 using System.Web.UI.WebControls;
 
 namespace PazCitasWA
@@ -20,6 +21,9 @@ namespace PazCitasWA
                 LoadDropDowns();
                 // Fecha máxima: hoy menos 18 años
                 DateTime maxDate = DateTime.Today.AddYears(-18);
+                DateTime minDate = new DateTime(1940, 1, 1);
+
+                dtpFechaNacimiento.Attributes["min"] = minDate.ToString("yyyy-MM-dd");
                 dtpFechaNacimiento.Attributes["max"] = maxDate.ToString("yyyy-MM-dd");
             }
             string accion = Request.QueryString["accion"];
@@ -54,7 +58,8 @@ namespace PazCitasWA
                     CargarEspecialidadesPorSede(medico.sede.idSede);
                     ddlEspecialidad.SelectedValue = medico.especialidad.idEspecialidad.ToString();
                     ddlEspecialidad.Enabled = true;
-
+                    txtUsername.Enabled = false;
+                    txtPassword.Enabled = false;
                     
                 }
             }
@@ -116,11 +121,20 @@ namespace PazCitasWA
             medico.sede = objSede;
             medico.especialidad = objEspecialidad;
             medico.consultorio = objConsultorio;
+            CuentaUsuarioWSClient wsCuenta = new CuentaUsuarioWSClient();
+            cuentaUsuario cuenta = new cuentaUsuario();
+            cuenta.username = txtUsername.Text;
+            cuenta.password = txtPassword.Text;
+            cuenta.rol = rol.MÉDICO;
+            cuenta.rolSpecified = true;
+            cuenta.usuario = medico;
             try
             {
                 if (estado == Estado.Nuevo)
                 {
-                    wsMedico.insertarMedico(medico);
+                    int idInsertado = wsMedico.insertarMedico(medico);
+                    cuenta.usuario.idUsuario = idInsertado;
+                    wsCuenta.insertarCuenta(cuenta);
                 }
                 else if (estado == Estado.Modificar)
                 {
@@ -196,8 +210,18 @@ namespace PazCitasWA
             else
             {
                 ddlConsultorio.DataSource = listaConsultorios;
-                ddlConsultorio.DataTextField = "nombreConsultorio";
-                ddlConsultorio.DataValueField = "idConsultorio";
+
+                // Crear una lista temporal que contenga el nombre del consultorio y su estado de "asignado"
+                var listaConsultoriosConAsignado = listaConsultorios.Select(c => new
+                {
+                    idConsultorio = c.idConsultorio,
+                    displayText = $"{c.nombreConsultorio} - {(c.asignado ? "Asignado" : "No Asignado")}"
+                }).ToList();
+
+                // Configurar los campos que se mostrarán en el dropdown
+                ddlConsultorio.DataSource = listaConsultoriosConAsignado;
+                ddlConsultorio.DataTextField = "displayText";   // Campo combinado que muestra nombre y estado
+                ddlConsultorio.DataValueField = "idConsultorio"; // El valor asociado será el idConsultorio
                 ddlConsultorio.DataBind();
                 ddlConsultorio.Enabled = true;
             }
@@ -207,12 +231,11 @@ namespace PazCitasWA
         private void CargarConsultoriosPorMedico(int idMedico)
         {
             wsConsultorio = new ConsultorioWSClient();
-            medico medicoCons = new medico();
+            
             wsMedico = new MedicoWSClient();
-            medicoCons = wsMedico.obtenerMedico(idMedico);
-
+            medico = (medico)Session["medicoSeleccionado"];
             //Si no tiene especialidades
-            consultorio consultorio = wsConsultorio.obtenerConsultorioPorId(medicoCons.consultorio.idConsultorio);
+            consultorio consultorio = medico.consultorio;
             BindingList<consultorio> consultoriosLoad = new BindingList<consultorio>();
             consultoriosLoad.Add(consultorio);
 

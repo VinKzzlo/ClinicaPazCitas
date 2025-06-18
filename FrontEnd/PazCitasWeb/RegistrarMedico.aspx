@@ -173,6 +173,35 @@
                     </div>
                 </div>
 
+                <div class="mb-3 row align-items-center">
+                    <div class="col-6">
+                        <asp:Label ID="lblUsername" CssClass="col-form-label fw-medium pe-2" runat="server" Text="Nombre de usuario:"></asp:Label>
+                        <asp:TextBox ID="txtUsername" CssClass="form-control" runat="server"></asp:TextBox>
+                        <div style="min-height: 1.25rem;">
+                            <asp:RegularExpressionValidator
+                                ID="revUsuario"
+                                runat="server"
+                                ControlToValidate="txtUsername"
+                                ValidationExpression="^[a-zA-Z0-9_]{5,15}$"
+                                ForeColor="Red"
+                                ErrorMessage="El nombre de usuario debe contener entre 5 y 15 caracteres, y solo puede tener letras, números y guiones bajos."></asp:RegularExpressionValidator>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <asp:Label ID="lblPassword" CssClass="col-form-label fw-medium pe-2" runat="server" Text="Contraseña:"></asp:Label>
+                        <asp:TextBox ID="txtPassword" CssClass="form-control" runat="server"></asp:TextBox>
+                        <div style="min-height: 1.25rem;">
+                            <asp:RegularExpressionValidator
+                                ID="revPassword"
+                                runat="server"
+                                ControlToValidate="txtPassword"
+                                ValidationExpression="^[A-Za-z0-9]{8,}$"
+                                ForeColor="Red"
+                                ErrorMessage="La contraseña debe tener al menos 8 caracteres y solo permitir letras y números."></asp:RegularExpressionValidator>
+                        </div>
+                    </div>
+                </div>
+
             </div>
             <div class="card-footer clearfix">
                 <asp:LinkButton ID="btnRegresar" runat="server" CausesValidation="false" Text="<i class='fa-solid fa-rotate-left'></i> Regresar" CssClass="float-start btn btn-secondary" OnClick="btnRegresar_Click" />

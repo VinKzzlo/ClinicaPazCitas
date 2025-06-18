@@ -4,6 +4,7 @@
  */
 package pe.edu.pucp.pazcitas.atencion.dao;
 
+import java.util.ArrayList;
 import pe.edu.pucp.pazcitas.atencion.model.NotaClinica;
 import pe.edu.pucp.pazcitas.dao.ICrud;
 
@@ -12,5 +13,5 @@ import pe.edu.pucp.pazcitas.dao.ICrud;
  * @author asant
  */
 public interface NotaClinicaDAO extends ICrud<NotaClinica>{
-    
+    ArrayList<NotaClinica> listarXhistorial(int idHis);
 }

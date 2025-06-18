@@ -12,5 +12,5 @@ import pe.edu.pucp.pazcitas.usuario.model.Administrador;
  * @author asant
  */
 public interface AdministradorDAO extends ICrud<Administrador>{
-    
+    public Administrador obtenerPorID(int idAdmin);
 }

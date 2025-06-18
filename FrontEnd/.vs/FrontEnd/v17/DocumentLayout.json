@@ -3,12 +3,28 @@
   "WorkspaceRootPath": "D:\\PUCP 2025-I\\ProyectoProgra3\\ClinicaPazCitas\\FrontEnd\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{2E4BD478-8240-4E43-BFFE-88276C463D15}|PazCitasWeb\\PazCitasWA.csproj|D:\\PUCP 2025-I\\ProyectoProgra3\\ClinicaPazCitas\\FrontEnd\\pazcitasweb\\registrarturnosmedico.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2E4BD478-8240-4E43-BFFE-88276C463D15}|PazCitasWeb\\PazCitasWA.csproj|solutionrelative:pazcitasweb\\registrarturnosmedico.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{2E4BD478-8240-4E43-BFFE-88276C463D15}|PazCitasWeb\\PazCitasWA.csproj|d:\\pucp 2025-i\\proyectoprogra3\\clinicapazcitas\\frontend\\pazcitasweb\\pazcitasmedico.master||{B30AFBFF-D992-43B7-B62D-2642580A2883}",
+      "RelativeMoniker": "D:0:0:{2E4BD478-8240-4E43-BFFE-88276C463D15}|PazCitasWeb\\PazCitasWA.csproj|solutionrelative:pazcitasweb\\pazcitasmedico.master||{B30AFBFF-D992-43B7-B62D-2642580A2883}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2E4BD478-8240-4E43-BFFE-88276C463D15}|PazCitasWeb\\PazCitasWA.csproj|d:\\pucp 2025-i\\proyectoprogra3\\clinicapazcitas\\frontend\\pazcitasweb\\registrarturnosmedico.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
-      "RelativeMoniker": "D:0:0:{2E4BD478-8240-4E43-BFFE-88276C463D15}|PazCitasWeb\\PazCitasWA.csproj|solutionrelative:pazcitasweb\\registrarturnosmedico.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+      "AbsoluteMoniker": "D:0:0:{2E4BD478-8240-4E43-BFFE-88276C463D15}|PazCitasWeb\\PazCitasWA.csproj|d:\\pucp 2025-i\\proyectoprogra3\\clinicapazcitas\\frontend\\pazcitasweb\\pazcitasadmin.master||{B30AFBFF-D992-43B7-B62D-2642580A2883}",
+      "RelativeMoniker": "D:0:0:{2E4BD478-8240-4E43-BFFE-88276C463D15}|PazCitasWeb\\PazCitasWA.csproj|solutionrelative:pazcitasweb\\pazcitasadmin.master||{B30AFBFF-D992-43B7-B62D-2642580A2883}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2E4BD478-8240-4E43-BFFE-88276C463D15}|PazCitasWeb\\PazCitasWA.csproj|d:\\pucp 2025-i\\proyectoprogra3\\clinicapazcitas\\frontend\\pazcitasweb\\pazcitaspaciente.master||{B30AFBFF-D992-43B7-B62D-2642580A2883}",
+      "RelativeMoniker": "D:0:0:{2E4BD478-8240-4E43-BFFE-88276C463D15}|PazCitasWeb\\PazCitasWA.csproj|solutionrelative:pazcitasweb\\pazcitaspaciente.master||{B30AFBFF-D992-43B7-B62D-2642580A2883}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2E4BD478-8240-4E43-BFFE-88276C463D15}|PazCitasWeb\\PazCitasWA.csproj|d:\\pucp 2025-i\\proyectoprogra3\\clinicapazcitas\\frontend\\pazcitasweb\\inicio.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2E4BD478-8240-4E43-BFFE-88276C463D15}|PazCitasWeb\\PazCitasWA.csproj|solutionrelative:pazcitasweb\\inicio.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2E4BD478-8240-4E43-BFFE-88276C463D15}|PazCitasWeb\\PazCitasWA.csproj|d:\\pucp 2025-i\\proyectoprogra3\\clinicapazcitas\\frontend\\pazcitasweb\\pazcitaspaciente.master.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2E4BD478-8240-4E43-BFFE-88276C463D15}|PazCitasWeb\\PazCitasWA.csproj|solutionrelative:pazcitasweb\\pazcitaspaciente.master.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2E4BD478-8240-4E43-BFFE-88276C463D15}|PazCitasWeb\\PazCitasWA.csproj|d:\\pucp 2025-i\\proyectoprogra3\\clinicapazcitas\\frontend\\pazcitasweb\\pazcitasmedico.master.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2E4BD478-8240-4E43-BFFE-88276C463D15}|PazCitasWeb\\PazCitasWA.csproj|solutionrelative:pazcitasweb\\pazcitasmedico.master.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -18,32 +34,84 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "RegistrarTurnosMedico.aspx",
-              "DocumentMoniker": "D:\\PUCP 2025-I\\ProyectoProgra3\\ClinicaPazCitas\\FrontEnd\\PazCitasWeb\\RegistrarTurnosMedico.aspx",
-              "RelativeDocumentMoniker": "PazCitasWeb\\RegistrarTurnosMedico.aspx",
-              "ToolTip": "D:\\PUCP 2025-I\\ProyectoProgra3\\ClinicaPazCitas\\FrontEnd\\PazCitasWeb\\RegistrarTurnosMedico.aspx",
-              "RelativeToolTip": "PazCitasWeb\\RegistrarTurnosMedico.aspx",
+              "Title": "PazCitasAdmin.Master",
+              "DocumentMoniker": "D:\\PUCP 2025-I\\ProyectoProgra3\\ClinicaPazCitas\\FrontEnd\\PazCitasWeb\\PazCitasAdmin.Master",
+              "RelativeDocumentMoniker": "PazCitasWeb\\PazCitasAdmin.Master",
+              "ToolTip": "D:\\PUCP 2025-I\\ProyectoProgra3\\ClinicaPazCitas\\FrontEnd\\PazCitasWeb\\PazCitasAdmin.Master",
+              "RelativeToolTip": "PazCitasWeb\\PazCitasAdmin.Master",
               "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
-              "WhenOpened": "2025-06-17T04:40:46.491Z",
+              "WhenOpened": "2025-06-18T07:48:57.946Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "PazCitasPaciente.Master",
+              "DocumentMoniker": "D:\\PUCP 2025-I\\ProyectoProgra3\\ClinicaPazCitas\\FrontEnd\\PazCitasWeb\\PazCitasPaciente.Master",
+              "RelativeDocumentMoniker": "PazCitasWeb\\PazCitasPaciente.Master",
+              "ToolTip": "D:\\PUCP 2025-I\\ProyectoProgra3\\ClinicaPazCitas\\FrontEnd\\PazCitasWeb\\PazCitasPaciente.Master",
+              "RelativeToolTip": "PazCitasWeb\\PazCitasPaciente.Master",
+              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
+              "WhenOpened": "2025-06-18T07:46:26.431Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "PazCitasPaciente.Master.cs",
+              "DocumentMoniker": "D:\\PUCP 2025-I\\ProyectoProgra3\\ClinicaPazCitas\\FrontEnd\\PazCitasWeb\\PazCitasPaciente.Master.cs",
+              "RelativeDocumentMoniker": "PazCitasWeb\\PazCitasPaciente.Master.cs",
+              "ToolTip": "D:\\PUCP 2025-I\\ProyectoProgra3\\ClinicaPazCitas\\FrontEnd\\PazCitasWeb\\PazCitasPaciente.Master.cs",
+              "RelativeToolTip": "PazCitasWeb\\PazCitasPaciente.Master.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-18T07:46:23.2Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Inicio.aspx.cs",
+              "DocumentMoniker": "D:\\PUCP 2025-I\\ProyectoProgra3\\ClinicaPazCitas\\FrontEnd\\PazCitasWeb\\Inicio.aspx.cs",
+              "RelativeDocumentMoniker": "PazCitasWeb\\Inicio.aspx.cs",
+              "ToolTip": "D:\\PUCP 2025-I\\ProyectoProgra3\\ClinicaPazCitas\\FrontEnd\\PazCitasWeb\\Inicio.aspx.cs",
+              "RelativeToolTip": "PazCitasWeb\\Inicio.aspx.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAowBEAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-18T07:43:05.336Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "RegistrarTurnosMedico.aspx.cs",
-              "DocumentMoniker": "D:\\PUCP 2025-I\\ProyectoProgra3\\ClinicaPazCitas\\FrontEnd\\PazCitasWeb\\RegistrarTurnosMedico.aspx.cs",
-              "RelativeDocumentMoniker": "PazCitasWeb\\RegistrarTurnosMedico.aspx.cs",
-              "ToolTip": "D:\\PUCP 2025-I\\ProyectoProgra3\\ClinicaPazCitas\\FrontEnd\\PazCitasWeb\\RegistrarTurnosMedico.aspx.cs",
-              "RelativeToolTip": "PazCitasWeb\\RegistrarTurnosMedico.aspx.cs",
-              "ViewState": "AgIAAFoAAAAAAAAAAAAQwG0AAAAuAAAAAAAAAA==",
+              "Title": "PazCitasMedico.Master",
+              "DocumentMoniker": "D:\\PUCP 2025-I\\ProyectoProgra3\\ClinicaPazCitas\\FrontEnd\\PazCitasWeb\\PazCitasMedico.Master",
+              "RelativeDocumentMoniker": "PazCitasWeb\\PazCitasMedico.Master",
+              "ToolTip": "D:\\PUCP 2025-I\\ProyectoProgra3\\ClinicaPazCitas\\FrontEnd\\PazCitasWeb\\PazCitasMedico.Master",
+              "RelativeToolTip": "PazCitasWeb\\PazCitasMedico.Master",
+              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
+              "WhenOpened": "2025-06-18T07:42:45.376Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "PazCitasMedico.Master.cs",
+              "DocumentMoniker": "D:\\PUCP 2025-I\\ProyectoProgra3\\ClinicaPazCitas\\FrontEnd\\PazCitasWeb\\PazCitasMedico.Master.cs",
+              "RelativeDocumentMoniker": "PazCitasWeb\\PazCitasMedico.Master.cs",
+              "ToolTip": "D:\\PUCP 2025-I\\ProyectoProgra3\\ClinicaPazCitas\\FrontEnd\\PazCitasWeb\\PazCitasMedico.Master.cs",
+              "RelativeToolTip": "PazCitasWeb\\PazCitasMedico.Master.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-17T04:25:11.755Z",
+              "WhenOpened": "2025-06-18T07:42:43.212Z",
               "EditorCaption": ""
             }
           ]

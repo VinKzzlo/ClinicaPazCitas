@@ -1,11 +1,24 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.Security;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+using PazCitasWA.ServiciosWS;
 
 namespace PazCitasWA
 {
     public partial class Login : System.Web.UI.Page
     {
+        private CuentaUsuarioWSClient bocuenta;
+        private PacienteWSClient bopaciente;
+        private MedicoWSClient bomedico;
+        private AdministradorWSClient boadmin;
+        private CitaWSClient bocita;
         protected void Page_Load(object sender, EventArgs e)
         {
+            bocuenta = new CuentaUsuarioWSClient();
             if (!IsPostBack)
             {
                 string rol = Request.QueryString["rol"];
@@ -19,6 +32,8 @@ namespace PazCitasWA
                         btnLogin.CssClass = "btn btn-warning btn-login";
                         iconUser.Attributes["class"] = "fas fa-user text-warning";
                         iconLock.Attributes["class"] = "fas fa-lock text-warning";
+
+                        
                         break;
 
                     case "medico":
@@ -53,19 +68,122 @@ namespace PazCitasWA
 
         protected void btnLogin_Click(object sender, EventArgs e)
         {
+            bocita = new CitaWSClient();
+            int resultado = 0;
+            lblMensaje.Text = "";
+            cuentaUsuario cuentaUsuario = new cuentaUsuario();
+            cuentaUsuario.username = txtUsuario.Text;
+            cuentaUsuario.password = txtClave.Text;
             string rol = Request.QueryString["rol"];
             switch (rol)
             {
                 case "paciente":
-                    Response.Redirect("HomePaciente.aspx");
+                    resultado = bocuenta.verificarCuentaPaciente(txtUsuario.Text, txtClave.Text);
+                    
+                   
+                    
+                    if(resultado != 0)
+                    {
+                        bopaciente = new PacienteWSClient();
+                        paciente pac = bopaciente.obtenerPacienteXiD(resultado);
+                        Session["paciente"] = pac;
+                        Session["IdPaciente"] = pac.idUsuario;
+                        FormsAuthenticationTicket tkt;
+                        string cookiestr;
+                        HttpCookie ck;
+
+                        tkt = new FormsAuthenticationTicket(1,
+                        cuentaUsuario.username, DateTime.Now,
+                        DateTime.Now.AddMinutes(30), true, "datos adicionales");
+
+                        cookiestr = FormsAuthentication.Encrypt(tkt);
+                        ck = new HttpCookie(FormsAuthentication.FormsCookieName,
+                            cookiestr);
+                        ck.Expires = tkt.Expiration;
+                        ck.Path = FormsAuthentication.FormsCookiePath;
+                        Response.Cookies.Add(ck);
+
+                        string strRedirect;
+                        strRedirect = Request["ReturnUrl"];
+                        if (strRedirect == null)
+                            Response.Redirect("HomePaciente.aspx");
+                        Response.Redirect(strRedirect, true);
+                        
+
+                    }
+                    else 
+                        lblMensaje.Text = "No ha ingresado correctamente su usuario/password";
+                    
                     break;
 
                 case "medico":
-                    Response.Redirect("HomeMedico.aspx");
+                    resultado = bocuenta.verificarCuentaMedico(txtUsuario.Text, txtClave.Text);
+
+                    if (resultado != 0)
+                    {
+                        bomedico = new MedicoWSClient();
+                        medico med = bomedico.obtenerMedico(resultado);
+                        Session["medico"] = med;
+                        FormsAuthenticationTicket tkt;
+                        string cookiestr;
+                        HttpCookie ck;
+
+                        tkt = new FormsAuthenticationTicket(1,
+                        cuentaUsuario.username, DateTime.Now,
+                        DateTime.Now.AddMinutes(30), true, "datos adicionales");
+
+                        cookiestr = FormsAuthentication.Encrypt(tkt);
+                        ck = new HttpCookie(FormsAuthentication.FormsCookieName,
+                            cookiestr);
+                        ck.Expires = tkt.Expiration;
+                        ck.Path = FormsAuthentication.FormsCookiePath;
+                        Response.Cookies.Add(ck);
+
+                        string strRedirect;
+                        strRedirect = Request["ReturnUrl"];
+                        if (strRedirect == null)
+                            Response.Redirect("HomeMedico.aspx");
+                        Response.Redirect(strRedirect, true);
+
+
+                    }
+                    else
+                        lblMensaje.Text = "No ha ingresado correctamente su usuario/password";
                     break;
 
                 case "admin":
-                    Response.Redirect("HomeAdmin.aspx");
+                    resultado = bocuenta.verificarCuentaAdministrador(txtUsuario.Text, txtClave.Text);
+
+                    if (resultado != 0)
+                    {
+                        boadmin = new AdministradorWSClient();
+                        administrador adm = boadmin.obtenerPorIDAdministrador(resultado);
+                        Session["administrador"] = adm;
+                        FormsAuthenticationTicket tkt;
+                        string cookiestr;
+                        HttpCookie ck;
+
+                        tkt = new FormsAuthenticationTicket(1,
+                        cuentaUsuario.username, DateTime.Now,
+                        DateTime.Now.AddMinutes(30), true, "datos adicionales");
+
+                        cookiestr = FormsAuthentication.Encrypt(tkt);
+                        ck = new HttpCookie(FormsAuthentication.FormsCookieName,
+                            cookiestr);
+                        ck.Expires = tkt.Expiration;
+                        ck.Path = FormsAuthentication.FormsCookiePath;
+                        Response.Cookies.Add(ck);
+
+                        string strRedirect;
+                        strRedirect = Request["ReturnUrl"];
+                        if (strRedirect == null)
+                            Response.Redirect("HomeAdmin.aspx");
+                        Response.Redirect(strRedirect, true);
+
+
+                    }
+                    else
+                        lblMensaje.Text = "No ha ingresado correctamente su usuario/password";
                     break;
 
                 default:

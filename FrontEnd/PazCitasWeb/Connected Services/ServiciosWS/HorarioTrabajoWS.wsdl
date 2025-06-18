@@ -5,23 +5,11 @@
       <xsd:import schemaLocation="http://localhost:8080/PazCitasWeb/HorarioTrabajoWS?xsd=1" namespace="http://services.pucp.edu.pe" />
     </xsd:schema>
   </types>
-  <message name="eliminarHorarioPorMedico">
-    <part name="parameters" element="tns:eliminarHorarioPorMedico" />
+  <message name="listarHorario">
+    <part name="parameters" element="tns:listarHorario" />
   </message>
-  <message name="eliminarHorarioPorMedicoResponse">
-    <part name="parameters" element="tns:eliminarHorarioPorMedicoResponse" />
-  </message>
-  <message name="listarPorMedico">
-    <part name="parameters" element="tns:listarPorMedico" />
-  </message>
-  <message name="listarPorMedicoResponse">
-    <part name="parameters" element="tns:listarPorMedicoResponse" />
-  </message>
-  <message name="eliminarHorario">
-    <part name="parameters" element="tns:eliminarHorario" />
-  </message>
-  <message name="eliminarHorarioResponse">
-    <part name="parameters" element="tns:eliminarHorarioResponse" />
+  <message name="listarHorarioResponse">
+    <part name="parameters" element="tns:listarHorarioResponse" />
   </message>
   <message name="insertaHorario">
     <part name="parameters" element="tns:insertaHorario" />
@@ -35,24 +23,28 @@
   <message name="modificarHorarioResponse">
     <part name="parameters" element="tns:modificarHorarioResponse" />
   </message>
-  <message name="listarHorario">
-    <part name="parameters" element="tns:listarHorario" />
+  <message name="eliminarHorario">
+    <part name="parameters" element="tns:eliminarHorario" />
   </message>
-  <message name="listarHorarioResponse">
-    <part name="parameters" element="tns:listarHorarioResponse" />
+  <message name="eliminarHorarioResponse">
+    <part name="parameters" element="tns:eliminarHorarioResponse" />
+  </message>
+  <message name="listarPorMedico">
+    <part name="parameters" element="tns:listarPorMedico" />
+  </message>
+  <message name="listarPorMedicoResponse">
+    <part name="parameters" element="tns:listarPorMedicoResponse" />
+  </message>
+  <message name="eliminarHorarioPorMedico">
+    <part name="parameters" element="tns:eliminarHorarioPorMedico" />
+  </message>
+  <message name="eliminarHorarioPorMedicoResponse">
+    <part name="parameters" element="tns:eliminarHorarioPorMedicoResponse" />
   </message>
   <portType name="HorarioTrabajoWS">
-    <operation name="eliminarHorarioPorMedico">
-      <input wsam:Action="http://services.pucp.edu.pe/HorarioTrabajoWS/eliminarHorarioPorMedicoRequest" message="tns:eliminarHorarioPorMedico" />
-      <output wsam:Action="http://services.pucp.edu.pe/HorarioTrabajoWS/eliminarHorarioPorMedicoResponse" message="tns:eliminarHorarioPorMedicoResponse" />
-    </operation>
-    <operation name="listarPorMedico">
-      <input wsam:Action="http://services.pucp.edu.pe/HorarioTrabajoWS/listarPorMedicoRequest" message="tns:listarPorMedico" />
-      <output wsam:Action="http://services.pucp.edu.pe/HorarioTrabajoWS/listarPorMedicoResponse" message="tns:listarPorMedicoResponse" />
-    </operation>
-    <operation name="eliminarHorario">
-      <input wsam:Action="http://services.pucp.edu.pe/HorarioTrabajoWS/eliminarHorarioRequest" message="tns:eliminarHorario" />
-      <output wsam:Action="http://services.pucp.edu.pe/HorarioTrabajoWS/eliminarHorarioResponse" message="tns:eliminarHorarioResponse" />
+    <operation name="listarHorario">
+      <input wsam:Action="http://services.pucp.edu.pe/HorarioTrabajoWS/listarHorarioRequest" message="tns:listarHorario" />
+      <output wsam:Action="http://services.pucp.edu.pe/HorarioTrabajoWS/listarHorarioResponse" message="tns:listarHorarioResponse" />
     </operation>
     <operation name="insertaHorario">
       <input wsam:Action="http://services.pucp.edu.pe/HorarioTrabajoWS/insertaHorarioRequest" message="tns:insertaHorario" />
@@ -62,32 +54,22 @@
       <input wsam:Action="http://services.pucp.edu.pe/HorarioTrabajoWS/modificarHorarioRequest" message="tns:modificarHorario" />
       <output wsam:Action="http://services.pucp.edu.pe/HorarioTrabajoWS/modificarHorarioResponse" message="tns:modificarHorarioResponse" />
     </operation>
-    <operation name="listarHorario">
-      <input wsam:Action="http://services.pucp.edu.pe/HorarioTrabajoWS/listarHorarioRequest" message="tns:listarHorario" />
-      <output wsam:Action="http://services.pucp.edu.pe/HorarioTrabajoWS/listarHorarioResponse" message="tns:listarHorarioResponse" />
+    <operation name="eliminarHorario">
+      <input wsam:Action="http://services.pucp.edu.pe/HorarioTrabajoWS/eliminarHorarioRequest" message="tns:eliminarHorario" />
+      <output wsam:Action="http://services.pucp.edu.pe/HorarioTrabajoWS/eliminarHorarioResponse" message="tns:eliminarHorarioResponse" />
+    </operation>
+    <operation name="listarPorMedico">
+      <input wsam:Action="http://services.pucp.edu.pe/HorarioTrabajoWS/listarPorMedicoRequest" message="tns:listarPorMedico" />
+      <output wsam:Action="http://services.pucp.edu.pe/HorarioTrabajoWS/listarPorMedicoResponse" message="tns:listarPorMedicoResponse" />
+    </operation>
+    <operation name="eliminarHorarioPorMedico">
+      <input wsam:Action="http://services.pucp.edu.pe/HorarioTrabajoWS/eliminarHorarioPorMedicoRequest" message="tns:eliminarHorarioPorMedico" />
+      <output wsam:Action="http://services.pucp.edu.pe/HorarioTrabajoWS/eliminarHorarioPorMedicoResponse" message="tns:eliminarHorarioPorMedicoResponse" />
     </operation>
   </portType>
   <binding name="HorarioTrabajoWSPortBinding" type="tns:HorarioTrabajoWS">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
-    <operation name="eliminarHorarioPorMedico">
-      <soap:operation soapAction="" />
-      <input>
-        <soap:body use="literal" />
-      </input>
-      <output>
-        <soap:body use="literal" />
-      </output>
-    </operation>
-    <operation name="listarPorMedico">
-      <soap:operation soapAction="" />
-      <input>
-        <soap:body use="literal" />
-      </input>
-      <output>
-        <soap:body use="literal" />
-      </output>
-    </operation>
-    <operation name="eliminarHorario">
+    <operation name="listarHorario">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />
@@ -114,7 +96,25 @@
         <soap:body use="literal" />
       </output>
     </operation>
-    <operation name="listarHorario">
+    <operation name="eliminarHorario">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="listarPorMedico">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="eliminarHorarioPorMedico">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />

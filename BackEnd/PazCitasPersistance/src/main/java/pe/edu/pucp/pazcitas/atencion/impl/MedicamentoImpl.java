@@ -40,7 +40,11 @@ public class MedicamentoImpl implements MedicamentoDAO {
 
     @Override
     public int eliminar(int idMedicamento) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        Map<Integer, Object> parametrosEntrada = new HashMap<>();
+        parametrosEntrada.put(1, idMedicamento);
+        int resultado = DBManager.getInstance().ejecutarProcedimiento("ELIMINAR_MEDICAMENTO", parametrosEntrada, null);
+        System.out.println("Se ha realizado la eliminacion del medicamento");
+        return resultado;
     }
 
     @Override
@@ -62,6 +66,35 @@ public class MedicamentoImpl implements MedicamentoDAO {
         rs = DBManager.getInstance().ejecutarProcedimientoLectura("LISTAR_MEDICAMENTOS_TODOS", null);
         System.out.println("Lectura de medicamentos...");
 
+        try {
+            while (rs.next()) {
+                if (medicamentos == null) {
+                    medicamentos = new ArrayList<>();
+                }
+                Medicamento m = new Medicamento();
+                m.setIdMedicamento(rs.getInt("id_medicamento"));
+                m.setNombre(rs.getString("nombre"));
+                m.setPresentacion(rs.getString("presentacion"));
+                m.setStock(rs.getInt("stock"));
+                medicamentos.add(m);
+            }
+        } catch (SQLException ex) {
+            System.out.println(ex.getMessage());
+
+        } finally {
+            DBManager.getInstance().cerrarConexion();
+        }
+
+        return medicamentos;
+    }
+
+    @Override
+    public ArrayList<Medicamento> listarXNombre(String nombre) {
+        ArrayList<Medicamento> medicamentos = null;
+        Map<Integer, Object> parametrosEntrada = new HashMap<>();
+        parametrosEntrada.put(1, nombre);
+        rs = DBManager.getInstance().ejecutarProcedimientoLectura("LISTAR_MEDICAMENTOS_X_NOMBRE", parametrosEntrada);
+        System.out.println("Lectura de medicamentos...");
         try {
             while (rs.next()) {
                 if (medicamentos == null) {

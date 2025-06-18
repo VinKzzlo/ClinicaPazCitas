@@ -71,5 +71,12 @@ namespace PazCitasWA
                 }
             }
         }
+
+        protected void btnEliminar_Click(object sender, EventArgs e)
+        {
+            int idMedicamentoSelec = Int32.Parse(((LinkButton)sender).CommandArgument);
+            wsMedicamento.eliminarMedicamento(idMedicamentoSelec);
+            Response.Redirect("ListarTratamientos.aspx");
+        }
     }
 }

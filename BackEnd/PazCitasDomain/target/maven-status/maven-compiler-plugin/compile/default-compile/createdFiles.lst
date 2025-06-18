@@ -21,5 +21,6 @@ pe\edu\pucp\pazcitas\cita\model\EstadoAtencion.class
 pe\edu\pucp\pazcitas\usuario\model\CuentaUsuario.class
 pe\edu\pucp\pazcitas\atencion\model\HistorialMedico.class
 pe\edu\pucp\pazcitas\usuario\model\Administrador.class
+pe\edu\pucp\pazcitas\cita\model\TurnoDisponibleDTO.class
 pe\edu\pucp\pazcitas\usuario\model\Paciente.class
 pe\edu\pucp\pazcitas\cita\model\Cita.class

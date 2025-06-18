@@ -5,31 +5,31 @@
       <xsd:import schemaLocation="http://localhost:8080/PazCitasWeb/LineaRecetaMedicamentoWeb?xsd=1" namespace="http://services.pucp.edu.pe" />
     </xsd:schema>
   </types>
-  <message name="eliminarLineaReceta">
-    <part name="parameters" element="tns:eliminarLineaReceta" />
-  </message>
-  <message name="eliminarLineaRecetaResponse">
-    <part name="parameters" element="tns:eliminarLineaRecetaResponse" />
-  </message>
   <message name="insertarLineaReceta">
     <part name="parameters" element="tns:insertarLineaReceta" />
   </message>
   <message name="insertarLineaRecetaResponse">
     <part name="parameters" element="tns:insertarLineaRecetaResponse" />
   </message>
+  <message name="eliminarLineaReceta">
+    <part name="parameters" element="tns:eliminarLineaReceta" />
+  </message>
+  <message name="eliminarLineaRecetaResponse">
+    <part name="parameters" element="tns:eliminarLineaRecetaResponse" />
+  </message>
   <portType name="LineaRecetaMedicamentoWeb">
-    <operation name="eliminarLineaReceta">
-      <input wsam:Action="http://services.pucp.edu.pe/LineaRecetaMedicamentoWeb/eliminarLineaRecetaRequest" message="tns:eliminarLineaReceta" />
-      <output wsam:Action="http://services.pucp.edu.pe/LineaRecetaMedicamentoWeb/eliminarLineaRecetaResponse" message="tns:eliminarLineaRecetaResponse" />
-    </operation>
     <operation name="insertarLineaReceta">
       <input wsam:Action="http://services.pucp.edu.pe/LineaRecetaMedicamentoWeb/insertarLineaRecetaRequest" message="tns:insertarLineaReceta" />
       <output wsam:Action="http://services.pucp.edu.pe/LineaRecetaMedicamentoWeb/insertarLineaRecetaResponse" message="tns:insertarLineaRecetaResponse" />
     </operation>
+    <operation name="eliminarLineaReceta">
+      <input wsam:Action="http://services.pucp.edu.pe/LineaRecetaMedicamentoWeb/eliminarLineaRecetaRequest" message="tns:eliminarLineaReceta" />
+      <output wsam:Action="http://services.pucp.edu.pe/LineaRecetaMedicamentoWeb/eliminarLineaRecetaResponse" message="tns:eliminarLineaRecetaResponse" />
+    </operation>
   </portType>
   <binding name="LineaRecetaMedicamentoWebPortBinding" type="tns:LineaRecetaMedicamentoWeb">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
-    <operation name="eliminarLineaReceta">
+    <operation name="insertarLineaReceta">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />
@@ -38,7 +38,7 @@
         <soap:body use="literal" />
       </output>
     </operation>
-    <operation name="insertarLineaReceta">
+    <operation name="eliminarLineaReceta">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />

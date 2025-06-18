@@ -85,10 +85,10 @@
             padding: 16px;
         }
 
-        .form-control::placeholder {
-            font-size: 16px;
-            opacity: 0.75;
-        }
+            .form-control::placeholder {
+                font-size: 16px;
+                opacity: 0.75;
+            }
 
         .btn-login {
             border-radius: 12px;
@@ -158,18 +158,21 @@
                         <a href="#" class="text-decoration-none text-small">¿Olvidó su contraseña?</a>
                     </div>
                 </div>
-
+                <div class="form-group mt-2">
+                    <asp:Label ID="lblMensaje" runat="server" CssClass="text-danger text-center d-block" EnableViewState="false"></asp:Label>
+                </div>
                 <div class="d-grid">
-                    <asp:Button ID="btnLogin" runat="server" CssClass="btn btn-warning btn-login" Text="Iniciar sesión" OnClick="btnLogin_Click"/>
+                    <asp:Button ID="btnLogin" runat="server" CssClass="btn btn-warning btn-login" Text="Iniciar sesión" OnClick="btnLogin_Click" />
                 </div>
 
                 <div class="login-footer">
                     <a href="Inicio.aspx" class="text-decoration-none text-primary text-small">
-                        <i class="fas fa-arrow-left me-1"></i> Volver al inicio
+                        <i class="fas fa-arrow-left me-1"></i>Volver al inicio
                     </a>
                 </div>
             </div>
         </div>
     </form>
+
 </body>
 </html>

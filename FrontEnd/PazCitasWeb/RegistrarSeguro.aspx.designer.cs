@@ -60,6 +60,15 @@ namespace PazCitasWA
         protected global::System.Web.UI.WebControls.TextBox txtNombreSeguro;
 
         /// <summary>
+        /// Control revNombres.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator revNombres;
+
+        /// <summary>
         /// Control lblTipoSeguro.
         /// </summary>
         /// <remarks>
@@ -112,6 +121,15 @@ namespace PazCitasWA
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl dtpVigencia;
+
+        /// <summary>
+        /// Control rvVigencia.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RangeValidator rvVigencia;
 
         /// <summary>
         /// Control btnRegresar.

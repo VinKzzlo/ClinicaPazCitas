@@ -332,9 +332,6 @@
     <Content Include="Connected Services\ServiciosWS\PazCitasWA.ServiciosWS.obtenerMedicoResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
-    <Content Include="Connected Services\ServiciosWS\PazCitasWA.ServiciosWS.obtenerPacienteResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
     <Content Include="Connected Services\ServiciosWS\PazCitasWA.ServiciosWS.obtenerSedePorIdResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
@@ -384,6 +381,36 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
     <Content Include="Connected Services\ServiciosWS\PazCitasWA.ServiciosWS.eliminarHorarioPorMedicoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServiciosWS\PazCitasWA.ServiciosWS.eliminarMedicamentoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServiciosWS\PazCitasWA.ServiciosWS.listaCitaPorMedicoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServiciosWS\PazCitasWA.ServiciosWS.listarMedicamentoXnombreResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServiciosWS\PazCitasWA.ServiciosWS.listarNotaClinicaXHistorialResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServiciosWS\PazCitasWA.ServiciosWS.listarTurnosSemanaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServiciosWS\PazCitasWA.ServiciosWS.obtenerHistorialResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServiciosWS\PazCitasWA.ServiciosWS.obtenerPacientexDNIResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServiciosWS\PazCitasWA.ServiciosWS.obtenerPacienteXiDResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServiciosWS\PazCitasWA.ServiciosWS.obtenerPorIDAdministradorResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServiciosWS\PazCitasWA.ServiciosWS.turnoDisponibleDTO.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
     <None Include="Connected Services\ServiciosWS\RecetaWS.wsdl" />
@@ -500,6 +527,7 @@
     <Content Include="Content\Fonts\css\v5-font-face.css" />
     <Content Include="Content\Fonts\css\v5-font-face.min.css" />
     <Content Include="Content\sidebars.css" />
+    <Content Include="DetalleCitaPaciente.aspx" />
     <Content Include="DetalleEspecialidadPaciente.aspx" />
     <Content Include="EmitirExamen.aspx" />
     <Content Include="EmitirReceta.aspx" />
@@ -514,7 +542,10 @@
     <Content Include="Images\doctorGenericImage.png" />
     <Content Include="Images\genericDoctor.png" />
     <Content Include="Images\PazCantante.PNG" />
+    <Content Include="Images\WarningPerson.png" />
     <Content Include="Inicio.aspx" />
+    <Content Include="ListarAdministradores.aspx" />
+    <Content Include="ListarCitasMedico.aspx" />
     <Content Include="ListarCitasPaciente.aspx" />
     <Content Include="ListarConsultorios.aspx" />
     <Content Include="ListarEspecialidades.aspx" />
@@ -528,7 +559,9 @@
     <Content Include="ListarTratamientos.aspx" />
     <Content Include="ListarTurnos.aspx" />
     <Content Include="Login.aspx" />
-    <Content Include="RegistrarCita.aspx" />
+    <Content Include="MisPacientes.aspx" />
+    <Content Include="RegistrarAdministrador.aspx" />
+    <Content Include="RegistrarCitaPaciente.aspx" />
     <Content Include="RegistrarConsultorio.aspx" />
     <Content Include="RegistrarEspecialidad.aspx" />
     <Content Include="RegistrarMedico.aspx" />
@@ -558,9 +591,11 @@
     <Content Include="Scripts\jquery-3.7.1.min.js" />
     <Content Include="Scripts\jquery-3.7.1.slim.js" />
     <Content Include="Scripts\jquery-3.7.1.slim.min.js" />
+    <Content Include="Scripts\PazCitasS\RegistrarLineaMedicamento.js" />
     <Content Include="Scripts\scriptAdmin.js" />
     <Content Include="Scripts\sidebars.js" />
     <Content Include="Content\styleAdmin.css" />
+    <Content Include="VerCitaMedico.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -575,6 +610,13 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="DetalleCitaPaciente.aspx.cs">
+      <DependentUpon>DetalleCitaPaciente.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DetalleCitaPaciente.aspx.designer.cs">
+      <DependentUpon>DetalleCitaPaciente.aspx</DependentUpon>
     </Compile>
     <Compile Include="DetalleEspecialidadPaciente.aspx.cs">
       <DependentUpon>DetalleEspecialidadPaciente.aspx</DependentUpon>
@@ -656,6 +698,20 @@
     </Compile>
     <Compile Include="Inicio.aspx.designer.cs">
       <DependentUpon>Inicio.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ListarAdministradores.aspx.cs">
+      <DependentUpon>ListarAdministradores.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ListarAdministradores.aspx.designer.cs">
+      <DependentUpon>ListarAdministradores.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ListarCitasMedico.aspx.cs">
+      <DependentUpon>ListarCitasMedico.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ListarCitasMedico.aspx.designer.cs">
+      <DependentUpon>ListarCitasMedico.aspx</DependentUpon>
     </Compile>
     <Compile Include="ListarCitasPaciente.aspx.cs">
       <DependentUpon>ListarCitasPaciente.aspx</DependentUpon>
@@ -748,6 +804,13 @@
     <Compile Include="Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
+    <Compile Include="MisPacientes.aspx.cs">
+      <DependentUpon>MisPacientes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MisPacientes.aspx.designer.cs">
+      <DependentUpon>MisPacientes.aspx</DependentUpon>
+    </Compile>
     <Compile Include="PazCitasAdmin.Master.cs">
       <DependentUpon>PazCitasAdmin.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -770,12 +833,18 @@
       <DependentUpon>PazCitasPaciente.Master</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="RegistrarCita.aspx.cs">
-      <DependentUpon>RegistrarCita.aspx</DependentUpon>
+    <Compile Include="RegistrarAdministrador.aspx.cs">
+      <DependentUpon>RegistrarAdministrador.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="RegistrarCita.aspx.designer.cs">
-      <DependentUpon>RegistrarCita.aspx</DependentUpon>
+    <Compile Include="RegistrarAdministrador.aspx.designer.cs">
+      <DependentUpon>RegistrarAdministrador.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="RegistrarCitaPaciente.aspx.cs">
+      <DependentUpon>RegistrarCitaPaciente.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="RegistrarCitaPaciente.aspx.designer.cs">
+      <DependentUpon>RegistrarCitaPaciente.aspx</DependentUpon>
     </Compile>
     <Compile Include="RegistrarConsultorio.aspx.cs">
       <DependentUpon>RegistrarConsultorio.aspx</DependentUpon>
@@ -839,6 +908,13 @@
     </Compile>
     <Compile Include="Reportes.aspx.designer.cs">
       <DependentUpon>Reportes.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="VerCitaMedico.aspx.cs">
+      <DependentUpon>VerCitaMedico.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="VerCitaMedico.aspx.designer.cs">
+      <DependentUpon>VerCitaMedico.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

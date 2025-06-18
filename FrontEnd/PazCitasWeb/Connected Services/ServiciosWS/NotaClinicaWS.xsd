@@ -4,11 +4,18 @@
   <xs:element name="insertarNotaClinicaResponse" type="tns:insertarNotaClinicaResponse" />
   <xs:element name="listarNotaClinica" type="tns:listarNotaClinica" />
   <xs:element name="listarNotaClinicaResponse" type="tns:listarNotaClinicaResponse" />
+  <xs:element name="listarNotaClinicaXHistorial" type="tns:listarNotaClinicaXHistorial" />
+  <xs:element name="listarNotaClinicaXHistorialResponse" type="tns:listarNotaClinicaXHistorialResponse" />
   <xs:element name="modificarNotaClinica" type="tns:modificarNotaClinica" />
   <xs:element name="modificarNotaClinicaResponse" type="tns:modificarNotaClinicaResponse" />
-  <xs:complexType name="insertarNotaClinica">
+  <xs:complexType name="listarNotaClinicaXHistorial">
     <xs:sequence>
-      <xs:element minOccurs="0" name="notaClinica" type="tns:notaClinica" />
+      <xs:element name="idhis" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="listarNotaClinicaXHistorialResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:notaClinica" />
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="notaClinica">
@@ -168,6 +175,11 @@
       <xs:element minOccurs="0" name="nombre" type="xs:string" />
       <xs:element minOccurs="0" name="presentacion" type="xs:string" />
       <xs:element name="stock" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="insertarNotaClinica">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="notaClinica" type="tns:notaClinica" />
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="insertarNotaClinicaResponse">

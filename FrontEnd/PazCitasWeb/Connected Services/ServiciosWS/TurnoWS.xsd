@@ -6,6 +6,8 @@
   <xs:element name="insertaTurnoResponse" type="tns:insertaTurnoResponse" />
   <xs:element name="listarTurno" type="tns:listarTurno" />
   <xs:element name="listarTurnoResponse" type="tns:listarTurnoResponse" />
+  <xs:element name="listarTurnosSemana" type="tns:listarTurnosSemana" />
+  <xs:element name="listarTurnosSemanaResponse" type="tns:listarTurnosSemanaResponse" />
   <xs:element name="modificarTurno" type="tns:modificarTurno" />
   <xs:element name="modificarTurnoResponse" type="tns:modificarTurnoResponse" />
   <xs:element name="obtenerXId" type="tns:obtenerXId" />
@@ -18,6 +20,26 @@
   <xs:complexType name="eliminarTurnoResponse">
     <xs:sequence>
       <xs:element name="return" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="listarTurnosSemana">
+    <xs:sequence>
+      <xs:element name="idMedico" type="xs:int" />
+      <xs:element minOccurs="0" name="fechaInicio" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="listarTurnosSemanaResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:turnoDisponibleDTO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="turnoDisponibleDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="dia" type="tns:diaSemana" />
+      <xs:element minOccurs="0" name="fecha" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="horaFin" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="horaInicio" type="xs:dateTime" />
+      <xs:element name="idHorarioTrabajo" type="xs:int" />
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="insertaTurno">

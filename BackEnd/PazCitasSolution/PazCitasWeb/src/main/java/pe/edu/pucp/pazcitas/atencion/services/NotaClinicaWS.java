@@ -39,4 +39,10 @@ public class NotaClinicaWS {
         bonotaclinica = new NotaClinicaBO();
         return bonotaclinica.modificar(nota);
     }
+    
+    @WebMethod(operationName = "listarNotaClinicaXHistorial")
+    public ArrayList<NotaClinica> listarNotaClinicaXHistorial(@WebParam(name = "idhis") int idhis) {
+        bonotaclinica = new NotaClinicaBO();
+        return bonotaclinica.listarXHistorial(idhis);
+    }
 }

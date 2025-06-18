@@ -1,9 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xs:schema xmlns:tns="http://services.pucp.edu.pe" targetNamespace="http://services.pucp.edu.pe" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="eliminarMedicamento" type="tns:eliminarMedicamento" />
+  <xs:element name="eliminarMedicamentoResponse" type="tns:eliminarMedicamentoResponse" />
   <xs:element name="insertarMedicamento" type="tns:insertarMedicamento" />
   <xs:element name="insertarMedicamentoResponse" type="tns:insertarMedicamentoResponse" />
   <xs:element name="listarMedicamento" type="tns:listarMedicamento" />
   <xs:element name="listarMedicamentoResponse" type="tns:listarMedicamentoResponse" />
+  <xs:element name="listarMedicamentoXnombre" type="tns:listarMedicamentoXnombre" />
+  <xs:element name="listarMedicamentoXnombreResponse" type="tns:listarMedicamentoXnombreResponse" />
   <xs:element name="modificarMedicamento" type="tns:modificarMedicamento" />
   <xs:element name="modificarMedicamentoResponse" type="tns:modificarMedicamentoResponse" />
   <xs:complexType name="listarMedicamento">
@@ -41,6 +45,26 @@
   <xs:complexType name="insertarMedicamentoResponse">
     <xs:sequence>
       <xs:element name="return" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="eliminarMedicamento">
+    <xs:sequence>
+      <xs:element name="idMedicamento" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="eliminarMedicamentoResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="listarMedicamentoXnombre">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="nombre" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="listarMedicamentoXnombreResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:medicamento" />
     </xs:sequence>
   </xs:complexType>
 </xs:schema>

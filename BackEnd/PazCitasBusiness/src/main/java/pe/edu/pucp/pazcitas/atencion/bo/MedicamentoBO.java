@@ -36,4 +36,8 @@ public class MedicamentoBO {
         
     }
 
+    public ArrayList<Medicamento> listarXNombre(String nombre){
+        return daoMedicamento.listarXNombre(nombre);
+    }
+    
 }

@@ -41,4 +41,9 @@ public class PacienteBO {
         {
             return daoPaciente.obtenerPorID(idPaciente);
         }
+        
+        public Paciente obtenerXDNI(String dni)
+        {
+            return daoPaciente.obtenerPorDNI(dni);
+        }
 }

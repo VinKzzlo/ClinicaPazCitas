@@ -12,6 +12,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 import pe.edu.pucp.pazcitas.atencion.dao.RecetaDAO;
+import pe.edu.pucp.pazcitas.atencion.model.LineaRecetaMedicamento;
 import pe.edu.pucp.pazcitas.atencion.model.Receta;
 import pe.edu.pucp.pazcitas.config.DBManager;
 
@@ -32,7 +33,17 @@ public class RecetaImpl implements RecetaDAO {
         parametrosEntrada.put(2, receta.getIndicaciones());
         DBManager.getInstance().ejecutarProcedimiento("INSERTAR_RECETA", parametrosEntrada, parametrosSalida);
         receta.setIdReceta((int) parametrosSalida.get(1));
-        System.out.println("Se ha realizado el registro de la receta...");
+
+        for (LineaRecetaMedicamento line : receta.getLineasReceta()) {
+            parametrosSalida = new HashMap<>();
+            parametrosEntrada = new HashMap<>();
+            parametrosSalida.put(1, Types.INTEGER);
+            parametrosEntrada.put(2, receta.getIdReceta());
+            parametrosEntrada.put(3, line.getMedicamento().getIdMedicamento());
+            parametrosEntrada.put(4, line.getCantidad());
+            DBManager.getInstance().ejecutarProcedimiento("INSERTAR_RECETA_MEDICAMENTO", parametrosEntrada, parametrosSalida);
+            line.setIdLineaRecetaMedicamento((int) parametrosSalida.get(1));
+        }
         return receta.getIdReceta();
     }
 

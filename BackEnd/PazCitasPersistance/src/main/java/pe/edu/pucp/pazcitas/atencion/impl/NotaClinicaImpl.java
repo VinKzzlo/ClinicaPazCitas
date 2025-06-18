@@ -81,7 +81,47 @@ public class NotaClinicaImpl implements NotaClinicaDAO {
                 Cita cita = new Cita();
                 cita.setIdCita(rs.getInt("id_cita"));
                 n.setCita(cita);
-               
+
+                Receta receta = new Receta();
+                receta.setIdReceta(rs.getInt("id_receta"));
+                n.setReceta(receta);
+                HistorialMedico hist = new HistorialMedico();
+                hist.setIdhistorial(rs.getInt("id_historial"));
+                n.setHistorial(hist);
+                notas.add(n);
+            }
+        } catch (SQLException ex) {
+            System.out.println(ex.getMessage());
+
+        } finally {
+            DBManager.getInstance().cerrarConexion();
+        }
+
+        return notas;
+    }
+
+    @Override
+    public ArrayList<NotaClinica> listarXhistorial(int idHis) {
+        ArrayList<NotaClinica> notas = null;
+        Map<Integer, Object> parametrosEntrada = new HashMap<>();
+        parametrosEntrada.put(1, idHis);
+        rs = DBManager.getInstance().ejecutarProcedimientoLectura("LISTAR_NOTAS_CLINICAS_X_HISTORIAL", parametrosEntrada);
+        System.out.println("Lectura de notas...");
+
+        try {
+            while (rs.next()) {
+                if (notas == null) {
+                    notas = new ArrayList<>();
+                }
+                NotaClinica n = new NotaClinica();
+                n.setIdNota(rs.getInt("id_nota"));
+                n.setDescripcion(rs.getString("descripcion"));
+                n.setDiagnostico(rs.getString("diagnostico"));
+                n.setObservaciones(rs.getString("observaciones"));
+                Cita cita = new Cita();
+                cita.setIdCita(rs.getInt("id_cita"));
+                n.setCita(cita);
+
                 Receta receta = new Receta();
                 receta.setIdReceta(rs.getInt("id_receta"));
                 n.setReceta(receta);

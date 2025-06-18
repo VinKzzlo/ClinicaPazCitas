@@ -5,9 +5,11 @@
 package pe.edu.pucp.pazcitas.cita.bo;
 
 import java.util.ArrayList;
+import java.util.Date;
 import pe.edu.pucp.pazcitas.cita.dao.TurnoDAO;
 import pe.edu.pucp.pazcitas.cita.impl.TurnoImpl;
 import pe.edu.pucp.pazcitas.cita.model.Turno;
+import pe.edu.pucp.pazcitas.cita.model.TurnoDisponibleDTO;
 
 /**
  *
@@ -34,5 +36,8 @@ public class TurnoBO {
     }
     public Turno obtenerXId(int idTurno){
         return daoTurno.obtenerPorId(idTurno);
+    }
+    public ArrayList<TurnoDisponibleDTO> listarTurnosPorSemana(int idMedico, Date fechaInicio) {
+        return daoTurno.listarTurnosDisponiblesSemana(idMedico, fechaInicio);
     }
 }

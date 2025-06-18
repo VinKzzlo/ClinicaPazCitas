@@ -60,5 +60,10 @@ namespace PazCitasWA
         {
             Response.Redirect("RegistrarPaciente.aspx");
         }
+
+        protected void btnVer_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

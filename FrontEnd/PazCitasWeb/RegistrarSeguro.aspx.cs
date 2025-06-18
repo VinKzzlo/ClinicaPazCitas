@@ -16,6 +16,11 @@ namespace PazCitasWA
             {
                 wsSeguro = new SeguroWSClient();
                 CargarTipoSeguro();
+                DateTime maxDate = new DateTime(2030, 12, 1);
+                DateTime minDate = new DateTime(2025, 1, 1);
+
+                dtpVigencia.Attributes["min"] = minDate.ToString("yyyy-MM-dd");
+                dtpVigencia.Attributes["max"] = maxDate.ToString("yyyy-MM-dd");
             }
             string accion = Request.QueryString["accion"];
             if (accion == null)

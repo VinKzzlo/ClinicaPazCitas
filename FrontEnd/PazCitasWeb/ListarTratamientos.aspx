@@ -4,7 +4,7 @@
     Listar Medicamentos
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="cph_Scripts" runat="server">
-     <style>
+    <style>
         .stock-box {
             display: inline-block;
             width: 100%;
@@ -12,17 +12,20 @@
             text-align: center;
             font-weight: bold;
             border-radius: 5px;
-            min-width: 50px;  /* Establece un tamaño mínimo para que el texto esté centrado */
+            min-width: 50px; /* Establece un tamaño mínimo para que el texto esté centrado */
             color: white;
         }
+
         .bg-danger {
             background-color: #dc3545 !important;
             color: white;
         }
+
         .bg-warning {
             background-color: #ffc107 !important;
             color: white;
         }
+
         .bg-success {
             background-color: #28a745 !important;
             color: white;
@@ -69,7 +72,10 @@
                                     Text="<i class='fa-solid fa-pen me-1'></i> Modificar"
                                     OnClick="btnModificar_Click"
                                     CommandArgument='<%# Eval("idMedicamento") %>' />
-
+                                <asp:LinkButton runat="server" ID="btnEliminar" CssClass="btn btn-danger btn-sm"
+                                    Text="<i class='fa-solid fa-trash me-1'></i> Eliminar"
+                                    OnClick="btnEliminar_Click"
+                                    CommandArgument='<%# Eval("idMedicamento") %>' />
                             </div>
                         </ItemTemplate>
                         <ItemStyle Width="15%" />

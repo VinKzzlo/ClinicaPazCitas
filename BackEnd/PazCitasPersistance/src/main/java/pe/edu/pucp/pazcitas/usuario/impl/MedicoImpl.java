@@ -210,4 +210,6 @@ public class MedicoImpl implements MedicoDAO{
         return medicos;
     }
     
+    
+    
 }

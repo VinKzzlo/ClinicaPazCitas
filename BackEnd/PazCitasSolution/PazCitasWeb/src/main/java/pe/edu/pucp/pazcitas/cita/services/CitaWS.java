@@ -52,4 +52,10 @@ public class CitaWS {
         bocita = new CitaBO();
         return bocita.listarXPaciente(idPaciente);
     }
+    
+    @WebMethod(operationName = "listaCitaPorMedico")
+    public ArrayList<Cita> listaCitaPorMedico(@WebParam(name = "idMed") int idMed) {
+        bocita = new CitaBO();
+        return bocita.listarXMedico(idMed);
+    }
 }

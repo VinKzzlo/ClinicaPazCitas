@@ -12,5 +12,5 @@ import pe.edu.pucp.pazcitas.dao.ICrud;
  * @author asant
  */
 public interface HistorialMedicoDAO extends ICrud<HistorialMedico>{
-    
+    HistorialMedico obtenerHistorial(int idPaciente);
 }

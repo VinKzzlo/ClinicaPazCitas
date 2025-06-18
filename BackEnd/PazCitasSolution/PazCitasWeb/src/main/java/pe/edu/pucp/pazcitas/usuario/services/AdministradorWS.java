@@ -43,4 +43,10 @@ public class AdministradorWS {
         boadministrador = new AdministradorBO();
         return boadministrador.eliminar(idAdmi);
     }
+    
+    @WebMethod(operationName = "obtenerPorIDAdministrador")
+    public Administrador obtenerPorIDAdministrador(@WebParam(name = "idAdmin") int idAdmin){
+        boadministrador = new AdministradorBO();
+        return boadministrador.obtenerPorID(idAdmin);
+    }
 }
