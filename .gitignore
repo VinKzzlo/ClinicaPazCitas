@@ -36,3 +36,6 @@ replay_pid*
 /BackEnd/PazCitasWeb/target/
 /BackEnd/PazCitasMain/target/
 /BackEnd/PazCitasSolution/PazCitasWeb/target/
+
+# Ignorar archivos de configuración
+*.properties

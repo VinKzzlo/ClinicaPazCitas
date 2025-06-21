@@ -57,8 +57,8 @@ namespace PazCitasWA
                 //TurnoWSClient wsTurno = new TurnoWSClient();
                 //turno turnoTemp = new turno();
                 //e.Row.Cells[2].Text = (DataBinder.Eval(e.Row.DataItem, "horario.turno.horaInicio")).ToString();
-                e.Row.Cells[3].Text = (DataBinder.Eval(e.Row.DataItem, "estadoCita")).ToString();
-                e.Row.Cells[4].Text = (DataBinder.Eval(e.Row.DataItem, "estadoAtencion")).ToString();
+                e.Row.Cells[2].Text = (DataBinder.Eval(e.Row.DataItem, "estadoCita")).ToString();
+                e.Row.Cells[3].Text = (DataBinder.Eval(e.Row.DataItem, "estadoAtencion")).ToString();
 
             }
         }
