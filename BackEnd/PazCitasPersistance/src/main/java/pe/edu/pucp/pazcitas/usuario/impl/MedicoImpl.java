@@ -209,7 +209,55 @@ public class MedicoImpl implements MedicoDAO{
         }
         return medicos;
     }
-    
-    
-    
+
+    @Override
+    public ArrayList<Medico> listarPorCadena(String cadena) {
+        ArrayList<Medico> medicos = null;
+        Map<Integer, Object> parametrosEntrada = new HashMap<>();
+        parametrosEntrada.put(1, cadena);
+        rs = DBManager.getInstance().ejecutarProcedimientoLectura("OBTENER_MEDICO_X_CADENA", parametrosEntrada);
+        try{
+            while(rs.next()){
+                if(medicos == null) medicos = new ArrayList<>();
+                Medico m=new Medico();
+                m.setIdUsuario(rs.getInt("id_usuario"));
+                m.setNombre(rs.getString("nombre"));
+                m.setApellidoPaterno(rs.getString("apellido_paterno"));
+                m.setApellidoMaterno(rs.getString("apellido_materno"));
+                m.setDni(rs.getString("dni"));
+                m.setEmail(rs.getString("email"));
+                m.setFechaNacimiento(rs.getDate("fecha_nacimiento"));
+                m.setGenero(rs.getString("genero").charAt(0));
+                m.setCodigoMedico(rs.getString("codigo_medico"));
+                
+                Sede s=new Sede();
+                s.setIdSede(rs.getInt("id_sede"));
+                s.setNombre(rs.getString("nombre_sede"));
+                s.setDireccion(rs.getString("direccion"));
+                
+                Consultorio c=new Consultorio();
+                c.setIdConsultorio(rs.getInt("id_consultorio"));
+                c.setNombreConsultorio(rs.getString("nombre_consultorio"));
+                c.setPiso(rs.getInt("piso"));
+                c.setCapacidad(rs.getInt("capacidad"));
+                c.setAsignado(rs.getBoolean("asignado"));
+                
+                Especialidad e=new Especialidad();
+                e.setIdEspecialidad(rs.getInt("id_especialidad"));
+                e.setNombre(rs.getString("nombre_especialidad"));
+                e.setDescripcion(rs.getString("descripcion"));
+                m.setEspecialidad(e);
+                m.setSede(s);
+                m.setConsultorio(c);
+                
+                medicos.add(m);
+            }
+        }catch(SQLException ex){
+            System.out.println(ex.getMessage());
+        }finally{
+            DBManager.getInstance().cerrarConexion();
+        }
+        return medicos; 
+    }
+
 }

@@ -13,13 +13,16 @@ namespace PazCitasWA
     public partial class ListarCitasMedico : System.Web.UI.Page
     {
         private CitaWSClient citabo;
+        private MedicoWSClient wsMedico;
         BindingList<cita> citasmed;
         medico med;
         protected void Page_Load(object sender, EventArgs e)
         {
             lblMensaje.Text = "";
             citabo = new CitaWSClient();
-            med = (medico)Session["medico"];
+            wsMedico = new MedicoWSClient();
+            int idMedico = (int)Session["id_usuario"];
+            med = wsMedico.obtenerMedico(idMedico);
             if (citabo.listaCitaPorMedico(med.idUsuario) != null) {
                 citasmed = new BindingList<cita>(citabo.listaCitaPorMedico(med.idUsuario));
                 gvCitasMed.DataSource = citasmed;

@@ -6,6 +6,8 @@
   <xs:element name="insertarMedicoResponse" type="tns:insertarMedicoResponse" />
   <xs:element name="listarMedico" type="tns:listarMedico" />
   <xs:element name="listarMedicoResponse" type="tns:listarMedicoResponse" />
+  <xs:element name="listarMedicoXCadena" type="tns:listarMedicoXCadena" />
+  <xs:element name="listarMedicoXCadenaResponse" type="tns:listarMedicoXCadenaResponse" />
   <xs:element name="listarMedicoXEspXSede" type="tns:listarMedicoXEspXSede" />
   <xs:element name="listarMedicoXEspXSedeResponse" type="tns:listarMedicoXEspXSedeResponse" />
   <xs:element name="modificarMedico" type="tns:modificarMedico" />
@@ -179,6 +181,16 @@
       <xs:element name="stock" type="xs:int" />
     </xs:sequence>
   </xs:complexType>
+  <xs:complexType name="listarMedicoXCadena">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="cadena" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="listarMedicoXCadenaResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:medico" />
+    </xs:sequence>
+  </xs:complexType>
   <xs:complexType name="modificarMedico">
     <xs:sequence>
       <xs:element minOccurs="0" name="medico" type="tns:medico" />
@@ -210,22 +222,22 @@
       <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:medico" />
     </xs:sequence>
   </xs:complexType>
-  <xs:complexType name="eliminarMedico">
-    <xs:sequence>
-      <xs:element name="idmedico" type="xs:int" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:complexType name="eliminarMedicoResponse">
-    <xs:sequence>
-      <xs:element name="return" type="xs:int" />
-    </xs:sequence>
-  </xs:complexType>
   <xs:complexType name="insertarMedico">
     <xs:sequence>
       <xs:element minOccurs="0" name="medico" type="tns:medico" />
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="insertarMedicoResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="eliminarMedico">
+    <xs:sequence>
+      <xs:element name="idmedico" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="eliminarMedicoResponse">
     <xs:sequence>
       <xs:element name="return" type="xs:int" />
     </xs:sequence>

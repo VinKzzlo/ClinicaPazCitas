@@ -16,28 +16,38 @@ import pe.edu.pucp.pazcitas.cita.model.TurnoDisponibleDTO;
  * @author Joel
  */
 public class TurnoBO {
+
     private final TurnoDAO daoTurno;
-    
-    public TurnoBO(){
+
+    public TurnoBO() {
         daoTurno = new TurnoImpl();
     }
-    
-    public int insertar(Turno turno){
+
+    public int insertar(Turno turno) {
         return daoTurno.insertar(turno);
     }
-    public int modificar(Turno turno){
+
+    public int modificar(Turno turno) {
         return daoTurno.modificar(turno);
     }
-    public int eliminar(int idTurno){
+
+    public int eliminar(int idTurno) {
         return daoTurno.eliminar(idTurno);
     }
-    public ArrayList<Turno> listarTodos(){
+
+    public ArrayList<Turno> listarTodos() {
         return daoTurno.listarTodos();
     }
-    public Turno obtenerXId(int idTurno){
+
+    public Turno obtenerXId(int idTurno) {
         return daoTurno.obtenerPorId(idTurno);
     }
+
     public ArrayList<TurnoDisponibleDTO> listarTurnosPorSemana(int idMedico, Date fechaInicio) {
         return daoTurno.listarTurnosDisponiblesSemana(idMedico, fechaInicio);
+    }
+
+    public ArrayList<Turno> obtenerTurnosLibres(int idMedico, Date fecha) {
+        return daoTurno.obtenerTurnosLibres(idMedico, fecha);
     }
 }

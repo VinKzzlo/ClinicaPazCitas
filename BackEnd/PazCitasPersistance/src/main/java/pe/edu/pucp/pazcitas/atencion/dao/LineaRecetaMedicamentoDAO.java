@@ -4,6 +4,7 @@
  */
 package pe.edu.pucp.pazcitas.atencion.dao;
 
+import java.util.ArrayList;
 import pe.edu.pucp.pazcitas.atencion.model.LineaRecetaMedicamento;
 import pe.edu.pucp.pazcitas.dao.ICrud;
 

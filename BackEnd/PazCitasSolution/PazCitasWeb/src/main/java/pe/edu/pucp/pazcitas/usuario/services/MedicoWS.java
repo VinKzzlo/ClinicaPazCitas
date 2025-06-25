@@ -20,39 +20,52 @@ import pe.edu.pucp.pazcitas.usuario.model.Medico;
 public class MedicoWS {
 
     private MedicoBO bomedico;
+
     /**
      * This is a sample web service operation
-     * @return 
+     *
+     * @return
      */
     @WebMethod(operationName = "listarMedico")
     public ArrayList<Medico> listarMedico() {
         bomedico = new MedicoBO();
         return bomedico.listarTodos();
     }
+
     @WebMethod(operationName = "insertarMedico")
     public int insertarMedico(@WebParam(name = "medico") Medico medico) {
         bomedico = new MedicoBO();
         return bomedico.insertar(medico);
     }
+
     @WebMethod(operationName = "modificarMedico")
     public int modificarMedico(@WebParam(name = "medico") Medico medico) {
         bomedico = new MedicoBO();
         return bomedico.modificar(medico);
     }
+
     @WebMethod(operationName = "eliminarMedico")
     public int eliminarMedico(@WebParam(name = "idmedico") int idmedico) {
         bomedico = new MedicoBO();
         return bomedico.eliminar(idmedico);
     }
+
     @WebMethod(operationName = "obtenerMedico")
     public Medico obtenerMedico(@WebParam(name = "idmedico") int idmedico) {
         bomedico = new MedicoBO();
         return bomedico.obtenerXId(idmedico);
     }
+
     @WebMethod(operationName = "listarMedicoXEspXSede")
-    public ArrayList<Medico> listarMedicoXEspXSede(@WebParam(name = "idSede") int idSede, 
+    public ArrayList<Medico> listarMedicoXEspXSede(@WebParam(name = "idSede") int idSede,
             @WebParam(name = "idEsp") int idEsp) {
         bomedico = new MedicoBO();
         return bomedico.listarxEspecialidadxSede(idSede, idEsp);
+    }
+
+    @WebMethod(operationName = "listarMedicoXCadena")
+    public ArrayList<Medico> listarMedicoXCadena(@WebParam(name = "cadena") String cadena) {
+        bomedico = new MedicoBO();
+        return bomedico.listarPorCadena(cadena);
     }
 }

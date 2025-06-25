@@ -15,4 +15,5 @@ import pe.edu.pucp.pazcitas.usuario.model.Medico;
 public interface MedicoDAO extends ICrud<Medico>{
     public ArrayList<Medico> listarXEspXSede(int idEsp, int idSede);
     public Medico obtenerPorID(int idMedico);
+    public ArrayList<Medico> listarPorCadena(String cadena);
 }

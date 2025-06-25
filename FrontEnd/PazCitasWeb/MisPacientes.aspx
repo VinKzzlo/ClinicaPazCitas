@@ -67,10 +67,17 @@
                     OnPageIndexChanging="dgvNotas_PageIndexChanging" PageSize="5"
                     CssClass="table table-hover table-responsive table-striped">
                     <Columns>
-                        <asp:BoundField HeaderText="Descripcion" ItemStyle-CssClass="align-middle" />
-                        <asp:BoundField HeaderText="Diagnostio Completo" ItemStyle-CssClass="align-middle" />
-                        <asp:BoundField HeaderText="Obsevacion" ItemStyle-CssClass="align-middle" />
-                       
+                        <asp:BoundField HeaderText="Descripcion" DataField="descripcion" ItemStyle-CssClass="align-middle" />
+                        <asp:BoundField HeaderText="Diagnóstico Completo" DataField="diagnostico" ItemStyle-CssClass="align-middle" />
+                        <asp:BoundField HeaderText="Observación" DataField="observaciones" ItemStyle-CssClass="align-middle" />
+
+                        <asp:TemplateField HeaderText="Acciones">
+                            <ItemTemplate>
+                                <asp:LinkButton ID="btnVerDetalle" runat="server"
+                                    Text="Ver Detalle" CssClass="btn btn-sm btn-outline-primary rounded-pill"
+                                    CommandName="VerDetalle" CommandArgument='<%# Eval("IdNota") %>' OnClick="btnVerDetalle_Click"/>
+                            </ItemTemplate>
+                        </asp:TemplateField>
                     </Columns>
                 </asp:GridView>
             </div>

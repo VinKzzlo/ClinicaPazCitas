@@ -30,9 +30,9 @@
             --color-principal-hover: #FFB000;
             --color-principal-claro: #fff9e6;
             /* --- Fondo de la página con degradado de 3 colores --- */
-            --color-fondo-pagina: linear-gradient( 135deg, rgb(246, 192, 19, 0.50) 0%, /* Color 1: Azulado sutil en la esquina superior izquierda */
-            rgba(240, 240, 240, 0.8) 50%, /* Color 2: Blanco neutro en el centro */
-            rgb(246, 192, 19, 0.2) 100% /* Color 3: Amarillo sutil en la esquina inferior derecha */
+            --color-fondo-pagina: linear-gradient( 135deg, rgb(246, 192, 19, 0.5) 0%, /* Color 1: Azulado sutil en la esquina superior izquierda */
+            rgba(240, 240, 240, 0.15) 50%, /* Color 2: Blanco neutro en el centro */
+            rgb(246, 192, 19, 0.3) 100% /* Color 3: Amarillo sutil en la esquina inferior derecha */
             );
             /* --- Otros colores --- */
             --color-texto-primario: #343a40;
@@ -213,7 +213,24 @@
             align-items: center;
             gap: 0.5rem;
             color: var(--color-texto-secundario);
+            transition: all 0.3s ease; /* Transición suave para los cambios */
         }
+        /* --- 2. ESTILOS CUANDO EL SIDEBAR ESTÁ COLAPSADO --- */
+        .sidebar.collapsed .sidebar-footer {
+            /* ¡La Magia está aquí! Cambiamos la dirección del flexbox a columna */
+            flex-direction: column;
+    
+            /* Centramos todo el contenido */
+            align-items: center;
+            text-align: center;
+    
+            /* Ajustamos el espacio entre el ícono y el texto */
+            gap: 0.75rem; 
+    
+            /* Añadimos un poco de padding para que no se pegue a los bordes */
+            padding: 0.5rem 0;
+        }
+
 
         .top-bar {
             display: flex;
@@ -298,7 +315,7 @@
 
 
         /* ======================================================================== */
-        /*      ESTILO CONDICIONAL PARA EL OFF-CANVAS EN MODO MÓVIL (NUEVO)         */
+        /*      ESTILO CONDICIONAL PARA EL OFF-CANVAS EN MODO MÓVIL                 */
         /* ======================================================================== */
 
         /*
@@ -337,6 +354,52 @@
                 }*/
             }
         }
+        /* ======================================================================== */
+        /* ======   ESTILOS PARA LINK ACTIVO EN MODO COLAPSADO (v3 - Encojer) ====== */
+        /* ======================================================================== */
+        /* 1. Ocultamos el texto de una manera que permita la animación Y no ocupe espacio. */
+        .sidebar.collapsed .nav-link .link-text {
+            opacity: 0;
+            pointer-events: none;
+    
+            /* --- La Magia está Aquí --- */
+            white-space: nowrap; /* Evita que el texto se rompa en varias líneas */
+            overflow: hidden;    /* Oculta cualquier contenido que se desborde */
+            width: 0;            /* Hacemos que el ancho del contenedor del texto sea CERO */
+    
+            transition: opacity 0.2s ease, width 0.3s ease; /* Animamos la opacidad y el ancho */
+        }
+
+
+        /* Primero, preparamos todos los enlaces en modo colapsado para que se centren */
+        .sidebar.collapsed .sidebar-nav .nav-link {
+            /* Centra el contenido (el ícono) horizontalmente */
+            justify-content: center;
+            padding-left: 16px;
+            padding-right: 2px;
+        }
+
+            /* Ahora, definimos el estilo del enlace ACTIVO en modo colapsado */
+            .sidebar.collapsed .sidebar-nav .nav-link.active {
+                width: 55px;  
+                height: 44px; 
+                border-radius: 25%; 
+                background-color: var(--color-principal);
+                box-shadow: 0 4px 10px -2px rgba(255, 195, 0, 0.5);
+                & > .link-icon{
+                    color: white;
+                }
+        }
+        .icon-wrapper-soft-yellow {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: var(--color-principal-claro);
+            color: var(--color-principal-hover);
+            border-radius: 50%;
+        }
     </style>
 
     <title>
@@ -363,7 +426,7 @@
 
                 <ul class="sidebar-nav nav flex-column">
                     <!-- ... tus li ... -->
-                    <li class="nav-item"><a href="ListarCitasPaciente.aspx" class="nav-link"><i class="fa-solid fa-calendar-days link-icon"></i><span class="link-text">Mis Citas</span></a></li>
+                    <li class="nav-item"><a href="ListarCitasPaciente.aspx" class="nav-link"><i class="fa-solid fa-calendar-days"></i><span class="link-text">Mis Citas</span></a></li>
                     <li class="nav-item"><a href="RegistrarCitaPaciente.aspx" class="nav-link"><i class="fa-solid fa-calendar-plus link-icon"></i><span class="link-text">Registrar Cita</span></a></li>
                     <li class="nav-item"><a href="ListarSedesPaciente.aspx" class="nav-link"><i class="fa-solid fa-hospital link-icon"></i><span class="link-text">Ver Sedes</span></a></li>
                     <li class="nav-item"><a href="ListarEspecialidadesPaciente.aspx" class="nav-link"><i class="fa-solid fa-stethoscope link-icon"></i><span class="link-text">Especialidades</span></a></li>
@@ -402,7 +465,9 @@
 
                     <!-- Título de la página -->
                     <h1 class="page-title mb-0">
-                        <asp:ContentPlaceHolder ID="cph_PageTitle" runat="server">Dashboard</asp:ContentPlaceHolder>
+                        <asp:Label ID="lblCabeceraSaludo" runat="server"></asp:Label>
+                        <asp:ContentPlaceHolder ID="cph_PageTitle" runat="server">
+                        </asp:ContentPlaceHolder>
                     </h1>
                 </div>
 
@@ -410,10 +475,12 @@
                 <div class="dropdown user-profile">
                     <!-- ... tu código de perfil de usuario aquí ... -->
                     <a href="#" class="dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        <img src="https://i.pravatar.cc/40?u=paciente" alt="Avatar de usuario">
+                        <span class="icon-wrapper-soft-yellow">
+                            <i class="fa-solid fa-user fa-lg"></i>
+                        </span>
                         <div class="user-info d-none d-md-block">
                             <div class="user-name">
-                                <asp:Label ID="lblNombreCompleto" runat="server" Text="Paciente Manzana"></asp:Label>
+                                <asp:Label ID="lblNombreCompleto" runat="server"></asp:Label>
                             </div>
                             <div class="user-role">Paciente</div>
                         </div>
@@ -424,9 +491,11 @@
                         <li>
                             <hr class="dropdown-divider">
                         </li>
-                        <%--<li><a class="dropdown-item text-danger" href="#"><i class="fa-solid fa-sign-out-alt me-2"></i>Cerrar Sesión</a></li>--%>
-                        <li><a href="Inicio.aspx?logout=true" class="nav-link text-danger"><i class="fa-solid fa-right-from-bracket pe-2"></i><span class="link-text">Cerrar Sesión</span></a></li>
-
+                        <li><a href="Inicio.aspx?logout=true" class="nav-link text-danger">
+                                <i class="fa-solid fa-right-from-bracket pe-2"></i>
+                                <span class="link-text">Cerrar Sesión</span>
+                            </a>
+                        </li>
                     </ul>
                 </div>
             </header>
@@ -437,7 +506,6 @@
                 <div class="page-content">
                     <form id="form1" runat="server">
                         <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
-
                         <asp:ContentPlaceHolder ID="cph_Contenido" runat="server">
                         </asp:ContentPlaceHolder>
                     </form>

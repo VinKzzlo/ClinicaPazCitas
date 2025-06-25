@@ -7,6 +7,7 @@ package pe.edu.pucp.pazcitas.atencion.services;
 import jakarta.jws.WebService;
 import jakarta.jws.WebMethod;
 import jakarta.jws.WebParam;
+import java.util.ArrayList;
 import pe.edu.pucp.pazcitas.atencion.bo.LineaRecetaMedicamentoBO;
 import pe.edu.pucp.pazcitas.atencion.model.LineaRecetaMedicamento;
 
@@ -29,5 +30,11 @@ public class LineaRecetaMedicamentoWeb {
     public int eliminarLineaReceta(@WebParam(name = "idLinea") int idLinea) {
         bolinea = new LineaRecetaMedicamentoBO();
         return bolinea.eliminar(idLinea);
+    }
+    
+    @WebMethod(operationName = "listar_lineas_x_receta")
+    public ArrayList<LineaRecetaMedicamento> listar_lineas_x_receta(@WebParam(name = "idReceta") int idReceta) {
+        bolinea = new LineaRecetaMedicamentoBO();
+        return bolinea.listar_lineas_x_receta(idReceta); 
     }
 }

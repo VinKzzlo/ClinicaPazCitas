@@ -17,4 +17,5 @@ import pe.edu.pucp.pazcitas.dao.ICrud;
 public interface TurnoDAO extends ICrud<Turno>{
     public Turno obtenerPorId(int idTurno);
     public ArrayList<TurnoDisponibleDTO> listarTurnosDisponiblesSemana(int idMedico, Date fechaInicio);
+    public ArrayList<Turno> obtenerTurnosLibres(int idMedico, Date fecha);
 }

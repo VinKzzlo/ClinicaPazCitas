@@ -4,19 +4,16 @@
   <xs:element name="eliminarLineaRecetaResponse" type="tns:eliminarLineaRecetaResponse" />
   <xs:element name="insertarLineaReceta" type="tns:insertarLineaReceta" />
   <xs:element name="insertarLineaRecetaResponse" type="tns:insertarLineaRecetaResponse" />
-  <xs:complexType name="eliminarLineaReceta">
+  <xs:element name="listar_lineas_x_receta" type="tns:listar_lineas_x_receta" />
+  <xs:element name="listar_lineas_x_recetaResponse" type="tns:listar_lineas_x_recetaResponse" />
+  <xs:complexType name="listar_lineas_x_receta">
     <xs:sequence>
-      <xs:element name="idLinea" type="xs:int" />
+      <xs:element name="idReceta" type="xs:int" />
     </xs:sequence>
   </xs:complexType>
-  <xs:complexType name="eliminarLineaRecetaResponse">
+  <xs:complexType name="listar_lineas_x_recetaResponse">
     <xs:sequence>
-      <xs:element name="return" type="xs:int" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:complexType name="insertarLineaReceta">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="linea" type="tns:lineaRecetaMedicamento" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:lineaRecetaMedicamento" />
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="lineaRecetaMedicamento">
@@ -44,6 +41,21 @@
       <xs:element name="idReceta" type="xs:int" />
       <xs:element minOccurs="0" name="indicaciones" type="xs:string" />
       <xs:element minOccurs="0" maxOccurs="unbounded" name="lineasReceta" nillable="true" type="tns:lineaRecetaMedicamento" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="eliminarLineaReceta">
+    <xs:sequence>
+      <xs:element name="idLinea" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="eliminarLineaRecetaResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="insertarLineaReceta">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="linea" type="tns:lineaRecetaMedicamento" />
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="insertarLineaRecetaResponse">

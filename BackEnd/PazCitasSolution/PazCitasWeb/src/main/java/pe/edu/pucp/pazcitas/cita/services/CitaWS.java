@@ -7,7 +7,9 @@ package pe.edu.pucp.pazcitas.cita.services;
 import jakarta.jws.WebService;
 import jakarta.jws.WebMethod;
 import jakarta.jws.WebParam;
+import java.sql.Time;
 import java.util.ArrayList;
+import java.util.Date;
 import pe.edu.pucp.pazcitas.cita.bo.CitaBO;
 import pe.edu.pucp.pazcitas.cita.model.Cita;
 
@@ -57,5 +59,22 @@ public class CitaWS {
     public ArrayList<Cita> listaCitaPorMedico(@WebParam(name = "idMed") int idMed) {
         bocita = new CitaBO();
         return bocita.listarXMedico(idMed);
+    }
+    
+    @WebMethod(operationName = "listarXPacienteCompletoSinDatosPaciente")
+    public ArrayList<Cita> listarXPacienteCompletoSinDatosPaciente(@WebParam(name = "idPaciente") int idPaciente) {
+        bocita = new CitaBO();
+        return bocita.listarXPacienteCompletoSinDatosPaciente(idPaciente);
+    }
+    @WebMethod(operationName = "obtenerXIdCompletoSinDatosPaciente")
+    public Cita obtenerXIdCompletoSinDatosPaciente(@WebParam(name = "idCita") int idCita) {
+        bocita = new CitaBO();
+        return bocita.obtenerXIdCompleSinDatosPaciente(idCita);
+    }
+    @WebMethod(operationName = "modificarFechaCita")
+    public int modificarFechaCita(@WebParam(name = "idCita") int idCita, @WebParam(name = "fecha") Date fecha,@WebParam(name = "hora") Date hora,@WebParam(name = "idMedico") int idMedico) {
+        bocita = new CitaBO();
+        Time horaSQL = new Time(hora.getTime());
+        return bocita.modificarFechaCita(idCita,fecha,horaSQL,idMedico);
     }
 }

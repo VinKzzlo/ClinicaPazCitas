@@ -128,4 +128,32 @@ public class TurnoImpl implements TurnoDAO {
         return turnosDisponiblesDto;
     }
 
+    @Override
+    public ArrayList<Turno> obtenerTurnosLibres(int idMedico, Date fecha) {
+        ArrayList<Turno> turnos = null;
+        Map<Integer, Object> parametrosEntrada = new HashMap<>();
+        parametrosEntrada.put(1, fecha);
+        parametrosEntrada.put(2, idMedico);
+        rs = DBManager.getInstance().ejecutarProcedimientoLectura("OBTENER_TURNOS_LIBRES", parametrosEntrada);
+        try {
+            if (turnos == null) {
+                turnos = new ArrayList<>();
+            }
+            while (rs.next()) {
+                Turno t = new Turno();
+                t.setIdTurno(rs.getInt("id_turno"));
+                DiaSemana dia = DiaSemana.valueOf(rs.getString("dia").toUpperCase());
+                t.setDia(dia);
+                t.setHoraInicio(rs.getTime("hora_inicio"));
+                t.setHoraFin(rs.getTime("hora_fin"));
+                turnos.add(t);
+            }
+        } catch (SQLException ex) {
+            System.out.println(ex.getMessage());
+        } finally {
+            DBManager.getInstance().cerrarConexion();
+        }
+        return turnos;
+    }
+
 }

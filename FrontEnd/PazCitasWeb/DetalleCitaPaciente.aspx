@@ -41,16 +41,27 @@
             document.getElementById(refreshButtonId).click();
         }
 
-        //Funcion para las flechas del modal de modificación 
+        // Funcion para las flechas del modal de modificación (CON LÍMITES)
         function navigateDates(direction, hdnOffsetId, refreshButtonId) {
             const offsetField = document.getElementById(hdnOffsetId);
             let currentOffset = parseInt(offsetField.value, 10);
-            // Cambia el offset (-1 para atrás, +1 para adelante)
-            currentOffset += direction;
-            offsetField.value = currentOffset;
+            const originalOffset = currentOffset;
 
-            // Dispara el postback para que el servidor regenere las fechas
-            document.getElementById(refreshButtonId).click();
+            // Lógica para limitar la navegación
+            if (direction === -1 && currentOffset > 0) {
+                // Solo podemos ir hacia atrás si no estamos en la primera página (offset > 0).
+                currentOffset += direction; // Resta 1
+            }
+            else if (direction === 1 && currentOffset < 2) { // El límite es 3 (página 0, 1, 2, 3)
+                // Solo podemos ir hacia adelante si no hemos llegado a la página 3.
+                currentOffset += direction; // Suma 1
+            }
+
+            // Solo hacemos el postback si el offset realmente cambió.
+            if (originalOffset !== currentOffset) {
+                offsetField.value = currentOffset;
+                document.getElementById(refreshButtonId).click();
+            }
         }
     </script>
 </asp:Content>
@@ -1066,7 +1077,7 @@
         }
 
             /* 
-   ===============================================================
+         ===============================================================
    ===     CORRECCIÓN: Se usan clases (.modify-button, .cancel-button) en lugar de IDs     ===
    ===============================================================
 */
@@ -1511,6 +1522,30 @@
             color: var(--color-texto-secundario);
             font-weight: 500;
         }
+
+        /* ====================================================================== */
+        /* ====== ESTILOS PARA LOS BOTONES DEL FOOTER DEL MODAL MODIFY ====== */
+        /* ====================================================================== */
+
+        /* Estilo base para el botón primario (Guardar) */
+        #modalModify .modal-footer .btn-primary {
+            background-color: var(--color-texto-primario); /* Color oscuro por defecto (deshabilitado) */
+            color: #9ca3af; /* Texto gris claro */
+            cursor: not-allowed;
+            border: none;
+        }
+
+        /* Estilo para el botón primario CUANDO ESTÁ HABILITADO */
+        #modalModify .modal-footer .btn-primary:not(.aspNetDisabled):not([disabled]) {
+            background-color: var(--color-principal); /* Amarillo */
+            color: var(--color-texto-primario); /* Texto oscuro */
+            cursor: pointer;
+        }
+
+        /* Efecto hover SOLO para el botón habilitado */
+        #modalModify .modal-footer .btn-primary:not(.aspNetDisabled):not([disabled]):hover {
+            background-color: var(--color-principal-hover);
+        }
     </style>
 
     <div class="dashboard-container">
@@ -1789,84 +1824,73 @@
     <!-- ======    HTML DEL MODAL DE MODIFICACIÓN (ESTRUCTURA FINAL)   ====== -->
     <!-- =============================================================== -->
     <div id="modalModify" class="modal-wrapper">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title">Modificar Cita</h5>
-                <button type="button" class="modal-close-button" onclick="closeModal('modalModify'); return false;">×</button>
-            </div>
+    <%-- El UpdatePanel ahora envuelve TODO el contenido del modal --%>
+    <asp:UpdatePanel ID="updModalModify" runat="server">
+        <ContentTemplate>
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Modificar Cita</h5>
+                    <button type="button" class="modal-close-button" onclick="closeModal('modalModify'); return false;">×</button>
+                </div>
+                
+                <%-- Campos ocultos y botón invisible se mantienen aquí --%>
+                <asp:HiddenField ID="hdnSelectedDate" runat="server" />
+                <asp:HiddenField ID="hdnSelectedTime" runat="server" />
+                <asp:HiddenField ID="hdnDateOffset" runat="server" Value="0" />
+                <asp:Button ID="btnRefreshScheduler" runat="server" OnClick="btnRefreshScheduler_Click" Style="display: none;" />
 
-            <%-- EL UPDATEPANEL AHORA ENVUELVE SOLO EL CUERPO INTERACTIVO --%>
-            <asp:UpdatePanel ID="updModalModify" runat="server">
-                <ContentTemplate>
-                    <%-- Campos ocultos y botón invisible se mantienen DENTRO del UpdatePanel --%>
-                    <asp:HiddenField ID="hdnSelectedDate" runat="server" />
-                    <asp:HiddenField ID="hdnSelectedTime" runat="server" />
-                    <asp:HiddenField ID="hdnDateOffset" runat="server" Value="0" />
-
-                    <asp:Button ID="btnRefreshScheduler" runat="server" OnClick="btnRefreshScheduler_Click" Style="display: none;" />
-
-                    <div class="modal-body">
-                        <%-- SECCIÓN DE FECHAS --%>
-                        <div>
-                            <h4 class="scheduler-section-title">1. Selecciona un día</h4>
-                            <div class="date-selector-container">
-                                <%-- BOTÓN ANTERIOR --%>
-                                <a href="javascript:void(0);" class="date-nav-btn"
-                                   onclick="navigateDates(-1, '<%= hdnDateOffset.ClientID %>', '<%= btnRefreshScheduler.ClientID %>')">
-                                    <i class="fas fa-chevron-left"></i>
-                                </a>
-                                <div class="date-selector">
-                                    <asp:Repeater ID="rptDates" runat="server">
-                                        <ItemTemplate>
-                                            <a href="javascript:void(0);"
-                                                class='<%# GetDateItemCssClass(Container.DataItem) %>'
-                                                onclick="selectDate('<%# ((DateTime)Container.DataItem).ToString("o") %>', '<%= hdnSelectedDate.ClientID %>', '<%= hdnSelectedTime.ClientID %>', '<%= btnRefreshScheduler.ClientID %>')">
-                                                <span class="day-number"><%# ((DateTime)Container.DataItem).ToString("dd") %></span>
-                                                <span class="day-month"><%# ((DateTime)Container.DataItem).ToString("MMM") %></span>
-                                            </a>
-                                        </ItemTemplate>
-                                    </asp:Repeater>
-                                </div>
-                                <%-- BOTÓN SIGUIENTE --%>
-                                <a href="javascript:void(0);" class="date-nav-btn"
-                                   onclick="navigateDates(1, '<%= hdnDateOffset.ClientID %>', '<%= btnRefreshScheduler.ClientID %>')">
-                                    <i class="fas fa-chevron-right"></i>
-                                </a>
-                            </div>
-                        </div>
-                        <%-- SECCIÓN DE HORARIOS --%>
-                        <asp:Panel ID="pnlTimeSlots" runat="server" Visible="false">
-                            <h4 class="scheduler-section-title">2. Selecciona un horario</h4>
-                            <div class="time-slots-grid">
-                                <asp:Repeater ID="rptTimes" runat="server">
+                <div class="modal-body">
+                    <%-- El contenido del scheduler no cambia --%>
+                    <div>
+                        <h4 class="scheduler-section-title">1. Selecciona un día</h4>
+                        <div class="date-selector-container">
+                            <a href="javascript:void(0);" class="date-nav-btn" onclick="navigateDates(-1, '<%= hdnDateOffset.ClientID %>', '<%= btnRefreshScheduler.ClientID %>')"><i class="fas fa-chevron-left"></i></a>
+                            <div class="date-selector">
+                                <asp:Repeater ID="rptDates" runat="server">
                                     <ItemTemplate>
                                         <a href="javascript:void(0);"
-                                            class='<%# GetTimeSlotCssClass(Eval("Time")) %>' <%-- PASAMOS EL VALOR, NO EL CONTENEDOR --%>
-                                            onclick="selectTime('<%# Eval("Time") %>', '<%= hdnSelectedTime.ClientID %>', '<%= btnRefreshScheduler.ClientID %>')">
-                                            <%# Eval("Time") %>
+                                            class='<%# GetDateItemCssClass(Container.DataItem) %>'
+                                            onclick="selectDate('<%# ((DateTime)Container.DataItem).ToString("o") %>', '<%= hdnSelectedDate.ClientID %>', '<%= hdnSelectedTime.ClientID %>', '<%= btnRefreshScheduler.ClientID %>')">
+                                            <span class="day-number"><%# ((DateTime)Container.DataItem).ToString("dd") %></span>
+                                            <span class="day-month"><%# ((DateTime)Container.DataItem).ToString("MMM") %></span>
                                         </a>
                                     </ItemTemplate>
                                 </asp:Repeater>
                             </div>
-                        </asp:Panel>
-                        <asp:Panel ID="pnlNoTimes" runat="server" Visible="false">
-                            <div class="no-times-message">
-                                <i class="far fa-frown fa-2x" style="margin-bottom: 1rem;"></i>
-                                <p>No hay horarios disponibles para este día.<br />
-                                    Por favor, selecciona otra fecha.</p>
-                            </div>
-                        </asp:Panel>
+                            <a href="javascript:void(0);" class="date-nav-btn" onclick="navigateDates(1, '<%= hdnDateOffset.ClientID %>', '<%= btnRefreshScheduler.ClientID %>')"><i class="fas fa-chevron-right"></i></a>
+                        </div>
                     </div>
-                </ContentTemplate>
-            </asp:UpdatePanel>
-
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" onclick="closeModal('modalModify'); return false;">Salir</button>
-                <%-- El botón de Guardar debe estar FUERA del UpdatePanel para causar un PostBack completo --%>
-                <asp:Button ID="btnConfirmModify" runat="server" Text="Guardar Cambios" CssClass="btn btn-primary" OnClick="btnConfirmModify_Click" />
+                    <asp:Panel ID="pnlTimeSlots" runat="server" Visible="false">
+                        <h4 class="scheduler-section-title">2. Selecciona un horario</h4>
+                        <div class="time-slots-grid">
+                            <asp:Repeater ID="rptTimes" runat="server">
+                                <ItemTemplate>
+                                    <a href="javascript:void(0);"
+                                        class='<%# GetTimeSlotCssClass(Eval("Time")) %>'
+                                        onclick="selectTime('<%# Eval("Time") %>', '<%= hdnSelectedTime.ClientID %>', '<%= btnRefreshScheduler.ClientID %>')">
+                                        <%# Eval("Time") %>
+                                    </a>
+                                </ItemTemplate>
+                            </asp:Repeater>
+                        </div>
+                    </asp:Panel>
+                    <asp:Panel ID="pnlNoTimes" runat="server" Visible="false">
+                        <div class="no-times-message">
+                            <i class="far fa-frown fa-2x" style="margin-bottom: 1rem;"></i>
+                            <p>No hay horarios disponibles.<br />Por favor, selecciona otra fecha.</p>
+                        </div>
+                    </asp:Panel>
+                </div>
+                
+                <%-- ¡CAMBIO IMPORTANTE! El footer ahora está DENTRO del ContentTemplate --%>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" onclick="closeModal('modalModify'); return false;">Salir</button>
+                    <asp:Button ID="btnConfirmModify" runat="server" Text="Guardar Cambios" CssClass="btn btn-primary" OnClick="btnConfirmModify_Click" />
+                </div>
             </div>
-        </div>
-    </div>
+        </ContentTemplate>
+    </asp:UpdatePanel>
+</div>
 
 
 
@@ -1878,7 +1902,7 @@
             <!-- 1. El header ahora será rojo gracias al CSS -->
             <div class="modal-header">
                 <h5 class="modal-title">Confirmar Cancelación</h5>
-                <button type="button" class="modal-close-button" data-dismiss="modal">×</button>
+                <button type="button" class="modal-close-button" onclick="closeModal('modalCancel'); return false;">×</button>
             </div>
 
             <!-- 2. El body ahora tiene un layout flex con imagen y texto -->
@@ -1894,7 +1918,7 @@
 
             <!-- 3. El footer ahora será oscuro y los botones tendrán el efecto "salto" -->
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">No, mantener cita</button>
+                <button type="button" class="btn btn-secondary" onclick="closeModal('modalCancel'); return false;">No, mantener cita</button>
                 <asp:Button ID="btnConfirmCancel" runat="server" Text="Sí, cancelar cita" CssClass="btn btn-danger" OnClick="btnConfirmCancel_Click" />
             </div>
         </div>

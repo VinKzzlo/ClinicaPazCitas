@@ -4,6 +4,7 @@
  */
 package pe.edu.pucp.pazcitas.atencion.bo;
 
+import java.util.ArrayList;
 import pe.edu.pucp.pazcitas.atencion.dao.LineaRecetaMedicamentoDAO;
 import pe.edu.pucp.pazcitas.atencion.impl.LineaRecetaMedicamentoImpl;
 import pe.edu.pucp.pazcitas.atencion.model.LineaRecetaMedicamento;
@@ -24,5 +25,8 @@ public class LineaRecetaMedicamentoBO {
     }
     public int eliminar(int idlinea){
         return daolineareceta.eliminar(idlinea);
+    }
+    public ArrayList<LineaRecetaMedicamento> listar_lineas_x_receta(int idReceta){
+        return daolineareceta.listar_lineas_x_receta(idReceta);
     }
 }

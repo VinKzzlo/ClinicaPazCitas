@@ -24,13 +24,13 @@ namespace PazCitasWA
         protected global::System.Web.UI.WebControls.TextBox txtBusqueda;
 
         /// <summary>
-        /// Control btnBuscar.
+        /// Control updMedicos.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnBuscar;
+        protected global::System.Web.UI.UpdatePanel updMedicos;
 
         /// <summary>
         /// Control rptMedicos.
@@ -42,13 +42,22 @@ namespace PazCitasWA
         protected global::System.Web.UI.WebControls.Repeater rptMedicos;
 
         /// <summary>
-        /// Control pnlErrorGeneral.
+        /// Control pnlNoResultados.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel pnlErrorGeneral;
+        protected global::System.Web.UI.WebControls.Panel pnlNoResultados;
+
+        /// <summary>
+        /// Control litTerminoBusqueda.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Literal litTerminoBusqueda;
 
         /// <summary>
         /// Control lblMensaje.

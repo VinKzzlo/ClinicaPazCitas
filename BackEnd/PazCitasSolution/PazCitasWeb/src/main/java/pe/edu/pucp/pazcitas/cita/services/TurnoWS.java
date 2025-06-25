@@ -59,4 +59,10 @@ public class TurnoWS {
         boturno = new TurnoBO();
         return boturno.listarTurnosPorSemana(idMedico, fechaInicio);
     }
+
+    @WebMethod(operationName = "obtenerTurnosLibres")
+    public ArrayList<Turno> obtenerTurnosLibres(@WebParam(name = "idMedico") int idMedico, @WebParam(name = "fecha") Date fecha) {
+        boturno = new TurnoBO();
+        return boturno.obtenerTurnosLibres(idMedico, fecha);
+    }
 }

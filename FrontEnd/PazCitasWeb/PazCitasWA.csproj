@@ -414,7 +414,22 @@
     <Content Include="Connected Services\ServiciosWS\PazCitasWA.ServiciosWS.turnoDisponibleDTO.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
+    <Content Include="Connected Services\ServiciosWS\PazCitasWA.ServiciosWS.verificarCuentaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
     <Content Include="Connected Services\ServiciosWS\PazCitasWA.ServiciosWS.eliminarSedeEspecialidadXSedeResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServiciosWS\PazCitasWA.ServiciosWS.lineaRecetaMedicamento.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServiciosWS\PazCitasWA.ServiciosWS.listarMedicoXCadenaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServiciosWS\PazCitasWA.ServiciosWS.listarXPacienteCompletoSinDatosPacienteResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServiciosWS\PazCitasWA.ServiciosWS.listar_lineas_x_recetaResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
     <Content Include="Connected Services\ServiciosWS\PazCitasWA.ServiciosWS.marcarAsignadoResponse.datasource">
@@ -423,10 +438,23 @@
     <Content Include="Connected Services\ServiciosWS\PazCitasWA.ServiciosWS.marcarNoAsignadoResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
-    <Content Include="Connected Services\ServiciosWS\PazCitasWA.ServiciosWS.verificarCuentaResponse.datasource">
+    <Content Include="Connected Services\ServiciosWS\PazCitasWA.ServiciosWS.modificarFechaCitaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServiciosWS\PazCitasWA.ServiciosWS.obtenerTurnosLibresResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServiciosWS\PazCitasWA.ServiciosWS.obtenerXIdCompletoSinDatosPacienteResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServiciosWS\PazCitasWA.ServiciosWS.generarReporteCitaResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
     <None Include="Connected Services\ServiciosWS\RecetaWS.wsdl" />
+    <None Include="Connected Services\ServiciosWS\ReporteWS.wsdl" />
+    <None Include="Connected Services\ServiciosWS\ReporteWS.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Connected Services\ServiciosWS\SedeEspecialidadWS.wsdl" />
     <None Include="Connected Services\ServiciosWS\SedeEspecialidadWS.xsd">
       <SubType>Designer</SubType>
@@ -611,6 +639,7 @@
     <Content Include="Scripts\sidebars.js" />
     <Content Include="Content\styleAdmin.css" />
     <Content Include="VerCitaMedico.aspx" />
+    <Content Include="VisualizarReporte.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -931,12 +960,20 @@
     <Compile Include="Reportes.aspx.designer.cs">
       <DependentUpon>Reportes.aspx</DependentUpon>
     </Compile>
+    <Compile Include="ServiciosEmail\ServicioEmail.cs" />
     <Compile Include="VerCitaMedico.aspx.cs">
       <DependentUpon>VerCitaMedico.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="VerCitaMedico.aspx.designer.cs">
       <DependentUpon>VerCitaMedico.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="VisualizarReporte.aspx.cs">
+      <DependentUpon>VisualizarReporte.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="VisualizarReporte.aspx.designer.cs">
+      <DependentUpon>VisualizarReporte.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

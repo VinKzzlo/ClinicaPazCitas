@@ -48,8 +48,6 @@
             box-shadow: 0 1px 3px rgba(0,0,0,0.06);
         }
 
-        /* NUEVO PANEL 4 - Estilo moderno horizontal tipo tarjetas */
-
         .calendar-header {
             display: flex;
             justify-content: space-between;
@@ -71,8 +69,6 @@
                 font-weight: 600;
                 margin: 0;
             }
-
-
 
         .calendar-container {
             display: grid;
@@ -165,6 +161,12 @@
             .modal-box.error {
                 border-left: 6px solid #dc3545;
             }
+
+            .modal-box input.form-control {
+                border-radius: 10px;
+                padding: 12px;
+                font-size: 16px;
+            }
     </style>
 
     <script>
@@ -186,6 +188,19 @@
             btn.classList.add('selected');
             document.getElementById(fieldId).value = valor;
         }
+
+        function mostrarModalPago() {
+            document.getElementById("modalPago").style.display = "flex";
+        }
+
+        function cerrarModalPago() {
+            document.getElementById("modalPago").style.display = "none";
+        }
+
+        function confirmarPago() {
+            cerrarModalPago();
+            mostrarModal("Pago realizado con éxito", true);
+        }
     </script>
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="cph_Contenido" runat="server">
@@ -200,7 +215,7 @@
                     <asp:DropDownList ID="DropDownList1" runat="server" CssClass="form-select form-select-lg" />
                 </div>
                 <asp:LinkButton ID="Button1" runat="server" OnClick="btnSiguiente1_Click" CssClass="btn btn-primary px-5 py-2">
-                    <i class="bi bi-arrow-right-circle me-2"></i> Siguiente
+     <i class="bi bi-arrow-right-circle me-2"></i> Siguiente
                 </asp:LinkButton>
             </asp:Panel>
 
@@ -212,10 +227,10 @@
                 </div>
                 <div class="d-flex justify-content-center gap-3">
                     <asp:LinkButton ID="Button2" runat="server" OnClick="btnAtras1_Click" CssClass="btn btn-outline-secondary px-5 py-2">
-                        <i class="bi bi-arrow-left-circle me-2"></i> Atrás
+        <i class="bi bi-arrow-left-circle me-2"></i> Atrás
                     </asp:LinkButton>
                     <asp:LinkButton ID="Button3" runat="server" OnClick="btnSiguiente2_Click" CssClass="btn btn-primary px-5 py-2">
-                        <i class="bi bi-arrow-right-circle me-2"></i> Siguiente
+        <i class="bi bi-arrow-right-circle me-2"></i> Siguiente
                     </asp:LinkButton>
                 </div>
             </asp:Panel>
@@ -228,10 +243,10 @@
                 </div>
                 <div class="d-flex justify-content-center gap-3">
                     <asp:LinkButton ID="Button4" runat="server" OnClick="btnAtras2_Click" CssClass="btn btn-outline-secondary px-5 py-2">
-                        <i class="bi bi-arrow-left-circle me-2"></i> Atrás
+        <i class="bi bi-arrow-left-circle me-2"></i> Atrás
                     </asp:LinkButton>
                     <asp:LinkButton ID="Button5" runat="server" OnClick="btnSiguiente3_Click" CssClass="btn btn-primary px-5 py-2">
-                        <i class="bi bi-arrow-right-circle me-2"></i> Siguiente
+        <i class="bi bi-arrow-right-circle me-2"></i> Siguiente
                     </asp:LinkButton>
                 </div>
             </asp:Panel>
@@ -241,11 +256,11 @@
                 <h4 class="text-start">Paso 4: Selecciona una fecha y horario disponible</h4>
                 <div class="d-flex justify-content-between align-items-center mb-4">
                     <asp:LinkButton ID="btnSemanaAnterior" runat="server" OnClick="btnSemanaAnterior_Click" CssClass="btn btn-outline-secondary">
-                        <i class="bi bi-chevron-left"></i>
+        <i class="bi bi-chevron-left"></i>
                     </asp:LinkButton>
                     <asp:Label ID="lblSemanaActual" runat="server" Font-Bold="true" Font-Size="Large" CssClass="text-primary fw-bold" />
                     <asp:LinkButton ID="btnSemanaSiguiente" runat="server" OnClick="btnSemanaSiguiente_Click" CssClass="btn btn-outline-secondary">
-                        <i class="bi bi-chevron-right"></i>
+        <i class="bi bi-chevron-right"></i>
                     </asp:LinkButton>
                 </div>
 
@@ -257,10 +272,10 @@
                 <asp:HiddenField ID="HiddenField1" runat="server" />
                 <div class="d-flex justify-content-center gap-3 mt-4">
                     <asp:LinkButton ID="Button6" runat="server" OnClick="btnAtras3_Click" CssClass="btn btn-outline-secondary px-5 py-2">
-                        <i class="bi bi-arrow-left-circle me-2"></i> Atrás
+        <i class="bi bi-arrow-left-circle me-2"></i> Atrás
                     </asp:LinkButton>
                     <asp:LinkButton ID="Button7" runat="server" OnClick="btnSiguiente4_Click" CssClass="btn btn-primary px-5 py-2">
-                        <i class="bi bi-arrow-right-circle me-2"></i> Siguiente
+        <i class="bi bi-arrow-right-circle me-2"></i> Siguiente
                     </asp:LinkButton>
                 </div>
             </asp:Panel>
@@ -269,23 +284,21 @@
             <asp:Panel ID="Panel5" runat="server" Visible="false">
                 <h4 class="text-start">Paso 5: Confirmación de Cita</h4>
                 <div class="text-start mb-3">
-                    <p>
-                        <strong>Sede:</strong>
-                        <asp:Label ID="Label1" runat="server" />
-                    </p>
-                    <p>
-                        <strong>Especialidad:</strong>
-                        <asp:Label ID="Label2" runat="server" />
-                    </p>
-                    <p>
-                        <strong>Médico:</strong>
-                        <asp:Label ID="Label3" runat="server" />
-                    </p>
-                    <p>
-                        <strong>Horario:</strong>
-                        <asp:Label ID="Label4" runat="server" />
-                    </p>
+                    <p><strong>Sede:</strong>
+                        <asp:Label ID="Label1" runat="server" /></p>
+                    <p><strong>Especialidad:</strong>
+                        <asp:Label ID="Label2" runat="server" /></p>
+                    <p><strong>Médico:</strong>
+                        <asp:Label ID="Label3" runat="server" /></p>
+                    <p><strong>Horario:</strong>
+                        <asp:Label ID="Label4" runat="server" /></p>
                 </div>
+
+                <!-- Botón para abrir modal de pago -->
+                <button type="button" class="btn btn-dark px-4 py-2 mb-3" onclick="mostrarModalPago()">
+                    Ingresar Datos de Pago
+                </button>
+
                 <div class="d-flex justify-content-center gap-3">
                     <asp:LinkButton ID="Button8" runat="server" OnClick="btnAtras4_Click" CssClass="btn btn-outline-secondary px-5 py-2">
                         <i class="bi bi-arrow-left-circle me-2"></i> Atrás
@@ -299,14 +312,40 @@
             <!-- Mensaje de error -->
             <asp:Label ID="Label5" runat="server" CssClass="text-danger mt-4 d-block fw-semibold" />
 
-            <!-- Modal -->
+            <!-- Modal de mensaje -->
             <div id="modalMensaje" class="modal-overlay">
                 <div class="modal-box">
                     <h4 id="modalTexto">Mensaje</h4>
                     <button type="button" onclick="cerrarModal()">Cerrar</button>
                 </div>
             </div>
+
+            <!-- Modal de pago -->
+            <div id="modalPago" class="modal-overlay">
+                <div class="modal-box" style="max-width: 450px;">
+                    <h4 class="mb-4">Información de Pago</h4>
+                    <div class="mb-3 text-start">
+                        <label>Número de Tarjeta</label>
+                        <input type="text" class="form-control" placeholder="1234 5678 9012 3456" />
+                    </div>
+                    <div class="mb-3 row">
+                        <div class="col">
+                            <label>Fecha de Vencimiento</label>
+                            <input type="text" class="form-control" placeholder="MM/AA" />
+                        </div>
+                        <div class="col">
+                            <label>CVV</label>
+                            <input type="text" class="form-control" placeholder="123" />
+                        </div>
+                    </div>
+                    <div class="mb-4 text-start">
+                        <label>Nombre del Titular</label>
+                        <input type="text" class="form-control" placeholder="Juan Pérez" />
+                    </div>
+                    <button class="btn btn-primary w-100" onclick="confirmarPago()">Confirmar Pago</button>
+                    <button class="btn btn-link mt-2" onclick="cerrarModalPago()">Cancelar</button>
+                </div>
+            </div>
         </div>
     </div>
 </asp:Content>
-

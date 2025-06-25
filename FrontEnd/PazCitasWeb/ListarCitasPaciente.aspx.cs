@@ -47,9 +47,8 @@ namespace PazCitasWA
             try
             {
                 wsCita = new CitaWSClient();
-                BindingList<cita> citas = new BindingList<cita>(wsCita.listarXPaciente(IdPacienteLogueado));
-                wsMedico= new MedicoWSClient();
-                wsTurno=new TurnoWSClient();
+                citas = new BindingList<cita>(wsCita.listarXPacienteCompletoSinDatosPaciente(IdPacienteLogueado));
+
                 // ENLAZAR DATOS AL REPEATER
                 rptMisCitas.DataSource = citas;
                 rptMisCitas.DataBind();
@@ -70,7 +69,7 @@ namespace PazCitasWA
                 }
                 // Redirigir a login si no hay sesión o devolver un valor que indique error
                 // Response.Redirect("Login.aspx"); 
-                return 3; //Para la prueba
+                return 1; //Para la prueba
             }
         }
 
@@ -78,51 +77,48 @@ namespace PazCitasWA
         {
             if (e.Item.ItemType == ListItemType.Item || e.Item.ItemType == ListItemType.AlternatingItem)
             {
-                cita data = (cita)e.Item.DataItem;
-                int idMedico = data.horarioTrabajo.medico.idUsuario;
-                medico med = wsMedico.obtenerMedico(idMedico);
-                turno tur = wsTurno.obtenerXId(data.horarioTrabajo.turno.idTurno);
+                cita ct = (cita)e.Item.DataItem;
                 var lit = (Literal)e.Item.FindControl("litNombreMedico");
                 if (lit != null)
                 {
-                    lit.Text = "Dr. " + med.nombre.ToString() + med.apellidoPaterno.ToString();
+                    lit.Text = "Dr. " + ct.horarioTrabajo.medico.nombre.ToString() + ct.horarioTrabajo.medico.apellidoPaterno.ToString();
                 }
 
                 lit = (Literal)e.Item.FindControl("litSubNom");
                 if (lit != null)
                 {
-                    lit.Text = med.email.ToString();
+                    lit.Text = ct.horarioTrabajo.medico.email.ToString();
                 }
 
                 lit = (Literal)e.Item.FindControl("litEspecialidadMedico");
                 if (lit != null)
                 {
 
-                    lit.Text = med.especialidad.nombre.ToString();
+                    lit.Text = ct.horarioTrabajo.medico.especialidad.nombre.ToString();
                 }
 
                 lit = (Literal)e.Item.FindControl("litEstadoCita");
                 if (lit != null)
                 {
-                    if (estadoCita.CANCELADA == data.estadoCita)
+                    if (estadoCita.CANCELADA == ct.estadoCita)
                     {
                         ;
                     }
-                    else if (estadoCita.PROGRAMADA == data.estadoCita)
+                    else if (estadoCita.PROGRAMADA == ct.estadoCita)
                     {
                         ;
                     }
-                    else if (estadoCita.ATENDIDA == data.estadoCita)
+                    else if (estadoCita.ATENDIDA == ct.estadoCita)
                     {
                         ;
                     }
-                    lit.Text = data.estadoCita.ToString();
+                    lit.Text = ct.estadoCita.ToString();
                 }
 
                 lit = (Literal)e.Item.FindControl("litFecha");
                 if (lit != null)
                 {
-                    DateTime d = data.fecha;
+                    DateTime d = ct.fecha;
                     lit.Text = d.ToString("dd/MM/yyyy");
                 }
 
@@ -130,7 +126,7 @@ namespace PazCitasWA
                 if (lit != null)
                 {
 
-                    lit.Text = tur.horaInicio.ToString("HH:mm");
+                    lit.Text = ct.horarioTrabajo.turno.horaInicio.ToString("HH:mm");
                 }
             }
         }

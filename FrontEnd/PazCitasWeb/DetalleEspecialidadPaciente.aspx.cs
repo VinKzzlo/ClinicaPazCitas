@@ -1,7 +1,12 @@
-﻿using PazCitasWA.ServiciosWS;
-using System;
+﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel;
+using System.Data.SqlClient;
 using System.Linq;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+using PazCitasWA.ServiciosWS;
 
 namespace PazCitasWA
 {
@@ -29,17 +34,17 @@ namespace PazCitasWA
                 litNombreEspecialidadMedicos.Text = espGlob.nombre;
                 litDescripcionEspecialidad.Text = Server.HtmlDecode(espGlob.descripcion); // Decodificar si guardas
 
-                wsMedico = new MedicoWSClient();
+                wsMedico=new MedicoWSClient();
                 BindingList<medico> medicosTotal = new BindingList<medico>(wsMedico.listarMedico());
                 medicos = new BindingList<medico>();
-                foreach (medico med in medicosTotal)
+                foreach(medico med in medicosTotal)
                 {
-                    if (med.especialidad.idEspecialidad == Int32.Parse(idEspecialidad))
+                    if(med.especialidad.idEspecialidad == Int32.Parse(idEspecialidad))
                     {
                         medicos.Add(med);
                     }
                 }
-
+                
                 rptMedicos.DataSource = medicos;
                 rptMedicos.DataBind();
 

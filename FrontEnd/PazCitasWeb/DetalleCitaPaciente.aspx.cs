@@ -13,6 +13,7 @@ using PazCitasWA.ServiciosWS;
 // using para modal
 using System.Globalization;
 using System.Diagnostics.PerformanceData;
+using System.Web.Compilation;
 
 
 namespace PazCitasWA
@@ -27,7 +28,6 @@ namespace PazCitasWA
         }
 
         private CitaWSClient wsCita;
-        private MedicoWSClient wsMedico;
         private TurnoWSClient wsTurno;
 
         private cita c = null;
@@ -46,10 +46,8 @@ namespace PazCitasWA
             {
                 // Aquí llamas al servicio web para obtener los detalles de esa especialidad
                 wsCita = new CitaWSClient();
-                wsMedico = new MedicoWSClient();
-                wsTurno = new TurnoWSClient();
 
-                c = wsCita.obtenerCita(Int32.Parse(idCita));
+                c = wsCita.obtenerXIdCompletoSinDatosPaciente(Int32.Parse(idCita));
                 if (c == null)
                 {
                     Response.Redirect("ListarCitasPaciente.aspx"); // O a una página de error
@@ -60,8 +58,8 @@ namespace PazCitasWA
                 this.CitaGuardada = c;
 
                 int idMedico = c.horarioTrabajo.medico.idUsuario;
-                medico med = wsMedico.obtenerMedico(idMedico);
-                turno tur = wsTurno.obtenerXId(c.horarioTrabajo.turno.idTurno);
+                medico med = c.horarioTrabajo.medico;
+                turno tur = c.horarioTrabajo.turno;
 
                 lblEspecialidadNombre.Text = med.especialidad.nombre.ToString();
                 lblSedeNombre.Text = med.sede.nombre.ToString();
@@ -101,8 +99,7 @@ namespace PazCitasWA
 
         private void BuildStaticCalendar(cita citaDate)
         {
-            wsTurno = new TurnoWSClient();
-            turno tur = wsTurno.obtenerXId(citaDate.horarioTrabajo.turno.idTurno);
+            turno tur = citaDate.horarioTrabajo.turno;
             DateTime today = DateTime.Today; // Obtenemos la fecha actual para compararla
 
             lblCalendarMonth.Text = citaDate.fecha.ToString("MMMM yyyy");
@@ -266,27 +263,26 @@ namespace PazCitasWA
                 msjModificarCita = "Tu cita ya se encuetra cancelada";
                 canModify = false;
             }
-            else if (dias < 0)
+            else if (dias <= 0)
             {
                 msjCancelarCita = "Ya paso el día de tu cita";
                 canCancel = false;
                 msjModificarCita = "Ya paso el día de tu cita";
                 canModify = false;
             }
-            else if (dias < 4)
-            {
-                msjModificarCita = "Queda menos de 4 días para tu cita, no puedes modificarla";
-                canModify = false;
-                
-
-            }
             else if (dias < 2)
             {
                 msjCancelarCita = "Queda menos de 2 días para tu cita, no puedes cancelarla";
                 canCancel = false;
             }
+            else if (dias < 4)
+            {
+                msjModificarCita = "Queda menos de 4 días para tu cita, no puedes modificarla";
+                canModify = false;
+            }
 
-            canModify = true;
+            /*solo para pruebas del modificar, eliminar despues*/
+            //canModify = true;
 
             // Lógica para el botón MODIFICAR
             if (canModify)
@@ -315,35 +311,19 @@ namespace PazCitasWA
             }
         }
 
-        //protected void btnModifyAppointment_Click(object sender, EventArgs e)
-        //{
-        //    // Aquí va la lógica para mostrar tu modal de modificación.
-        //    // Por ahora, usamos un simple alert de JavaScript.
-        //    string script = "alert('Modal para MODIFICAR cita aparecerá aquí.');";
-        //    ScriptManager.RegisterStartupScript(this, GetType(), "ShowModifyModal", script, true);
-        //}
-
-        //protected void btnCancelAppointment_Click(object sender, EventArgs e)
-        //{
-        //    // Aquí va la lógica para mostrar tu modal de cancelación.
-        //    // Por ahora, usamos un simple alert de JavaScript.
-        //    string script = "alert('Modal para CANCELAR cita aparecerá aquí.');";
-        //    ScriptManager.RegisterStartupScript(this, GetType(), "ShowCancelModal", script, true);
-        //}
 
         protected void btnConfirmCancel_Click(object sender, EventArgs e)
         {
-            // 1. Aquí irá tu lógica para llamar al Web Service y cancelar la cita.
-            string idCita = Request.QueryString["id"];
             wsCita = new CitaWSClient();
-            cita ct = wsCita.obtenerCita(Int32.Parse(idCita));
-            ct.estadoCita = estadoCita.CANCELADA;
-            ct.estadoCitaSpecified = true;
-            wsCita.modificarCita(ct);
-            
+            cita auxct = this.CitaGuardada;
+            auxct.estadoCita = estadoCita.CANCELADA;
+            auxct.estadoCitaSpecified = true;
+            int res=wsCita.modificarCita(auxct);
+
             // 2. Muestra un mensaje de éxito y redirige.
-            string script = "alert('Tu cita ha sido cancelada exitosamente.'); window.location='ListarCitasPaciente.aspx';";
-            //InitializeScheduler();
+            string script;
+            if(res!=0)script= "alert('Tu cita ha sido cancelada exitosamente.'); window.location='ListarCitasPaciente.aspx';";
+            else script= "alert('¡Algo sucedio! Intenta cancelar tu cita mas tarde.'); window.location='ListarCitasPaciente.aspx';";
             ScriptManager.RegisterStartupScript(this, GetType(), "CancelSuccess", script, true);
         }
 
@@ -351,6 +331,12 @@ namespace PazCitasWA
 
 
 
+        /* Aqui se guardaran las fechas para la cita */
+        private List<DateTime> AvailableDates
+        {
+            get { return ViewState["AvailableDates"] as List<DateTime>; }
+            set { ViewState["AvailableDates"] = value; }
+        }
 
 
 
@@ -359,99 +345,117 @@ namespace PazCitasWA
 
 
 
-
-
-        // --- REEMPLAZA TODA LA SECCIÓN DE MÉTODOS DEL SCHEDULER CON ESTO ---
-
-        // Este método se llama cuando el usuario hace clic en "Modificar Cita".
-        // Su única función es reiniciar todo y abrir el modal.
+        // Se llama al hacer clic en "Modificar Cita".
         protected void btnModifyAppointment_Click(object sender, EventArgs e)
         {
             InitializeScheduler();
             ScriptManager.RegisterStartupScript(this, this.GetType(), "OpenModifyModalScript", "openModal('modalModify');", true);
         }
 
-        // Inicializa el scheduler a su estado por defecto.
+        // Inicializa y resetea el scheduler.
         private void InitializeScheduler()
         {
-            // Resetea los campos ocultos
+
+            // Para la simulación, creamos una lista de ejemplo de 30 días.
+            DateTime fechCita = this.CitaGuardada.fecha;
+            var dates = new List<DateTime>();
+            for (int i = 0; i <= 14; i++)
+            {
+                dates.Add(fechCita.AddDays(i));
+            }
+            this.AvailableDates = dates; // Guardamos la lista completa en ViewState
+
+            // Reseteamos los campos ocultos.
             hdnSelectedDate.Value = string.Empty;
             hdnSelectedTime.Value = string.Empty;
             hdnDateOffset.Value = "0";
 
-            // Genera y enlaza la lista de fechas
-            BindDates();
+            // Mostramos la primera "página" de fechas.
+            BindDatesPage();
 
-            // Oculta las secciones de horarios
+            // Ocultamos las secciones de horarios.
             pnlTimeSlots.Visible = false;
             pnlNoTimes.Visible = false;
 
-            // Deshabilita el botón de guardado
+            // Actualizamos el estado del botón de guardado.
             UpdateButtonState();
         }
 
-        // NUEVO MÉTODO: Centraliza la creación de la lista de fechas.
-        private void BindDates()
+        // NUEVO MÉTODO: Muestra una "página" de la lista de fechas guardada.
+        private void BindDatesPage()
         {
-            // Lee el offset actual desde el campo oculto
-            int offsetWeeks = 0;
-            int.TryParse(hdnDateOffset.Value, out offsetWeeks);
+            int offset = 0;
+            int.TryParse(hdnDateOffset.Value, out offset);
 
-            // Calcula el día de inicio. Cada "página" son 14 días (2 semanas).
-            int startDayOffset = offsetWeeks * 14;
+            int pageSize = 5; // Mostramos 7 días a la vez. Puedes cambiar este número.
 
-            var dates = new List<DateTime>();
-            for (int i = 1; i <= 14; i++)
-            {
-                // Añade los días a partir del offset calculado
-                dates.Add(DateTime.Today.AddDays(startDayOffset + i));
-            }
-            rptDates.DataSource = dates;
+            // Usamos LINQ para "paginar" la lista de fechas guardada.
+            var datesToShow = this.AvailableDates
+                                  .Skip(offset * pageSize)
+                                  .Take(pageSize)
+                                  .ToList();
+
+            rptDates.DataSource = datesToShow;
             rptDates.DataBind();
+
         }
 
-        // Este es el evento central que se ejecuta en cada clic de fecha u hora.
+        // Evento central que se ejecuta en cada clic dentro del modal.
         protected void btnRefreshScheduler_Click(object sender, EventArgs e)
         {
-            // 1. SIEMPRE volvemos a enlazar las fechas. Esto evita que desaparezcan.
-            BindDates();
+            // 1. Siempre volvemos a enlazar la página actual de fechas.
+            BindDatesPage();
 
-            // 2. Leemos la fecha seleccionada del campo oculto.
+            // El resto de la lógica se mantiene igual...
             DateTime? selectedDate = null;
             if (DateTime.TryParse(hdnSelectedDate.Value, out DateTime parsedDate))
             {
                 selectedDate = parsedDate;
             }
 
-            // 3. Si hay una fecha seleccionada, mostramos sus horarios.
             if (selectedDate.HasValue)
             {
                 BindTimeSlotsForDate(selectedDate.Value);
             }
             else
             {
-                // Si no hay fecha (o se reseteó), nos aseguramos de que los paneles de hora estén ocultos.
                 pnlTimeSlots.Visible = false;
                 pnlNoTimes.Visible = false;
             }
 
-            // 4. Actualizamos el estado del botón de guardado.
             UpdateButtonState();
         }
 
-        // La lógica de BindTimeSlotsForDate se mantiene igual.
+        // La lógica de BindTimeSlotsForDate y los demás métodos se mantiene igual.
         private void BindTimeSlotsForDate(DateTime date)
         {
-            var availableTimes = new BindingList<object>();
-            if (date.Day % 2 == 0) // Simulación
-            {
-                availableTimes.Add(new { Time = "09:00 AM" });
-                availableTimes.Add(new { Time = "09:30 AM" });
-                availableTimes.Add(new { Time = "11:00 AM" });
-            }
+            TurnoWSClient wsTurno = new TurnoWSClient();
 
-            if (availableTimes.Count > 0)
+            cita citaOriginal = this.CitaGuardada;
+            if (citaOriginal == null)
             {
+                pnlNoTimes.Visible = true;
+                pnlTimeSlots.Visible = false;
+                return;
+            }
+            int idMedico = citaOriginal.horarioTrabajo.medico.idUsuario;
+
+            // 1. Llama al servicio y guarda el resultado en una variable temporal.
+            turno[] turnosDesdeWS = wsTurno.obtenerTurnosLibres(idMedico, date);
+
+            // 2. Comprueba si el resultado NO es nulo Y si tiene al menos un elemento.
+            if (turnosDesdeWS != null && turnosDesdeWS.Length > 0)
+            {
+                // Solo si la comprobación es exitosa, creamos el BindingList.
+                BindingList<turno> turnosDisp = new BindingList<turno>(turnosDesdeWS);
+
+                var availableTimes = new BindingList<object>();
+                foreach (turno tur in turnosDisp)
+                {
+                    string horaFormateada = tur.horaInicio.ToString("hh:mm tt", CultureInfo.InvariantCulture);
+                    availableTimes.Add(new { Time = horaFormateada });
+                }
+
                 rptTimes.DataSource = availableTimes;
                 rptTimes.DataBind();
                 pnlTimeSlots.Visible = true;
@@ -459,20 +463,35 @@ namespace PazCitasWA
             }
             else
             {
+                // Si turnosDesdeWS es null o está vacío, significa que no hay horarios.
+                // Mostramos el mensaje de "no disponible".
                 pnlTimeSlots.Visible = false;
                 pnlNoTimes.Visible = true;
             }
         }
 
-        // La lógica de UpdateButtonState se mantiene igual.
         private void UpdateButtonState()
         {
+            // Comprueba si ambos campos ocultos tienen un valor.
             bool isSelectionComplete = !string.IsNullOrEmpty(hdnSelectedDate.Value) && !string.IsNullOrEmpty(hdnSelectedTime.Value);
+
+            // 1. Habilita o deshabilita el control de servidor. Esto es importante para la lógica.
             btnConfirmModify.Enabled = isSelectionComplete;
-            btnConfirmModify.CssClass = isSelectionComplete ? "btn btn-primary" : "btn btn-primary aspNetDisabled";
+
+            // 2. Gestionamos la clase CSS manualmente para asegurar la respuesta visual.
+            //    ASP.NET a veces es inconsistente con 'aspNetDisabled' en UpdatePanels.
+            if (isSelectionComplete)
+            {
+                // Si la selección está completa, nos aseguramos de que no tenga la clase de deshabilitado.
+                btnConfirmModify.CssClass = "btn btn-primary";
+            }
+            else
+            {
+                // Si la selección no está completa, añadimos la clase para que el CSS lo pinte de oscuro.
+                btnConfirmModify.CssClass = "btn btn-primary aspNetDisabled";
+            }
         }
 
-        // La lógica de los métodos GetCssClass se mantiene igual.
         protected string GetDateItemCssClass(object dataItem)
         {
             DateTime date = (DateTime)dataItem;
@@ -482,20 +501,25 @@ namespace PazCitasWA
             }
             return "date-item";
         }
+
         protected string GetTimeSlotCssClass(object timeValue)
         {
-            if (timeValue == null) return "time-slot-button";
+            // Si por alguna razón el valor es nulo, devolvemos la clase base.
+            if (timeValue == null)
+            {
+                return "time-slot-button";
+            }
 
-            // 'timeValue' ya es el string de la hora, por ejemplo "09:00 AM".
+            // 1. 'timeValue' ya es el string que necesitamos (ej: "09:00 AM").
+            //    Lo convertimos a string de forma segura.
             string time = timeValue.ToString();
 
-            // Comparamos directamente con el valor del campo oculto.
+            // 2. Comparamos directamente el string de la hora actual con el del campo oculto.
             return !string.IsNullOrEmpty(hdnSelectedTime.Value) && time == hdnSelectedTime.Value
                    ? "time-slot-button selected"
                    : "time-slot-button";
         }
 
-        // El método de guardado se mantiene igual.
         protected void btnConfirmModify_Click(object sender, EventArgs e)
         {
             string selectedDateValue = hdnSelectedDate.Value;
@@ -503,19 +527,31 @@ namespace PazCitasWA
 
             if (string.IsNullOrEmpty(selectedDateValue) || string.IsNullOrEmpty(selectedTimeValue))
             {
-                return;
+                return; // No hacer nada si no hay selección completa
             }
+            // 1. Parsea la fecha seleccionada
+            DateTime fechaSeleccionada = DateTime.Parse(selectedDateValue, CultureInfo.InvariantCulture, DateTimeStyles.RoundtripKind);
 
-            DateTime nuevaFecha = DateTime.Parse(selectedDateValue);
-            DateTime nuevaFechaCompleta = DateTime.Parse(
-                $"{nuevaFecha.ToShortDateString()} {selectedTimeValue}",
-                CultureInfo.InvariantCulture
+            // 2. Parsea la hora seleccionada.
+            DateTime horaSeleccionada = DateTime.Parse(selectedTimeValue, new CultureInfo("en-US")); // "en-US" para parsear "AM/PM" correctamente.
+
+            // 3. Combina la parte de la fecha con la parte de la hora.
+            DateTime nuevaFechaCompleta = new DateTime(
+                fechaSeleccionada.Year,
+                fechaSeleccionada.Month,
+                fechaSeleccionada.Day,
+                horaSeleccionada.Hour,
+                horaSeleccionada.Minute,
+                horaSeleccionada.Second
             );
 
-            // Tu lógica de guardado aquí...
-            // wsCita.modificarCita(idCita, nuevaFechaCompleta);
+            wsCita = new CitaWSClient();
+            int res = wsCita.modificarFechaCita(this.CitaGuardada.idCita, fechaSeleccionada, horaSeleccionada, this.CitaGuardada.horarioTrabajo.medico.idUsuario);
 
-            string script = "closeModal('modalModify'); alert('Cita modificada con éxito para el " + nuevaFechaCompleta.ToString("dd 'de' MMMM 'a las' hh:mm tt") + "'); window.location.reload();";
+            // --- Este script es ahora la forma correcta de cerrar el modal y notificar al usuario ---
+            string script;
+            if (res != 0) script = "closeModal('modalModify'); alert('Cita modificada con éxito para el " + nuevaFechaCompleta.ToString("dd 'de' MMMM 'a las' hh:mm tt") + "'); window.location.reload();";
+            else script = "closeModal('modalModify'); alert('¡Algo sucedio! Intenta cancelar tu cita mas tarde.'); window.location.reload();";
             ScriptManager.RegisterStartupScript(this, this.GetType(), "ModifySuccessScript", script, true);
         }
 

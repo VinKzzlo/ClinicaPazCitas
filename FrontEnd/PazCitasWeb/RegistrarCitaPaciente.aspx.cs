@@ -1,4 +1,5 @@
-﻿using PazCitasWA.ServiciosWS;
+﻿using PazCitasWA.ServiciosEmail;
+using PazCitasWA.ServiciosWS;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -198,6 +199,28 @@ namespace PazCitasWA
             Panel4.Visible = true;
         }
 
+
+        // En tu archivo RegistrarCitaPaciente.aspx.cs
+
+        protected int ObtenerIdDelPacienteLogueado()
+        {
+            // ======================================================================
+            // === LA CORRECCIÓN ESTÁ AQUÍ: Buscamos "id_usuario", no "paciente" ===
+            if (Session["id_usuario"] != null)
+            {
+                // Si la encuentra, simplemente la convierte a número y la devuelve.
+                return Convert.ToInt32(Session["id_usuario"]);
+            }
+            // ======================================================================
+            else
+            {
+                // Si no encuentra la sesión, es cuando te redirige.
+                // Ahora que buscará la clave correcta, ya no debería entrar aquí.
+                Response.Redirect("~/Login.aspx?rol=paciente");
+                return 0;
+            }
+        }
+
         protected void btnRegistrar_Click(object sender, EventArgs e)
         {
             Label5.Text = string.Empty;
@@ -229,14 +252,60 @@ namespace PazCitasWA
                 nuevaCita.horarioTrabajo = new horarioTrabajo();
                 nuevaCita.horarioTrabajo.idHorarioTrabajo = int.Parse(idTurno);
                 nuevaCita.paciente = new paciente();
-                nuevaCita.paciente.idUsuario = 3;
+                nuevaCita.paciente.idUsuario = Convert.ToInt32(Session["id_usuario"]);
+
+
+                // --- IMPORTANTE: Debes obtener el ID del paciente que ha iniciado sesión ---
+                // nuevaCita.paciente = new paciente { idUsuario = 3 }; // NO USAR UN ID FIJO
+                int idPacienteLogueado = ObtenerIdDelPacienteLogueado(); // Debes implementar esta función
+                nuevaCita.paciente = new paciente { idUsuario = idPacienteLogueado };
+                // -------------------------------------------------------------------------
+
 
                 var wsCita = new CitaWSClient();
                 int resultado = wsCita.insertarCita(nuevaCita);
 
                 if (resultado > 0)
                 {
-                    ScriptManager.RegisterStartupScript(this, GetType(), "alertaOk", "mostrarModal('Cita registrada correctamente.', true);", true);
+                    ScriptManager.RegisterStartupScript(this, GetType(), "alertaOk", "mostrarModal('Cita registrada correctamente. Recibirá una confirmación por correo.', true);", true);
+                    // Intentamos enviar la notificación en segundo plano
+                    try
+                    {
+                        // 1. OBTENER DATOS ADICIONALES PARA EL CORREO
+                        // Necesitarás un método en tu Web Service que te devuelva el email y nombre del paciente por su ID
+                        var wsPaciente = new PacienteWSClient();
+                        var pacienteInfo = wsPaciente.obtenerPacienteXiD(idPacienteLogueado);
+                        string emailPaciente = pacienteInfo.email;
+                        string nombrePaciente = pacienteInfo.nombre;
+                        string nombreMedico = Label3.Text;
+
+                        // 2. PREPARAR EL MENSAJE
+                        string asunto = "✅ Confirmación de su Cita en PazCitas";
+                        string cuerpoHtml = $@"
+                            <h1>¡Cita Confirmada!</h1>
+                            <p>Estimado/a <strong>{nombrePaciente}</strong>,</p>
+                            <p>Le confirmamos que su cita ha sido registrada con éxito para los siguientes detalles:</p>
+                            <ul>
+                                <li><strong>Sede:</strong> {Label1.Text}</li>
+                                <li><strong>Especialidad:</strong> {Label2.Text}</li>
+                                <li><strong>Médico:</strong> {nombreMedico}</li>
+                                <li><strong>Fecha y Hora:</strong> {turnoTexto}</li>
+                            </ul>
+                            <p>Gracias por su preferencia.</p>";
+
+                        // 3. ENVIAR EL CORREO USANDO EL SERVICIO QUE YA CREAMOS
+                        ServicioEmail.Enviar(emailPaciente, asunto, cuerpoHtml);
+
+                        // 4. (Opcional) Guardar en el historial de notificaciones del portal
+                        // NotificacionDAO.Insertar(idPacienteLogueado, nuevaCitaId, "CONFIRMACION", asunto, "Su cita ha sido confirmada.");
+                    }
+                    catch (Exception ex)
+                    {
+                        // Si el envío del correo falla, no afecta al registro de la cita.
+                        // Lo ideal es registrar este error en un log para revisarlo después.
+                        // System.Diagnostics.Debug.WriteLine("Error al enviar email de confirmación: " + ex.Message);
+                    }
+
                 }
                 else
                 {

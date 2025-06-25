@@ -23,36 +23,91 @@ namespace PazCitasWA
         private RecetaWSClient boreceta;
 
         private CitaWSClient bocita;
-
+        private LineaRecetaMedicamentoWebClient lineabo;
 
         private NotaClinicaWSClient notabo;
         private notaClinica nota;
         private HistorialMedicoWSClient historialbo;
-        
+        String accion;
         protected void Page_Load(object sender, EventArgs e)
         {
-            //Revisar si es ispostback
-            if (!IsPostBack) {
-                cita citaselec = (cita)Session["citaSeleccionada"];
-                txtDNIPaciente.Text = citaselec.paciente.dni;
-                TextNombre.Text = citaselec.paciente.nombre + citaselec.paciente.apellidoPaterno;
-                TextTelefono.Text = citaselec.paciente.telefono;
-            }
 
-            bomed = new MedicamentoWSClient();
-            boreceta = new RecetaWSClient();
-            bocita = new CitaWSClient();
-            receta = new receta();
-            notabo = new NotaClinicaWSClient();
-            historialbo = new HistorialMedicoWSClient();
-
-            if (Session["lineas"] == null)
+            if (!IsPostBack)
             {
-                lineas = new BindingList<lineaRecetaMedicamento>();
-                
+                accion = Request.QueryString["accion"];
+
             }
-            else
-                lineas = (BindingList<lineaRecetaMedicamento>)Session["lineas"];
+
+            if (accion == null)
+            {
+                //Revisar si es ispostback
+                if (!IsPostBack)
+                {
+                    cita citaselec = (cita)Session["citaSeleccionada"];
+                    txtDNIPaciente.Text = citaselec.paciente.dni;
+                    TextNombre.Text = citaselec.paciente.nombre + citaselec.paciente.apellidoPaterno;
+                    TextTelefono.Text = citaselec.paciente.telefono;
+                }
+
+                bomed = new MedicamentoWSClient();
+                boreceta = new RecetaWSClient();
+                bocita = new CitaWSClient();
+                receta = new receta();
+                notabo = new NotaClinicaWSClient();
+                historialbo = new HistorialMedicoWSClient();
+
+                if (Session["lineas"] == null)
+                {
+                    lineas = new BindingList<lineaRecetaMedicamento>();
+
+                }
+                else
+                    lineas = (BindingList<lineaRecetaMedicamento>)Session["lineas"];
+
+
+            }
+            else if (accion == "ver")
+            {
+                lineabo = new LineaRecetaMedicamentoWebClient();
+
+
+
+                notaClinica notasel = (notaClinica)Session["notaSeleccionada"];
+                lineas = new BindingList<lineaRecetaMedicamento>(lineabo.listar_lineas_x_receta(notasel.receta.idReceta));
+
+                gvLineasMedicamento.DataSource = lineas;
+                gvLineasMedicamento.DataBind();
+
+                paciente pac = (paciente)Session["pac"];
+
+                txtDNIPaciente.Text = pac.dni;
+                txtDNIPaciente.Enabled = false;
+                TextNombre.Text = pac.nombre;
+                TextNombre.Enabled = false;
+                TextTelefono.Text = pac.telefono;
+                TextTelefono.Enabled = false;
+
+                txtIndicaciones.Text = notasel.receta.indicaciones;
+                txtIndicaciones.Enabled = false;
+                TextDescripcion.Text = notasel.descripcion;
+                TextDescripcion.Enabled = false;
+                TextDiag.Text = notasel.diagnostico;
+                TextDescripcion.Enabled = false;
+                TextDiag.Enabled = false;
+                TextObs.Text = notasel.observaciones;
+                TextObs.Enabled = false;
+
+                btnBuscarMedicamento.Visible = false;
+                btnGuardar.Visible = false;
+                btnBuscarMedicamento.Visible = false;
+                lbAgregarMedicamento.Visible = false;
+
+
+
+
+
+
+            }
 
         }
         protected void gvLineasMedicamento_RowDataBound(object sender, GridViewRowEventArgs e)
@@ -62,7 +117,17 @@ namespace PazCitasWA
                 e.Row.Cells[0].Text = ((medicamento)DataBinder.Eval(e.Row.DataItem, "Medicamento")).nombre;
                 e.Row.Cells[1].Text = ((medicamento)DataBinder.Eval(e.Row.DataItem, "Medicamento")).presentacion;
                 e.Row.Cells[2].Text = DataBinder.Eval(e.Row.DataItem, "cantidad").ToString();
-                
+
+
+                if (accion == "ver")
+                {
+                    LinkButton btnTrash = (LinkButton)e.Row.FindControl("lbltrash");
+                    if (btnTrash != null)
+                    {
+                        btnTrash.Visible = false;
+                    }
+                }
+
             }
 
         }
@@ -109,7 +174,7 @@ namespace PazCitasWA
             line.medicamento = (medicamento)Session["medicamento"];
             lineas.Add(line);
             Session["lineas"] = lineas;
-            
+
             gvLineasMedicamento.DataSource = lineas;
             gvLineasMedicamento.DataBind();
 
@@ -133,23 +198,57 @@ namespace PazCitasWA
             ScriptManager.RegisterStartupScript(this, GetType(), "showModalMedicamento", script, true);
 
         }
-        
+
         protected void btnRegresar_Click(object sender, EventArgs e)
         {
-            cita citaselec = (cita)Session["citaSeleccionada"];
-            estadoAtencion es;
-            es = estadoAtencion.EN_ESPERA;
-            citaselec.estadoAtencion = es;
-            citaselec.estadoAtencionSpecified = true;
-            bocita.modificarCita(citaselec);
-            Session["citaSeleccionada"] = citaselec;
-            Response.Redirect("VerCitaMedico.aspx");
+
+            if (accion == null)
+            {
+
+                cita citaselec = (cita)Session["citaSeleccionada"];
+                estadoAtencion es;
+                es = estadoAtencion.EN_ESPERA;
+                citaselec.estadoAtencion = es;
+                citaselec.estadoAtencionSpecified = true;
+                bocita.modificarCita(citaselec);
+                Session["citaSeleccionada"] = citaselec;
+                Response.Redirect("VerCitaMedico.aspx");
+            }
+            else
+            {
+
+                Session["pac"] = null;
+                txtDNIPaciente.Text = "";
+                txtDNIPaciente.Enabled = true;
+                TextNombre.Text = "";
+                TextNombre.Enabled = true;
+                TextTelefono.Text = "";
+                TextTelefono.Enabled = true;
+
+                txtIndicaciones.Text = "";
+                txtIndicaciones.Enabled = true;
+                TextDescripcion.Text = "";
+                TextDescripcion.Enabled = true;
+                TextDiag.Text = "";
+                TextDescripcion.Enabled = true;
+                TextDiag.Enabled = true;
+                TextObs.Text = "";
+                TextObs.Enabled = true;
+
+                btnBuscarMedicamento.Visible = true;
+                btnGuardar.Visible = true;
+                btnBuscarMedicamento.Visible = true;
+                lbAgregarMedicamento.Visible = true;
+                gvLineasMedicamento.DataSource = null;
+
+                Response.Redirect("ListarCitasMedico.aspx");
+            }
 
         }
 
         protected void btnGuardar_Click(object sender, EventArgs e)
         {
-            if(lineas.Count == 0)
+            if (lineas.Count == 0)
             {
                 lblMensajeError.Text = "Debe agregar por lo menos un producto.";
                 string script = "showModalFormError();";
@@ -168,12 +267,13 @@ namespace PazCitasWA
             receta.lineasReceta = lineas.ToArray();
 
             boreceta = new RecetaWSClient();
-            
+
             int resultado = boreceta.insertarReceta(receta);
             receta.idReceta = resultado;
             Session["receta"] = receta;
 
-            if (resultado != 0){
+            if (resultado != 0)
+            {
 
                 if (TextObs.Text == "")
                 {
@@ -254,6 +354,14 @@ namespace PazCitasWA
                 e.Row.Cells[2].Text = DataBinder.Eval(e.Row.DataItem, "Presentacion").ToString();
                 e.Row.Cells[3].Text = DataBinder.Eval(e.Row.DataItem, "Stock").ToString();
 
+                if (accion == "ver")
+                {
+                    LinkButton btnTrash = (LinkButton)e.Row.FindControl("lbltrash");
+                    if (btnTrash != null)
+                    {
+                        btnTrash.Visible = false;
+                    }
+                }
             }
         }
 
