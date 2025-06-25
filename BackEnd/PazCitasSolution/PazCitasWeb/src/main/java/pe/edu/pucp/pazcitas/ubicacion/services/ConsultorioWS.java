@@ -55,4 +55,17 @@ public class ConsultorioWS {
         boconsultorio = new ConsultorioBO();
         return boconsultorio.listarXSede(idSede);
     }
+    
+    @WebMethod(operationName = "marcarAsignado")
+    public int marcarAsignado(@WebParam(name = "idConsultorio") int idconsultorio) {
+        boconsultorio = new ConsultorioBO();
+        return boconsultorio.marcarAsignado(idconsultorio);
+    }
+    
+    @WebMethod(operationName = "marcarNoAsignado")
+    public int marcarNoAsignado(@WebParam(name = "idConsultorio") int idconsultorio) {
+        boconsultorio = new ConsultorioBO();
+        return boconsultorio.marcarNoAsignado(idconsultorio);
+    }
+    
 }

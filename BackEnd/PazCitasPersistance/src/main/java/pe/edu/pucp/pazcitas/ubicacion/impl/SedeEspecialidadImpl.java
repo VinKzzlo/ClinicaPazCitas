@@ -51,5 +51,13 @@ public class SedeEspecialidadImpl implements SedeEspecialidadDAO{
     public ArrayList<SedeEspecialidad> listarTodos() {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
-    
+
+    @Override
+    public int eliminarPorSede(int idSede) {
+        Map<Integer,Object> parametrosEntrada = new HashMap<>();
+        parametrosEntrada.put(1,idSede);
+        int resultado = DBManager.getInstance().ejecutarProcedimiento("ELIMINAR_SEDE_ESPECIALIDAD_X_SEDE", parametrosEntrada, null);
+        System.out.println("Se ha realizado la eliminacion de la sede-especialidad por sede");
+        return resultado;
+    }
 }

@@ -12,5 +12,5 @@ import pe.edu.pucp.pazcitas.dao.ICrud;
  * @author Joel
  */
 public interface LineaRecetaMedicamentoDAO extends ICrud<LineaRecetaMedicamento>{
-    
+    ArrayList<LineaRecetaMedicamento> listar_lineas_x_receta(int idReceta);
 }

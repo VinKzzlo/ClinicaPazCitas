@@ -11,6 +11,12 @@
   <message name="modificarCitaResponse">
     <part name="parameters" element="tns:modificarCitaResponse" />
   </message>
+  <message name="listaCitaPorMedico">
+    <part name="parameters" element="tns:listaCitaPorMedico" />
+  </message>
+  <message name="listaCitaPorMedicoResponse">
+    <part name="parameters" element="tns:listaCitaPorMedicoResponse" />
+  </message>
   <message name="obtenerCita">
     <part name="parameters" element="tns:obtenerCita" />
   </message>
@@ -35,12 +41,6 @@
   <message name="insertarCitaResponse">
     <part name="parameters" element="tns:insertarCitaResponse" />
   </message>
-  <message name="listaCitaPorMedico">
-    <part name="parameters" element="tns:listaCitaPorMedico" />
-  </message>
-  <message name="listaCitaPorMedicoResponse">
-    <part name="parameters" element="tns:listaCitaPorMedicoResponse" />
-  </message>
   <message name="listarCita">
     <part name="parameters" element="tns:listarCita" />
   </message>
@@ -51,6 +51,10 @@
     <operation name="modificarCita">
       <input wsam:Action="http://services.pucp.edu.pe/CitaWS/modificarCitaRequest" message="tns:modificarCita" />
       <output wsam:Action="http://services.pucp.edu.pe/CitaWS/modificarCitaResponse" message="tns:modificarCitaResponse" />
+    </operation>
+    <operation name="listaCitaPorMedico">
+      <input wsam:Action="http://services.pucp.edu.pe/CitaWS/listaCitaPorMedicoRequest" message="tns:listaCitaPorMedico" />
+      <output wsam:Action="http://services.pucp.edu.pe/CitaWS/listaCitaPorMedicoResponse" message="tns:listaCitaPorMedicoResponse" />
     </operation>
     <operation name="obtenerCita">
       <input wsam:Action="http://services.pucp.edu.pe/CitaWS/obtenerCitaRequest" message="tns:obtenerCita" />
@@ -68,10 +72,6 @@
       <input wsam:Action="http://services.pucp.edu.pe/CitaWS/insertarCitaRequest" message="tns:insertarCita" />
       <output wsam:Action="http://services.pucp.edu.pe/CitaWS/insertarCitaResponse" message="tns:insertarCitaResponse" />
     </operation>
-    <operation name="listaCitaPorMedico">
-      <input wsam:Action="http://services.pucp.edu.pe/CitaWS/listaCitaPorMedicoRequest" message="tns:listaCitaPorMedico" />
-      <output wsam:Action="http://services.pucp.edu.pe/CitaWS/listaCitaPorMedicoResponse" message="tns:listaCitaPorMedicoResponse" />
-    </operation>
     <operation name="listarCita">
       <input wsam:Action="http://services.pucp.edu.pe/CitaWS/listarCitaRequest" message="tns:listarCita" />
       <output wsam:Action="http://services.pucp.edu.pe/CitaWS/listarCitaResponse" message="tns:listarCitaResponse" />
@@ -80,6 +80,15 @@
   <binding name="CitaWSPortBinding" type="tns:CitaWS">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
     <operation name="modificarCita">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="listaCitaPorMedico">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />
@@ -116,15 +125,6 @@
       </output>
     </operation>
     <operation name="insertarCita">
-      <soap:operation soapAction="" />
-      <input>
-        <soap:body use="literal" />
-      </input>
-      <output>
-        <soap:body use="literal" />
-      </output>
-    </operation>
-    <operation name="listaCitaPorMedico">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />

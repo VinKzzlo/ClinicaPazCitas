@@ -99,5 +99,25 @@ public class CuentaUsuarioImpl implements CuentaUsuarioDAO{
     public ArrayList<CuentaUsuario> listarTodos() {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
+
+    @Override
+    public int verificarCuenta(String identificador, String password, String rol) {
+        int resultado = 0;
+        Map<Integer, Object> parametrosEntrada = new HashMap<>();
+        parametrosEntrada.put(1, identificador);
+        parametrosEntrada.put(2, password);
+        parametrosEntrada.put(3, rol);
+        rs = DBManager.getInstance().ejecutarProcedimientoLectura("VERIFICAR_CUENTA_GENERAL", parametrosEntrada);
+        try{
+            if(rs.next()){
+                resultado = rs.getInt("fid_usuario");
+            }
+        }catch(SQLException ex){
+            System.out.println("ERROR: "+ex.getMessage());
+        }finally{
+            DBManager.getInstance().cerrarConexion();
+        }
+        return resultado;
+    }
     
 }

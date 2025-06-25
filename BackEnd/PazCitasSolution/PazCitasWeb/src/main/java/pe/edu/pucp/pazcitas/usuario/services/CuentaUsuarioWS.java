@@ -45,6 +45,14 @@ public class CuentaUsuarioWS {
         return cuentabo.verificarCuentaPaciente(username,contra);
     }
     
-    
+    //MEtodo Nuevo
+    @WebMethod(operationName = "verificarCuenta")
+    public int verificarCuentaPorDni(
+            @WebParam(name = "identificador") String identificador,
+            @WebParam(name = "password") String password,
+            @WebParam(name = "rol") String rol) {
+        cuentabo = new CuentaUsuarioBO();
+        return cuentabo.verificarCuenta(identificador, password, rol);
+    }
     
 }

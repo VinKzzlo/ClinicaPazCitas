@@ -166,5 +166,23 @@ public class ConsultorioImpl implements ConsultorioDAO {
         }
         return consultorios;
     }
+
+    @Override
+    public int marcarAsignado(int idConsultorio) {
+        Map<Integer,Object> parametrosEntrada = new HashMap<>();
+        parametrosEntrada.put(1, idConsultorio);
+        int resultado = DBManager.getInstance().ejecutarProcedimiento("MARCAR_CONSULTORIO_ASIGNADO", parametrosEntrada, null);
+        System.out.println("Se ha realizado la eliminacion del consultorio");
+        return resultado;
+    }
+
+    @Override
+    public int marcarNoAsignado(int idConsultorio) {
+        Map<Integer,Object> parametrosEntrada = new HashMap<>();
+        parametrosEntrada.put(1, idConsultorio);
+        int resultado = DBManager.getInstance().ejecutarProcedimiento("MARCAR_CONSULTORIO_NO_ASIGNADO", parametrosEntrada, null);
+        System.out.println("Se ha realizado la eliminacion del consultorio");
+        return resultado;
+    }
     
 }

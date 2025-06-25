@@ -5,18 +5,6 @@
       <xsd:import schemaLocation="http://localhost:8080/PazCitasWeb/EspecialidadWS?xsd=1" namespace="http://services.pucp.edu.pe" />
     </xsd:schema>
   </types>
-  <message name="listarEspecialidad">
-    <part name="parameters" element="tns:listarEspecialidad" />
-  </message>
-  <message name="listarEspecialidadResponse">
-    <part name="parameters" element="tns:listarEspecialidadResponse" />
-  </message>
-  <message name="listarXSede">
-    <part name="parameters" element="tns:listarXSede" />
-  </message>
-  <message name="listarXSedeResponse">
-    <part name="parameters" element="tns:listarXSedeResponse" />
-  </message>
   <message name="insertarEspecialidad">
     <part name="parameters" element="tns:insertarEspecialidad" />
   </message>
@@ -29,27 +17,31 @@
   <message name="eliminarEspecialidadResponse">
     <part name="parameters" element="tns:eliminarEspecialidadResponse" />
   </message>
-  <message name="obtenerEspecialidadPorId">
-    <part name="parameters" element="tns:obtenerEspecialidadPorId" />
-  </message>
-  <message name="obtenerEspecialidadPorIdResponse">
-    <part name="parameters" element="tns:obtenerEspecialidadPorIdResponse" />
-  </message>
   <message name="modificarEspecialidad">
     <part name="parameters" element="tns:modificarEspecialidad" />
   </message>
   <message name="modificarEspecialidadResponse">
     <part name="parameters" element="tns:modificarEspecialidadResponse" />
   </message>
+  <message name="obtenerEspecialidadPorId">
+    <part name="parameters" element="tns:obtenerEspecialidadPorId" />
+  </message>
+  <message name="obtenerEspecialidadPorIdResponse">
+    <part name="parameters" element="tns:obtenerEspecialidadPorIdResponse" />
+  </message>
+  <message name="listarXSede">
+    <part name="parameters" element="tns:listarXSede" />
+  </message>
+  <message name="listarXSedeResponse">
+    <part name="parameters" element="tns:listarXSedeResponse" />
+  </message>
+  <message name="listarEspecialidad">
+    <part name="parameters" element="tns:listarEspecialidad" />
+  </message>
+  <message name="listarEspecialidadResponse">
+    <part name="parameters" element="tns:listarEspecialidadResponse" />
+  </message>
   <portType name="EspecialidadWS">
-    <operation name="listarEspecialidad">
-      <input wsam:Action="http://services.pucp.edu.pe/EspecialidadWS/listarEspecialidadRequest" message="tns:listarEspecialidad" />
-      <output wsam:Action="http://services.pucp.edu.pe/EspecialidadWS/listarEspecialidadResponse" message="tns:listarEspecialidadResponse" />
-    </operation>
-    <operation name="listarXSede">
-      <input wsam:Action="http://services.pucp.edu.pe/EspecialidadWS/listarXSedeRequest" message="tns:listarXSede" />
-      <output wsam:Action="http://services.pucp.edu.pe/EspecialidadWS/listarXSedeResponse" message="tns:listarXSedeResponse" />
-    </operation>
     <operation name="insertarEspecialidad">
       <input wsam:Action="http://services.pucp.edu.pe/EspecialidadWS/insertarEspecialidadRequest" message="tns:insertarEspecialidad" />
       <output wsam:Action="http://services.pucp.edu.pe/EspecialidadWS/insertarEspecialidadResponse" message="tns:insertarEspecialidadResponse" />
@@ -58,35 +50,25 @@
       <input wsam:Action="http://services.pucp.edu.pe/EspecialidadWS/eliminarEspecialidadRequest" message="tns:eliminarEspecialidad" />
       <output wsam:Action="http://services.pucp.edu.pe/EspecialidadWS/eliminarEspecialidadResponse" message="tns:eliminarEspecialidadResponse" />
     </operation>
-    <operation name="obtenerEspecialidadPorId">
-      <input wsam:Action="http://services.pucp.edu.pe/EspecialidadWS/obtenerEspecialidadPorIdRequest" message="tns:obtenerEspecialidadPorId" />
-      <output wsam:Action="http://services.pucp.edu.pe/EspecialidadWS/obtenerEspecialidadPorIdResponse" message="tns:obtenerEspecialidadPorIdResponse" />
-    </operation>
     <operation name="modificarEspecialidad">
       <input wsam:Action="http://services.pucp.edu.pe/EspecialidadWS/modificarEspecialidadRequest" message="tns:modificarEspecialidad" />
       <output wsam:Action="http://services.pucp.edu.pe/EspecialidadWS/modificarEspecialidadResponse" message="tns:modificarEspecialidadResponse" />
     </operation>
+    <operation name="obtenerEspecialidadPorId">
+      <input wsam:Action="http://services.pucp.edu.pe/EspecialidadWS/obtenerEspecialidadPorIdRequest" message="tns:obtenerEspecialidadPorId" />
+      <output wsam:Action="http://services.pucp.edu.pe/EspecialidadWS/obtenerEspecialidadPorIdResponse" message="tns:obtenerEspecialidadPorIdResponse" />
+    </operation>
+    <operation name="listarXSede">
+      <input wsam:Action="http://services.pucp.edu.pe/EspecialidadWS/listarXSedeRequest" message="tns:listarXSede" />
+      <output wsam:Action="http://services.pucp.edu.pe/EspecialidadWS/listarXSedeResponse" message="tns:listarXSedeResponse" />
+    </operation>
+    <operation name="listarEspecialidad">
+      <input wsam:Action="http://services.pucp.edu.pe/EspecialidadWS/listarEspecialidadRequest" message="tns:listarEspecialidad" />
+      <output wsam:Action="http://services.pucp.edu.pe/EspecialidadWS/listarEspecialidadResponse" message="tns:listarEspecialidadResponse" />
+    </operation>
   </portType>
   <binding name="EspecialidadWSPortBinding" type="tns:EspecialidadWS">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
-    <operation name="listarEspecialidad">
-      <soap:operation soapAction="" />
-      <input>
-        <soap:body use="literal" />
-      </input>
-      <output>
-        <soap:body use="literal" />
-      </output>
-    </operation>
-    <operation name="listarXSede">
-      <soap:operation soapAction="" />
-      <input>
-        <soap:body use="literal" />
-      </input>
-      <output>
-        <soap:body use="literal" />
-      </output>
-    </operation>
     <operation name="insertarEspecialidad">
       <soap:operation soapAction="" />
       <input>
@@ -105,6 +87,15 @@
         <soap:body use="literal" />
       </output>
     </operation>
+    <operation name="modificarEspecialidad">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
     <operation name="obtenerEspecialidadPorId">
       <soap:operation soapAction="" />
       <input>
@@ -114,7 +105,16 @@
         <soap:body use="literal" />
       </output>
     </operation>
-    <operation name="modificarEspecialidad">
+    <operation name="listarXSede">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="listarEspecialidad">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />

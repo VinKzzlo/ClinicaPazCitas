@@ -44,5 +44,11 @@ namespace PazCitasWA
             wsSede.eliminarSede(idSede);
             Response.Redirect("ListarSedes.aspx");
         }
+
+        protected void btnEspecialidades_Click(object sender, EventArgs e)
+        {
+            int idSede = Int32.Parse(((LinkButton)sender).CommandArgument);
+            Response.Redirect($"AsignarEspecialidades.aspx?idSede={idSede}");
+        }
     }
 }

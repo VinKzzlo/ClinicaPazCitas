@@ -2,6 +2,8 @@
 <xs:schema xmlns:tns="http://services.pucp.edu.pe" targetNamespace="http://services.pucp.edu.pe" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   <xs:element name="eliminarSedeEspecialidad" type="tns:eliminarSedeEspecialidad" />
   <xs:element name="eliminarSedeEspecialidadResponse" type="tns:eliminarSedeEspecialidadResponse" />
+  <xs:element name="eliminarSedeEspecialidadXSede" type="tns:eliminarSedeEspecialidadXSede" />
+  <xs:element name="eliminarSedeEspecialidadXSedeResponse" type="tns:eliminarSedeEspecialidadXSedeResponse" />
   <xs:element name="insertarSedeEspecialidad" type="tns:insertarSedeEspecialidad" />
   <xs:element name="insertarSedeEspecialidadResponse" type="tns:insertarSedeEspecialidadResponse" />
   <xs:complexType name="eliminarSedeEspecialidad">
@@ -187,6 +189,16 @@
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="insertarSedeEspecialidadResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="eliminarSedeEspecialidadXSede">
+    <xs:sequence>
+      <xs:element name="idSede" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="eliminarSedeEspecialidadXSedeResponse">
     <xs:sequence>
       <xs:element name="return" type="xs:int" />
     </xs:sequence>

@@ -2,177 +2,87 @@
 
 <!DOCTYPE html>
 <html lang="es">
-<head runat="server">
+<head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Login - PazCitas</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ingreso / Registro</title>
 
-    <!-- Bootstrap -->
-    <link href="Content/bootstrap-grid.min.css" rel="stylesheet" />
-    <link href="Content/bootstrap-reboot.min.css" rel="stylesheet" />
-    <!-- Font Awesome -->
-    <link href="Content/Fonts/css/all.min.css" rel="stylesheet" />
-    <!-- Bootstrap Bundle + jQuery -->
-    <script src="Scripts/bootstrap.bundle.min.js"></script>
-    <script src="Scripts/jquery-3.7.1.min.js"></script>
-
-    <style>
-        body {
-            background-color: #f8f9fa;
-            min-height: 100vh;
-            margin: 0;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 40px 20px;
-        }
-
-        .login-wrapper {
-            max-width: 1300px;
-            width: 100%;
-            height: 650px;
-            display: flex;
-            background-color: #fff;
-            border-radius: 24px;
-            box-shadow: 0 12px 40px rgba(0,0,0,0.15);
-            overflow: hidden;
-            flex-direction: row;
-        }
-
-        .login-header {
-            flex: 1;
-            background-color: #0d6efd;
-            color: white;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            padding: 60px 30px;
-        }
-
-        .login-icon {
-            font-size: 120px;
-            margin-bottom: 30px;
-        }
-
-        .login-title {
-            font-size: 34px;
-            font-weight: bold;
-            text-align: center;
-        }
-
-        .login-body {
-            flex: 1;
-            padding: 60px 60px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-        }
-
-        .form-label {
-            font-weight: 600;
-            font-size: 18px;
-            margin-bottom: 8px;
-        }
-
-        .input-group-text {
-            font-size: 24px;
-            padding: 14px 18px;
-        }
-
-        .form-control {
-            font-size: 20px;
-            padding: 16px;
-        }
-
-            .form-control::placeholder {
-                font-size: 16px;
-                opacity: 0.75;
-            }
-
-        .btn-login {
-            border-radius: 12px;
-            font-weight: bold;
-            font-size: 22px;
-            padding: 18px;
-            margin-top: 30px;
-        }
-
-        .text-small {
-            font-size: 15px;
-        }
-
-        .login-footer {
-            margin-top: 40px;
-            text-align: center;
-        }
-
-        @media (max-width: 768px) {
-            .login-wrapper {
-                flex-direction: column;
-                height: auto;
-            }
-
-            .login-body {
-                padding: 40px 30px;
-            }
-
-            .login-title {
-                font-size: 26px;
-            }
-
-            .login-icon {
-                font-size: 70px;
-            }
-        }
-    </style>
+    <!-- Bootstrap local -->
+    <link href="Content/bootstrap.min.css" rel="stylesheet" />
+    <!-- Font Awesome local -->
+    <link href="Content/Fonts/css/all.css" rel="stylesheet" />
+    <!-- Estilo personalizado -->
+    <link href="Content/LoginModern/login-modern.css" rel="stylesheet" />
 </head>
 <body>
-    <form id="form1" runat="server">
-        <div class="login-wrapper">
-            <!-- CABECERA -->
-            <div id="loginHeader" runat="server" class="login-header" style="background-color: #0d6efd;">
-                <div id="iconoRol" runat="server" class="login-icon">
-                    <i class="fas fa-user text-white"></i>
+    <form runat="server">
+        <asp:ScriptManager ID="ScriptManager1" runat="server" />
+
+        <div class="contenedor" id="contenedor">
+            <input type="hidden" id="rolUsuario" value="<%= Request.QueryString["rol"] ?? "" %>" />
+
+            <!-- Panel lateral -->
+            <div class="panel" id="panel">
+                <div class="panel-contenido">
+                    <i class="fas fa-sign-in-alt icono-panel" id="icono-panel"></i>
+                    <h2 id="titulo-panel">¡Hola, bienvenido!</h2>
+                    <p id="texto-panel">¿No tienes cuenta?</p>
+                    <button type="button" class="boton-panel" id="cambiar-formulario">Regístrate aquí</button>
                 </div>
-                <div id="tituloRol" runat="server" class="login-title">Acceso</div>
             </div>
 
-            <!-- FORMULARIO -->
-            <div class="login-body">
-                <div class="mb-4">
-                    <label class="form-label">Nombre de usuario</label>
-                    <div class="input-group">
-                        <span class="input-group-text"><i id="iconUser" runat="server" class="fas fa-user text-warning"></i></span>
-                        <asp:TextBox ID="txtUsuario" runat="server" CssClass="form-control" placeholder="Ingrese su DNI"></asp:TextBox>
-                    </div>
+            <!-- Área de formularios -->
+            <div class="formulario-area" id="formularioArea">
+
+                <!-- LOGIN -->
+                <div class="formulario animado activo" id="formularioLogin">
+                    <h2><i class="fas fa-user-check icono-form me-2" id="icono-login"></i>Iniciar sesión</h2>
+
+                    
+
+                    <label for="txtUsuario"><i class="fas fa-id-card icono-label me-2"></i>DNI:</label>
+                    <asp:TextBox ID="txtUsuario" runat="server" CssClass="form-control mb-3" placeholder="Ingrese su DNI"></asp:TextBox>
+
+                    <label for="txtClave"><i class="fas fa-lock icono-label me-2"></i>Contraseña:</label>
+                    <asp:TextBox ID="txtClave" runat="server" TextMode="Password" CssClass="form-control mb-4" placeholder="Ingrese su contraseña"></asp:TextBox>
+                    <asp:Label ID="lblMensaje" runat="server" CssClass="text-danger mb-2 d-block"></asp:Label>
+                    <button type="button" class="btn btn-primary w-100 fw-bold" onclick="document.getElementById('<%= btnLogin.ClientID %>').click();">Iniciar sesión</button>
+                    <asp:Button ID="btnLogin" runat="server" Text="HiddenLogin" OnClick="btnLogin_Click" Style="display: none;" />
+                    
                 </div>
 
-                <div class="mb-2">
-                    <label class="form-label">Contraseña</label>
-                    <div class="input-group">
-                        <span class="input-group-text"><i id="iconLock" runat="server" class="fas fa-lock text-warning"></i></span>
-                        <asp:TextBox ID="txtClave" runat="server" CssClass="form-control" TextMode="Password" placeholder="Ingrese su contraseña"></asp:TextBox>
-                    </div>
-                    <div class="text-end mt-2">
-                        <a href="#" class="text-decoration-none text-small">¿Olvidó su contraseña?</a>
-                    </div>
-                </div>
-                <div class="form-group mt-2">
-                    <asp:Label ID="lblMensaje" runat="server" CssClass="text-danger text-center d-block" EnableViewState="false"></asp:Label>
-                </div>
-                <div class="d-grid">
-                    <asp:Button ID="btnLogin" runat="server" CssClass="btn btn-warning btn-login" Text="Iniciar sesión" OnClick="btnLogin_Click" />
-                </div>
+                <!-- REGISTRO -->
+                <div class="formulario animado" id="formularioRegistro">
+                    <h2><i class="fas fa-user-plus icono-form me-2" id="icono-registro"></i>Registro</h2>
 
-                <div class="login-footer">
-                    <a href="Inicio.aspx" class="text-decoration-none text-primary text-small">
-                        <i class="fas fa-arrow-left me-1"></i>Volver al inicio
-                    </a>
+                    <label for="txtDni"><i class="fas fa-id-card icono-label me-2"></i>DNI:</label>
+                    <asp:TextBox ID="txtDni" runat="server" CssClass="form-control mb-3" placeholder="Ingrese su DNI" />
+
+                    <label for="txtNombre"><i class="fas fa-user icono-label me-2"></i>Nombre completo:</label>
+                    <asp:TextBox ID="txtNombre" runat="server" CssClass="form-control mb-3" placeholder="Ingrese su nombre" />
+
+                    <label for="txtCorreo"><i class="fas fa-envelope icono-label me-2"></i>Correo electrónico:</label>
+                    <asp:TextBox ID="txtCorreo" runat="server" CssClass="form-control mb-3" placeholder="Ingrese su correo" TextMode="Email" />
+
+                    <label for="txtDireccion"><i class="fas fa-map-marker-alt icono-label me-2"></i>Dirección:</label>
+                    <asp:TextBox ID="txtDireccion" runat="server" CssClass="form-control mb-3" placeholder="Ingrese su dirección" />
+
+                    <label for="txtTelefono"><i class="fas fa-phone icono-label me-2"></i>Teléfono:</label>
+                    <asp:TextBox ID="txtTelefono" runat="server" CssClass="form-control mb-3" placeholder="Ingrese su teléfono" />
+
+                    <label for="txtPassword"><i class="fas fa-lock icono-label me-2"></i>Contraseña:</label>
+                    <asp:TextBox ID="txtPassword" runat="server" TextMode="Password" CssClass="form-control mb-4" placeholder="Ingrese su contraseña" />
+
+                    <button type="button" class="btn btn-success w-100 fw-bold" onclick="document.getElementById('<%= btnRegistro.ClientID %>').click();">Registrarse</button>
+                    <asp:Button ID="btnRegistro" runat="server" Text="HiddenRegister" OnClick="btnRegistro_Click" Style="display: none;" />
                 </div>
             </div>
         </div>
     </form>
 
+    <!-- Scripts -->
+    <script src="Scripts/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="Scripts/LoginModern/login-modern.js"></script>
 </body>
 </html>

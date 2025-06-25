@@ -95,7 +95,7 @@ public class EspecialidadImpl implements EspecialidadDAO{
         rs = DBManager.getInstance().ejecutarProcedimientoLectura("LISTAR_ESPECIALIDAD_X_SEDE", parametrosEntrada);
         System.out.println("Lectura de sede...");
         try {
-            if (rs.next()) {
+            while (rs.next()) {
                 if(especialidades == null) especialidades = new ArrayList<>();
                 Especialidad c = new Especialidad();
                 c.setIdEspecialidad(rs.getInt("id_especialidad"));

@@ -12,5 +12,5 @@ import pe.edu.pucp.pazcitas.ubicacion.model.SedeEspecialidad;
  * @author Joel
  */
 public interface SedeEspecialidadDAO extends ICrud<SedeEspecialidad>{
-    
+    int eliminarPorSede(int idSede);
 }

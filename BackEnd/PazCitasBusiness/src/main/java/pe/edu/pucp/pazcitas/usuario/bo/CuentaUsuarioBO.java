@@ -32,4 +32,8 @@ public class CuentaUsuarioBO {
         return daocuenta.verificarCuentaAdministrador(username, contra);
     }
     
+    // Verificación única por DNI, contraseña y rol
+    public int verificarCuenta(String identificador, String password, String rol) {
+        return daocuenta.verificarCuenta(identificador, password, rol);
+    }
 }

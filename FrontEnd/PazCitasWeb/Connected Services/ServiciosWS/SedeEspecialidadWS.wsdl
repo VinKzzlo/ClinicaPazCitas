@@ -5,6 +5,12 @@
       <xsd:import schemaLocation="http://localhost:8080/PazCitasWeb/SedeEspecialidadWS?xsd=1" namespace="http://services.pucp.edu.pe" />
     </xsd:schema>
   </types>
+  <message name="eliminarSedeEspecialidadXSede">
+    <part name="parameters" element="tns:eliminarSedeEspecialidadXSede" />
+  </message>
+  <message name="eliminarSedeEspecialidadXSedeResponse">
+    <part name="parameters" element="tns:eliminarSedeEspecialidadXSedeResponse" />
+  </message>
   <message name="insertarSedeEspecialidad">
     <part name="parameters" element="tns:insertarSedeEspecialidad" />
   </message>
@@ -18,6 +24,10 @@
     <part name="parameters" element="tns:eliminarSedeEspecialidadResponse" />
   </message>
   <portType name="SedeEspecialidadWS">
+    <operation name="eliminarSedeEspecialidadXSede">
+      <input wsam:Action="http://services.pucp.edu.pe/SedeEspecialidadWS/eliminarSedeEspecialidadXSedeRequest" message="tns:eliminarSedeEspecialidadXSede" />
+      <output wsam:Action="http://services.pucp.edu.pe/SedeEspecialidadWS/eliminarSedeEspecialidadXSedeResponse" message="tns:eliminarSedeEspecialidadXSedeResponse" />
+    </operation>
     <operation name="insertarSedeEspecialidad">
       <input wsam:Action="http://services.pucp.edu.pe/SedeEspecialidadWS/insertarSedeEspecialidadRequest" message="tns:insertarSedeEspecialidad" />
       <output wsam:Action="http://services.pucp.edu.pe/SedeEspecialidadWS/insertarSedeEspecialidadResponse" message="tns:insertarSedeEspecialidadResponse" />
@@ -29,6 +39,15 @@
   </portType>
   <binding name="SedeEspecialidadWSPortBinding" type="tns:SedeEspecialidadWS">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <operation name="eliminarSedeEspecialidadXSede">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
     <operation name="insertarSedeEspecialidad">
       <soap:operation soapAction="" />
       <input>

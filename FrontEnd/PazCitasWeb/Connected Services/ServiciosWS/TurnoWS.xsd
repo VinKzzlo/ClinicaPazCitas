@@ -12,16 +12,6 @@
   <xs:element name="modificarTurnoResponse" type="tns:modificarTurnoResponse" />
   <xs:element name="obtenerXId" type="tns:obtenerXId" />
   <xs:element name="obtenerXIdResponse" type="tns:obtenerXIdResponse" />
-  <xs:complexType name="eliminarTurno">
-    <xs:sequence>
-      <xs:element name="idturno" type="xs:int" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:complexType name="eliminarTurnoResponse">
-    <xs:sequence>
-      <xs:element name="return" type="xs:int" />
-    </xs:sequence>
-  </xs:complexType>
   <xs:complexType name="listarTurnosSemana">
     <xs:sequence>
       <xs:element name="idMedico" type="xs:int" />
@@ -40,6 +30,16 @@
       <xs:element minOccurs="0" name="horaFin" type="xs:dateTime" />
       <xs:element minOccurs="0" name="horaInicio" type="xs:dateTime" />
       <xs:element name="idHorarioTrabajo" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="eliminarTurno">
+    <xs:sequence>
+      <xs:element name="idturno" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="eliminarTurnoResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:int" />
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="insertaTurno">

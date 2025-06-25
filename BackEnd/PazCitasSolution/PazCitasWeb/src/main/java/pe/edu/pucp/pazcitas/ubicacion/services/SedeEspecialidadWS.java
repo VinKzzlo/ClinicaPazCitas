@@ -31,4 +31,10 @@ public class SedeEspecialidadWS {
         bosedeesp = new SedeEspecialidadBO();
         return bosedeesp.eliminar(idsedeEsp);
     }
+    
+    @WebMethod(operationName = "eliminarSedeEspecialidadXSede")
+    public int eliminarSedeEspecialidadXSede(@WebParam(name = "idSede") int idSede){
+        bosedeesp = new SedeEspecialidadBO();
+        return bosedeesp.eliminarXSede(idSede);
+    }
 }

@@ -26,4 +26,8 @@ public class SedeEspecialidadBO {
     public int eliminar(int id){
         return daoSedeEspecialidad.eliminar(id);
     }
+    
+    public int eliminarXSede(int idSede){
+        return daoSedeEspecialidad.eliminarPorSede(idSede);
+    }
 }

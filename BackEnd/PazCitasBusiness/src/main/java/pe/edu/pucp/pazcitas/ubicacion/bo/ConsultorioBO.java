@@ -43,4 +43,12 @@ public class ConsultorioBO {
     public ArrayList<Consultorio> listarXSede(int idSede) {
         return daoConsultorio.listarConsultoriosXSede(idSede);
     }
+    
+    public int marcarAsignado(int idConsultorio){
+        return daoConsultorio.marcarAsignado(idConsultorio);
+    }
+    
+    public int marcarNoAsignado(int idConsultorio){
+        return daoConsultorio.marcarNoAsignado(idConsultorio);
+    }
 }

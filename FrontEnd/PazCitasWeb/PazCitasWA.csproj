@@ -106,6 +106,7 @@
     <None Include="Connected Services\ServiciosWS\PagoWS.xsd">
       <SubType>Designer</SubType>
     </None>
+    <Content Include="AsignarEspecialidades.aspx" />
     <Content Include="AsignarTurnos.aspx" />
     <Content Include="Connected Services\ServiciosWS\PazCitasWA.ServiciosWS.administrador.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
@@ -413,6 +414,18 @@
     <Content Include="Connected Services\ServiciosWS\PazCitasWA.ServiciosWS.turnoDisponibleDTO.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
+    <Content Include="Connected Services\ServiciosWS\PazCitasWA.ServiciosWS.eliminarSedeEspecialidadXSedeResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServiciosWS\PazCitasWA.ServiciosWS.marcarAsignadoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServiciosWS\PazCitasWA.ServiciosWS.marcarNoAsignadoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServiciosWS\PazCitasWA.ServiciosWS.verificarCuentaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
     <None Include="Connected Services\ServiciosWS\RecetaWS.wsdl" />
     <None Include="Connected Services\ServiciosWS\SedeEspecialidadWS.wsdl" />
     <None Include="Connected Services\ServiciosWS\SedeEspecialidadWS.xsd">
@@ -526,6 +539,7 @@
     <Content Include="Content\Fonts\css\v4-shims.min.css" />
     <Content Include="Content\Fonts\css\v5-font-face.css" />
     <Content Include="Content\Fonts\css\v5-font-face.min.css" />
+    <Content Include="Content\LoginModern\login-modern.css" />
     <Content Include="Content\sidebars.css" />
     <Content Include="DetalleCitaPaciente.aspx" />
     <Content Include="DetalleEspecialidadPaciente.aspx" />
@@ -591,6 +605,7 @@
     <Content Include="Scripts\jquery-3.7.1.min.js" />
     <Content Include="Scripts\jquery-3.7.1.slim.js" />
     <Content Include="Scripts\jquery-3.7.1.slim.min.js" />
+    <Content Include="Scripts\LoginModern\login-modern.js" />
     <Content Include="Scripts\PazCitasS\RegistrarLineaMedicamento.js" />
     <Content Include="Scripts\scriptAdmin.js" />
     <Content Include="Scripts\sidebars.js" />
@@ -599,6 +614,13 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AsignarEspecialidades.aspx.cs">
+      <DependentUpon>AsignarEspecialidades.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AsignarEspecialidades.aspx.designer.cs">
+      <DependentUpon>AsignarEspecialidades.aspx</DependentUpon>
+    </Compile>
     <Compile Include="AsignarTurnos.aspx.cs">
       <DependentUpon>AsignarTurnos.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

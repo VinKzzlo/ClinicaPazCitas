@@ -14,6 +14,7 @@ namespace PazCitasWA
         private ConsultorioWSClient wsConsultorio;
         private Estado estado;
         private medico medico;
+        private int idConsPrevio;
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
@@ -51,10 +52,13 @@ namespace PazCitasWA
                     dtpFechaNacimiento.Value = medico.fechaNacimiento.ToString("yyyy-MM-dd");
                     txtEmail.Text = medico.email;
 
-                    // Preseleccionamos sede consultorioy especialidad:
+                    // Preseleccionamos sede consultorio y especialidad:
                     ddlSede.SelectedValue = medico.sede.idSede.ToString();
-                    ddlSede.Enabled = false;
-                    CargarConsultoriosPorMedico(medico.consultorio.idConsultorio);
+                    ddlSede.Enabled = true;
+                    CargarConsultoriosPorSede(medico.sede.idSede);
+                    ddlConsultorio.SelectedValue = medico.sede.idSede.ToString();
+                    ddlConsultorio.Enabled = true;
+                    ViewState["idConsPrevio"] = medico.consultorio.idConsultorio;
                     CargarEspecialidadesPorSede(medico.sede.idSede);
                     ddlEspecialidad.SelectedValue = medico.especialidad.idEspecialidad.ToString();
                     ddlEspecialidad.Enabled = true;
@@ -128,17 +132,22 @@ namespace PazCitasWA
             cuenta.rol = rol.MÉDICO;
             cuenta.rolSpecified = true;
             cuenta.usuario = medico;
+            wsConsultorio = new ConsultorioWSClient();
             try
             {
                 if (estado == Estado.Nuevo)
                 {
                     int idInsertado = wsMedico.insertarMedico(medico);
+                    wsConsultorio.marcarAsignado(medico.consultorio.idConsultorio);
                     cuenta.usuario.idUsuario = idInsertado;
                     wsCuenta.insertarCuenta(cuenta);
                 }
                 else if (estado == Estado.Modificar)
                 {
+                    int idConsPrevio = (int)ViewState["idConsPrevio"];
+                    wsConsultorio.marcarNoAsignado(idConsPrevio);
                     wsMedico.modificarMedico(medico);
+                    wsConsultorio.marcarAsignado(medico.consultorio.idConsultorio);
                 }
             }
             catch (Exception ex)

@@ -15,4 +15,6 @@ import pe.edu.pucp.pazcitas.ubicacion.model.Consultorio;
 public interface ConsultorioDAO extends ICrud<Consultorio>{
     Consultorio obtenerPorId(int idConsultorio);
     ArrayList<Consultorio> listarConsultoriosXSede(int idSede);
+    int marcarAsignado(int idConsultorio);
+    int marcarNoAsignado(int idConsultorio);
 }

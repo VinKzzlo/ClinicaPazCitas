@@ -5,6 +5,7 @@ namespace PazCitasWA
 {
     public partial class PazCitas : System.Web.UI.MasterPage
     {
+        AdministradorWSClient wsAdmin;
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
@@ -18,12 +19,14 @@ namespace PazCitasWA
             try
             {
                 // Verificar si hay un administrador en sesión
-                if (Session["administrador"] != null)
+                if (Session["id_usuario"] != null)
                 {
-                    var administrador = (administrador)Session["administrador"];
-
+                    int idAdmin = (int)Session["id_usuario"];
+                    administrador adminSelect = new administrador();
+                    wsAdmin = new AdministradorWSClient();
+                    adminSelect = wsAdmin.obtenerPorIDAdministrador(idAdmin);
                     // Mostrar nombre completo del administrador
-                    string nombreCompleto = $"{administrador.nombre} {administrador.apellidoPaterno}";
+                    string nombreCompleto = $"{adminSelect.nombre} {adminSelect.apellidoPaterno}";
 
                     // Si el nombre es muy largo, truncarlo
                     if (nombreCompleto.Length > 20)
