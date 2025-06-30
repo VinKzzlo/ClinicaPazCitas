@@ -42,20 +42,41 @@ namespace PazCitasWA
                 admin = (administrador)Session["adminSeleccionado"];
                 if (!IsPostBack)
                 {
-                    txtIDUsuario.Text = admin.idUsuario.ToString();
-                    txtDNI.Text = admin.dni;
-                    txtNombre.Text = admin.nombre;
-                    txtPaterno.Text = admin.apellidoPaterno;
-                    txtMaterno.Text = admin.apellidoMaterno;
-                    if (admin.genero.Equals('M')) rbMasculino.Checked = true;
-                    else rbFemenino.Checked = true;
-                    dtpFechaNacimiento.Value = admin.fechaNacimiento.ToString("yyyy-MM-dd");
-                    txtEmail.Text = admin.email;
 
+                    AsignarValores();
                     txtUsername.Enabled = false;
                     txtPassword.Enabled = false;
                 }
             }
+            else if(accion == "ver")
+            {
+                lblTitulo.Text = "Ver Administrador";
+                admin = (administrador)Session["adminSeleccionado"];
+                AsignarValores();
+                txtDNI.Enabled = false;
+                txtNombre.Enabled = false;
+                txtPaterno.Enabled = false;
+                txtMaterno.Enabled = false;
+                txtEmail.Enabled = false;
+                dtpFechaNacimiento.Disabled = true;
+                rbFemenino.Disabled = true;
+                rbMasculino.Disabled = true;
+                txtUsername.Enabled = false;
+                txtPassword.Enabled = false;
+            }
+        }
+
+        protected void AsignarValores()
+        {
+            txtIDUsuario.Text = admin.idUsuario.ToString();
+            txtDNI.Text = admin.dni;
+            txtNombre.Text = admin.nombre;
+            txtPaterno.Text = admin.apellidoPaterno;
+            txtMaterno.Text = admin.apellidoMaterno;
+            if (admin.genero.Equals('M')) rbMasculino.Checked = true;
+            else rbFemenino.Checked = true;
+            dtpFechaNacimiento.Value = admin.fechaNacimiento.ToString("yyyy-MM-dd");
+            txtEmail.Text = admin.email;
         }
 
         protected void btnRegresar_Click(object sender, EventArgs e)
@@ -93,6 +114,20 @@ namespace PazCitasWA
             {
                 if (estado == Estado.Nuevo)
                 {
+                    var lista = wsAdmin.listarAdministrador();
+
+                    bool dniRepetido = lista.Any(a => a.dni == admin.dni);
+                    bool usernameRepetido = wsCuenta.usernameExiste(txtUsername.Text);
+
+                    if (dniRepetido || usernameRepetido)
+                    {
+                        string mensaje = "Ya existe un administrador con ";
+                        if (dniRepetido) mensaje += "el mismo DNI. ";
+                        if (usernameRepetido) mensaje += "el mismo nombre de usuario.";
+
+                        lanzarMensajedeError(mensaje.Trim());
+                        return; // salir del método
+                    }
                     int idInsertado = wsAdmin.insertarAdministrador(admin);
                     cuenta.usuario.idUsuario = idInsertado;
                     wsCuenta.insertarCuenta(cuenta);
@@ -108,6 +143,17 @@ namespace PazCitasWA
             }
 
             Response.Redirect("ListarAdministradores.aspx");
+        }
+        public void lanzarMensajedeError(String mensaje)
+        {
+            lblMensajeError.Text = mensaje;
+            string script = "mostrarModalError();";
+            ScriptManager.RegisterStartupScript(this, GetType(), "modalError", script, true);
+        }
+        protected void cvGenero_ServerValidate(object source, ServerValidateEventArgs args)
+        {
+            // Verificar si algún radio button está seleccionado
+            args.IsValid = rbMasculino.Checked || rbFemenino.Checked;
         }
     }
 }

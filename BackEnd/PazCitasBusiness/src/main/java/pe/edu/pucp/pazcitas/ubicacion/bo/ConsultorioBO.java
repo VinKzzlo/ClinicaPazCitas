@@ -44,11 +44,19 @@ public class ConsultorioBO {
         return daoConsultorio.listarConsultoriosXSede(idSede);
     }
     
+    public ArrayList<Consultorio> listarXSedeNoAsignados(int idSede){
+        return daoConsultorio.listarConsultoriosXSedeNoAsignados(idSede);
+    }
+    
     public int marcarAsignado(int idConsultorio){
         return daoConsultorio.marcarAsignado(idConsultorio);
     }
     
     public int marcarNoAsignado(int idConsultorio){
         return daoConsultorio.marcarNoAsignado(idConsultorio);
+    }
+    
+    public boolean consultorioExisteEnSede(String nombre, int idSede){
+        return daoConsultorio.verificarExisteEnSede(nombre, idSede) != 0;
     }
 }

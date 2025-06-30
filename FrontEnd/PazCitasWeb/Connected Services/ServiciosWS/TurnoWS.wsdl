@@ -5,36 +5,6 @@
       <xsd:import schemaLocation="http://localhost:8080/PazCitasWeb/TurnoWS?xsd=1" namespace="http://services.pucp.edu.pe" />
     </xsd:schema>
   </types>
-  <message name="modificarTurno">
-    <part name="parameters" element="tns:modificarTurno" />
-  </message>
-  <message name="modificarTurnoResponse">
-    <part name="parameters" element="tns:modificarTurnoResponse" />
-  </message>
-  <message name="listarTurno">
-    <part name="parameters" element="tns:listarTurno" />
-  </message>
-  <message name="listarTurnoResponse">
-    <part name="parameters" element="tns:listarTurnoResponse" />
-  </message>
-  <message name="eliminarTurno">
-    <part name="parameters" element="tns:eliminarTurno" />
-  </message>
-  <message name="eliminarTurnoResponse">
-    <part name="parameters" element="tns:eliminarTurnoResponse" />
-  </message>
-  <message name="insertaTurno">
-    <part name="parameters" element="tns:insertaTurno" />
-  </message>
-  <message name="insertaTurnoResponse">
-    <part name="parameters" element="tns:insertaTurnoResponse" />
-  </message>
-  <message name="listarTurnosSemana">
-    <part name="parameters" element="tns:listarTurnosSemana" />
-  </message>
-  <message name="listarTurnosSemanaResponse">
-    <part name="parameters" element="tns:listarTurnosSemanaResponse" />
-  </message>
   <message name="obtenerTurnosLibres">
     <part name="parameters" element="tns:obtenerTurnosLibres" />
   </message>
@@ -47,27 +17,37 @@
   <message name="obtenerXIdResponse">
     <part name="parameters" element="tns:obtenerXIdResponse" />
   </message>
+  <message name="listarTurnosSemana">
+    <part name="parameters" element="tns:listarTurnosSemana" />
+  </message>
+  <message name="listarTurnosSemanaResponse">
+    <part name="parameters" element="tns:listarTurnosSemanaResponse" />
+  </message>
+  <message name="listarTurno">
+    <part name="parameters" element="tns:listarTurno" />
+  </message>
+  <message name="listarTurnoResponse">
+    <part name="parameters" element="tns:listarTurnoResponse" />
+  </message>
+  <message name="insertaTurno">
+    <part name="parameters" element="tns:insertaTurno" />
+  </message>
+  <message name="insertaTurnoResponse">
+    <part name="parameters" element="tns:insertaTurnoResponse" />
+  </message>
+  <message name="modificarTurno">
+    <part name="parameters" element="tns:modificarTurno" />
+  </message>
+  <message name="modificarTurnoResponse">
+    <part name="parameters" element="tns:modificarTurnoResponse" />
+  </message>
+  <message name="eliminarTurno">
+    <part name="parameters" element="tns:eliminarTurno" />
+  </message>
+  <message name="eliminarTurnoResponse">
+    <part name="parameters" element="tns:eliminarTurnoResponse" />
+  </message>
   <portType name="TurnoWS">
-    <operation name="modificarTurno">
-      <input wsam:Action="http://services.pucp.edu.pe/TurnoWS/modificarTurnoRequest" message="tns:modificarTurno" />
-      <output wsam:Action="http://services.pucp.edu.pe/TurnoWS/modificarTurnoResponse" message="tns:modificarTurnoResponse" />
-    </operation>
-    <operation name="listarTurno">
-      <input wsam:Action="http://services.pucp.edu.pe/TurnoWS/listarTurnoRequest" message="tns:listarTurno" />
-      <output wsam:Action="http://services.pucp.edu.pe/TurnoWS/listarTurnoResponse" message="tns:listarTurnoResponse" />
-    </operation>
-    <operation name="eliminarTurno">
-      <input wsam:Action="http://services.pucp.edu.pe/TurnoWS/eliminarTurnoRequest" message="tns:eliminarTurno" />
-      <output wsam:Action="http://services.pucp.edu.pe/TurnoWS/eliminarTurnoResponse" message="tns:eliminarTurnoResponse" />
-    </operation>
-    <operation name="insertaTurno">
-      <input wsam:Action="http://services.pucp.edu.pe/TurnoWS/insertaTurnoRequest" message="tns:insertaTurno" />
-      <output wsam:Action="http://services.pucp.edu.pe/TurnoWS/insertaTurnoResponse" message="tns:insertaTurnoResponse" />
-    </operation>
-    <operation name="listarTurnosSemana">
-      <input wsam:Action="http://services.pucp.edu.pe/TurnoWS/listarTurnosSemanaRequest" message="tns:listarTurnosSemana" />
-      <output wsam:Action="http://services.pucp.edu.pe/TurnoWS/listarTurnosSemanaResponse" message="tns:listarTurnosSemanaResponse" />
-    </operation>
     <operation name="obtenerTurnosLibres">
       <input wsam:Action="http://services.pucp.edu.pe/TurnoWS/obtenerTurnosLibresRequest" message="tns:obtenerTurnosLibres" />
       <output wsam:Action="http://services.pucp.edu.pe/TurnoWS/obtenerTurnosLibresResponse" message="tns:obtenerTurnosLibresResponse" />
@@ -76,10 +56,30 @@
       <input wsam:Action="http://services.pucp.edu.pe/TurnoWS/obtenerXIdRequest" message="tns:obtenerXId" />
       <output wsam:Action="http://services.pucp.edu.pe/TurnoWS/obtenerXIdResponse" message="tns:obtenerXIdResponse" />
     </operation>
+    <operation name="listarTurnosSemana">
+      <input wsam:Action="http://services.pucp.edu.pe/TurnoWS/listarTurnosSemanaRequest" message="tns:listarTurnosSemana" />
+      <output wsam:Action="http://services.pucp.edu.pe/TurnoWS/listarTurnosSemanaResponse" message="tns:listarTurnosSemanaResponse" />
+    </operation>
+    <operation name="listarTurno">
+      <input wsam:Action="http://services.pucp.edu.pe/TurnoWS/listarTurnoRequest" message="tns:listarTurno" />
+      <output wsam:Action="http://services.pucp.edu.pe/TurnoWS/listarTurnoResponse" message="tns:listarTurnoResponse" />
+    </operation>
+    <operation name="insertaTurno">
+      <input wsam:Action="http://services.pucp.edu.pe/TurnoWS/insertaTurnoRequest" message="tns:insertaTurno" />
+      <output wsam:Action="http://services.pucp.edu.pe/TurnoWS/insertaTurnoResponse" message="tns:insertaTurnoResponse" />
+    </operation>
+    <operation name="modificarTurno">
+      <input wsam:Action="http://services.pucp.edu.pe/TurnoWS/modificarTurnoRequest" message="tns:modificarTurno" />
+      <output wsam:Action="http://services.pucp.edu.pe/TurnoWS/modificarTurnoResponse" message="tns:modificarTurnoResponse" />
+    </operation>
+    <operation name="eliminarTurno">
+      <input wsam:Action="http://services.pucp.edu.pe/TurnoWS/eliminarTurnoRequest" message="tns:eliminarTurno" />
+      <output wsam:Action="http://services.pucp.edu.pe/TurnoWS/eliminarTurnoResponse" message="tns:eliminarTurnoResponse" />
+    </operation>
   </portType>
   <binding name="TurnoWSPortBinding" type="tns:TurnoWS">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
-    <operation name="modificarTurno">
+    <operation name="obtenerTurnosLibres">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />
@@ -88,25 +88,7 @@
         <soap:body use="literal" />
       </output>
     </operation>
-    <operation name="listarTurno">
-      <soap:operation soapAction="" />
-      <input>
-        <soap:body use="literal" />
-      </input>
-      <output>
-        <soap:body use="literal" />
-      </output>
-    </operation>
-    <operation name="eliminarTurno">
-      <soap:operation soapAction="" />
-      <input>
-        <soap:body use="literal" />
-      </input>
-      <output>
-        <soap:body use="literal" />
-      </output>
-    </operation>
-    <operation name="insertaTurno">
+    <operation name="obtenerXId">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />
@@ -124,7 +106,7 @@
         <soap:body use="literal" />
       </output>
     </operation>
-    <operation name="obtenerTurnosLibres">
+    <operation name="listarTurno">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />
@@ -133,7 +115,25 @@
         <soap:body use="literal" />
       </output>
     </operation>
-    <operation name="obtenerXId">
+    <operation name="insertaTurno">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="modificarTurno">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="eliminarTurno">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />

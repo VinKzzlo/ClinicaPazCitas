@@ -1,9 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xs:schema xmlns:tns="http://services.pucp.edu.pe" targetNamespace="http://services.pucp.edu.pe" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="consultorioExiste" type="tns:consultorioExiste" />
+  <xs:element name="consultorioExisteResponse" type="tns:consultorioExisteResponse" />
   <xs:element name="eliminarConsultorio" type="tns:eliminarConsultorio" />
   <xs:element name="eliminarConsultorioResponse" type="tns:eliminarConsultorioResponse" />
   <xs:element name="insertarConsultorio" type="tns:insertarConsultorio" />
   <xs:element name="insertarConsultorioResponse" type="tns:insertarConsultorioResponse" />
+  <xs:element name="listarConsulPorSedeNoAsig" type="tns:listarConsulPorSedeNoAsig" />
+  <xs:element name="listarConsulPorSedeNoAsigResponse" type="tns:listarConsulPorSedeNoAsigResponse" />
   <xs:element name="listarConsultPorSede" type="tns:listarConsultPorSede" />
   <xs:element name="listarConsultPorSedeResponse" type="tns:listarConsultPorSedeResponse" />
   <xs:element name="listarConsultorio" type="tns:listarConsultorio" />
@@ -185,6 +189,17 @@
       <xs:element name="return" type="xs:int" />
     </xs:sequence>
   </xs:complexType>
+  <xs:complexType name="consultorioExiste">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="nombre" type="xs:string" />
+      <xs:element name="idSede" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="consultorioExisteResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
   <xs:complexType name="listarConsultorio">
     <xs:sequence />
   </xs:complexType>
@@ -203,6 +218,16 @@
       <xs:element name="return" type="xs:int" />
     </xs:sequence>
   </xs:complexType>
+  <xs:complexType name="listarConsulPorSedeNoAsig">
+    <xs:sequence>
+      <xs:element name="idSede" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="listarConsulPorSedeNoAsigResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:consultorio" />
+    </xs:sequence>
+  </xs:complexType>
   <xs:complexType name="eliminarConsultorio">
     <xs:sequence>
       <xs:element name="idConsultorio" type="xs:int" />
@@ -213,16 +238,6 @@
       <xs:element name="return" type="xs:int" />
     </xs:sequence>
   </xs:complexType>
-  <xs:complexType name="listarConsultPorSede">
-    <xs:sequence>
-      <xs:element name="idSede" type="xs:int" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:complexType name="listarConsultPorSedeResponse">
-    <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:consultorio" />
-    </xs:sequence>
-  </xs:complexType>
   <xs:complexType name="obtenerConsultorioPorId">
     <xs:sequence>
       <xs:element name="idConsultorio" type="xs:int" />
@@ -231,6 +246,16 @@
   <xs:complexType name="obtenerConsultorioPorIdResponse">
     <xs:sequence>
       <xs:element minOccurs="0" name="return" type="tns:consultorio" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="listarConsultPorSede">
+    <xs:sequence>
+      <xs:element name="idSede" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="listarConsultPorSedeResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:consultorio" />
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="marcarAsignado">

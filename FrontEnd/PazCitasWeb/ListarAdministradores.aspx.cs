@@ -57,7 +57,10 @@ namespace PazCitasWA
 
         protected void btnVer_Click(object sender, EventArgs e)
         {
-
+            int idAdmin = Int32.Parse(((LinkButton)sender).CommandArgument);
+            administrador adminSeleccionado = administradores.SingleOrDefault(x => x.idUsuario == idAdmin);
+            Session["adminSeleccionado"] = adminSeleccionado;
+            Response.Redirect("RegistrarAdministrador.aspx?accion=ver");
         }
 
         protected void btnRegistrar_Click(object sender, EventArgs e)

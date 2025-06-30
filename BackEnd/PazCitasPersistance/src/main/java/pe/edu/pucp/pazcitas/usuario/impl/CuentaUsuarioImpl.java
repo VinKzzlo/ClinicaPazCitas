@@ -119,5 +119,23 @@ public class CuentaUsuarioImpl implements CuentaUsuarioDAO{
         }
         return resultado;
     }
+
+    @Override
+    public int verificarUsernameExiste(String username) {
+        int resultado=0;
+        Map<Integer, Object> parametrosEntrada = new HashMap<>();
+        parametrosEntrada.put(1, username);
+        rs = DBManager.getInstance().ejecutarProcedimientoLectura("VERIFICAR_USERNAME_EXISTE", parametrosEntrada);
+        try{
+            if(rs.next()){
+                resultado = rs.getInt("existe");
+            }
+        }catch(SQLException ex){
+            System.out.println("ERROR: "+ex.getMessage());
+        }finally{
+            DBManager.getInstance().cerrarConexion();
+        }
+        return resultado;
+    }
     
 }

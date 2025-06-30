@@ -43,7 +43,7 @@ public class ConsultorioImpl implements ConsultorioDAO {
 
     @Override
     public int eliminar(int idConsultorio) {
-        Map<Integer,Object> parametrosEntrada = new HashMap<>();
+        Map<Integer, Object> parametrosEntrada = new HashMap<>();
         parametrosEntrada.put(1, idConsultorio);
         int resultado = DBManager.getInstance().ejecutarProcedimiento("ELIMINAR_CONSULTORIO", parametrosEntrada, null);
         System.out.println("Se ha realizado la eliminacion del consultorio");
@@ -53,7 +53,7 @@ public class ConsultorioImpl implements ConsultorioDAO {
     @Override
     public int modificar(Consultorio consultorio) {
         Map<Integer, Object> parametrosEntrada = new HashMap<>();
-        
+
         parametrosEntrada.put(1, consultorio.getIdConsultorio());
 
         parametrosEntrada.put(2, consultorio.getNombreConsultorio());
@@ -78,8 +78,11 @@ public class ConsultorioImpl implements ConsultorioDAO {
                 e.setNombreConsultorio(rs.getString("nombre_consultorio"));
                 e.setPiso(rs.getInt("piso"));
                 e.setCapacidad(rs.getInt("capacidad"));
-                if(rs.getInt("asignado") == 1)e.setAsignado(true);
-                else e.setAsignado(false);
+                if (rs.getInt("asignado") == 1) {
+                    e.setAsignado(true);
+                } else {
+                    e.setAsignado(false);
+                }
                 e.setActivo(true);
 
                 Sede sede = new Sede();
@@ -97,8 +100,7 @@ public class ConsultorioImpl implements ConsultorioDAO {
         return consultorios;
     }
 
-    
-    @Override  
+    @Override
     public Consultorio obtenerPorId(int idConsultorio) {
         Consultorio consultorio = null;
         Map<Integer, Object> parametrosEntrada = new HashMap<>();
@@ -112,20 +114,25 @@ public class ConsultorioImpl implements ConsultorioDAO {
                 consultorio.setNombreConsultorio(rs.getString("nombre_consultorio"));
                 consultorio.setPiso(rs.getInt("piso"));
                 consultorio.setCapacidad(rs.getInt("capacidad"));
-                
-                if(rs.getInt("asignado") == 1)consultorio.setAsignado(true);
-                else consultorio.setAsignado(false);
+
+                if (rs.getInt("asignado") == 1) {
+                    consultorio.setAsignado(true);
+                } else {
+                    consultorio.setAsignado(false);
+                }
                 consultorio.setActivo(true);
-                
-                if(rs.getInt("activo") == 1)consultorio.setActivo(true);
-                else consultorio.setActivo(false);
+
+                if (rs.getInt("activo") == 1) {
+                    consultorio.setActivo(true);
+                } else {
+                    consultorio.setActivo(false);
+                }
 
                 Sede sede = new Sede();
                 sede.setIdSede(rs.getInt("fid_sede"));
                 sede.setNombre(rs.getString("nombre"));
                 sede.setDireccion(rs.getString("direccion"));
                 consultorio.setSede(sede);
-                
 
                 // Si quieres, puedes también recuperar la sede asociada con otro DAO
                 // int idSede = rs.getInt("fid_sede");
@@ -147,16 +154,55 @@ public class ConsultorioImpl implements ConsultorioDAO {
         System.out.println("Lectura de consultorios por sede...");
         try {
             while (rs.next()) {
-                if(consultorios == null) consultorios = new ArrayList<>();
+                if (consultorios == null) {
+                    consultorios = new ArrayList<>();
+                }
                 Consultorio c = new Consultorio();
                 c.setIdConsultorio(rs.getInt("id_consultorio"));
                 c.setNombreConsultorio(rs.getString("nombre_consultorio"));
                 c.setPiso(rs.getInt("piso"));
                 c.setCapacidad(rs.getInt("capacidad"));
-                if(rs.getInt("asignado") == 1)c.setAsignado(true);
-                else c.setAsignado(false);
+                if (rs.getInt("asignado") == 1) {
+                    c.setAsignado(true);
+                } else {
+                    c.setAsignado(false);
+                }
                 c.setActivo(true);
-                
+
+                consultorios.add(c);
+            }
+        } catch (SQLException ex) {
+            System.out.println("ERROR: " + ex.getMessage());
+        } finally {
+            DBManager.getInstance().cerrarConexion();
+        }
+        return consultorios;
+    }
+
+    @Override
+    public ArrayList<Consultorio> listarConsultoriosXSedeNoAsignados(int idSede) {
+        ArrayList<Consultorio> consultorios = new ArrayList<>();
+        Map<Integer, Object> parametrosEntrada = new HashMap<>();
+        parametrosEntrada.put(1, idSede);
+        rs = DBManager.getInstance().ejecutarProcedimientoLectura("LISTAR_CONSULTORIOS_X_SEDE_NO_ASIGNADOS", parametrosEntrada);
+        System.out.println("Lectura de consultorios por sede...");
+        try {
+            while (rs.next()) {
+                if (consultorios == null) {
+                    consultorios = new ArrayList<>();
+                }
+                Consultorio c = new Consultorio();
+                c.setIdConsultorio(rs.getInt("id_consultorio"));
+                c.setNombreConsultorio(rs.getString("nombre_consultorio"));
+                c.setPiso(rs.getInt("piso"));
+                c.setCapacidad(rs.getInt("capacidad"));
+                if (rs.getInt("asignado") == 1) {
+                    c.setAsignado(true);
+                } else {
+                    c.setAsignado(false);
+                }
+                c.setActivo(true);
+
                 consultorios.add(c);
             }
         } catch (SQLException ex) {
@@ -169,7 +215,7 @@ public class ConsultorioImpl implements ConsultorioDAO {
 
     @Override
     public int marcarAsignado(int idConsultorio) {
-        Map<Integer,Object> parametrosEntrada = new HashMap<>();
+        Map<Integer, Object> parametrosEntrada = new HashMap<>();
         parametrosEntrada.put(1, idConsultorio);
         int resultado = DBManager.getInstance().ejecutarProcedimiento("MARCAR_CONSULTORIO_ASIGNADO", parametrosEntrada, null);
         System.out.println("Se ha realizado la eliminacion del consultorio");
@@ -178,11 +224,30 @@ public class ConsultorioImpl implements ConsultorioDAO {
 
     @Override
     public int marcarNoAsignado(int idConsultorio) {
-        Map<Integer,Object> parametrosEntrada = new HashMap<>();
+        Map<Integer, Object> parametrosEntrada = new HashMap<>();
         parametrosEntrada.put(1, idConsultorio);
         int resultado = DBManager.getInstance().ejecutarProcedimiento("MARCAR_CONSULTORIO_NO_ASIGNADO", parametrosEntrada, null);
         System.out.println("Se ha realizado la eliminacion del consultorio");
         return resultado;
     }
-    
+
+    @Override
+    public int verificarExisteEnSede(String nombreConsultorio, int idSede) {
+        int resultado = 0;
+        Map<Integer, Object> parametrosEntrada = new HashMap<>();
+        parametrosEntrada.put(1, nombreConsultorio);
+        parametrosEntrada.put(2, idSede);
+        rs = DBManager.getInstance().ejecutarProcedimientoLectura("VERIFICAR_CONSULTORIO_EXISTE_EN_SEDE", parametrosEntrada);
+        try{
+            if(rs.next()){
+                resultado = rs.getInt("existe");
+            }
+        }catch(SQLException ex){
+            System.out.println("ERROR: "+ex.getMessage());
+        }finally{
+            DBManager.getInstance().cerrarConexion();
+        }
+        return resultado;
+    }
+
 }

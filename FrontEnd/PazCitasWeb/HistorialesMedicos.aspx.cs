@@ -37,10 +37,5 @@ namespace PazCitasWA
             gvHistoriales.PageIndex = e.NewPageIndex;
             gvHistoriales.DataBind();
         }
-
-        protected void btnVer_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }

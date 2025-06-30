@@ -3,7 +3,6 @@
     Nuestras Especialidades
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="cph_Scripts" runat="server">
-    <%-- Puedes agregar scripts específicos para esta página aquí si es necesario --%>
     <style>
         .specialty-header {
             margin-bottom: 2.5rem; /* Espacio debajo del título principal */
@@ -57,10 +56,8 @@
         }
 
         .specialty-icon {
-            max-width: 45px; /* Tamaño máximo del icono dentro del círculo */
+            max-width: 45px;
             max-height: 45px;
-            /* Para colorear un PNG/SVG genérico a azul (si no son ya azules): */
-            /* filter: invert(38%) sepia(99%) saturate(2555%) hue-rotate(206deg) brightness(99%) contrast(101%); */
         }
 
         .specialty-card .card-title {
@@ -70,7 +67,6 @@
             margin-top: 0.5rem;
         }
 
-        /* Opcional: Estrella decorativa como en la imagen */
         .decorative-star {
             position: absolute;
             top: 20px; /* Ajusta según necesites */

@@ -1,5 +1,7 @@
 ﻿using PazCitasWA.ServiciosWS;
 using System;
+using System.Linq;
+using System.Web.UI;
 using System.Web.UI.WebControls;
 
 namespace PazCitasWA
@@ -61,6 +63,16 @@ namespace PazCitasWA
             {
                 if (estado == Estado.Nuevo)
                 {
+
+                    bool nombreRepetidoEnSede = wsConsultorio.consultorioExiste(consultorio.nombreConsultorio, sede.idSede);
+
+                    if (nombreRepetidoEnSede)
+                    {
+                        string mensaje = "Ya existe un consultorio con ese nombre en la sede elegida";
+
+                        lanzarMensajedeError(mensaje.Trim());
+                        return; // salir del método
+                    }
                     wsConsultorio.insertarConsultorio(consultorio);
                 }
                 else if (estado == Estado.Modificar)
@@ -69,12 +81,20 @@ namespace PazCitasWA
                 }
             }
             catch (Exception ex)
-            { //lanzarMensajedeError(ex.Message); return;
+            {
+                lanzarMensajedeError(ex.Message);
+                return;
             }
 
             Response.Redirect("ListarConsultorios.aspx");
         }
 
+        public void lanzarMensajedeError(String mensaje)
+        {
+            lblMensajeError.Text = mensaje;
+            string script = "mostrarModalError();";
+            ScriptManager.RegisterStartupScript(this, GetType(), "modalError", script, true);
+        }
         protected void btnRegresar_Click(object sender, EventArgs e)
         {
             Response.Redirect("ListarConsultorios.aspx");

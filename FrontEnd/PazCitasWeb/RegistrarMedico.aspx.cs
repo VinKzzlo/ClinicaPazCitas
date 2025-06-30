@@ -2,6 +2,7 @@
 using System;
 using System.ComponentModel;
 using System.Linq;
+using System.Web.UI;
 using System.Web.UI.WebControls;
 
 namespace PazCitasWA
@@ -15,6 +16,7 @@ namespace PazCitasWA
         private Estado estado;
         private medico medico;
         private int idConsPrevio;
+        private CuentaUsuarioWSClient wsCuenta;
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
@@ -26,6 +28,9 @@ namespace PazCitasWA
 
                 dtpFechaNacimiento.Attributes["min"] = minDate.ToString("yyyy-MM-dd");
                 dtpFechaNacimiento.Attributes["max"] = maxDate.ToString("yyyy-MM-dd");
+                // Establecer el valor máximo de la fecha como la fecha actual
+                rvFechaNacimiento.MaximumValue = DateTime.Today.ToString("yyyy-MM-dd");
+
             }
             string accion = Request.QueryString["accion"];
             if (accion == null)
@@ -41,33 +46,67 @@ namespace PazCitasWA
                 medico = (medico)Session["medicoSeleccionado"];
                 if (!IsPostBack)
                 {
-                    txtIDUsuario.Text = medico.idUsuario.ToString();
-                    txtDNI.Text = medico.dni;
-                    txtCMP.Text = medico.codigoMedico;
-                    txtNombre.Text = medico.nombre;
-                    txtPaterno.Text = medico.apellidoPaterno;
-                    txtMaterno.Text = medico.apellidoMaterno;
-                    if (medico.genero.Equals('M')) rbMasculino.Checked = true;
-                    else rbFemenino.Checked = true;
-                    dtpFechaNacimiento.Value = medico.fechaNacimiento.ToString("yyyy-MM-dd");
-                    txtEmail.Text = medico.email;
-
-                    // Preseleccionamos sede consultorio y especialidad:
-                    ddlSede.SelectedValue = medico.sede.idSede.ToString();
-                    ddlSede.Enabled = true;
-                    CargarConsultoriosPorSede(medico.sede.idSede);
-                    ddlConsultorio.SelectedValue = medico.sede.idSede.ToString();
-                    ddlConsultorio.Enabled = true;
-                    ViewState["idConsPrevio"] = medico.consultorio.idConsultorio;
-                    CargarEspecialidadesPorSede(medico.sede.idSede);
-                    ddlEspecialidad.SelectedValue = medico.especialidad.idEspecialidad.ToString();
-                    ddlEspecialidad.Enabled = true;
+                    AsignarValores();
+                    rfvPassword.Enabled = false;
+                    rfvUsername.Enabled = false;
                     txtUsername.Enabled = false;
                     txtPassword.Enabled = false;
-                    
                 }
             }
+            else if (accion == "ver")
+            {
+                lblTitulo.Text = "Ver Médico";
+                medico = (medico)Session["medicoSeleccionado"];
+                AsignarValores();
+                rfvPassword.Enabled = false;
+                rfvUsername.Enabled = false;
+                txtDNI.Enabled = false;
+                txtCMP.Enabled = false;
+                txtNombre.Enabled = false;
+                txtPaterno.Enabled = false;
+                txtMaterno.Enabled = false;
+                txtEmail.Enabled = false;
+                dtpFechaNacimiento.Disabled = true;
+                rbFemenino.Disabled = true;
+                rbMasculino.Disabled = true;
+                ddlConsultorio.Enabled = false;
+                ddlSede.Enabled = false;
+                ddlEspecialidad.Enabled = false;
+                txtUsername.Enabled = false;
+                txtPassword.Enabled = false;
+            }
 
+        }
+
+        protected void AsignarValores()
+        {
+            txtIDUsuario.Text = medico.idUsuario.ToString();
+            txtDNI.Text = medico.dni;
+            txtCMP.Text = medico.codigoMedico;
+            txtNombre.Text = medico.nombre;
+            txtPaterno.Text = medico.apellidoPaterno;
+            txtMaterno.Text = medico.apellidoMaterno;
+            if (medico.genero.Equals('M')) rbMasculino.Checked = true;
+            else rbFemenino.Checked = true;
+            dtpFechaNacimiento.Value = medico.fechaNacimiento.ToString("yyyy-MM-dd");
+            txtEmail.Text = medico.email;
+
+            // Preseleccionamos sede consultorio y especialidad:
+            ddlSede.SelectedValue = medico.sede.idSede.ToString();
+            ddlSede.Enabled = true;
+
+            CargarConsultoriosPorSede(medico.sede.idSede);
+            ViewState["idConsPrevio"] = medico.consultorio.idConsultorio;
+
+            ddlConsultorio.Items.Add(new ListItem(medico.consultorio.nombreConsultorio,
+                medico.consultorio.idConsultorio.ToString()));
+            ddlConsultorio.SelectedValue = medico.consultorio.idConsultorio.ToString();
+            ddlConsultorio.Enabled = true;
+
+            CargarEspecialidadesPorSede(medico.sede.idSede);
+            ddlEspecialidad.SelectedValue = medico.especialidad.idEspecialidad.ToString();
+
+            ddlEspecialidad.Enabled = true;
         }
 
         private void LoadDropDowns()
@@ -125,7 +164,7 @@ namespace PazCitasWA
             medico.sede = objSede;
             medico.especialidad = objEspecialidad;
             medico.consultorio = objConsultorio;
-            CuentaUsuarioWSClient wsCuenta = new CuentaUsuarioWSClient();
+            wsCuenta = new CuentaUsuarioWSClient();
             cuentaUsuario cuenta = new cuentaUsuario();
             cuenta.username = txtUsername.Text;
             cuenta.password = txtPassword.Text;
@@ -137,10 +176,27 @@ namespace PazCitasWA
             {
                 if (estado == Estado.Nuevo)
                 {
+                    var lista = wsMedico.listarMedico();
+
+                    bool dniRepetido = lista.Any(m => m.dni == medico.dni);
+                    bool cmpRepetido = lista.Any(m => m.codigoMedico == medico.codigoMedico);
+                    bool usernameRepetido = wsCuenta.usernameExiste(txtUsername.Text);
+
+                    if (dniRepetido || cmpRepetido || usernameRepetido)
+                    {
+                        string mensaje = "Ya existe un médico con ";
+                        if (dniRepetido) mensaje += "el mismo DNI. ";
+                        if (cmpRepetido) mensaje += "el mismo CMP. ";
+                        if (usernameRepetido) mensaje += "el mismo nombre de usuario.";
+
+                        lanzarMensajedeError(mensaje.Trim());
+                        return; // salir del método
+                    }
                     int idInsertado = wsMedico.insertarMedico(medico);
                     wsConsultorio.marcarAsignado(medico.consultorio.idConsultorio);
                     cuenta.usuario.idUsuario = idInsertado;
                     wsCuenta.insertarCuenta(cuenta);
+                    Response.Redirect($"RegistrarTurnosMedico.aspx?idMedico={idInsertado}");
                 }
                 else if (estado == Estado.Modificar)
                 {
@@ -148,14 +204,22 @@ namespace PazCitasWA
                     wsConsultorio.marcarNoAsignado(idConsPrevio);
                     wsMedico.modificarMedico(medico);
                     wsConsultorio.marcarAsignado(medico.consultorio.idConsultorio);
+                    Response.Redirect("ListarMedicos.aspx");
                 }
             }
             catch (Exception ex)
             {
-                throw;
+                lanzarMensajedeError(ex.Message);
+                return;
             }
 
-            Response.Redirect("ListarMedicos.aspx");
+        }
+
+        public void lanzarMensajedeError(String mensaje)
+        {
+            lblMensajeError.Text = mensaje;
+            string script = "mostrarModalError();";
+            ScriptManager.RegisterStartupScript(this, GetType(), "modalError", script, true);
         }
 
         protected void ddlSede_SelectedIndexChanged(object sender, EventArgs e)
@@ -186,7 +250,7 @@ namespace PazCitasWA
             //Si no tiene especialidades
             especialidad[] listaEspecialidades = wsEspecialidad.listarXSede(idSede);
 
-            if(listaEspecialidades == null)
+            if (listaEspecialidades == null)
             {
                 ddlEspecialidad.Items.Clear();
                 ddlEspecialidad.Items.Add(new ListItem("-- Esta sede no tiene Espe....--", ""));
@@ -208,7 +272,7 @@ namespace PazCitasWA
             wsConsultorio = new ConsultorioWSClient();
 
             //Si no tiene especialidades
-            consultorio[] listaConsultorios = wsConsultorio.listarConsultPorSede(idSede);
+            consultorio[] listaConsultorios = wsConsultorio.listarConsulPorSedeNoAsig(idSede);
 
             if (listaConsultorios == null)
             {
@@ -220,16 +284,7 @@ namespace PazCitasWA
             {
                 ddlConsultorio.DataSource = listaConsultorios;
 
-                // Crear una lista temporal que contenga el nombre del consultorio y su estado de "asignado"
-                var listaConsultoriosConAsignado = listaConsultorios.Select(c => new
-                {
-                    idConsultorio = c.idConsultorio,
-                    displayText = $"{c.nombreConsultorio} - {(c.asignado ? "Asignado" : "No Asignado")}"
-                }).ToList();
-
-                // Configurar los campos que se mostrarán en el dropdown
-                ddlConsultorio.DataSource = listaConsultoriosConAsignado;
-                ddlConsultorio.DataTextField = "displayText";   // Campo combinado que muestra nombre y estado
+                ddlConsultorio.DataTextField = "nombreConsultorio";
                 ddlConsultorio.DataValueField = "idConsultorio"; // El valor asociado será el idConsultorio
                 ddlConsultorio.DataBind();
                 ddlConsultorio.Enabled = true;
@@ -237,34 +292,10 @@ namespace PazCitasWA
 
         }
 
-        private void CargarConsultoriosPorMedico(int idMedico)
+        protected void cvGenero_ServerValidate(object source, ServerValidateEventArgs args)
         {
-            wsConsultorio = new ConsultorioWSClient();
-            
-            wsMedico = new MedicoWSClient();
-            medico = (medico)Session["medicoSeleccionado"];
-            //Si no tiene especialidades
-            consultorio consultorio = medico.consultorio;
-            BindingList<consultorio> consultoriosLoad = new BindingList<consultorio>();
-            consultoriosLoad.Add(consultorio);
-
-            if (consultoriosLoad == null)
-            {
-                ddlConsultorio.Items.Clear();
-                ddlConsultorio.Items.Add(new ListItem("-- Esta sede no tiene Consultorios --", ""));
-                ddlConsultorio.Enabled = false;
-            }
-            else
-            {
-                ddlConsultorio.DataSource = consultoriosLoad;
-                ddlConsultorio.DataTextField = "nombreConsultorio";
-                ddlConsultorio.DataValueField = "idConsultorio";
-                ddlConsultorio.DataBind();
-                ddlConsultorio.Enabled = false;
-            }
-
+            // Verificar si algún radio button está seleccionado
+            args.IsValid = rbMasculino.Checked || rbFemenino.Checked;
         }
-
-
     }
 }

@@ -5,23 +5,29 @@
       <xsd:import schemaLocation="http://localhost:8080/PazCitasWeb/ConsultorioWS?xsd=1" namespace="http://services.pucp.edu.pe" />
     </xsd:schema>
   </types>
-  <message name="marcarAsignado">
-    <part name="parameters" element="tns:marcarAsignado" />
+  <message name="listarConsulPorSedeNoAsig">
+    <part name="parameters" element="tns:listarConsulPorSedeNoAsig" />
   </message>
-  <message name="marcarAsignadoResponse">
-    <part name="parameters" element="tns:marcarAsignadoResponse" />
+  <message name="listarConsulPorSedeNoAsigResponse">
+    <part name="parameters" element="tns:listarConsulPorSedeNoAsigResponse" />
   </message>
-  <message name="marcarNoAsignado">
-    <part name="parameters" element="tns:marcarNoAsignado" />
+  <message name="obtenerConsultorioPorId">
+    <part name="parameters" element="tns:obtenerConsultorioPorId" />
   </message>
-  <message name="marcarNoAsignadoResponse">
-    <part name="parameters" element="tns:marcarNoAsignadoResponse" />
+  <message name="obtenerConsultorioPorIdResponse">
+    <part name="parameters" element="tns:obtenerConsultorioPorIdResponse" />
   </message>
-  <message name="listarConsultorio">
-    <part name="parameters" element="tns:listarConsultorio" />
+  <message name="insertarConsultorio">
+    <part name="parameters" element="tns:insertarConsultorio" />
   </message>
-  <message name="listarConsultorioResponse">
-    <part name="parameters" element="tns:listarConsultorioResponse" />
+  <message name="insertarConsultorioResponse">
+    <part name="parameters" element="tns:insertarConsultorioResponse" />
+  </message>
+  <message name="modificarConsultorio">
+    <part name="parameters" element="tns:modificarConsultorio" />
+  </message>
+  <message name="modificarConsultorioResponse">
+    <part name="parameters" element="tns:modificarConsultorioResponse" />
   </message>
   <message name="listarConsultPorSede">
     <part name="parameters" element="tns:listarConsultPorSede" />
@@ -35,36 +41,46 @@
   <message name="eliminarConsultorioResponse">
     <part name="parameters" element="tns:eliminarConsultorioResponse" />
   </message>
-  <message name="insertarConsultorio">
-    <part name="parameters" element="tns:insertarConsultorio" />
+  <message name="marcarAsignado">
+    <part name="parameters" element="tns:marcarAsignado" />
   </message>
-  <message name="insertarConsultorioResponse">
-    <part name="parameters" element="tns:insertarConsultorioResponse" />
+  <message name="marcarAsignadoResponse">
+    <part name="parameters" element="tns:marcarAsignadoResponse" />
   </message>
-  <message name="obtenerConsultorioPorId">
-    <part name="parameters" element="tns:obtenerConsultorioPorId" />
+  <message name="listarConsultorio">
+    <part name="parameters" element="tns:listarConsultorio" />
   </message>
-  <message name="obtenerConsultorioPorIdResponse">
-    <part name="parameters" element="tns:obtenerConsultorioPorIdResponse" />
+  <message name="listarConsultorioResponse">
+    <part name="parameters" element="tns:listarConsultorioResponse" />
   </message>
-  <message name="modificarConsultorio">
-    <part name="parameters" element="tns:modificarConsultorio" />
+  <message name="marcarNoAsignado">
+    <part name="parameters" element="tns:marcarNoAsignado" />
   </message>
-  <message name="modificarConsultorioResponse">
-    <part name="parameters" element="tns:modificarConsultorioResponse" />
+  <message name="marcarNoAsignadoResponse">
+    <part name="parameters" element="tns:marcarNoAsignadoResponse" />
+  </message>
+  <message name="consultorioExiste">
+    <part name="parameters" element="tns:consultorioExiste" />
+  </message>
+  <message name="consultorioExisteResponse">
+    <part name="parameters" element="tns:consultorioExisteResponse" />
   </message>
   <portType name="ConsultorioWS">
-    <operation name="marcarAsignado">
-      <input wsam:Action="http://services.pucp.edu.pe/ConsultorioWS/marcarAsignadoRequest" message="tns:marcarAsignado" />
-      <output wsam:Action="http://services.pucp.edu.pe/ConsultorioWS/marcarAsignadoResponse" message="tns:marcarAsignadoResponse" />
+    <operation name="listarConsulPorSedeNoAsig">
+      <input wsam:Action="http://services.pucp.edu.pe/ConsultorioWS/listarConsulPorSedeNoAsigRequest" message="tns:listarConsulPorSedeNoAsig" />
+      <output wsam:Action="http://services.pucp.edu.pe/ConsultorioWS/listarConsulPorSedeNoAsigResponse" message="tns:listarConsulPorSedeNoAsigResponse" />
     </operation>
-    <operation name="marcarNoAsignado">
-      <input wsam:Action="http://services.pucp.edu.pe/ConsultorioWS/marcarNoAsignadoRequest" message="tns:marcarNoAsignado" />
-      <output wsam:Action="http://services.pucp.edu.pe/ConsultorioWS/marcarNoAsignadoResponse" message="tns:marcarNoAsignadoResponse" />
+    <operation name="obtenerConsultorioPorId">
+      <input wsam:Action="http://services.pucp.edu.pe/ConsultorioWS/obtenerConsultorioPorIdRequest" message="tns:obtenerConsultorioPorId" />
+      <output wsam:Action="http://services.pucp.edu.pe/ConsultorioWS/obtenerConsultorioPorIdResponse" message="tns:obtenerConsultorioPorIdResponse" />
     </operation>
-    <operation name="listarConsultorio">
-      <input wsam:Action="http://services.pucp.edu.pe/ConsultorioWS/listarConsultorioRequest" message="tns:listarConsultorio" />
-      <output wsam:Action="http://services.pucp.edu.pe/ConsultorioWS/listarConsultorioResponse" message="tns:listarConsultorioResponse" />
+    <operation name="insertarConsultorio">
+      <input wsam:Action="http://services.pucp.edu.pe/ConsultorioWS/insertarConsultorioRequest" message="tns:insertarConsultorio" />
+      <output wsam:Action="http://services.pucp.edu.pe/ConsultorioWS/insertarConsultorioResponse" message="tns:insertarConsultorioResponse" />
+    </operation>
+    <operation name="modificarConsultorio">
+      <input wsam:Action="http://services.pucp.edu.pe/ConsultorioWS/modificarConsultorioRequest" message="tns:modificarConsultorio" />
+      <output wsam:Action="http://services.pucp.edu.pe/ConsultorioWS/modificarConsultorioResponse" message="tns:modificarConsultorioResponse" />
     </operation>
     <operation name="listarConsultPorSede">
       <input wsam:Action="http://services.pucp.edu.pe/ConsultorioWS/listarConsultPorSedeRequest" message="tns:listarConsultPorSede" />
@@ -74,22 +90,26 @@
       <input wsam:Action="http://services.pucp.edu.pe/ConsultorioWS/eliminarConsultorioRequest" message="tns:eliminarConsultorio" />
       <output wsam:Action="http://services.pucp.edu.pe/ConsultorioWS/eliminarConsultorioResponse" message="tns:eliminarConsultorioResponse" />
     </operation>
-    <operation name="insertarConsultorio">
-      <input wsam:Action="http://services.pucp.edu.pe/ConsultorioWS/insertarConsultorioRequest" message="tns:insertarConsultorio" />
-      <output wsam:Action="http://services.pucp.edu.pe/ConsultorioWS/insertarConsultorioResponse" message="tns:insertarConsultorioResponse" />
+    <operation name="marcarAsignado">
+      <input wsam:Action="http://services.pucp.edu.pe/ConsultorioWS/marcarAsignadoRequest" message="tns:marcarAsignado" />
+      <output wsam:Action="http://services.pucp.edu.pe/ConsultorioWS/marcarAsignadoResponse" message="tns:marcarAsignadoResponse" />
     </operation>
-    <operation name="obtenerConsultorioPorId">
-      <input wsam:Action="http://services.pucp.edu.pe/ConsultorioWS/obtenerConsultorioPorIdRequest" message="tns:obtenerConsultorioPorId" />
-      <output wsam:Action="http://services.pucp.edu.pe/ConsultorioWS/obtenerConsultorioPorIdResponse" message="tns:obtenerConsultorioPorIdResponse" />
+    <operation name="listarConsultorio">
+      <input wsam:Action="http://services.pucp.edu.pe/ConsultorioWS/listarConsultorioRequest" message="tns:listarConsultorio" />
+      <output wsam:Action="http://services.pucp.edu.pe/ConsultorioWS/listarConsultorioResponse" message="tns:listarConsultorioResponse" />
     </operation>
-    <operation name="modificarConsultorio">
-      <input wsam:Action="http://services.pucp.edu.pe/ConsultorioWS/modificarConsultorioRequest" message="tns:modificarConsultorio" />
-      <output wsam:Action="http://services.pucp.edu.pe/ConsultorioWS/modificarConsultorioResponse" message="tns:modificarConsultorioResponse" />
+    <operation name="marcarNoAsignado">
+      <input wsam:Action="http://services.pucp.edu.pe/ConsultorioWS/marcarNoAsignadoRequest" message="tns:marcarNoAsignado" />
+      <output wsam:Action="http://services.pucp.edu.pe/ConsultorioWS/marcarNoAsignadoResponse" message="tns:marcarNoAsignadoResponse" />
+    </operation>
+    <operation name="consultorioExiste">
+      <input wsam:Action="http://services.pucp.edu.pe/ConsultorioWS/consultorioExisteRequest" message="tns:consultorioExiste" />
+      <output wsam:Action="http://services.pucp.edu.pe/ConsultorioWS/consultorioExisteResponse" message="tns:consultorioExisteResponse" />
     </operation>
   </portType>
   <binding name="ConsultorioWSPortBinding" type="tns:ConsultorioWS">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
-    <operation name="marcarAsignado">
+    <operation name="listarConsulPorSedeNoAsig">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />
@@ -98,7 +118,7 @@
         <soap:body use="literal" />
       </output>
     </operation>
-    <operation name="marcarNoAsignado">
+    <operation name="obtenerConsultorioPorId">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />
@@ -107,7 +127,16 @@
         <soap:body use="literal" />
       </output>
     </operation>
-    <operation name="listarConsultorio">
+    <operation name="insertarConsultorio">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="modificarConsultorio">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />
@@ -134,7 +163,7 @@
         <soap:body use="literal" />
       </output>
     </operation>
-    <operation name="insertarConsultorio">
+    <operation name="marcarAsignado">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />
@@ -143,7 +172,7 @@
         <soap:body use="literal" />
       </output>
     </operation>
-    <operation name="obtenerConsultorioPorId">
+    <operation name="listarConsultorio">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />
@@ -152,7 +181,16 @@
         <soap:body use="literal" />
       </output>
     </operation>
-    <operation name="modificarConsultorio">
+    <operation name="marcarNoAsignado">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="consultorioExiste">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />

@@ -6,6 +6,8 @@
   <xs:element name="insertarCitaResponse" type="tns:insertarCitaResponse" />
   <xs:element name="listaCitaPorMedico" type="tns:listaCitaPorMedico" />
   <xs:element name="listaCitaPorMedicoResponse" type="tns:listaCitaPorMedicoResponse" />
+  <xs:element name="listaCitaPorMedicoXestado" type="tns:listaCitaPorMedicoXestado" />
+  <xs:element name="listaCitaPorMedicoXestadoResponse" type="tns:listaCitaPorMedicoXestadoResponse" />
   <xs:element name="listarCita" type="tns:listarCita" />
   <xs:element name="listarCitaResponse" type="tns:listarCitaResponse" />
   <xs:element name="listarXPaciente" type="tns:listarXPaciente" />
@@ -247,14 +249,15 @@
       <xs:element name="return" type="xs:int" />
     </xs:sequence>
   </xs:complexType>
-  <xs:complexType name="insertarCita">
+  <xs:complexType name="listaCitaPorMedicoXestado">
     <xs:sequence>
-      <xs:element minOccurs="0" name="cita" type="tns:cita" />
+      <xs:element name="idMed" type="xs:int" />
+      <xs:element minOccurs="0" name="estado" type="xs:string" />
     </xs:sequence>
   </xs:complexType>
-  <xs:complexType name="insertarCitaResponse">
+  <xs:complexType name="listaCitaPorMedicoXestadoResponse">
     <xs:sequence>
-      <xs:element name="return" type="xs:int" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:cita" />
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="listaCitaPorMedico">
@@ -265,6 +268,16 @@
   <xs:complexType name="listaCitaPorMedicoResponse">
     <xs:sequence>
       <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:cita" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="insertarCita">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="cita" type="tns:cita" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="insertarCitaResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:int" />
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="modificarFechaCita">

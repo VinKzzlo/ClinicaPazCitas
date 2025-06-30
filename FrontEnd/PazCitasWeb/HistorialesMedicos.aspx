@@ -1,4 +1,5 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/PazCitasAdmin.Master" AutoEventWireup="true" CodeBehind="HistorialesMedicos.aspx.cs" Inherits="PazCitasWA.HistorialesMedicos" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="cph_Title" runat="server">
     Historiales Médicos
 </asp:Content>
@@ -40,12 +41,34 @@
                 background-color: #e2f8e2;
             }
 
-        /* Paginador */
-        .pagination-container a,
-        .pagination-container span {
-            padding: 0.25rem 0.5rem;
-            font-size: 0.8rem;
+        /* Paginación */
+        .pagination-container {
+            text-align: center;
+            margin-top: 1rem;
         }
+
+            .pagination-container a,
+            .pagination-container span {
+                display: inline-block;
+                padding: 6px 12px;
+                margin: 0 3px;
+                border-radius: 5px;
+                border: 1px solid #ccc;
+                background-color: #f4f4f4;
+                color: #333;
+                text-decoration: none;
+            }
+
+            .pagination-container span {
+                background-color: #198754;
+                color: white;
+                font-weight: bold;
+                border-color: #198754;
+            }
+
+            .pagination-container a:hover {
+                background-color: #d9ffd9;
+            }
 
         .Center {
             text-align: center;
@@ -77,26 +100,13 @@
                             ItemStyle-Width="20%" ItemStyle-CssClass="align-middle" />
                         <asp:BoundField HeaderText="Paciente"
                             HeaderStyle-CssClass="bg-success text-white align-middle"
-                            ItemStyle-Width="30%" ItemStyle-CssClass="align-middle" />
+                            ItemStyle-Width="40%" ItemStyle-CssClass="align-middle" />
                         <asp:BoundField HeaderText="DNI"
                             HeaderStyle-CssClass="bg-success text-white align-middle"
                             ItemStyle-Width="10%" ItemStyle-CssClass="text-wrap align-middle" />
                         <asp:BoundField HeaderText="Fecha Actualizacion"
                             HeaderStyle-CssClass="bg-success text-white align-middle"
-                            ItemStyle-Width="20%" ItemStyle-CssClass="text-wrap align-middle" />
-
-                        <asp:TemplateField HeaderText="Acciones" HeaderStyle-CssClass="bg-success text-white align-middle"
-                            ItemStyle-CssClass="Center">
-                            <ItemTemplate>
-                                <div class="d-flex gap-2">
-                                    <asp:LinkButton ID="btnVer" runat="server" CssClass="btn btn-primary btn-sm"
-                                        Text="<i class='fa-solid fa-eye me-2'></i> Ver a Detalle"
-                                        OnClick="btnVer_Click"
-                                        CommandArgument='<%# Eval("idHistorial") %>' />
-                                </div>
-                            </ItemTemplate>
-                            <ItemStyle Width="20%" />
-                        </asp:TemplateField>
+                            ItemStyle-Width="30%" ItemStyle-CssClass="text-wrap align-middle" />
                     </Columns>
                 </asp:GridView>
             </div>

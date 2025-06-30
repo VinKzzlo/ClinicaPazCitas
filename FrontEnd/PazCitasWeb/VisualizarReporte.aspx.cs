@@ -11,17 +11,20 @@ namespace PazCitasWA
     public partial class VisualizarReporte : System.Web.UI.Page
     {
         private ReporteWSClient boReporte;
+        private AdministradorWSClient boAdministrador;
         protected void Page_Load(object sender, EventArgs e)
         {
             boReporte = new ReporteWSClient();
-            string nombrePaciente = "";
-            if (Session["Paciente"] != null)
+            boAdministrador = new AdministradorWSClient();
+            string nombreAdmin = "";
+            if (Session["id_usuario"] != null)
             {
-                paciente paciente = (paciente)Session["Paciente"];
-                nombrePaciente = paciente.nombre;
+                int idAdmin = (int)Session["id_usuario"];
+                administrador admin = boAdministrador.obtenerPorIDAdministrador(idAdmin);
+                nombreAdmin = admin.nombre + " " + admin.apellidoPaterno;
             }
 
-            byte[] reporte = boReporte.generarReporteCita(nombrePaciente);
+            byte[] reporte = boReporte.generarReporteCita(nombreAdmin);
             Response.Clear();
             Response.ContentType = "application/pdf";
             Response.AddHeader("Content-Disposition", "inline;filename=ReporteCitasProgramadas");

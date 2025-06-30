@@ -12,6 +12,8 @@ namespace PazCitasWA
     {
 
         CitaWSClient bocita;
+        ReporteWSClient boReporte;
+
         protected void Page_Load(object sender, EventArgs e)
         {
             bocita = new CitaWSClient();
@@ -43,10 +45,7 @@ namespace PazCitasWA
             Response.Redirect("EmitirReceta.aspx");
         }
 
-        protected void btnHistorial_Click(object sender, EventArgs e)
-        {
-
-        }
+        
 
         protected void btnRegresar_Click(object sender, EventArgs e)
         {

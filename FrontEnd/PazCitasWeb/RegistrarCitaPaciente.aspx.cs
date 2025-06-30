@@ -346,6 +346,10 @@ namespace PazCitasWA
             int idMedico = int.Parse(DropDownList3.SelectedValue);
             var turnosSemana = wsTurno.listarTurnosSemana(idMedico, inicio);
 
+            // Aseguramos que la lista no sea null
+            if (turnosSemana == null)
+                turnosSemana = new turnoDisponibleDTO[0];
+
             var html = new StringBuilder();
 
             for (DateTime dia = inicio; dia <= fin; dia = dia.AddDays(1))
@@ -353,26 +357,31 @@ namespace PazCitasWA
                 var turnosDia = new List<turnoDisponibleDTO>();
                 foreach (var turno in turnosSemana)
                 {
-                    if (turno.fecha == dia)
+                    if (turno.fecha.Date == dia.Date)
                     {
                         turnosDia.Add(turno);
                     }
                 }
 
-                if (turnosDia.Count == 0) continue;
-
                 html.Append("<div class='day-card'>");
                 html.AppendFormat("<div class='day-title'>{0:dd MMM} - {0:dddd}</div>", dia);
                 html.Append("<div class='hour-list'>");
 
-                foreach (var turno in turnosDia)
+                if (turnosDia.Count == 0)
                 {
-                    string hora = turno.horaInicio.ToString("HH:mm");
-                    string valor = hora + " " + turno.fecha.ToString("dd/MM") + "|" + turno.idHorarioTrabajo;
-                    html.AppendFormat(
-                        "<button type='button' class='time-slot' onclick=\"seleccionarTurno(this, '{0}', '{1}')\">{2}</button>",
-                        HiddenField1.ClientID, valor, hora
-                    );
+                    html.Append("<div class='no-turnos'>SIN TURNOS DISPONIBLES</div>");
+                }
+                else
+                {
+                    foreach (var turno in turnosDia)
+                    {
+                        string hora = turno.horaInicio.ToString("HH:mm");
+                        string valor = hora + " " + turno.fecha.ToString("dd/MM") + "|" + turno.idHorarioTrabajo;
+                        html.AppendFormat(
+                            "<button type='button' class='time-slot' onclick=\"seleccionarTurno(this, '{0}', '{1}')\">{2}</button>",
+                            HiddenField1.ClientID, valor, hora
+                        );
+                    }
                 }
 
                 html.Append("</div></div>");
@@ -386,6 +395,7 @@ namespace PazCitasWA
             btnSemanaAnterior.Enabled = SemanaInicio > topeMinimo;
             btnSemanaSiguiente.Enabled = SemanaInicio < topeMaximo;
         }
+
 
         protected void btnSemanaAnterior_Click(object sender, EventArgs e)
         {

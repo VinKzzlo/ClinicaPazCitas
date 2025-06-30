@@ -16,4 +16,5 @@ public interface CuentaUsuarioDAO extends ICrud<CuentaUsuario>{
     public int verificarCuentaMedico(String username, String password);
     public int verificarCuentaPaciente(String username, String password);
     public int verificarCuenta(String identificador, String password, String rol);
+    int verificarUsernameExiste(String username);
 }

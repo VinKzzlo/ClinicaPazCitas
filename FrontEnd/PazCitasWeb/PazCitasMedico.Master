@@ -215,15 +215,6 @@
                 </li>
                 <!-- RF-12: EMITIR RECETA -->
 
-                <!-- RF-12: SOLICITAR EXAMEN -->
-                <li class="nav-item mb-1">
-                    <a href="SolicitarExamen.aspx" class="nav-link" data-bs-toggle="tooltip" data-bs-placement="right">
-                        <i class="fa-solid fa-calendar-days pe-2"></i>
-                        <span class="link-text">Solicitar Examen</span>
-                    </a>
-                </li>
-
-
                 <!-- CERRAR SESIÓN -->
                 <li class="nav-item mb-1">
                     <a href="Inicio.aspx?logout=true" class="nav-link text-danger">
@@ -283,12 +274,6 @@
                                 <asp:Label ID="lblNombreCompleto" runat="server" Text="Dr. Usuario"></asp:Label>
                             </button>
                             <ul class="dropdown-menu fade" aria-labelledby="btnUsuario">
-                                <li><a class="dropdown-item" href="#"><i class="fa-solid fa-user me-2"></i>Mi Perfil</a></li>
-                                <li><a class="dropdown-item" href="#"><i class="fa-solid fa-key me-2"></i>Cambiar Contraseña</a></li>
-                                <li><a class="dropdown-item" href="#"><i class="fa-solid fa-cog me-2"></i>Configuración</a></li>
-                                <li>
-                                    <hr class="dropdown-divider">
-                                </li>
                                 <li class="nav-item mb-1">
                                     <a href="Inicio.aspx?logout=true" class="nav-link text-danger">
                                         <i class="fa-solid fa-right-from-bracket pe-2"></i>

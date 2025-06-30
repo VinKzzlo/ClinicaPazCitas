@@ -55,10 +55,10 @@ public class DBManager {
         //Asignamos valores del archivo leido
         hostname = datos.getProperty("hostname");
         usuario = datos.getProperty("usuario");
-        password = datos.getProperty("password");
-        //password = datos.getProperty("passwordencryptado");
+        //password = datos.getProperty("password");
+        password = datos.getProperty("passwordencryptado");
         clave = datos.getProperty("clave");
-        //password = desencriptar(password,clave);
+        password = desencriptar(password,clave);
         puerto = datos.getProperty("puerto");
         database = datos.getProperty("database");
         tipoBD = datos.getProperty("tipoBD");

@@ -14,25 +14,19 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
         /* ======================================================================== */
-        /*             PARÁMETROS DE DISEÑO (MODIFICAR SOLO AQUÍ)                   */
+        /*             PARÁMETROS DE DISEÑO                                         */
         /* ======================================================================== */
         :root {
-            /* --- Controla la apariencia del contenedor estilizado --- */
-            --contenedor-border-radius: 1.25rem; /* Controla el redondeado de los contenedores */
-            /* --- Color de fondo y transparencia del contenedor --- */
-            /* rgba(R, G, B, A) -> A (Alfa) es la transparencia: 1=opaco, 0=transparente */
-            --contenedor-bg-color: rgba(255, 255, 255, 0.8); /* Blanco con 98% de opacidad */
-            /* --- Controla el espaciado general del layout --- */
-            --layout-padding: 1.25rem; /* Espacio en los bordes de la ventana */
-            --layout-gap: 1.25rem; /* Espacio entre los contenedores */
-            /* --- Paleta de Colores de la Marca --- */
+            --contenedor-border-radius: 1.25rem;
+            --contenedor-bg-color: rgba(255, 255, 255, 0.85);
+            --layout-padding: 1.25rem; 
+            --layout-gap: 1.25rem;
             --color-principal: #FFC300;
             --color-principal-hover: #FFB000;
             --color-principal-claro: #fff9e6;
-            /* --- Fondo de la página con degradado de 3 colores --- */
-            --color-fondo-pagina: linear-gradient( 135deg, rgb(246, 192, 19, 0.5) 0%, /* Color 1: Azulado sutil en la esquina superior izquierda */
+            --color-fondo-pagina: linear-gradient( 135deg, rgb(246, 192, 19, 0.3) 0%, /* Color 1: Azulado sutil en la esquina superior izquierda */
             rgba(240, 240, 240, 0.15) 50%, /* Color 2: Blanco neutro en el centro */
-            rgb(246, 192, 19, 0.3) 100% /* Color 3: Amarillo sutil en la esquina inferior derecha */
+            rgb(246, 192, 19, 0.5) 100% /* Color 3: Amarillo sutil en la esquina inferior derecha */
             );
             /* --- Otros colores --- */
             --color-texto-primario: #343a40;
@@ -41,7 +35,7 @@
         }
 
         /* ======================================================================== */
-        /*                  LA CLASE MÁGICA: CONTENEDOR ESTILIZADO                  */
+        /*                                   CONTENEDOR ESTILIZADO                  */
         /* ======================================================================== */
         .contenedor-estilizado {
             background-color: var(--contenedor-bg-color);
@@ -54,30 +48,12 @@
             border-right: none;
         }
 
-        /* 
-            ========================================================================
-            MEJORA DE ANIMACIÓN PARA OFF-CANVAS (VERSIÓN SÚPER AGRESIVA):
-            Esta regla intenta forzar la animación anulando cualquier posible
-            configuración de 'prefers-reduced-motion' que pudiera desactivarla.
-            ========================================================================
-        */
         @media (prefers-reduced-motion: no-preference) {
             .offcanvas {
-                /*
-               Aplicamos la transición solo si el usuario NO ha solicitado
-               movimiento reducido.
-               - 'transform': propiedad a animar.
-               - '0.4s': Duración razonable (puedes poner '5s' para probar).
-               - 'ease-in-out': Curva suave.
-            */
                 transition: transform 0.4s ease-in-out !important;
             }
         }
 
-        /* 
-           En algunos casos, Bootstrap también desactiva la transición directamente.
-           Esta regla es un "seguro" adicional.
-        */
         .offcanvas {
             transition: transform 0.4s ease-in-out !important;
         }
@@ -85,21 +61,17 @@
         /* ======================================================================== */
         /*           ESTILOS DE ESTRUCTURA Y COMPONENTES (NO TOCAR)                 */
         /* ======================================================================== */
-
-        /* --- Base del Documento --- */
         html, body {
             height: 100%;
             width: 100%;
         }
 
         body {
-            /* Se usa 'background' en lugar de 'background-color' para que acepte degradados */
             background: var(--color-fondo-pagina);
             font-family: 'Segoe UI', 'Roboto', 'Helvetica Neue', sans-serif;
-            overflow: hidden; /* Evita barras de scroll innecesarias en el body */
+            overflow: hidden;
         }
 
-        /* --- Estructura Principal del Layout --- */
         .page-wrapper {
             display: flex;
             height: 100%;
@@ -112,47 +84,39 @@
         .sidebar {
             width: 260px;
             flex-shrink: 0;
-            /* Eliminamos el padding de aquí porque ahora está en el div interno */
             padding: 0;
             transition: width 0.3s ease;
-            /* Hacemos que el contenedor sea transparente, ya que el hijo tendrá el color */
             background-color: transparent;
-            border: none; /* Quitamos cualquier borde que pudiera tener */
+            border: none;
         }
 
             .sidebar.collapsed {
-                width: calc(68px + var(--layout-gap)); /* Ajusta el ancho colapsado */
+                width: calc(68px + var(--layout-gap));
             }
 
                 .sidebar.collapsed .sidebar-brand-text,
                 .sidebar.collapsed .nav-link .link-text {
                     opacity: 0;
-                    pointer-events: none; /*Evita interacción con texto invisible */
+                    pointer-events: none;
                     transition: opacity 0.2s ease;
                 }
 
                 .sidebar.collapsed .sidebar-brand,
                 .sidebar.collapsed .nav-link {
-                    /*justify-content: center;
-            padding-left: 0;
-            padding-right: 0;*/
                 }
 
-        /* --- Contenido Principal y sus componentes --- */
         .main-content {
-            flex-grow: 1; /* Hace que ocupe el espacio vertical restante */
+            flex-grow: 1; 
             display: flex;
             flex-direction: column;
-            overflow: hidden; /* Importante para que el contenido respete los bordes redondeados */
+            overflow: hidden; 
         }
 
         .page-content {
-            /*padding: 0 2rem 2rem 2rem;*/
-            overflow-y: auto; /* Scroll solo para esta área si el contenido es largo */
-            flex-grow: 1; /* Asegura que el área de contenido llene el espacio */
+            overflow-y: auto;
+            flex-grow: 1;
         }
 
-        /* --- Estilos de componentes específicos (Logo, Navegación, etc.) --- */
         .sidebar-brand {
             display: flex;
             align-items: center;
@@ -163,7 +127,6 @@
             font-weight: 700;
             text-decoration: none;
         }
-
             .sidebar-brand:hover {
                 color: var(--color-principal-hover) !important;
             }
@@ -171,7 +134,6 @@
             .sidebar-brand .fa-book-medical {
                 font-size: 2rem;
             }
-
         .sidebar-nav {
             list-style: none;
             padding-left: 0;
@@ -208,26 +170,19 @@
                 }
 
         .sidebar-footer {
-            margin-top: auto; /* Empuja el footer del sidebar hacia abajo */
+            margin-top: auto; 
             display: flex;
             align-items: center;
             gap: 0.5rem;
             color: var(--color-texto-secundario);
-            transition: all 0.3s ease; /* Transición suave para los cambios */
+            transition: all 0.3s ease; 
         }
         /* --- 2. ESTILOS CUANDO EL SIDEBAR ESTÁ COLAPSADO --- */
         .sidebar.collapsed .sidebar-footer {
-            /* ¡La Magia está aquí! Cambiamos la dirección del flexbox a columna */
             flex-direction: column;
-    
-            /* Centramos todo el contenido */
             align-items: center;
             text-align: center;
-    
-            /* Ajustamos el espacio entre el ícono y el texto */
             gap: 0.75rem; 
-    
-            /* Añadimos un poco de padding para que no se pegue a los bordes */
             padding: 0.5rem 0;
         }
 
@@ -237,7 +192,7 @@
             justify-content: space-between;
             align-items: center;
             padding: 1rem 2rem;
-            flex-shrink: 0; /* Evita que se encoja verticalmente */
+            flex-shrink: 0;
         }
 
             .top-bar .page-title {
@@ -318,68 +273,29 @@
         /*      ESTILO CONDICIONAL PARA EL OFF-CANVAS EN MODO MÓVIL                 */
         /* ======================================================================== */
 
-        /*
-           Bootstrap 5 usa 768px como el punto de ruptura 'md'.
-           Esta regla se aplicará a pantallas MÁS PEQUEÑAS que 768px.
-           (Es decir, cuando el sidebar se convierte en un off-canvas real).
-        */
         @media (max-width: 767.98px) {
-
-            /* Apuntamos al div .contenedor-estilizado que está DENTRO del .sidebar */
             .sidebar .contenedor-estilizado {
-                /* ¡AQUÍ PONES EL COLOR QUE QUIERES SOLO PARA EL MÓVIL! */
-                background-color: #ffffff; /* Ejemplo: un gris oscuro */
-                /* 
-                   IMPORTANTE: Si usas un fondo oscuro, probablemente necesites
-                   cambiar también el color de los textos y los íconos para que
-                   sean legibles.
-                */
-                /* Cambia el color del logo y el texto principal */
-                /*.sidebar-brand, .sidebar-footer {
-                    color: #f8f9fa !important;*/ /* Un blanco suave */
-                /*}*/
-                /* Cambia el color de los enlaces de navegación */
-                /*.sidebar-nav .nav-link {
-                    color: #adb5bd;*/ /* Un gris claro para los enlaces inactivos */
-                /*}*/
-                /* Cambia el color del enlace activo para que contraste con el fondo oscuro */
-                /*.sidebar-nav .nav-link.active {
-                    background-color: var(--color-principal);*/ /* Mantenemos el amarillo de la marca */
-                /*color: #343a40;*/ /* Texto oscuro para el botón activo */
-                /*}*/
-                /* Cambia el color del hover para que se vea bien en fondo oscuro */
-                /*.sidebar-nav .nav-link:hover {
-                    background-color: rgba(255, 255, 255, 0.1);
-                    color: white;
-                }*/
+                background-color: #ffffff; 
             }
         }
         /* ======================================================================== */
-        /* ======   ESTILOS PARA LINK ACTIVO EN MODO COLAPSADO (v3 - Encojer) ====== */
+        /* ======   ESTILOS PARA LINK ACTIVO EN MODO COLAPSADO               ====== */
         /* ======================================================================== */
-        /* 1. Ocultamos el texto de una manera que permita la animación Y no ocupe espacio. */
         .sidebar.collapsed .nav-link .link-text {
             opacity: 0;
             pointer-events: none;
-    
-            /* --- La Magia está Aquí --- */
-            white-space: nowrap; /* Evita que el texto se rompa en varias líneas */
-            overflow: hidden;    /* Oculta cualquier contenido que se desborde */
-            width: 0;            /* Hacemos que el ancho del contenedor del texto sea CERO */
-    
-            transition: opacity 0.2s ease, width 0.3s ease; /* Animamos la opacidad y el ancho */
+            white-space: nowrap;
+            overflow: hidden;
+            width: 0;
+            transition: opacity 0.2s ease, width 0.3s ease;
         }
 
-
-        /* Primero, preparamos todos los enlaces en modo colapsado para que se centren */
         .sidebar.collapsed .sidebar-nav .nav-link {
-            /* Centra el contenido (el ícono) horizontalmente */
             justify-content: center;
             padding-left: 16px;
             padding-right: 2px;
         }
 
-            /* Ahora, definimos el estilo del enlace ACTIVO en modo colapsado */
             .sidebar.collapsed .sidebar-nav .nav-link.active {
                 width: 55px;  
                 height: 44px; 
@@ -408,24 +324,16 @@
     <asp:ContentPlaceHolder ID="cph_Scripts" runat="server"></asp:ContentPlaceHolder>
 </head>
 <body>
-    <!-- El page-wrapper es el contenedor principal que establece el padding y el gap general -->
     <div class="page-wrapper">
         <!-- ========================== BARRA LATERAL ========================== -->
-        <!-- El 'aside' ahora solo maneja la lógica de offcanvas y posicionamiento -->
         <aside id="sidebar" class="sidebar offcanvas-md offcanvas-start">
-            <!-- ESTE ES EL NUEVO DIV INTERNO -->
-            <!-- Lleva la clase 'contenedor-estilizado' y se asegura de que el estilo siempre sea visible -->
             <div class="contenedor-estilizado d-flex flex-column h-100" style="padding: 1.5rem 1rem;">
-
-                <!-- Mueve TODO el contenido que estaba en el aside aquí dentro -->
-                <a href="Home.aspx" class="sidebar-brand">
-                    <%--<i class="fa-solid fa-book-medical"></i>--%>
+                <a href="ListarCitasPaciente.aspx" class="sidebar-brand">
                     <i class="fa-solid fa-heartbeat" style="font-size: 2rem; color: #e91e63;"></i>
                     <span class="sidebar-brand-text">PazCitas</span>
                 </a>
 
                 <ul class="sidebar-nav nav flex-column">
-                    <!-- ... tus li ... -->
                     <li class="nav-item"><a href="ListarCitasPaciente.aspx" class="nav-link"><i class="fa-solid fa-calendar-days"></i><span class="link-text">Mis Citas</span></a></li>
                     <li class="nav-item"><a href="RegistrarCitaPaciente.aspx" class="nav-link"><i class="fa-solid fa-calendar-plus link-icon"></i><span class="link-text">Registrar Cita</span></a></li>
                     <li class="nav-item"><a href="ListarSedesPaciente.aspx" class="nav-link"><i class="fa-solid fa-hospital link-icon"></i><span class="link-text">Ver Sedes</span></a></li>
@@ -446,19 +354,15 @@
 
         <!-- ========================== CONTENIDO PRINCIPAL ========================== -->
         <div class="flex-grow-1 d-flex flex-column" style="gap: var(--layout-gap)">
-            <!-- Barra Superior con los DOS botones -->
             <header class="top-bar contenedor-estilizado">
                 <div class="d-flex align-items-center gap-3">
 
                     <!-- ========= BOTÓN 1: PARA ESCRITORIO (md y superior) ========= -->
-                    <!-- Se muestra solo en 'md' y más grandes (d-none d-md-inline-flex) -->
                     <button id="sidebar-toggle-btn-desktop" class="sidebar-toggle-btn d-none d-md-inline-flex">
                         <i class="fa-solid fa-bars"></i>
                     </button>
 
                     <!-- ========= BOTÓN 2: PARA MÓVIL (sm e inferior) ========= -->
-                    <!-- Se muestra solo en pantallas más pequeñas que 'md' (d-md-none) -->
-                    <!-- Apunta al off-canvas #sidebar -->
                     <button id="sidebar-toggle-btn-mobile" class="sidebar-toggle-btn d-md-none" data-bs-toggle="offcanvas" data-bs-target="#sidebar">
                         <i class="fa-solid fa-bars"></i>
                     </button>
@@ -473,7 +377,6 @@
 
                 <!-- Perfil de Usuario (sin cambios) -->
                 <div class="dropdown user-profile">
-                    <!-- ... tu código de perfil de usuario aquí ... -->
                     <a href="#" class="dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         <span class="icon-wrapper-soft-yellow">
                             <i class="fa-solid fa-user fa-lg"></i>
@@ -486,11 +389,6 @@
                         </div>
                     </a>
                     <ul class="dropdown-menu dropdown-menu-end">
-                        <li><a class="dropdown-item" href="#"><i class="fa-solid fa-user me-2"></i>Mi Perfil</a></li>
-                        <li><a class="dropdown-item" href="#"><i class="fa-solid fa-key me-2"></i>Cambiar Contraseña</a></li>
-                        <li>
-                            <hr class="dropdown-divider">
-                        </li>
                         <li><a href="Inicio.aspx?logout=true" class="nav-link text-danger">
                                 <i class="fa-solid fa-right-from-bracket pe-2"></i>
                                 <span class="link-text">Cerrar Sesión</span>
@@ -501,7 +399,6 @@
             </header>
 
             <!-- Área de Contenido Principal -->
-            <!-- La clase 'main-content' define su estructura y 'contenedor-estilizado' su apariencia -->
             <main class="main-content contenedor-estilizado">
                 <div class="page-content">
                     <form id="form1" runat="server">
@@ -519,17 +416,14 @@
     <script>
         document.addEventListener('DOMContentLoaded', function () {
             const sidebar = document.getElementById('sidebar');
-            // Apuntamos específicamente al botón de ESCRITORIO
             const desktopToggleButton = document.getElementById('sidebar-toggle-btn-desktop');
 
-            // La lógica de colapso ahora solo se aplica al botón de escritorio.
             if (desktopToggleButton) {
                 desktopToggleButton.addEventListener('click', function () {
                     sidebar.classList.toggle('collapsed');
                 });
             }
 
-            // --- Marcar el Link Activo en la Barra Lateral (sin cambios) ---
             const currentPage = location.pathname.split('/').pop();
             if (currentPage) {
                 document.querySelectorAll('.sidebar-nav .nav-link').forEach(link => {

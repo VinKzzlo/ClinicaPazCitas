@@ -11,18 +11,24 @@ namespace PazCitasWA
     {
         private MedicoWSClient wsMedico;
         private BindingList<medico> medicos;
+        private BindingList<medico> medicosFiltrados;
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            wsMedico = new MedicoWSClient();
-            medico[] medicos1 = wsMedico.listarMedico();
-            medicos = new BindingList<medico>(wsMedico.listarMedico());
+            if (!IsPostBack)
+            {
+                wsMedico = new MedicoWSClient();
+                medicos = new BindingList<medico>(wsMedico.listarMedico());
+                ViewState["medicos"] = medicos;
+                gvMedicos.DataSource = medicos;
+                gvMedicos.DataBind();
 
-            gvMedicos.DataSource = medicos;
-            gvMedicos.DataBind();
-
-            
-
+            }
+            else
+            {
+                // Recuperar la lista en postbacks
+                medicos = (BindingList<medico>)ViewState["medicos"];
+            }
         }
 
         protected void gvMedicos_RowDataBound(object sender, GridViewRowEventArgs e)
@@ -43,6 +49,7 @@ namespace PazCitasWA
         protected void gvMedicos_PageIndexChanging(object sender, GridViewPageEventArgs e)
         {
             gvMedicos.PageIndex = e.NewPageIndex;
+            gvMedicos.DataSource = (BindingList<medico>)ViewState["medicos"];
             gvMedicos.DataBind();
         }
         protected void btnRegistrar_Click(object sender, EventArgs e)
@@ -67,7 +74,19 @@ namespace PazCitasWA
 
         protected void btnVer_Click(object sender, EventArgs e)
         {
+            int idMedico = Int32.Parse(((LinkButton)sender).CommandArgument);
+            medico medicoSeleccionado = medicos.SingleOrDefault(x => x.idUsuario == idMedico);
+            Session["medicoSeleccionado"] = medicoSeleccionado;
+            Response.Redirect("RegistrarMedico.aspx?accion=ver");
+        }
 
+        protected void btnBuscar_Click(object sender, EventArgs e)
+        {
+            wsMedico = new MedicoWSClient();
+            medicosFiltrados = new BindingList<medico>(wsMedico.listarMedicoXCadena(txtCadena.Text));
+            ViewState["medicos"] = medicosFiltrados;
+            gvMedicos.DataSource = medicosFiltrados;
+            gvMedicos.DataBind();
         }
     }
 }

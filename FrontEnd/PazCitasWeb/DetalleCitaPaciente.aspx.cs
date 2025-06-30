@@ -14,6 +14,7 @@ using PazCitasWA.ServiciosWS;
 using System.Globalization;
 using System.Diagnostics.PerformanceData;
 using System.Web.Compilation;
+using PazCitasWA.ServiciosEmail;
 
 
 namespace PazCitasWA
@@ -33,7 +34,6 @@ namespace PazCitasWA
         private cita c = null;
         protected void Page_Load(object sender, EventArgs e)
         {
-            // Esta parte se puede ejecutar siempre, ya que solo lee el QueryString
             
             string idCita = Request.QueryString["id"];
             if (string.IsNullOrEmpty(idCita))
@@ -44,17 +44,15 @@ namespace PazCitasWA
 
             if (!IsPostBack)
             {
-                // Aquí llamas al servicio web para obtener los detalles de esa especialidad
                 wsCita = new CitaWSClient();
 
                 c = wsCita.obtenerXIdCompletoSinDatosPaciente(Int32.Parse(idCita));
                 if (c == null)
                 {
-                    Response.Redirect("ListarCitasPaciente.aspx"); // O a una página de error
+                    Response.Redirect("ListarCitasPaciente.aspx"); 
                     return;
                 }
 
-                // 2. GUARDA la cita en ViewState. Este es el paso clave.
                 this.CitaGuardada = c;
 
                 int idMedico = c.horarioTrabajo.medico.idUsuario;
@@ -70,16 +68,13 @@ namespace PazCitasWA
                 lblMedicoEmail.Text = med.email.ToString();
                 lblMedicoNombreCompleto.Text = "Dr. " + med.nombre.ToString() + med.apellidoPaterno.ToString();
 
-                //DateTime fechaDeLaCita = c.fecha;//new DateTime(2025, 6, 24, 16, 0, 0)
-                //BuildStaticCalendar(fechaDeLaCita);
                 string estadoActualCita = c.estadoAtencion.ToString();
                 SetAppointmentStatus(estadoActualCita);
 
-                decimal costoTotalCita = 250m;//Obtener el costo real
+                decimal costoTotalCita = 250m;
                 decimal coberturaSeguro = 180m;
                 string estadoDelPago = "pendiente";
 
-                //// 2. Llama al método para configurar la interfaz
                 SetPaymentOverview(costoTotalCita, coberturaSeguro, estadoDelPago);
 
                 lblConsultationReason.Text = c.motivoConsulta.ToString();
@@ -100,14 +95,13 @@ namespace PazCitasWA
         private void BuildStaticCalendar(cita citaDate)
         {
             turno tur = citaDate.horarioTrabajo.turno;
-            DateTime today = DateTime.Today; // Obtenemos la fecha actual para compararla
+            DateTime today = DateTime.Today; 
 
             lblCalendarMonth.Text = citaDate.fecha.ToString("MMMM yyyy");
             lblAppointmentTime.Text = tur.horaInicio.ToString("HH:mm") + " - " + tur.horaFin.ToString("HH:mm");
 
             var firstDayOfMonth = new DateTime(citaDate.fecha.Year, citaDate.fecha.Month, 1);
             int startDayOfWeek = (int)firstDayOfMonth.DayOfWeek;
-            // Ajuste para que la semana empiece en Lunes (1) en lugar de Domingo (0)
             if (startDayOfWeek == 0) startDayOfWeek = 7;
 
             var daysInMonth = DateTime.DaysInMonth(citaDate.fecha.Year, citaDate.fecha.Month);
@@ -184,7 +178,7 @@ namespace PazCitasWA
                     phTagConsultorio.Visible = true;
                     phTagConsultorio.Controls.Add(new Literal { Text = "<div class='step-status-tag tag-completed'>Completado</div>" });
 
-                    // Paso 3 completado (final)
+                    // Paso 3 completado 
                     stepAtendido.Attributes["class"] += " completed";
                     phTagAtendido.Visible = true;
                     phTagAtendido.Controls.Add(new Literal { Text = "<div class='step-status-tag tag-completed'>Finalizado</div>" });
@@ -210,7 +204,6 @@ namespace PazCitasWA
             lblAmountPatient.Text = montoPaciente.ToString("C0");
 
             // 2. Calcular y asignar el alto de las barras de progreso
-            // La barra del total siempre está al 100% (o un poco menos para efecto visual)
             barFillTotal.Style["height"] = "95%";
 
             // Las otras barras son un porcentaje del total
@@ -222,7 +215,7 @@ namespace PazCitasWA
                 barFillInsurance.Style["height"] = insurancePercent.ToString("F0") + "%";
                 barFillPatient.Style["height"] = patientPercent.ToString("F0") + "%";
             }
-            else // Evitar división por cero
+            else 
             {
                 barFillInsurance.Style["height"] = "0%";
                 barFillPatient.Style["height"] = "0%";
@@ -247,7 +240,7 @@ namespace PazCitasWA
         }
         private void SetupActionButtons(cita c)
         {
-            // === EJEMPLO DE CONDICIONALES ===
+            //  EJEMPLO DE CONDICIONALES 
             bool canModify = true; // CAMBIA A 'true' PARA PROBAR
             string msjCancelarCita = "";
             bool canCancel = true;  // CAMBIA A 'false' PARA PROBAR
@@ -281,10 +274,6 @@ namespace PazCitasWA
                 canModify = false;
             }
 
-            /*solo para pruebas del modificar, eliminar despues*/
-            //canModify = true;
-
-            // Lógica para el botón MODIFICAR
             if (canModify)
             {
                 btnModifyAppointment.Enabled = true;
@@ -297,7 +286,6 @@ namespace PazCitasWA
                 divModifyWarning.Visible = true; // Mostramos el div contenedor
             }
 
-            // Lógica para el botón CANCELAR
             if (canCancel)
             {
                 btnCancelAppointment.Enabled = true;
@@ -314,49 +302,71 @@ namespace PazCitasWA
 
         protected void btnConfirmCancel_Click(object sender, EventArgs e)
         {
+
             wsCita = new CitaWSClient();
             cita auxct = this.CitaGuardada;
             auxct.estadoCita = estadoCita.CANCELADA;
             auxct.estadoCitaSpecified = true;
-            int res=wsCita.modificarCita(auxct);
+            int res = wsCita.modificarCita(auxct);
 
-            // 2. Muestra un mensaje de éxito y redirige.
+            PacienteWSClient boPaciente = new PacienteWSClient();
             string script;
-            if(res!=0)script= "alert('Tu cita ha sido cancelada exitosamente.'); window.location='ListarCitasPaciente.aspx';";
-            else script= "alert('¡Algo sucedio! Intenta cancelar tu cita mas tarde.'); window.location='ListarCitasPaciente.aspx';";
+            if (res != 0)
+            {
+                try
+                {
+
+                    if (Session["id_usuario"] != null)
+                    {
+                        int idPaciente = (int)Session["id_usuario"];
+                        paciente pacienteLogueado = boPaciente.obtenerPacienteXiD(idPaciente);
+
+                        string nombreMedico = auxct.horarioTrabajo.medico.nombre + " " + auxct.horarioTrabajo.medico.apellidoPaterno;
+                        string fechaOriginal = auxct.fecha.ToString("dd 'de' MMMM 'de' yyyy");
+
+                        // --- Notificación para el Paciente ---
+                        if (pacienteLogueado != null && !string.IsNullOrEmpty(pacienteLogueado.email))
+                        {
+                            string asuntoPaciente = "✅ Confirmación de Cancelación de Cita - PazCitas";
+                            string cuerpoPaciente = $@"
+                        <h3>Hola, {pacienteLogueado.nombre}!</h3>
+                        <p>Te confirmamos que tu cita con el Dr./Dra. <strong>{nombreMedico}</strong> del día <strong>{fechaOriginal}</strong> ha sido <strong>cancelada exitosamente</strong>.</p>
+                        <p>Atentamente,<br><strong>El equipo de Clínica PazCitas</strong></p>";
+
+                            ServicioEmail.Enviar(pacienteLogueado.email, asuntoPaciente, cuerpoPaciente);
+                        }
+
+                    }
+
+                }
+                catch (Exception ex)
+                {
+                    System.Diagnostics.Debug.WriteLine("Error al enviar email de cancelación: " + ex.Message);
+                }
+                script = "alert('Tu cita ha sido cancelada exitosamente.'); window.location='ListarCitasPaciente.aspx';";
+            }
+            else
+            {
+                script = "alert('¡Algo sucedio! Intenta cancelar tu cita mas tarde.'); window.location='ListarCitasPaciente.aspx';";
+            }
+
             ScriptManager.RegisterStartupScript(this, GetType(), "CancelSuccess", script, true);
         }
 
-
-
-
-
-        /* Aqui se guardaran las fechas para la cita */
         private List<DateTime> AvailableDates
         {
             get { return ViewState["AvailableDates"] as List<DateTime>; }
             set { ViewState["AvailableDates"] = value; }
         }
 
-
-
-
-
-
-
-
-        // Se llama al hacer clic en "Modificar Cita".
         protected void btnModifyAppointment_Click(object sender, EventArgs e)
         {
             InitializeScheduler();
             ScriptManager.RegisterStartupScript(this, this.GetType(), "OpenModifyModalScript", "openModal('modalModify');", true);
         }
 
-        // Inicializa y resetea el scheduler.
         private void InitializeScheduler()
         {
-
-            // Para la simulación, creamos una lista de ejemplo de 30 días.
             DateTime fechCita = this.CitaGuardada.fecha;
             var dates = new List<DateTime>();
             for (int i = 0; i <= 14; i++)
@@ -370,7 +380,6 @@ namespace PazCitasWA
             hdnSelectedTime.Value = string.Empty;
             hdnDateOffset.Value = "0";
 
-            // Mostramos la primera "página" de fechas.
             BindDatesPage();
 
             // Ocultamos las secciones de horarios.
@@ -387,9 +396,8 @@ namespace PazCitasWA
             int offset = 0;
             int.TryParse(hdnDateOffset.Value, out offset);
 
-            int pageSize = 5; // Mostramos 7 días a la vez. Puedes cambiar este número.
+            int pageSize = 5;
 
-            // Usamos LINQ para "paginar" la lista de fechas guardada.
             var datesToShow = this.AvailableDates
                                   .Skip(offset * pageSize)
                                   .Take(pageSize)
@@ -403,10 +411,8 @@ namespace PazCitasWA
         // Evento central que se ejecuta en cada clic dentro del modal.
         protected void btnRefreshScheduler_Click(object sender, EventArgs e)
         {
-            // 1. Siempre volvemos a enlazar la página actual de fechas.
             BindDatesPage();
 
-            // El resto de la lógica se mantiene igual...
             DateTime? selectedDate = null;
             if (DateTime.TryParse(hdnSelectedDate.Value, out DateTime parsedDate))
             {
@@ -463,8 +469,6 @@ namespace PazCitasWA
             }
             else
             {
-                // Si turnosDesdeWS es null o está vacío, significa que no hay horarios.
-                // Mostramos el mensaje de "no disponible".
                 pnlTimeSlots.Visible = false;
                 pnlNoTimes.Visible = true;
             }
@@ -472,14 +476,8 @@ namespace PazCitasWA
 
         private void UpdateButtonState()
         {
-            // Comprueba si ambos campos ocultos tienen un valor.
             bool isSelectionComplete = !string.IsNullOrEmpty(hdnSelectedDate.Value) && !string.IsNullOrEmpty(hdnSelectedTime.Value);
-
-            // 1. Habilita o deshabilita el control de servidor. Esto es importante para la lógica.
             btnConfirmModify.Enabled = isSelectionComplete;
-
-            // 2. Gestionamos la clase CSS manualmente para asegurar la respuesta visual.
-            //    ASP.NET a veces es inconsistente con 'aspNetDisabled' en UpdatePanels.
             if (isSelectionComplete)
             {
                 // Si la selección está completa, nos aseguramos de que no tenga la clase de deshabilitado.
@@ -548,7 +546,6 @@ namespace PazCitasWA
             wsCita = new CitaWSClient();
             int res = wsCita.modificarFechaCita(this.CitaGuardada.idCita, fechaSeleccionada, horaSeleccionada, this.CitaGuardada.horarioTrabajo.medico.idUsuario);
 
-            // --- Este script es ahora la forma correcta de cerrar el modal y notificar al usuario ---
             string script;
             if (res != 0) script = "closeModal('modalModify'); alert('Cita modificada con éxito para el " + nuevaFechaCompleta.ToString("dd 'de' MMMM 'a las' hh:mm tt") + "'); window.location.reload();";
             else script = "closeModal('modalModify'); alert('¡Algo sucedio! Intenta cancelar tu cita mas tarde.'); window.location.reload();";

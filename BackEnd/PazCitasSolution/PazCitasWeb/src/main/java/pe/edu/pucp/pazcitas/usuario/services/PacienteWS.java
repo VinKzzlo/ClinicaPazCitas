@@ -56,5 +56,11 @@ public class PacienteWS {
         bopaciente = new PacienteBO();
         return bopaciente.obtenerXDNI(dni);
     }
+   
+    @WebMethod(operationName = "listarPacienteXCadena")
+    public ArrayList<Paciente> listarPacienteXCadena(@WebParam(name = "cadena") String cadena) {
+        bopaciente = new PacienteBO();
+        return bopaciente.listarXCadena(cadena);
+    }
     
 }

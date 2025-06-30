@@ -54,7 +54,7 @@ namespace PazCitasWA
                 switch (rol)
                 {
                     case "PACIENTE":
-                        Response.Redirect("HomePaciente.aspx");
+                        Response.Redirect("ListarCitasPaciente.aspx");
                         break;
                     case "MÉDICO":
                         Response.Redirect("HomeMedico.aspx");

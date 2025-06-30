@@ -1,6 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/PazCitasPaciente.Master" AutoEventWireup="true" CodeBehind="DetalleCitaPaciente.aspx.cs" Inherits="PazCitasWA.DetalleCitaPaciente" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="cph_Title" runat="server">
+    Detalles de mi Cita
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="cph_Scripts" runat="server">
     <script type="text/javascript">
@@ -20,8 +21,6 @@
                 document.body.style.overflow = 'auto';
             }
         }
-
-        // --- NUEVAS FUNCIONES PARA EL SCHEDULER ---
 
         // Función que se llama al hacer clic en una fecha
         function selectDate(dateValue, hdnDateId, hdnTimeId, refreshButtonId) {
@@ -68,9 +67,6 @@
 <asp:Content ID="Content3" ContentPlaceHolderID="cph_PageTitle" runat="server">
 </asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="cph_Contenido" runat="server">
-    <%-- ========================================================================= --%>
-    <%--          ESTILOS COMPLETOS DEL DASHBOARD (VERSIÓN AUTOCONTENIDA)          --%>
-    <%-- ========================================================================= --%>
     <style>
         :root {
             /* --- Parámetros de Diseño del Dashboard --- */
@@ -84,11 +80,6 @@
             --negative-accent-bg: #fef2f2;
         }
 
-        /* 
-           ===============================================================
-           === CONTENEDOR PRINCIPAL: CENTRADO Y AUTÓNOMO ===
-           ===============================================================
-        */
         .dashboard-container {
             width: 100%;
             max-width: 1400px; /* Ancho máximo del dashboard completo */
@@ -101,7 +92,7 @@
         .dashboard-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            grid-template-areas: "main main sidebar"; /* Layout de 3 columnas (2 para main, 1 para sidebar) */
+            grid-template-areas: "main main sidebar"; 
             gap: var(--layout-gap, 1.25rem);
         }
 
@@ -119,7 +110,6 @@
             gap: var(--layout-gap, 1.25rem);
         }
 
-        /* --- Estilo de Tarjeta con Efecto Hover --- */
         .dashboard-card {
             background-color: rgba(var(--dashboard-card-bg-color), var(--dashboard-card-opacity));
             border-radius: var(--contenedor-border-radius, 1.25rem);
@@ -134,7 +124,6 @@
                 box-shadow: var(--dashboard-card-shadow-hover);
             }
 
-        /* --- Estilos de los Componentes Internos --- */
         .stats-grid {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
@@ -393,11 +382,6 @@
             padding-left: 1.8rem; /* Alinea el texto con el título, dejando espacio para el icono */
         }
 
-        /* 
-           ===============================================================
-           === RESPONSIVIDAD: AQUÍ SE CONTROLA EL COLAPSO DE COLUMNAS ===
-           ===============================================================
-        */
         @media (max-width: 1200px) {
             .dashboard-grid {
                 grid-template-columns: 2fr 1fr;
@@ -409,7 +393,6 @@
         }
 
         @media (max-width: 992px) {
-            /* Aquí es donde el sidebar se coloca debajo del contenido principal */
             .dashboard-grid {
                 grid-template-columns: 1fr;
                 grid-template-areas:
@@ -427,9 +410,6 @@
                 grid-template-columns: 1fr;
             }
         }
-        /* ======================================================= */
-        /* ====== ESTILOS PARA LA TARJETA DE DOCTOR (Final) ====== */
-        /* ======================================================= */
         .doctor-profile-card {
             display: flex;
             align-items: center;
@@ -453,15 +433,10 @@
             flex-direction: column;
         }
 
-        /*
-   ===============================================================
-   ===     NUEVO ESTILO PARA RESALTAR EL EMAIL COMO UNA TAG      ===
-   ===============================================================
-*/
         .doctor-profile-email-tag {
             display: inline-block; /* Se ajusta al contenido */
             width: fit-content;
-            font-size: 0.75rem; /* Letra pequeña */
+            font-size: 0.75rem; 
             font-weight: 600;
             color: var(--color-principal-hover); /* Usa el color de la marca */
             background-color: var(--color-principal-claro); /* Fondo claro de la marca */
@@ -484,20 +459,13 @@
             margin-top: 2px;
         }
 
-        /* ==================================================================== */
         /* ====== ESTILOS PARA EL CALENDARIO (DISEÑO AMARILLO/OSCURO) ====== */
-        /* ==================================================================== */
         .calendar-widget-card {
-            /* Usamos rgba para añadir un canal Alfa (transparencia) al color */
-            /* Formato: rgba(R, G, B, Opacidad) */
-            /* #FFC300 en RGB es 255, 195, 0. El 0.85 es la opacidad (85%) */
             background: linear-gradient( to bottom right, rgba(255, 217, 102, 0.85), /* #FFD966 con 85% de opacidad */
             rgba(255, 195, 0, 0.90) /* #FFC300 con 90% de opacidad */
             );
             color: var(--color-texto-primario);
             padding: 1.5rem;
-            /* Opcional: añade un efecto "backdrop-filter" para un look más moderno (si quieres) */
-            /* Esto desenfoca lo que está detrás del elemento. */
             -webkit-backdrop-filter: blur(10px);
             backdrop-filter: blur(10px);
         }
@@ -528,18 +496,6 @@
             color: rgba(52, 58, 64, 0.7);
         }
 
-        /* ANTES */
-        /*.calendar-day-cell {
-            font-size: 0.9rem;
-            font-weight: 500;
-            padding: 0.5rem 0;
-            position: relative;
-            border-radius: 8px;
-            cursor: default;
-            transition: all 0.2s ease;
-        }*/
-
-        /* DESPUÉS (con el fondo amarillo suave) */
         .calendar-day-cell {
             font-size: 0.9rem;
             font-weight: 500;
@@ -551,37 +507,27 @@
             background-color: var(--color-principal-claro); /* El color amarillo suave de tu marca */
         }
 
-            /* ANTES */
-            /*.calendar-day-cell.other-month {
-                color: rgba(52, 58, 64, 0.4); 
-            }*/
-
-            /* DESPUÉS (con fondo semi-transparente) */
             .calendar-day-cell.other-month {
                 color: rgba(52, 58, 64, 0.4);
                 background-color: rgba(255, 249, 230, 0.5); /* El mismo amarillo suave pero con 50% de opacidad */
             }
 
-            /* --- ESTILO PARA EL DÍA ACTUAL --- */
             .calendar-day-cell.today-day {
                 /* Marco oscuro sin fondo */
                 box-shadow: 0 0 0 2px var(--color-texto-primario) inset;
                 font-weight: 700;
             }
 
-            /* --- ESTILO PARA EL DÍA DE LA CITA (LA SELECCIÓN) --- */
             .calendar-day-cell.selected-day {
                 /* El color oscuro de tu tarjeta de "Board Meeting" */
                 background-color: var(--color-texto-primario);
                 color: white; /* Texto blanco para contraste */
                 font-weight: 700;
-                /* Anulamos el borde si el día de la cita es también hoy */
                 box-shadow: none;
             }
 
         .calendar-divider {
             border: 0;
-            /* La línea divisora ahora es más oscura para verse sobre el amarillo */
             border-top: 1px solid rgba(52, 58, 64, 0.2);
             margin: 1.5rem 0;
         }
@@ -594,11 +540,6 @@
             font-size: 1rem;
             font-weight: 500;
         }
-        /* ==================================================================== */
-        /* ====== ESTILOS PARA EL CALENDARIO (DISEÑO FINALIZADO) ====== */
-        /* ==================================================================== */
-
-        /* ... (la regla .calendar-widget-card se mantiene igual con el degradado) ... */
 
         .calendar-header {
             display: flex;
@@ -613,7 +554,6 @@
                 font-weight: 700; /* Cambiado a 700 para que sea más negrita */
             }
 
-        /* ... (el resto de las reglas del grid y los días se mantienen igual) ... */
 
         .calendar-divider {
             border: 0;
@@ -621,11 +561,6 @@
             margin: 1.5rem 0;
         }
 
-        /* 
-   ===============================================================
-   ===     NUEVO CONTENEDOR PARA LA HORA CON FONDO BLANCO      ===
-   ===============================================================
-*/
         .calendar-time-wrapper {
             display: flex;
             justify-content: center; /* Centra el contenedor blanco */
@@ -643,32 +578,27 @@
             font-weight: 600;
         }
 
-        /* =================================================================== */
-        /* ======    ESTILOS FINALES PARA TIMELINE                      ====== */
-        /* =================================================================== */
+        /*     ESTILOS FINALES PARA TIMELINE   */
 
         .timeline-stepper-card {
             padding: 1.5rem;
             display: flex;
             flex-direction: column;
             align-items: center;
-            /* NUEVO: Padding inferior para dar espacio a las píldoras */
             padding-bottom: 5rem;
-            position: relative; /* Asegura que el padding funcione bien con elementos absolutos */
+            position: relative; 
         }
 
-        /* Título superior con icono y negrita */
         .timeline-main-title {
-            font-size: 1.2rem; /* Un poco más grande */
-            font-weight: 700; /* Negrita */
-            color: var(--color-texto-primario); /* Más oscuro para mayor jerarquía */
+            font-size: 1.2rem; 
+            font-weight: 700;
+            color: var(--color-texto-primario); 
             margin-bottom: 2.5rem;
             display: flex;
             align-items: center;
-            gap: 0.6rem; /* Espacio entre icono y texto */
+            gap: 0.6rem; 
         }
 
-        /* El contenedor del timeline ahora no necesita margen inferior */
         .timeline-container {
             display: flex;
             align-items: flex-start;
@@ -732,11 +662,9 @@
             background-repeat: repeat-x;
         }
 
-        /* Píldora de estado (posicionamiento corregido) */
         .step-status-tag {
             position: absolute;
-            /* CORREGIDO: Usamos 'top' en lugar de 'bottom' para un anclaje más predecible */
-            top: 150px; /* Distancia desde la parte superior del .timeline-step */
+            top: 150px; 
             left: 50%;
             transform: translateX(-50%);
             display: inline-block;
@@ -757,7 +685,6 @@
             color: #1e40af;
         }
 
-        /* Estados dinámicos para íconos y líneas (sin cambios) */
         .timeline-step.completed .step-icon,
         .timeline-step.active .step-icon {
             color: white;
@@ -783,13 +710,11 @@
             background-size: 100% 2px;
         }
 
-        /* ======================================================= */
         /* ====== ESTILOS PARA LA TARJETA DE PAGO DE CITA   ====== */
-        /* ======================================================= */
         .payment-overview-card {
             display: flex;
             flex-direction: column;
-            gap: 1.5rem; /* Espacio entre el header, el cuerpo y el footer de la tarjeta */
+            gap: 1.5rem; 
         }
 
         .payment-overview-header {
@@ -904,9 +829,7 @@
             height: 10px;
             border-radius: 50%;
         }
-        /* ========================================================== */
         /* ====== ESTILOS PARA TARJETA DE PAGO (ULTRA-COMPACTA) ====== */
-        /* ========================================================== */
         .payment-overview-card {
             display: flex;
             flex-direction: column;
@@ -998,16 +921,13 @@
         }
         /* Rojo de acento */
 
-        /* Estilo para la descripción debajo de cada barra */
         .bar-label {
             font-size: 0.75rem;
             font-weight: 500;
             color: var(--color-texto-secundario);
             margin-top: 0.25rem; /* Pequeño espacio sobre el texto */
         }
-        /* ======================================================= */
         /* ======   ESTILOS PARA LA TARJETA MOTIVO DE CITA  ====== */
-        /* ======================================================= */
         .consultation-info-card {
             display: flex;
             flex-direction: column; /* Cambiado a columna para layout vertical */
@@ -1031,9 +951,6 @@
             padding-left: 2rem; /* Añadimos un padding para alinear con el texto del título, no con el ícono */
         }
 
-        /* ======================================================== */
-        /* ====== ESTILOS PARA LA TARJETA DE ACCIONES (Corregido y Final) ====== */
-        /* ======================================================== */
         .actions-card {
             background-color: var(--color-texto-primario);
             color: white;
@@ -1060,7 +977,6 @@
                 margin-top: 0.75rem;
             }
 
-        /* --- ESTILOS BASE Y DE HOVER CORREGIDOS --- */
         .action-button {
             width: 100%;
             padding: 12px;
@@ -1076,11 +992,6 @@
             text-decoration: none;
         }
 
-            /* 
-         ===============================================================
-   ===     CORRECCIÓN: Se usan clases (.modify-button, .cancel-button) en lugar de IDs     ===
-   ===============================================================
-*/
             /* Hover para el botón de Modificar (Amarillo) */
             .action-button.modify-button:hover {
                 background-color: var(--color-principal);
@@ -1095,14 +1006,14 @@
 
             /* Estilo para un botón deshabilitado */
             .action-button[disabled],
-            .action-button.aspNetDisabled { /* ASP.NET a veces usa una clase en lugar del atributo */
-                background-color: #4b5563 !important; /* Gris oscuro, !important para anular hover */
-                color: #9ca3af !important; /* Texto gris claro, !important */
-                cursor: not-allowed !important; /* Cursor de "no permitido" */
-                pointer-events: none; /* Previene cualquier evento de mouse, incluido el hover */
+            .action-button.aspNetDisabled { 
+                background-color: #4b5563 !important; 
+                color: #9ca3af !important; 
+                cursor: not-allowed !important; 
+                pointer-events: none;
             }
 
-        /* --- LÓGICA DE MENSAJES DE ADVERTENCIA (Corregida) --- */
+       
         .action-warning-message {
             font-size: 0.8rem;
             color: #ffc107;
@@ -1110,9 +1021,7 @@
             margin-top: 0.75rem;
         }
 
-        /* ======================================================== */
-        /* ======        CSS PARA LOS MODALES (AÑADIR)       ====== */
-        /* ======================================================== */
+        
 
         .modal-wrapper {
             position: fixed;
@@ -1214,17 +1123,13 @@
                 color: var(--color-texto-primario);
             }
 
-        /* =================================================================== */
         /* ====== ESTILOS PERSONALIZADOS PARA EL MODAL DE CANCELACIÓN ====== */
-        /* =================================================================== */
 
         /* 1. Header rojo para el modal de cancelación */
         #modalCancel .modal-header {
             background-color: var(--negative-accent-color);
             color: white;
             border-bottom: none;
-            /* La magia para redondear las esquinas superiores */
-            /* El valor debe coincidir con el border-radius del .modal-content */
             border-top-left-radius: 1rem;
             border-top-right-radius: 1rem;
         }
@@ -1238,8 +1143,8 @@
         /* 2. Cuerpo del modal con layout de imagen y texto */
         #modalCancel .modal-body {
             display: flex;
-            align-items: center; /* Centra verticalmente la imagen y el texto */
-            gap: 1.5rem; /* Espacio entre la imagen y el texto */
+            align-items: center;
+            gap: 1.5rem; 
         }
 
         /* Estilos para la imagen de advertencia */
@@ -1255,7 +1160,7 @@
             line-height: 1.6;
         }
 
-            .modal-text-content p:first-child { /* El título "¿Estás seguro...?" */
+            .modal-text-content p:first-child { 
                 font-weight: 600;
                 font-size: 1.1rem;
                 color: var(--color-texto-primario);
@@ -1305,9 +1210,8 @@
                 #modalCancel .modal-footer .btn-danger:hover {
                     background-color: #b91c1c; /* Rojo más oscuro para el hover */
                 }
-        /* ====================================================================== */
+        
         /* ====== ESTILOS PERSONALIZADOS PARA EL MODAL DE MODIFICACIÓN ====== */
-        /* ====================================================================== */
 
         /* 1. Header amarillo con bordes redondeados */
         #modalModify .modal-header {
@@ -1374,7 +1278,6 @@
                     background-color: #6b7280;
                 }
 
-            /* Botón principal (Guardar) ya tiene su estilo amarillo, solo nos aseguramos */
             #modalModify .modal-footer .btn-primary {
                 background-color: var(--color-principal);
                 color: var(--color-texto-primario);
@@ -1383,9 +1286,7 @@
                 #modalModify .modal-footer .btn-primary:hover {
                     background-color: var(--color-principal-hover);
                 }
-        /* ====================================================================== */
         /* ====== ESTILOS PARA EL SCHEDULER DENTRO DEL MODAL DE MODIFICACIÓN ====== */
-        /* ====================================================================== */
 
         /* Contenedor principal del cuerpo del modal */
         #modalModify .modal-body {
@@ -1426,7 +1327,6 @@
                 display: none; /* Chrome, Safari y Opera */
             }
 
-        /* Botones de navegación del carrusel (no funcionales con PostBack, pero visualmente presentes) */
         .date-nav-btn {
             background-color: #f3f4f6;
             border: 1px solid #e5e7eb;
@@ -1523,9 +1423,7 @@
             font-weight: 500;
         }
 
-        /* ====================================================================== */
         /* ====== ESTILOS PARA LOS BOTONES DEL FOOTER DEL MODAL MODIFY ====== */
-        /* ====================================================================== */
 
         /* Estilo base para el botón primario (Guardar) */
         #modalModify .modal-footer .btn-primary {
@@ -1620,7 +1518,6 @@
 
 
 
-                        <%-- REEMPLAZA LA TARJETA "Facturas Vencidas" CON ESTA TARJETA DE PAGO --%>
                         <div class="dashboard-card payment-overview-card">
 
                             <div class="payment-overview-header">
@@ -1678,8 +1575,6 @@
 
                         <div class="timeline-container">
 
-                            <!-- ... (resto del timeline) ... -->
-
                             <!-- PASO 1: En Espera -->
                             <div id="stepEspera" class="timeline-step" runat="server">
                                 <div class="step-icon"><i class="fas fa-check"></i></div>
@@ -1703,7 +1598,6 @@
                                 <div class="step-details">
                                     <div class="round-title">Etapa 2</div>
                                     <div class="step-description">En Consultorio</div>
-                                    <%-- ID CAMBIADO DE lblDateConsultorio a lblDescConsultorio --%>
                                     <div class="step-date">
                                         <asp:Label ID="lblDescConsultorio" runat="server"></asp:Label>
                                     </div>
@@ -1720,7 +1614,6 @@
                                 <div class="step-details">
                                     <div class="round-title">Etapa 3</div>
                                     <div class="step-description">Atendido</div>
-                                    <%-- ID CAMBIADO DE lblDateAtendido a lblDescAtendido --%>
                                     <div class="step-date">
                                         <asp:Label ID="lblDescAtendido" runat="server"></asp:Label>
                                     </div>
@@ -1819,12 +1712,8 @@
         </div>
     </div>
 
-
-    <!-- =============================================================== -->
-    <!-- ======    HTML DEL MODAL DE MODIFICACIÓN (ESTRUCTURA FINAL)   ====== -->
-    <!-- =============================================================== -->
+    <!-- ======    HTML DEL MODAL DE MODIFICACIÓN   ====== -->
     <div id="modalModify" class="modal-wrapper">
-    <%-- El UpdatePanel ahora envuelve TODO el contenido del modal --%>
     <asp:UpdatePanel ID="updModalModify" runat="server">
         <ContentTemplate>
             <div class="modal-content">
@@ -1833,14 +1722,12 @@
                     <button type="button" class="modal-close-button" onclick="closeModal('modalModify'); return false;">×</button>
                 </div>
                 
-                <%-- Campos ocultos y botón invisible se mantienen aquí --%>
                 <asp:HiddenField ID="hdnSelectedDate" runat="server" />
                 <asp:HiddenField ID="hdnSelectedTime" runat="server" />
                 <asp:HiddenField ID="hdnDateOffset" runat="server" Value="0" />
                 <asp:Button ID="btnRefreshScheduler" runat="server" OnClick="btnRefreshScheduler_Click" Style="display: none;" />
 
                 <div class="modal-body">
-                    <%-- El contenido del scheduler no cambia --%>
                     <div>
                         <h4 class="scheduler-section-title">1. Selecciona un día</h4>
                         <div class="date-selector-container">
@@ -1882,7 +1769,6 @@
                     </asp:Panel>
                 </div>
                 
-                <%-- ¡CAMBIO IMPORTANTE! El footer ahora está DENTRO del ContentTemplate --%>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" onclick="closeModal('modalModify'); return false;">Salir</button>
                     <asp:Button ID="btnConfirmModify" runat="server" Text="Guardar Cambios" CssClass="btn btn-primary" OnClick="btnConfirmModify_Click" />
@@ -1891,12 +1777,7 @@
         </ContentTemplate>
     </asp:UpdatePanel>
 </div>
-
-
-
-    <!-- ============================================================= -->
     <!-- ====== MODAL DE CANCELACIÓN CON NUEVO DISEÑO (ACTUALIZADO) ====== -->
-    <!-- ============================================================= -->
     <div id="modalCancel" class="modal-wrapper">
         <div class="modal-content">
             <!-- 1. El header ahora será rojo gracias al CSS -->

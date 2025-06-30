@@ -55,4 +55,10 @@ public class CuentaUsuarioWS {
         return cuentabo.verificarCuenta(identificador, password, rol);
     }
     
+    @WebMethod(operationName = "usernameExiste")
+    public boolean usernameExiste(@WebParam(name = "username") String username) {
+        cuentabo = new CuentaUsuarioBO();
+        return cuentabo.usernameExiste(username);
+    }
+    
 }

@@ -60,13 +60,22 @@ namespace PazCitasWA
         protected global::System.Web.UI.WebControls.Panel pnlTurnos;
 
         /// <summary>
-        /// Control gvTurnos.
+        /// Control rptHorarios.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView gvTurnos;
+        protected global::System.Web.UI.WebControls.Repeater rptHorarios;
+
+        /// <summary>
+        /// Control hfTurnosSeleccionados.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HiddenField hfTurnosSeleccionados;
 
         /// <summary>
         /// Control btnGuardar.

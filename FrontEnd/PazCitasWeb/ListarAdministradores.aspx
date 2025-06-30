@@ -41,12 +41,34 @@
                 background-color: #e2f8e2;
             }
 
-        /* Paginador */
-        .pagination-container a,
-        .pagination-container span {
-            padding: 0.25rem 0.5rem;
-            font-size: 0.8rem;
+        /* Paginación */
+        .pagination-container {
+            text-align: center;
+            margin-top: 1rem;
         }
+
+            .pagination-container a,
+            .pagination-container span {
+                display: inline-block;
+                padding: 6px 12px;
+                margin: 0 3px;
+                border-radius: 5px;
+                border: 1px solid #ccc;
+                background-color: #f4f4f4;
+                color: #333;
+                text-decoration: none;
+            }
+
+            .pagination-container span {
+                background-color: #198754;
+                color: white;
+                font-weight: bold;
+                border-color: #198754;
+            }
+
+            .pagination-container a:hover {
+                background-color: #d9ffd9;
+            }
 
         .Center {
             text-align: center;

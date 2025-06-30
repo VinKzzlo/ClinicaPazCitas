@@ -14,7 +14,7 @@ namespace PazCitasWA
         private TurnoWSClient wsTurno = new TurnoWSClient();
         private HorarioTrabajoWSClient wsHorario = new HorarioTrabajoWSClient();
 
-        // Lista simple para mantener turnos asignados
+        // Lista para mantener turnos asignados
         private List<int> turnosAsignados = new List<int>();
 
         protected int IdMedico =>
@@ -25,9 +25,10 @@ namespace PazCitasWA
             if (!IsPostBack)
             {
                 if (IdMedico == 0) Response.Redirect("AsignarTurnos.aspx");
+
                 CargarTurnosAsignados();
                 CargarDatosMedico();
-                CargarTurnosFijos();
+                CargarGrillaTurnos();
             }
             else
             {
@@ -41,17 +42,14 @@ namespace PazCitasWA
         {
             try
             {
-                // Intentar cargar turnos ya asignados
                 var horariosAsignados = wsHorario.listarPorMedico(IdMedico);
                 turnosAsignados = horariosAsignados?.Select(h => h.turno.idTurno).ToList() ?? new List<int>();
             }
             catch
             {
-                // Si hay error o no existe el método, lista vacía
                 turnosAsignados = new List<int>();
             }
 
-            // Guardar en ViewState
             ViewState["TurnosAsignados"] = turnosAsignados;
         }
 
@@ -63,52 +61,86 @@ namespace PazCitasWA
             lblCMPMedico.Text = medico.codigoMedico;
         }
 
-        private void CargarTurnosFijos()
+        private void CargarGrillaTurnos()
         {
             var turnos = wsTurno.listarTurno();
-            gvTurnos.DataSource = turnos;
-            gvTurnos.DataBind();
+
+            // Días de la semana en orden
+            var diasSemana = new[] { "Lunes", "Martes", "Miercoles", "Jueves", "Viernes" };
+
+            // Obtener horas únicas y ordenarlas
+            var horasUnicas = turnos.Select(t => t.horaInicio.ToString(@"HH:mm"))
+                                   .Distinct()
+                                   .OrderBy(h => h)
+                                   .ToList();
+
+            // Crear estructura de datos para la grilla
+            var grillaDatos = horasUnicas.Select(hora => new
+            {
+                Hora = hora,
+                TurnosPorDia = diasSemana.Select(dia =>
+                {
+                    var turno = turnos.FirstOrDefault(t =>
+                        t.dia.ToString().Equals(dia, StringComparison.OrdinalIgnoreCase) &&
+                        t.horaInicio.ToString(@"HH:mm") == hora);
+
+                    return new
+                    {
+                        Dia = dia,
+                        Turno = turno,
+                        IdTurno = turno?.idTurno ?? -1,
+                        Disponible = turno != null
+                    };
+                }).ToList()
+            }).ToList();
+
+            rptHorarios.DataSource = grillaDatos;
+            rptHorarios.DataBind();
         }
 
-        // Método público para usar en el ASPX
-        public bool EsTurnoAsignado(int idTurno)
+        // Método para obtener turnos asignados en formato JavaScript
+        public string GetTurnosAsignadosJS()
         {
             if (ViewState["TurnosAsignados"] != null)
                 turnosAsignados = (List<int>)ViewState["TurnosAsignados"];
 
-            return turnosAsignados.Contains(idTurno);
+            return string.Join(",", turnosAsignados);
         }
 
         protected void btnGuardar_Click(object sender, EventArgs e)
         {
             try
             {
-                var asignaciones = new List<int>();
-
-                foreach (GridViewRow row in gvTurnos.Rows)
+                // Obtener turnos seleccionados del campo oculto
+                var turnosSeleccionados = new List<int>();
+                if (!string.IsNullOrEmpty(hfTurnosSeleccionados.Value))
                 {
-                    var chk = (CheckBox)row.FindControl("chkAsignar");
-                    if (chk?.Checked == true)
-                    {
-                        int idTurno = (int)gvTurnos.DataKeys[row.RowIndex].Value;
-                        asignaciones.Add(idTurno);
-                    }
+                    turnosSeleccionados = hfTurnosSeleccionados.Value
+                        .Split(',')
+                        .Where(s => !string.IsNullOrEmpty(s))
+                        .Select(int.Parse)
+                        .ToList();
                 }
 
                 // Eliminar asignaciones previas
                 wsHorario.eliminarHorarioPorMedico(IdMedico);
-                
+
                 // Insertar nuevas asignaciones
-                horarioTrabajo horarioIn= new horarioTrabajo();
-                medico medico = new medico();
-                medico = wsMedico.obtenerMedico(IdMedico);
-                horarioIn.medico = medico;
-                foreach (int idTurno in asignaciones)
+                if (turnosSeleccionados.Any())
                 {
-                    turno turnoIn = new turno();
-                    turnoIn.idTurno = idTurno;
-                    horarioIn.turno = turnoIn;
-                    wsHorario.insertaHorario(horarioIn);
+                    var medico = wsMedico.obtenerMedico(IdMedico);
+
+                    foreach (int idTurno in turnosSeleccionados)
+                    {
+                        var horarioIn = new horarioTrabajo();
+                        horarioIn.medico = medico;
+
+                        var turnoIn = new turno();
+                        turnoIn.idTurno = idTurno;
+                        horarioIn.turno = turnoIn;
+
+                        wsHorario.insertaHorario(horarioIn);
+                    }
                 }
 
                 // Mensaje de éxito y redirección

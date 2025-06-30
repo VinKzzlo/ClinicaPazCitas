@@ -24,12 +24,10 @@ namespace PazCitasWA
                 wsPaciente = new PacienteWSClient();
                 pct = wsPaciente.obtenerPacienteXiD(IdPacienteLogueado);
                 lblNombreCompleto.Text = pct.nombre + " " + pct.apellidoPaterno;
-                //lblNombreCompleto.Text = "Joseph TM";
                 lblCabeceraSaludo.Text = "¡Hola, " + pct.nombre + "! Bienvenido de nuevo.";
-                //lblCabeceraSaludo.Text = "¡Hola, Joseph! Bienvenido de nuevo.";
             }
         }
-        private int IdPacienteLogueado // Prueba
+        private int IdPacienteLogueado 
         {
             get
             {
@@ -37,9 +35,8 @@ namespace PazCitasWA
                 {
                     return id;
                 }
-                // Redirigir a login si no hay sesión o devolver un valor que indique error
                 Response.Redirect("Login.aspx");
-                return 1; //Para la prueba
+                return -1; 
             }
         }
     }

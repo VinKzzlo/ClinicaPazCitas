@@ -450,4 +450,76 @@ public class CitaImpl implements CitaDAO {
         return resultado;
     }
 
+    @Override
+    public ArrayList<Cita> listarXMedicoXEstado(int idMed, String estado) {
+        ArrayList<Cita> citas = null;
+        Map<Integer, Object> parametrosEntrada = new HashMap<>();
+        parametrosEntrada.put(1, idMed);
+        EstadoCita est;
+
+        if (estado.compareToIgnoreCase("PROGRAMADA") == 0) {
+            est = EstadoCita.PROGRAMADA;
+        } else if (estado.compareToIgnoreCase("ATENDIDA") == 0) {
+            est = EstadoCita.ATENDIDA;
+        } else {
+            est = EstadoCita.CANCELADA;
+        }
+
+        parametrosEntrada.put(2, est.name());
+        rs = DBManager.getInstance().ejecutarProcedimientoLectura("LISTAR_CITA_X_MEDICO_X_ESTADO", parametrosEntrada);
+        try {
+            while (rs.next()) {
+                if (citas == null) {
+                    citas = new ArrayList<>();
+                }
+                Cita c = new Cita();
+                c.setIdCita(rs.getInt("id_cita"));
+                c.setFecha(rs.getDate("fecha"));
+                EstadoCita estadoCita = EstadoCita.valueOf(rs.getString("estado_cita").toUpperCase());
+                c.setEstadoCita(estadoCita);
+
+                EstadoAtencion estadoAtencion = EstadoAtencion.valueOf(rs.getString("estado_atencion").toUpperCase());
+                c.setEstadoAtencion(estadoAtencion);
+
+                c.setMotivoConsulta(rs.getString("motivo_consulta"));
+
+                Paciente paciente = new Paciente();
+                paciente.setIdUsuario(rs.getInt("fid_paciente"));
+                paciente.setNombre(rs.getString("nombre"));
+                paciente.setApellidoPaterno(rs.getString("apellido_paterno"));
+                paciente.setApellidoMaterno(rs.getString("apellido_materno"));
+                paciente.setDni(rs.getString("dni"));
+                paciente.setFechaNacimiento(rs.getDate("fecha_nacimiento"));
+                paciente.setEmail(rs.getString("email"));
+                paciente.setGenero(rs.getString("genero").charAt(0));
+
+                paciente.setDireccion(rs.getString("direccion"));
+                paciente.setTelefono(rs.getString("telefono"));
+
+                HorarioTrabajo horario = new HorarioTrabajo();
+                horario.setIdHorarioTrabajo(rs.getInt("id_horario_trabajo"));
+
+                Medico med = new Medico();
+                med.setIdUsuario(rs.getInt("fid_medico"));
+
+                Turno tur = new Turno();
+                tur.setIdTurno(rs.getInt("fid_turno"));
+
+                horario.setMedico(med);
+                horario.setTurno(tur);
+
+                c.setPaciente(paciente);
+                c.setHorarioTrabajo(horario);
+                citas.add(c);
+            }
+        } catch (SQLException ex) {
+            System.out.println(ex.getMessage());
+        } finally {
+            DBManager.getInstance().cerrarConexion();
+        }
+        return citas;
+    }
+
+    
+    
 }

@@ -450,6 +450,24 @@
     <Content Include="Connected Services\ServiciosWS\PazCitasWA.ServiciosWS.generarReporteCitaResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
+    <Content Include="Connected Services\ServiciosWS\PazCitasWA.ServiciosWS.listarConsulPorSedeNoAsigResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServiciosWS\PazCitasWA.ServiciosWS.usernameExisteResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServiciosWS\PazCitasWA.ServiciosWS.listarPacienteXCadenaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServiciosWS\PazCitasWA.ServiciosWS.consultorioExisteResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServiciosWS\PazCitasWA.ServiciosWS.generarReporteCitasXSedeResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServiciosWS\PazCitasWA.ServiciosWS.listaCitaPorMedicoXestadoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
     <None Include="Connected Services\ServiciosWS\RecetaWS.wsdl" />
     <None Include="Connected Services\ServiciosWS\ReporteWS.wsdl" />
     <None Include="Connected Services\ServiciosWS\ReporteWS.xsd">
@@ -583,7 +601,7 @@
     <Content Include="HomePaciente.aspx" />
     <Content Include="Images\doctorGenericImage.png" />
     <Content Include="Images\genericDoctor.png" />
-    <Content Include="Images\PazCantante.PNG" />
+    <Content Include="Images\imagen-clinica.jpg" />
     <Content Include="Images\WarningPerson.png" />
     <Content Include="Inicio.aspx" />
     <Content Include="ListarAdministradores.aspx" />
@@ -633,8 +651,17 @@
     <Content Include="Scripts\jquery-3.7.1.min.js" />
     <Content Include="Scripts\jquery-3.7.1.slim.js" />
     <Content Include="Scripts\jquery-3.7.1.slim.min.js" />
+    <Content Include="Scripts\jquery.signalR-2.2.2.js" />
+    <Content Include="Scripts\jquery.signalR-2.2.2.min.js" />
     <Content Include="Scripts\LoginModern\login-modern.js" />
+    <Content Include="Scripts\PazCitasS\RegistrarAdmin.js" />
+    <Content Include="Scripts\PazCitasS\RegistrarConsultorio.js" />
+    <Content Include="Scripts\PazCitasS\RegistrarEspecialidad.js" />
     <Content Include="Scripts\PazCitasS\RegistrarLineaMedicamento.js" />
+    <Content Include="Scripts\PazCitasS\RegistrarMedico.js" />
+    <Content Include="Scripts\PazCitasS\RegistrarPaciente.js" />
+    <Content Include="Scripts\PazCitasS\RegistrarSede.js" />
+    <Content Include="Scripts\PazCitasS\RegistrarSeguro.js" />
     <Content Include="Scripts\scriptAdmin.js" />
     <Content Include="Scripts\sidebars.js" />
     <Content Include="Content\styleAdmin.css" />

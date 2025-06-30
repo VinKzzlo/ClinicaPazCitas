@@ -6,9 +6,8 @@
 
 <asp:Content ID="Content2" ContentPlaceHolderID="cph_Scripts" runat="server">
     <style>
-        /* Tus estilos originales se mantienen. Solo se añade el de no-results-message. */
         .hero-search-section {
-            background-color: #e0f2fe; /* Color de fondo claro */
+            background-color: #e0f2fe;
             padding: 40px 20px;
             text-align: center;
             border-radius: 1rem;
@@ -168,9 +167,6 @@
                                         <h5 class="card-title"><%# "Dr. " + Eval("nombre") + " " + Eval("apellidoPaterno") %></h5>
                                         <p class="cmp-text">CMP: <%# Eval("codigoMedico") %></p>
                                     </div>
-                                    <a href='#' class="btn-know-doctor">
-                                        Conoce al médico <i class="fas fa-arrow-right arrow-icon"></i>
-                                    </a>
                                 </div>
                             </div>
                         </div>

@@ -54,7 +54,7 @@ namespace PazCitasWA
             else
             {
                 // Manejar caso sin id (mostrar mensaje o redirigir)
-                Response.Redirect("HomePaciente.aspx");
+                Response.Redirect("ListarCitasPaciente.aspx");
             }
         }
     }

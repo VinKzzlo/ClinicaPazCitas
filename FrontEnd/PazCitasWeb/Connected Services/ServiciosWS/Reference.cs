@@ -16,13 +16,13 @@ namespace PazCitasWA.ServiciosWS {
     public interface MedicoWS {
         
         // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="http://services.pucp.edu.pe/MedicoWS/obtenerMedicoRequest", ReplyAction="http://services.pucp.edu.pe/MedicoWS/obtenerMedicoResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://services.pucp.edu.pe/MedicoWS/listarMedicoXEspXSedeRequest", ReplyAction="http://services.pucp.edu.pe/MedicoWS/listarMedicoXEspXSedeResponse")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        PazCitasWA.ServiciosWS.obtenerMedicoResponse obtenerMedico(PazCitasWA.ServiciosWS.obtenerMedicoRequest request);
+        PazCitasWA.ServiciosWS.listarMedicoXEspXSedeResponse listarMedicoXEspXSede(PazCitasWA.ServiciosWS.listarMedicoXEspXSedeRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://services.pucp.edu.pe/MedicoWS/obtenerMedicoRequest", ReplyAction="http://services.pucp.edu.pe/MedicoWS/obtenerMedicoResponse")]
-        System.Threading.Tasks.Task<PazCitasWA.ServiciosWS.obtenerMedicoResponse> obtenerMedicoAsync(PazCitasWA.ServiciosWS.obtenerMedicoRequest request);
+        [System.ServiceModel.OperationContractAttribute(Action="http://services.pucp.edu.pe/MedicoWS/listarMedicoXEspXSedeRequest", ReplyAction="http://services.pucp.edu.pe/MedicoWS/listarMedicoXEspXSedeResponse")]
+        System.Threading.Tasks.Task<PazCitasWA.ServiciosWS.listarMedicoXEspXSedeResponse> listarMedicoXEspXSedeAsync(PazCitasWA.ServiciosWS.listarMedicoXEspXSedeRequest request);
         
         // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
         [System.ServiceModel.OperationContractAttribute(Action="http://services.pucp.edu.pe/MedicoWS/listarMedicoXCadenaRequest", ReplyAction="http://services.pucp.edu.pe/MedicoWS/listarMedicoXCadenaResponse")]
@@ -34,22 +34,13 @@ namespace PazCitasWA.ServiciosWS {
         System.Threading.Tasks.Task<PazCitasWA.ServiciosWS.listarMedicoXCadenaResponse> listarMedicoXCadenaAsync(PazCitasWA.ServiciosWS.listarMedicoXCadenaRequest request);
         
         // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="http://services.pucp.edu.pe/MedicoWS/listarMedicoXEspXSedeRequest", ReplyAction="http://services.pucp.edu.pe/MedicoWS/listarMedicoXEspXSedeResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://services.pucp.edu.pe/MedicoWS/modificarMedicoRequest", ReplyAction="http://services.pucp.edu.pe/MedicoWS/modificarMedicoResponse")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        PazCitasWA.ServiciosWS.listarMedicoXEspXSedeResponse listarMedicoXEspXSede(PazCitasWA.ServiciosWS.listarMedicoXEspXSedeRequest request);
+        PazCitasWA.ServiciosWS.modificarMedicoResponse modificarMedico(PazCitasWA.ServiciosWS.modificarMedicoRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://services.pucp.edu.pe/MedicoWS/listarMedicoXEspXSedeRequest", ReplyAction="http://services.pucp.edu.pe/MedicoWS/listarMedicoXEspXSedeResponse")]
-        System.Threading.Tasks.Task<PazCitasWA.ServiciosWS.listarMedicoXEspXSedeResponse> listarMedicoXEspXSedeAsync(PazCitasWA.ServiciosWS.listarMedicoXEspXSedeRequest request);
-        
-        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="http://services.pucp.edu.pe/MedicoWS/listarMedicoRequest", ReplyAction="http://services.pucp.edu.pe/MedicoWS/listarMedicoResponse")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        PazCitasWA.ServiciosWS.listarMedicoResponse listarMedico(PazCitasWA.ServiciosWS.listarMedicoRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://services.pucp.edu.pe/MedicoWS/listarMedicoRequest", ReplyAction="http://services.pucp.edu.pe/MedicoWS/listarMedicoResponse")]
-        System.Threading.Tasks.Task<PazCitasWA.ServiciosWS.listarMedicoResponse> listarMedicoAsync(PazCitasWA.ServiciosWS.listarMedicoRequest request);
+        [System.ServiceModel.OperationContractAttribute(Action="http://services.pucp.edu.pe/MedicoWS/modificarMedicoRequest", ReplyAction="http://services.pucp.edu.pe/MedicoWS/modificarMedicoResponse")]
+        System.Threading.Tasks.Task<PazCitasWA.ServiciosWS.modificarMedicoResponse> modificarMedicoAsync(PazCitasWA.ServiciosWS.modificarMedicoRequest request);
         
         // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
         [System.ServiceModel.OperationContractAttribute(Action="http://services.pucp.edu.pe/MedicoWS/insertarMedicoRequest", ReplyAction="http://services.pucp.edu.pe/MedicoWS/insertarMedicoResponse")]
@@ -61,15 +52,6 @@ namespace PazCitasWA.ServiciosWS {
         System.Threading.Tasks.Task<PazCitasWA.ServiciosWS.insertarMedicoResponse> insertarMedicoAsync(PazCitasWA.ServiciosWS.insertarMedicoRequest request);
         
         // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="http://services.pucp.edu.pe/MedicoWS/modificarMedicoRequest", ReplyAction="http://services.pucp.edu.pe/MedicoWS/modificarMedicoResponse")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        PazCitasWA.ServiciosWS.modificarMedicoResponse modificarMedico(PazCitasWA.ServiciosWS.modificarMedicoRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://services.pucp.edu.pe/MedicoWS/modificarMedicoRequest", ReplyAction="http://services.pucp.edu.pe/MedicoWS/modificarMedicoResponse")]
-        System.Threading.Tasks.Task<PazCitasWA.ServiciosWS.modificarMedicoResponse> modificarMedicoAsync(PazCitasWA.ServiciosWS.modificarMedicoRequest request);
-        
-        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
         [System.ServiceModel.OperationContractAttribute(Action="http://services.pucp.edu.pe/MedicoWS/eliminarMedicoRequest", ReplyAction="http://services.pucp.edu.pe/MedicoWS/eliminarMedicoResponse")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
@@ -77,6 +59,24 @@ namespace PazCitasWA.ServiciosWS {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://services.pucp.edu.pe/MedicoWS/eliminarMedicoRequest", ReplyAction="http://services.pucp.edu.pe/MedicoWS/eliminarMedicoResponse")]
         System.Threading.Tasks.Task<PazCitasWA.ServiciosWS.eliminarMedicoResponse> eliminarMedicoAsync(PazCitasWA.ServiciosWS.eliminarMedicoRequest request);
+        
+        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="http://services.pucp.edu.pe/MedicoWS/obtenerMedicoRequest", ReplyAction="http://services.pucp.edu.pe/MedicoWS/obtenerMedicoResponse")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        PazCitasWA.ServiciosWS.obtenerMedicoResponse obtenerMedico(PazCitasWA.ServiciosWS.obtenerMedicoRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://services.pucp.edu.pe/MedicoWS/obtenerMedicoRequest", ReplyAction="http://services.pucp.edu.pe/MedicoWS/obtenerMedicoResponse")]
+        System.Threading.Tasks.Task<PazCitasWA.ServiciosWS.obtenerMedicoResponse> obtenerMedicoAsync(PazCitasWA.ServiciosWS.obtenerMedicoRequest request);
+        
+        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="http://services.pucp.edu.pe/MedicoWS/listarMedicoRequest", ReplyAction="http://services.pucp.edu.pe/MedicoWS/listarMedicoResponse")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        PazCitasWA.ServiciosWS.listarMedicoResponse listarMedico(PazCitasWA.ServiciosWS.listarMedicoRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://services.pucp.edu.pe/MedicoWS/listarMedicoRequest", ReplyAction="http://services.pucp.edu.pe/MedicoWS/listarMedicoResponse")]
+        System.Threading.Tasks.Task<PazCitasWA.ServiciosWS.listarMedicoResponse> listarMedicoAsync(PazCitasWA.ServiciosWS.listarMedicoRequest request);
     }
     
     /// <remarks/>
@@ -2402,35 +2402,40 @@ namespace PazCitasWA.ServiciosWS {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="obtenerMedico", WrapperNamespace="http://services.pucp.edu.pe", IsWrapped=true)]
-    public partial class obtenerMedicoRequest {
+    [System.ServiceModel.MessageContractAttribute(WrapperName="listarMedicoXEspXSede", WrapperNamespace="http://services.pucp.edu.pe", IsWrapped=true)]
+    public partial class listarMedicoXEspXSedeRequest {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.pucp.edu.pe", Order=0)]
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public int idmedico;
+        public int idSede;
         
-        public obtenerMedicoRequest() {
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.pucp.edu.pe", Order=1)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public int idEsp;
+        
+        public listarMedicoXEspXSedeRequest() {
         }
         
-        public obtenerMedicoRequest(int idmedico) {
-            this.idmedico = idmedico;
+        public listarMedicoXEspXSedeRequest(int idSede, int idEsp) {
+            this.idSede = idSede;
+            this.idEsp = idEsp;
         }
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="obtenerMedicoResponse", WrapperNamespace="http://services.pucp.edu.pe", IsWrapped=true)]
-    public partial class obtenerMedicoResponse {
+    [System.ServiceModel.MessageContractAttribute(WrapperName="listarMedicoXEspXSedeResponse", WrapperNamespace="http://services.pucp.edu.pe", IsWrapped=true)]
+    public partial class listarMedicoXEspXSedeResponse {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.pucp.edu.pe", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public PazCitasWA.ServiciosWS.medico @return;
+        [System.Xml.Serialization.XmlElementAttribute("return", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public PazCitasWA.ServiciosWS.medico[] @return;
         
-        public obtenerMedicoResponse() {
+        public listarMedicoXEspXSedeResponse() {
         }
         
-        public obtenerMedicoResponse(PazCitasWA.ServiciosWS.medico @return) {
+        public listarMedicoXEspXSedeResponse(PazCitasWA.ServiciosWS.medico[] @return) {
             this.@return = @return;
         }
     }
@@ -2474,68 +2479,35 @@ namespace PazCitasWA.ServiciosWS {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="listarMedicoXEspXSede", WrapperNamespace="http://services.pucp.edu.pe", IsWrapped=true)]
-    public partial class listarMedicoXEspXSedeRequest {
+    [System.ServiceModel.MessageContractAttribute(WrapperName="modificarMedico", WrapperNamespace="http://services.pucp.edu.pe", IsWrapped=true)]
+    public partial class modificarMedicoRequest {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.pucp.edu.pe", Order=0)]
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public int idSede;
+        public PazCitasWA.ServiciosWS.medico medico;
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.pucp.edu.pe", Order=1)]
+        public modificarMedicoRequest() {
+        }
+        
+        public modificarMedicoRequest(PazCitasWA.ServiciosWS.medico medico) {
+            this.medico = medico;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="modificarMedicoResponse", WrapperNamespace="http://services.pucp.edu.pe", IsWrapped=true)]
+    public partial class modificarMedicoResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.pucp.edu.pe", Order=0)]
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public int idEsp;
+        public int @return;
         
-        public listarMedicoXEspXSedeRequest() {
+        public modificarMedicoResponse() {
         }
         
-        public listarMedicoXEspXSedeRequest(int idSede, int idEsp) {
-            this.idSede = idSede;
-            this.idEsp = idEsp;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="listarMedicoXEspXSedeResponse", WrapperNamespace="http://services.pucp.edu.pe", IsWrapped=true)]
-    public partial class listarMedicoXEspXSedeResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.pucp.edu.pe", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute("return", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public PazCitasWA.ServiciosWS.medico[] @return;
-        
-        public listarMedicoXEspXSedeResponse() {
-        }
-        
-        public listarMedicoXEspXSedeResponse(PazCitasWA.ServiciosWS.medico[] @return) {
-            this.@return = @return;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="listarMedico", WrapperNamespace="http://services.pucp.edu.pe", IsWrapped=true)]
-    public partial class listarMedicoRequest {
-        
-        public listarMedicoRequest() {
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="listarMedicoResponse", WrapperNamespace="http://services.pucp.edu.pe", IsWrapped=true)]
-    public partial class listarMedicoResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.pucp.edu.pe", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute("return", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public PazCitasWA.ServiciosWS.medico[] @return;
-        
-        public listarMedicoResponse() {
-        }
-        
-        public listarMedicoResponse(PazCitasWA.ServiciosWS.medico[] @return) {
+        public modificarMedicoResponse(int @return) {
             this.@return = @return;
         }
     }
@@ -2579,42 +2551,6 @@ namespace PazCitasWA.ServiciosWS {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="modificarMedico", WrapperNamespace="http://services.pucp.edu.pe", IsWrapped=true)]
-    public partial class modificarMedicoRequest {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.pucp.edu.pe", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public PazCitasWA.ServiciosWS.medico medico;
-        
-        public modificarMedicoRequest() {
-        }
-        
-        public modificarMedicoRequest(PazCitasWA.ServiciosWS.medico medico) {
-            this.medico = medico;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="modificarMedicoResponse", WrapperNamespace="http://services.pucp.edu.pe", IsWrapped=true)]
-    public partial class modificarMedicoResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.pucp.edu.pe", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public int @return;
-        
-        public modificarMedicoResponse() {
-        }
-        
-        public modificarMedicoResponse(int @return) {
-            this.@return = @return;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(WrapperName="eliminarMedico", WrapperNamespace="http://services.pucp.edu.pe", IsWrapped=true)]
     public partial class eliminarMedicoRequest {
         
@@ -2648,6 +2584,70 @@ namespace PazCitasWA.ServiciosWS {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="obtenerMedico", WrapperNamespace="http://services.pucp.edu.pe", IsWrapped=true)]
+    public partial class obtenerMedicoRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.pucp.edu.pe", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public int idmedico;
+        
+        public obtenerMedicoRequest() {
+        }
+        
+        public obtenerMedicoRequest(int idmedico) {
+            this.idmedico = idmedico;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="obtenerMedicoResponse", WrapperNamespace="http://services.pucp.edu.pe", IsWrapped=true)]
+    public partial class obtenerMedicoResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.pucp.edu.pe", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public PazCitasWA.ServiciosWS.medico @return;
+        
+        public obtenerMedicoResponse() {
+        }
+        
+        public obtenerMedicoResponse(PazCitasWA.ServiciosWS.medico @return) {
+            this.@return = @return;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="listarMedico", WrapperNamespace="http://services.pucp.edu.pe", IsWrapped=true)]
+    public partial class listarMedicoRequest {
+        
+        public listarMedicoRequest() {
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="listarMedicoResponse", WrapperNamespace="http://services.pucp.edu.pe", IsWrapped=true)]
+    public partial class listarMedicoResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.pucp.edu.pe", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute("return", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public PazCitasWA.ServiciosWS.medico[] @return;
+        
+        public listarMedicoResponse() {
+        }
+        
+        public listarMedicoResponse(PazCitasWA.ServiciosWS.medico[] @return) {
+            this.@return = @return;
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     public interface MedicoWSChannel : PazCitasWA.ServiciosWS.MedicoWS, System.ServiceModel.IClientChannel {
     }
@@ -2676,26 +2676,28 @@ namespace PazCitasWA.ServiciosWS {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        PazCitasWA.ServiciosWS.obtenerMedicoResponse PazCitasWA.ServiciosWS.MedicoWS.obtenerMedico(PazCitasWA.ServiciosWS.obtenerMedicoRequest request) {
-            return base.Channel.obtenerMedico(request);
+        PazCitasWA.ServiciosWS.listarMedicoXEspXSedeResponse PazCitasWA.ServiciosWS.MedicoWS.listarMedicoXEspXSede(PazCitasWA.ServiciosWS.listarMedicoXEspXSedeRequest request) {
+            return base.Channel.listarMedicoXEspXSede(request);
         }
         
-        public PazCitasWA.ServiciosWS.medico obtenerMedico(int idmedico) {
-            PazCitasWA.ServiciosWS.obtenerMedicoRequest inValue = new PazCitasWA.ServiciosWS.obtenerMedicoRequest();
-            inValue.idmedico = idmedico;
-            PazCitasWA.ServiciosWS.obtenerMedicoResponse retVal = ((PazCitasWA.ServiciosWS.MedicoWS)(this)).obtenerMedico(inValue);
+        public PazCitasWA.ServiciosWS.medico[] listarMedicoXEspXSede(int idSede, int idEsp) {
+            PazCitasWA.ServiciosWS.listarMedicoXEspXSedeRequest inValue = new PazCitasWA.ServiciosWS.listarMedicoXEspXSedeRequest();
+            inValue.idSede = idSede;
+            inValue.idEsp = idEsp;
+            PazCitasWA.ServiciosWS.listarMedicoXEspXSedeResponse retVal = ((PazCitasWA.ServiciosWS.MedicoWS)(this)).listarMedicoXEspXSede(inValue);
             return retVal.@return;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<PazCitasWA.ServiciosWS.obtenerMedicoResponse> PazCitasWA.ServiciosWS.MedicoWS.obtenerMedicoAsync(PazCitasWA.ServiciosWS.obtenerMedicoRequest request) {
-            return base.Channel.obtenerMedicoAsync(request);
+        System.Threading.Tasks.Task<PazCitasWA.ServiciosWS.listarMedicoXEspXSedeResponse> PazCitasWA.ServiciosWS.MedicoWS.listarMedicoXEspXSedeAsync(PazCitasWA.ServiciosWS.listarMedicoXEspXSedeRequest request) {
+            return base.Channel.listarMedicoXEspXSedeAsync(request);
         }
         
-        public System.Threading.Tasks.Task<PazCitasWA.ServiciosWS.obtenerMedicoResponse> obtenerMedicoAsync(int idmedico) {
-            PazCitasWA.ServiciosWS.obtenerMedicoRequest inValue = new PazCitasWA.ServiciosWS.obtenerMedicoRequest();
-            inValue.idmedico = idmedico;
-            return ((PazCitasWA.ServiciosWS.MedicoWS)(this)).obtenerMedicoAsync(inValue);
+        public System.Threading.Tasks.Task<PazCitasWA.ServiciosWS.listarMedicoXEspXSedeResponse> listarMedicoXEspXSedeAsync(int idSede, int idEsp) {
+            PazCitasWA.ServiciosWS.listarMedicoXEspXSedeRequest inValue = new PazCitasWA.ServiciosWS.listarMedicoXEspXSedeRequest();
+            inValue.idSede = idSede;
+            inValue.idEsp = idEsp;
+            return ((PazCitasWA.ServiciosWS.MedicoWS)(this)).listarMedicoXEspXSedeAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -2722,49 +2724,26 @@ namespace PazCitasWA.ServiciosWS {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        PazCitasWA.ServiciosWS.listarMedicoXEspXSedeResponse PazCitasWA.ServiciosWS.MedicoWS.listarMedicoXEspXSede(PazCitasWA.ServiciosWS.listarMedicoXEspXSedeRequest request) {
-            return base.Channel.listarMedicoXEspXSede(request);
+        PazCitasWA.ServiciosWS.modificarMedicoResponse PazCitasWA.ServiciosWS.MedicoWS.modificarMedico(PazCitasWA.ServiciosWS.modificarMedicoRequest request) {
+            return base.Channel.modificarMedico(request);
         }
         
-        public PazCitasWA.ServiciosWS.medico[] listarMedicoXEspXSede(int idSede, int idEsp) {
-            PazCitasWA.ServiciosWS.listarMedicoXEspXSedeRequest inValue = new PazCitasWA.ServiciosWS.listarMedicoXEspXSedeRequest();
-            inValue.idSede = idSede;
-            inValue.idEsp = idEsp;
-            PazCitasWA.ServiciosWS.listarMedicoXEspXSedeResponse retVal = ((PazCitasWA.ServiciosWS.MedicoWS)(this)).listarMedicoXEspXSede(inValue);
+        public int modificarMedico(PazCitasWA.ServiciosWS.medico medico) {
+            PazCitasWA.ServiciosWS.modificarMedicoRequest inValue = new PazCitasWA.ServiciosWS.modificarMedicoRequest();
+            inValue.medico = medico;
+            PazCitasWA.ServiciosWS.modificarMedicoResponse retVal = ((PazCitasWA.ServiciosWS.MedicoWS)(this)).modificarMedico(inValue);
             return retVal.@return;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<PazCitasWA.ServiciosWS.listarMedicoXEspXSedeResponse> PazCitasWA.ServiciosWS.MedicoWS.listarMedicoXEspXSedeAsync(PazCitasWA.ServiciosWS.listarMedicoXEspXSedeRequest request) {
-            return base.Channel.listarMedicoXEspXSedeAsync(request);
+        System.Threading.Tasks.Task<PazCitasWA.ServiciosWS.modificarMedicoResponse> PazCitasWA.ServiciosWS.MedicoWS.modificarMedicoAsync(PazCitasWA.ServiciosWS.modificarMedicoRequest request) {
+            return base.Channel.modificarMedicoAsync(request);
         }
         
-        public System.Threading.Tasks.Task<PazCitasWA.ServiciosWS.listarMedicoXEspXSedeResponse> listarMedicoXEspXSedeAsync(int idSede, int idEsp) {
-            PazCitasWA.ServiciosWS.listarMedicoXEspXSedeRequest inValue = new PazCitasWA.ServiciosWS.listarMedicoXEspXSedeRequest();
-            inValue.idSede = idSede;
-            inValue.idEsp = idEsp;
-            return ((PazCitasWA.ServiciosWS.MedicoWS)(this)).listarMedicoXEspXSedeAsync(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        PazCitasWA.ServiciosWS.listarMedicoResponse PazCitasWA.ServiciosWS.MedicoWS.listarMedico(PazCitasWA.ServiciosWS.listarMedicoRequest request) {
-            return base.Channel.listarMedico(request);
-        }
-        
-        public PazCitasWA.ServiciosWS.medico[] listarMedico() {
-            PazCitasWA.ServiciosWS.listarMedicoRequest inValue = new PazCitasWA.ServiciosWS.listarMedicoRequest();
-            PazCitasWA.ServiciosWS.listarMedicoResponse retVal = ((PazCitasWA.ServiciosWS.MedicoWS)(this)).listarMedico(inValue);
-            return retVal.@return;
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<PazCitasWA.ServiciosWS.listarMedicoResponse> PazCitasWA.ServiciosWS.MedicoWS.listarMedicoAsync(PazCitasWA.ServiciosWS.listarMedicoRequest request) {
-            return base.Channel.listarMedicoAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<PazCitasWA.ServiciosWS.listarMedicoResponse> listarMedicoAsync() {
-            PazCitasWA.ServiciosWS.listarMedicoRequest inValue = new PazCitasWA.ServiciosWS.listarMedicoRequest();
-            return ((PazCitasWA.ServiciosWS.MedicoWS)(this)).listarMedicoAsync(inValue);
+        public System.Threading.Tasks.Task<PazCitasWA.ServiciosWS.modificarMedicoResponse> modificarMedicoAsync(PazCitasWA.ServiciosWS.medico medico) {
+            PazCitasWA.ServiciosWS.modificarMedicoRequest inValue = new PazCitasWA.ServiciosWS.modificarMedicoRequest();
+            inValue.medico = medico;
+            return ((PazCitasWA.ServiciosWS.MedicoWS)(this)).modificarMedicoAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -2791,29 +2770,6 @@ namespace PazCitasWA.ServiciosWS {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        PazCitasWA.ServiciosWS.modificarMedicoResponse PazCitasWA.ServiciosWS.MedicoWS.modificarMedico(PazCitasWA.ServiciosWS.modificarMedicoRequest request) {
-            return base.Channel.modificarMedico(request);
-        }
-        
-        public int modificarMedico(PazCitasWA.ServiciosWS.medico medico) {
-            PazCitasWA.ServiciosWS.modificarMedicoRequest inValue = new PazCitasWA.ServiciosWS.modificarMedicoRequest();
-            inValue.medico = medico;
-            PazCitasWA.ServiciosWS.modificarMedicoResponse retVal = ((PazCitasWA.ServiciosWS.MedicoWS)(this)).modificarMedico(inValue);
-            return retVal.@return;
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<PazCitasWA.ServiciosWS.modificarMedicoResponse> PazCitasWA.ServiciosWS.MedicoWS.modificarMedicoAsync(PazCitasWA.ServiciosWS.modificarMedicoRequest request) {
-            return base.Channel.modificarMedicoAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<PazCitasWA.ServiciosWS.modificarMedicoResponse> modificarMedicoAsync(PazCitasWA.ServiciosWS.medico medico) {
-            PazCitasWA.ServiciosWS.modificarMedicoRequest inValue = new PazCitasWA.ServiciosWS.modificarMedicoRequest();
-            inValue.medico = medico;
-            return ((PazCitasWA.ServiciosWS.MedicoWS)(this)).modificarMedicoAsync(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         PazCitasWA.ServiciosWS.eliminarMedicoResponse PazCitasWA.ServiciosWS.MedicoWS.eliminarMedico(PazCitasWA.ServiciosWS.eliminarMedicoRequest request) {
             return base.Channel.eliminarMedico(request);
         }
@@ -2835,6 +2791,50 @@ namespace PazCitasWA.ServiciosWS {
             inValue.idmedico = idmedico;
             return ((PazCitasWA.ServiciosWS.MedicoWS)(this)).eliminarMedicoAsync(inValue);
         }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        PazCitasWA.ServiciosWS.obtenerMedicoResponse PazCitasWA.ServiciosWS.MedicoWS.obtenerMedico(PazCitasWA.ServiciosWS.obtenerMedicoRequest request) {
+            return base.Channel.obtenerMedico(request);
+        }
+        
+        public PazCitasWA.ServiciosWS.medico obtenerMedico(int idmedico) {
+            PazCitasWA.ServiciosWS.obtenerMedicoRequest inValue = new PazCitasWA.ServiciosWS.obtenerMedicoRequest();
+            inValue.idmedico = idmedico;
+            PazCitasWA.ServiciosWS.obtenerMedicoResponse retVal = ((PazCitasWA.ServiciosWS.MedicoWS)(this)).obtenerMedico(inValue);
+            return retVal.@return;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<PazCitasWA.ServiciosWS.obtenerMedicoResponse> PazCitasWA.ServiciosWS.MedicoWS.obtenerMedicoAsync(PazCitasWA.ServiciosWS.obtenerMedicoRequest request) {
+            return base.Channel.obtenerMedicoAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<PazCitasWA.ServiciosWS.obtenerMedicoResponse> obtenerMedicoAsync(int idmedico) {
+            PazCitasWA.ServiciosWS.obtenerMedicoRequest inValue = new PazCitasWA.ServiciosWS.obtenerMedicoRequest();
+            inValue.idmedico = idmedico;
+            return ((PazCitasWA.ServiciosWS.MedicoWS)(this)).obtenerMedicoAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        PazCitasWA.ServiciosWS.listarMedicoResponse PazCitasWA.ServiciosWS.MedicoWS.listarMedico(PazCitasWA.ServiciosWS.listarMedicoRequest request) {
+            return base.Channel.listarMedico(request);
+        }
+        
+        public PazCitasWA.ServiciosWS.medico[] listarMedico() {
+            PazCitasWA.ServiciosWS.listarMedicoRequest inValue = new PazCitasWA.ServiciosWS.listarMedicoRequest();
+            PazCitasWA.ServiciosWS.listarMedicoResponse retVal = ((PazCitasWA.ServiciosWS.MedicoWS)(this)).listarMedico(inValue);
+            return retVal.@return;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<PazCitasWA.ServiciosWS.listarMedicoResponse> PazCitasWA.ServiciosWS.MedicoWS.listarMedicoAsync(PazCitasWA.ServiciosWS.listarMedicoRequest request) {
+            return base.Channel.listarMedicoAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<PazCitasWA.ServiciosWS.listarMedicoResponse> listarMedicoAsync() {
+            PazCitasWA.ServiciosWS.listarMedicoRequest inValue = new PazCitasWA.ServiciosWS.listarMedicoRequest();
+            return ((PazCitasWA.ServiciosWS.MedicoWS)(this)).listarMedicoAsync(inValue);
+        }
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -2842,31 +2842,13 @@ namespace PazCitasWA.ServiciosWS {
     public interface AdministradorWS {
         
         // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="http://services.pucp.edu.pe/AdministradorWS/obtenerPorIDAdministradorRequest", ReplyAction="http://services.pucp.edu.pe/AdministradorWS/obtenerPorIDAdministradorResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://services.pucp.edu.pe/AdministradorWS/listarAdministradorRequest", ReplyAction="http://services.pucp.edu.pe/AdministradorWS/listarAdministradorResponse")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        PazCitasWA.ServiciosWS.obtenerPorIDAdministradorResponse obtenerPorIDAdministrador(PazCitasWA.ServiciosWS.obtenerPorIDAdministradorRequest request);
+        PazCitasWA.ServiciosWS.listarAdministradorResponse listarAdministrador(PazCitasWA.ServiciosWS.listarAdministradorRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://services.pucp.edu.pe/AdministradorWS/obtenerPorIDAdministradorRequest", ReplyAction="http://services.pucp.edu.pe/AdministradorWS/obtenerPorIDAdministradorResponse")]
-        System.Threading.Tasks.Task<PazCitasWA.ServiciosWS.obtenerPorIDAdministradorResponse> obtenerPorIDAdministradorAsync(PazCitasWA.ServiciosWS.obtenerPorIDAdministradorRequest request);
-        
-        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="http://services.pucp.edu.pe/AdministradorWS/modificarAdministradorRequest", ReplyAction="http://services.pucp.edu.pe/AdministradorWS/modificarAdministradorResponse")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        PazCitasWA.ServiciosWS.modificarAdministradorResponse modificarAdministrador(PazCitasWA.ServiciosWS.modificarAdministradorRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://services.pucp.edu.pe/AdministradorWS/modificarAdministradorRequest", ReplyAction="http://services.pucp.edu.pe/AdministradorWS/modificarAdministradorResponse")]
-        System.Threading.Tasks.Task<PazCitasWA.ServiciosWS.modificarAdministradorResponse> modificarAdministradorAsync(PazCitasWA.ServiciosWS.modificarAdministradorRequest request);
-        
-        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="http://services.pucp.edu.pe/AdministradorWS/eliminarAdministradorRequest", ReplyAction="http://services.pucp.edu.pe/AdministradorWS/eliminarAdministradorResponse")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        PazCitasWA.ServiciosWS.eliminarAdministradorResponse eliminarAdministrador(PazCitasWA.ServiciosWS.eliminarAdministradorRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://services.pucp.edu.pe/AdministradorWS/eliminarAdministradorRequest", ReplyAction="http://services.pucp.edu.pe/AdministradorWS/eliminarAdministradorResponse")]
-        System.Threading.Tasks.Task<PazCitasWA.ServiciosWS.eliminarAdministradorResponse> eliminarAdministradorAsync(PazCitasWA.ServiciosWS.eliminarAdministradorRequest request);
+        [System.ServiceModel.OperationContractAttribute(Action="http://services.pucp.edu.pe/AdministradorWS/listarAdministradorRequest", ReplyAction="http://services.pucp.edu.pe/AdministradorWS/listarAdministradorResponse")]
+        System.Threading.Tasks.Task<PazCitasWA.ServiciosWS.listarAdministradorResponse> listarAdministradorAsync(PazCitasWA.ServiciosWS.listarAdministradorRequest request);
         
         // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
         [System.ServiceModel.OperationContractAttribute(Action="http://services.pucp.edu.pe/AdministradorWS/insertarAdministradorRequest", ReplyAction="http://services.pucp.edu.pe/AdministradorWS/insertarAdministradorResponse")]
@@ -2878,119 +2860,57 @@ namespace PazCitasWA.ServiciosWS {
         System.Threading.Tasks.Task<PazCitasWA.ServiciosWS.insertarAdministradorResponse> insertarAdministradorAsync(PazCitasWA.ServiciosWS.insertarAdministradorRequest request);
         
         // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="http://services.pucp.edu.pe/AdministradorWS/listarAdministradorRequest", ReplyAction="http://services.pucp.edu.pe/AdministradorWS/listarAdministradorResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://services.pucp.edu.pe/AdministradorWS/eliminarAdministradorRequest", ReplyAction="http://services.pucp.edu.pe/AdministradorWS/eliminarAdministradorResponse")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        PazCitasWA.ServiciosWS.listarAdministradorResponse listarAdministrador(PazCitasWA.ServiciosWS.listarAdministradorRequest request);
+        PazCitasWA.ServiciosWS.eliminarAdministradorResponse eliminarAdministrador(PazCitasWA.ServiciosWS.eliminarAdministradorRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://services.pucp.edu.pe/AdministradorWS/listarAdministradorRequest", ReplyAction="http://services.pucp.edu.pe/AdministradorWS/listarAdministradorResponse")]
-        System.Threading.Tasks.Task<PazCitasWA.ServiciosWS.listarAdministradorResponse> listarAdministradorAsync(PazCitasWA.ServiciosWS.listarAdministradorRequest request);
+        [System.ServiceModel.OperationContractAttribute(Action="http://services.pucp.edu.pe/AdministradorWS/eliminarAdministradorRequest", ReplyAction="http://services.pucp.edu.pe/AdministradorWS/eliminarAdministradorResponse")]
+        System.Threading.Tasks.Task<PazCitasWA.ServiciosWS.eliminarAdministradorResponse> eliminarAdministradorAsync(PazCitasWA.ServiciosWS.eliminarAdministradorRequest request);
+        
+        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="http://services.pucp.edu.pe/AdministradorWS/modificarAdministradorRequest", ReplyAction="http://services.pucp.edu.pe/AdministradorWS/modificarAdministradorResponse")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        PazCitasWA.ServiciosWS.modificarAdministradorResponse modificarAdministrador(PazCitasWA.ServiciosWS.modificarAdministradorRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://services.pucp.edu.pe/AdministradorWS/modificarAdministradorRequest", ReplyAction="http://services.pucp.edu.pe/AdministradorWS/modificarAdministradorResponse")]
+        System.Threading.Tasks.Task<PazCitasWA.ServiciosWS.modificarAdministradorResponse> modificarAdministradorAsync(PazCitasWA.ServiciosWS.modificarAdministradorRequest request);
+        
+        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="http://services.pucp.edu.pe/AdministradorWS/obtenerPorIDAdministradorRequest", ReplyAction="http://services.pucp.edu.pe/AdministradorWS/obtenerPorIDAdministradorResponse")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        PazCitasWA.ServiciosWS.obtenerPorIDAdministradorResponse obtenerPorIDAdministrador(PazCitasWA.ServiciosWS.obtenerPorIDAdministradorRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://services.pucp.edu.pe/AdministradorWS/obtenerPorIDAdministradorRequest", ReplyAction="http://services.pucp.edu.pe/AdministradorWS/obtenerPorIDAdministradorResponse")]
+        System.Threading.Tasks.Task<PazCitasWA.ServiciosWS.obtenerPorIDAdministradorResponse> obtenerPorIDAdministradorAsync(PazCitasWA.ServiciosWS.obtenerPorIDAdministradorRequest request);
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="obtenerPorIDAdministrador", WrapperNamespace="http://services.pucp.edu.pe", IsWrapped=true)]
-    public partial class obtenerPorIDAdministradorRequest {
+    [System.ServiceModel.MessageContractAttribute(WrapperName="listarAdministrador", WrapperNamespace="http://services.pucp.edu.pe", IsWrapped=true)]
+    public partial class listarAdministradorRequest {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.pucp.edu.pe", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public int idAdmin;
-        
-        public obtenerPorIDAdministradorRequest() {
-        }
-        
-        public obtenerPorIDAdministradorRequest(int idAdmin) {
-            this.idAdmin = idAdmin;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="obtenerPorIDAdministradorResponse", WrapperNamespace="http://services.pucp.edu.pe", IsWrapped=true)]
-    public partial class obtenerPorIDAdministradorResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.pucp.edu.pe", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public PazCitasWA.ServiciosWS.administrador @return;
-        
-        public obtenerPorIDAdministradorResponse() {
-        }
-        
-        public obtenerPorIDAdministradorResponse(PazCitasWA.ServiciosWS.administrador @return) {
-            this.@return = @return;
+        public listarAdministradorRequest() {
         }
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="modificarAdministrador", WrapperNamespace="http://services.pucp.edu.pe", IsWrapped=true)]
-    public partial class modificarAdministradorRequest {
+    [System.ServiceModel.MessageContractAttribute(WrapperName="listarAdministradorResponse", WrapperNamespace="http://services.pucp.edu.pe", IsWrapped=true)]
+    public partial class listarAdministradorResponse {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.pucp.edu.pe", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public PazCitasWA.ServiciosWS.administrador administrador;
+        [System.Xml.Serialization.XmlElementAttribute("return", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public PazCitasWA.ServiciosWS.administrador[] @return;
         
-        public modificarAdministradorRequest() {
+        public listarAdministradorResponse() {
         }
         
-        public modificarAdministradorRequest(PazCitasWA.ServiciosWS.administrador administrador) {
-            this.administrador = administrador;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="modificarAdministradorResponse", WrapperNamespace="http://services.pucp.edu.pe", IsWrapped=true)]
-    public partial class modificarAdministradorResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.pucp.edu.pe", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public int @return;
-        
-        public modificarAdministradorResponse() {
-        }
-        
-        public modificarAdministradorResponse(int @return) {
-            this.@return = @return;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="eliminarAdministrador", WrapperNamespace="http://services.pucp.edu.pe", IsWrapped=true)]
-    public partial class eliminarAdministradorRequest {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.pucp.edu.pe", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public int idadministrador;
-        
-        public eliminarAdministradorRequest() {
-        }
-        
-        public eliminarAdministradorRequest(int idadministrador) {
-            this.idadministrador = idadministrador;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="eliminarAdministradorResponse", WrapperNamespace="http://services.pucp.edu.pe", IsWrapped=true)]
-    public partial class eliminarAdministradorResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.pucp.edu.pe", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public int @return;
-        
-        public eliminarAdministradorResponse() {
-        }
-        
-        public eliminarAdministradorResponse(int @return) {
+        public listarAdministradorResponse(PazCitasWA.ServiciosWS.administrador[] @return) {
             this.@return = @return;
         }
     }
@@ -3034,27 +2954,107 @@ namespace PazCitasWA.ServiciosWS {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="listarAdministrador", WrapperNamespace="http://services.pucp.edu.pe", IsWrapped=true)]
-    public partial class listarAdministradorRequest {
+    [System.ServiceModel.MessageContractAttribute(WrapperName="eliminarAdministrador", WrapperNamespace="http://services.pucp.edu.pe", IsWrapped=true)]
+    public partial class eliminarAdministradorRequest {
         
-        public listarAdministradorRequest() {
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.pucp.edu.pe", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public int idadministrador;
+        
+        public eliminarAdministradorRequest() {
+        }
+        
+        public eliminarAdministradorRequest(int idadministrador) {
+            this.idadministrador = idadministrador;
         }
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="listarAdministradorResponse", WrapperNamespace="http://services.pucp.edu.pe", IsWrapped=true)]
-    public partial class listarAdministradorResponse {
+    [System.ServiceModel.MessageContractAttribute(WrapperName="eliminarAdministradorResponse", WrapperNamespace="http://services.pucp.edu.pe", IsWrapped=true)]
+    public partial class eliminarAdministradorResponse {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.pucp.edu.pe", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute("return", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public PazCitasWA.ServiciosWS.administrador[] @return;
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public int @return;
         
-        public listarAdministradorResponse() {
+        public eliminarAdministradorResponse() {
         }
         
-        public listarAdministradorResponse(PazCitasWA.ServiciosWS.administrador[] @return) {
+        public eliminarAdministradorResponse(int @return) {
+            this.@return = @return;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="modificarAdministrador", WrapperNamespace="http://services.pucp.edu.pe", IsWrapped=true)]
+    public partial class modificarAdministradorRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.pucp.edu.pe", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public PazCitasWA.ServiciosWS.administrador administrador;
+        
+        public modificarAdministradorRequest() {
+        }
+        
+        public modificarAdministradorRequest(PazCitasWA.ServiciosWS.administrador administrador) {
+            this.administrador = administrador;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="modificarAdministradorResponse", WrapperNamespace="http://services.pucp.edu.pe", IsWrapped=true)]
+    public partial class modificarAdministradorResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.pucp.edu.pe", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public int @return;
+        
+        public modificarAdministradorResponse() {
+        }
+        
+        public modificarAdministradorResponse(int @return) {
+            this.@return = @return;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="obtenerPorIDAdministrador", WrapperNamespace="http://services.pucp.edu.pe", IsWrapped=true)]
+    public partial class obtenerPorIDAdministradorRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.pucp.edu.pe", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public int idAdmin;
+        
+        public obtenerPorIDAdministradorRequest() {
+        }
+        
+        public obtenerPorIDAdministradorRequest(int idAdmin) {
+            this.idAdmin = idAdmin;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="obtenerPorIDAdministradorResponse", WrapperNamespace="http://services.pucp.edu.pe", IsWrapped=true)]
+    public partial class obtenerPorIDAdministradorResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.pucp.edu.pe", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public PazCitasWA.ServiciosWS.administrador @return;
+        
+        public obtenerPorIDAdministradorResponse() {
+        }
+        
+        public obtenerPorIDAdministradorResponse(PazCitasWA.ServiciosWS.administrador @return) {
             this.@return = @return;
         }
     }
@@ -3087,72 +3087,24 @@ namespace PazCitasWA.ServiciosWS {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        PazCitasWA.ServiciosWS.obtenerPorIDAdministradorResponse PazCitasWA.ServiciosWS.AdministradorWS.obtenerPorIDAdministrador(PazCitasWA.ServiciosWS.obtenerPorIDAdministradorRequest request) {
-            return base.Channel.obtenerPorIDAdministrador(request);
+        PazCitasWA.ServiciosWS.listarAdministradorResponse PazCitasWA.ServiciosWS.AdministradorWS.listarAdministrador(PazCitasWA.ServiciosWS.listarAdministradorRequest request) {
+            return base.Channel.listarAdministrador(request);
         }
         
-        public PazCitasWA.ServiciosWS.administrador obtenerPorIDAdministrador(int idAdmin) {
-            PazCitasWA.ServiciosWS.obtenerPorIDAdministradorRequest inValue = new PazCitasWA.ServiciosWS.obtenerPorIDAdministradorRequest();
-            inValue.idAdmin = idAdmin;
-            PazCitasWA.ServiciosWS.obtenerPorIDAdministradorResponse retVal = ((PazCitasWA.ServiciosWS.AdministradorWS)(this)).obtenerPorIDAdministrador(inValue);
+        public PazCitasWA.ServiciosWS.administrador[] listarAdministrador() {
+            PazCitasWA.ServiciosWS.listarAdministradorRequest inValue = new PazCitasWA.ServiciosWS.listarAdministradorRequest();
+            PazCitasWA.ServiciosWS.listarAdministradorResponse retVal = ((PazCitasWA.ServiciosWS.AdministradorWS)(this)).listarAdministrador(inValue);
             return retVal.@return;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<PazCitasWA.ServiciosWS.obtenerPorIDAdministradorResponse> PazCitasWA.ServiciosWS.AdministradorWS.obtenerPorIDAdministradorAsync(PazCitasWA.ServiciosWS.obtenerPorIDAdministradorRequest request) {
-            return base.Channel.obtenerPorIDAdministradorAsync(request);
+        System.Threading.Tasks.Task<PazCitasWA.ServiciosWS.listarAdministradorResponse> PazCitasWA.ServiciosWS.AdministradorWS.listarAdministradorAsync(PazCitasWA.ServiciosWS.listarAdministradorRequest request) {
+            return base.Channel.listarAdministradorAsync(request);
         }
         
-        public System.Threading.Tasks.Task<PazCitasWA.ServiciosWS.obtenerPorIDAdministradorResponse> obtenerPorIDAdministradorAsync(int idAdmin) {
-            PazCitasWA.ServiciosWS.obtenerPorIDAdministradorRequest inValue = new PazCitasWA.ServiciosWS.obtenerPorIDAdministradorRequest();
-            inValue.idAdmin = idAdmin;
-            return ((PazCitasWA.ServiciosWS.AdministradorWS)(this)).obtenerPorIDAdministradorAsync(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        PazCitasWA.ServiciosWS.modificarAdministradorResponse PazCitasWA.ServiciosWS.AdministradorWS.modificarAdministrador(PazCitasWA.ServiciosWS.modificarAdministradorRequest request) {
-            return base.Channel.modificarAdministrador(request);
-        }
-        
-        public int modificarAdministrador(PazCitasWA.ServiciosWS.administrador administrador) {
-            PazCitasWA.ServiciosWS.modificarAdministradorRequest inValue = new PazCitasWA.ServiciosWS.modificarAdministradorRequest();
-            inValue.administrador = administrador;
-            PazCitasWA.ServiciosWS.modificarAdministradorResponse retVal = ((PazCitasWA.ServiciosWS.AdministradorWS)(this)).modificarAdministrador(inValue);
-            return retVal.@return;
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<PazCitasWA.ServiciosWS.modificarAdministradorResponse> PazCitasWA.ServiciosWS.AdministradorWS.modificarAdministradorAsync(PazCitasWA.ServiciosWS.modificarAdministradorRequest request) {
-            return base.Channel.modificarAdministradorAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<PazCitasWA.ServiciosWS.modificarAdministradorResponse> modificarAdministradorAsync(PazCitasWA.ServiciosWS.administrador administrador) {
-            PazCitasWA.ServiciosWS.modificarAdministradorRequest inValue = new PazCitasWA.ServiciosWS.modificarAdministradorRequest();
-            inValue.administrador = administrador;
-            return ((PazCitasWA.ServiciosWS.AdministradorWS)(this)).modificarAdministradorAsync(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        PazCitasWA.ServiciosWS.eliminarAdministradorResponse PazCitasWA.ServiciosWS.AdministradorWS.eliminarAdministrador(PazCitasWA.ServiciosWS.eliminarAdministradorRequest request) {
-            return base.Channel.eliminarAdministrador(request);
-        }
-        
-        public int eliminarAdministrador(int idadministrador) {
-            PazCitasWA.ServiciosWS.eliminarAdministradorRequest inValue = new PazCitasWA.ServiciosWS.eliminarAdministradorRequest();
-            inValue.idadministrador = idadministrador;
-            PazCitasWA.ServiciosWS.eliminarAdministradorResponse retVal = ((PazCitasWA.ServiciosWS.AdministradorWS)(this)).eliminarAdministrador(inValue);
-            return retVal.@return;
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<PazCitasWA.ServiciosWS.eliminarAdministradorResponse> PazCitasWA.ServiciosWS.AdministradorWS.eliminarAdministradorAsync(PazCitasWA.ServiciosWS.eliminarAdministradorRequest request) {
-            return base.Channel.eliminarAdministradorAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<PazCitasWA.ServiciosWS.eliminarAdministradorResponse> eliminarAdministradorAsync(int idadministrador) {
-            PazCitasWA.ServiciosWS.eliminarAdministradorRequest inValue = new PazCitasWA.ServiciosWS.eliminarAdministradorRequest();
-            inValue.idadministrador = idadministrador;
-            return ((PazCitasWA.ServiciosWS.AdministradorWS)(this)).eliminarAdministradorAsync(inValue);
+        public System.Threading.Tasks.Task<PazCitasWA.ServiciosWS.listarAdministradorResponse> listarAdministradorAsync() {
+            PazCitasWA.ServiciosWS.listarAdministradorRequest inValue = new PazCitasWA.ServiciosWS.listarAdministradorRequest();
+            return ((PazCitasWA.ServiciosWS.AdministradorWS)(this)).listarAdministradorAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -3179,24 +3131,72 @@ namespace PazCitasWA.ServiciosWS {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        PazCitasWA.ServiciosWS.listarAdministradorResponse PazCitasWA.ServiciosWS.AdministradorWS.listarAdministrador(PazCitasWA.ServiciosWS.listarAdministradorRequest request) {
-            return base.Channel.listarAdministrador(request);
+        PazCitasWA.ServiciosWS.eliminarAdministradorResponse PazCitasWA.ServiciosWS.AdministradorWS.eliminarAdministrador(PazCitasWA.ServiciosWS.eliminarAdministradorRequest request) {
+            return base.Channel.eliminarAdministrador(request);
         }
         
-        public PazCitasWA.ServiciosWS.administrador[] listarAdministrador() {
-            PazCitasWA.ServiciosWS.listarAdministradorRequest inValue = new PazCitasWA.ServiciosWS.listarAdministradorRequest();
-            PazCitasWA.ServiciosWS.listarAdministradorResponse retVal = ((PazCitasWA.ServiciosWS.AdministradorWS)(this)).listarAdministrador(inValue);
+        public int eliminarAdministrador(int idadministrador) {
+            PazCitasWA.ServiciosWS.eliminarAdministradorRequest inValue = new PazCitasWA.ServiciosWS.eliminarAdministradorRequest();
+            inValue.idadministrador = idadministrador;
+            PazCitasWA.ServiciosWS.eliminarAdministradorResponse retVal = ((PazCitasWA.ServiciosWS.AdministradorWS)(this)).eliminarAdministrador(inValue);
             return retVal.@return;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<PazCitasWA.ServiciosWS.listarAdministradorResponse> PazCitasWA.ServiciosWS.AdministradorWS.listarAdministradorAsync(PazCitasWA.ServiciosWS.listarAdministradorRequest request) {
-            return base.Channel.listarAdministradorAsync(request);
+        System.Threading.Tasks.Task<PazCitasWA.ServiciosWS.eliminarAdministradorResponse> PazCitasWA.ServiciosWS.AdministradorWS.eliminarAdministradorAsync(PazCitasWA.ServiciosWS.eliminarAdministradorRequest request) {
+            return base.Channel.eliminarAdministradorAsync(request);
         }
         
-        public System.Threading.Tasks.Task<PazCitasWA.ServiciosWS.listarAdministradorResponse> listarAdministradorAsync() {
-            PazCitasWA.ServiciosWS.listarAdministradorRequest inValue = new PazCitasWA.ServiciosWS.listarAdministradorRequest();
-            return ((PazCitasWA.ServiciosWS.AdministradorWS)(this)).listarAdministradorAsync(inValue);
+        public System.Threading.Tasks.Task<PazCitasWA.ServiciosWS.eliminarAdministradorResponse> eliminarAdministradorAsync(int idadministrador) {
+            PazCitasWA.ServiciosWS.eliminarAdministradorRequest inValue = new PazCitasWA.ServiciosWS.eliminarAdministradorRequest();
+            inValue.idadministrador = idadministrador;
+            return ((PazCitasWA.ServiciosWS.AdministradorWS)(this)).eliminarAdministradorAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        PazCitasWA.ServiciosWS.modificarAdministradorResponse PazCitasWA.ServiciosWS.AdministradorWS.modificarAdministrador(PazCitasWA.ServiciosWS.modificarAdministradorRequest request) {
+            return base.Channel.modificarAdministrador(request);
+        }
+        
+        public int modificarAdministrador(PazCitasWA.ServiciosWS.administrador administrador) {
+            PazCitasWA.ServiciosWS.modificarAdministradorRequest inValue = new PazCitasWA.ServiciosWS.modificarAdministradorRequest();
+            inValue.administrador = administrador;
+            PazCitasWA.ServiciosWS.modificarAdministradorResponse retVal = ((PazCitasWA.ServiciosWS.AdministradorWS)(this)).modificarAdministrador(inValue);
+            return retVal.@return;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<PazCitasWA.ServiciosWS.modificarAdministradorResponse> PazCitasWA.ServiciosWS.AdministradorWS.modificarAdministradorAsync(PazCitasWA.ServiciosWS.modificarAdministradorRequest request) {
+            return base.Channel.modificarAdministradorAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<PazCitasWA.ServiciosWS.modificarAdministradorResponse> modificarAdministradorAsync(PazCitasWA.ServiciosWS.administrador administrador) {
+            PazCitasWA.ServiciosWS.modificarAdministradorRequest inValue = new PazCitasWA.ServiciosWS.modificarAdministradorRequest();
+            inValue.administrador = administrador;
+            return ((PazCitasWA.ServiciosWS.AdministradorWS)(this)).modificarAdministradorAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        PazCitasWA.ServiciosWS.obtenerPorIDAdministradorResponse PazCitasWA.ServiciosWS.AdministradorWS.obtenerPorIDAdministrador(PazCitasWA.ServiciosWS.obtenerPorIDAdministradorRequest request) {
+            return base.Channel.obtenerPorIDAdministrador(request);
+        }
+        
+        public PazCitasWA.ServiciosWS.administrador obtenerPorIDAdministrador(int idAdmin) {
+            PazCitasWA.ServiciosWS.obtenerPorIDAdministradorRequest inValue = new PazCitasWA.ServiciosWS.obtenerPorIDAdministradorRequest();
+            inValue.idAdmin = idAdmin;
+            PazCitasWA.ServiciosWS.obtenerPorIDAdministradorResponse retVal = ((PazCitasWA.ServiciosWS.AdministradorWS)(this)).obtenerPorIDAdministrador(inValue);
+            return retVal.@return;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<PazCitasWA.ServiciosWS.obtenerPorIDAdministradorResponse> PazCitasWA.ServiciosWS.AdministradorWS.obtenerPorIDAdministradorAsync(PazCitasWA.ServiciosWS.obtenerPorIDAdministradorRequest request) {
+            return base.Channel.obtenerPorIDAdministradorAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<PazCitasWA.ServiciosWS.obtenerPorIDAdministradorResponse> obtenerPorIDAdministradorAsync(int idAdmin) {
+            PazCitasWA.ServiciosWS.obtenerPorIDAdministradorRequest inValue = new PazCitasWA.ServiciosWS.obtenerPorIDAdministradorRequest();
+            inValue.idAdmin = idAdmin;
+            return ((PazCitasWA.ServiciosWS.AdministradorWS)(this)).obtenerPorIDAdministradorAsync(inValue);
         }
     }
     
@@ -3223,15 +3223,6 @@ namespace PazCitasWA.ServiciosWS {
         System.Threading.Tasks.Task<PazCitasWA.ServiciosWS.modificarPagoResponse> modificarPagoAsync(PazCitasWA.ServiciosWS.modificarPagoRequest request);
         
         // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="http://services.pucp.edu.pe/PagoWS/eliminarPagoRequest", ReplyAction="http://services.pucp.edu.pe/PagoWS/eliminarPagoResponse")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        PazCitasWA.ServiciosWS.eliminarPagoResponse eliminarPago(PazCitasWA.ServiciosWS.eliminarPagoRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://services.pucp.edu.pe/PagoWS/eliminarPagoRequest", ReplyAction="http://services.pucp.edu.pe/PagoWS/eliminarPagoResponse")]
-        System.Threading.Tasks.Task<PazCitasWA.ServiciosWS.eliminarPagoResponse> eliminarPagoAsync(PazCitasWA.ServiciosWS.eliminarPagoRequest request);
-        
-        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
         [System.ServiceModel.OperationContractAttribute(Action="http://services.pucp.edu.pe/PagoWS/insertarPagoRequest", ReplyAction="http://services.pucp.edu.pe/PagoWS/insertarPagoResponse")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
@@ -3239,6 +3230,15 @@ namespace PazCitasWA.ServiciosWS {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://services.pucp.edu.pe/PagoWS/insertarPagoRequest", ReplyAction="http://services.pucp.edu.pe/PagoWS/insertarPagoResponse")]
         System.Threading.Tasks.Task<PazCitasWA.ServiciosWS.insertarPagoResponse> insertarPagoAsync(PazCitasWA.ServiciosWS.insertarPagoRequest request);
+        
+        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="http://services.pucp.edu.pe/PagoWS/eliminarPagoRequest", ReplyAction="http://services.pucp.edu.pe/PagoWS/eliminarPagoResponse")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        PazCitasWA.ServiciosWS.eliminarPagoResponse eliminarPago(PazCitasWA.ServiciosWS.eliminarPagoRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://services.pucp.edu.pe/PagoWS/eliminarPagoRequest", ReplyAction="http://services.pucp.edu.pe/PagoWS/eliminarPagoResponse")]
+        System.Threading.Tasks.Task<PazCitasWA.ServiciosWS.eliminarPagoResponse> eliminarPagoAsync(PazCitasWA.ServiciosWS.eliminarPagoRequest request);
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -3308,42 +3308,6 @@ namespace PazCitasWA.ServiciosWS {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="eliminarPago", WrapperNamespace="http://services.pucp.edu.pe", IsWrapped=true)]
-    public partial class eliminarPagoRequest {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.pucp.edu.pe", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public int idpago;
-        
-        public eliminarPagoRequest() {
-        }
-        
-        public eliminarPagoRequest(int idpago) {
-            this.idpago = idpago;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="eliminarPagoResponse", WrapperNamespace="http://services.pucp.edu.pe", IsWrapped=true)]
-    public partial class eliminarPagoResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.pucp.edu.pe", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public int @return;
-        
-        public eliminarPagoResponse() {
-        }
-        
-        public eliminarPagoResponse(int @return) {
-            this.@return = @return;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(WrapperName="insertarPago", WrapperNamespace="http://services.pucp.edu.pe", IsWrapped=true)]
     public partial class insertarPagoRequest {
         
@@ -3373,6 +3337,42 @@ namespace PazCitasWA.ServiciosWS {
         }
         
         public insertarPagoResponse(int @return) {
+            this.@return = @return;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="eliminarPago", WrapperNamespace="http://services.pucp.edu.pe", IsWrapped=true)]
+    public partial class eliminarPagoRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.pucp.edu.pe", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public int idpago;
+        
+        public eliminarPagoRequest() {
+        }
+        
+        public eliminarPagoRequest(int idpago) {
+            this.idpago = idpago;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="eliminarPagoResponse", WrapperNamespace="http://services.pucp.edu.pe", IsWrapped=true)]
+    public partial class eliminarPagoResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.pucp.edu.pe", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public int @return;
+        
+        public eliminarPagoResponse() {
+        }
+        
+        public eliminarPagoResponse(int @return) {
             this.@return = @return;
         }
     }
@@ -3449,29 +3449,6 @@ namespace PazCitasWA.ServiciosWS {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        PazCitasWA.ServiciosWS.eliminarPagoResponse PazCitasWA.ServiciosWS.PagoWS.eliminarPago(PazCitasWA.ServiciosWS.eliminarPagoRequest request) {
-            return base.Channel.eliminarPago(request);
-        }
-        
-        public int eliminarPago(int idpago) {
-            PazCitasWA.ServiciosWS.eliminarPagoRequest inValue = new PazCitasWA.ServiciosWS.eliminarPagoRequest();
-            inValue.idpago = idpago;
-            PazCitasWA.ServiciosWS.eliminarPagoResponse retVal = ((PazCitasWA.ServiciosWS.PagoWS)(this)).eliminarPago(inValue);
-            return retVal.@return;
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<PazCitasWA.ServiciosWS.eliminarPagoResponse> PazCitasWA.ServiciosWS.PagoWS.eliminarPagoAsync(PazCitasWA.ServiciosWS.eliminarPagoRequest request) {
-            return base.Channel.eliminarPagoAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<PazCitasWA.ServiciosWS.eliminarPagoResponse> eliminarPagoAsync(int idpago) {
-            PazCitasWA.ServiciosWS.eliminarPagoRequest inValue = new PazCitasWA.ServiciosWS.eliminarPagoRequest();
-            inValue.idpago = idpago;
-            return ((PazCitasWA.ServiciosWS.PagoWS)(this)).eliminarPagoAsync(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         PazCitasWA.ServiciosWS.insertarPagoResponse PazCitasWA.ServiciosWS.PagoWS.insertarPago(PazCitasWA.ServiciosWS.insertarPagoRequest request) {
             return base.Channel.insertarPago(request);
         }
@@ -3493,6 +3470,29 @@ namespace PazCitasWA.ServiciosWS {
             inValue.pago = pago;
             return ((PazCitasWA.ServiciosWS.PagoWS)(this)).insertarPagoAsync(inValue);
         }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        PazCitasWA.ServiciosWS.eliminarPagoResponse PazCitasWA.ServiciosWS.PagoWS.eliminarPago(PazCitasWA.ServiciosWS.eliminarPagoRequest request) {
+            return base.Channel.eliminarPago(request);
+        }
+        
+        public int eliminarPago(int idpago) {
+            PazCitasWA.ServiciosWS.eliminarPagoRequest inValue = new PazCitasWA.ServiciosWS.eliminarPagoRequest();
+            inValue.idpago = idpago;
+            PazCitasWA.ServiciosWS.eliminarPagoResponse retVal = ((PazCitasWA.ServiciosWS.PagoWS)(this)).eliminarPago(inValue);
+            return retVal.@return;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<PazCitasWA.ServiciosWS.eliminarPagoResponse> PazCitasWA.ServiciosWS.PagoWS.eliminarPagoAsync(PazCitasWA.ServiciosWS.eliminarPagoRequest request) {
+            return base.Channel.eliminarPagoAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<PazCitasWA.ServiciosWS.eliminarPagoResponse> eliminarPagoAsync(int idpago) {
+            PazCitasWA.ServiciosWS.eliminarPagoRequest inValue = new PazCitasWA.ServiciosWS.eliminarPagoRequest();
+            inValue.idpago = idpago;
+            return ((PazCitasWA.ServiciosWS.PagoWS)(this)).eliminarPagoAsync(inValue);
+        }
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -3500,13 +3500,13 @@ namespace PazCitasWA.ServiciosWS {
     public interface CitaWS {
         
         // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="http://services.pucp.edu.pe/CitaWS/listarXPacienteRequest", ReplyAction="http://services.pucp.edu.pe/CitaWS/listarXPacienteResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://services.pucp.edu.pe/CitaWS/listarCitaRequest", ReplyAction="http://services.pucp.edu.pe/CitaWS/listarCitaResponse")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        PazCitasWA.ServiciosWS.listarXPacienteResponse listarXPaciente(PazCitasWA.ServiciosWS.listarXPacienteRequest request);
+        PazCitasWA.ServiciosWS.listarCitaResponse listarCita(PazCitasWA.ServiciosWS.listarCitaRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://services.pucp.edu.pe/CitaWS/listarXPacienteRequest", ReplyAction="http://services.pucp.edu.pe/CitaWS/listarXPacienteResponse")]
-        System.Threading.Tasks.Task<PazCitasWA.ServiciosWS.listarXPacienteResponse> listarXPacienteAsync(PazCitasWA.ServiciosWS.listarXPacienteRequest request);
+        [System.ServiceModel.OperationContractAttribute(Action="http://services.pucp.edu.pe/CitaWS/listarCitaRequest", ReplyAction="http://services.pucp.edu.pe/CitaWS/listarCitaResponse")]
+        System.Threading.Tasks.Task<PazCitasWA.ServiciosWS.listarCitaResponse> listarCitaAsync(PazCitasWA.ServiciosWS.listarCitaRequest request);
         
         // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
         [System.ServiceModel.OperationContractAttribute(Action="http://services.pucp.edu.pe/CitaWS/modificarCitaRequest", ReplyAction="http://services.pucp.edu.pe/CitaWS/modificarCitaResponse")]
@@ -3518,13 +3518,13 @@ namespace PazCitasWA.ServiciosWS {
         System.Threading.Tasks.Task<PazCitasWA.ServiciosWS.modificarCitaResponse> modificarCitaAsync(PazCitasWA.ServiciosWS.modificarCitaRequest request);
         
         // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="http://services.pucp.edu.pe/CitaWS/obtenerCitaRequest", ReplyAction="http://services.pucp.edu.pe/CitaWS/obtenerCitaResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://services.pucp.edu.pe/CitaWS/listaCitaPorMedicoRequest", ReplyAction="http://services.pucp.edu.pe/CitaWS/listaCitaPorMedicoResponse")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        PazCitasWA.ServiciosWS.obtenerCitaResponse obtenerCita(PazCitasWA.ServiciosWS.obtenerCitaRequest request);
+        PazCitasWA.ServiciosWS.listaCitaPorMedicoResponse listaCitaPorMedico(PazCitasWA.ServiciosWS.listaCitaPorMedicoRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://services.pucp.edu.pe/CitaWS/obtenerCitaRequest", ReplyAction="http://services.pucp.edu.pe/CitaWS/obtenerCitaResponse")]
-        System.Threading.Tasks.Task<PazCitasWA.ServiciosWS.obtenerCitaResponse> obtenerCitaAsync(PazCitasWA.ServiciosWS.obtenerCitaRequest request);
+        [System.ServiceModel.OperationContractAttribute(Action="http://services.pucp.edu.pe/CitaWS/listaCitaPorMedicoRequest", ReplyAction="http://services.pucp.edu.pe/CitaWS/listaCitaPorMedicoResponse")]
+        System.Threading.Tasks.Task<PazCitasWA.ServiciosWS.listaCitaPorMedicoResponse> listaCitaPorMedicoAsync(PazCitasWA.ServiciosWS.listaCitaPorMedicoRequest request);
         
         // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
         [System.ServiceModel.OperationContractAttribute(Action="http://services.pucp.edu.pe/CitaWS/modificarFechaCitaRequest", ReplyAction="http://services.pucp.edu.pe/CitaWS/modificarFechaCitaResponse")]
@@ -3545,6 +3545,24 @@ namespace PazCitasWA.ServiciosWS {
         System.Threading.Tasks.Task<PazCitasWA.ServiciosWS.insertarCitaResponse> insertarCitaAsync(PazCitasWA.ServiciosWS.insertarCitaRequest request);
         
         // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="http://services.pucp.edu.pe/CitaWS/listarXPacienteRequest", ReplyAction="http://services.pucp.edu.pe/CitaWS/listarXPacienteResponse")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        PazCitasWA.ServiciosWS.listarXPacienteResponse listarXPaciente(PazCitasWA.ServiciosWS.listarXPacienteRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://services.pucp.edu.pe/CitaWS/listarXPacienteRequest", ReplyAction="http://services.pucp.edu.pe/CitaWS/listarXPacienteResponse")]
+        System.Threading.Tasks.Task<PazCitasWA.ServiciosWS.listarXPacienteResponse> listarXPacienteAsync(PazCitasWA.ServiciosWS.listarXPacienteRequest request);
+        
+        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="http://services.pucp.edu.pe/CitaWS/obtenerCitaRequest", ReplyAction="http://services.pucp.edu.pe/CitaWS/obtenerCitaResponse")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        PazCitasWA.ServiciosWS.obtenerCitaResponse obtenerCita(PazCitasWA.ServiciosWS.obtenerCitaRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://services.pucp.edu.pe/CitaWS/obtenerCitaRequest", ReplyAction="http://services.pucp.edu.pe/CitaWS/obtenerCitaResponse")]
+        System.Threading.Tasks.Task<PazCitasWA.ServiciosWS.obtenerCitaResponse> obtenerCitaAsync(PazCitasWA.ServiciosWS.obtenerCitaRequest request);
+        
+        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
         [System.ServiceModel.OperationContractAttribute(Action="http://services.pucp.edu.pe/CitaWS/eliminarCitaRequest", ReplyAction="http://services.pucp.edu.pe/CitaWS/eliminarCitaResponse")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
@@ -3554,13 +3572,22 @@ namespace PazCitasWA.ServiciosWS {
         System.Threading.Tasks.Task<PazCitasWA.ServiciosWS.eliminarCitaResponse> eliminarCitaAsync(PazCitasWA.ServiciosWS.eliminarCitaRequest request);
         
         // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="http://services.pucp.edu.pe/CitaWS/listaCitaPorMedicoRequest", ReplyAction="http://services.pucp.edu.pe/CitaWS/listaCitaPorMedicoResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://services.pucp.edu.pe/CitaWS/obtenerXIdCompletoSinDatosPacienteRequest", ReplyAction="http://services.pucp.edu.pe/CitaWS/obtenerXIdCompletoSinDatosPacienteResponse")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        PazCitasWA.ServiciosWS.listaCitaPorMedicoResponse listaCitaPorMedico(PazCitasWA.ServiciosWS.listaCitaPorMedicoRequest request);
+        PazCitasWA.ServiciosWS.obtenerXIdCompletoSinDatosPacienteResponse obtenerXIdCompletoSinDatosPaciente(PazCitasWA.ServiciosWS.obtenerXIdCompletoSinDatosPacienteRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://services.pucp.edu.pe/CitaWS/listaCitaPorMedicoRequest", ReplyAction="http://services.pucp.edu.pe/CitaWS/listaCitaPorMedicoResponse")]
-        System.Threading.Tasks.Task<PazCitasWA.ServiciosWS.listaCitaPorMedicoResponse> listaCitaPorMedicoAsync(PazCitasWA.ServiciosWS.listaCitaPorMedicoRequest request);
+        [System.ServiceModel.OperationContractAttribute(Action="http://services.pucp.edu.pe/CitaWS/obtenerXIdCompletoSinDatosPacienteRequest", ReplyAction="http://services.pucp.edu.pe/CitaWS/obtenerXIdCompletoSinDatosPacienteResponse")]
+        System.Threading.Tasks.Task<PazCitasWA.ServiciosWS.obtenerXIdCompletoSinDatosPacienteResponse> obtenerXIdCompletoSinDatosPacienteAsync(PazCitasWA.ServiciosWS.obtenerXIdCompletoSinDatosPacienteRequest request);
+        
+        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="http://services.pucp.edu.pe/CitaWS/listaCitaPorMedicoXestadoRequest", ReplyAction="http://services.pucp.edu.pe/CitaWS/listaCitaPorMedicoXestadoResponse")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        PazCitasWA.ServiciosWS.listaCitaPorMedicoXestadoResponse listaCitaPorMedicoXestado(PazCitasWA.ServiciosWS.listaCitaPorMedicoXestadoRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://services.pucp.edu.pe/CitaWS/listaCitaPorMedicoXestadoRequest", ReplyAction="http://services.pucp.edu.pe/CitaWS/listaCitaPorMedicoXestadoResponse")]
+        System.Threading.Tasks.Task<PazCitasWA.ServiciosWS.listaCitaPorMedicoXestadoResponse> listaCitaPorMedicoXestadoAsync(PazCitasWA.ServiciosWS.listaCitaPorMedicoXestadoRequest request);
         
         // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
         [System.ServiceModel.OperationContractAttribute(Action="http://services.pucp.edu.pe/CitaWS/listarXPacienteCompletoSinDatosPacienteRequest" +
@@ -3574,58 +3601,32 @@ namespace PazCitasWA.ServiciosWS {
             "", ReplyAction="http://services.pucp.edu.pe/CitaWS/listarXPacienteCompletoSinDatosPacienteRespons" +
             "e")]
         System.Threading.Tasks.Task<PazCitasWA.ServiciosWS.listarXPacienteCompletoSinDatosPacienteResponse> listarXPacienteCompletoSinDatosPacienteAsync(PazCitasWA.ServiciosWS.listarXPacienteCompletoSinDatosPacienteRequest request);
-        
-        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="http://services.pucp.edu.pe/CitaWS/obtenerXIdCompletoSinDatosPacienteRequest", ReplyAction="http://services.pucp.edu.pe/CitaWS/obtenerXIdCompletoSinDatosPacienteResponse")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        PazCitasWA.ServiciosWS.obtenerXIdCompletoSinDatosPacienteResponse obtenerXIdCompletoSinDatosPaciente(PazCitasWA.ServiciosWS.obtenerXIdCompletoSinDatosPacienteRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://services.pucp.edu.pe/CitaWS/obtenerXIdCompletoSinDatosPacienteRequest", ReplyAction="http://services.pucp.edu.pe/CitaWS/obtenerXIdCompletoSinDatosPacienteResponse")]
-        System.Threading.Tasks.Task<PazCitasWA.ServiciosWS.obtenerXIdCompletoSinDatosPacienteResponse> obtenerXIdCompletoSinDatosPacienteAsync(PazCitasWA.ServiciosWS.obtenerXIdCompletoSinDatosPacienteRequest request);
-        
-        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="http://services.pucp.edu.pe/CitaWS/listarCitaRequest", ReplyAction="http://services.pucp.edu.pe/CitaWS/listarCitaResponse")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        PazCitasWA.ServiciosWS.listarCitaResponse listarCita(PazCitasWA.ServiciosWS.listarCitaRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://services.pucp.edu.pe/CitaWS/listarCitaRequest", ReplyAction="http://services.pucp.edu.pe/CitaWS/listarCitaResponse")]
-        System.Threading.Tasks.Task<PazCitasWA.ServiciosWS.listarCitaResponse> listarCitaAsync(PazCitasWA.ServiciosWS.listarCitaRequest request);
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="listarXPaciente", WrapperNamespace="http://services.pucp.edu.pe", IsWrapped=true)]
-    public partial class listarXPacienteRequest {
+    [System.ServiceModel.MessageContractAttribute(WrapperName="listarCita", WrapperNamespace="http://services.pucp.edu.pe", IsWrapped=true)]
+    public partial class listarCitaRequest {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.pucp.edu.pe", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public int idPaciente;
-        
-        public listarXPacienteRequest() {
-        }
-        
-        public listarXPacienteRequest(int idPaciente) {
-            this.idPaciente = idPaciente;
+        public listarCitaRequest() {
         }
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="listarXPacienteResponse", WrapperNamespace="http://services.pucp.edu.pe", IsWrapped=true)]
-    public partial class listarXPacienteResponse {
+    [System.ServiceModel.MessageContractAttribute(WrapperName="listarCitaResponse", WrapperNamespace="http://services.pucp.edu.pe", IsWrapped=true)]
+    public partial class listarCitaResponse {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.pucp.edu.pe", Order=0)]
         [System.Xml.Serialization.XmlElementAttribute("return", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
         public PazCitasWA.ServiciosWS.cita[] @return;
         
-        public listarXPacienteResponse() {
+        public listarCitaResponse() {
         }
         
-        public listarXPacienteResponse(PazCitasWA.ServiciosWS.cita[] @return) {
+        public listarCitaResponse(PazCitasWA.ServiciosWS.cita[] @return) {
             this.@return = @return;
         }
     }
@@ -3669,35 +3670,35 @@ namespace PazCitasWA.ServiciosWS {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="obtenerCita", WrapperNamespace="http://services.pucp.edu.pe", IsWrapped=true)]
-    public partial class obtenerCitaRequest {
+    [System.ServiceModel.MessageContractAttribute(WrapperName="listaCitaPorMedico", WrapperNamespace="http://services.pucp.edu.pe", IsWrapped=true)]
+    public partial class listaCitaPorMedicoRequest {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.pucp.edu.pe", Order=0)]
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public int idcita;
+        public int idMed;
         
-        public obtenerCitaRequest() {
+        public listaCitaPorMedicoRequest() {
         }
         
-        public obtenerCitaRequest(int idcita) {
-            this.idcita = idcita;
+        public listaCitaPorMedicoRequest(int idMed) {
+            this.idMed = idMed;
         }
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="obtenerCitaResponse", WrapperNamespace="http://services.pucp.edu.pe", IsWrapped=true)]
-    public partial class obtenerCitaResponse {
+    [System.ServiceModel.MessageContractAttribute(WrapperName="listaCitaPorMedicoResponse", WrapperNamespace="http://services.pucp.edu.pe", IsWrapped=true)]
+    public partial class listaCitaPorMedicoResponse {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.pucp.edu.pe", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public PazCitasWA.ServiciosWS.cita @return;
+        [System.Xml.Serialization.XmlElementAttribute("return", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public PazCitasWA.ServiciosWS.cita[] @return;
         
-        public obtenerCitaResponse() {
+        public listaCitaPorMedicoResponse() {
         }
         
-        public obtenerCitaResponse(PazCitasWA.ServiciosWS.cita @return) {
+        public listaCitaPorMedicoResponse(PazCitasWA.ServiciosWS.cita[] @return) {
             this.@return = @return;
         }
     }
@@ -3792,6 +3793,78 @@ namespace PazCitasWA.ServiciosWS {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="listarXPaciente", WrapperNamespace="http://services.pucp.edu.pe", IsWrapped=true)]
+    public partial class listarXPacienteRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.pucp.edu.pe", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public int idPaciente;
+        
+        public listarXPacienteRequest() {
+        }
+        
+        public listarXPacienteRequest(int idPaciente) {
+            this.idPaciente = idPaciente;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="listarXPacienteResponse", WrapperNamespace="http://services.pucp.edu.pe", IsWrapped=true)]
+    public partial class listarXPacienteResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.pucp.edu.pe", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute("return", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public PazCitasWA.ServiciosWS.cita[] @return;
+        
+        public listarXPacienteResponse() {
+        }
+        
+        public listarXPacienteResponse(PazCitasWA.ServiciosWS.cita[] @return) {
+            this.@return = @return;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="obtenerCita", WrapperNamespace="http://services.pucp.edu.pe", IsWrapped=true)]
+    public partial class obtenerCitaRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.pucp.edu.pe", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public int idcita;
+        
+        public obtenerCitaRequest() {
+        }
+        
+        public obtenerCitaRequest(int idcita) {
+            this.idcita = idcita;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="obtenerCitaResponse", WrapperNamespace="http://services.pucp.edu.pe", IsWrapped=true)]
+    public partial class obtenerCitaResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.pucp.edu.pe", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public PazCitasWA.ServiciosWS.cita @return;
+        
+        public obtenerCitaResponse() {
+        }
+        
+        public obtenerCitaResponse(PazCitasWA.ServiciosWS.cita @return) {
+            this.@return = @return;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(WrapperName="eliminarCita", WrapperNamespace="http://services.pucp.edu.pe", IsWrapped=true)]
     public partial class eliminarCitaRequest {
         
@@ -3821,78 +3894,6 @@ namespace PazCitasWA.ServiciosWS {
         }
         
         public eliminarCitaResponse(int @return) {
-            this.@return = @return;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="listaCitaPorMedico", WrapperNamespace="http://services.pucp.edu.pe", IsWrapped=true)]
-    public partial class listaCitaPorMedicoRequest {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.pucp.edu.pe", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public int idMed;
-        
-        public listaCitaPorMedicoRequest() {
-        }
-        
-        public listaCitaPorMedicoRequest(int idMed) {
-            this.idMed = idMed;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="listaCitaPorMedicoResponse", WrapperNamespace="http://services.pucp.edu.pe", IsWrapped=true)]
-    public partial class listaCitaPorMedicoResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.pucp.edu.pe", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute("return", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public PazCitasWA.ServiciosWS.cita[] @return;
-        
-        public listaCitaPorMedicoResponse() {
-        }
-        
-        public listaCitaPorMedicoResponse(PazCitasWA.ServiciosWS.cita[] @return) {
-            this.@return = @return;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="listarXPacienteCompletoSinDatosPaciente", WrapperNamespace="http://services.pucp.edu.pe", IsWrapped=true)]
-    public partial class listarXPacienteCompletoSinDatosPacienteRequest {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.pucp.edu.pe", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public int idPaciente;
-        
-        public listarXPacienteCompletoSinDatosPacienteRequest() {
-        }
-        
-        public listarXPacienteCompletoSinDatosPacienteRequest(int idPaciente) {
-            this.idPaciente = idPaciente;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="listarXPacienteCompletoSinDatosPacienteResponse", WrapperNamespace="http://services.pucp.edu.pe", IsWrapped=true)]
-    public partial class listarXPacienteCompletoSinDatosPacienteResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.pucp.edu.pe", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute("return", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public PazCitasWA.ServiciosWS.cita[] @return;
-        
-        public listarXPacienteCompletoSinDatosPacienteResponse() {
-        }
-        
-        public listarXPacienteCompletoSinDatosPacienteResponse(PazCitasWA.ServiciosWS.cita[] @return) {
             this.@return = @return;
         }
     }
@@ -3936,27 +3937,76 @@ namespace PazCitasWA.ServiciosWS {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="listarCita", WrapperNamespace="http://services.pucp.edu.pe", IsWrapped=true)]
-    public partial class listarCitaRequest {
+    [System.ServiceModel.MessageContractAttribute(WrapperName="listaCitaPorMedicoXestado", WrapperNamespace="http://services.pucp.edu.pe", IsWrapped=true)]
+    public partial class listaCitaPorMedicoXestadoRequest {
         
-        public listarCitaRequest() {
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.pucp.edu.pe", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public int idMed;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.pucp.edu.pe", Order=1)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string estado;
+        
+        public listaCitaPorMedicoXestadoRequest() {
+        }
+        
+        public listaCitaPorMedicoXestadoRequest(int idMed, string estado) {
+            this.idMed = idMed;
+            this.estado = estado;
         }
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="listarCitaResponse", WrapperNamespace="http://services.pucp.edu.pe", IsWrapped=true)]
-    public partial class listarCitaResponse {
+    [System.ServiceModel.MessageContractAttribute(WrapperName="listaCitaPorMedicoXestadoResponse", WrapperNamespace="http://services.pucp.edu.pe", IsWrapped=true)]
+    public partial class listaCitaPorMedicoXestadoResponse {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.pucp.edu.pe", Order=0)]
         [System.Xml.Serialization.XmlElementAttribute("return", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
         public PazCitasWA.ServiciosWS.cita[] @return;
         
-        public listarCitaResponse() {
+        public listaCitaPorMedicoXestadoResponse() {
         }
         
-        public listarCitaResponse(PazCitasWA.ServiciosWS.cita[] @return) {
+        public listaCitaPorMedicoXestadoResponse(PazCitasWA.ServiciosWS.cita[] @return) {
+            this.@return = @return;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="listarXPacienteCompletoSinDatosPaciente", WrapperNamespace="http://services.pucp.edu.pe", IsWrapped=true)]
+    public partial class listarXPacienteCompletoSinDatosPacienteRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.pucp.edu.pe", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public int idPaciente;
+        
+        public listarXPacienteCompletoSinDatosPacienteRequest() {
+        }
+        
+        public listarXPacienteCompletoSinDatosPacienteRequest(int idPaciente) {
+            this.idPaciente = idPaciente;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="listarXPacienteCompletoSinDatosPacienteResponse", WrapperNamespace="http://services.pucp.edu.pe", IsWrapped=true)]
+    public partial class listarXPacienteCompletoSinDatosPacienteResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.pucp.edu.pe", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute("return", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public PazCitasWA.ServiciosWS.cita[] @return;
+        
+        public listarXPacienteCompletoSinDatosPacienteResponse() {
+        }
+        
+        public listarXPacienteCompletoSinDatosPacienteResponse(PazCitasWA.ServiciosWS.cita[] @return) {
             this.@return = @return;
         }
     }
@@ -3989,26 +4039,24 @@ namespace PazCitasWA.ServiciosWS {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        PazCitasWA.ServiciosWS.listarXPacienteResponse PazCitasWA.ServiciosWS.CitaWS.listarXPaciente(PazCitasWA.ServiciosWS.listarXPacienteRequest request) {
-            return base.Channel.listarXPaciente(request);
+        PazCitasWA.ServiciosWS.listarCitaResponse PazCitasWA.ServiciosWS.CitaWS.listarCita(PazCitasWA.ServiciosWS.listarCitaRequest request) {
+            return base.Channel.listarCita(request);
         }
         
-        public PazCitasWA.ServiciosWS.cita[] listarXPaciente(int idPaciente) {
-            PazCitasWA.ServiciosWS.listarXPacienteRequest inValue = new PazCitasWA.ServiciosWS.listarXPacienteRequest();
-            inValue.idPaciente = idPaciente;
-            PazCitasWA.ServiciosWS.listarXPacienteResponse retVal = ((PazCitasWA.ServiciosWS.CitaWS)(this)).listarXPaciente(inValue);
+        public PazCitasWA.ServiciosWS.cita[] listarCita() {
+            PazCitasWA.ServiciosWS.listarCitaRequest inValue = new PazCitasWA.ServiciosWS.listarCitaRequest();
+            PazCitasWA.ServiciosWS.listarCitaResponse retVal = ((PazCitasWA.ServiciosWS.CitaWS)(this)).listarCita(inValue);
             return retVal.@return;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<PazCitasWA.ServiciosWS.listarXPacienteResponse> PazCitasWA.ServiciosWS.CitaWS.listarXPacienteAsync(PazCitasWA.ServiciosWS.listarXPacienteRequest request) {
-            return base.Channel.listarXPacienteAsync(request);
+        System.Threading.Tasks.Task<PazCitasWA.ServiciosWS.listarCitaResponse> PazCitasWA.ServiciosWS.CitaWS.listarCitaAsync(PazCitasWA.ServiciosWS.listarCitaRequest request) {
+            return base.Channel.listarCitaAsync(request);
         }
         
-        public System.Threading.Tasks.Task<PazCitasWA.ServiciosWS.listarXPacienteResponse> listarXPacienteAsync(int idPaciente) {
-            PazCitasWA.ServiciosWS.listarXPacienteRequest inValue = new PazCitasWA.ServiciosWS.listarXPacienteRequest();
-            inValue.idPaciente = idPaciente;
-            return ((PazCitasWA.ServiciosWS.CitaWS)(this)).listarXPacienteAsync(inValue);
+        public System.Threading.Tasks.Task<PazCitasWA.ServiciosWS.listarCitaResponse> listarCitaAsync() {
+            PazCitasWA.ServiciosWS.listarCitaRequest inValue = new PazCitasWA.ServiciosWS.listarCitaRequest();
+            return ((PazCitasWA.ServiciosWS.CitaWS)(this)).listarCitaAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -4035,26 +4083,26 @@ namespace PazCitasWA.ServiciosWS {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        PazCitasWA.ServiciosWS.obtenerCitaResponse PazCitasWA.ServiciosWS.CitaWS.obtenerCita(PazCitasWA.ServiciosWS.obtenerCitaRequest request) {
-            return base.Channel.obtenerCita(request);
+        PazCitasWA.ServiciosWS.listaCitaPorMedicoResponse PazCitasWA.ServiciosWS.CitaWS.listaCitaPorMedico(PazCitasWA.ServiciosWS.listaCitaPorMedicoRequest request) {
+            return base.Channel.listaCitaPorMedico(request);
         }
         
-        public PazCitasWA.ServiciosWS.cita obtenerCita(int idcita) {
-            PazCitasWA.ServiciosWS.obtenerCitaRequest inValue = new PazCitasWA.ServiciosWS.obtenerCitaRequest();
-            inValue.idcita = idcita;
-            PazCitasWA.ServiciosWS.obtenerCitaResponse retVal = ((PazCitasWA.ServiciosWS.CitaWS)(this)).obtenerCita(inValue);
+        public PazCitasWA.ServiciosWS.cita[] listaCitaPorMedico(int idMed) {
+            PazCitasWA.ServiciosWS.listaCitaPorMedicoRequest inValue = new PazCitasWA.ServiciosWS.listaCitaPorMedicoRequest();
+            inValue.idMed = idMed;
+            PazCitasWA.ServiciosWS.listaCitaPorMedicoResponse retVal = ((PazCitasWA.ServiciosWS.CitaWS)(this)).listaCitaPorMedico(inValue);
             return retVal.@return;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<PazCitasWA.ServiciosWS.obtenerCitaResponse> PazCitasWA.ServiciosWS.CitaWS.obtenerCitaAsync(PazCitasWA.ServiciosWS.obtenerCitaRequest request) {
-            return base.Channel.obtenerCitaAsync(request);
+        System.Threading.Tasks.Task<PazCitasWA.ServiciosWS.listaCitaPorMedicoResponse> PazCitasWA.ServiciosWS.CitaWS.listaCitaPorMedicoAsync(PazCitasWA.ServiciosWS.listaCitaPorMedicoRequest request) {
+            return base.Channel.listaCitaPorMedicoAsync(request);
         }
         
-        public System.Threading.Tasks.Task<PazCitasWA.ServiciosWS.obtenerCitaResponse> obtenerCitaAsync(int idcita) {
-            PazCitasWA.ServiciosWS.obtenerCitaRequest inValue = new PazCitasWA.ServiciosWS.obtenerCitaRequest();
-            inValue.idcita = idcita;
-            return ((PazCitasWA.ServiciosWS.CitaWS)(this)).obtenerCitaAsync(inValue);
+        public System.Threading.Tasks.Task<PazCitasWA.ServiciosWS.listaCitaPorMedicoResponse> listaCitaPorMedicoAsync(int idMed) {
+            PazCitasWA.ServiciosWS.listaCitaPorMedicoRequest inValue = new PazCitasWA.ServiciosWS.listaCitaPorMedicoRequest();
+            inValue.idMed = idMed;
+            return ((PazCitasWA.ServiciosWS.CitaWS)(this)).listaCitaPorMedicoAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -4110,6 +4158,52 @@ namespace PazCitasWA.ServiciosWS {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        PazCitasWA.ServiciosWS.listarXPacienteResponse PazCitasWA.ServiciosWS.CitaWS.listarXPaciente(PazCitasWA.ServiciosWS.listarXPacienteRequest request) {
+            return base.Channel.listarXPaciente(request);
+        }
+        
+        public PazCitasWA.ServiciosWS.cita[] listarXPaciente(int idPaciente) {
+            PazCitasWA.ServiciosWS.listarXPacienteRequest inValue = new PazCitasWA.ServiciosWS.listarXPacienteRequest();
+            inValue.idPaciente = idPaciente;
+            PazCitasWA.ServiciosWS.listarXPacienteResponse retVal = ((PazCitasWA.ServiciosWS.CitaWS)(this)).listarXPaciente(inValue);
+            return retVal.@return;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<PazCitasWA.ServiciosWS.listarXPacienteResponse> PazCitasWA.ServiciosWS.CitaWS.listarXPacienteAsync(PazCitasWA.ServiciosWS.listarXPacienteRequest request) {
+            return base.Channel.listarXPacienteAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<PazCitasWA.ServiciosWS.listarXPacienteResponse> listarXPacienteAsync(int idPaciente) {
+            PazCitasWA.ServiciosWS.listarXPacienteRequest inValue = new PazCitasWA.ServiciosWS.listarXPacienteRequest();
+            inValue.idPaciente = idPaciente;
+            return ((PazCitasWA.ServiciosWS.CitaWS)(this)).listarXPacienteAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        PazCitasWA.ServiciosWS.obtenerCitaResponse PazCitasWA.ServiciosWS.CitaWS.obtenerCita(PazCitasWA.ServiciosWS.obtenerCitaRequest request) {
+            return base.Channel.obtenerCita(request);
+        }
+        
+        public PazCitasWA.ServiciosWS.cita obtenerCita(int idcita) {
+            PazCitasWA.ServiciosWS.obtenerCitaRequest inValue = new PazCitasWA.ServiciosWS.obtenerCitaRequest();
+            inValue.idcita = idcita;
+            PazCitasWA.ServiciosWS.obtenerCitaResponse retVal = ((PazCitasWA.ServiciosWS.CitaWS)(this)).obtenerCita(inValue);
+            return retVal.@return;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<PazCitasWA.ServiciosWS.obtenerCitaResponse> PazCitasWA.ServiciosWS.CitaWS.obtenerCitaAsync(PazCitasWA.ServiciosWS.obtenerCitaRequest request) {
+            return base.Channel.obtenerCitaAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<PazCitasWA.ServiciosWS.obtenerCitaResponse> obtenerCitaAsync(int idcita) {
+            PazCitasWA.ServiciosWS.obtenerCitaRequest inValue = new PazCitasWA.ServiciosWS.obtenerCitaRequest();
+            inValue.idcita = idcita;
+            return ((PazCitasWA.ServiciosWS.CitaWS)(this)).obtenerCitaAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         PazCitasWA.ServiciosWS.eliminarCitaResponse PazCitasWA.ServiciosWS.CitaWS.eliminarCita(PazCitasWA.ServiciosWS.eliminarCitaRequest request) {
             return base.Channel.eliminarCita(request);
         }
@@ -4130,52 +4224,6 @@ namespace PazCitasWA.ServiciosWS {
             PazCitasWA.ServiciosWS.eliminarCitaRequest inValue = new PazCitasWA.ServiciosWS.eliminarCitaRequest();
             inValue.idcita = idcita;
             return ((PazCitasWA.ServiciosWS.CitaWS)(this)).eliminarCitaAsync(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        PazCitasWA.ServiciosWS.listaCitaPorMedicoResponse PazCitasWA.ServiciosWS.CitaWS.listaCitaPorMedico(PazCitasWA.ServiciosWS.listaCitaPorMedicoRequest request) {
-            return base.Channel.listaCitaPorMedico(request);
-        }
-        
-        public PazCitasWA.ServiciosWS.cita[] listaCitaPorMedico(int idMed) {
-            PazCitasWA.ServiciosWS.listaCitaPorMedicoRequest inValue = new PazCitasWA.ServiciosWS.listaCitaPorMedicoRequest();
-            inValue.idMed = idMed;
-            PazCitasWA.ServiciosWS.listaCitaPorMedicoResponse retVal = ((PazCitasWA.ServiciosWS.CitaWS)(this)).listaCitaPorMedico(inValue);
-            return retVal.@return;
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<PazCitasWA.ServiciosWS.listaCitaPorMedicoResponse> PazCitasWA.ServiciosWS.CitaWS.listaCitaPorMedicoAsync(PazCitasWA.ServiciosWS.listaCitaPorMedicoRequest request) {
-            return base.Channel.listaCitaPorMedicoAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<PazCitasWA.ServiciosWS.listaCitaPorMedicoResponse> listaCitaPorMedicoAsync(int idMed) {
-            PazCitasWA.ServiciosWS.listaCitaPorMedicoRequest inValue = new PazCitasWA.ServiciosWS.listaCitaPorMedicoRequest();
-            inValue.idMed = idMed;
-            return ((PazCitasWA.ServiciosWS.CitaWS)(this)).listaCitaPorMedicoAsync(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        PazCitasWA.ServiciosWS.listarXPacienteCompletoSinDatosPacienteResponse PazCitasWA.ServiciosWS.CitaWS.listarXPacienteCompletoSinDatosPaciente(PazCitasWA.ServiciosWS.listarXPacienteCompletoSinDatosPacienteRequest request) {
-            return base.Channel.listarXPacienteCompletoSinDatosPaciente(request);
-        }
-        
-        public PazCitasWA.ServiciosWS.cita[] listarXPacienteCompletoSinDatosPaciente(int idPaciente) {
-            PazCitasWA.ServiciosWS.listarXPacienteCompletoSinDatosPacienteRequest inValue = new PazCitasWA.ServiciosWS.listarXPacienteCompletoSinDatosPacienteRequest();
-            inValue.idPaciente = idPaciente;
-            PazCitasWA.ServiciosWS.listarXPacienteCompletoSinDatosPacienteResponse retVal = ((PazCitasWA.ServiciosWS.CitaWS)(this)).listarXPacienteCompletoSinDatosPaciente(inValue);
-            return retVal.@return;
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<PazCitasWA.ServiciosWS.listarXPacienteCompletoSinDatosPacienteResponse> PazCitasWA.ServiciosWS.CitaWS.listarXPacienteCompletoSinDatosPacienteAsync(PazCitasWA.ServiciosWS.listarXPacienteCompletoSinDatosPacienteRequest request) {
-            return base.Channel.listarXPacienteCompletoSinDatosPacienteAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<PazCitasWA.ServiciosWS.listarXPacienteCompletoSinDatosPacienteResponse> listarXPacienteCompletoSinDatosPacienteAsync(int idPaciente) {
-            PazCitasWA.ServiciosWS.listarXPacienteCompletoSinDatosPacienteRequest inValue = new PazCitasWA.ServiciosWS.listarXPacienteCompletoSinDatosPacienteRequest();
-            inValue.idPaciente = idPaciente;
-            return ((PazCitasWA.ServiciosWS.CitaWS)(this)).listarXPacienteCompletoSinDatosPacienteAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -4202,75 +4250,57 @@ namespace PazCitasWA.ServiciosWS {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        PazCitasWA.ServiciosWS.listarCitaResponse PazCitasWA.ServiciosWS.CitaWS.listarCita(PazCitasWA.ServiciosWS.listarCitaRequest request) {
-            return base.Channel.listarCita(request);
+        PazCitasWA.ServiciosWS.listaCitaPorMedicoXestadoResponse PazCitasWA.ServiciosWS.CitaWS.listaCitaPorMedicoXestado(PazCitasWA.ServiciosWS.listaCitaPorMedicoXestadoRequest request) {
+            return base.Channel.listaCitaPorMedicoXestado(request);
         }
         
-        public PazCitasWA.ServiciosWS.cita[] listarCita() {
-            PazCitasWA.ServiciosWS.listarCitaRequest inValue = new PazCitasWA.ServiciosWS.listarCitaRequest();
-            PazCitasWA.ServiciosWS.listarCitaResponse retVal = ((PazCitasWA.ServiciosWS.CitaWS)(this)).listarCita(inValue);
+        public PazCitasWA.ServiciosWS.cita[] listaCitaPorMedicoXestado(int idMed, string estado) {
+            PazCitasWA.ServiciosWS.listaCitaPorMedicoXestadoRequest inValue = new PazCitasWA.ServiciosWS.listaCitaPorMedicoXestadoRequest();
+            inValue.idMed = idMed;
+            inValue.estado = estado;
+            PazCitasWA.ServiciosWS.listaCitaPorMedicoXestadoResponse retVal = ((PazCitasWA.ServiciosWS.CitaWS)(this)).listaCitaPorMedicoXestado(inValue);
             return retVal.@return;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<PazCitasWA.ServiciosWS.listarCitaResponse> PazCitasWA.ServiciosWS.CitaWS.listarCitaAsync(PazCitasWA.ServiciosWS.listarCitaRequest request) {
-            return base.Channel.listarCitaAsync(request);
+        System.Threading.Tasks.Task<PazCitasWA.ServiciosWS.listaCitaPorMedicoXestadoResponse> PazCitasWA.ServiciosWS.CitaWS.listaCitaPorMedicoXestadoAsync(PazCitasWA.ServiciosWS.listaCitaPorMedicoXestadoRequest request) {
+            return base.Channel.listaCitaPorMedicoXestadoAsync(request);
         }
         
-        public System.Threading.Tasks.Task<PazCitasWA.ServiciosWS.listarCitaResponse> listarCitaAsync() {
-            PazCitasWA.ServiciosWS.listarCitaRequest inValue = new PazCitasWA.ServiciosWS.listarCitaRequest();
-            return ((PazCitasWA.ServiciosWS.CitaWS)(this)).listarCitaAsync(inValue);
+        public System.Threading.Tasks.Task<PazCitasWA.ServiciosWS.listaCitaPorMedicoXestadoResponse> listaCitaPorMedicoXestadoAsync(int idMed, string estado) {
+            PazCitasWA.ServiciosWS.listaCitaPorMedicoXestadoRequest inValue = new PazCitasWA.ServiciosWS.listaCitaPorMedicoXestadoRequest();
+            inValue.idMed = idMed;
+            inValue.estado = estado;
+            return ((PazCitasWA.ServiciosWS.CitaWS)(this)).listaCitaPorMedicoXestadoAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        PazCitasWA.ServiciosWS.listarXPacienteCompletoSinDatosPacienteResponse PazCitasWA.ServiciosWS.CitaWS.listarXPacienteCompletoSinDatosPaciente(PazCitasWA.ServiciosWS.listarXPacienteCompletoSinDatosPacienteRequest request) {
+            return base.Channel.listarXPacienteCompletoSinDatosPaciente(request);
+        }
+        
+        public PazCitasWA.ServiciosWS.cita[] listarXPacienteCompletoSinDatosPaciente(int idPaciente) {
+            PazCitasWA.ServiciosWS.listarXPacienteCompletoSinDatosPacienteRequest inValue = new PazCitasWA.ServiciosWS.listarXPacienteCompletoSinDatosPacienteRequest();
+            inValue.idPaciente = idPaciente;
+            PazCitasWA.ServiciosWS.listarXPacienteCompletoSinDatosPacienteResponse retVal = ((PazCitasWA.ServiciosWS.CitaWS)(this)).listarXPacienteCompletoSinDatosPaciente(inValue);
+            return retVal.@return;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<PazCitasWA.ServiciosWS.listarXPacienteCompletoSinDatosPacienteResponse> PazCitasWA.ServiciosWS.CitaWS.listarXPacienteCompletoSinDatosPacienteAsync(PazCitasWA.ServiciosWS.listarXPacienteCompletoSinDatosPacienteRequest request) {
+            return base.Channel.listarXPacienteCompletoSinDatosPacienteAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<PazCitasWA.ServiciosWS.listarXPacienteCompletoSinDatosPacienteResponse> listarXPacienteCompletoSinDatosPacienteAsync(int idPaciente) {
+            PazCitasWA.ServiciosWS.listarXPacienteCompletoSinDatosPacienteRequest inValue = new PazCitasWA.ServiciosWS.listarXPacienteCompletoSinDatosPacienteRequest();
+            inValue.idPaciente = idPaciente;
+            return ((PazCitasWA.ServiciosWS.CitaWS)(this)).listarXPacienteCompletoSinDatosPacienteAsync(inValue);
         }
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(Namespace="http://services.pucp.edu.pe", ConfigurationName="ServiciosWS.TurnoWS")]
     public interface TurnoWS {
-        
-        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="http://services.pucp.edu.pe/TurnoWS/modificarTurnoRequest", ReplyAction="http://services.pucp.edu.pe/TurnoWS/modificarTurnoResponse")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        PazCitasWA.ServiciosWS.modificarTurnoResponse modificarTurno(PazCitasWA.ServiciosWS.modificarTurnoRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://services.pucp.edu.pe/TurnoWS/modificarTurnoRequest", ReplyAction="http://services.pucp.edu.pe/TurnoWS/modificarTurnoResponse")]
-        System.Threading.Tasks.Task<PazCitasWA.ServiciosWS.modificarTurnoResponse> modificarTurnoAsync(PazCitasWA.ServiciosWS.modificarTurnoRequest request);
-        
-        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="http://services.pucp.edu.pe/TurnoWS/listarTurnoRequest", ReplyAction="http://services.pucp.edu.pe/TurnoWS/listarTurnoResponse")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        PazCitasWA.ServiciosWS.listarTurnoResponse listarTurno(PazCitasWA.ServiciosWS.listarTurnoRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://services.pucp.edu.pe/TurnoWS/listarTurnoRequest", ReplyAction="http://services.pucp.edu.pe/TurnoWS/listarTurnoResponse")]
-        System.Threading.Tasks.Task<PazCitasWA.ServiciosWS.listarTurnoResponse> listarTurnoAsync(PazCitasWA.ServiciosWS.listarTurnoRequest request);
-        
-        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="http://services.pucp.edu.pe/TurnoWS/eliminarTurnoRequest", ReplyAction="http://services.pucp.edu.pe/TurnoWS/eliminarTurnoResponse")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        PazCitasWA.ServiciosWS.eliminarTurnoResponse eliminarTurno(PazCitasWA.ServiciosWS.eliminarTurnoRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://services.pucp.edu.pe/TurnoWS/eliminarTurnoRequest", ReplyAction="http://services.pucp.edu.pe/TurnoWS/eliminarTurnoResponse")]
-        System.Threading.Tasks.Task<PazCitasWA.ServiciosWS.eliminarTurnoResponse> eliminarTurnoAsync(PazCitasWA.ServiciosWS.eliminarTurnoRequest request);
-        
-        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="http://services.pucp.edu.pe/TurnoWS/insertaTurnoRequest", ReplyAction="http://services.pucp.edu.pe/TurnoWS/insertaTurnoResponse")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        PazCitasWA.ServiciosWS.insertaTurnoResponse insertaTurno(PazCitasWA.ServiciosWS.insertaTurnoRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://services.pucp.edu.pe/TurnoWS/insertaTurnoRequest", ReplyAction="http://services.pucp.edu.pe/TurnoWS/insertaTurnoResponse")]
-        System.Threading.Tasks.Task<PazCitasWA.ServiciosWS.insertaTurnoResponse> insertaTurnoAsync(PazCitasWA.ServiciosWS.insertaTurnoRequest request);
-        
-        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="http://services.pucp.edu.pe/TurnoWS/listarTurnosSemanaRequest", ReplyAction="http://services.pucp.edu.pe/TurnoWS/listarTurnosSemanaResponse")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        PazCitasWA.ServiciosWS.listarTurnosSemanaResponse listarTurnosSemana(PazCitasWA.ServiciosWS.listarTurnosSemanaRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://services.pucp.edu.pe/TurnoWS/listarTurnosSemanaRequest", ReplyAction="http://services.pucp.edu.pe/TurnoWS/listarTurnosSemanaResponse")]
-        System.Threading.Tasks.Task<PazCitasWA.ServiciosWS.listarTurnosSemanaResponse> listarTurnosSemanaAsync(PazCitasWA.ServiciosWS.listarTurnosSemanaRequest request);
         
         // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
         [System.ServiceModel.OperationContractAttribute(Action="http://services.pucp.edu.pe/TurnoWS/obtenerTurnosLibresRequest", ReplyAction="http://services.pucp.edu.pe/TurnoWS/obtenerTurnosLibresResponse")]
@@ -4289,183 +4319,51 @@ namespace PazCitasWA.ServiciosWS {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://services.pucp.edu.pe/TurnoWS/obtenerXIdRequest", ReplyAction="http://services.pucp.edu.pe/TurnoWS/obtenerXIdResponse")]
         System.Threading.Tasks.Task<PazCitasWA.ServiciosWS.obtenerXIdResponse> obtenerXIdAsync(PazCitasWA.ServiciosWS.obtenerXIdRequest request);
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="modificarTurno", WrapperNamespace="http://services.pucp.edu.pe", IsWrapped=true)]
-    public partial class modificarTurnoRequest {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.pucp.edu.pe", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public PazCitasWA.ServiciosWS.turno turno;
+        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="http://services.pucp.edu.pe/TurnoWS/listarTurnosSemanaRequest", ReplyAction="http://services.pucp.edu.pe/TurnoWS/listarTurnosSemanaResponse")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        PazCitasWA.ServiciosWS.listarTurnosSemanaResponse listarTurnosSemana(PazCitasWA.ServiciosWS.listarTurnosSemanaRequest request);
         
-        public modificarTurnoRequest() {
-        }
+        [System.ServiceModel.OperationContractAttribute(Action="http://services.pucp.edu.pe/TurnoWS/listarTurnosSemanaRequest", ReplyAction="http://services.pucp.edu.pe/TurnoWS/listarTurnosSemanaResponse")]
+        System.Threading.Tasks.Task<PazCitasWA.ServiciosWS.listarTurnosSemanaResponse> listarTurnosSemanaAsync(PazCitasWA.ServiciosWS.listarTurnosSemanaRequest request);
         
-        public modificarTurnoRequest(PazCitasWA.ServiciosWS.turno turno) {
-            this.turno = turno;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="modificarTurnoResponse", WrapperNamespace="http://services.pucp.edu.pe", IsWrapped=true)]
-    public partial class modificarTurnoResponse {
+        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="http://services.pucp.edu.pe/TurnoWS/listarTurnoRequest", ReplyAction="http://services.pucp.edu.pe/TurnoWS/listarTurnoResponse")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        PazCitasWA.ServiciosWS.listarTurnoResponse listarTurno(PazCitasWA.ServiciosWS.listarTurnoRequest request);
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.pucp.edu.pe", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public int @return;
+        [System.ServiceModel.OperationContractAttribute(Action="http://services.pucp.edu.pe/TurnoWS/listarTurnoRequest", ReplyAction="http://services.pucp.edu.pe/TurnoWS/listarTurnoResponse")]
+        System.Threading.Tasks.Task<PazCitasWA.ServiciosWS.listarTurnoResponse> listarTurnoAsync(PazCitasWA.ServiciosWS.listarTurnoRequest request);
         
-        public modificarTurnoResponse() {
-        }
+        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="http://services.pucp.edu.pe/TurnoWS/insertaTurnoRequest", ReplyAction="http://services.pucp.edu.pe/TurnoWS/insertaTurnoResponse")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        PazCitasWA.ServiciosWS.insertaTurnoResponse insertaTurno(PazCitasWA.ServiciosWS.insertaTurnoRequest request);
         
-        public modificarTurnoResponse(int @return) {
-            this.@return = @return;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="listarTurno", WrapperNamespace="http://services.pucp.edu.pe", IsWrapped=true)]
-    public partial class listarTurnoRequest {
+        [System.ServiceModel.OperationContractAttribute(Action="http://services.pucp.edu.pe/TurnoWS/insertaTurnoRequest", ReplyAction="http://services.pucp.edu.pe/TurnoWS/insertaTurnoResponse")]
+        System.Threading.Tasks.Task<PazCitasWA.ServiciosWS.insertaTurnoResponse> insertaTurnoAsync(PazCitasWA.ServiciosWS.insertaTurnoRequest request);
         
-        public listarTurnoRequest() {
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="listarTurnoResponse", WrapperNamespace="http://services.pucp.edu.pe", IsWrapped=true)]
-    public partial class listarTurnoResponse {
+        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="http://services.pucp.edu.pe/TurnoWS/modificarTurnoRequest", ReplyAction="http://services.pucp.edu.pe/TurnoWS/modificarTurnoResponse")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        PazCitasWA.ServiciosWS.modificarTurnoResponse modificarTurno(PazCitasWA.ServiciosWS.modificarTurnoRequest request);
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.pucp.edu.pe", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute("return", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public PazCitasWA.ServiciosWS.turno[] @return;
+        [System.ServiceModel.OperationContractAttribute(Action="http://services.pucp.edu.pe/TurnoWS/modificarTurnoRequest", ReplyAction="http://services.pucp.edu.pe/TurnoWS/modificarTurnoResponse")]
+        System.Threading.Tasks.Task<PazCitasWA.ServiciosWS.modificarTurnoResponse> modificarTurnoAsync(PazCitasWA.ServiciosWS.modificarTurnoRequest request);
         
-        public listarTurnoResponse() {
-        }
+        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="http://services.pucp.edu.pe/TurnoWS/eliminarTurnoRequest", ReplyAction="http://services.pucp.edu.pe/TurnoWS/eliminarTurnoResponse")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        PazCitasWA.ServiciosWS.eliminarTurnoResponse eliminarTurno(PazCitasWA.ServiciosWS.eliminarTurnoRequest request);
         
-        public listarTurnoResponse(PazCitasWA.ServiciosWS.turno[] @return) {
-            this.@return = @return;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="eliminarTurno", WrapperNamespace="http://services.pucp.edu.pe", IsWrapped=true)]
-    public partial class eliminarTurnoRequest {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.pucp.edu.pe", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public int idturno;
-        
-        public eliminarTurnoRequest() {
-        }
-        
-        public eliminarTurnoRequest(int idturno) {
-            this.idturno = idturno;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="eliminarTurnoResponse", WrapperNamespace="http://services.pucp.edu.pe", IsWrapped=true)]
-    public partial class eliminarTurnoResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.pucp.edu.pe", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public int @return;
-        
-        public eliminarTurnoResponse() {
-        }
-        
-        public eliminarTurnoResponse(int @return) {
-            this.@return = @return;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="insertaTurno", WrapperNamespace="http://services.pucp.edu.pe", IsWrapped=true)]
-    public partial class insertaTurnoRequest {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.pucp.edu.pe", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public PazCitasWA.ServiciosWS.turno turno;
-        
-        public insertaTurnoRequest() {
-        }
-        
-        public insertaTurnoRequest(PazCitasWA.ServiciosWS.turno turno) {
-            this.turno = turno;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="insertaTurnoResponse", WrapperNamespace="http://services.pucp.edu.pe", IsWrapped=true)]
-    public partial class insertaTurnoResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.pucp.edu.pe", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public int @return;
-        
-        public insertaTurnoResponse() {
-        }
-        
-        public insertaTurnoResponse(int @return) {
-            this.@return = @return;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="listarTurnosSemana", WrapperNamespace="http://services.pucp.edu.pe", IsWrapped=true)]
-    public partial class listarTurnosSemanaRequest {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.pucp.edu.pe", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public int idMedico;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.pucp.edu.pe", Order=1)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public System.DateTime fechaInicio;
-        
-        public listarTurnosSemanaRequest() {
-        }
-        
-        public listarTurnosSemanaRequest(int idMedico, System.DateTime fechaInicio) {
-            this.idMedico = idMedico;
-            this.fechaInicio = fechaInicio;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="listarTurnosSemanaResponse", WrapperNamespace="http://services.pucp.edu.pe", IsWrapped=true)]
-    public partial class listarTurnosSemanaResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.pucp.edu.pe", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute("return", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public PazCitasWA.ServiciosWS.turnoDisponibleDTO[] @return;
-        
-        public listarTurnosSemanaResponse() {
-        }
-        
-        public listarTurnosSemanaResponse(PazCitasWA.ServiciosWS.turnoDisponibleDTO[] @return) {
-            this.@return = @return;
-        }
+        [System.ServiceModel.OperationContractAttribute(Action="http://services.pucp.edu.pe/TurnoWS/eliminarTurnoRequest", ReplyAction="http://services.pucp.edu.pe/TurnoWS/eliminarTurnoResponse")]
+        System.Threading.Tasks.Task<PazCitasWA.ServiciosWS.eliminarTurnoResponse> eliminarTurnoAsync(PazCitasWA.ServiciosWS.eliminarTurnoRequest request);
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -4545,6 +4443,183 @@ namespace PazCitasWA.ServiciosWS {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="listarTurnosSemana", WrapperNamespace="http://services.pucp.edu.pe", IsWrapped=true)]
+    public partial class listarTurnosSemanaRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.pucp.edu.pe", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public int idMedico;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.pucp.edu.pe", Order=1)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public System.DateTime fechaInicio;
+        
+        public listarTurnosSemanaRequest() {
+        }
+        
+        public listarTurnosSemanaRequest(int idMedico, System.DateTime fechaInicio) {
+            this.idMedico = idMedico;
+            this.fechaInicio = fechaInicio;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="listarTurnosSemanaResponse", WrapperNamespace="http://services.pucp.edu.pe", IsWrapped=true)]
+    public partial class listarTurnosSemanaResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.pucp.edu.pe", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute("return", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public PazCitasWA.ServiciosWS.turnoDisponibleDTO[] @return;
+        
+        public listarTurnosSemanaResponse() {
+        }
+        
+        public listarTurnosSemanaResponse(PazCitasWA.ServiciosWS.turnoDisponibleDTO[] @return) {
+            this.@return = @return;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="listarTurno", WrapperNamespace="http://services.pucp.edu.pe", IsWrapped=true)]
+    public partial class listarTurnoRequest {
+        
+        public listarTurnoRequest() {
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="listarTurnoResponse", WrapperNamespace="http://services.pucp.edu.pe", IsWrapped=true)]
+    public partial class listarTurnoResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.pucp.edu.pe", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute("return", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public PazCitasWA.ServiciosWS.turno[] @return;
+        
+        public listarTurnoResponse() {
+        }
+        
+        public listarTurnoResponse(PazCitasWA.ServiciosWS.turno[] @return) {
+            this.@return = @return;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="insertaTurno", WrapperNamespace="http://services.pucp.edu.pe", IsWrapped=true)]
+    public partial class insertaTurnoRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.pucp.edu.pe", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public PazCitasWA.ServiciosWS.turno turno;
+        
+        public insertaTurnoRequest() {
+        }
+        
+        public insertaTurnoRequest(PazCitasWA.ServiciosWS.turno turno) {
+            this.turno = turno;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="insertaTurnoResponse", WrapperNamespace="http://services.pucp.edu.pe", IsWrapped=true)]
+    public partial class insertaTurnoResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.pucp.edu.pe", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public int @return;
+        
+        public insertaTurnoResponse() {
+        }
+        
+        public insertaTurnoResponse(int @return) {
+            this.@return = @return;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="modificarTurno", WrapperNamespace="http://services.pucp.edu.pe", IsWrapped=true)]
+    public partial class modificarTurnoRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.pucp.edu.pe", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public PazCitasWA.ServiciosWS.turno turno;
+        
+        public modificarTurnoRequest() {
+        }
+        
+        public modificarTurnoRequest(PazCitasWA.ServiciosWS.turno turno) {
+            this.turno = turno;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="modificarTurnoResponse", WrapperNamespace="http://services.pucp.edu.pe", IsWrapped=true)]
+    public partial class modificarTurnoResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.pucp.edu.pe", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public int @return;
+        
+        public modificarTurnoResponse() {
+        }
+        
+        public modificarTurnoResponse(int @return) {
+            this.@return = @return;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="eliminarTurno", WrapperNamespace="http://services.pucp.edu.pe", IsWrapped=true)]
+    public partial class eliminarTurnoRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.pucp.edu.pe", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public int idturno;
+        
+        public eliminarTurnoRequest() {
+        }
+        
+        public eliminarTurnoRequest(int idturno) {
+            this.idturno = idturno;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="eliminarTurnoResponse", WrapperNamespace="http://services.pucp.edu.pe", IsWrapped=true)]
+    public partial class eliminarTurnoResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.pucp.edu.pe", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public int @return;
+        
+        public eliminarTurnoResponse() {
+        }
+        
+        public eliminarTurnoResponse(int @return) {
+            this.@return = @return;
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     public interface TurnoWSChannel : PazCitasWA.ServiciosWS.TurnoWS, System.ServiceModel.IClientChannel {
     }
@@ -4570,121 +4645,6 @@ namespace PazCitasWA.ServiciosWS {
         
         public TurnoWSClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
                 base(binding, remoteAddress) {
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        PazCitasWA.ServiciosWS.modificarTurnoResponse PazCitasWA.ServiciosWS.TurnoWS.modificarTurno(PazCitasWA.ServiciosWS.modificarTurnoRequest request) {
-            return base.Channel.modificarTurno(request);
-        }
-        
-        public int modificarTurno(PazCitasWA.ServiciosWS.turno turno) {
-            PazCitasWA.ServiciosWS.modificarTurnoRequest inValue = new PazCitasWA.ServiciosWS.modificarTurnoRequest();
-            inValue.turno = turno;
-            PazCitasWA.ServiciosWS.modificarTurnoResponse retVal = ((PazCitasWA.ServiciosWS.TurnoWS)(this)).modificarTurno(inValue);
-            return retVal.@return;
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<PazCitasWA.ServiciosWS.modificarTurnoResponse> PazCitasWA.ServiciosWS.TurnoWS.modificarTurnoAsync(PazCitasWA.ServiciosWS.modificarTurnoRequest request) {
-            return base.Channel.modificarTurnoAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<PazCitasWA.ServiciosWS.modificarTurnoResponse> modificarTurnoAsync(PazCitasWA.ServiciosWS.turno turno) {
-            PazCitasWA.ServiciosWS.modificarTurnoRequest inValue = new PazCitasWA.ServiciosWS.modificarTurnoRequest();
-            inValue.turno = turno;
-            return ((PazCitasWA.ServiciosWS.TurnoWS)(this)).modificarTurnoAsync(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        PazCitasWA.ServiciosWS.listarTurnoResponse PazCitasWA.ServiciosWS.TurnoWS.listarTurno(PazCitasWA.ServiciosWS.listarTurnoRequest request) {
-            return base.Channel.listarTurno(request);
-        }
-        
-        public PazCitasWA.ServiciosWS.turno[] listarTurno() {
-            PazCitasWA.ServiciosWS.listarTurnoRequest inValue = new PazCitasWA.ServiciosWS.listarTurnoRequest();
-            PazCitasWA.ServiciosWS.listarTurnoResponse retVal = ((PazCitasWA.ServiciosWS.TurnoWS)(this)).listarTurno(inValue);
-            return retVal.@return;
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<PazCitasWA.ServiciosWS.listarTurnoResponse> PazCitasWA.ServiciosWS.TurnoWS.listarTurnoAsync(PazCitasWA.ServiciosWS.listarTurnoRequest request) {
-            return base.Channel.listarTurnoAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<PazCitasWA.ServiciosWS.listarTurnoResponse> listarTurnoAsync() {
-            PazCitasWA.ServiciosWS.listarTurnoRequest inValue = new PazCitasWA.ServiciosWS.listarTurnoRequest();
-            return ((PazCitasWA.ServiciosWS.TurnoWS)(this)).listarTurnoAsync(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        PazCitasWA.ServiciosWS.eliminarTurnoResponse PazCitasWA.ServiciosWS.TurnoWS.eliminarTurno(PazCitasWA.ServiciosWS.eliminarTurnoRequest request) {
-            return base.Channel.eliminarTurno(request);
-        }
-        
-        public int eliminarTurno(int idturno) {
-            PazCitasWA.ServiciosWS.eliminarTurnoRequest inValue = new PazCitasWA.ServiciosWS.eliminarTurnoRequest();
-            inValue.idturno = idturno;
-            PazCitasWA.ServiciosWS.eliminarTurnoResponse retVal = ((PazCitasWA.ServiciosWS.TurnoWS)(this)).eliminarTurno(inValue);
-            return retVal.@return;
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<PazCitasWA.ServiciosWS.eliminarTurnoResponse> PazCitasWA.ServiciosWS.TurnoWS.eliminarTurnoAsync(PazCitasWA.ServiciosWS.eliminarTurnoRequest request) {
-            return base.Channel.eliminarTurnoAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<PazCitasWA.ServiciosWS.eliminarTurnoResponse> eliminarTurnoAsync(int idturno) {
-            PazCitasWA.ServiciosWS.eliminarTurnoRequest inValue = new PazCitasWA.ServiciosWS.eliminarTurnoRequest();
-            inValue.idturno = idturno;
-            return ((PazCitasWA.ServiciosWS.TurnoWS)(this)).eliminarTurnoAsync(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        PazCitasWA.ServiciosWS.insertaTurnoResponse PazCitasWA.ServiciosWS.TurnoWS.insertaTurno(PazCitasWA.ServiciosWS.insertaTurnoRequest request) {
-            return base.Channel.insertaTurno(request);
-        }
-        
-        public int insertaTurno(PazCitasWA.ServiciosWS.turno turno) {
-            PazCitasWA.ServiciosWS.insertaTurnoRequest inValue = new PazCitasWA.ServiciosWS.insertaTurnoRequest();
-            inValue.turno = turno;
-            PazCitasWA.ServiciosWS.insertaTurnoResponse retVal = ((PazCitasWA.ServiciosWS.TurnoWS)(this)).insertaTurno(inValue);
-            return retVal.@return;
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<PazCitasWA.ServiciosWS.insertaTurnoResponse> PazCitasWA.ServiciosWS.TurnoWS.insertaTurnoAsync(PazCitasWA.ServiciosWS.insertaTurnoRequest request) {
-            return base.Channel.insertaTurnoAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<PazCitasWA.ServiciosWS.insertaTurnoResponse> insertaTurnoAsync(PazCitasWA.ServiciosWS.turno turno) {
-            PazCitasWA.ServiciosWS.insertaTurnoRequest inValue = new PazCitasWA.ServiciosWS.insertaTurnoRequest();
-            inValue.turno = turno;
-            return ((PazCitasWA.ServiciosWS.TurnoWS)(this)).insertaTurnoAsync(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        PazCitasWA.ServiciosWS.listarTurnosSemanaResponse PazCitasWA.ServiciosWS.TurnoWS.listarTurnosSemana(PazCitasWA.ServiciosWS.listarTurnosSemanaRequest request) {
-            return base.Channel.listarTurnosSemana(request);
-        }
-        
-        public PazCitasWA.ServiciosWS.turnoDisponibleDTO[] listarTurnosSemana(int idMedico, System.DateTime fechaInicio) {
-            PazCitasWA.ServiciosWS.listarTurnosSemanaRequest inValue = new PazCitasWA.ServiciosWS.listarTurnosSemanaRequest();
-            inValue.idMedico = idMedico;
-            inValue.fechaInicio = fechaInicio;
-            PazCitasWA.ServiciosWS.listarTurnosSemanaResponse retVal = ((PazCitasWA.ServiciosWS.TurnoWS)(this)).listarTurnosSemana(inValue);
-            return retVal.@return;
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<PazCitasWA.ServiciosWS.listarTurnosSemanaResponse> PazCitasWA.ServiciosWS.TurnoWS.listarTurnosSemanaAsync(PazCitasWA.ServiciosWS.listarTurnosSemanaRequest request) {
-            return base.Channel.listarTurnosSemanaAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<PazCitasWA.ServiciosWS.listarTurnosSemanaResponse> listarTurnosSemanaAsync(int idMedico, System.DateTime fechaInicio) {
-            PazCitasWA.ServiciosWS.listarTurnosSemanaRequest inValue = new PazCitasWA.ServiciosWS.listarTurnosSemanaRequest();
-            inValue.idMedico = idMedico;
-            inValue.fechaInicio = fechaInicio;
-            return ((PazCitasWA.ServiciosWS.TurnoWS)(this)).listarTurnosSemanaAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -4734,6 +4694,121 @@ namespace PazCitasWA.ServiciosWS {
             inValue.idturno = idturno;
             return ((PazCitasWA.ServiciosWS.TurnoWS)(this)).obtenerXIdAsync(inValue);
         }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        PazCitasWA.ServiciosWS.listarTurnosSemanaResponse PazCitasWA.ServiciosWS.TurnoWS.listarTurnosSemana(PazCitasWA.ServiciosWS.listarTurnosSemanaRequest request) {
+            return base.Channel.listarTurnosSemana(request);
+        }
+        
+        public PazCitasWA.ServiciosWS.turnoDisponibleDTO[] listarTurnosSemana(int idMedico, System.DateTime fechaInicio) {
+            PazCitasWA.ServiciosWS.listarTurnosSemanaRequest inValue = new PazCitasWA.ServiciosWS.listarTurnosSemanaRequest();
+            inValue.idMedico = idMedico;
+            inValue.fechaInicio = fechaInicio;
+            PazCitasWA.ServiciosWS.listarTurnosSemanaResponse retVal = ((PazCitasWA.ServiciosWS.TurnoWS)(this)).listarTurnosSemana(inValue);
+            return retVal.@return;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<PazCitasWA.ServiciosWS.listarTurnosSemanaResponse> PazCitasWA.ServiciosWS.TurnoWS.listarTurnosSemanaAsync(PazCitasWA.ServiciosWS.listarTurnosSemanaRequest request) {
+            return base.Channel.listarTurnosSemanaAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<PazCitasWA.ServiciosWS.listarTurnosSemanaResponse> listarTurnosSemanaAsync(int idMedico, System.DateTime fechaInicio) {
+            PazCitasWA.ServiciosWS.listarTurnosSemanaRequest inValue = new PazCitasWA.ServiciosWS.listarTurnosSemanaRequest();
+            inValue.idMedico = idMedico;
+            inValue.fechaInicio = fechaInicio;
+            return ((PazCitasWA.ServiciosWS.TurnoWS)(this)).listarTurnosSemanaAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        PazCitasWA.ServiciosWS.listarTurnoResponse PazCitasWA.ServiciosWS.TurnoWS.listarTurno(PazCitasWA.ServiciosWS.listarTurnoRequest request) {
+            return base.Channel.listarTurno(request);
+        }
+        
+        public PazCitasWA.ServiciosWS.turno[] listarTurno() {
+            PazCitasWA.ServiciosWS.listarTurnoRequest inValue = new PazCitasWA.ServiciosWS.listarTurnoRequest();
+            PazCitasWA.ServiciosWS.listarTurnoResponse retVal = ((PazCitasWA.ServiciosWS.TurnoWS)(this)).listarTurno(inValue);
+            return retVal.@return;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<PazCitasWA.ServiciosWS.listarTurnoResponse> PazCitasWA.ServiciosWS.TurnoWS.listarTurnoAsync(PazCitasWA.ServiciosWS.listarTurnoRequest request) {
+            return base.Channel.listarTurnoAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<PazCitasWA.ServiciosWS.listarTurnoResponse> listarTurnoAsync() {
+            PazCitasWA.ServiciosWS.listarTurnoRequest inValue = new PazCitasWA.ServiciosWS.listarTurnoRequest();
+            return ((PazCitasWA.ServiciosWS.TurnoWS)(this)).listarTurnoAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        PazCitasWA.ServiciosWS.insertaTurnoResponse PazCitasWA.ServiciosWS.TurnoWS.insertaTurno(PazCitasWA.ServiciosWS.insertaTurnoRequest request) {
+            return base.Channel.insertaTurno(request);
+        }
+        
+        public int insertaTurno(PazCitasWA.ServiciosWS.turno turno) {
+            PazCitasWA.ServiciosWS.insertaTurnoRequest inValue = new PazCitasWA.ServiciosWS.insertaTurnoRequest();
+            inValue.turno = turno;
+            PazCitasWA.ServiciosWS.insertaTurnoResponse retVal = ((PazCitasWA.ServiciosWS.TurnoWS)(this)).insertaTurno(inValue);
+            return retVal.@return;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<PazCitasWA.ServiciosWS.insertaTurnoResponse> PazCitasWA.ServiciosWS.TurnoWS.insertaTurnoAsync(PazCitasWA.ServiciosWS.insertaTurnoRequest request) {
+            return base.Channel.insertaTurnoAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<PazCitasWA.ServiciosWS.insertaTurnoResponse> insertaTurnoAsync(PazCitasWA.ServiciosWS.turno turno) {
+            PazCitasWA.ServiciosWS.insertaTurnoRequest inValue = new PazCitasWA.ServiciosWS.insertaTurnoRequest();
+            inValue.turno = turno;
+            return ((PazCitasWA.ServiciosWS.TurnoWS)(this)).insertaTurnoAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        PazCitasWA.ServiciosWS.modificarTurnoResponse PazCitasWA.ServiciosWS.TurnoWS.modificarTurno(PazCitasWA.ServiciosWS.modificarTurnoRequest request) {
+            return base.Channel.modificarTurno(request);
+        }
+        
+        public int modificarTurno(PazCitasWA.ServiciosWS.turno turno) {
+            PazCitasWA.ServiciosWS.modificarTurnoRequest inValue = new PazCitasWA.ServiciosWS.modificarTurnoRequest();
+            inValue.turno = turno;
+            PazCitasWA.ServiciosWS.modificarTurnoResponse retVal = ((PazCitasWA.ServiciosWS.TurnoWS)(this)).modificarTurno(inValue);
+            return retVal.@return;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<PazCitasWA.ServiciosWS.modificarTurnoResponse> PazCitasWA.ServiciosWS.TurnoWS.modificarTurnoAsync(PazCitasWA.ServiciosWS.modificarTurnoRequest request) {
+            return base.Channel.modificarTurnoAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<PazCitasWA.ServiciosWS.modificarTurnoResponse> modificarTurnoAsync(PazCitasWA.ServiciosWS.turno turno) {
+            PazCitasWA.ServiciosWS.modificarTurnoRequest inValue = new PazCitasWA.ServiciosWS.modificarTurnoRequest();
+            inValue.turno = turno;
+            return ((PazCitasWA.ServiciosWS.TurnoWS)(this)).modificarTurnoAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        PazCitasWA.ServiciosWS.eliminarTurnoResponse PazCitasWA.ServiciosWS.TurnoWS.eliminarTurno(PazCitasWA.ServiciosWS.eliminarTurnoRequest request) {
+            return base.Channel.eliminarTurno(request);
+        }
+        
+        public int eliminarTurno(int idturno) {
+            PazCitasWA.ServiciosWS.eliminarTurnoRequest inValue = new PazCitasWA.ServiciosWS.eliminarTurnoRequest();
+            inValue.idturno = idturno;
+            PazCitasWA.ServiciosWS.eliminarTurnoResponse retVal = ((PazCitasWA.ServiciosWS.TurnoWS)(this)).eliminarTurno(inValue);
+            return retVal.@return;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<PazCitasWA.ServiciosWS.eliminarTurnoResponse> PazCitasWA.ServiciosWS.TurnoWS.eliminarTurnoAsync(PazCitasWA.ServiciosWS.eliminarTurnoRequest request) {
+            return base.Channel.eliminarTurnoAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<PazCitasWA.ServiciosWS.eliminarTurnoResponse> eliminarTurnoAsync(int idturno) {
+            PazCitasWA.ServiciosWS.eliminarTurnoRequest inValue = new PazCitasWA.ServiciosWS.eliminarTurnoRequest();
+            inValue.idturno = idturno;
+            return ((PazCitasWA.ServiciosWS.TurnoWS)(this)).eliminarTurnoAsync(inValue);
+        }
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -4741,22 +4816,13 @@ namespace PazCitasWA.ServiciosWS {
     public interface MedicamentoWS {
         
         // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="http://services.pucp.edu.pe/MedicamentoWS/listarMedicamentoRequest", ReplyAction="http://services.pucp.edu.pe/MedicamentoWS/listarMedicamentoResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://services.pucp.edu.pe/MedicamentoWS/eliminarMedicamentoRequest", ReplyAction="http://services.pucp.edu.pe/MedicamentoWS/eliminarMedicamentoResponse")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        PazCitasWA.ServiciosWS.listarMedicamentoResponse listarMedicamento(PazCitasWA.ServiciosWS.listarMedicamentoRequest request);
+        PazCitasWA.ServiciosWS.eliminarMedicamentoResponse eliminarMedicamento(PazCitasWA.ServiciosWS.eliminarMedicamentoRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://services.pucp.edu.pe/MedicamentoWS/listarMedicamentoRequest", ReplyAction="http://services.pucp.edu.pe/MedicamentoWS/listarMedicamentoResponse")]
-        System.Threading.Tasks.Task<PazCitasWA.ServiciosWS.listarMedicamentoResponse> listarMedicamentoAsync(PazCitasWA.ServiciosWS.listarMedicamentoRequest request);
-        
-        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="http://services.pucp.edu.pe/MedicamentoWS/modificarMedicamentoRequest", ReplyAction="http://services.pucp.edu.pe/MedicamentoWS/modificarMedicamentoResponse")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        PazCitasWA.ServiciosWS.modificarMedicamentoResponse modificarMedicamento(PazCitasWA.ServiciosWS.modificarMedicamentoRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://services.pucp.edu.pe/MedicamentoWS/modificarMedicamentoRequest", ReplyAction="http://services.pucp.edu.pe/MedicamentoWS/modificarMedicamentoResponse")]
-        System.Threading.Tasks.Task<PazCitasWA.ServiciosWS.modificarMedicamentoResponse> modificarMedicamentoAsync(PazCitasWA.ServiciosWS.modificarMedicamentoRequest request);
+        [System.ServiceModel.OperationContractAttribute(Action="http://services.pucp.edu.pe/MedicamentoWS/eliminarMedicamentoRequest", ReplyAction="http://services.pucp.edu.pe/MedicamentoWS/eliminarMedicamentoResponse")]
+        System.Threading.Tasks.Task<PazCitasWA.ServiciosWS.eliminarMedicamentoResponse> eliminarMedicamentoAsync(PazCitasWA.ServiciosWS.eliminarMedicamentoRequest request);
         
         // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
         [System.ServiceModel.OperationContractAttribute(Action="http://services.pucp.edu.pe/MedicamentoWS/insertarMedicamentoRequest", ReplyAction="http://services.pucp.edu.pe/MedicamentoWS/insertarMedicamentoResponse")]
@@ -4777,75 +4843,56 @@ namespace PazCitasWA.ServiciosWS {
         System.Threading.Tasks.Task<PazCitasWA.ServiciosWS.listarMedicamentoXnombreResponse> listarMedicamentoXnombreAsync(PazCitasWA.ServiciosWS.listarMedicamentoXnombreRequest request);
         
         // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="http://services.pucp.edu.pe/MedicamentoWS/eliminarMedicamentoRequest", ReplyAction="http://services.pucp.edu.pe/MedicamentoWS/eliminarMedicamentoResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://services.pucp.edu.pe/MedicamentoWS/modificarMedicamentoRequest", ReplyAction="http://services.pucp.edu.pe/MedicamentoWS/modificarMedicamentoResponse")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        PazCitasWA.ServiciosWS.eliminarMedicamentoResponse eliminarMedicamento(PazCitasWA.ServiciosWS.eliminarMedicamentoRequest request);
+        PazCitasWA.ServiciosWS.modificarMedicamentoResponse modificarMedicamento(PazCitasWA.ServiciosWS.modificarMedicamentoRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://services.pucp.edu.pe/MedicamentoWS/eliminarMedicamentoRequest", ReplyAction="http://services.pucp.edu.pe/MedicamentoWS/eliminarMedicamentoResponse")]
-        System.Threading.Tasks.Task<PazCitasWA.ServiciosWS.eliminarMedicamentoResponse> eliminarMedicamentoAsync(PazCitasWA.ServiciosWS.eliminarMedicamentoRequest request);
+        [System.ServiceModel.OperationContractAttribute(Action="http://services.pucp.edu.pe/MedicamentoWS/modificarMedicamentoRequest", ReplyAction="http://services.pucp.edu.pe/MedicamentoWS/modificarMedicamentoResponse")]
+        System.Threading.Tasks.Task<PazCitasWA.ServiciosWS.modificarMedicamentoResponse> modificarMedicamentoAsync(PazCitasWA.ServiciosWS.modificarMedicamentoRequest request);
+        
+        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="http://services.pucp.edu.pe/MedicamentoWS/listarMedicamentoRequest", ReplyAction="http://services.pucp.edu.pe/MedicamentoWS/listarMedicamentoResponse")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        PazCitasWA.ServiciosWS.listarMedicamentoResponse listarMedicamento(PazCitasWA.ServiciosWS.listarMedicamentoRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://services.pucp.edu.pe/MedicamentoWS/listarMedicamentoRequest", ReplyAction="http://services.pucp.edu.pe/MedicamentoWS/listarMedicamentoResponse")]
+        System.Threading.Tasks.Task<PazCitasWA.ServiciosWS.listarMedicamentoResponse> listarMedicamentoAsync(PazCitasWA.ServiciosWS.listarMedicamentoRequest request);
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="listarMedicamento", WrapperNamespace="http://services.pucp.edu.pe", IsWrapped=true)]
-    public partial class listarMedicamentoRequest {
-        
-        public listarMedicamentoRequest() {
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="listarMedicamentoResponse", WrapperNamespace="http://services.pucp.edu.pe", IsWrapped=true)]
-    public partial class listarMedicamentoResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.pucp.edu.pe", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute("return", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public PazCitasWA.ServiciosWS.medicamento[] @return;
-        
-        public listarMedicamentoResponse() {
-        }
-        
-        public listarMedicamentoResponse(PazCitasWA.ServiciosWS.medicamento[] @return) {
-            this.@return = @return;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="modificarMedicamento", WrapperNamespace="http://services.pucp.edu.pe", IsWrapped=true)]
-    public partial class modificarMedicamentoRequest {
+    [System.ServiceModel.MessageContractAttribute(WrapperName="eliminarMedicamento", WrapperNamespace="http://services.pucp.edu.pe", IsWrapped=true)]
+    public partial class eliminarMedicamentoRequest {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.pucp.edu.pe", Order=0)]
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public PazCitasWA.ServiciosWS.medicamento medicamento;
+        public int idMedicamento;
         
-        public modificarMedicamentoRequest() {
+        public eliminarMedicamentoRequest() {
         }
         
-        public modificarMedicamentoRequest(PazCitasWA.ServiciosWS.medicamento medicamento) {
-            this.medicamento = medicamento;
+        public eliminarMedicamentoRequest(int idMedicamento) {
+            this.idMedicamento = idMedicamento;
         }
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="modificarMedicamentoResponse", WrapperNamespace="http://services.pucp.edu.pe", IsWrapped=true)]
-    public partial class modificarMedicamentoResponse {
+    [System.ServiceModel.MessageContractAttribute(WrapperName="eliminarMedicamentoResponse", WrapperNamespace="http://services.pucp.edu.pe", IsWrapped=true)]
+    public partial class eliminarMedicamentoResponse {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.pucp.edu.pe", Order=0)]
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
         public int @return;
         
-        public modificarMedicamentoResponse() {
+        public eliminarMedicamentoResponse() {
         }
         
-        public modificarMedicamentoResponse(int @return) {
+        public eliminarMedicamentoResponse(int @return) {
             this.@return = @return;
         }
     }
@@ -4925,35 +4972,63 @@ namespace PazCitasWA.ServiciosWS {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="eliminarMedicamento", WrapperNamespace="http://services.pucp.edu.pe", IsWrapped=true)]
-    public partial class eliminarMedicamentoRequest {
+    [System.ServiceModel.MessageContractAttribute(WrapperName="modificarMedicamento", WrapperNamespace="http://services.pucp.edu.pe", IsWrapped=true)]
+    public partial class modificarMedicamentoRequest {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.pucp.edu.pe", Order=0)]
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public int idMedicamento;
+        public PazCitasWA.ServiciosWS.medicamento medicamento;
         
-        public eliminarMedicamentoRequest() {
+        public modificarMedicamentoRequest() {
         }
         
-        public eliminarMedicamentoRequest(int idMedicamento) {
-            this.idMedicamento = idMedicamento;
+        public modificarMedicamentoRequest(PazCitasWA.ServiciosWS.medicamento medicamento) {
+            this.medicamento = medicamento;
         }
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="eliminarMedicamentoResponse", WrapperNamespace="http://services.pucp.edu.pe", IsWrapped=true)]
-    public partial class eliminarMedicamentoResponse {
+    [System.ServiceModel.MessageContractAttribute(WrapperName="modificarMedicamentoResponse", WrapperNamespace="http://services.pucp.edu.pe", IsWrapped=true)]
+    public partial class modificarMedicamentoResponse {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.pucp.edu.pe", Order=0)]
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
         public int @return;
         
-        public eliminarMedicamentoResponse() {
+        public modificarMedicamentoResponse() {
         }
         
-        public eliminarMedicamentoResponse(int @return) {
+        public modificarMedicamentoResponse(int @return) {
+            this.@return = @return;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="listarMedicamento", WrapperNamespace="http://services.pucp.edu.pe", IsWrapped=true)]
+    public partial class listarMedicamentoRequest {
+        
+        public listarMedicamentoRequest() {
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="listarMedicamentoResponse", WrapperNamespace="http://services.pucp.edu.pe", IsWrapped=true)]
+    public partial class listarMedicamentoResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.pucp.edu.pe", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute("return", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public PazCitasWA.ServiciosWS.medicamento[] @return;
+        
+        public listarMedicamentoResponse() {
+        }
+        
+        public listarMedicamentoResponse(PazCitasWA.ServiciosWS.medicamento[] @return) {
             this.@return = @return;
         }
     }
@@ -4986,47 +5061,26 @@ namespace PazCitasWA.ServiciosWS {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        PazCitasWA.ServiciosWS.listarMedicamentoResponse PazCitasWA.ServiciosWS.MedicamentoWS.listarMedicamento(PazCitasWA.ServiciosWS.listarMedicamentoRequest request) {
-            return base.Channel.listarMedicamento(request);
+        PazCitasWA.ServiciosWS.eliminarMedicamentoResponse PazCitasWA.ServiciosWS.MedicamentoWS.eliminarMedicamento(PazCitasWA.ServiciosWS.eliminarMedicamentoRequest request) {
+            return base.Channel.eliminarMedicamento(request);
         }
         
-        public PazCitasWA.ServiciosWS.medicamento[] listarMedicamento() {
-            PazCitasWA.ServiciosWS.listarMedicamentoRequest inValue = new PazCitasWA.ServiciosWS.listarMedicamentoRequest();
-            PazCitasWA.ServiciosWS.listarMedicamentoResponse retVal = ((PazCitasWA.ServiciosWS.MedicamentoWS)(this)).listarMedicamento(inValue);
+        public int eliminarMedicamento(int idMedicamento) {
+            PazCitasWA.ServiciosWS.eliminarMedicamentoRequest inValue = new PazCitasWA.ServiciosWS.eliminarMedicamentoRequest();
+            inValue.idMedicamento = idMedicamento;
+            PazCitasWA.ServiciosWS.eliminarMedicamentoResponse retVal = ((PazCitasWA.ServiciosWS.MedicamentoWS)(this)).eliminarMedicamento(inValue);
             return retVal.@return;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<PazCitasWA.ServiciosWS.listarMedicamentoResponse> PazCitasWA.ServiciosWS.MedicamentoWS.listarMedicamentoAsync(PazCitasWA.ServiciosWS.listarMedicamentoRequest request) {
-            return base.Channel.listarMedicamentoAsync(request);
+        System.Threading.Tasks.Task<PazCitasWA.ServiciosWS.eliminarMedicamentoResponse> PazCitasWA.ServiciosWS.MedicamentoWS.eliminarMedicamentoAsync(PazCitasWA.ServiciosWS.eliminarMedicamentoRequest request) {
+            return base.Channel.eliminarMedicamentoAsync(request);
         }
         
-        public System.Threading.Tasks.Task<PazCitasWA.ServiciosWS.listarMedicamentoResponse> listarMedicamentoAsync() {
-            PazCitasWA.ServiciosWS.listarMedicamentoRequest inValue = new PazCitasWA.ServiciosWS.listarMedicamentoRequest();
-            return ((PazCitasWA.ServiciosWS.MedicamentoWS)(this)).listarMedicamentoAsync(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        PazCitasWA.ServiciosWS.modificarMedicamentoResponse PazCitasWA.ServiciosWS.MedicamentoWS.modificarMedicamento(PazCitasWA.ServiciosWS.modificarMedicamentoRequest request) {
-            return base.Channel.modificarMedicamento(request);
-        }
-        
-        public int modificarMedicamento(PazCitasWA.ServiciosWS.medicamento medicamento) {
-            PazCitasWA.ServiciosWS.modificarMedicamentoRequest inValue = new PazCitasWA.ServiciosWS.modificarMedicamentoRequest();
-            inValue.medicamento = medicamento;
-            PazCitasWA.ServiciosWS.modificarMedicamentoResponse retVal = ((PazCitasWA.ServiciosWS.MedicamentoWS)(this)).modificarMedicamento(inValue);
-            return retVal.@return;
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<PazCitasWA.ServiciosWS.modificarMedicamentoResponse> PazCitasWA.ServiciosWS.MedicamentoWS.modificarMedicamentoAsync(PazCitasWA.ServiciosWS.modificarMedicamentoRequest request) {
-            return base.Channel.modificarMedicamentoAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<PazCitasWA.ServiciosWS.modificarMedicamentoResponse> modificarMedicamentoAsync(PazCitasWA.ServiciosWS.medicamento medicamento) {
-            PazCitasWA.ServiciosWS.modificarMedicamentoRequest inValue = new PazCitasWA.ServiciosWS.modificarMedicamentoRequest();
-            inValue.medicamento = medicamento;
-            return ((PazCitasWA.ServiciosWS.MedicamentoWS)(this)).modificarMedicamentoAsync(inValue);
+        public System.Threading.Tasks.Task<PazCitasWA.ServiciosWS.eliminarMedicamentoResponse> eliminarMedicamentoAsync(int idMedicamento) {
+            PazCitasWA.ServiciosWS.eliminarMedicamentoRequest inValue = new PazCitasWA.ServiciosWS.eliminarMedicamentoRequest();
+            inValue.idMedicamento = idMedicamento;
+            return ((PazCitasWA.ServiciosWS.MedicamentoWS)(this)).eliminarMedicamentoAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -5076,41 +5130,53 @@ namespace PazCitasWA.ServiciosWS {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        PazCitasWA.ServiciosWS.eliminarMedicamentoResponse PazCitasWA.ServiciosWS.MedicamentoWS.eliminarMedicamento(PazCitasWA.ServiciosWS.eliminarMedicamentoRequest request) {
-            return base.Channel.eliminarMedicamento(request);
+        PazCitasWA.ServiciosWS.modificarMedicamentoResponse PazCitasWA.ServiciosWS.MedicamentoWS.modificarMedicamento(PazCitasWA.ServiciosWS.modificarMedicamentoRequest request) {
+            return base.Channel.modificarMedicamento(request);
         }
         
-        public int eliminarMedicamento(int idMedicamento) {
-            PazCitasWA.ServiciosWS.eliminarMedicamentoRequest inValue = new PazCitasWA.ServiciosWS.eliminarMedicamentoRequest();
-            inValue.idMedicamento = idMedicamento;
-            PazCitasWA.ServiciosWS.eliminarMedicamentoResponse retVal = ((PazCitasWA.ServiciosWS.MedicamentoWS)(this)).eliminarMedicamento(inValue);
+        public int modificarMedicamento(PazCitasWA.ServiciosWS.medicamento medicamento) {
+            PazCitasWA.ServiciosWS.modificarMedicamentoRequest inValue = new PazCitasWA.ServiciosWS.modificarMedicamentoRequest();
+            inValue.medicamento = medicamento;
+            PazCitasWA.ServiciosWS.modificarMedicamentoResponse retVal = ((PazCitasWA.ServiciosWS.MedicamentoWS)(this)).modificarMedicamento(inValue);
             return retVal.@return;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<PazCitasWA.ServiciosWS.eliminarMedicamentoResponse> PazCitasWA.ServiciosWS.MedicamentoWS.eliminarMedicamentoAsync(PazCitasWA.ServiciosWS.eliminarMedicamentoRequest request) {
-            return base.Channel.eliminarMedicamentoAsync(request);
+        System.Threading.Tasks.Task<PazCitasWA.ServiciosWS.modificarMedicamentoResponse> PazCitasWA.ServiciosWS.MedicamentoWS.modificarMedicamentoAsync(PazCitasWA.ServiciosWS.modificarMedicamentoRequest request) {
+            return base.Channel.modificarMedicamentoAsync(request);
         }
         
-        public System.Threading.Tasks.Task<PazCitasWA.ServiciosWS.eliminarMedicamentoResponse> eliminarMedicamentoAsync(int idMedicamento) {
-            PazCitasWA.ServiciosWS.eliminarMedicamentoRequest inValue = new PazCitasWA.ServiciosWS.eliminarMedicamentoRequest();
-            inValue.idMedicamento = idMedicamento;
-            return ((PazCitasWA.ServiciosWS.MedicamentoWS)(this)).eliminarMedicamentoAsync(inValue);
+        public System.Threading.Tasks.Task<PazCitasWA.ServiciosWS.modificarMedicamentoResponse> modificarMedicamentoAsync(PazCitasWA.ServiciosWS.medicamento medicamento) {
+            PazCitasWA.ServiciosWS.modificarMedicamentoRequest inValue = new PazCitasWA.ServiciosWS.modificarMedicamentoRequest();
+            inValue.medicamento = medicamento;
+            return ((PazCitasWA.ServiciosWS.MedicamentoWS)(this)).modificarMedicamentoAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        PazCitasWA.ServiciosWS.listarMedicamentoResponse PazCitasWA.ServiciosWS.MedicamentoWS.listarMedicamento(PazCitasWA.ServiciosWS.listarMedicamentoRequest request) {
+            return base.Channel.listarMedicamento(request);
+        }
+        
+        public PazCitasWA.ServiciosWS.medicamento[] listarMedicamento() {
+            PazCitasWA.ServiciosWS.listarMedicamentoRequest inValue = new PazCitasWA.ServiciosWS.listarMedicamentoRequest();
+            PazCitasWA.ServiciosWS.listarMedicamentoResponse retVal = ((PazCitasWA.ServiciosWS.MedicamentoWS)(this)).listarMedicamento(inValue);
+            return retVal.@return;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<PazCitasWA.ServiciosWS.listarMedicamentoResponse> PazCitasWA.ServiciosWS.MedicamentoWS.listarMedicamentoAsync(PazCitasWA.ServiciosWS.listarMedicamentoRequest request) {
+            return base.Channel.listarMedicamentoAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<PazCitasWA.ServiciosWS.listarMedicamentoResponse> listarMedicamentoAsync() {
+            PazCitasWA.ServiciosWS.listarMedicamentoRequest inValue = new PazCitasWA.ServiciosWS.listarMedicamentoRequest();
+            return ((PazCitasWA.ServiciosWS.MedicamentoWS)(this)).listarMedicamentoAsync(inValue);
         }
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(Namespace="http://services.pucp.edu.pe", ConfigurationName="ServiciosWS.NotaClinicaWS")]
     public interface NotaClinicaWS {
-        
-        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="http://services.pucp.edu.pe/NotaClinicaWS/listarNotaClinicaRequest", ReplyAction="http://services.pucp.edu.pe/NotaClinicaWS/listarNotaClinicaResponse")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        PazCitasWA.ServiciosWS.listarNotaClinicaResponse listarNotaClinica(PazCitasWA.ServiciosWS.listarNotaClinicaRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://services.pucp.edu.pe/NotaClinicaWS/listarNotaClinicaRequest", ReplyAction="http://services.pucp.edu.pe/NotaClinicaWS/listarNotaClinicaResponse")]
-        System.Threading.Tasks.Task<PazCitasWA.ServiciosWS.listarNotaClinicaResponse> listarNotaClinicaAsync(PazCitasWA.ServiciosWS.listarNotaClinicaRequest request);
         
         // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
         [System.ServiceModel.OperationContractAttribute(Action="http://services.pucp.edu.pe/NotaClinicaWS/insertarNotaClinicaRequest", ReplyAction="http://services.pucp.edu.pe/NotaClinicaWS/insertarNotaClinicaResponse")]
@@ -5138,34 +5204,15 @@ namespace PazCitasWA.ServiciosWS {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://services.pucp.edu.pe/NotaClinicaWS/listarNotaClinicaXHistorialRequest", ReplyAction="http://services.pucp.edu.pe/NotaClinicaWS/listarNotaClinicaXHistorialResponse")]
         System.Threading.Tasks.Task<PazCitasWA.ServiciosWS.listarNotaClinicaXHistorialResponse> listarNotaClinicaXHistorialAsync(PazCitasWA.ServiciosWS.listarNotaClinicaXHistorialRequest request);
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="listarNotaClinica", WrapperNamespace="http://services.pucp.edu.pe", IsWrapped=true)]
-    public partial class listarNotaClinicaRequest {
         
-        public listarNotaClinicaRequest() {
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="listarNotaClinicaResponse", WrapperNamespace="http://services.pucp.edu.pe", IsWrapped=true)]
-    public partial class listarNotaClinicaResponse {
+        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="http://services.pucp.edu.pe/NotaClinicaWS/listarNotaClinicaRequest", ReplyAction="http://services.pucp.edu.pe/NotaClinicaWS/listarNotaClinicaResponse")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        PazCitasWA.ServiciosWS.listarNotaClinicaResponse listarNotaClinica(PazCitasWA.ServiciosWS.listarNotaClinicaRequest request);
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.pucp.edu.pe", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute("return", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public PazCitasWA.ServiciosWS.notaClinica[] @return;
-        
-        public listarNotaClinicaResponse() {
-        }
-        
-        public listarNotaClinicaResponse(PazCitasWA.ServiciosWS.notaClinica[] @return) {
-            this.@return = @return;
-        }
+        [System.ServiceModel.OperationContractAttribute(Action="http://services.pucp.edu.pe/NotaClinicaWS/listarNotaClinicaRequest", ReplyAction="http://services.pucp.edu.pe/NotaClinicaWS/listarNotaClinicaResponse")]
+        System.Threading.Tasks.Task<PazCitasWA.ServiciosWS.listarNotaClinicaResponse> listarNotaClinicaAsync(PazCitasWA.ServiciosWS.listarNotaClinicaRequest request);
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -5276,6 +5323,34 @@ namespace PazCitasWA.ServiciosWS {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="listarNotaClinica", WrapperNamespace="http://services.pucp.edu.pe", IsWrapped=true)]
+    public partial class listarNotaClinicaRequest {
+        
+        public listarNotaClinicaRequest() {
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="listarNotaClinicaResponse", WrapperNamespace="http://services.pucp.edu.pe", IsWrapped=true)]
+    public partial class listarNotaClinicaResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.pucp.edu.pe", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute("return", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public PazCitasWA.ServiciosWS.notaClinica[] @return;
+        
+        public listarNotaClinicaResponse() {
+        }
+        
+        public listarNotaClinicaResponse(PazCitasWA.ServiciosWS.notaClinica[] @return) {
+            this.@return = @return;
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     public interface NotaClinicaWSChannel : PazCitasWA.ServiciosWS.NotaClinicaWS, System.ServiceModel.IClientChannel {
     }
@@ -5301,27 +5376,6 @@ namespace PazCitasWA.ServiciosWS {
         
         public NotaClinicaWSClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
                 base(binding, remoteAddress) {
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        PazCitasWA.ServiciosWS.listarNotaClinicaResponse PazCitasWA.ServiciosWS.NotaClinicaWS.listarNotaClinica(PazCitasWA.ServiciosWS.listarNotaClinicaRequest request) {
-            return base.Channel.listarNotaClinica(request);
-        }
-        
-        public PazCitasWA.ServiciosWS.notaClinica[] listarNotaClinica() {
-            PazCitasWA.ServiciosWS.listarNotaClinicaRequest inValue = new PazCitasWA.ServiciosWS.listarNotaClinicaRequest();
-            PazCitasWA.ServiciosWS.listarNotaClinicaResponse retVal = ((PazCitasWA.ServiciosWS.NotaClinicaWS)(this)).listarNotaClinica(inValue);
-            return retVal.@return;
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<PazCitasWA.ServiciosWS.listarNotaClinicaResponse> PazCitasWA.ServiciosWS.NotaClinicaWS.listarNotaClinicaAsync(PazCitasWA.ServiciosWS.listarNotaClinicaRequest request) {
-            return base.Channel.listarNotaClinicaAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<PazCitasWA.ServiciosWS.listarNotaClinicaResponse> listarNotaClinicaAsync() {
-            PazCitasWA.ServiciosWS.listarNotaClinicaRequest inValue = new PazCitasWA.ServiciosWS.listarNotaClinicaRequest();
-            return ((PazCitasWA.ServiciosWS.NotaClinicaWS)(this)).listarNotaClinicaAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -5392,6 +5446,27 @@ namespace PazCitasWA.ServiciosWS {
             inValue.idhis = idhis;
             return ((PazCitasWA.ServiciosWS.NotaClinicaWS)(this)).listarNotaClinicaXHistorialAsync(inValue);
         }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        PazCitasWA.ServiciosWS.listarNotaClinicaResponse PazCitasWA.ServiciosWS.NotaClinicaWS.listarNotaClinica(PazCitasWA.ServiciosWS.listarNotaClinicaRequest request) {
+            return base.Channel.listarNotaClinica(request);
+        }
+        
+        public PazCitasWA.ServiciosWS.notaClinica[] listarNotaClinica() {
+            PazCitasWA.ServiciosWS.listarNotaClinicaRequest inValue = new PazCitasWA.ServiciosWS.listarNotaClinicaRequest();
+            PazCitasWA.ServiciosWS.listarNotaClinicaResponse retVal = ((PazCitasWA.ServiciosWS.NotaClinicaWS)(this)).listarNotaClinica(inValue);
+            return retVal.@return;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<PazCitasWA.ServiciosWS.listarNotaClinicaResponse> PazCitasWA.ServiciosWS.NotaClinicaWS.listarNotaClinicaAsync(PazCitasWA.ServiciosWS.listarNotaClinicaRequest request) {
+            return base.Channel.listarNotaClinicaAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<PazCitasWA.ServiciosWS.listarNotaClinicaResponse> listarNotaClinicaAsync() {
+            PazCitasWA.ServiciosWS.listarNotaClinicaRequest inValue = new PazCitasWA.ServiciosWS.listarNotaClinicaRequest();
+            return ((PazCitasWA.ServiciosWS.NotaClinicaWS)(this)).listarNotaClinicaAsync(inValue);
+        }
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -5399,13 +5474,13 @@ namespace PazCitasWA.ServiciosWS {
     public interface SeguroWS {
         
         // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="http://services.pucp.edu.pe/SeguroWS/eliminarSeguroRequest", ReplyAction="http://services.pucp.edu.pe/SeguroWS/eliminarSeguroResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://services.pucp.edu.pe/SeguroWS/modificarSeguroRequest", ReplyAction="http://services.pucp.edu.pe/SeguroWS/modificarSeguroResponse")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        PazCitasWA.ServiciosWS.eliminarSeguroResponse eliminarSeguro(PazCitasWA.ServiciosWS.eliminarSeguroRequest request);
+        PazCitasWA.ServiciosWS.modificarSeguroResponse modificarSeguro(PazCitasWA.ServiciosWS.modificarSeguroRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://services.pucp.edu.pe/SeguroWS/eliminarSeguroRequest", ReplyAction="http://services.pucp.edu.pe/SeguroWS/eliminarSeguroResponse")]
-        System.Threading.Tasks.Task<PazCitasWA.ServiciosWS.eliminarSeguroResponse> eliminarSeguroAsync(PazCitasWA.ServiciosWS.eliminarSeguroRequest request);
+        [System.ServiceModel.OperationContractAttribute(Action="http://services.pucp.edu.pe/SeguroWS/modificarSeguroRequest", ReplyAction="http://services.pucp.edu.pe/SeguroWS/modificarSeguroResponse")]
+        System.Threading.Tasks.Task<PazCitasWA.ServiciosWS.modificarSeguroResponse> modificarSeguroAsync(PazCitasWA.ServiciosWS.modificarSeguroRequest request);
         
         // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
         [System.ServiceModel.OperationContractAttribute(Action="http://services.pucp.edu.pe/SeguroWS/listarSeguroRequest", ReplyAction="http://services.pucp.edu.pe/SeguroWS/listarSeguroResponse")]
@@ -5426,47 +5501,47 @@ namespace PazCitasWA.ServiciosWS {
         System.Threading.Tasks.Task<PazCitasWA.ServiciosWS.insertarSeguroResponse> insertarSeguroAsync(PazCitasWA.ServiciosWS.insertarSeguroRequest request);
         
         // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="http://services.pucp.edu.pe/SeguroWS/modificarSeguroRequest", ReplyAction="http://services.pucp.edu.pe/SeguroWS/modificarSeguroResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://services.pucp.edu.pe/SeguroWS/eliminarSeguroRequest", ReplyAction="http://services.pucp.edu.pe/SeguroWS/eliminarSeguroResponse")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        PazCitasWA.ServiciosWS.modificarSeguroResponse modificarSeguro(PazCitasWA.ServiciosWS.modificarSeguroRequest request);
+        PazCitasWA.ServiciosWS.eliminarSeguroResponse eliminarSeguro(PazCitasWA.ServiciosWS.eliminarSeguroRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://services.pucp.edu.pe/SeguroWS/modificarSeguroRequest", ReplyAction="http://services.pucp.edu.pe/SeguroWS/modificarSeguroResponse")]
-        System.Threading.Tasks.Task<PazCitasWA.ServiciosWS.modificarSeguroResponse> modificarSeguroAsync(PazCitasWA.ServiciosWS.modificarSeguroRequest request);
+        [System.ServiceModel.OperationContractAttribute(Action="http://services.pucp.edu.pe/SeguroWS/eliminarSeguroRequest", ReplyAction="http://services.pucp.edu.pe/SeguroWS/eliminarSeguroResponse")]
+        System.Threading.Tasks.Task<PazCitasWA.ServiciosWS.eliminarSeguroResponse> eliminarSeguroAsync(PazCitasWA.ServiciosWS.eliminarSeguroRequest request);
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="eliminarSeguro", WrapperNamespace="http://services.pucp.edu.pe", IsWrapped=true)]
-    public partial class eliminarSeguroRequest {
+    [System.ServiceModel.MessageContractAttribute(WrapperName="modificarSeguro", WrapperNamespace="http://services.pucp.edu.pe", IsWrapped=true)]
+    public partial class modificarSeguroRequest {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.pucp.edu.pe", Order=0)]
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public int idseguro;
+        public PazCitasWA.ServiciosWS.seguro seguro;
         
-        public eliminarSeguroRequest() {
+        public modificarSeguroRequest() {
         }
         
-        public eliminarSeguroRequest(int idseguro) {
-            this.idseguro = idseguro;
+        public modificarSeguroRequest(PazCitasWA.ServiciosWS.seguro seguro) {
+            this.seguro = seguro;
         }
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="eliminarSeguroResponse", WrapperNamespace="http://services.pucp.edu.pe", IsWrapped=true)]
-    public partial class eliminarSeguroResponse {
+    [System.ServiceModel.MessageContractAttribute(WrapperName="modificarSeguroResponse", WrapperNamespace="http://services.pucp.edu.pe", IsWrapped=true)]
+    public partial class modificarSeguroResponse {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.pucp.edu.pe", Order=0)]
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
         public int @return;
         
-        public eliminarSeguroResponse() {
+        public modificarSeguroResponse() {
         }
         
-        public eliminarSeguroResponse(int @return) {
+        public modificarSeguroResponse(int @return) {
             this.@return = @return;
         }
     }
@@ -5538,35 +5613,35 @@ namespace PazCitasWA.ServiciosWS {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="modificarSeguro", WrapperNamespace="http://services.pucp.edu.pe", IsWrapped=true)]
-    public partial class modificarSeguroRequest {
+    [System.ServiceModel.MessageContractAttribute(WrapperName="eliminarSeguro", WrapperNamespace="http://services.pucp.edu.pe", IsWrapped=true)]
+    public partial class eliminarSeguroRequest {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.pucp.edu.pe", Order=0)]
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public PazCitasWA.ServiciosWS.seguro seguro;
+        public int idseguro;
         
-        public modificarSeguroRequest() {
+        public eliminarSeguroRequest() {
         }
         
-        public modificarSeguroRequest(PazCitasWA.ServiciosWS.seguro seguro) {
-            this.seguro = seguro;
+        public eliminarSeguroRequest(int idseguro) {
+            this.idseguro = idseguro;
         }
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="modificarSeguroResponse", WrapperNamespace="http://services.pucp.edu.pe", IsWrapped=true)]
-    public partial class modificarSeguroResponse {
+    [System.ServiceModel.MessageContractAttribute(WrapperName="eliminarSeguroResponse", WrapperNamespace="http://services.pucp.edu.pe", IsWrapped=true)]
+    public partial class eliminarSeguroResponse {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.pucp.edu.pe", Order=0)]
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
         public int @return;
         
-        public modificarSeguroResponse() {
+        public eliminarSeguroResponse() {
         }
         
-        public modificarSeguroResponse(int @return) {
+        public eliminarSeguroResponse(int @return) {
             this.@return = @return;
         }
     }
@@ -5599,26 +5674,26 @@ namespace PazCitasWA.ServiciosWS {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        PazCitasWA.ServiciosWS.eliminarSeguroResponse PazCitasWA.ServiciosWS.SeguroWS.eliminarSeguro(PazCitasWA.ServiciosWS.eliminarSeguroRequest request) {
-            return base.Channel.eliminarSeguro(request);
+        PazCitasWA.ServiciosWS.modificarSeguroResponse PazCitasWA.ServiciosWS.SeguroWS.modificarSeguro(PazCitasWA.ServiciosWS.modificarSeguroRequest request) {
+            return base.Channel.modificarSeguro(request);
         }
         
-        public int eliminarSeguro(int idseguro) {
-            PazCitasWA.ServiciosWS.eliminarSeguroRequest inValue = new PazCitasWA.ServiciosWS.eliminarSeguroRequest();
-            inValue.idseguro = idseguro;
-            PazCitasWA.ServiciosWS.eliminarSeguroResponse retVal = ((PazCitasWA.ServiciosWS.SeguroWS)(this)).eliminarSeguro(inValue);
+        public int modificarSeguro(PazCitasWA.ServiciosWS.seguro seguro) {
+            PazCitasWA.ServiciosWS.modificarSeguroRequest inValue = new PazCitasWA.ServiciosWS.modificarSeguroRequest();
+            inValue.seguro = seguro;
+            PazCitasWA.ServiciosWS.modificarSeguroResponse retVal = ((PazCitasWA.ServiciosWS.SeguroWS)(this)).modificarSeguro(inValue);
             return retVal.@return;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<PazCitasWA.ServiciosWS.eliminarSeguroResponse> PazCitasWA.ServiciosWS.SeguroWS.eliminarSeguroAsync(PazCitasWA.ServiciosWS.eliminarSeguroRequest request) {
-            return base.Channel.eliminarSeguroAsync(request);
+        System.Threading.Tasks.Task<PazCitasWA.ServiciosWS.modificarSeguroResponse> PazCitasWA.ServiciosWS.SeguroWS.modificarSeguroAsync(PazCitasWA.ServiciosWS.modificarSeguroRequest request) {
+            return base.Channel.modificarSeguroAsync(request);
         }
         
-        public System.Threading.Tasks.Task<PazCitasWA.ServiciosWS.eliminarSeguroResponse> eliminarSeguroAsync(int idseguro) {
-            PazCitasWA.ServiciosWS.eliminarSeguroRequest inValue = new PazCitasWA.ServiciosWS.eliminarSeguroRequest();
-            inValue.idseguro = idseguro;
-            return ((PazCitasWA.ServiciosWS.SeguroWS)(this)).eliminarSeguroAsync(inValue);
+        public System.Threading.Tasks.Task<PazCitasWA.ServiciosWS.modificarSeguroResponse> modificarSeguroAsync(PazCitasWA.ServiciosWS.seguro seguro) {
+            PazCitasWA.ServiciosWS.modificarSeguroRequest inValue = new PazCitasWA.ServiciosWS.modificarSeguroRequest();
+            inValue.seguro = seguro;
+            return ((PazCitasWA.ServiciosWS.SeguroWS)(this)).modificarSeguroAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -5666,26 +5741,26 @@ namespace PazCitasWA.ServiciosWS {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        PazCitasWA.ServiciosWS.modificarSeguroResponse PazCitasWA.ServiciosWS.SeguroWS.modificarSeguro(PazCitasWA.ServiciosWS.modificarSeguroRequest request) {
-            return base.Channel.modificarSeguro(request);
+        PazCitasWA.ServiciosWS.eliminarSeguroResponse PazCitasWA.ServiciosWS.SeguroWS.eliminarSeguro(PazCitasWA.ServiciosWS.eliminarSeguroRequest request) {
+            return base.Channel.eliminarSeguro(request);
         }
         
-        public int modificarSeguro(PazCitasWA.ServiciosWS.seguro seguro) {
-            PazCitasWA.ServiciosWS.modificarSeguroRequest inValue = new PazCitasWA.ServiciosWS.modificarSeguroRequest();
-            inValue.seguro = seguro;
-            PazCitasWA.ServiciosWS.modificarSeguroResponse retVal = ((PazCitasWA.ServiciosWS.SeguroWS)(this)).modificarSeguro(inValue);
+        public int eliminarSeguro(int idseguro) {
+            PazCitasWA.ServiciosWS.eliminarSeguroRequest inValue = new PazCitasWA.ServiciosWS.eliminarSeguroRequest();
+            inValue.idseguro = idseguro;
+            PazCitasWA.ServiciosWS.eliminarSeguroResponse retVal = ((PazCitasWA.ServiciosWS.SeguroWS)(this)).eliminarSeguro(inValue);
             return retVal.@return;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<PazCitasWA.ServiciosWS.modificarSeguroResponse> PazCitasWA.ServiciosWS.SeguroWS.modificarSeguroAsync(PazCitasWA.ServiciosWS.modificarSeguroRequest request) {
-            return base.Channel.modificarSeguroAsync(request);
+        System.Threading.Tasks.Task<PazCitasWA.ServiciosWS.eliminarSeguroResponse> PazCitasWA.ServiciosWS.SeguroWS.eliminarSeguroAsync(PazCitasWA.ServiciosWS.eliminarSeguroRequest request) {
+            return base.Channel.eliminarSeguroAsync(request);
         }
         
-        public System.Threading.Tasks.Task<PazCitasWA.ServiciosWS.modificarSeguroResponse> modificarSeguroAsync(PazCitasWA.ServiciosWS.seguro seguro) {
-            PazCitasWA.ServiciosWS.modificarSeguroRequest inValue = new PazCitasWA.ServiciosWS.modificarSeguroRequest();
-            inValue.seguro = seguro;
-            return ((PazCitasWA.ServiciosWS.SeguroWS)(this)).modificarSeguroAsync(inValue);
+        public System.Threading.Tasks.Task<PazCitasWA.ServiciosWS.eliminarSeguroResponse> eliminarSeguroAsync(int idseguro) {
+            PazCitasWA.ServiciosWS.eliminarSeguroRequest inValue = new PazCitasWA.ServiciosWS.eliminarSeguroRequest();
+            inValue.idseguro = idseguro;
+            return ((PazCitasWA.ServiciosWS.SeguroWS)(this)).eliminarSeguroAsync(inValue);
         }
     }
     
@@ -5707,17 +5782,6 @@ namespace PazCitasWA.ServiciosWS {
         System.Threading.Tasks.Task<PazCitasWA.ServiciosWS.listar_lineas_x_recetaResponse> listar_lineas_x_recetaAsync(PazCitasWA.ServiciosWS.listar_lineas_x_recetaRequest request);
         
         // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="http://services.pucp.edu.pe/LineaRecetaMedicamentoWeb/eliminarLineaRecetaRequest", ReplyAction="http://services.pucp.edu.pe/LineaRecetaMedicamentoWeb/eliminarLineaRecetaResponse" +
-            "")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        PazCitasWA.ServiciosWS.eliminarLineaRecetaResponse eliminarLineaReceta(PazCitasWA.ServiciosWS.eliminarLineaRecetaRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://services.pucp.edu.pe/LineaRecetaMedicamentoWeb/eliminarLineaRecetaRequest", ReplyAction="http://services.pucp.edu.pe/LineaRecetaMedicamentoWeb/eliminarLineaRecetaResponse" +
-            "")]
-        System.Threading.Tasks.Task<PazCitasWA.ServiciosWS.eliminarLineaRecetaResponse> eliminarLineaRecetaAsync(PazCitasWA.ServiciosWS.eliminarLineaRecetaRequest request);
-        
-        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
         [System.ServiceModel.OperationContractAttribute(Action="http://services.pucp.edu.pe/LineaRecetaMedicamentoWeb/insertarLineaRecetaRequest", ReplyAction="http://services.pucp.edu.pe/LineaRecetaMedicamentoWeb/insertarLineaRecetaResponse" +
             "")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
@@ -5727,6 +5791,17 @@ namespace PazCitasWA.ServiciosWS {
         [System.ServiceModel.OperationContractAttribute(Action="http://services.pucp.edu.pe/LineaRecetaMedicamentoWeb/insertarLineaRecetaRequest", ReplyAction="http://services.pucp.edu.pe/LineaRecetaMedicamentoWeb/insertarLineaRecetaResponse" +
             "")]
         System.Threading.Tasks.Task<PazCitasWA.ServiciosWS.insertarLineaRecetaResponse> insertarLineaRecetaAsync(PazCitasWA.ServiciosWS.insertarLineaRecetaRequest request);
+        
+        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="http://services.pucp.edu.pe/LineaRecetaMedicamentoWeb/eliminarLineaRecetaRequest", ReplyAction="http://services.pucp.edu.pe/LineaRecetaMedicamentoWeb/eliminarLineaRecetaResponse" +
+            "")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        PazCitasWA.ServiciosWS.eliminarLineaRecetaResponse eliminarLineaReceta(PazCitasWA.ServiciosWS.eliminarLineaRecetaRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://services.pucp.edu.pe/LineaRecetaMedicamentoWeb/eliminarLineaRecetaRequest", ReplyAction="http://services.pucp.edu.pe/LineaRecetaMedicamentoWeb/eliminarLineaRecetaResponse" +
+            "")]
+        System.Threading.Tasks.Task<PazCitasWA.ServiciosWS.eliminarLineaRecetaResponse> eliminarLineaRecetaAsync(PazCitasWA.ServiciosWS.eliminarLineaRecetaRequest request);
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -5768,42 +5843,6 @@ namespace PazCitasWA.ServiciosWS {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="eliminarLineaReceta", WrapperNamespace="http://services.pucp.edu.pe", IsWrapped=true)]
-    public partial class eliminarLineaRecetaRequest {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.pucp.edu.pe", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public int idLinea;
-        
-        public eliminarLineaRecetaRequest() {
-        }
-        
-        public eliminarLineaRecetaRequest(int idLinea) {
-            this.idLinea = idLinea;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="eliminarLineaRecetaResponse", WrapperNamespace="http://services.pucp.edu.pe", IsWrapped=true)]
-    public partial class eliminarLineaRecetaResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.pucp.edu.pe", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public int @return;
-        
-        public eliminarLineaRecetaResponse() {
-        }
-        
-        public eliminarLineaRecetaResponse(int @return) {
-            this.@return = @return;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(WrapperName="insertarLineaReceta", WrapperNamespace="http://services.pucp.edu.pe", IsWrapped=true)]
     public partial class insertarLineaRecetaRequest {
         
@@ -5833,6 +5872,42 @@ namespace PazCitasWA.ServiciosWS {
         }
         
         public insertarLineaRecetaResponse(int @return) {
+            this.@return = @return;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="eliminarLineaReceta", WrapperNamespace="http://services.pucp.edu.pe", IsWrapped=true)]
+    public partial class eliminarLineaRecetaRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.pucp.edu.pe", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public int idLinea;
+        
+        public eliminarLineaRecetaRequest() {
+        }
+        
+        public eliminarLineaRecetaRequest(int idLinea) {
+            this.idLinea = idLinea;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="eliminarLineaRecetaResponse", WrapperNamespace="http://services.pucp.edu.pe", IsWrapped=true)]
+    public partial class eliminarLineaRecetaResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.pucp.edu.pe", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public int @return;
+        
+        public eliminarLineaRecetaResponse() {
+        }
+        
+        public eliminarLineaRecetaResponse(int @return) {
             this.@return = @return;
         }
     }
@@ -5888,29 +5963,6 @@ namespace PazCitasWA.ServiciosWS {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        PazCitasWA.ServiciosWS.eliminarLineaRecetaResponse PazCitasWA.ServiciosWS.LineaRecetaMedicamentoWeb.eliminarLineaReceta(PazCitasWA.ServiciosWS.eliminarLineaRecetaRequest request) {
-            return base.Channel.eliminarLineaReceta(request);
-        }
-        
-        public int eliminarLineaReceta(int idLinea) {
-            PazCitasWA.ServiciosWS.eliminarLineaRecetaRequest inValue = new PazCitasWA.ServiciosWS.eliminarLineaRecetaRequest();
-            inValue.idLinea = idLinea;
-            PazCitasWA.ServiciosWS.eliminarLineaRecetaResponse retVal = ((PazCitasWA.ServiciosWS.LineaRecetaMedicamentoWeb)(this)).eliminarLineaReceta(inValue);
-            return retVal.@return;
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<PazCitasWA.ServiciosWS.eliminarLineaRecetaResponse> PazCitasWA.ServiciosWS.LineaRecetaMedicamentoWeb.eliminarLineaRecetaAsync(PazCitasWA.ServiciosWS.eliminarLineaRecetaRequest request) {
-            return base.Channel.eliminarLineaRecetaAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<PazCitasWA.ServiciosWS.eliminarLineaRecetaResponse> eliminarLineaRecetaAsync(int idLinea) {
-            PazCitasWA.ServiciosWS.eliminarLineaRecetaRequest inValue = new PazCitasWA.ServiciosWS.eliminarLineaRecetaRequest();
-            inValue.idLinea = idLinea;
-            return ((PazCitasWA.ServiciosWS.LineaRecetaMedicamentoWeb)(this)).eliminarLineaRecetaAsync(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         PazCitasWA.ServiciosWS.insertarLineaRecetaResponse PazCitasWA.ServiciosWS.LineaRecetaMedicamentoWeb.insertarLineaReceta(PazCitasWA.ServiciosWS.insertarLineaRecetaRequest request) {
             return base.Channel.insertarLineaReceta(request);
         }
@@ -5932,50 +5984,68 @@ namespace PazCitasWA.ServiciosWS {
             inValue.linea = linea;
             return ((PazCitasWA.ServiciosWS.LineaRecetaMedicamentoWeb)(this)).insertarLineaRecetaAsync(inValue);
         }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        PazCitasWA.ServiciosWS.eliminarLineaRecetaResponse PazCitasWA.ServiciosWS.LineaRecetaMedicamentoWeb.eliminarLineaReceta(PazCitasWA.ServiciosWS.eliminarLineaRecetaRequest request) {
+            return base.Channel.eliminarLineaReceta(request);
+        }
+        
+        public int eliminarLineaReceta(int idLinea) {
+            PazCitasWA.ServiciosWS.eliminarLineaRecetaRequest inValue = new PazCitasWA.ServiciosWS.eliminarLineaRecetaRequest();
+            inValue.idLinea = idLinea;
+            PazCitasWA.ServiciosWS.eliminarLineaRecetaResponse retVal = ((PazCitasWA.ServiciosWS.LineaRecetaMedicamentoWeb)(this)).eliminarLineaReceta(inValue);
+            return retVal.@return;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<PazCitasWA.ServiciosWS.eliminarLineaRecetaResponse> PazCitasWA.ServiciosWS.LineaRecetaMedicamentoWeb.eliminarLineaRecetaAsync(PazCitasWA.ServiciosWS.eliminarLineaRecetaRequest request) {
+            return base.Channel.eliminarLineaRecetaAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<PazCitasWA.ServiciosWS.eliminarLineaRecetaResponse> eliminarLineaRecetaAsync(int idLinea) {
+            PazCitasWA.ServiciosWS.eliminarLineaRecetaRequest inValue = new PazCitasWA.ServiciosWS.eliminarLineaRecetaRequest();
+            inValue.idLinea = idLinea;
+            return ((PazCitasWA.ServiciosWS.LineaRecetaMedicamentoWeb)(this)).eliminarLineaRecetaAsync(inValue);
+        }
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(Namespace="http://services.pucp.edu.pe", ConfigurationName="ServiciosWS.ReporteWS")]
     public interface ReporteWS {
         
-        // CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de elemento nombre del espacio de nombres  no está marcado para aceptar valores nil.
+        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
         [System.ServiceModel.OperationContractAttribute(Action="http://services.pucp.edu.pe/ReporteWS/generarReporteCitaRequest", ReplyAction="http://services.pucp.edu.pe/ReporteWS/generarReporteCitaResponse")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         PazCitasWA.ServiciosWS.generarReporteCitaResponse generarReporteCita(PazCitasWA.ServiciosWS.generarReporteCitaRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://services.pucp.edu.pe/ReporteWS/generarReporteCitaRequest", ReplyAction="http://services.pucp.edu.pe/ReporteWS/generarReporteCitaResponse")]
         System.Threading.Tasks.Task<PazCitasWA.ServiciosWS.generarReporteCitaResponse> generarReporteCitaAsync(PazCitasWA.ServiciosWS.generarReporteCitaRequest request);
+        
+        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="http://services.pucp.edu.pe/ReporteWS/generarReporteCitasXSedeRequest", ReplyAction="http://services.pucp.edu.pe/ReporteWS/generarReporteCitasXSedeResponse")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        PazCitasWA.ServiciosWS.generarReporteCitasXSedeResponse generarReporteCitasXSede(PazCitasWA.ServiciosWS.generarReporteCitasXSedeRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://services.pucp.edu.pe/ReporteWS/generarReporteCitasXSedeRequest", ReplyAction="http://services.pucp.edu.pe/ReporteWS/generarReporteCitasXSedeResponse")]
+        System.Threading.Tasks.Task<PazCitasWA.ServiciosWS.generarReporteCitasXSedeResponse> generarReporteCitasXSedeAsync(PazCitasWA.ServiciosWS.generarReporteCitasXSedeRequest request);
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="generarReporteCita", WrapperNamespace="http://services.pucp.edu.pe", IsWrapped=true)]
     public partial class generarReporteCitaRequest {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="generarReporteCita", Namespace="http://services.pucp.edu.pe", Order=0)]
-        public PazCitasWA.ServiciosWS.generarReporteCitaRequestBody Body;
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.pucp.edu.pe", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string nombre;
         
         public generarReporteCitaRequest() {
         }
         
-        public generarReporteCitaRequest(PazCitasWA.ServiciosWS.generarReporteCitaRequestBody Body) {
-            this.Body = Body;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="")]
-    public partial class generarReporteCitaRequestBody {
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
-        public string nombre;
-        
-        public generarReporteCitaRequestBody() {
-        }
-        
-        public generarReporteCitaRequestBody(string nombre) {
+        public generarReporteCitaRequest(string nombre) {
             this.nombre = nombre;
         }
     }
@@ -5983,33 +6053,58 @@ namespace PazCitasWA.ServiciosWS {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="generarReporteCitaResponse", WrapperNamespace="http://services.pucp.edu.pe", IsWrapped=true)]
     public partial class generarReporteCitaResponse {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="generarReporteCitaResponse", Namespace="http://services.pucp.edu.pe", Order=0)]
-        public PazCitasWA.ServiciosWS.generarReporteCitaResponseBody Body;
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.pucp.edu.pe", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, DataType="base64Binary", IsNullable=true)]
+        public byte[] @return;
         
         public generarReporteCitaResponse() {
         }
         
-        public generarReporteCitaResponse(PazCitasWA.ServiciosWS.generarReporteCitaResponseBody Body) {
-            this.Body = Body;
+        public generarReporteCitaResponse(byte[] @return) {
+            this.@return = @return;
         }
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="")]
-    public partial class generarReporteCitaResponseBody {
+    [System.ServiceModel.MessageContractAttribute(WrapperName="generarReporteCitasXSede", WrapperNamespace="http://services.pucp.edu.pe", IsWrapped=true)]
+    public partial class generarReporteCitasXSedeRequest {
         
-        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
-        public byte[] @return;
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.pucp.edu.pe", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string nombre;
         
-        public generarReporteCitaResponseBody() {
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.pucp.edu.pe", Order=1)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public PazCitasWA.ServiciosWS.sede sede;
+        
+        public generarReporteCitasXSedeRequest() {
         }
         
-        public generarReporteCitaResponseBody(byte[] @return) {
+        public generarReporteCitasXSedeRequest(string nombre, PazCitasWA.ServiciosWS.sede sede) {
+            this.nombre = nombre;
+            this.sede = sede;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="generarReporteCitasXSedeResponse", WrapperNamespace="http://services.pucp.edu.pe", IsWrapped=true)]
+    public partial class generarReporteCitasXSedeResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.pucp.edu.pe", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, DataType="base64Binary", IsNullable=true)]
+        public byte[] @return;
+        
+        public generarReporteCitasXSedeResponse() {
+        }
+        
+        public generarReporteCitasXSedeResponse(byte[] @return) {
             this.@return = @return;
         }
     }
@@ -6048,10 +6143,9 @@ namespace PazCitasWA.ServiciosWS {
         
         public byte[] generarReporteCita(string nombre) {
             PazCitasWA.ServiciosWS.generarReporteCitaRequest inValue = new PazCitasWA.ServiciosWS.generarReporteCitaRequest();
-            inValue.Body = new PazCitasWA.ServiciosWS.generarReporteCitaRequestBody();
-            inValue.Body.nombre = nombre;
+            inValue.nombre = nombre;
             PazCitasWA.ServiciosWS.generarReporteCitaResponse retVal = ((PazCitasWA.ServiciosWS.ReporteWS)(this)).generarReporteCita(inValue);
-            return retVal.Body.@return;
+            return retVal.@return;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -6061,9 +6155,33 @@ namespace PazCitasWA.ServiciosWS {
         
         public System.Threading.Tasks.Task<PazCitasWA.ServiciosWS.generarReporteCitaResponse> generarReporteCitaAsync(string nombre) {
             PazCitasWA.ServiciosWS.generarReporteCitaRequest inValue = new PazCitasWA.ServiciosWS.generarReporteCitaRequest();
-            inValue.Body = new PazCitasWA.ServiciosWS.generarReporteCitaRequestBody();
-            inValue.Body.nombre = nombre;
+            inValue.nombre = nombre;
             return ((PazCitasWA.ServiciosWS.ReporteWS)(this)).generarReporteCitaAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        PazCitasWA.ServiciosWS.generarReporteCitasXSedeResponse PazCitasWA.ServiciosWS.ReporteWS.generarReporteCitasXSede(PazCitasWA.ServiciosWS.generarReporteCitasXSedeRequest request) {
+            return base.Channel.generarReporteCitasXSede(request);
+        }
+        
+        public byte[] generarReporteCitasXSede(string nombre, PazCitasWA.ServiciosWS.sede sede) {
+            PazCitasWA.ServiciosWS.generarReporteCitasXSedeRequest inValue = new PazCitasWA.ServiciosWS.generarReporteCitasXSedeRequest();
+            inValue.nombre = nombre;
+            inValue.sede = sede;
+            PazCitasWA.ServiciosWS.generarReporteCitasXSedeResponse retVal = ((PazCitasWA.ServiciosWS.ReporteWS)(this)).generarReporteCitasXSede(inValue);
+            return retVal.@return;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<PazCitasWA.ServiciosWS.generarReporteCitasXSedeResponse> PazCitasWA.ServiciosWS.ReporteWS.generarReporteCitasXSedeAsync(PazCitasWA.ServiciosWS.generarReporteCitasXSedeRequest request) {
+            return base.Channel.generarReporteCitasXSedeAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<PazCitasWA.ServiciosWS.generarReporteCitasXSedeResponse> generarReporteCitasXSedeAsync(string nombre, PazCitasWA.ServiciosWS.sede sede) {
+            PazCitasWA.ServiciosWS.generarReporteCitasXSedeRequest inValue = new PazCitasWA.ServiciosWS.generarReporteCitasXSedeRequest();
+            inValue.nombre = nombre;
+            inValue.sede = sede;
+            return ((PazCitasWA.ServiciosWS.ReporteWS)(this)).generarReporteCitasXSedeAsync(inValue);
         }
     }
     
@@ -6072,31 +6190,40 @@ namespace PazCitasWA.ServiciosWS {
     public interface ConsultorioWS {
         
         // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="http://services.pucp.edu.pe/ConsultorioWS/marcarAsignadoRequest", ReplyAction="http://services.pucp.edu.pe/ConsultorioWS/marcarAsignadoResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://services.pucp.edu.pe/ConsultorioWS/listarConsulPorSedeNoAsigRequest", ReplyAction="http://services.pucp.edu.pe/ConsultorioWS/listarConsulPorSedeNoAsigResponse")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        PazCitasWA.ServiciosWS.marcarAsignadoResponse marcarAsignado(PazCitasWA.ServiciosWS.marcarAsignadoRequest request);
+        PazCitasWA.ServiciosWS.listarConsulPorSedeNoAsigResponse listarConsulPorSedeNoAsig(PazCitasWA.ServiciosWS.listarConsulPorSedeNoAsigRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://services.pucp.edu.pe/ConsultorioWS/marcarAsignadoRequest", ReplyAction="http://services.pucp.edu.pe/ConsultorioWS/marcarAsignadoResponse")]
-        System.Threading.Tasks.Task<PazCitasWA.ServiciosWS.marcarAsignadoResponse> marcarAsignadoAsync(PazCitasWA.ServiciosWS.marcarAsignadoRequest request);
+        [System.ServiceModel.OperationContractAttribute(Action="http://services.pucp.edu.pe/ConsultorioWS/listarConsulPorSedeNoAsigRequest", ReplyAction="http://services.pucp.edu.pe/ConsultorioWS/listarConsulPorSedeNoAsigResponse")]
+        System.Threading.Tasks.Task<PazCitasWA.ServiciosWS.listarConsulPorSedeNoAsigResponse> listarConsulPorSedeNoAsigAsync(PazCitasWA.ServiciosWS.listarConsulPorSedeNoAsigRequest request);
         
         // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="http://services.pucp.edu.pe/ConsultorioWS/marcarNoAsignadoRequest", ReplyAction="http://services.pucp.edu.pe/ConsultorioWS/marcarNoAsignadoResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://services.pucp.edu.pe/ConsultorioWS/obtenerConsultorioPorIdRequest", ReplyAction="http://services.pucp.edu.pe/ConsultorioWS/obtenerConsultorioPorIdResponse")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        PazCitasWA.ServiciosWS.marcarNoAsignadoResponse marcarNoAsignado(PazCitasWA.ServiciosWS.marcarNoAsignadoRequest request);
+        PazCitasWA.ServiciosWS.obtenerConsultorioPorIdResponse obtenerConsultorioPorId(PazCitasWA.ServiciosWS.obtenerConsultorioPorIdRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://services.pucp.edu.pe/ConsultorioWS/marcarNoAsignadoRequest", ReplyAction="http://services.pucp.edu.pe/ConsultorioWS/marcarNoAsignadoResponse")]
-        System.Threading.Tasks.Task<PazCitasWA.ServiciosWS.marcarNoAsignadoResponse> marcarNoAsignadoAsync(PazCitasWA.ServiciosWS.marcarNoAsignadoRequest request);
+        [System.ServiceModel.OperationContractAttribute(Action="http://services.pucp.edu.pe/ConsultorioWS/obtenerConsultorioPorIdRequest", ReplyAction="http://services.pucp.edu.pe/ConsultorioWS/obtenerConsultorioPorIdResponse")]
+        System.Threading.Tasks.Task<PazCitasWA.ServiciosWS.obtenerConsultorioPorIdResponse> obtenerConsultorioPorIdAsync(PazCitasWA.ServiciosWS.obtenerConsultorioPorIdRequest request);
         
         // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="http://services.pucp.edu.pe/ConsultorioWS/listarConsultorioRequest", ReplyAction="http://services.pucp.edu.pe/ConsultorioWS/listarConsultorioResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://services.pucp.edu.pe/ConsultorioWS/insertarConsultorioRequest", ReplyAction="http://services.pucp.edu.pe/ConsultorioWS/insertarConsultorioResponse")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        PazCitasWA.ServiciosWS.listarConsultorioResponse listarConsultorio(PazCitasWA.ServiciosWS.listarConsultorioRequest request);
+        PazCitasWA.ServiciosWS.insertarConsultorioResponse insertarConsultorio(PazCitasWA.ServiciosWS.insertarConsultorioRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://services.pucp.edu.pe/ConsultorioWS/listarConsultorioRequest", ReplyAction="http://services.pucp.edu.pe/ConsultorioWS/listarConsultorioResponse")]
-        System.Threading.Tasks.Task<PazCitasWA.ServiciosWS.listarConsultorioResponse> listarConsultorioAsync(PazCitasWA.ServiciosWS.listarConsultorioRequest request);
+        [System.ServiceModel.OperationContractAttribute(Action="http://services.pucp.edu.pe/ConsultorioWS/insertarConsultorioRequest", ReplyAction="http://services.pucp.edu.pe/ConsultorioWS/insertarConsultorioResponse")]
+        System.Threading.Tasks.Task<PazCitasWA.ServiciosWS.insertarConsultorioResponse> insertarConsultorioAsync(PazCitasWA.ServiciosWS.insertarConsultorioRequest request);
+        
+        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="http://services.pucp.edu.pe/ConsultorioWS/modificarConsultorioRequest", ReplyAction="http://services.pucp.edu.pe/ConsultorioWS/modificarConsultorioResponse")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        PazCitasWA.ServiciosWS.modificarConsultorioResponse modificarConsultorio(PazCitasWA.ServiciosWS.modificarConsultorioRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://services.pucp.edu.pe/ConsultorioWS/modificarConsultorioRequest", ReplyAction="http://services.pucp.edu.pe/ConsultorioWS/modificarConsultorioResponse")]
+        System.Threading.Tasks.Task<PazCitasWA.ServiciosWS.modificarConsultorioResponse> modificarConsultorioAsync(PazCitasWA.ServiciosWS.modificarConsultorioRequest request);
         
         // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
         [System.ServiceModel.OperationContractAttribute(Action="http://services.pucp.edu.pe/ConsultorioWS/listarConsultPorSedeRequest", ReplyAction="http://services.pucp.edu.pe/ConsultorioWS/listarConsultPorSedeResponse")]
@@ -6117,129 +6244,182 @@ namespace PazCitasWA.ServiciosWS {
         System.Threading.Tasks.Task<PazCitasWA.ServiciosWS.eliminarConsultorioResponse> eliminarConsultorioAsync(PazCitasWA.ServiciosWS.eliminarConsultorioRequest request);
         
         // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="http://services.pucp.edu.pe/ConsultorioWS/insertarConsultorioRequest", ReplyAction="http://services.pucp.edu.pe/ConsultorioWS/insertarConsultorioResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://services.pucp.edu.pe/ConsultorioWS/marcarAsignadoRequest", ReplyAction="http://services.pucp.edu.pe/ConsultorioWS/marcarAsignadoResponse")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        PazCitasWA.ServiciosWS.insertarConsultorioResponse insertarConsultorio(PazCitasWA.ServiciosWS.insertarConsultorioRequest request);
+        PazCitasWA.ServiciosWS.marcarAsignadoResponse marcarAsignado(PazCitasWA.ServiciosWS.marcarAsignadoRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://services.pucp.edu.pe/ConsultorioWS/insertarConsultorioRequest", ReplyAction="http://services.pucp.edu.pe/ConsultorioWS/insertarConsultorioResponse")]
-        System.Threading.Tasks.Task<PazCitasWA.ServiciosWS.insertarConsultorioResponse> insertarConsultorioAsync(PazCitasWA.ServiciosWS.insertarConsultorioRequest request);
+        [System.ServiceModel.OperationContractAttribute(Action="http://services.pucp.edu.pe/ConsultorioWS/marcarAsignadoRequest", ReplyAction="http://services.pucp.edu.pe/ConsultorioWS/marcarAsignadoResponse")]
+        System.Threading.Tasks.Task<PazCitasWA.ServiciosWS.marcarAsignadoResponse> marcarAsignadoAsync(PazCitasWA.ServiciosWS.marcarAsignadoRequest request);
         
         // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="http://services.pucp.edu.pe/ConsultorioWS/obtenerConsultorioPorIdRequest", ReplyAction="http://services.pucp.edu.pe/ConsultorioWS/obtenerConsultorioPorIdResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://services.pucp.edu.pe/ConsultorioWS/listarConsultorioRequest", ReplyAction="http://services.pucp.edu.pe/ConsultorioWS/listarConsultorioResponse")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        PazCitasWA.ServiciosWS.obtenerConsultorioPorIdResponse obtenerConsultorioPorId(PazCitasWA.ServiciosWS.obtenerConsultorioPorIdRequest request);
+        PazCitasWA.ServiciosWS.listarConsultorioResponse listarConsultorio(PazCitasWA.ServiciosWS.listarConsultorioRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://services.pucp.edu.pe/ConsultorioWS/obtenerConsultorioPorIdRequest", ReplyAction="http://services.pucp.edu.pe/ConsultorioWS/obtenerConsultorioPorIdResponse")]
-        System.Threading.Tasks.Task<PazCitasWA.ServiciosWS.obtenerConsultorioPorIdResponse> obtenerConsultorioPorIdAsync(PazCitasWA.ServiciosWS.obtenerConsultorioPorIdRequest request);
+        [System.ServiceModel.OperationContractAttribute(Action="http://services.pucp.edu.pe/ConsultorioWS/listarConsultorioRequest", ReplyAction="http://services.pucp.edu.pe/ConsultorioWS/listarConsultorioResponse")]
+        System.Threading.Tasks.Task<PazCitasWA.ServiciosWS.listarConsultorioResponse> listarConsultorioAsync(PazCitasWA.ServiciosWS.listarConsultorioRequest request);
         
         // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="http://services.pucp.edu.pe/ConsultorioWS/modificarConsultorioRequest", ReplyAction="http://services.pucp.edu.pe/ConsultorioWS/modificarConsultorioResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://services.pucp.edu.pe/ConsultorioWS/marcarNoAsignadoRequest", ReplyAction="http://services.pucp.edu.pe/ConsultorioWS/marcarNoAsignadoResponse")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        PazCitasWA.ServiciosWS.modificarConsultorioResponse modificarConsultorio(PazCitasWA.ServiciosWS.modificarConsultorioRequest request);
+        PazCitasWA.ServiciosWS.marcarNoAsignadoResponse marcarNoAsignado(PazCitasWA.ServiciosWS.marcarNoAsignadoRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://services.pucp.edu.pe/ConsultorioWS/modificarConsultorioRequest", ReplyAction="http://services.pucp.edu.pe/ConsultorioWS/modificarConsultorioResponse")]
-        System.Threading.Tasks.Task<PazCitasWA.ServiciosWS.modificarConsultorioResponse> modificarConsultorioAsync(PazCitasWA.ServiciosWS.modificarConsultorioRequest request);
+        [System.ServiceModel.OperationContractAttribute(Action="http://services.pucp.edu.pe/ConsultorioWS/marcarNoAsignadoRequest", ReplyAction="http://services.pucp.edu.pe/ConsultorioWS/marcarNoAsignadoResponse")]
+        System.Threading.Tasks.Task<PazCitasWA.ServiciosWS.marcarNoAsignadoResponse> marcarNoAsignadoAsync(PazCitasWA.ServiciosWS.marcarNoAsignadoRequest request);
+        
+        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="http://services.pucp.edu.pe/ConsultorioWS/consultorioExisteRequest", ReplyAction="http://services.pucp.edu.pe/ConsultorioWS/consultorioExisteResponse")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        PazCitasWA.ServiciosWS.consultorioExisteResponse consultorioExiste(PazCitasWA.ServiciosWS.consultorioExisteRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://services.pucp.edu.pe/ConsultorioWS/consultorioExisteRequest", ReplyAction="http://services.pucp.edu.pe/ConsultorioWS/consultorioExisteResponse")]
+        System.Threading.Tasks.Task<PazCitasWA.ServiciosWS.consultorioExisteResponse> consultorioExisteAsync(PazCitasWA.ServiciosWS.consultorioExisteRequest request);
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="marcarAsignado", WrapperNamespace="http://services.pucp.edu.pe", IsWrapped=true)]
-    public partial class marcarAsignadoRequest {
+    [System.ServiceModel.MessageContractAttribute(WrapperName="listarConsulPorSedeNoAsig", WrapperNamespace="http://services.pucp.edu.pe", IsWrapped=true)]
+    public partial class listarConsulPorSedeNoAsigRequest {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.pucp.edu.pe", Order=0)]
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public int idConsultorio;
+        public int idSede;
         
-        public marcarAsignadoRequest() {
+        public listarConsulPorSedeNoAsigRequest() {
         }
         
-        public marcarAsignadoRequest(int idConsultorio) {
-            this.idConsultorio = idConsultorio;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="marcarAsignadoResponse", WrapperNamespace="http://services.pucp.edu.pe", IsWrapped=true)]
-    public partial class marcarAsignadoResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.pucp.edu.pe", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public int @return;
-        
-        public marcarAsignadoResponse() {
-        }
-        
-        public marcarAsignadoResponse(int @return) {
-            this.@return = @return;
+        public listarConsulPorSedeNoAsigRequest(int idSede) {
+            this.idSede = idSede;
         }
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="marcarNoAsignado", WrapperNamespace="http://services.pucp.edu.pe", IsWrapped=true)]
-    public partial class marcarNoAsignadoRequest {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.pucp.edu.pe", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public int idConsultorio;
-        
-        public marcarNoAsignadoRequest() {
-        }
-        
-        public marcarNoAsignadoRequest(int idConsultorio) {
-            this.idConsultorio = idConsultorio;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="marcarNoAsignadoResponse", WrapperNamespace="http://services.pucp.edu.pe", IsWrapped=true)]
-    public partial class marcarNoAsignadoResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.pucp.edu.pe", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public int @return;
-        
-        public marcarNoAsignadoResponse() {
-        }
-        
-        public marcarNoAsignadoResponse(int @return) {
-            this.@return = @return;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="listarConsultorio", WrapperNamespace="http://services.pucp.edu.pe", IsWrapped=true)]
-    public partial class listarConsultorioRequest {
-        
-        public listarConsultorioRequest() {
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="listarConsultorioResponse", WrapperNamespace="http://services.pucp.edu.pe", IsWrapped=true)]
-    public partial class listarConsultorioResponse {
+    [System.ServiceModel.MessageContractAttribute(WrapperName="listarConsulPorSedeNoAsigResponse", WrapperNamespace="http://services.pucp.edu.pe", IsWrapped=true)]
+    public partial class listarConsulPorSedeNoAsigResponse {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.pucp.edu.pe", Order=0)]
         [System.Xml.Serialization.XmlElementAttribute("return", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
         public PazCitasWA.ServiciosWS.consultorio[] @return;
         
-        public listarConsultorioResponse() {
+        public listarConsulPorSedeNoAsigResponse() {
         }
         
-        public listarConsultorioResponse(PazCitasWA.ServiciosWS.consultorio[] @return) {
+        public listarConsulPorSedeNoAsigResponse(PazCitasWA.ServiciosWS.consultorio[] @return) {
+            this.@return = @return;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="obtenerConsultorioPorId", WrapperNamespace="http://services.pucp.edu.pe", IsWrapped=true)]
+    public partial class obtenerConsultorioPorIdRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.pucp.edu.pe", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public int idConsultorio;
+        
+        public obtenerConsultorioPorIdRequest() {
+        }
+        
+        public obtenerConsultorioPorIdRequest(int idConsultorio) {
+            this.idConsultorio = idConsultorio;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="obtenerConsultorioPorIdResponse", WrapperNamespace="http://services.pucp.edu.pe", IsWrapped=true)]
+    public partial class obtenerConsultorioPorIdResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.pucp.edu.pe", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public PazCitasWA.ServiciosWS.consultorio @return;
+        
+        public obtenerConsultorioPorIdResponse() {
+        }
+        
+        public obtenerConsultorioPorIdResponse(PazCitasWA.ServiciosWS.consultorio @return) {
+            this.@return = @return;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="insertarConsultorio", WrapperNamespace="http://services.pucp.edu.pe", IsWrapped=true)]
+    public partial class insertarConsultorioRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.pucp.edu.pe", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public PazCitasWA.ServiciosWS.consultorio Consultorio;
+        
+        public insertarConsultorioRequest() {
+        }
+        
+        public insertarConsultorioRequest(PazCitasWA.ServiciosWS.consultorio Consultorio) {
+            this.Consultorio = Consultorio;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="insertarConsultorioResponse", WrapperNamespace="http://services.pucp.edu.pe", IsWrapped=true)]
+    public partial class insertarConsultorioResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.pucp.edu.pe", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public int @return;
+        
+        public insertarConsultorioResponse() {
+        }
+        
+        public insertarConsultorioResponse(int @return) {
+            this.@return = @return;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="modificarConsultorio", WrapperNamespace="http://services.pucp.edu.pe", IsWrapped=true)]
+    public partial class modificarConsultorioRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.pucp.edu.pe", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public PazCitasWA.ServiciosWS.consultorio Consultorio;
+        
+        public modificarConsultorioRequest() {
+        }
+        
+        public modificarConsultorioRequest(PazCitasWA.ServiciosWS.consultorio Consultorio) {
+            this.Consultorio = Consultorio;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="modificarConsultorioResponse", WrapperNamespace="http://services.pucp.edu.pe", IsWrapped=true)]
+    public partial class modificarConsultorioResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.pucp.edu.pe", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public int @return;
+        
+        public modificarConsultorioResponse() {
+        }
+        
+        public modificarConsultorioResponse(int @return) {
             this.@return = @return;
         }
     }
@@ -6319,53 +6499,17 @@ namespace PazCitasWA.ServiciosWS {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="insertarConsultorio", WrapperNamespace="http://services.pucp.edu.pe", IsWrapped=true)]
-    public partial class insertarConsultorioRequest {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.pucp.edu.pe", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public PazCitasWA.ServiciosWS.consultorio Consultorio;
-        
-        public insertarConsultorioRequest() {
-        }
-        
-        public insertarConsultorioRequest(PazCitasWA.ServiciosWS.consultorio Consultorio) {
-            this.Consultorio = Consultorio;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="insertarConsultorioResponse", WrapperNamespace="http://services.pucp.edu.pe", IsWrapped=true)]
-    public partial class insertarConsultorioResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.pucp.edu.pe", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public int @return;
-        
-        public insertarConsultorioResponse() {
-        }
-        
-        public insertarConsultorioResponse(int @return) {
-            this.@return = @return;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="obtenerConsultorioPorId", WrapperNamespace="http://services.pucp.edu.pe", IsWrapped=true)]
-    public partial class obtenerConsultorioPorIdRequest {
+    [System.ServiceModel.MessageContractAttribute(WrapperName="marcarAsignado", WrapperNamespace="http://services.pucp.edu.pe", IsWrapped=true)]
+    public partial class marcarAsignadoRequest {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.pucp.edu.pe", Order=0)]
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
         public int idConsultorio;
         
-        public obtenerConsultorioPorIdRequest() {
+        public marcarAsignadoRequest() {
         }
         
-        public obtenerConsultorioPorIdRequest(int idConsultorio) {
+        public marcarAsignadoRequest(int idConsultorio) {
             this.idConsultorio = idConsultorio;
         }
     }
@@ -6373,17 +6517,17 @@ namespace PazCitasWA.ServiciosWS {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="obtenerConsultorioPorIdResponse", WrapperNamespace="http://services.pucp.edu.pe", IsWrapped=true)]
-    public partial class obtenerConsultorioPorIdResponse {
+    [System.ServiceModel.MessageContractAttribute(WrapperName="marcarAsignadoResponse", WrapperNamespace="http://services.pucp.edu.pe", IsWrapped=true)]
+    public partial class marcarAsignadoResponse {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.pucp.edu.pe", Order=0)]
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public PazCitasWA.ServiciosWS.consultorio @return;
+        public int @return;
         
-        public obtenerConsultorioPorIdResponse() {
+        public marcarAsignadoResponse() {
         }
         
-        public obtenerConsultorioPorIdResponse(PazCitasWA.ServiciosWS.consultorio @return) {
+        public marcarAsignadoResponse(int @return) {
             this.@return = @return;
         }
     }
@@ -6391,35 +6535,104 @@ namespace PazCitasWA.ServiciosWS {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="modificarConsultorio", WrapperNamespace="http://services.pucp.edu.pe", IsWrapped=true)]
-    public partial class modificarConsultorioRequest {
+    [System.ServiceModel.MessageContractAttribute(WrapperName="listarConsultorio", WrapperNamespace="http://services.pucp.edu.pe", IsWrapped=true)]
+    public partial class listarConsultorioRequest {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.pucp.edu.pe", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public PazCitasWA.ServiciosWS.consultorio Consultorio;
-        
-        public modificarConsultorioRequest() {
-        }
-        
-        public modificarConsultorioRequest(PazCitasWA.ServiciosWS.consultorio Consultorio) {
-            this.Consultorio = Consultorio;
+        public listarConsultorioRequest() {
         }
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="modificarConsultorioResponse", WrapperNamespace="http://services.pucp.edu.pe", IsWrapped=true)]
-    public partial class modificarConsultorioResponse {
+    [System.ServiceModel.MessageContractAttribute(WrapperName="listarConsultorioResponse", WrapperNamespace="http://services.pucp.edu.pe", IsWrapped=true)]
+    public partial class listarConsultorioResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.pucp.edu.pe", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute("return", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public PazCitasWA.ServiciosWS.consultorio[] @return;
+        
+        public listarConsultorioResponse() {
+        }
+        
+        public listarConsultorioResponse(PazCitasWA.ServiciosWS.consultorio[] @return) {
+            this.@return = @return;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="marcarNoAsignado", WrapperNamespace="http://services.pucp.edu.pe", IsWrapped=true)]
+    public partial class marcarNoAsignadoRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.pucp.edu.pe", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public int idConsultorio;
+        
+        public marcarNoAsignadoRequest() {
+        }
+        
+        public marcarNoAsignadoRequest(int idConsultorio) {
+            this.idConsultorio = idConsultorio;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="marcarNoAsignadoResponse", WrapperNamespace="http://services.pucp.edu.pe", IsWrapped=true)]
+    public partial class marcarNoAsignadoResponse {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.pucp.edu.pe", Order=0)]
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
         public int @return;
         
-        public modificarConsultorioResponse() {
+        public marcarNoAsignadoResponse() {
         }
         
-        public modificarConsultorioResponse(int @return) {
+        public marcarNoAsignadoResponse(int @return) {
+            this.@return = @return;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="consultorioExiste", WrapperNamespace="http://services.pucp.edu.pe", IsWrapped=true)]
+    public partial class consultorioExisteRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.pucp.edu.pe", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string nombre;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.pucp.edu.pe", Order=1)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public int idSede;
+        
+        public consultorioExisteRequest() {
+        }
+        
+        public consultorioExisteRequest(string nombre, int idSede) {
+            this.nombre = nombre;
+            this.idSede = idSede;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="consultorioExisteResponse", WrapperNamespace="http://services.pucp.edu.pe", IsWrapped=true)]
+    public partial class consultorioExisteResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.pucp.edu.pe", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public bool @return;
+        
+        public consultorioExisteResponse() {
+        }
+        
+        public consultorioExisteResponse(bool @return) {
             this.@return = @return;
         }
     }
@@ -6452,70 +6665,95 @@ namespace PazCitasWA.ServiciosWS {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        PazCitasWA.ServiciosWS.marcarAsignadoResponse PazCitasWA.ServiciosWS.ConsultorioWS.marcarAsignado(PazCitasWA.ServiciosWS.marcarAsignadoRequest request) {
-            return base.Channel.marcarAsignado(request);
+        PazCitasWA.ServiciosWS.listarConsulPorSedeNoAsigResponse PazCitasWA.ServiciosWS.ConsultorioWS.listarConsulPorSedeNoAsig(PazCitasWA.ServiciosWS.listarConsulPorSedeNoAsigRequest request) {
+            return base.Channel.listarConsulPorSedeNoAsig(request);
         }
         
-        public int marcarAsignado(int idConsultorio) {
-            PazCitasWA.ServiciosWS.marcarAsignadoRequest inValue = new PazCitasWA.ServiciosWS.marcarAsignadoRequest();
-            inValue.idConsultorio = idConsultorio;
-            PazCitasWA.ServiciosWS.marcarAsignadoResponse retVal = ((PazCitasWA.ServiciosWS.ConsultorioWS)(this)).marcarAsignado(inValue);
+        public PazCitasWA.ServiciosWS.consultorio[] listarConsulPorSedeNoAsig(int idSede) {
+            PazCitasWA.ServiciosWS.listarConsulPorSedeNoAsigRequest inValue = new PazCitasWA.ServiciosWS.listarConsulPorSedeNoAsigRequest();
+            inValue.idSede = idSede;
+            PazCitasWA.ServiciosWS.listarConsulPorSedeNoAsigResponse retVal = ((PazCitasWA.ServiciosWS.ConsultorioWS)(this)).listarConsulPorSedeNoAsig(inValue);
             return retVal.@return;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<PazCitasWA.ServiciosWS.marcarAsignadoResponse> PazCitasWA.ServiciosWS.ConsultorioWS.marcarAsignadoAsync(PazCitasWA.ServiciosWS.marcarAsignadoRequest request) {
-            return base.Channel.marcarAsignadoAsync(request);
+        System.Threading.Tasks.Task<PazCitasWA.ServiciosWS.listarConsulPorSedeNoAsigResponse> PazCitasWA.ServiciosWS.ConsultorioWS.listarConsulPorSedeNoAsigAsync(PazCitasWA.ServiciosWS.listarConsulPorSedeNoAsigRequest request) {
+            return base.Channel.listarConsulPorSedeNoAsigAsync(request);
         }
         
-        public System.Threading.Tasks.Task<PazCitasWA.ServiciosWS.marcarAsignadoResponse> marcarAsignadoAsync(int idConsultorio) {
-            PazCitasWA.ServiciosWS.marcarAsignadoRequest inValue = new PazCitasWA.ServiciosWS.marcarAsignadoRequest();
-            inValue.idConsultorio = idConsultorio;
-            return ((PazCitasWA.ServiciosWS.ConsultorioWS)(this)).marcarAsignadoAsync(inValue);
+        public System.Threading.Tasks.Task<PazCitasWA.ServiciosWS.listarConsulPorSedeNoAsigResponse> listarConsulPorSedeNoAsigAsync(int idSede) {
+            PazCitasWA.ServiciosWS.listarConsulPorSedeNoAsigRequest inValue = new PazCitasWA.ServiciosWS.listarConsulPorSedeNoAsigRequest();
+            inValue.idSede = idSede;
+            return ((PazCitasWA.ServiciosWS.ConsultorioWS)(this)).listarConsulPorSedeNoAsigAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        PazCitasWA.ServiciosWS.marcarNoAsignadoResponse PazCitasWA.ServiciosWS.ConsultorioWS.marcarNoAsignado(PazCitasWA.ServiciosWS.marcarNoAsignadoRequest request) {
-            return base.Channel.marcarNoAsignado(request);
+        PazCitasWA.ServiciosWS.obtenerConsultorioPorIdResponse PazCitasWA.ServiciosWS.ConsultorioWS.obtenerConsultorioPorId(PazCitasWA.ServiciosWS.obtenerConsultorioPorIdRequest request) {
+            return base.Channel.obtenerConsultorioPorId(request);
         }
         
-        public int marcarNoAsignado(int idConsultorio) {
-            PazCitasWA.ServiciosWS.marcarNoAsignadoRequest inValue = new PazCitasWA.ServiciosWS.marcarNoAsignadoRequest();
+        public PazCitasWA.ServiciosWS.consultorio obtenerConsultorioPorId(int idConsultorio) {
+            PazCitasWA.ServiciosWS.obtenerConsultorioPorIdRequest inValue = new PazCitasWA.ServiciosWS.obtenerConsultorioPorIdRequest();
             inValue.idConsultorio = idConsultorio;
-            PazCitasWA.ServiciosWS.marcarNoAsignadoResponse retVal = ((PazCitasWA.ServiciosWS.ConsultorioWS)(this)).marcarNoAsignado(inValue);
+            PazCitasWA.ServiciosWS.obtenerConsultorioPorIdResponse retVal = ((PazCitasWA.ServiciosWS.ConsultorioWS)(this)).obtenerConsultorioPorId(inValue);
             return retVal.@return;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<PazCitasWA.ServiciosWS.marcarNoAsignadoResponse> PazCitasWA.ServiciosWS.ConsultorioWS.marcarNoAsignadoAsync(PazCitasWA.ServiciosWS.marcarNoAsignadoRequest request) {
-            return base.Channel.marcarNoAsignadoAsync(request);
+        System.Threading.Tasks.Task<PazCitasWA.ServiciosWS.obtenerConsultorioPorIdResponse> PazCitasWA.ServiciosWS.ConsultorioWS.obtenerConsultorioPorIdAsync(PazCitasWA.ServiciosWS.obtenerConsultorioPorIdRequest request) {
+            return base.Channel.obtenerConsultorioPorIdAsync(request);
         }
         
-        public System.Threading.Tasks.Task<PazCitasWA.ServiciosWS.marcarNoAsignadoResponse> marcarNoAsignadoAsync(int idConsultorio) {
-            PazCitasWA.ServiciosWS.marcarNoAsignadoRequest inValue = new PazCitasWA.ServiciosWS.marcarNoAsignadoRequest();
+        public System.Threading.Tasks.Task<PazCitasWA.ServiciosWS.obtenerConsultorioPorIdResponse> obtenerConsultorioPorIdAsync(int idConsultorio) {
+            PazCitasWA.ServiciosWS.obtenerConsultorioPorIdRequest inValue = new PazCitasWA.ServiciosWS.obtenerConsultorioPorIdRequest();
             inValue.idConsultorio = idConsultorio;
-            return ((PazCitasWA.ServiciosWS.ConsultorioWS)(this)).marcarNoAsignadoAsync(inValue);
+            return ((PazCitasWA.ServiciosWS.ConsultorioWS)(this)).obtenerConsultorioPorIdAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        PazCitasWA.ServiciosWS.listarConsultorioResponse PazCitasWA.ServiciosWS.ConsultorioWS.listarConsultorio(PazCitasWA.ServiciosWS.listarConsultorioRequest request) {
-            return base.Channel.listarConsultorio(request);
+        PazCitasWA.ServiciosWS.insertarConsultorioResponse PazCitasWA.ServiciosWS.ConsultorioWS.insertarConsultorio(PazCitasWA.ServiciosWS.insertarConsultorioRequest request) {
+            return base.Channel.insertarConsultorio(request);
         }
         
-        public PazCitasWA.ServiciosWS.consultorio[] listarConsultorio() {
-            PazCitasWA.ServiciosWS.listarConsultorioRequest inValue = new PazCitasWA.ServiciosWS.listarConsultorioRequest();
-            PazCitasWA.ServiciosWS.listarConsultorioResponse retVal = ((PazCitasWA.ServiciosWS.ConsultorioWS)(this)).listarConsultorio(inValue);
+        public int insertarConsultorio(PazCitasWA.ServiciosWS.consultorio Consultorio) {
+            PazCitasWA.ServiciosWS.insertarConsultorioRequest inValue = new PazCitasWA.ServiciosWS.insertarConsultorioRequest();
+            inValue.Consultorio = Consultorio;
+            PazCitasWA.ServiciosWS.insertarConsultorioResponse retVal = ((PazCitasWA.ServiciosWS.ConsultorioWS)(this)).insertarConsultorio(inValue);
             return retVal.@return;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<PazCitasWA.ServiciosWS.listarConsultorioResponse> PazCitasWA.ServiciosWS.ConsultorioWS.listarConsultorioAsync(PazCitasWA.ServiciosWS.listarConsultorioRequest request) {
-            return base.Channel.listarConsultorioAsync(request);
+        System.Threading.Tasks.Task<PazCitasWA.ServiciosWS.insertarConsultorioResponse> PazCitasWA.ServiciosWS.ConsultorioWS.insertarConsultorioAsync(PazCitasWA.ServiciosWS.insertarConsultorioRequest request) {
+            return base.Channel.insertarConsultorioAsync(request);
         }
         
-        public System.Threading.Tasks.Task<PazCitasWA.ServiciosWS.listarConsultorioResponse> listarConsultorioAsync() {
-            PazCitasWA.ServiciosWS.listarConsultorioRequest inValue = new PazCitasWA.ServiciosWS.listarConsultorioRequest();
-            return ((PazCitasWA.ServiciosWS.ConsultorioWS)(this)).listarConsultorioAsync(inValue);
+        public System.Threading.Tasks.Task<PazCitasWA.ServiciosWS.insertarConsultorioResponse> insertarConsultorioAsync(PazCitasWA.ServiciosWS.consultorio Consultorio) {
+            PazCitasWA.ServiciosWS.insertarConsultorioRequest inValue = new PazCitasWA.ServiciosWS.insertarConsultorioRequest();
+            inValue.Consultorio = Consultorio;
+            return ((PazCitasWA.ServiciosWS.ConsultorioWS)(this)).insertarConsultorioAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        PazCitasWA.ServiciosWS.modificarConsultorioResponse PazCitasWA.ServiciosWS.ConsultorioWS.modificarConsultorio(PazCitasWA.ServiciosWS.modificarConsultorioRequest request) {
+            return base.Channel.modificarConsultorio(request);
+        }
+        
+        public int modificarConsultorio(PazCitasWA.ServiciosWS.consultorio Consultorio) {
+            PazCitasWA.ServiciosWS.modificarConsultorioRequest inValue = new PazCitasWA.ServiciosWS.modificarConsultorioRequest();
+            inValue.Consultorio = Consultorio;
+            PazCitasWA.ServiciosWS.modificarConsultorioResponse retVal = ((PazCitasWA.ServiciosWS.ConsultorioWS)(this)).modificarConsultorio(inValue);
+            return retVal.@return;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<PazCitasWA.ServiciosWS.modificarConsultorioResponse> PazCitasWA.ServiciosWS.ConsultorioWS.modificarConsultorioAsync(PazCitasWA.ServiciosWS.modificarConsultorioRequest request) {
+            return base.Channel.modificarConsultorioAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<PazCitasWA.ServiciosWS.modificarConsultorioResponse> modificarConsultorioAsync(PazCitasWA.ServiciosWS.consultorio Consultorio) {
+            PazCitasWA.ServiciosWS.modificarConsultorioRequest inValue = new PazCitasWA.ServiciosWS.modificarConsultorioRequest();
+            inValue.Consultorio = Consultorio;
+            return ((PazCitasWA.ServiciosWS.ConsultorioWS)(this)).modificarConsultorioAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -6565,114 +6803,101 @@ namespace PazCitasWA.ServiciosWS {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        PazCitasWA.ServiciosWS.insertarConsultorioResponse PazCitasWA.ServiciosWS.ConsultorioWS.insertarConsultorio(PazCitasWA.ServiciosWS.insertarConsultorioRequest request) {
-            return base.Channel.insertarConsultorio(request);
+        PazCitasWA.ServiciosWS.marcarAsignadoResponse PazCitasWA.ServiciosWS.ConsultorioWS.marcarAsignado(PazCitasWA.ServiciosWS.marcarAsignadoRequest request) {
+            return base.Channel.marcarAsignado(request);
         }
         
-        public int insertarConsultorio(PazCitasWA.ServiciosWS.consultorio Consultorio) {
-            PazCitasWA.ServiciosWS.insertarConsultorioRequest inValue = new PazCitasWA.ServiciosWS.insertarConsultorioRequest();
-            inValue.Consultorio = Consultorio;
-            PazCitasWA.ServiciosWS.insertarConsultorioResponse retVal = ((PazCitasWA.ServiciosWS.ConsultorioWS)(this)).insertarConsultorio(inValue);
-            return retVal.@return;
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<PazCitasWA.ServiciosWS.insertarConsultorioResponse> PazCitasWA.ServiciosWS.ConsultorioWS.insertarConsultorioAsync(PazCitasWA.ServiciosWS.insertarConsultorioRequest request) {
-            return base.Channel.insertarConsultorioAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<PazCitasWA.ServiciosWS.insertarConsultorioResponse> insertarConsultorioAsync(PazCitasWA.ServiciosWS.consultorio Consultorio) {
-            PazCitasWA.ServiciosWS.insertarConsultorioRequest inValue = new PazCitasWA.ServiciosWS.insertarConsultorioRequest();
-            inValue.Consultorio = Consultorio;
-            return ((PazCitasWA.ServiciosWS.ConsultorioWS)(this)).insertarConsultorioAsync(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        PazCitasWA.ServiciosWS.obtenerConsultorioPorIdResponse PazCitasWA.ServiciosWS.ConsultorioWS.obtenerConsultorioPorId(PazCitasWA.ServiciosWS.obtenerConsultorioPorIdRequest request) {
-            return base.Channel.obtenerConsultorioPorId(request);
-        }
-        
-        public PazCitasWA.ServiciosWS.consultorio obtenerConsultorioPorId(int idConsultorio) {
-            PazCitasWA.ServiciosWS.obtenerConsultorioPorIdRequest inValue = new PazCitasWA.ServiciosWS.obtenerConsultorioPorIdRequest();
+        public int marcarAsignado(int idConsultorio) {
+            PazCitasWA.ServiciosWS.marcarAsignadoRequest inValue = new PazCitasWA.ServiciosWS.marcarAsignadoRequest();
             inValue.idConsultorio = idConsultorio;
-            PazCitasWA.ServiciosWS.obtenerConsultorioPorIdResponse retVal = ((PazCitasWA.ServiciosWS.ConsultorioWS)(this)).obtenerConsultorioPorId(inValue);
+            PazCitasWA.ServiciosWS.marcarAsignadoResponse retVal = ((PazCitasWA.ServiciosWS.ConsultorioWS)(this)).marcarAsignado(inValue);
             return retVal.@return;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<PazCitasWA.ServiciosWS.obtenerConsultorioPorIdResponse> PazCitasWA.ServiciosWS.ConsultorioWS.obtenerConsultorioPorIdAsync(PazCitasWA.ServiciosWS.obtenerConsultorioPorIdRequest request) {
-            return base.Channel.obtenerConsultorioPorIdAsync(request);
+        System.Threading.Tasks.Task<PazCitasWA.ServiciosWS.marcarAsignadoResponse> PazCitasWA.ServiciosWS.ConsultorioWS.marcarAsignadoAsync(PazCitasWA.ServiciosWS.marcarAsignadoRequest request) {
+            return base.Channel.marcarAsignadoAsync(request);
         }
         
-        public System.Threading.Tasks.Task<PazCitasWA.ServiciosWS.obtenerConsultorioPorIdResponse> obtenerConsultorioPorIdAsync(int idConsultorio) {
-            PazCitasWA.ServiciosWS.obtenerConsultorioPorIdRequest inValue = new PazCitasWA.ServiciosWS.obtenerConsultorioPorIdRequest();
+        public System.Threading.Tasks.Task<PazCitasWA.ServiciosWS.marcarAsignadoResponse> marcarAsignadoAsync(int idConsultorio) {
+            PazCitasWA.ServiciosWS.marcarAsignadoRequest inValue = new PazCitasWA.ServiciosWS.marcarAsignadoRequest();
             inValue.idConsultorio = idConsultorio;
-            return ((PazCitasWA.ServiciosWS.ConsultorioWS)(this)).obtenerConsultorioPorIdAsync(inValue);
+            return ((PazCitasWA.ServiciosWS.ConsultorioWS)(this)).marcarAsignadoAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        PazCitasWA.ServiciosWS.modificarConsultorioResponse PazCitasWA.ServiciosWS.ConsultorioWS.modificarConsultorio(PazCitasWA.ServiciosWS.modificarConsultorioRequest request) {
-            return base.Channel.modificarConsultorio(request);
+        PazCitasWA.ServiciosWS.listarConsultorioResponse PazCitasWA.ServiciosWS.ConsultorioWS.listarConsultorio(PazCitasWA.ServiciosWS.listarConsultorioRequest request) {
+            return base.Channel.listarConsultorio(request);
         }
         
-        public int modificarConsultorio(PazCitasWA.ServiciosWS.consultorio Consultorio) {
-            PazCitasWA.ServiciosWS.modificarConsultorioRequest inValue = new PazCitasWA.ServiciosWS.modificarConsultorioRequest();
-            inValue.Consultorio = Consultorio;
-            PazCitasWA.ServiciosWS.modificarConsultorioResponse retVal = ((PazCitasWA.ServiciosWS.ConsultorioWS)(this)).modificarConsultorio(inValue);
+        public PazCitasWA.ServiciosWS.consultorio[] listarConsultorio() {
+            PazCitasWA.ServiciosWS.listarConsultorioRequest inValue = new PazCitasWA.ServiciosWS.listarConsultorioRequest();
+            PazCitasWA.ServiciosWS.listarConsultorioResponse retVal = ((PazCitasWA.ServiciosWS.ConsultorioWS)(this)).listarConsultorio(inValue);
             return retVal.@return;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<PazCitasWA.ServiciosWS.modificarConsultorioResponse> PazCitasWA.ServiciosWS.ConsultorioWS.modificarConsultorioAsync(PazCitasWA.ServiciosWS.modificarConsultorioRequest request) {
-            return base.Channel.modificarConsultorioAsync(request);
+        System.Threading.Tasks.Task<PazCitasWA.ServiciosWS.listarConsultorioResponse> PazCitasWA.ServiciosWS.ConsultorioWS.listarConsultorioAsync(PazCitasWA.ServiciosWS.listarConsultorioRequest request) {
+            return base.Channel.listarConsultorioAsync(request);
         }
         
-        public System.Threading.Tasks.Task<PazCitasWA.ServiciosWS.modificarConsultorioResponse> modificarConsultorioAsync(PazCitasWA.ServiciosWS.consultorio Consultorio) {
-            PazCitasWA.ServiciosWS.modificarConsultorioRequest inValue = new PazCitasWA.ServiciosWS.modificarConsultorioRequest();
-            inValue.Consultorio = Consultorio;
-            return ((PazCitasWA.ServiciosWS.ConsultorioWS)(this)).modificarConsultorioAsync(inValue);
+        public System.Threading.Tasks.Task<PazCitasWA.ServiciosWS.listarConsultorioResponse> listarConsultorioAsync() {
+            PazCitasWA.ServiciosWS.listarConsultorioRequest inValue = new PazCitasWA.ServiciosWS.listarConsultorioRequest();
+            return ((PazCitasWA.ServiciosWS.ConsultorioWS)(this)).listarConsultorioAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        PazCitasWA.ServiciosWS.marcarNoAsignadoResponse PazCitasWA.ServiciosWS.ConsultorioWS.marcarNoAsignado(PazCitasWA.ServiciosWS.marcarNoAsignadoRequest request) {
+            return base.Channel.marcarNoAsignado(request);
+        }
+        
+        public int marcarNoAsignado(int idConsultorio) {
+            PazCitasWA.ServiciosWS.marcarNoAsignadoRequest inValue = new PazCitasWA.ServiciosWS.marcarNoAsignadoRequest();
+            inValue.idConsultorio = idConsultorio;
+            PazCitasWA.ServiciosWS.marcarNoAsignadoResponse retVal = ((PazCitasWA.ServiciosWS.ConsultorioWS)(this)).marcarNoAsignado(inValue);
+            return retVal.@return;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<PazCitasWA.ServiciosWS.marcarNoAsignadoResponse> PazCitasWA.ServiciosWS.ConsultorioWS.marcarNoAsignadoAsync(PazCitasWA.ServiciosWS.marcarNoAsignadoRequest request) {
+            return base.Channel.marcarNoAsignadoAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<PazCitasWA.ServiciosWS.marcarNoAsignadoResponse> marcarNoAsignadoAsync(int idConsultorio) {
+            PazCitasWA.ServiciosWS.marcarNoAsignadoRequest inValue = new PazCitasWA.ServiciosWS.marcarNoAsignadoRequest();
+            inValue.idConsultorio = idConsultorio;
+            return ((PazCitasWA.ServiciosWS.ConsultorioWS)(this)).marcarNoAsignadoAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        PazCitasWA.ServiciosWS.consultorioExisteResponse PazCitasWA.ServiciosWS.ConsultorioWS.consultorioExiste(PazCitasWA.ServiciosWS.consultorioExisteRequest request) {
+            return base.Channel.consultorioExiste(request);
+        }
+        
+        public bool consultorioExiste(string nombre, int idSede) {
+            PazCitasWA.ServiciosWS.consultorioExisteRequest inValue = new PazCitasWA.ServiciosWS.consultorioExisteRequest();
+            inValue.nombre = nombre;
+            inValue.idSede = idSede;
+            PazCitasWA.ServiciosWS.consultorioExisteResponse retVal = ((PazCitasWA.ServiciosWS.ConsultorioWS)(this)).consultorioExiste(inValue);
+            return retVal.@return;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<PazCitasWA.ServiciosWS.consultorioExisteResponse> PazCitasWA.ServiciosWS.ConsultorioWS.consultorioExisteAsync(PazCitasWA.ServiciosWS.consultorioExisteRequest request) {
+            return base.Channel.consultorioExisteAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<PazCitasWA.ServiciosWS.consultorioExisteResponse> consultorioExisteAsync(string nombre, int idSede) {
+            PazCitasWA.ServiciosWS.consultorioExisteRequest inValue = new PazCitasWA.ServiciosWS.consultorioExisteRequest();
+            inValue.nombre = nombre;
+            inValue.idSede = idSede;
+            return ((PazCitasWA.ServiciosWS.ConsultorioWS)(this)).consultorioExisteAsync(inValue);
         }
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(Namespace="http://services.pucp.edu.pe", ConfigurationName="ServiciosWS.SedeWS")]
     public interface SedeWS {
-        
-        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="http://services.pucp.edu.pe/SedeWS/obtenerSedePorIdRequest", ReplyAction="http://services.pucp.edu.pe/SedeWS/obtenerSedePorIdResponse")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        PazCitasWA.ServiciosWS.obtenerSedePorIdResponse obtenerSedePorId(PazCitasWA.ServiciosWS.obtenerSedePorIdRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://services.pucp.edu.pe/SedeWS/obtenerSedePorIdRequest", ReplyAction="http://services.pucp.edu.pe/SedeWS/obtenerSedePorIdResponse")]
-        System.Threading.Tasks.Task<PazCitasWA.ServiciosWS.obtenerSedePorIdResponse> obtenerSedePorIdAsync(PazCitasWA.ServiciosWS.obtenerSedePorIdRequest request);
-        
-        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="http://services.pucp.edu.pe/SedeWS/insertarSedeRequest", ReplyAction="http://services.pucp.edu.pe/SedeWS/insertarSedeResponse")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        PazCitasWA.ServiciosWS.insertarSedeResponse insertarSede(PazCitasWA.ServiciosWS.insertarSedeRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://services.pucp.edu.pe/SedeWS/insertarSedeRequest", ReplyAction="http://services.pucp.edu.pe/SedeWS/insertarSedeResponse")]
-        System.Threading.Tasks.Task<PazCitasWA.ServiciosWS.insertarSedeResponse> insertarSedeAsync(PazCitasWA.ServiciosWS.insertarSedeRequest request);
-        
-        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="http://services.pucp.edu.pe/SedeWS/eliminarSedeRequest", ReplyAction="http://services.pucp.edu.pe/SedeWS/eliminarSedeResponse")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        PazCitasWA.ServiciosWS.eliminarSedeResponse eliminarSede(PazCitasWA.ServiciosWS.eliminarSedeRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://services.pucp.edu.pe/SedeWS/eliminarSedeRequest", ReplyAction="http://services.pucp.edu.pe/SedeWS/eliminarSedeResponse")]
-        System.Threading.Tasks.Task<PazCitasWA.ServiciosWS.eliminarSedeResponse> eliminarSedeAsync(PazCitasWA.ServiciosWS.eliminarSedeRequest request);
-        
-        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="http://services.pucp.edu.pe/SedeWS/modificarSedeRequest", ReplyAction="http://services.pucp.edu.pe/SedeWS/modificarSedeResponse")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        PazCitasWA.ServiciosWS.modificarSedeResponse modificarSede(PazCitasWA.ServiciosWS.modificarSedeRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://services.pucp.edu.pe/SedeWS/modificarSedeRequest", ReplyAction="http://services.pucp.edu.pe/SedeWS/modificarSedeResponse")]
-        System.Threading.Tasks.Task<PazCitasWA.ServiciosWS.modificarSedeResponse> modificarSedeAsync(PazCitasWA.ServiciosWS.modificarSedeRequest request);
         
         // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
         [System.ServiceModel.OperationContractAttribute(Action="http://services.pucp.edu.pe/SedeWS/listarXEspecialidadRequest", ReplyAction="http://services.pucp.edu.pe/SedeWS/listarXEspecialidadResponse")]
@@ -6691,6 +6916,178 @@ namespace PazCitasWA.ServiciosWS {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://services.pucp.edu.pe/SedeWS/listarSedeRequest", ReplyAction="http://services.pucp.edu.pe/SedeWS/listarSedeResponse")]
         System.Threading.Tasks.Task<PazCitasWA.ServiciosWS.listarSedeResponse> listarSedeAsync(PazCitasWA.ServiciosWS.listarSedeRequest request);
+        
+        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="http://services.pucp.edu.pe/SedeWS/modificarSedeRequest", ReplyAction="http://services.pucp.edu.pe/SedeWS/modificarSedeResponse")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        PazCitasWA.ServiciosWS.modificarSedeResponse modificarSede(PazCitasWA.ServiciosWS.modificarSedeRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://services.pucp.edu.pe/SedeWS/modificarSedeRequest", ReplyAction="http://services.pucp.edu.pe/SedeWS/modificarSedeResponse")]
+        System.Threading.Tasks.Task<PazCitasWA.ServiciosWS.modificarSedeResponse> modificarSedeAsync(PazCitasWA.ServiciosWS.modificarSedeRequest request);
+        
+        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="http://services.pucp.edu.pe/SedeWS/eliminarSedeRequest", ReplyAction="http://services.pucp.edu.pe/SedeWS/eliminarSedeResponse")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        PazCitasWA.ServiciosWS.eliminarSedeResponse eliminarSede(PazCitasWA.ServiciosWS.eliminarSedeRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://services.pucp.edu.pe/SedeWS/eliminarSedeRequest", ReplyAction="http://services.pucp.edu.pe/SedeWS/eliminarSedeResponse")]
+        System.Threading.Tasks.Task<PazCitasWA.ServiciosWS.eliminarSedeResponse> eliminarSedeAsync(PazCitasWA.ServiciosWS.eliminarSedeRequest request);
+        
+        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="http://services.pucp.edu.pe/SedeWS/obtenerSedePorIdRequest", ReplyAction="http://services.pucp.edu.pe/SedeWS/obtenerSedePorIdResponse")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        PazCitasWA.ServiciosWS.obtenerSedePorIdResponse obtenerSedePorId(PazCitasWA.ServiciosWS.obtenerSedePorIdRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://services.pucp.edu.pe/SedeWS/obtenerSedePorIdRequest", ReplyAction="http://services.pucp.edu.pe/SedeWS/obtenerSedePorIdResponse")]
+        System.Threading.Tasks.Task<PazCitasWA.ServiciosWS.obtenerSedePorIdResponse> obtenerSedePorIdAsync(PazCitasWA.ServiciosWS.obtenerSedePorIdRequest request);
+        
+        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="http://services.pucp.edu.pe/SedeWS/insertarSedeRequest", ReplyAction="http://services.pucp.edu.pe/SedeWS/insertarSedeResponse")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        PazCitasWA.ServiciosWS.insertarSedeResponse insertarSede(PazCitasWA.ServiciosWS.insertarSedeRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://services.pucp.edu.pe/SedeWS/insertarSedeRequest", ReplyAction="http://services.pucp.edu.pe/SedeWS/insertarSedeResponse")]
+        System.Threading.Tasks.Task<PazCitasWA.ServiciosWS.insertarSedeResponse> insertarSedeAsync(PazCitasWA.ServiciosWS.insertarSedeRequest request);
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="listarXEspecialidad", WrapperNamespace="http://services.pucp.edu.pe", IsWrapped=true)]
+    public partial class listarXEspecialidadRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.pucp.edu.pe", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public int idEspecialidad;
+        
+        public listarXEspecialidadRequest() {
+        }
+        
+        public listarXEspecialidadRequest(int idEspecialidad) {
+            this.idEspecialidad = idEspecialidad;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="listarXEspecialidadResponse", WrapperNamespace="http://services.pucp.edu.pe", IsWrapped=true)]
+    public partial class listarXEspecialidadResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.pucp.edu.pe", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute("return", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public PazCitasWA.ServiciosWS.sede[] @return;
+        
+        public listarXEspecialidadResponse() {
+        }
+        
+        public listarXEspecialidadResponse(PazCitasWA.ServiciosWS.sede[] @return) {
+            this.@return = @return;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="listarSede", WrapperNamespace="http://services.pucp.edu.pe", IsWrapped=true)]
+    public partial class listarSedeRequest {
+        
+        public listarSedeRequest() {
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="listarSedeResponse", WrapperNamespace="http://services.pucp.edu.pe", IsWrapped=true)]
+    public partial class listarSedeResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.pucp.edu.pe", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute("return", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public PazCitasWA.ServiciosWS.sede[] @return;
+        
+        public listarSedeResponse() {
+        }
+        
+        public listarSedeResponse(PazCitasWA.ServiciosWS.sede[] @return) {
+            this.@return = @return;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="modificarSede", WrapperNamespace="http://services.pucp.edu.pe", IsWrapped=true)]
+    public partial class modificarSedeRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.pucp.edu.pe", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public PazCitasWA.ServiciosWS.sede Sede;
+        
+        public modificarSedeRequest() {
+        }
+        
+        public modificarSedeRequest(PazCitasWA.ServiciosWS.sede Sede) {
+            this.Sede = Sede;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="modificarSedeResponse", WrapperNamespace="http://services.pucp.edu.pe", IsWrapped=true)]
+    public partial class modificarSedeResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.pucp.edu.pe", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public int @return;
+        
+        public modificarSedeResponse() {
+        }
+        
+        public modificarSedeResponse(int @return) {
+            this.@return = @return;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="eliminarSede", WrapperNamespace="http://services.pucp.edu.pe", IsWrapped=true)]
+    public partial class eliminarSedeRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.pucp.edu.pe", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public int idSede;
+        
+        public eliminarSedeRequest() {
+        }
+        
+        public eliminarSedeRequest(int idSede) {
+            this.idSede = idSede;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="eliminarSedeResponse", WrapperNamespace="http://services.pucp.edu.pe", IsWrapped=true)]
+    public partial class eliminarSedeResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.pucp.edu.pe", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public int @return;
+        
+        public eliminarSedeResponse() {
+        }
+        
+        public eliminarSedeResponse(int @return) {
+            this.@return = @return;
+        }
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -6765,142 +7162,6 @@ namespace PazCitasWA.ServiciosWS {
         }
     }
     
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="eliminarSede", WrapperNamespace="http://services.pucp.edu.pe", IsWrapped=true)]
-    public partial class eliminarSedeRequest {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.pucp.edu.pe", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public int idSede;
-        
-        public eliminarSedeRequest() {
-        }
-        
-        public eliminarSedeRequest(int idSede) {
-            this.idSede = idSede;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="eliminarSedeResponse", WrapperNamespace="http://services.pucp.edu.pe", IsWrapped=true)]
-    public partial class eliminarSedeResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.pucp.edu.pe", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public int @return;
-        
-        public eliminarSedeResponse() {
-        }
-        
-        public eliminarSedeResponse(int @return) {
-            this.@return = @return;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="modificarSede", WrapperNamespace="http://services.pucp.edu.pe", IsWrapped=true)]
-    public partial class modificarSedeRequest {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.pucp.edu.pe", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public PazCitasWA.ServiciosWS.sede Sede;
-        
-        public modificarSedeRequest() {
-        }
-        
-        public modificarSedeRequest(PazCitasWA.ServiciosWS.sede Sede) {
-            this.Sede = Sede;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="modificarSedeResponse", WrapperNamespace="http://services.pucp.edu.pe", IsWrapped=true)]
-    public partial class modificarSedeResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.pucp.edu.pe", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public int @return;
-        
-        public modificarSedeResponse() {
-        }
-        
-        public modificarSedeResponse(int @return) {
-            this.@return = @return;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="listarXEspecialidad", WrapperNamespace="http://services.pucp.edu.pe", IsWrapped=true)]
-    public partial class listarXEspecialidadRequest {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.pucp.edu.pe", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public int idEspecialidad;
-        
-        public listarXEspecialidadRequest() {
-        }
-        
-        public listarXEspecialidadRequest(int idEspecialidad) {
-            this.idEspecialidad = idEspecialidad;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="listarXEspecialidadResponse", WrapperNamespace="http://services.pucp.edu.pe", IsWrapped=true)]
-    public partial class listarXEspecialidadResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.pucp.edu.pe", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute("return", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public PazCitasWA.ServiciosWS.sede[] @return;
-        
-        public listarXEspecialidadResponse() {
-        }
-        
-        public listarXEspecialidadResponse(PazCitasWA.ServiciosWS.sede[] @return) {
-            this.@return = @return;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="listarSede", WrapperNamespace="http://services.pucp.edu.pe", IsWrapped=true)]
-    public partial class listarSedeRequest {
-        
-        public listarSedeRequest() {
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="listarSedeResponse", WrapperNamespace="http://services.pucp.edu.pe", IsWrapped=true)]
-    public partial class listarSedeResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.pucp.edu.pe", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute("return", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public PazCitasWA.ServiciosWS.sede[] @return;
-        
-        public listarSedeResponse() {
-        }
-        
-        public listarSedeResponse(PazCitasWA.ServiciosWS.sede[] @return) {
-            this.@return = @return;
-        }
-    }
-    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     public interface SedeWSChannel : PazCitasWA.ServiciosWS.SedeWS, System.ServiceModel.IClientChannel {
     }
@@ -6926,6 +7187,96 @@ namespace PazCitasWA.ServiciosWS {
         
         public SedeWSClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
                 base(binding, remoteAddress) {
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        PazCitasWA.ServiciosWS.listarXEspecialidadResponse PazCitasWA.ServiciosWS.SedeWS.listarXEspecialidad(PazCitasWA.ServiciosWS.listarXEspecialidadRequest request) {
+            return base.Channel.listarXEspecialidad(request);
+        }
+        
+        public PazCitasWA.ServiciosWS.sede[] listarXEspecialidad(int idEspecialidad) {
+            PazCitasWA.ServiciosWS.listarXEspecialidadRequest inValue = new PazCitasWA.ServiciosWS.listarXEspecialidadRequest();
+            inValue.idEspecialidad = idEspecialidad;
+            PazCitasWA.ServiciosWS.listarXEspecialidadResponse retVal = ((PazCitasWA.ServiciosWS.SedeWS)(this)).listarXEspecialidad(inValue);
+            return retVal.@return;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<PazCitasWA.ServiciosWS.listarXEspecialidadResponse> PazCitasWA.ServiciosWS.SedeWS.listarXEspecialidadAsync(PazCitasWA.ServiciosWS.listarXEspecialidadRequest request) {
+            return base.Channel.listarXEspecialidadAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<PazCitasWA.ServiciosWS.listarXEspecialidadResponse> listarXEspecialidadAsync(int idEspecialidad) {
+            PazCitasWA.ServiciosWS.listarXEspecialidadRequest inValue = new PazCitasWA.ServiciosWS.listarXEspecialidadRequest();
+            inValue.idEspecialidad = idEspecialidad;
+            return ((PazCitasWA.ServiciosWS.SedeWS)(this)).listarXEspecialidadAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        PazCitasWA.ServiciosWS.listarSedeResponse PazCitasWA.ServiciosWS.SedeWS.listarSede(PazCitasWA.ServiciosWS.listarSedeRequest request) {
+            return base.Channel.listarSede(request);
+        }
+        
+        public PazCitasWA.ServiciosWS.sede[] listarSede() {
+            PazCitasWA.ServiciosWS.listarSedeRequest inValue = new PazCitasWA.ServiciosWS.listarSedeRequest();
+            PazCitasWA.ServiciosWS.listarSedeResponse retVal = ((PazCitasWA.ServiciosWS.SedeWS)(this)).listarSede(inValue);
+            return retVal.@return;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<PazCitasWA.ServiciosWS.listarSedeResponse> PazCitasWA.ServiciosWS.SedeWS.listarSedeAsync(PazCitasWA.ServiciosWS.listarSedeRequest request) {
+            return base.Channel.listarSedeAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<PazCitasWA.ServiciosWS.listarSedeResponse> listarSedeAsync() {
+            PazCitasWA.ServiciosWS.listarSedeRequest inValue = new PazCitasWA.ServiciosWS.listarSedeRequest();
+            return ((PazCitasWA.ServiciosWS.SedeWS)(this)).listarSedeAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        PazCitasWA.ServiciosWS.modificarSedeResponse PazCitasWA.ServiciosWS.SedeWS.modificarSede(PazCitasWA.ServiciosWS.modificarSedeRequest request) {
+            return base.Channel.modificarSede(request);
+        }
+        
+        public int modificarSede(PazCitasWA.ServiciosWS.sede Sede) {
+            PazCitasWA.ServiciosWS.modificarSedeRequest inValue = new PazCitasWA.ServiciosWS.modificarSedeRequest();
+            inValue.Sede = Sede;
+            PazCitasWA.ServiciosWS.modificarSedeResponse retVal = ((PazCitasWA.ServiciosWS.SedeWS)(this)).modificarSede(inValue);
+            return retVal.@return;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<PazCitasWA.ServiciosWS.modificarSedeResponse> PazCitasWA.ServiciosWS.SedeWS.modificarSedeAsync(PazCitasWA.ServiciosWS.modificarSedeRequest request) {
+            return base.Channel.modificarSedeAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<PazCitasWA.ServiciosWS.modificarSedeResponse> modificarSedeAsync(PazCitasWA.ServiciosWS.sede Sede) {
+            PazCitasWA.ServiciosWS.modificarSedeRequest inValue = new PazCitasWA.ServiciosWS.modificarSedeRequest();
+            inValue.Sede = Sede;
+            return ((PazCitasWA.ServiciosWS.SedeWS)(this)).modificarSedeAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        PazCitasWA.ServiciosWS.eliminarSedeResponse PazCitasWA.ServiciosWS.SedeWS.eliminarSede(PazCitasWA.ServiciosWS.eliminarSedeRequest request) {
+            return base.Channel.eliminarSede(request);
+        }
+        
+        public int eliminarSede(int idSede) {
+            PazCitasWA.ServiciosWS.eliminarSedeRequest inValue = new PazCitasWA.ServiciosWS.eliminarSedeRequest();
+            inValue.idSede = idSede;
+            PazCitasWA.ServiciosWS.eliminarSedeResponse retVal = ((PazCitasWA.ServiciosWS.SedeWS)(this)).eliminarSede(inValue);
+            return retVal.@return;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<PazCitasWA.ServiciosWS.eliminarSedeResponse> PazCitasWA.ServiciosWS.SedeWS.eliminarSedeAsync(PazCitasWA.ServiciosWS.eliminarSedeRequest request) {
+            return base.Channel.eliminarSedeAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<PazCitasWA.ServiciosWS.eliminarSedeResponse> eliminarSedeAsync(int idSede) {
+            PazCitasWA.ServiciosWS.eliminarSedeRequest inValue = new PazCitasWA.ServiciosWS.eliminarSedeRequest();
+            inValue.idSede = idSede;
+            return ((PazCitasWA.ServiciosWS.SedeWS)(this)).eliminarSedeAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -6973,96 +7324,6 @@ namespace PazCitasWA.ServiciosWS {
             inValue.Sede = Sede;
             return ((PazCitasWA.ServiciosWS.SedeWS)(this)).insertarSedeAsync(inValue);
         }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        PazCitasWA.ServiciosWS.eliminarSedeResponse PazCitasWA.ServiciosWS.SedeWS.eliminarSede(PazCitasWA.ServiciosWS.eliminarSedeRequest request) {
-            return base.Channel.eliminarSede(request);
-        }
-        
-        public int eliminarSede(int idSede) {
-            PazCitasWA.ServiciosWS.eliminarSedeRequest inValue = new PazCitasWA.ServiciosWS.eliminarSedeRequest();
-            inValue.idSede = idSede;
-            PazCitasWA.ServiciosWS.eliminarSedeResponse retVal = ((PazCitasWA.ServiciosWS.SedeWS)(this)).eliminarSede(inValue);
-            return retVal.@return;
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<PazCitasWA.ServiciosWS.eliminarSedeResponse> PazCitasWA.ServiciosWS.SedeWS.eliminarSedeAsync(PazCitasWA.ServiciosWS.eliminarSedeRequest request) {
-            return base.Channel.eliminarSedeAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<PazCitasWA.ServiciosWS.eliminarSedeResponse> eliminarSedeAsync(int idSede) {
-            PazCitasWA.ServiciosWS.eliminarSedeRequest inValue = new PazCitasWA.ServiciosWS.eliminarSedeRequest();
-            inValue.idSede = idSede;
-            return ((PazCitasWA.ServiciosWS.SedeWS)(this)).eliminarSedeAsync(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        PazCitasWA.ServiciosWS.modificarSedeResponse PazCitasWA.ServiciosWS.SedeWS.modificarSede(PazCitasWA.ServiciosWS.modificarSedeRequest request) {
-            return base.Channel.modificarSede(request);
-        }
-        
-        public int modificarSede(PazCitasWA.ServiciosWS.sede Sede) {
-            PazCitasWA.ServiciosWS.modificarSedeRequest inValue = new PazCitasWA.ServiciosWS.modificarSedeRequest();
-            inValue.Sede = Sede;
-            PazCitasWA.ServiciosWS.modificarSedeResponse retVal = ((PazCitasWA.ServiciosWS.SedeWS)(this)).modificarSede(inValue);
-            return retVal.@return;
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<PazCitasWA.ServiciosWS.modificarSedeResponse> PazCitasWA.ServiciosWS.SedeWS.modificarSedeAsync(PazCitasWA.ServiciosWS.modificarSedeRequest request) {
-            return base.Channel.modificarSedeAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<PazCitasWA.ServiciosWS.modificarSedeResponse> modificarSedeAsync(PazCitasWA.ServiciosWS.sede Sede) {
-            PazCitasWA.ServiciosWS.modificarSedeRequest inValue = new PazCitasWA.ServiciosWS.modificarSedeRequest();
-            inValue.Sede = Sede;
-            return ((PazCitasWA.ServiciosWS.SedeWS)(this)).modificarSedeAsync(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        PazCitasWA.ServiciosWS.listarXEspecialidadResponse PazCitasWA.ServiciosWS.SedeWS.listarXEspecialidad(PazCitasWA.ServiciosWS.listarXEspecialidadRequest request) {
-            return base.Channel.listarXEspecialidad(request);
-        }
-        
-        public PazCitasWA.ServiciosWS.sede[] listarXEspecialidad(int idEspecialidad) {
-            PazCitasWA.ServiciosWS.listarXEspecialidadRequest inValue = new PazCitasWA.ServiciosWS.listarXEspecialidadRequest();
-            inValue.idEspecialidad = idEspecialidad;
-            PazCitasWA.ServiciosWS.listarXEspecialidadResponse retVal = ((PazCitasWA.ServiciosWS.SedeWS)(this)).listarXEspecialidad(inValue);
-            return retVal.@return;
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<PazCitasWA.ServiciosWS.listarXEspecialidadResponse> PazCitasWA.ServiciosWS.SedeWS.listarXEspecialidadAsync(PazCitasWA.ServiciosWS.listarXEspecialidadRequest request) {
-            return base.Channel.listarXEspecialidadAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<PazCitasWA.ServiciosWS.listarXEspecialidadResponse> listarXEspecialidadAsync(int idEspecialidad) {
-            PazCitasWA.ServiciosWS.listarXEspecialidadRequest inValue = new PazCitasWA.ServiciosWS.listarXEspecialidadRequest();
-            inValue.idEspecialidad = idEspecialidad;
-            return ((PazCitasWA.ServiciosWS.SedeWS)(this)).listarXEspecialidadAsync(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        PazCitasWA.ServiciosWS.listarSedeResponse PazCitasWA.ServiciosWS.SedeWS.listarSede(PazCitasWA.ServiciosWS.listarSedeRequest request) {
-            return base.Channel.listarSede(request);
-        }
-        
-        public PazCitasWA.ServiciosWS.sede[] listarSede() {
-            PazCitasWA.ServiciosWS.listarSedeRequest inValue = new PazCitasWA.ServiciosWS.listarSedeRequest();
-            PazCitasWA.ServiciosWS.listarSedeResponse retVal = ((PazCitasWA.ServiciosWS.SedeWS)(this)).listarSede(inValue);
-            return retVal.@return;
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<PazCitasWA.ServiciosWS.listarSedeResponse> PazCitasWA.ServiciosWS.SedeWS.listarSedeAsync(PazCitasWA.ServiciosWS.listarSedeRequest request) {
-            return base.Channel.listarSedeAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<PazCitasWA.ServiciosWS.listarSedeResponse> listarSedeAsync() {
-            PazCitasWA.ServiciosWS.listarSedeRequest inValue = new PazCitasWA.ServiciosWS.listarSedeRequest();
-            return ((PazCitasWA.ServiciosWS.SedeWS)(this)).listarSedeAsync(inValue);
-        }
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -7070,22 +7331,13 @@ namespace PazCitasWA.ServiciosWS {
     public interface CuentaUsuarioWS {
         
         // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="http://services.pucp.edu.pe/CuentaUsuarioWS/insertarCuentaRequest", ReplyAction="http://services.pucp.edu.pe/CuentaUsuarioWS/insertarCuentaResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://services.pucp.edu.pe/CuentaUsuarioWS/usernameExisteRequest", ReplyAction="http://services.pucp.edu.pe/CuentaUsuarioWS/usernameExisteResponse")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        PazCitasWA.ServiciosWS.insertarCuentaResponse insertarCuenta(PazCitasWA.ServiciosWS.insertarCuentaRequest request);
+        PazCitasWA.ServiciosWS.usernameExisteResponse usernameExiste(PazCitasWA.ServiciosWS.usernameExisteRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://services.pucp.edu.pe/CuentaUsuarioWS/insertarCuentaRequest", ReplyAction="http://services.pucp.edu.pe/CuentaUsuarioWS/insertarCuentaResponse")]
-        System.Threading.Tasks.Task<PazCitasWA.ServiciosWS.insertarCuentaResponse> insertarCuentaAsync(PazCitasWA.ServiciosWS.insertarCuentaRequest request);
-        
-        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="http://services.pucp.edu.pe/CuentaUsuarioWS/verificarCuentaMedicoRequest", ReplyAction="http://services.pucp.edu.pe/CuentaUsuarioWS/verificarCuentaMedicoResponse")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        PazCitasWA.ServiciosWS.verificarCuentaMedicoResponse verificarCuentaMedico(PazCitasWA.ServiciosWS.verificarCuentaMedicoRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://services.pucp.edu.pe/CuentaUsuarioWS/verificarCuentaMedicoRequest", ReplyAction="http://services.pucp.edu.pe/CuentaUsuarioWS/verificarCuentaMedicoResponse")]
-        System.Threading.Tasks.Task<PazCitasWA.ServiciosWS.verificarCuentaMedicoResponse> verificarCuentaMedicoAsync(PazCitasWA.ServiciosWS.verificarCuentaMedicoRequest request);
+        [System.ServiceModel.OperationContractAttribute(Action="http://services.pucp.edu.pe/CuentaUsuarioWS/usernameExisteRequest", ReplyAction="http://services.pucp.edu.pe/CuentaUsuarioWS/usernameExisteResponse")]
+        System.Threading.Tasks.Task<PazCitasWA.ServiciosWS.usernameExisteResponse> usernameExisteAsync(PazCitasWA.ServiciosWS.usernameExisteRequest request);
         
         // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
         [System.ServiceModel.OperationContractAttribute(Action="http://services.pucp.edu.pe/CuentaUsuarioWS/verificarCuentaPacienteRequest", ReplyAction="http://services.pucp.edu.pe/CuentaUsuarioWS/verificarCuentaPacienteResponse")]
@@ -7097,6 +7349,15 @@ namespace PazCitasWA.ServiciosWS {
         System.Threading.Tasks.Task<PazCitasWA.ServiciosWS.verificarCuentaPacienteResponse> verificarCuentaPacienteAsync(PazCitasWA.ServiciosWS.verificarCuentaPacienteRequest request);
         
         // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="http://services.pucp.edu.pe/CuentaUsuarioWS/verificarCuentaMedicoRequest", ReplyAction="http://services.pucp.edu.pe/CuentaUsuarioWS/verificarCuentaMedicoResponse")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        PazCitasWA.ServiciosWS.verificarCuentaMedicoResponse verificarCuentaMedico(PazCitasWA.ServiciosWS.verificarCuentaMedicoRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://services.pucp.edu.pe/CuentaUsuarioWS/verificarCuentaMedicoRequest", ReplyAction="http://services.pucp.edu.pe/CuentaUsuarioWS/verificarCuentaMedicoResponse")]
+        System.Threading.Tasks.Task<PazCitasWA.ServiciosWS.verificarCuentaMedicoResponse> verificarCuentaMedicoAsync(PazCitasWA.ServiciosWS.verificarCuentaMedicoRequest request);
+        
+        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
         [System.ServiceModel.OperationContractAttribute(Action="http://services.pucp.edu.pe/CuentaUsuarioWS/verificarCuentaRequest", ReplyAction="http://services.pucp.edu.pe/CuentaUsuarioWS/verificarCuentaResponse")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
@@ -7104,6 +7365,15 @@ namespace PazCitasWA.ServiciosWS {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://services.pucp.edu.pe/CuentaUsuarioWS/verificarCuentaRequest", ReplyAction="http://services.pucp.edu.pe/CuentaUsuarioWS/verificarCuentaResponse")]
         System.Threading.Tasks.Task<PazCitasWA.ServiciosWS.verificarCuentaResponse> verificarCuentaAsync(PazCitasWA.ServiciosWS.verificarCuentaRequest request);
+        
+        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="http://services.pucp.edu.pe/CuentaUsuarioWS/insertarCuentaRequest", ReplyAction="http://services.pucp.edu.pe/CuentaUsuarioWS/insertarCuentaResponse")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        PazCitasWA.ServiciosWS.insertarCuentaResponse insertarCuenta(PazCitasWA.ServiciosWS.insertarCuentaRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://services.pucp.edu.pe/CuentaUsuarioWS/insertarCuentaRequest", ReplyAction="http://services.pucp.edu.pe/CuentaUsuarioWS/insertarCuentaResponse")]
+        System.Threading.Tasks.Task<PazCitasWA.ServiciosWS.insertarCuentaResponse> insertarCuentaAsync(PazCitasWA.ServiciosWS.insertarCuentaRequest request);
         
         // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
         [System.ServiceModel.OperationContractAttribute(Action="http://services.pucp.edu.pe/CuentaUsuarioWS/verificarCuentaAdministradorRequest", ReplyAction="http://services.pucp.edu.pe/CuentaUsuarioWS/verificarCuentaAdministradorResponse")]
@@ -7118,76 +7388,35 @@ namespace PazCitasWA.ServiciosWS {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="insertarCuenta", WrapperNamespace="http://services.pucp.edu.pe", IsWrapped=true)]
-    public partial class insertarCuentaRequest {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.pucp.edu.pe", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public PazCitasWA.ServiciosWS.cuentaUsuario cuenta;
-        
-        public insertarCuentaRequest() {
-        }
-        
-        public insertarCuentaRequest(PazCitasWA.ServiciosWS.cuentaUsuario cuenta) {
-            this.cuenta = cuenta;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="insertarCuentaResponse", WrapperNamespace="http://services.pucp.edu.pe", IsWrapped=true)]
-    public partial class insertarCuentaResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.pucp.edu.pe", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public int @return;
-        
-        public insertarCuentaResponse() {
-        }
-        
-        public insertarCuentaResponse(int @return) {
-            this.@return = @return;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="verificarCuentaMedico", WrapperNamespace="http://services.pucp.edu.pe", IsWrapped=true)]
-    public partial class verificarCuentaMedicoRequest {
+    [System.ServiceModel.MessageContractAttribute(WrapperName="usernameExiste", WrapperNamespace="http://services.pucp.edu.pe", IsWrapped=true)]
+    public partial class usernameExisteRequest {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.pucp.edu.pe", Order=0)]
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
         public string username;
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.pucp.edu.pe", Order=1)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string contra;
-        
-        public verificarCuentaMedicoRequest() {
+        public usernameExisteRequest() {
         }
         
-        public verificarCuentaMedicoRequest(string username, string contra) {
+        public usernameExisteRequest(string username) {
             this.username = username;
-            this.contra = contra;
         }
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="verificarCuentaMedicoResponse", WrapperNamespace="http://services.pucp.edu.pe", IsWrapped=true)]
-    public partial class verificarCuentaMedicoResponse {
+    [System.ServiceModel.MessageContractAttribute(WrapperName="usernameExisteResponse", WrapperNamespace="http://services.pucp.edu.pe", IsWrapped=true)]
+    public partial class usernameExisteResponse {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.pucp.edu.pe", Order=0)]
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public int @return;
+        public bool @return;
         
-        public verificarCuentaMedicoResponse() {
+        public usernameExisteResponse() {
         }
         
-        public verificarCuentaMedicoResponse(int @return) {
+        public usernameExisteResponse(bool @return) {
             this.@return = @return;
         }
     }
@@ -7236,6 +7465,47 @@ namespace PazCitasWA.ServiciosWS {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="verificarCuentaMedico", WrapperNamespace="http://services.pucp.edu.pe", IsWrapped=true)]
+    public partial class verificarCuentaMedicoRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.pucp.edu.pe", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string username;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.pucp.edu.pe", Order=1)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string contra;
+        
+        public verificarCuentaMedicoRequest() {
+        }
+        
+        public verificarCuentaMedicoRequest(string username, string contra) {
+            this.username = username;
+            this.contra = contra;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="verificarCuentaMedicoResponse", WrapperNamespace="http://services.pucp.edu.pe", IsWrapped=true)]
+    public partial class verificarCuentaMedicoResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.pucp.edu.pe", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public int @return;
+        
+        public verificarCuentaMedicoResponse() {
+        }
+        
+        public verificarCuentaMedicoResponse(int @return) {
+            this.@return = @return;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(WrapperName="verificarCuenta", WrapperNamespace="http://services.pucp.edu.pe", IsWrapped=true)]
     public partial class verificarCuentaRequest {
         
@@ -7275,6 +7545,42 @@ namespace PazCitasWA.ServiciosWS {
         }
         
         public verificarCuentaResponse(int @return) {
+            this.@return = @return;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="insertarCuenta", WrapperNamespace="http://services.pucp.edu.pe", IsWrapped=true)]
+    public partial class insertarCuentaRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.pucp.edu.pe", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public PazCitasWA.ServiciosWS.cuentaUsuario cuenta;
+        
+        public insertarCuentaRequest() {
+        }
+        
+        public insertarCuentaRequest(PazCitasWA.ServiciosWS.cuentaUsuario cuenta) {
+            this.cuenta = cuenta;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="insertarCuentaResponse", WrapperNamespace="http://services.pucp.edu.pe", IsWrapped=true)]
+    public partial class insertarCuentaResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.pucp.edu.pe", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public int @return;
+        
+        public insertarCuentaResponse() {
+        }
+        
+        public insertarCuentaResponse(int @return) {
             this.@return = @return;
         }
     }
@@ -7348,51 +7654,26 @@ namespace PazCitasWA.ServiciosWS {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        PazCitasWA.ServiciosWS.insertarCuentaResponse PazCitasWA.ServiciosWS.CuentaUsuarioWS.insertarCuenta(PazCitasWA.ServiciosWS.insertarCuentaRequest request) {
-            return base.Channel.insertarCuenta(request);
+        PazCitasWA.ServiciosWS.usernameExisteResponse PazCitasWA.ServiciosWS.CuentaUsuarioWS.usernameExiste(PazCitasWA.ServiciosWS.usernameExisteRequest request) {
+            return base.Channel.usernameExiste(request);
         }
         
-        public int insertarCuenta(PazCitasWA.ServiciosWS.cuentaUsuario cuenta) {
-            PazCitasWA.ServiciosWS.insertarCuentaRequest inValue = new PazCitasWA.ServiciosWS.insertarCuentaRequest();
-            inValue.cuenta = cuenta;
-            PazCitasWA.ServiciosWS.insertarCuentaResponse retVal = ((PazCitasWA.ServiciosWS.CuentaUsuarioWS)(this)).insertarCuenta(inValue);
+        public bool usernameExiste(string username) {
+            PazCitasWA.ServiciosWS.usernameExisteRequest inValue = new PazCitasWA.ServiciosWS.usernameExisteRequest();
+            inValue.username = username;
+            PazCitasWA.ServiciosWS.usernameExisteResponse retVal = ((PazCitasWA.ServiciosWS.CuentaUsuarioWS)(this)).usernameExiste(inValue);
             return retVal.@return;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<PazCitasWA.ServiciosWS.insertarCuentaResponse> PazCitasWA.ServiciosWS.CuentaUsuarioWS.insertarCuentaAsync(PazCitasWA.ServiciosWS.insertarCuentaRequest request) {
-            return base.Channel.insertarCuentaAsync(request);
+        System.Threading.Tasks.Task<PazCitasWA.ServiciosWS.usernameExisteResponse> PazCitasWA.ServiciosWS.CuentaUsuarioWS.usernameExisteAsync(PazCitasWA.ServiciosWS.usernameExisteRequest request) {
+            return base.Channel.usernameExisteAsync(request);
         }
         
-        public System.Threading.Tasks.Task<PazCitasWA.ServiciosWS.insertarCuentaResponse> insertarCuentaAsync(PazCitasWA.ServiciosWS.cuentaUsuario cuenta) {
-            PazCitasWA.ServiciosWS.insertarCuentaRequest inValue = new PazCitasWA.ServiciosWS.insertarCuentaRequest();
-            inValue.cuenta = cuenta;
-            return ((PazCitasWA.ServiciosWS.CuentaUsuarioWS)(this)).insertarCuentaAsync(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        PazCitasWA.ServiciosWS.verificarCuentaMedicoResponse PazCitasWA.ServiciosWS.CuentaUsuarioWS.verificarCuentaMedico(PazCitasWA.ServiciosWS.verificarCuentaMedicoRequest request) {
-            return base.Channel.verificarCuentaMedico(request);
-        }
-        
-        public int verificarCuentaMedico(string username, string contra) {
-            PazCitasWA.ServiciosWS.verificarCuentaMedicoRequest inValue = new PazCitasWA.ServiciosWS.verificarCuentaMedicoRequest();
+        public System.Threading.Tasks.Task<PazCitasWA.ServiciosWS.usernameExisteResponse> usernameExisteAsync(string username) {
+            PazCitasWA.ServiciosWS.usernameExisteRequest inValue = new PazCitasWA.ServiciosWS.usernameExisteRequest();
             inValue.username = username;
-            inValue.contra = contra;
-            PazCitasWA.ServiciosWS.verificarCuentaMedicoResponse retVal = ((PazCitasWA.ServiciosWS.CuentaUsuarioWS)(this)).verificarCuentaMedico(inValue);
-            return retVal.@return;
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<PazCitasWA.ServiciosWS.verificarCuentaMedicoResponse> PazCitasWA.ServiciosWS.CuentaUsuarioWS.verificarCuentaMedicoAsync(PazCitasWA.ServiciosWS.verificarCuentaMedicoRequest request) {
-            return base.Channel.verificarCuentaMedicoAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<PazCitasWA.ServiciosWS.verificarCuentaMedicoResponse> verificarCuentaMedicoAsync(string username, string contra) {
-            PazCitasWA.ServiciosWS.verificarCuentaMedicoRequest inValue = new PazCitasWA.ServiciosWS.verificarCuentaMedicoRequest();
-            inValue.username = username;
-            inValue.contra = contra;
-            return ((PazCitasWA.ServiciosWS.CuentaUsuarioWS)(this)).verificarCuentaMedicoAsync(inValue);
+            return ((PazCitasWA.ServiciosWS.CuentaUsuarioWS)(this)).usernameExisteAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -7421,6 +7702,31 @@ namespace PazCitasWA.ServiciosWS {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        PazCitasWA.ServiciosWS.verificarCuentaMedicoResponse PazCitasWA.ServiciosWS.CuentaUsuarioWS.verificarCuentaMedico(PazCitasWA.ServiciosWS.verificarCuentaMedicoRequest request) {
+            return base.Channel.verificarCuentaMedico(request);
+        }
+        
+        public int verificarCuentaMedico(string username, string contra) {
+            PazCitasWA.ServiciosWS.verificarCuentaMedicoRequest inValue = new PazCitasWA.ServiciosWS.verificarCuentaMedicoRequest();
+            inValue.username = username;
+            inValue.contra = contra;
+            PazCitasWA.ServiciosWS.verificarCuentaMedicoResponse retVal = ((PazCitasWA.ServiciosWS.CuentaUsuarioWS)(this)).verificarCuentaMedico(inValue);
+            return retVal.@return;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<PazCitasWA.ServiciosWS.verificarCuentaMedicoResponse> PazCitasWA.ServiciosWS.CuentaUsuarioWS.verificarCuentaMedicoAsync(PazCitasWA.ServiciosWS.verificarCuentaMedicoRequest request) {
+            return base.Channel.verificarCuentaMedicoAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<PazCitasWA.ServiciosWS.verificarCuentaMedicoResponse> verificarCuentaMedicoAsync(string username, string contra) {
+            PazCitasWA.ServiciosWS.verificarCuentaMedicoRequest inValue = new PazCitasWA.ServiciosWS.verificarCuentaMedicoRequest();
+            inValue.username = username;
+            inValue.contra = contra;
+            return ((PazCitasWA.ServiciosWS.CuentaUsuarioWS)(this)).verificarCuentaMedicoAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         PazCitasWA.ServiciosWS.verificarCuentaResponse PazCitasWA.ServiciosWS.CuentaUsuarioWS.verificarCuenta(PazCitasWA.ServiciosWS.verificarCuentaRequest request) {
             return base.Channel.verificarCuenta(request);
         }
@@ -7445,6 +7751,29 @@ namespace PazCitasWA.ServiciosWS {
             inValue.password = password;
             inValue.rol = rol;
             return ((PazCitasWA.ServiciosWS.CuentaUsuarioWS)(this)).verificarCuentaAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        PazCitasWA.ServiciosWS.insertarCuentaResponse PazCitasWA.ServiciosWS.CuentaUsuarioWS.insertarCuenta(PazCitasWA.ServiciosWS.insertarCuentaRequest request) {
+            return base.Channel.insertarCuenta(request);
+        }
+        
+        public int insertarCuenta(PazCitasWA.ServiciosWS.cuentaUsuario cuenta) {
+            PazCitasWA.ServiciosWS.insertarCuentaRequest inValue = new PazCitasWA.ServiciosWS.insertarCuentaRequest();
+            inValue.cuenta = cuenta;
+            PazCitasWA.ServiciosWS.insertarCuentaResponse retVal = ((PazCitasWA.ServiciosWS.CuentaUsuarioWS)(this)).insertarCuenta(inValue);
+            return retVal.@return;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<PazCitasWA.ServiciosWS.insertarCuentaResponse> PazCitasWA.ServiciosWS.CuentaUsuarioWS.insertarCuentaAsync(PazCitasWA.ServiciosWS.insertarCuentaRequest request) {
+            return base.Channel.insertarCuentaAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<PazCitasWA.ServiciosWS.insertarCuentaResponse> insertarCuentaAsync(PazCitasWA.ServiciosWS.cuentaUsuario cuenta) {
+            PazCitasWA.ServiciosWS.insertarCuentaRequest inValue = new PazCitasWA.ServiciosWS.insertarCuentaRequest();
+            inValue.cuenta = cuenta;
+            return ((PazCitasWA.ServiciosWS.CuentaUsuarioWS)(this)).insertarCuentaAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -7478,13 +7807,22 @@ namespace PazCitasWA.ServiciosWS {
     public interface PacienteWS {
         
         // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="http://services.pucp.edu.pe/PacienteWS/listarPacienteRequest", ReplyAction="http://services.pucp.edu.pe/PacienteWS/listarPacienteResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://services.pucp.edu.pe/PacienteWS/obtenerPacientexDNIRequest", ReplyAction="http://services.pucp.edu.pe/PacienteWS/obtenerPacientexDNIResponse")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        PazCitasWA.ServiciosWS.listarPacienteResponse listarPaciente(PazCitasWA.ServiciosWS.listarPacienteRequest request);
+        PazCitasWA.ServiciosWS.obtenerPacientexDNIResponse obtenerPacientexDNI(PazCitasWA.ServiciosWS.obtenerPacientexDNIRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://services.pucp.edu.pe/PacienteWS/listarPacienteRequest", ReplyAction="http://services.pucp.edu.pe/PacienteWS/listarPacienteResponse")]
-        System.Threading.Tasks.Task<PazCitasWA.ServiciosWS.listarPacienteResponse> listarPacienteAsync(PazCitasWA.ServiciosWS.listarPacienteRequest request);
+        [System.ServiceModel.OperationContractAttribute(Action="http://services.pucp.edu.pe/PacienteWS/obtenerPacientexDNIRequest", ReplyAction="http://services.pucp.edu.pe/PacienteWS/obtenerPacientexDNIResponse")]
+        System.Threading.Tasks.Task<PazCitasWA.ServiciosWS.obtenerPacientexDNIResponse> obtenerPacientexDNIAsync(PazCitasWA.ServiciosWS.obtenerPacientexDNIRequest request);
+        
+        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="http://services.pucp.edu.pe/PacienteWS/modificarPacienteRequest", ReplyAction="http://services.pucp.edu.pe/PacienteWS/modificarPacienteResponse")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        PazCitasWA.ServiciosWS.modificarPacienteResponse modificarPaciente(PazCitasWA.ServiciosWS.modificarPacienteRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://services.pucp.edu.pe/PacienteWS/modificarPacienteRequest", ReplyAction="http://services.pucp.edu.pe/PacienteWS/modificarPacienteResponse")]
+        System.Threading.Tasks.Task<PazCitasWA.ServiciosWS.modificarPacienteResponse> modificarPacienteAsync(PazCitasWA.ServiciosWS.modificarPacienteRequest request);
         
         // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
         [System.ServiceModel.OperationContractAttribute(Action="http://services.pucp.edu.pe/PacienteWS/eliminarPacienteRequest", ReplyAction="http://services.pucp.edu.pe/PacienteWS/eliminarPacienteResponse")]
@@ -7494,6 +7832,15 @@ namespace PazCitasWA.ServiciosWS {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://services.pucp.edu.pe/PacienteWS/eliminarPacienteRequest", ReplyAction="http://services.pucp.edu.pe/PacienteWS/eliminarPacienteResponse")]
         System.Threading.Tasks.Task<PazCitasWA.ServiciosWS.eliminarPacienteResponse> eliminarPacienteAsync(PazCitasWA.ServiciosWS.eliminarPacienteRequest request);
+        
+        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="http://services.pucp.edu.pe/PacienteWS/listarPacienteRequest", ReplyAction="http://services.pucp.edu.pe/PacienteWS/listarPacienteResponse")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        PazCitasWA.ServiciosWS.listarPacienteResponse listarPaciente(PazCitasWA.ServiciosWS.listarPacienteRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://services.pucp.edu.pe/PacienteWS/listarPacienteRequest", ReplyAction="http://services.pucp.edu.pe/PacienteWS/listarPacienteResponse")]
+        System.Threading.Tasks.Task<PazCitasWA.ServiciosWS.listarPacienteResponse> listarPacienteAsync(PazCitasWA.ServiciosWS.listarPacienteRequest request);
         
         // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
         [System.ServiceModel.OperationContractAttribute(Action="http://services.pucp.edu.pe/PacienteWS/insertarPacienteRequest", ReplyAction="http://services.pucp.edu.pe/PacienteWS/insertarPacienteResponse")]
@@ -7514,48 +7861,83 @@ namespace PazCitasWA.ServiciosWS {
         System.Threading.Tasks.Task<PazCitasWA.ServiciosWS.obtenerPacienteXiDResponse> obtenerPacienteXiDAsync(PazCitasWA.ServiciosWS.obtenerPacienteXiDRequest request);
         
         // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="http://services.pucp.edu.pe/PacienteWS/modificarPacienteRequest", ReplyAction="http://services.pucp.edu.pe/PacienteWS/modificarPacienteResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://services.pucp.edu.pe/PacienteWS/listarPacienteXCadenaRequest", ReplyAction="http://services.pucp.edu.pe/PacienteWS/listarPacienteXCadenaResponse")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        PazCitasWA.ServiciosWS.modificarPacienteResponse modificarPaciente(PazCitasWA.ServiciosWS.modificarPacienteRequest request);
+        PazCitasWA.ServiciosWS.listarPacienteXCadenaResponse listarPacienteXCadena(PazCitasWA.ServiciosWS.listarPacienteXCadenaRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://services.pucp.edu.pe/PacienteWS/modificarPacienteRequest", ReplyAction="http://services.pucp.edu.pe/PacienteWS/modificarPacienteResponse")]
-        System.Threading.Tasks.Task<PazCitasWA.ServiciosWS.modificarPacienteResponse> modificarPacienteAsync(PazCitasWA.ServiciosWS.modificarPacienteRequest request);
-        
-        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="http://services.pucp.edu.pe/PacienteWS/obtenerPacientexDNIRequest", ReplyAction="http://services.pucp.edu.pe/PacienteWS/obtenerPacientexDNIResponse")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        PazCitasWA.ServiciosWS.obtenerPacientexDNIResponse obtenerPacientexDNI(PazCitasWA.ServiciosWS.obtenerPacientexDNIRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://services.pucp.edu.pe/PacienteWS/obtenerPacientexDNIRequest", ReplyAction="http://services.pucp.edu.pe/PacienteWS/obtenerPacientexDNIResponse")]
-        System.Threading.Tasks.Task<PazCitasWA.ServiciosWS.obtenerPacientexDNIResponse> obtenerPacientexDNIAsync(PazCitasWA.ServiciosWS.obtenerPacientexDNIRequest request);
+        [System.ServiceModel.OperationContractAttribute(Action="http://services.pucp.edu.pe/PacienteWS/listarPacienteXCadenaRequest", ReplyAction="http://services.pucp.edu.pe/PacienteWS/listarPacienteXCadenaResponse")]
+        System.Threading.Tasks.Task<PazCitasWA.ServiciosWS.listarPacienteXCadenaResponse> listarPacienteXCadenaAsync(PazCitasWA.ServiciosWS.listarPacienteXCadenaRequest request);
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="listarPaciente", WrapperNamespace="http://services.pucp.edu.pe", IsWrapped=true)]
-    public partial class listarPacienteRequest {
-        
-        public listarPacienteRequest() {
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="listarPacienteResponse", WrapperNamespace="http://services.pucp.edu.pe", IsWrapped=true)]
-    public partial class listarPacienteResponse {
+    [System.ServiceModel.MessageContractAttribute(WrapperName="obtenerPacientexDNI", WrapperNamespace="http://services.pucp.edu.pe", IsWrapped=true)]
+    public partial class obtenerPacientexDNIRequest {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.pucp.edu.pe", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute("return", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public PazCitasWA.ServiciosWS.paciente[] @return;
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string dni;
         
-        public listarPacienteResponse() {
+        public obtenerPacientexDNIRequest() {
         }
         
-        public listarPacienteResponse(PazCitasWA.ServiciosWS.paciente[] @return) {
+        public obtenerPacientexDNIRequest(string dni) {
+            this.dni = dni;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="obtenerPacientexDNIResponse", WrapperNamespace="http://services.pucp.edu.pe", IsWrapped=true)]
+    public partial class obtenerPacientexDNIResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.pucp.edu.pe", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public PazCitasWA.ServiciosWS.paciente @return;
+        
+        public obtenerPacientexDNIResponse() {
+        }
+        
+        public obtenerPacientexDNIResponse(PazCitasWA.ServiciosWS.paciente @return) {
+            this.@return = @return;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="modificarPaciente", WrapperNamespace="http://services.pucp.edu.pe", IsWrapped=true)]
+    public partial class modificarPacienteRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.pucp.edu.pe", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public PazCitasWA.ServiciosWS.paciente paciente;
+        
+        public modificarPacienteRequest() {
+        }
+        
+        public modificarPacienteRequest(PazCitasWA.ServiciosWS.paciente paciente) {
+            this.paciente = paciente;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="modificarPacienteResponse", WrapperNamespace="http://services.pucp.edu.pe", IsWrapped=true)]
+    public partial class modificarPacienteResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.pucp.edu.pe", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public int @return;
+        
+        public modificarPacienteResponse() {
+        }
+        
+        public modificarPacienteResponse(int @return) {
             this.@return = @return;
         }
     }
@@ -7592,6 +7974,34 @@ namespace PazCitasWA.ServiciosWS {
         }
         
         public eliminarPacienteResponse(int @return) {
+            this.@return = @return;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="listarPaciente", WrapperNamespace="http://services.pucp.edu.pe", IsWrapped=true)]
+    public partial class listarPacienteRequest {
+        
+        public listarPacienteRequest() {
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="listarPacienteResponse", WrapperNamespace="http://services.pucp.edu.pe", IsWrapped=true)]
+    public partial class listarPacienteResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.pucp.edu.pe", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute("return", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public PazCitasWA.ServiciosWS.paciente[] @return;
+        
+        public listarPacienteResponse() {
+        }
+        
+        public listarPacienteResponse(PazCitasWA.ServiciosWS.paciente[] @return) {
             this.@return = @return;
         }
     }
@@ -7671,71 +8081,35 @@ namespace PazCitasWA.ServiciosWS {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="modificarPaciente", WrapperNamespace="http://services.pucp.edu.pe", IsWrapped=true)]
-    public partial class modificarPacienteRequest {
+    [System.ServiceModel.MessageContractAttribute(WrapperName="listarPacienteXCadena", WrapperNamespace="http://services.pucp.edu.pe", IsWrapped=true)]
+    public partial class listarPacienteXCadenaRequest {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.pucp.edu.pe", Order=0)]
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public PazCitasWA.ServiciosWS.paciente paciente;
+        public string cadena;
         
-        public modificarPacienteRequest() {
+        public listarPacienteXCadenaRequest() {
         }
         
-        public modificarPacienteRequest(PazCitasWA.ServiciosWS.paciente paciente) {
-            this.paciente = paciente;
+        public listarPacienteXCadenaRequest(string cadena) {
+            this.cadena = cadena;
         }
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="modificarPacienteResponse", WrapperNamespace="http://services.pucp.edu.pe", IsWrapped=true)]
-    public partial class modificarPacienteResponse {
+    [System.ServiceModel.MessageContractAttribute(WrapperName="listarPacienteXCadenaResponse", WrapperNamespace="http://services.pucp.edu.pe", IsWrapped=true)]
+    public partial class listarPacienteXCadenaResponse {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.pucp.edu.pe", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public int @return;
+        [System.Xml.Serialization.XmlElementAttribute("return", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public PazCitasWA.ServiciosWS.paciente[] @return;
         
-        public modificarPacienteResponse() {
+        public listarPacienteXCadenaResponse() {
         }
         
-        public modificarPacienteResponse(int @return) {
-            this.@return = @return;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="obtenerPacientexDNI", WrapperNamespace="http://services.pucp.edu.pe", IsWrapped=true)]
-    public partial class obtenerPacientexDNIRequest {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.pucp.edu.pe", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string dni;
-        
-        public obtenerPacientexDNIRequest() {
-        }
-        
-        public obtenerPacientexDNIRequest(string dni) {
-            this.dni = dni;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="obtenerPacientexDNIResponse", WrapperNamespace="http://services.pucp.edu.pe", IsWrapped=true)]
-    public partial class obtenerPacientexDNIResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.pucp.edu.pe", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public PazCitasWA.ServiciosWS.paciente @return;
-        
-        public obtenerPacientexDNIResponse() {
-        }
-        
-        public obtenerPacientexDNIResponse(PazCitasWA.ServiciosWS.paciente @return) {
+        public listarPacienteXCadenaResponse(PazCitasWA.ServiciosWS.paciente[] @return) {
             this.@return = @return;
         }
     }
@@ -7768,24 +8142,49 @@ namespace PazCitasWA.ServiciosWS {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        PazCitasWA.ServiciosWS.listarPacienteResponse PazCitasWA.ServiciosWS.PacienteWS.listarPaciente(PazCitasWA.ServiciosWS.listarPacienteRequest request) {
-            return base.Channel.listarPaciente(request);
+        PazCitasWA.ServiciosWS.obtenerPacientexDNIResponse PazCitasWA.ServiciosWS.PacienteWS.obtenerPacientexDNI(PazCitasWA.ServiciosWS.obtenerPacientexDNIRequest request) {
+            return base.Channel.obtenerPacientexDNI(request);
         }
         
-        public PazCitasWA.ServiciosWS.paciente[] listarPaciente() {
-            PazCitasWA.ServiciosWS.listarPacienteRequest inValue = new PazCitasWA.ServiciosWS.listarPacienteRequest();
-            PazCitasWA.ServiciosWS.listarPacienteResponse retVal = ((PazCitasWA.ServiciosWS.PacienteWS)(this)).listarPaciente(inValue);
+        public PazCitasWA.ServiciosWS.paciente obtenerPacientexDNI(string dni) {
+            PazCitasWA.ServiciosWS.obtenerPacientexDNIRequest inValue = new PazCitasWA.ServiciosWS.obtenerPacientexDNIRequest();
+            inValue.dni = dni;
+            PazCitasWA.ServiciosWS.obtenerPacientexDNIResponse retVal = ((PazCitasWA.ServiciosWS.PacienteWS)(this)).obtenerPacientexDNI(inValue);
             return retVal.@return;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<PazCitasWA.ServiciosWS.listarPacienteResponse> PazCitasWA.ServiciosWS.PacienteWS.listarPacienteAsync(PazCitasWA.ServiciosWS.listarPacienteRequest request) {
-            return base.Channel.listarPacienteAsync(request);
+        System.Threading.Tasks.Task<PazCitasWA.ServiciosWS.obtenerPacientexDNIResponse> PazCitasWA.ServiciosWS.PacienteWS.obtenerPacientexDNIAsync(PazCitasWA.ServiciosWS.obtenerPacientexDNIRequest request) {
+            return base.Channel.obtenerPacientexDNIAsync(request);
         }
         
-        public System.Threading.Tasks.Task<PazCitasWA.ServiciosWS.listarPacienteResponse> listarPacienteAsync() {
-            PazCitasWA.ServiciosWS.listarPacienteRequest inValue = new PazCitasWA.ServiciosWS.listarPacienteRequest();
-            return ((PazCitasWA.ServiciosWS.PacienteWS)(this)).listarPacienteAsync(inValue);
+        public System.Threading.Tasks.Task<PazCitasWA.ServiciosWS.obtenerPacientexDNIResponse> obtenerPacientexDNIAsync(string dni) {
+            PazCitasWA.ServiciosWS.obtenerPacientexDNIRequest inValue = new PazCitasWA.ServiciosWS.obtenerPacientexDNIRequest();
+            inValue.dni = dni;
+            return ((PazCitasWA.ServiciosWS.PacienteWS)(this)).obtenerPacientexDNIAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        PazCitasWA.ServiciosWS.modificarPacienteResponse PazCitasWA.ServiciosWS.PacienteWS.modificarPaciente(PazCitasWA.ServiciosWS.modificarPacienteRequest request) {
+            return base.Channel.modificarPaciente(request);
+        }
+        
+        public int modificarPaciente(PazCitasWA.ServiciosWS.paciente paciente) {
+            PazCitasWA.ServiciosWS.modificarPacienteRequest inValue = new PazCitasWA.ServiciosWS.modificarPacienteRequest();
+            inValue.paciente = paciente;
+            PazCitasWA.ServiciosWS.modificarPacienteResponse retVal = ((PazCitasWA.ServiciosWS.PacienteWS)(this)).modificarPaciente(inValue);
+            return retVal.@return;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<PazCitasWA.ServiciosWS.modificarPacienteResponse> PazCitasWA.ServiciosWS.PacienteWS.modificarPacienteAsync(PazCitasWA.ServiciosWS.modificarPacienteRequest request) {
+            return base.Channel.modificarPacienteAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<PazCitasWA.ServiciosWS.modificarPacienteResponse> modificarPacienteAsync(PazCitasWA.ServiciosWS.paciente paciente) {
+            PazCitasWA.ServiciosWS.modificarPacienteRequest inValue = new PazCitasWA.ServiciosWS.modificarPacienteRequest();
+            inValue.paciente = paciente;
+            return ((PazCitasWA.ServiciosWS.PacienteWS)(this)).modificarPacienteAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -7809,6 +8208,27 @@ namespace PazCitasWA.ServiciosWS {
             PazCitasWA.ServiciosWS.eliminarPacienteRequest inValue = new PazCitasWA.ServiciosWS.eliminarPacienteRequest();
             inValue.idpaciente = idpaciente;
             return ((PazCitasWA.ServiciosWS.PacienteWS)(this)).eliminarPacienteAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        PazCitasWA.ServiciosWS.listarPacienteResponse PazCitasWA.ServiciosWS.PacienteWS.listarPaciente(PazCitasWA.ServiciosWS.listarPacienteRequest request) {
+            return base.Channel.listarPaciente(request);
+        }
+        
+        public PazCitasWA.ServiciosWS.paciente[] listarPaciente() {
+            PazCitasWA.ServiciosWS.listarPacienteRequest inValue = new PazCitasWA.ServiciosWS.listarPacienteRequest();
+            PazCitasWA.ServiciosWS.listarPacienteResponse retVal = ((PazCitasWA.ServiciosWS.PacienteWS)(this)).listarPaciente(inValue);
+            return retVal.@return;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<PazCitasWA.ServiciosWS.listarPacienteResponse> PazCitasWA.ServiciosWS.PacienteWS.listarPacienteAsync(PazCitasWA.ServiciosWS.listarPacienteRequest request) {
+            return base.Channel.listarPacienteAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<PazCitasWA.ServiciosWS.listarPacienteResponse> listarPacienteAsync() {
+            PazCitasWA.ServiciosWS.listarPacienteRequest inValue = new PazCitasWA.ServiciosWS.listarPacienteRequest();
+            return ((PazCitasWA.ServiciosWS.PacienteWS)(this)).listarPacienteAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -7858,64 +8278,32 @@ namespace PazCitasWA.ServiciosWS {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        PazCitasWA.ServiciosWS.modificarPacienteResponse PazCitasWA.ServiciosWS.PacienteWS.modificarPaciente(PazCitasWA.ServiciosWS.modificarPacienteRequest request) {
-            return base.Channel.modificarPaciente(request);
+        PazCitasWA.ServiciosWS.listarPacienteXCadenaResponse PazCitasWA.ServiciosWS.PacienteWS.listarPacienteXCadena(PazCitasWA.ServiciosWS.listarPacienteXCadenaRequest request) {
+            return base.Channel.listarPacienteXCadena(request);
         }
         
-        public int modificarPaciente(PazCitasWA.ServiciosWS.paciente paciente) {
-            PazCitasWA.ServiciosWS.modificarPacienteRequest inValue = new PazCitasWA.ServiciosWS.modificarPacienteRequest();
-            inValue.paciente = paciente;
-            PazCitasWA.ServiciosWS.modificarPacienteResponse retVal = ((PazCitasWA.ServiciosWS.PacienteWS)(this)).modificarPaciente(inValue);
+        public PazCitasWA.ServiciosWS.paciente[] listarPacienteXCadena(string cadena) {
+            PazCitasWA.ServiciosWS.listarPacienteXCadenaRequest inValue = new PazCitasWA.ServiciosWS.listarPacienteXCadenaRequest();
+            inValue.cadena = cadena;
+            PazCitasWA.ServiciosWS.listarPacienteXCadenaResponse retVal = ((PazCitasWA.ServiciosWS.PacienteWS)(this)).listarPacienteXCadena(inValue);
             return retVal.@return;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<PazCitasWA.ServiciosWS.modificarPacienteResponse> PazCitasWA.ServiciosWS.PacienteWS.modificarPacienteAsync(PazCitasWA.ServiciosWS.modificarPacienteRequest request) {
-            return base.Channel.modificarPacienteAsync(request);
+        System.Threading.Tasks.Task<PazCitasWA.ServiciosWS.listarPacienteXCadenaResponse> PazCitasWA.ServiciosWS.PacienteWS.listarPacienteXCadenaAsync(PazCitasWA.ServiciosWS.listarPacienteXCadenaRequest request) {
+            return base.Channel.listarPacienteXCadenaAsync(request);
         }
         
-        public System.Threading.Tasks.Task<PazCitasWA.ServiciosWS.modificarPacienteResponse> modificarPacienteAsync(PazCitasWA.ServiciosWS.paciente paciente) {
-            PazCitasWA.ServiciosWS.modificarPacienteRequest inValue = new PazCitasWA.ServiciosWS.modificarPacienteRequest();
-            inValue.paciente = paciente;
-            return ((PazCitasWA.ServiciosWS.PacienteWS)(this)).modificarPacienteAsync(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        PazCitasWA.ServiciosWS.obtenerPacientexDNIResponse PazCitasWA.ServiciosWS.PacienteWS.obtenerPacientexDNI(PazCitasWA.ServiciosWS.obtenerPacientexDNIRequest request) {
-            return base.Channel.obtenerPacientexDNI(request);
-        }
-        
-        public PazCitasWA.ServiciosWS.paciente obtenerPacientexDNI(string dni) {
-            PazCitasWA.ServiciosWS.obtenerPacientexDNIRequest inValue = new PazCitasWA.ServiciosWS.obtenerPacientexDNIRequest();
-            inValue.dni = dni;
-            PazCitasWA.ServiciosWS.obtenerPacientexDNIResponse retVal = ((PazCitasWA.ServiciosWS.PacienteWS)(this)).obtenerPacientexDNI(inValue);
-            return retVal.@return;
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<PazCitasWA.ServiciosWS.obtenerPacientexDNIResponse> PazCitasWA.ServiciosWS.PacienteWS.obtenerPacientexDNIAsync(PazCitasWA.ServiciosWS.obtenerPacientexDNIRequest request) {
-            return base.Channel.obtenerPacientexDNIAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<PazCitasWA.ServiciosWS.obtenerPacientexDNIResponse> obtenerPacientexDNIAsync(string dni) {
-            PazCitasWA.ServiciosWS.obtenerPacientexDNIRequest inValue = new PazCitasWA.ServiciosWS.obtenerPacientexDNIRequest();
-            inValue.dni = dni;
-            return ((PazCitasWA.ServiciosWS.PacienteWS)(this)).obtenerPacientexDNIAsync(inValue);
+        public System.Threading.Tasks.Task<PazCitasWA.ServiciosWS.listarPacienteXCadenaResponse> listarPacienteXCadenaAsync(string cadena) {
+            PazCitasWA.ServiciosWS.listarPacienteXCadenaRequest inValue = new PazCitasWA.ServiciosWS.listarPacienteXCadenaRequest();
+            inValue.cadena = cadena;
+            return ((PazCitasWA.ServiciosWS.PacienteWS)(this)).listarPacienteXCadenaAsync(inValue);
         }
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(Namespace="http://services.pucp.edu.pe", ConfigurationName="ServiciosWS.HistorialMedicoWS")]
     public interface HistorialMedicoWS {
-        
-        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="http://services.pucp.edu.pe/HistorialMedicoWS/obtenerHistorialRequest", ReplyAction="http://services.pucp.edu.pe/HistorialMedicoWS/obtenerHistorialResponse")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        PazCitasWA.ServiciosWS.obtenerHistorialResponse obtenerHistorial(PazCitasWA.ServiciosWS.obtenerHistorialRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://services.pucp.edu.pe/HistorialMedicoWS/obtenerHistorialRequest", ReplyAction="http://services.pucp.edu.pe/HistorialMedicoWS/obtenerHistorialResponse")]
-        System.Threading.Tasks.Task<PazCitasWA.ServiciosWS.obtenerHistorialResponse> obtenerHistorialAsync(PazCitasWA.ServiciosWS.obtenerHistorialRequest request);
         
         // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
         [System.ServiceModel.OperationContractAttribute(Action="http://services.pucp.edu.pe/HistorialMedicoWS/insertarHistorialRequest", ReplyAction="http://services.pucp.edu.pe/HistorialMedicoWS/insertarHistorialResponse")]
@@ -7927,13 +8315,13 @@ namespace PazCitasWA.ServiciosWS {
         System.Threading.Tasks.Task<PazCitasWA.ServiciosWS.insertarHistorialResponse> insertarHistorialAsync(PazCitasWA.ServiciosWS.insertarHistorialRequest request);
         
         // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="http://services.pucp.edu.pe/HistorialMedicoWS/eliminarHistorialRequest", ReplyAction="http://services.pucp.edu.pe/HistorialMedicoWS/eliminarHistorialResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://services.pucp.edu.pe/HistorialMedicoWS/obtenerHistorialRequest", ReplyAction="http://services.pucp.edu.pe/HistorialMedicoWS/obtenerHistorialResponse")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        PazCitasWA.ServiciosWS.eliminarHistorialResponse eliminarHistorial(PazCitasWA.ServiciosWS.eliminarHistorialRequest request);
+        PazCitasWA.ServiciosWS.obtenerHistorialResponse obtenerHistorial(PazCitasWA.ServiciosWS.obtenerHistorialRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://services.pucp.edu.pe/HistorialMedicoWS/eliminarHistorialRequest", ReplyAction="http://services.pucp.edu.pe/HistorialMedicoWS/eliminarHistorialResponse")]
-        System.Threading.Tasks.Task<PazCitasWA.ServiciosWS.eliminarHistorialResponse> eliminarHistorialAsync(PazCitasWA.ServiciosWS.eliminarHistorialRequest request);
+        [System.ServiceModel.OperationContractAttribute(Action="http://services.pucp.edu.pe/HistorialMedicoWS/obtenerHistorialRequest", ReplyAction="http://services.pucp.edu.pe/HistorialMedicoWS/obtenerHistorialResponse")]
+        System.Threading.Tasks.Task<PazCitasWA.ServiciosWS.obtenerHistorialResponse> obtenerHistorialAsync(PazCitasWA.ServiciosWS.obtenerHistorialRequest request);
         
         // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
         [System.ServiceModel.OperationContractAttribute(Action="http://services.pucp.edu.pe/HistorialMedicoWS/listarHistorialRequest", ReplyAction="http://services.pucp.edu.pe/HistorialMedicoWS/listarHistorialResponse")]
@@ -7943,42 +8331,15 @@ namespace PazCitasWA.ServiciosWS {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://services.pucp.edu.pe/HistorialMedicoWS/listarHistorialRequest", ReplyAction="http://services.pucp.edu.pe/HistorialMedicoWS/listarHistorialResponse")]
         System.Threading.Tasks.Task<PazCitasWA.ServiciosWS.listarHistorialResponse> listarHistorialAsync(PazCitasWA.ServiciosWS.listarHistorialRequest request);
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="obtenerHistorial", WrapperNamespace="http://services.pucp.edu.pe", IsWrapped=true)]
-    public partial class obtenerHistorialRequest {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.pucp.edu.pe", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public int idPaciente;
+        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="http://services.pucp.edu.pe/HistorialMedicoWS/eliminarHistorialRequest", ReplyAction="http://services.pucp.edu.pe/HistorialMedicoWS/eliminarHistorialResponse")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        PazCitasWA.ServiciosWS.eliminarHistorialResponse eliminarHistorial(PazCitasWA.ServiciosWS.eliminarHistorialRequest request);
         
-        public obtenerHistorialRequest() {
-        }
-        
-        public obtenerHistorialRequest(int idPaciente) {
-            this.idPaciente = idPaciente;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="obtenerHistorialResponse", WrapperNamespace="http://services.pucp.edu.pe", IsWrapped=true)]
-    public partial class obtenerHistorialResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.pucp.edu.pe", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public PazCitasWA.ServiciosWS.historialMedico @return;
-        
-        public obtenerHistorialResponse() {
-        }
-        
-        public obtenerHistorialResponse(PazCitasWA.ServiciosWS.historialMedico @return) {
-            this.@return = @return;
-        }
+        [System.ServiceModel.OperationContractAttribute(Action="http://services.pucp.edu.pe/HistorialMedicoWS/eliminarHistorialRequest", ReplyAction="http://services.pucp.edu.pe/HistorialMedicoWS/eliminarHistorialResponse")]
+        System.Threading.Tasks.Task<PazCitasWA.ServiciosWS.eliminarHistorialResponse> eliminarHistorialAsync(PazCitasWA.ServiciosWS.eliminarHistorialRequest request);
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -8020,6 +8381,70 @@ namespace PazCitasWA.ServiciosWS {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="obtenerHistorial", WrapperNamespace="http://services.pucp.edu.pe", IsWrapped=true)]
+    public partial class obtenerHistorialRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.pucp.edu.pe", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public int idPaciente;
+        
+        public obtenerHistorialRequest() {
+        }
+        
+        public obtenerHistorialRequest(int idPaciente) {
+            this.idPaciente = idPaciente;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="obtenerHistorialResponse", WrapperNamespace="http://services.pucp.edu.pe", IsWrapped=true)]
+    public partial class obtenerHistorialResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.pucp.edu.pe", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public PazCitasWA.ServiciosWS.historialMedico @return;
+        
+        public obtenerHistorialResponse() {
+        }
+        
+        public obtenerHistorialResponse(PazCitasWA.ServiciosWS.historialMedico @return) {
+            this.@return = @return;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="listarHistorial", WrapperNamespace="http://services.pucp.edu.pe", IsWrapped=true)]
+    public partial class listarHistorialRequest {
+        
+        public listarHistorialRequest() {
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="listarHistorialResponse", WrapperNamespace="http://services.pucp.edu.pe", IsWrapped=true)]
+    public partial class listarHistorialResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.pucp.edu.pe", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute("return", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public PazCitasWA.ServiciosWS.historialMedico[] @return;
+        
+        public listarHistorialResponse() {
+        }
+        
+        public listarHistorialResponse(PazCitasWA.ServiciosWS.historialMedico[] @return) {
+            this.@return = @return;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(WrapperName="eliminarHistorial", WrapperNamespace="http://services.pucp.edu.pe", IsWrapped=true)]
     public partial class eliminarHistorialRequest {
         
@@ -8053,34 +8478,6 @@ namespace PazCitasWA.ServiciosWS {
         }
     }
     
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="listarHistorial", WrapperNamespace="http://services.pucp.edu.pe", IsWrapped=true)]
-    public partial class listarHistorialRequest {
-        
-        public listarHistorialRequest() {
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="listarHistorialResponse", WrapperNamespace="http://services.pucp.edu.pe", IsWrapped=true)]
-    public partial class listarHistorialResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.pucp.edu.pe", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute("return", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public PazCitasWA.ServiciosWS.historialMedico[] @return;
-        
-        public listarHistorialResponse() {
-        }
-        
-        public listarHistorialResponse(PazCitasWA.ServiciosWS.historialMedico[] @return) {
-            this.@return = @return;
-        }
-    }
-    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     public interface HistorialMedicoWSChannel : PazCitasWA.ServiciosWS.HistorialMedicoWS, System.ServiceModel.IClientChannel {
     }
@@ -8109,6 +8506,29 @@ namespace PazCitasWA.ServiciosWS {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        PazCitasWA.ServiciosWS.insertarHistorialResponse PazCitasWA.ServiciosWS.HistorialMedicoWS.insertarHistorial(PazCitasWA.ServiciosWS.insertarHistorialRequest request) {
+            return base.Channel.insertarHistorial(request);
+        }
+        
+        public int insertarHistorial(PazCitasWA.ServiciosWS.historialMedico historial) {
+            PazCitasWA.ServiciosWS.insertarHistorialRequest inValue = new PazCitasWA.ServiciosWS.insertarHistorialRequest();
+            inValue.historial = historial;
+            PazCitasWA.ServiciosWS.insertarHistorialResponse retVal = ((PazCitasWA.ServiciosWS.HistorialMedicoWS)(this)).insertarHistorial(inValue);
+            return retVal.@return;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<PazCitasWA.ServiciosWS.insertarHistorialResponse> PazCitasWA.ServiciosWS.HistorialMedicoWS.insertarHistorialAsync(PazCitasWA.ServiciosWS.insertarHistorialRequest request) {
+            return base.Channel.insertarHistorialAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<PazCitasWA.ServiciosWS.insertarHistorialResponse> insertarHistorialAsync(PazCitasWA.ServiciosWS.historialMedico historial) {
+            PazCitasWA.ServiciosWS.insertarHistorialRequest inValue = new PazCitasWA.ServiciosWS.insertarHistorialRequest();
+            inValue.historial = historial;
+            return ((PazCitasWA.ServiciosWS.HistorialMedicoWS)(this)).insertarHistorialAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         PazCitasWA.ServiciosWS.obtenerHistorialResponse PazCitasWA.ServiciosWS.HistorialMedicoWS.obtenerHistorial(PazCitasWA.ServiciosWS.obtenerHistorialRequest request) {
             return base.Channel.obtenerHistorial(request);
         }
@@ -8132,26 +8552,24 @@ namespace PazCitasWA.ServiciosWS {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        PazCitasWA.ServiciosWS.insertarHistorialResponse PazCitasWA.ServiciosWS.HistorialMedicoWS.insertarHistorial(PazCitasWA.ServiciosWS.insertarHistorialRequest request) {
-            return base.Channel.insertarHistorial(request);
+        PazCitasWA.ServiciosWS.listarHistorialResponse PazCitasWA.ServiciosWS.HistorialMedicoWS.listarHistorial(PazCitasWA.ServiciosWS.listarHistorialRequest request) {
+            return base.Channel.listarHistorial(request);
         }
         
-        public int insertarHistorial(PazCitasWA.ServiciosWS.historialMedico historial) {
-            PazCitasWA.ServiciosWS.insertarHistorialRequest inValue = new PazCitasWA.ServiciosWS.insertarHistorialRequest();
-            inValue.historial = historial;
-            PazCitasWA.ServiciosWS.insertarHistorialResponse retVal = ((PazCitasWA.ServiciosWS.HistorialMedicoWS)(this)).insertarHistorial(inValue);
+        public PazCitasWA.ServiciosWS.historialMedico[] listarHistorial() {
+            PazCitasWA.ServiciosWS.listarHistorialRequest inValue = new PazCitasWA.ServiciosWS.listarHistorialRequest();
+            PazCitasWA.ServiciosWS.listarHistorialResponse retVal = ((PazCitasWA.ServiciosWS.HistorialMedicoWS)(this)).listarHistorial(inValue);
             return retVal.@return;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<PazCitasWA.ServiciosWS.insertarHistorialResponse> PazCitasWA.ServiciosWS.HistorialMedicoWS.insertarHistorialAsync(PazCitasWA.ServiciosWS.insertarHistorialRequest request) {
-            return base.Channel.insertarHistorialAsync(request);
+        System.Threading.Tasks.Task<PazCitasWA.ServiciosWS.listarHistorialResponse> PazCitasWA.ServiciosWS.HistorialMedicoWS.listarHistorialAsync(PazCitasWA.ServiciosWS.listarHistorialRequest request) {
+            return base.Channel.listarHistorialAsync(request);
         }
         
-        public System.Threading.Tasks.Task<PazCitasWA.ServiciosWS.insertarHistorialResponse> insertarHistorialAsync(PazCitasWA.ServiciosWS.historialMedico historial) {
-            PazCitasWA.ServiciosWS.insertarHistorialRequest inValue = new PazCitasWA.ServiciosWS.insertarHistorialRequest();
-            inValue.historial = historial;
-            return ((PazCitasWA.ServiciosWS.HistorialMedicoWS)(this)).insertarHistorialAsync(inValue);
+        public System.Threading.Tasks.Task<PazCitasWA.ServiciosWS.listarHistorialResponse> listarHistorialAsync() {
+            PazCitasWA.ServiciosWS.listarHistorialRequest inValue = new PazCitasWA.ServiciosWS.listarHistorialRequest();
+            return ((PazCitasWA.ServiciosWS.HistorialMedicoWS)(this)).listarHistorialAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -8176,41 +8594,11 @@ namespace PazCitasWA.ServiciosWS {
             inValue.historial = historial;
             return ((PazCitasWA.ServiciosWS.HistorialMedicoWS)(this)).eliminarHistorialAsync(inValue);
         }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        PazCitasWA.ServiciosWS.listarHistorialResponse PazCitasWA.ServiciosWS.HistorialMedicoWS.listarHistorial(PazCitasWA.ServiciosWS.listarHistorialRequest request) {
-            return base.Channel.listarHistorial(request);
-        }
-        
-        public PazCitasWA.ServiciosWS.historialMedico[] listarHistorial() {
-            PazCitasWA.ServiciosWS.listarHistorialRequest inValue = new PazCitasWA.ServiciosWS.listarHistorialRequest();
-            PazCitasWA.ServiciosWS.listarHistorialResponse retVal = ((PazCitasWA.ServiciosWS.HistorialMedicoWS)(this)).listarHistorial(inValue);
-            return retVal.@return;
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<PazCitasWA.ServiciosWS.listarHistorialResponse> PazCitasWA.ServiciosWS.HistorialMedicoWS.listarHistorialAsync(PazCitasWA.ServiciosWS.listarHistorialRequest request) {
-            return base.Channel.listarHistorialAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<PazCitasWA.ServiciosWS.listarHistorialResponse> listarHistorialAsync() {
-            PazCitasWA.ServiciosWS.listarHistorialRequest inValue = new PazCitasWA.ServiciosWS.listarHistorialRequest();
-            return ((PazCitasWA.ServiciosWS.HistorialMedicoWS)(this)).listarHistorialAsync(inValue);
-        }
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(Namespace="http://services.pucp.edu.pe", ConfigurationName="ServiciosWS.SedeEspecialidadWS")]
     public interface SedeEspecialidadWS {
-        
-        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="http://services.pucp.edu.pe/SedeEspecialidadWS/eliminarSedeEspecialidadRequest", ReplyAction="http://services.pucp.edu.pe/SedeEspecialidadWS/eliminarSedeEspecialidadResponse")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        PazCitasWA.ServiciosWS.eliminarSedeEspecialidadResponse eliminarSedeEspecialidad(PazCitasWA.ServiciosWS.eliminarSedeEspecialidadRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://services.pucp.edu.pe/SedeEspecialidadWS/eliminarSedeEspecialidadRequest", ReplyAction="http://services.pucp.edu.pe/SedeEspecialidadWS/eliminarSedeEspecialidadResponse")]
-        System.Threading.Tasks.Task<PazCitasWA.ServiciosWS.eliminarSedeEspecialidadResponse> eliminarSedeEspecialidadAsync(PazCitasWA.ServiciosWS.eliminarSedeEspecialidadRequest request);
         
         // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
         [System.ServiceModel.OperationContractAttribute(Action="http://services.pucp.edu.pe/SedeEspecialidadWS/insertarSedeEspecialidadRequest", ReplyAction="http://services.pucp.edu.pe/SedeEspecialidadWS/insertarSedeEspecialidadResponse")]
@@ -8220,6 +8608,15 @@ namespace PazCitasWA.ServiciosWS {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://services.pucp.edu.pe/SedeEspecialidadWS/insertarSedeEspecialidadRequest", ReplyAction="http://services.pucp.edu.pe/SedeEspecialidadWS/insertarSedeEspecialidadResponse")]
         System.Threading.Tasks.Task<PazCitasWA.ServiciosWS.insertarSedeEspecialidadResponse> insertarSedeEspecialidadAsync(PazCitasWA.ServiciosWS.insertarSedeEspecialidadRequest request);
+        
+        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="http://services.pucp.edu.pe/SedeEspecialidadWS/eliminarSedeEspecialidadRequest", ReplyAction="http://services.pucp.edu.pe/SedeEspecialidadWS/eliminarSedeEspecialidadResponse")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        PazCitasWA.ServiciosWS.eliminarSedeEspecialidadResponse eliminarSedeEspecialidad(PazCitasWA.ServiciosWS.eliminarSedeEspecialidadRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://services.pucp.edu.pe/SedeEspecialidadWS/eliminarSedeEspecialidadRequest", ReplyAction="http://services.pucp.edu.pe/SedeEspecialidadWS/eliminarSedeEspecialidadResponse")]
+        System.Threading.Tasks.Task<PazCitasWA.ServiciosWS.eliminarSedeEspecialidadResponse> eliminarSedeEspecialidadAsync(PazCitasWA.ServiciosWS.eliminarSedeEspecialidadRequest request);
         
         // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
         [System.ServiceModel.OperationContractAttribute(Action="http://services.pucp.edu.pe/SedeEspecialidadWS/eliminarSedeEspecialidadXSedeReque" +
@@ -8233,42 +8630,6 @@ namespace PazCitasWA.ServiciosWS {
             "st", ReplyAction="http://services.pucp.edu.pe/SedeEspecialidadWS/eliminarSedeEspecialidadXSedeRespo" +
             "nse")]
         System.Threading.Tasks.Task<PazCitasWA.ServiciosWS.eliminarSedeEspecialidadXSedeResponse> eliminarSedeEspecialidadXSedeAsync(PazCitasWA.ServiciosWS.eliminarSedeEspecialidadXSedeRequest request);
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="eliminarSedeEspecialidad", WrapperNamespace="http://services.pucp.edu.pe", IsWrapped=true)]
-    public partial class eliminarSedeEspecialidadRequest {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.pucp.edu.pe", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public int idsedeEsp;
-        
-        public eliminarSedeEspecialidadRequest() {
-        }
-        
-        public eliminarSedeEspecialidadRequest(int idsedeEsp) {
-            this.idsedeEsp = idsedeEsp;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="eliminarSedeEspecialidadResponse", WrapperNamespace="http://services.pucp.edu.pe", IsWrapped=true)]
-    public partial class eliminarSedeEspecialidadResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.pucp.edu.pe", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public int @return;
-        
-        public eliminarSedeEspecialidadResponse() {
-        }
-        
-        public eliminarSedeEspecialidadResponse(int @return) {
-            this.@return = @return;
-        }
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -8303,6 +8664,42 @@ namespace PazCitasWA.ServiciosWS {
         }
         
         public insertarSedeEspecialidadResponse(int @return) {
+            this.@return = @return;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="eliminarSedeEspecialidad", WrapperNamespace="http://services.pucp.edu.pe", IsWrapped=true)]
+    public partial class eliminarSedeEspecialidadRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.pucp.edu.pe", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public int idsedeEsp;
+        
+        public eliminarSedeEspecialidadRequest() {
+        }
+        
+        public eliminarSedeEspecialidadRequest(int idsedeEsp) {
+            this.idsedeEsp = idsedeEsp;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="eliminarSedeEspecialidadResponse", WrapperNamespace="http://services.pucp.edu.pe", IsWrapped=true)]
+    public partial class eliminarSedeEspecialidadResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.pucp.edu.pe", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public int @return;
+        
+        public eliminarSedeEspecialidadResponse() {
+        }
+        
+        public eliminarSedeEspecialidadResponse(int @return) {
             this.@return = @return;
         }
     }
@@ -8371,29 +8768,6 @@ namespace PazCitasWA.ServiciosWS {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        PazCitasWA.ServiciosWS.eliminarSedeEspecialidadResponse PazCitasWA.ServiciosWS.SedeEspecialidadWS.eliminarSedeEspecialidad(PazCitasWA.ServiciosWS.eliminarSedeEspecialidadRequest request) {
-            return base.Channel.eliminarSedeEspecialidad(request);
-        }
-        
-        public int eliminarSedeEspecialidad(int idsedeEsp) {
-            PazCitasWA.ServiciosWS.eliminarSedeEspecialidadRequest inValue = new PazCitasWA.ServiciosWS.eliminarSedeEspecialidadRequest();
-            inValue.idsedeEsp = idsedeEsp;
-            PazCitasWA.ServiciosWS.eliminarSedeEspecialidadResponse retVal = ((PazCitasWA.ServiciosWS.SedeEspecialidadWS)(this)).eliminarSedeEspecialidad(inValue);
-            return retVal.@return;
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<PazCitasWA.ServiciosWS.eliminarSedeEspecialidadResponse> PazCitasWA.ServiciosWS.SedeEspecialidadWS.eliminarSedeEspecialidadAsync(PazCitasWA.ServiciosWS.eliminarSedeEspecialidadRequest request) {
-            return base.Channel.eliminarSedeEspecialidadAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<PazCitasWA.ServiciosWS.eliminarSedeEspecialidadResponse> eliminarSedeEspecialidadAsync(int idsedeEsp) {
-            PazCitasWA.ServiciosWS.eliminarSedeEspecialidadRequest inValue = new PazCitasWA.ServiciosWS.eliminarSedeEspecialidadRequest();
-            inValue.idsedeEsp = idsedeEsp;
-            return ((PazCitasWA.ServiciosWS.SedeEspecialidadWS)(this)).eliminarSedeEspecialidadAsync(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         PazCitasWA.ServiciosWS.insertarSedeEspecialidadResponse PazCitasWA.ServiciosWS.SedeEspecialidadWS.insertarSedeEspecialidad(PazCitasWA.ServiciosWS.insertarSedeEspecialidadRequest request) {
             return base.Channel.insertarSedeEspecialidad(request);
         }
@@ -8414,6 +8788,29 @@ namespace PazCitasWA.ServiciosWS {
             PazCitasWA.ServiciosWS.insertarSedeEspecialidadRequest inValue = new PazCitasWA.ServiciosWS.insertarSedeEspecialidadRequest();
             inValue.sedeEsp = sedeEsp;
             return ((PazCitasWA.ServiciosWS.SedeEspecialidadWS)(this)).insertarSedeEspecialidadAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        PazCitasWA.ServiciosWS.eliminarSedeEspecialidadResponse PazCitasWA.ServiciosWS.SedeEspecialidadWS.eliminarSedeEspecialidad(PazCitasWA.ServiciosWS.eliminarSedeEspecialidadRequest request) {
+            return base.Channel.eliminarSedeEspecialidad(request);
+        }
+        
+        public int eliminarSedeEspecialidad(int idsedeEsp) {
+            PazCitasWA.ServiciosWS.eliminarSedeEspecialidadRequest inValue = new PazCitasWA.ServiciosWS.eliminarSedeEspecialidadRequest();
+            inValue.idsedeEsp = idsedeEsp;
+            PazCitasWA.ServiciosWS.eliminarSedeEspecialidadResponse retVal = ((PazCitasWA.ServiciosWS.SedeEspecialidadWS)(this)).eliminarSedeEspecialidad(inValue);
+            return retVal.@return;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<PazCitasWA.ServiciosWS.eliminarSedeEspecialidadResponse> PazCitasWA.ServiciosWS.SedeEspecialidadWS.eliminarSedeEspecialidadAsync(PazCitasWA.ServiciosWS.eliminarSedeEspecialidadRequest request) {
+            return base.Channel.eliminarSedeEspecialidadAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<PazCitasWA.ServiciosWS.eliminarSedeEspecialidadResponse> eliminarSedeEspecialidadAsync(int idsedeEsp) {
+            PazCitasWA.ServiciosWS.eliminarSedeEspecialidadRequest inValue = new PazCitasWA.ServiciosWS.eliminarSedeEspecialidadRequest();
+            inValue.idsedeEsp = idsedeEsp;
+            return ((PazCitasWA.ServiciosWS.SedeEspecialidadWS)(this)).eliminarSedeEspecialidadAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -8454,15 +8851,6 @@ namespace PazCitasWA.ServiciosWS {
         System.Threading.Tasks.Task<PazCitasWA.ServiciosWS.insertarRecetaResponse> insertarRecetaAsync(PazCitasWA.ServiciosWS.insertarRecetaRequest request);
         
         // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="http://services.pucp.edu.pe/RecetaWS/listarRecetaRequest", ReplyAction="http://services.pucp.edu.pe/RecetaWS/listarRecetaResponse")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        PazCitasWA.ServiciosWS.listarRecetaResponse listarReceta(PazCitasWA.ServiciosWS.listarRecetaRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://services.pucp.edu.pe/RecetaWS/listarRecetaRequest", ReplyAction="http://services.pucp.edu.pe/RecetaWS/listarRecetaResponse")]
-        System.Threading.Tasks.Task<PazCitasWA.ServiciosWS.listarRecetaResponse> listarRecetaAsync(PazCitasWA.ServiciosWS.listarRecetaRequest request);
-        
-        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
         [System.ServiceModel.OperationContractAttribute(Action="http://services.pucp.edu.pe/RecetaWS/modificarRecetaRequest", ReplyAction="http://services.pucp.edu.pe/RecetaWS/modificarRecetaResponse")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
@@ -8470,6 +8858,15 @@ namespace PazCitasWA.ServiciosWS {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://services.pucp.edu.pe/RecetaWS/modificarRecetaRequest", ReplyAction="http://services.pucp.edu.pe/RecetaWS/modificarRecetaResponse")]
         System.Threading.Tasks.Task<PazCitasWA.ServiciosWS.modificarRecetaResponse> modificarRecetaAsync(PazCitasWA.ServiciosWS.modificarRecetaRequest request);
+        
+        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="http://services.pucp.edu.pe/RecetaWS/listarRecetaRequest", ReplyAction="http://services.pucp.edu.pe/RecetaWS/listarRecetaResponse")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        PazCitasWA.ServiciosWS.listarRecetaResponse listarReceta(PazCitasWA.ServiciosWS.listarRecetaRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://services.pucp.edu.pe/RecetaWS/listarRecetaRequest", ReplyAction="http://services.pucp.edu.pe/RecetaWS/listarRecetaResponse")]
+        System.Threading.Tasks.Task<PazCitasWA.ServiciosWS.listarRecetaResponse> listarRecetaAsync(PazCitasWA.ServiciosWS.listarRecetaRequest request);
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -8511,34 +8908,6 @@ namespace PazCitasWA.ServiciosWS {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="listarReceta", WrapperNamespace="http://services.pucp.edu.pe", IsWrapped=true)]
-    public partial class listarRecetaRequest {
-        
-        public listarRecetaRequest() {
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="listarRecetaResponse", WrapperNamespace="http://services.pucp.edu.pe", IsWrapped=true)]
-    public partial class listarRecetaResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.pucp.edu.pe", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute("return", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public PazCitasWA.ServiciosWS.receta[] @return;
-        
-        public listarRecetaResponse() {
-        }
-        
-        public listarRecetaResponse(PazCitasWA.ServiciosWS.receta[] @return) {
-            this.@return = @return;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(WrapperName="modificarReceta", WrapperNamespace="http://services.pucp.edu.pe", IsWrapped=true)]
     public partial class modificarRecetaRequest {
         
@@ -8568,6 +8937,34 @@ namespace PazCitasWA.ServiciosWS {
         }
         
         public modificarRecetaResponse(int @return) {
+            this.@return = @return;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="listarReceta", WrapperNamespace="http://services.pucp.edu.pe", IsWrapped=true)]
+    public partial class listarRecetaRequest {
+        
+        public listarRecetaRequest() {
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="listarRecetaResponse", WrapperNamespace="http://services.pucp.edu.pe", IsWrapped=true)]
+    public partial class listarRecetaResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.pucp.edu.pe", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute("return", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public PazCitasWA.ServiciosWS.receta[] @return;
+        
+        public listarRecetaResponse() {
+        }
+        
+        public listarRecetaResponse(PazCitasWA.ServiciosWS.receta[] @return) {
             this.@return = @return;
         }
     }
@@ -8623,27 +9020,6 @@ namespace PazCitasWA.ServiciosWS {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        PazCitasWA.ServiciosWS.listarRecetaResponse PazCitasWA.ServiciosWS.RecetaWS.listarReceta(PazCitasWA.ServiciosWS.listarRecetaRequest request) {
-            return base.Channel.listarReceta(request);
-        }
-        
-        public PazCitasWA.ServiciosWS.receta[] listarReceta() {
-            PazCitasWA.ServiciosWS.listarRecetaRequest inValue = new PazCitasWA.ServiciosWS.listarRecetaRequest();
-            PazCitasWA.ServiciosWS.listarRecetaResponse retVal = ((PazCitasWA.ServiciosWS.RecetaWS)(this)).listarReceta(inValue);
-            return retVal.@return;
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<PazCitasWA.ServiciosWS.listarRecetaResponse> PazCitasWA.ServiciosWS.RecetaWS.listarRecetaAsync(PazCitasWA.ServiciosWS.listarRecetaRequest request) {
-            return base.Channel.listarRecetaAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<PazCitasWA.ServiciosWS.listarRecetaResponse> listarRecetaAsync() {
-            PazCitasWA.ServiciosWS.listarRecetaRequest inValue = new PazCitasWA.ServiciosWS.listarRecetaRequest();
-            return ((PazCitasWA.ServiciosWS.RecetaWS)(this)).listarRecetaAsync(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         PazCitasWA.ServiciosWS.modificarRecetaResponse PazCitasWA.ServiciosWS.RecetaWS.modificarReceta(PazCitasWA.ServiciosWS.modificarRecetaRequest request) {
             return base.Channel.modificarReceta(request);
         }
@@ -8665,29 +9041,32 @@ namespace PazCitasWA.ServiciosWS {
             inValue.receta = receta;
             return ((PazCitasWA.ServiciosWS.RecetaWS)(this)).modificarRecetaAsync(inValue);
         }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        PazCitasWA.ServiciosWS.listarRecetaResponse PazCitasWA.ServiciosWS.RecetaWS.listarReceta(PazCitasWA.ServiciosWS.listarRecetaRequest request) {
+            return base.Channel.listarReceta(request);
+        }
+        
+        public PazCitasWA.ServiciosWS.receta[] listarReceta() {
+            PazCitasWA.ServiciosWS.listarRecetaRequest inValue = new PazCitasWA.ServiciosWS.listarRecetaRequest();
+            PazCitasWA.ServiciosWS.listarRecetaResponse retVal = ((PazCitasWA.ServiciosWS.RecetaWS)(this)).listarReceta(inValue);
+            return retVal.@return;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<PazCitasWA.ServiciosWS.listarRecetaResponse> PazCitasWA.ServiciosWS.RecetaWS.listarRecetaAsync(PazCitasWA.ServiciosWS.listarRecetaRequest request) {
+            return base.Channel.listarRecetaAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<PazCitasWA.ServiciosWS.listarRecetaResponse> listarRecetaAsync() {
+            PazCitasWA.ServiciosWS.listarRecetaRequest inValue = new PazCitasWA.ServiciosWS.listarRecetaRequest();
+            return ((PazCitasWA.ServiciosWS.RecetaWS)(this)).listarRecetaAsync(inValue);
+        }
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(Namespace="http://services.pucp.edu.pe", ConfigurationName="ServiciosWS.EspecialidadWS")]
     public interface EspecialidadWS {
-        
-        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="http://services.pucp.edu.pe/EspecialidadWS/listarXSedeRequest", ReplyAction="http://services.pucp.edu.pe/EspecialidadWS/listarXSedeResponse")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        PazCitasWA.ServiciosWS.listarXSedeResponse listarXSede(PazCitasWA.ServiciosWS.listarXSedeRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://services.pucp.edu.pe/EspecialidadWS/listarXSedeRequest", ReplyAction="http://services.pucp.edu.pe/EspecialidadWS/listarXSedeResponse")]
-        System.Threading.Tasks.Task<PazCitasWA.ServiciosWS.listarXSedeResponse> listarXSedeAsync(PazCitasWA.ServiciosWS.listarXSedeRequest request);
-        
-        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="http://services.pucp.edu.pe/EspecialidadWS/listarEspecialidadRequest", ReplyAction="http://services.pucp.edu.pe/EspecialidadWS/listarEspecialidadResponse")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        PazCitasWA.ServiciosWS.listarEspecialidadResponse listarEspecialidad(PazCitasWA.ServiciosWS.listarEspecialidadRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://services.pucp.edu.pe/EspecialidadWS/listarEspecialidadRequest", ReplyAction="http://services.pucp.edu.pe/EspecialidadWS/listarEspecialidadResponse")]
-        System.Threading.Tasks.Task<PazCitasWA.ServiciosWS.listarEspecialidadResponse> listarEspecialidadAsync(PazCitasWA.ServiciosWS.listarEspecialidadRequest request);
         
         // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
         [System.ServiceModel.OperationContractAttribute(Action="http://services.pucp.edu.pe/EspecialidadWS/insertarEspecialidadRequest", ReplyAction="http://services.pucp.edu.pe/EspecialidadWS/insertarEspecialidadResponse")]
@@ -8697,15 +9076,6 @@ namespace PazCitasWA.ServiciosWS {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://services.pucp.edu.pe/EspecialidadWS/insertarEspecialidadRequest", ReplyAction="http://services.pucp.edu.pe/EspecialidadWS/insertarEspecialidadResponse")]
         System.Threading.Tasks.Task<PazCitasWA.ServiciosWS.insertarEspecialidadResponse> insertarEspecialidadAsync(PazCitasWA.ServiciosWS.insertarEspecialidadRequest request);
-        
-        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="http://services.pucp.edu.pe/EspecialidadWS/obtenerEspecialidadPorIdRequest", ReplyAction="http://services.pucp.edu.pe/EspecialidadWS/obtenerEspecialidadPorIdResponse")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        PazCitasWA.ServiciosWS.obtenerEspecialidadPorIdResponse obtenerEspecialidadPorId(PazCitasWA.ServiciosWS.obtenerEspecialidadPorIdRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://services.pucp.edu.pe/EspecialidadWS/obtenerEspecialidadPorIdRequest", ReplyAction="http://services.pucp.edu.pe/EspecialidadWS/obtenerEspecialidadPorIdResponse")]
-        System.Threading.Tasks.Task<PazCitasWA.ServiciosWS.obtenerEspecialidadPorIdResponse> obtenerEspecialidadPorIdAsync(PazCitasWA.ServiciosWS.obtenerEspecialidadPorIdRequest request);
         
         // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
         [System.ServiceModel.OperationContractAttribute(Action="http://services.pucp.edu.pe/EspecialidadWS/modificarEspecialidadRequest", ReplyAction="http://services.pucp.edu.pe/EspecialidadWS/modificarEspecialidadResponse")]
@@ -8724,70 +9094,33 @@ namespace PazCitasWA.ServiciosWS {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://services.pucp.edu.pe/EspecialidadWS/eliminarEspecialidadRequest", ReplyAction="http://services.pucp.edu.pe/EspecialidadWS/eliminarEspecialidadResponse")]
         System.Threading.Tasks.Task<PazCitasWA.ServiciosWS.eliminarEspecialidadResponse> eliminarEspecialidadAsync(PazCitasWA.ServiciosWS.eliminarEspecialidadRequest request);
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="listarXSede", WrapperNamespace="http://services.pucp.edu.pe", IsWrapped=true)]
-    public partial class listarXSedeRequest {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.pucp.edu.pe", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public int idSede;
+        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="http://services.pucp.edu.pe/EspecialidadWS/obtenerEspecialidadPorIdRequest", ReplyAction="http://services.pucp.edu.pe/EspecialidadWS/obtenerEspecialidadPorIdResponse")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        PazCitasWA.ServiciosWS.obtenerEspecialidadPorIdResponse obtenerEspecialidadPorId(PazCitasWA.ServiciosWS.obtenerEspecialidadPorIdRequest request);
         
-        public listarXSedeRequest() {
-        }
+        [System.ServiceModel.OperationContractAttribute(Action="http://services.pucp.edu.pe/EspecialidadWS/obtenerEspecialidadPorIdRequest", ReplyAction="http://services.pucp.edu.pe/EspecialidadWS/obtenerEspecialidadPorIdResponse")]
+        System.Threading.Tasks.Task<PazCitasWA.ServiciosWS.obtenerEspecialidadPorIdResponse> obtenerEspecialidadPorIdAsync(PazCitasWA.ServiciosWS.obtenerEspecialidadPorIdRequest request);
         
-        public listarXSedeRequest(int idSede) {
-            this.idSede = idSede;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="listarXSedeResponse", WrapperNamespace="http://services.pucp.edu.pe", IsWrapped=true)]
-    public partial class listarXSedeResponse {
+        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="http://services.pucp.edu.pe/EspecialidadWS/listarXSedeRequest", ReplyAction="http://services.pucp.edu.pe/EspecialidadWS/listarXSedeResponse")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        PazCitasWA.ServiciosWS.listarXSedeResponse listarXSede(PazCitasWA.ServiciosWS.listarXSedeRequest request);
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.pucp.edu.pe", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute("return", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public PazCitasWA.ServiciosWS.especialidad[] @return;
+        [System.ServiceModel.OperationContractAttribute(Action="http://services.pucp.edu.pe/EspecialidadWS/listarXSedeRequest", ReplyAction="http://services.pucp.edu.pe/EspecialidadWS/listarXSedeResponse")]
+        System.Threading.Tasks.Task<PazCitasWA.ServiciosWS.listarXSedeResponse> listarXSedeAsync(PazCitasWA.ServiciosWS.listarXSedeRequest request);
         
-        public listarXSedeResponse() {
-        }
+        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="http://services.pucp.edu.pe/EspecialidadWS/listarEspecialidadRequest", ReplyAction="http://services.pucp.edu.pe/EspecialidadWS/listarEspecialidadResponse")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        PazCitasWA.ServiciosWS.listarEspecialidadResponse listarEspecialidad(PazCitasWA.ServiciosWS.listarEspecialidadRequest request);
         
-        public listarXSedeResponse(PazCitasWA.ServiciosWS.especialidad[] @return) {
-            this.@return = @return;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="listarEspecialidad", WrapperNamespace="http://services.pucp.edu.pe", IsWrapped=true)]
-    public partial class listarEspecialidadRequest {
-        
-        public listarEspecialidadRequest() {
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="listarEspecialidadResponse", WrapperNamespace="http://services.pucp.edu.pe", IsWrapped=true)]
-    public partial class listarEspecialidadResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.pucp.edu.pe", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute("return", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public PazCitasWA.ServiciosWS.especialidad[] @return;
-        
-        public listarEspecialidadResponse() {
-        }
-        
-        public listarEspecialidadResponse(PazCitasWA.ServiciosWS.especialidad[] @return) {
-            this.@return = @return;
-        }
+        [System.ServiceModel.OperationContractAttribute(Action="http://services.pucp.edu.pe/EspecialidadWS/listarEspecialidadRequest", ReplyAction="http://services.pucp.edu.pe/EspecialidadWS/listarEspecialidadResponse")]
+        System.Threading.Tasks.Task<PazCitasWA.ServiciosWS.listarEspecialidadResponse> listarEspecialidadAsync(PazCitasWA.ServiciosWS.listarEspecialidadRequest request);
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -8822,42 +9155,6 @@ namespace PazCitasWA.ServiciosWS {
         }
         
         public insertarEspecialidadResponse(int @return) {
-            this.@return = @return;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="obtenerEspecialidadPorId", WrapperNamespace="http://services.pucp.edu.pe", IsWrapped=true)]
-    public partial class obtenerEspecialidadPorIdRequest {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.pucp.edu.pe", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public int idEspecialidad;
-        
-        public obtenerEspecialidadPorIdRequest() {
-        }
-        
-        public obtenerEspecialidadPorIdRequest(int idEspecialidad) {
-            this.idEspecialidad = idEspecialidad;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="obtenerEspecialidadPorIdResponse", WrapperNamespace="http://services.pucp.edu.pe", IsWrapped=true)]
-    public partial class obtenerEspecialidadPorIdResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.pucp.edu.pe", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public PazCitasWA.ServiciosWS.especialidad @return;
-        
-        public obtenerEspecialidadPorIdResponse() {
-        }
-        
-        public obtenerEspecialidadPorIdResponse(PazCitasWA.ServiciosWS.especialidad @return) {
             this.@return = @return;
         }
     }
@@ -8934,6 +9231,106 @@ namespace PazCitasWA.ServiciosWS {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="obtenerEspecialidadPorId", WrapperNamespace="http://services.pucp.edu.pe", IsWrapped=true)]
+    public partial class obtenerEspecialidadPorIdRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.pucp.edu.pe", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public int idEspecialidad;
+        
+        public obtenerEspecialidadPorIdRequest() {
+        }
+        
+        public obtenerEspecialidadPorIdRequest(int idEspecialidad) {
+            this.idEspecialidad = idEspecialidad;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="obtenerEspecialidadPorIdResponse", WrapperNamespace="http://services.pucp.edu.pe", IsWrapped=true)]
+    public partial class obtenerEspecialidadPorIdResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.pucp.edu.pe", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public PazCitasWA.ServiciosWS.especialidad @return;
+        
+        public obtenerEspecialidadPorIdResponse() {
+        }
+        
+        public obtenerEspecialidadPorIdResponse(PazCitasWA.ServiciosWS.especialidad @return) {
+            this.@return = @return;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="listarXSede", WrapperNamespace="http://services.pucp.edu.pe", IsWrapped=true)]
+    public partial class listarXSedeRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.pucp.edu.pe", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public int idSede;
+        
+        public listarXSedeRequest() {
+        }
+        
+        public listarXSedeRequest(int idSede) {
+            this.idSede = idSede;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="listarXSedeResponse", WrapperNamespace="http://services.pucp.edu.pe", IsWrapped=true)]
+    public partial class listarXSedeResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.pucp.edu.pe", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute("return", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public PazCitasWA.ServiciosWS.especialidad[] @return;
+        
+        public listarXSedeResponse() {
+        }
+        
+        public listarXSedeResponse(PazCitasWA.ServiciosWS.especialidad[] @return) {
+            this.@return = @return;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="listarEspecialidad", WrapperNamespace="http://services.pucp.edu.pe", IsWrapped=true)]
+    public partial class listarEspecialidadRequest {
+        
+        public listarEspecialidadRequest() {
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="listarEspecialidadResponse", WrapperNamespace="http://services.pucp.edu.pe", IsWrapped=true)]
+    public partial class listarEspecialidadResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.pucp.edu.pe", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute("return", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public PazCitasWA.ServiciosWS.especialidad[] @return;
+        
+        public listarEspecialidadResponse() {
+        }
+        
+        public listarEspecialidadResponse(PazCitasWA.ServiciosWS.especialidad[] @return) {
+            this.@return = @return;
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     public interface EspecialidadWSChannel : PazCitasWA.ServiciosWS.EspecialidadWS, System.ServiceModel.IClientChannel {
     }
@@ -8962,50 +9359,6 @@ namespace PazCitasWA.ServiciosWS {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        PazCitasWA.ServiciosWS.listarXSedeResponse PazCitasWA.ServiciosWS.EspecialidadWS.listarXSede(PazCitasWA.ServiciosWS.listarXSedeRequest request) {
-            return base.Channel.listarXSede(request);
-        }
-        
-        public PazCitasWA.ServiciosWS.especialidad[] listarXSede(int idSede) {
-            PazCitasWA.ServiciosWS.listarXSedeRequest inValue = new PazCitasWA.ServiciosWS.listarXSedeRequest();
-            inValue.idSede = idSede;
-            PazCitasWA.ServiciosWS.listarXSedeResponse retVal = ((PazCitasWA.ServiciosWS.EspecialidadWS)(this)).listarXSede(inValue);
-            return retVal.@return;
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<PazCitasWA.ServiciosWS.listarXSedeResponse> PazCitasWA.ServiciosWS.EspecialidadWS.listarXSedeAsync(PazCitasWA.ServiciosWS.listarXSedeRequest request) {
-            return base.Channel.listarXSedeAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<PazCitasWA.ServiciosWS.listarXSedeResponse> listarXSedeAsync(int idSede) {
-            PazCitasWA.ServiciosWS.listarXSedeRequest inValue = new PazCitasWA.ServiciosWS.listarXSedeRequest();
-            inValue.idSede = idSede;
-            return ((PazCitasWA.ServiciosWS.EspecialidadWS)(this)).listarXSedeAsync(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        PazCitasWA.ServiciosWS.listarEspecialidadResponse PazCitasWA.ServiciosWS.EspecialidadWS.listarEspecialidad(PazCitasWA.ServiciosWS.listarEspecialidadRequest request) {
-            return base.Channel.listarEspecialidad(request);
-        }
-        
-        public PazCitasWA.ServiciosWS.especialidad[] listarEspecialidad() {
-            PazCitasWA.ServiciosWS.listarEspecialidadRequest inValue = new PazCitasWA.ServiciosWS.listarEspecialidadRequest();
-            PazCitasWA.ServiciosWS.listarEspecialidadResponse retVal = ((PazCitasWA.ServiciosWS.EspecialidadWS)(this)).listarEspecialidad(inValue);
-            return retVal.@return;
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<PazCitasWA.ServiciosWS.listarEspecialidadResponse> PazCitasWA.ServiciosWS.EspecialidadWS.listarEspecialidadAsync(PazCitasWA.ServiciosWS.listarEspecialidadRequest request) {
-            return base.Channel.listarEspecialidadAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<PazCitasWA.ServiciosWS.listarEspecialidadResponse> listarEspecialidadAsync() {
-            PazCitasWA.ServiciosWS.listarEspecialidadRequest inValue = new PazCitasWA.ServiciosWS.listarEspecialidadRequest();
-            return ((PazCitasWA.ServiciosWS.EspecialidadWS)(this)).listarEspecialidadAsync(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         PazCitasWA.ServiciosWS.insertarEspecialidadResponse PazCitasWA.ServiciosWS.EspecialidadWS.insertarEspecialidad(PazCitasWA.ServiciosWS.insertarEspecialidadRequest request) {
             return base.Channel.insertarEspecialidad(request);
         }
@@ -9026,29 +9379,6 @@ namespace PazCitasWA.ServiciosWS {
             PazCitasWA.ServiciosWS.insertarEspecialidadRequest inValue = new PazCitasWA.ServiciosWS.insertarEspecialidadRequest();
             inValue.especialidad = especialidad;
             return ((PazCitasWA.ServiciosWS.EspecialidadWS)(this)).insertarEspecialidadAsync(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        PazCitasWA.ServiciosWS.obtenerEspecialidadPorIdResponse PazCitasWA.ServiciosWS.EspecialidadWS.obtenerEspecialidadPorId(PazCitasWA.ServiciosWS.obtenerEspecialidadPorIdRequest request) {
-            return base.Channel.obtenerEspecialidadPorId(request);
-        }
-        
-        public PazCitasWA.ServiciosWS.especialidad obtenerEspecialidadPorId(int idEspecialidad) {
-            PazCitasWA.ServiciosWS.obtenerEspecialidadPorIdRequest inValue = new PazCitasWA.ServiciosWS.obtenerEspecialidadPorIdRequest();
-            inValue.idEspecialidad = idEspecialidad;
-            PazCitasWA.ServiciosWS.obtenerEspecialidadPorIdResponse retVal = ((PazCitasWA.ServiciosWS.EspecialidadWS)(this)).obtenerEspecialidadPorId(inValue);
-            return retVal.@return;
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<PazCitasWA.ServiciosWS.obtenerEspecialidadPorIdResponse> PazCitasWA.ServiciosWS.EspecialidadWS.obtenerEspecialidadPorIdAsync(PazCitasWA.ServiciosWS.obtenerEspecialidadPorIdRequest request) {
-            return base.Channel.obtenerEspecialidadPorIdAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<PazCitasWA.ServiciosWS.obtenerEspecialidadPorIdResponse> obtenerEspecialidadPorIdAsync(int idEspecialidad) {
-            PazCitasWA.ServiciosWS.obtenerEspecialidadPorIdRequest inValue = new PazCitasWA.ServiciosWS.obtenerEspecialidadPorIdRequest();
-            inValue.idEspecialidad = idEspecialidad;
-            return ((PazCitasWA.ServiciosWS.EspecialidadWS)(this)).obtenerEspecialidadPorIdAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -9096,20 +9426,78 @@ namespace PazCitasWA.ServiciosWS {
             inValue.idepecialidad = idepecialidad;
             return ((PazCitasWA.ServiciosWS.EspecialidadWS)(this)).eliminarEspecialidadAsync(inValue);
         }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        PazCitasWA.ServiciosWS.obtenerEspecialidadPorIdResponse PazCitasWA.ServiciosWS.EspecialidadWS.obtenerEspecialidadPorId(PazCitasWA.ServiciosWS.obtenerEspecialidadPorIdRequest request) {
+            return base.Channel.obtenerEspecialidadPorId(request);
+        }
+        
+        public PazCitasWA.ServiciosWS.especialidad obtenerEspecialidadPorId(int idEspecialidad) {
+            PazCitasWA.ServiciosWS.obtenerEspecialidadPorIdRequest inValue = new PazCitasWA.ServiciosWS.obtenerEspecialidadPorIdRequest();
+            inValue.idEspecialidad = idEspecialidad;
+            PazCitasWA.ServiciosWS.obtenerEspecialidadPorIdResponse retVal = ((PazCitasWA.ServiciosWS.EspecialidadWS)(this)).obtenerEspecialidadPorId(inValue);
+            return retVal.@return;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<PazCitasWA.ServiciosWS.obtenerEspecialidadPorIdResponse> PazCitasWA.ServiciosWS.EspecialidadWS.obtenerEspecialidadPorIdAsync(PazCitasWA.ServiciosWS.obtenerEspecialidadPorIdRequest request) {
+            return base.Channel.obtenerEspecialidadPorIdAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<PazCitasWA.ServiciosWS.obtenerEspecialidadPorIdResponse> obtenerEspecialidadPorIdAsync(int idEspecialidad) {
+            PazCitasWA.ServiciosWS.obtenerEspecialidadPorIdRequest inValue = new PazCitasWA.ServiciosWS.obtenerEspecialidadPorIdRequest();
+            inValue.idEspecialidad = idEspecialidad;
+            return ((PazCitasWA.ServiciosWS.EspecialidadWS)(this)).obtenerEspecialidadPorIdAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        PazCitasWA.ServiciosWS.listarXSedeResponse PazCitasWA.ServiciosWS.EspecialidadWS.listarXSede(PazCitasWA.ServiciosWS.listarXSedeRequest request) {
+            return base.Channel.listarXSede(request);
+        }
+        
+        public PazCitasWA.ServiciosWS.especialidad[] listarXSede(int idSede) {
+            PazCitasWA.ServiciosWS.listarXSedeRequest inValue = new PazCitasWA.ServiciosWS.listarXSedeRequest();
+            inValue.idSede = idSede;
+            PazCitasWA.ServiciosWS.listarXSedeResponse retVal = ((PazCitasWA.ServiciosWS.EspecialidadWS)(this)).listarXSede(inValue);
+            return retVal.@return;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<PazCitasWA.ServiciosWS.listarXSedeResponse> PazCitasWA.ServiciosWS.EspecialidadWS.listarXSedeAsync(PazCitasWA.ServiciosWS.listarXSedeRequest request) {
+            return base.Channel.listarXSedeAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<PazCitasWA.ServiciosWS.listarXSedeResponse> listarXSedeAsync(int idSede) {
+            PazCitasWA.ServiciosWS.listarXSedeRequest inValue = new PazCitasWA.ServiciosWS.listarXSedeRequest();
+            inValue.idSede = idSede;
+            return ((PazCitasWA.ServiciosWS.EspecialidadWS)(this)).listarXSedeAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        PazCitasWA.ServiciosWS.listarEspecialidadResponse PazCitasWA.ServiciosWS.EspecialidadWS.listarEspecialidad(PazCitasWA.ServiciosWS.listarEspecialidadRequest request) {
+            return base.Channel.listarEspecialidad(request);
+        }
+        
+        public PazCitasWA.ServiciosWS.especialidad[] listarEspecialidad() {
+            PazCitasWA.ServiciosWS.listarEspecialidadRequest inValue = new PazCitasWA.ServiciosWS.listarEspecialidadRequest();
+            PazCitasWA.ServiciosWS.listarEspecialidadResponse retVal = ((PazCitasWA.ServiciosWS.EspecialidadWS)(this)).listarEspecialidad(inValue);
+            return retVal.@return;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<PazCitasWA.ServiciosWS.listarEspecialidadResponse> PazCitasWA.ServiciosWS.EspecialidadWS.listarEspecialidadAsync(PazCitasWA.ServiciosWS.listarEspecialidadRequest request) {
+            return base.Channel.listarEspecialidadAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<PazCitasWA.ServiciosWS.listarEspecialidadResponse> listarEspecialidadAsync() {
+            PazCitasWA.ServiciosWS.listarEspecialidadRequest inValue = new PazCitasWA.ServiciosWS.listarEspecialidadRequest();
+            return ((PazCitasWA.ServiciosWS.EspecialidadWS)(this)).listarEspecialidadAsync(inValue);
+        }
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(Namespace="http://services.pucp.edu.pe", ConfigurationName="ServiciosWS.HorarioTrabajoWS")]
     public interface HorarioTrabajoWS {
-        
-        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="http://services.pucp.edu.pe/HorarioTrabajoWS/eliminarHorarioRequest", ReplyAction="http://services.pucp.edu.pe/HorarioTrabajoWS/eliminarHorarioResponse")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        PazCitasWA.ServiciosWS.eliminarHorarioResponse eliminarHorario(PazCitasWA.ServiciosWS.eliminarHorarioRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://services.pucp.edu.pe/HorarioTrabajoWS/eliminarHorarioRequest", ReplyAction="http://services.pucp.edu.pe/HorarioTrabajoWS/eliminarHorarioResponse")]
-        System.Threading.Tasks.Task<PazCitasWA.ServiciosWS.eliminarHorarioResponse> eliminarHorarioAsync(PazCitasWA.ServiciosWS.eliminarHorarioRequest request);
         
         // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
         [System.ServiceModel.OperationContractAttribute(Action="http://services.pucp.edu.pe/HorarioTrabajoWS/listarPorMedicoRequest", ReplyAction="http://services.pucp.edu.pe/HorarioTrabajoWS/listarPorMedicoResponse")]
@@ -9121,13 +9509,13 @@ namespace PazCitasWA.ServiciosWS {
         System.Threading.Tasks.Task<PazCitasWA.ServiciosWS.listarPorMedicoResponse> listarPorMedicoAsync(PazCitasWA.ServiciosWS.listarPorMedicoRequest request);
         
         // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="http://services.pucp.edu.pe/HorarioTrabajoWS/modificarHorarioRequest", ReplyAction="http://services.pucp.edu.pe/HorarioTrabajoWS/modificarHorarioResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://services.pucp.edu.pe/HorarioTrabajoWS/listarHorarioRequest", ReplyAction="http://services.pucp.edu.pe/HorarioTrabajoWS/listarHorarioResponse")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        PazCitasWA.ServiciosWS.modificarHorarioResponse modificarHorario(PazCitasWA.ServiciosWS.modificarHorarioRequest request);
+        PazCitasWA.ServiciosWS.listarHorarioResponse listarHorario(PazCitasWA.ServiciosWS.listarHorarioRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://services.pucp.edu.pe/HorarioTrabajoWS/modificarHorarioRequest", ReplyAction="http://services.pucp.edu.pe/HorarioTrabajoWS/modificarHorarioResponse")]
-        System.Threading.Tasks.Task<PazCitasWA.ServiciosWS.modificarHorarioResponse> modificarHorarioAsync(PazCitasWA.ServiciosWS.modificarHorarioRequest request);
+        [System.ServiceModel.OperationContractAttribute(Action="http://services.pucp.edu.pe/HorarioTrabajoWS/listarHorarioRequest", ReplyAction="http://services.pucp.edu.pe/HorarioTrabajoWS/listarHorarioResponse")]
+        System.Threading.Tasks.Task<PazCitasWA.ServiciosWS.listarHorarioResponse> listarHorarioAsync(PazCitasWA.ServiciosWS.listarHorarioRequest request);
         
         // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
         [System.ServiceModel.OperationContractAttribute(Action="http://services.pucp.edu.pe/HorarioTrabajoWS/insertaHorarioRequest", ReplyAction="http://services.pucp.edu.pe/HorarioTrabajoWS/insertaHorarioResponse")]
@@ -9139,13 +9527,22 @@ namespace PazCitasWA.ServiciosWS {
         System.Threading.Tasks.Task<PazCitasWA.ServiciosWS.insertaHorarioResponse> insertaHorarioAsync(PazCitasWA.ServiciosWS.insertaHorarioRequest request);
         
         // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="http://services.pucp.edu.pe/HorarioTrabajoWS/listarHorarioRequest", ReplyAction="http://services.pucp.edu.pe/HorarioTrabajoWS/listarHorarioResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://services.pucp.edu.pe/HorarioTrabajoWS/modificarHorarioRequest", ReplyAction="http://services.pucp.edu.pe/HorarioTrabajoWS/modificarHorarioResponse")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        PazCitasWA.ServiciosWS.listarHorarioResponse listarHorario(PazCitasWA.ServiciosWS.listarHorarioRequest request);
+        PazCitasWA.ServiciosWS.modificarHorarioResponse modificarHorario(PazCitasWA.ServiciosWS.modificarHorarioRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://services.pucp.edu.pe/HorarioTrabajoWS/listarHorarioRequest", ReplyAction="http://services.pucp.edu.pe/HorarioTrabajoWS/listarHorarioResponse")]
-        System.Threading.Tasks.Task<PazCitasWA.ServiciosWS.listarHorarioResponse> listarHorarioAsync(PazCitasWA.ServiciosWS.listarHorarioRequest request);
+        [System.ServiceModel.OperationContractAttribute(Action="http://services.pucp.edu.pe/HorarioTrabajoWS/modificarHorarioRequest", ReplyAction="http://services.pucp.edu.pe/HorarioTrabajoWS/modificarHorarioResponse")]
+        System.Threading.Tasks.Task<PazCitasWA.ServiciosWS.modificarHorarioResponse> modificarHorarioAsync(PazCitasWA.ServiciosWS.modificarHorarioRequest request);
+        
+        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="http://services.pucp.edu.pe/HorarioTrabajoWS/eliminarHorarioRequest", ReplyAction="http://services.pucp.edu.pe/HorarioTrabajoWS/eliminarHorarioResponse")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        PazCitasWA.ServiciosWS.eliminarHorarioResponse eliminarHorario(PazCitasWA.ServiciosWS.eliminarHorarioRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://services.pucp.edu.pe/HorarioTrabajoWS/eliminarHorarioRequest", ReplyAction="http://services.pucp.edu.pe/HorarioTrabajoWS/eliminarHorarioResponse")]
+        System.Threading.Tasks.Task<PazCitasWA.ServiciosWS.eliminarHorarioResponse> eliminarHorarioAsync(PazCitasWA.ServiciosWS.eliminarHorarioRequest request);
         
         // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
         [System.ServiceModel.OperationContractAttribute(Action="http://services.pucp.edu.pe/HorarioTrabajoWS/eliminarHorarioPorMedicoRequest", ReplyAction="http://services.pucp.edu.pe/HorarioTrabajoWS/eliminarHorarioPorMedicoResponse")]
@@ -9155,42 +9552,6 @@ namespace PazCitasWA.ServiciosWS {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://services.pucp.edu.pe/HorarioTrabajoWS/eliminarHorarioPorMedicoRequest", ReplyAction="http://services.pucp.edu.pe/HorarioTrabajoWS/eliminarHorarioPorMedicoResponse")]
         System.Threading.Tasks.Task<PazCitasWA.ServiciosWS.eliminarHorarioPorMedicoResponse> eliminarHorarioPorMedicoAsync(PazCitasWA.ServiciosWS.eliminarHorarioPorMedicoRequest request);
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="eliminarHorario", WrapperNamespace="http://services.pucp.edu.pe", IsWrapped=true)]
-    public partial class eliminarHorarioRequest {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.pucp.edu.pe", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public int idhorario;
-        
-        public eliminarHorarioRequest() {
-        }
-        
-        public eliminarHorarioRequest(int idhorario) {
-            this.idhorario = idhorario;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="eliminarHorarioResponse", WrapperNamespace="http://services.pucp.edu.pe", IsWrapped=true)]
-    public partial class eliminarHorarioResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.pucp.edu.pe", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public int @return;
-        
-        public eliminarHorarioResponse() {
-        }
-        
-        public eliminarHorarioResponse(int @return) {
-            this.@return = @return;
-        }
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -9232,35 +9593,27 @@ namespace PazCitasWA.ServiciosWS {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="modificarHorario", WrapperNamespace="http://services.pucp.edu.pe", IsWrapped=true)]
-    public partial class modificarHorarioRequest {
+    [System.ServiceModel.MessageContractAttribute(WrapperName="listarHorario", WrapperNamespace="http://services.pucp.edu.pe", IsWrapped=true)]
+    public partial class listarHorarioRequest {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.pucp.edu.pe", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public PazCitasWA.ServiciosWS.horarioTrabajo horario;
-        
-        public modificarHorarioRequest() {
-        }
-        
-        public modificarHorarioRequest(PazCitasWA.ServiciosWS.horarioTrabajo horario) {
-            this.horario = horario;
+        public listarHorarioRequest() {
         }
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="modificarHorarioResponse", WrapperNamespace="http://services.pucp.edu.pe", IsWrapped=true)]
-    public partial class modificarHorarioResponse {
+    [System.ServiceModel.MessageContractAttribute(WrapperName="listarHorarioResponse", WrapperNamespace="http://services.pucp.edu.pe", IsWrapped=true)]
+    public partial class listarHorarioResponse {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.pucp.edu.pe", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public int @return;
+        [System.Xml.Serialization.XmlElementAttribute("return", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public PazCitasWA.ServiciosWS.horarioTrabajo[] @return;
         
-        public modificarHorarioResponse() {
+        public listarHorarioResponse() {
         }
         
-        public modificarHorarioResponse(int @return) {
+        public listarHorarioResponse(PazCitasWA.ServiciosWS.horarioTrabajo[] @return) {
             this.@return = @return;
         }
     }
@@ -9304,27 +9657,71 @@ namespace PazCitasWA.ServiciosWS {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="listarHorario", WrapperNamespace="http://services.pucp.edu.pe", IsWrapped=true)]
-    public partial class listarHorarioRequest {
+    [System.ServiceModel.MessageContractAttribute(WrapperName="modificarHorario", WrapperNamespace="http://services.pucp.edu.pe", IsWrapped=true)]
+    public partial class modificarHorarioRequest {
         
-        public listarHorarioRequest() {
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.pucp.edu.pe", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public PazCitasWA.ServiciosWS.horarioTrabajo horario;
+        
+        public modificarHorarioRequest() {
+        }
+        
+        public modificarHorarioRequest(PazCitasWA.ServiciosWS.horarioTrabajo horario) {
+            this.horario = horario;
         }
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="listarHorarioResponse", WrapperNamespace="http://services.pucp.edu.pe", IsWrapped=true)]
-    public partial class listarHorarioResponse {
+    [System.ServiceModel.MessageContractAttribute(WrapperName="modificarHorarioResponse", WrapperNamespace="http://services.pucp.edu.pe", IsWrapped=true)]
+    public partial class modificarHorarioResponse {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.pucp.edu.pe", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute("return", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public PazCitasWA.ServiciosWS.horarioTrabajo[] @return;
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public int @return;
         
-        public listarHorarioResponse() {
+        public modificarHorarioResponse() {
         }
         
-        public listarHorarioResponse(PazCitasWA.ServiciosWS.horarioTrabajo[] @return) {
+        public modificarHorarioResponse(int @return) {
+            this.@return = @return;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="eliminarHorario", WrapperNamespace="http://services.pucp.edu.pe", IsWrapped=true)]
+    public partial class eliminarHorarioRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.pucp.edu.pe", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public int idhorario;
+        
+        public eliminarHorarioRequest() {
+        }
+        
+        public eliminarHorarioRequest(int idhorario) {
+            this.idhorario = idhorario;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="eliminarHorarioResponse", WrapperNamespace="http://services.pucp.edu.pe", IsWrapped=true)]
+    public partial class eliminarHorarioResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.pucp.edu.pe", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public int @return;
+        
+        public eliminarHorarioResponse() {
+        }
+        
+        public eliminarHorarioResponse(int @return) {
             this.@return = @return;
         }
     }
@@ -9393,29 +9790,6 @@ namespace PazCitasWA.ServiciosWS {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        PazCitasWA.ServiciosWS.eliminarHorarioResponse PazCitasWA.ServiciosWS.HorarioTrabajoWS.eliminarHorario(PazCitasWA.ServiciosWS.eliminarHorarioRequest request) {
-            return base.Channel.eliminarHorario(request);
-        }
-        
-        public int eliminarHorario(int idhorario) {
-            PazCitasWA.ServiciosWS.eliminarHorarioRequest inValue = new PazCitasWA.ServiciosWS.eliminarHorarioRequest();
-            inValue.idhorario = idhorario;
-            PazCitasWA.ServiciosWS.eliminarHorarioResponse retVal = ((PazCitasWA.ServiciosWS.HorarioTrabajoWS)(this)).eliminarHorario(inValue);
-            return retVal.@return;
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<PazCitasWA.ServiciosWS.eliminarHorarioResponse> PazCitasWA.ServiciosWS.HorarioTrabajoWS.eliminarHorarioAsync(PazCitasWA.ServiciosWS.eliminarHorarioRequest request) {
-            return base.Channel.eliminarHorarioAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<PazCitasWA.ServiciosWS.eliminarHorarioResponse> eliminarHorarioAsync(int idhorario) {
-            PazCitasWA.ServiciosWS.eliminarHorarioRequest inValue = new PazCitasWA.ServiciosWS.eliminarHorarioRequest();
-            inValue.idhorario = idhorario;
-            return ((PazCitasWA.ServiciosWS.HorarioTrabajoWS)(this)).eliminarHorarioAsync(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         PazCitasWA.ServiciosWS.listarPorMedicoResponse PazCitasWA.ServiciosWS.HorarioTrabajoWS.listarPorMedico(PazCitasWA.ServiciosWS.listarPorMedicoRequest request) {
             return base.Channel.listarPorMedico(request);
         }
@@ -9439,26 +9813,24 @@ namespace PazCitasWA.ServiciosWS {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        PazCitasWA.ServiciosWS.modificarHorarioResponse PazCitasWA.ServiciosWS.HorarioTrabajoWS.modificarHorario(PazCitasWA.ServiciosWS.modificarHorarioRequest request) {
-            return base.Channel.modificarHorario(request);
+        PazCitasWA.ServiciosWS.listarHorarioResponse PazCitasWA.ServiciosWS.HorarioTrabajoWS.listarHorario(PazCitasWA.ServiciosWS.listarHorarioRequest request) {
+            return base.Channel.listarHorario(request);
         }
         
-        public int modificarHorario(PazCitasWA.ServiciosWS.horarioTrabajo horario) {
-            PazCitasWA.ServiciosWS.modificarHorarioRequest inValue = new PazCitasWA.ServiciosWS.modificarHorarioRequest();
-            inValue.horario = horario;
-            PazCitasWA.ServiciosWS.modificarHorarioResponse retVal = ((PazCitasWA.ServiciosWS.HorarioTrabajoWS)(this)).modificarHorario(inValue);
+        public PazCitasWA.ServiciosWS.horarioTrabajo[] listarHorario() {
+            PazCitasWA.ServiciosWS.listarHorarioRequest inValue = new PazCitasWA.ServiciosWS.listarHorarioRequest();
+            PazCitasWA.ServiciosWS.listarHorarioResponse retVal = ((PazCitasWA.ServiciosWS.HorarioTrabajoWS)(this)).listarHorario(inValue);
             return retVal.@return;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<PazCitasWA.ServiciosWS.modificarHorarioResponse> PazCitasWA.ServiciosWS.HorarioTrabajoWS.modificarHorarioAsync(PazCitasWA.ServiciosWS.modificarHorarioRequest request) {
-            return base.Channel.modificarHorarioAsync(request);
+        System.Threading.Tasks.Task<PazCitasWA.ServiciosWS.listarHorarioResponse> PazCitasWA.ServiciosWS.HorarioTrabajoWS.listarHorarioAsync(PazCitasWA.ServiciosWS.listarHorarioRequest request) {
+            return base.Channel.listarHorarioAsync(request);
         }
         
-        public System.Threading.Tasks.Task<PazCitasWA.ServiciosWS.modificarHorarioResponse> modificarHorarioAsync(PazCitasWA.ServiciosWS.horarioTrabajo horario) {
-            PazCitasWA.ServiciosWS.modificarHorarioRequest inValue = new PazCitasWA.ServiciosWS.modificarHorarioRequest();
-            inValue.horario = horario;
-            return ((PazCitasWA.ServiciosWS.HorarioTrabajoWS)(this)).modificarHorarioAsync(inValue);
+        public System.Threading.Tasks.Task<PazCitasWA.ServiciosWS.listarHorarioResponse> listarHorarioAsync() {
+            PazCitasWA.ServiciosWS.listarHorarioRequest inValue = new PazCitasWA.ServiciosWS.listarHorarioRequest();
+            return ((PazCitasWA.ServiciosWS.HorarioTrabajoWS)(this)).listarHorarioAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -9485,24 +9857,49 @@ namespace PazCitasWA.ServiciosWS {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        PazCitasWA.ServiciosWS.listarHorarioResponse PazCitasWA.ServiciosWS.HorarioTrabajoWS.listarHorario(PazCitasWA.ServiciosWS.listarHorarioRequest request) {
-            return base.Channel.listarHorario(request);
+        PazCitasWA.ServiciosWS.modificarHorarioResponse PazCitasWA.ServiciosWS.HorarioTrabajoWS.modificarHorario(PazCitasWA.ServiciosWS.modificarHorarioRequest request) {
+            return base.Channel.modificarHorario(request);
         }
         
-        public PazCitasWA.ServiciosWS.horarioTrabajo[] listarHorario() {
-            PazCitasWA.ServiciosWS.listarHorarioRequest inValue = new PazCitasWA.ServiciosWS.listarHorarioRequest();
-            PazCitasWA.ServiciosWS.listarHorarioResponse retVal = ((PazCitasWA.ServiciosWS.HorarioTrabajoWS)(this)).listarHorario(inValue);
+        public int modificarHorario(PazCitasWA.ServiciosWS.horarioTrabajo horario) {
+            PazCitasWA.ServiciosWS.modificarHorarioRequest inValue = new PazCitasWA.ServiciosWS.modificarHorarioRequest();
+            inValue.horario = horario;
+            PazCitasWA.ServiciosWS.modificarHorarioResponse retVal = ((PazCitasWA.ServiciosWS.HorarioTrabajoWS)(this)).modificarHorario(inValue);
             return retVal.@return;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<PazCitasWA.ServiciosWS.listarHorarioResponse> PazCitasWA.ServiciosWS.HorarioTrabajoWS.listarHorarioAsync(PazCitasWA.ServiciosWS.listarHorarioRequest request) {
-            return base.Channel.listarHorarioAsync(request);
+        System.Threading.Tasks.Task<PazCitasWA.ServiciosWS.modificarHorarioResponse> PazCitasWA.ServiciosWS.HorarioTrabajoWS.modificarHorarioAsync(PazCitasWA.ServiciosWS.modificarHorarioRequest request) {
+            return base.Channel.modificarHorarioAsync(request);
         }
         
-        public System.Threading.Tasks.Task<PazCitasWA.ServiciosWS.listarHorarioResponse> listarHorarioAsync() {
-            PazCitasWA.ServiciosWS.listarHorarioRequest inValue = new PazCitasWA.ServiciosWS.listarHorarioRequest();
-            return ((PazCitasWA.ServiciosWS.HorarioTrabajoWS)(this)).listarHorarioAsync(inValue);
+        public System.Threading.Tasks.Task<PazCitasWA.ServiciosWS.modificarHorarioResponse> modificarHorarioAsync(PazCitasWA.ServiciosWS.horarioTrabajo horario) {
+            PazCitasWA.ServiciosWS.modificarHorarioRequest inValue = new PazCitasWA.ServiciosWS.modificarHorarioRequest();
+            inValue.horario = horario;
+            return ((PazCitasWA.ServiciosWS.HorarioTrabajoWS)(this)).modificarHorarioAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        PazCitasWA.ServiciosWS.eliminarHorarioResponse PazCitasWA.ServiciosWS.HorarioTrabajoWS.eliminarHorario(PazCitasWA.ServiciosWS.eliminarHorarioRequest request) {
+            return base.Channel.eliminarHorario(request);
+        }
+        
+        public int eliminarHorario(int idhorario) {
+            PazCitasWA.ServiciosWS.eliminarHorarioRequest inValue = new PazCitasWA.ServiciosWS.eliminarHorarioRequest();
+            inValue.idhorario = idhorario;
+            PazCitasWA.ServiciosWS.eliminarHorarioResponse retVal = ((PazCitasWA.ServiciosWS.HorarioTrabajoWS)(this)).eliminarHorario(inValue);
+            return retVal.@return;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<PazCitasWA.ServiciosWS.eliminarHorarioResponse> PazCitasWA.ServiciosWS.HorarioTrabajoWS.eliminarHorarioAsync(PazCitasWA.ServiciosWS.eliminarHorarioRequest request) {
+            return base.Channel.eliminarHorarioAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<PazCitasWA.ServiciosWS.eliminarHorarioResponse> eliminarHorarioAsync(int idhorario) {
+            PazCitasWA.ServiciosWS.eliminarHorarioRequest inValue = new PazCitasWA.ServiciosWS.eliminarHorarioRequest();
+            inValue.idhorario = idhorario;
+            return ((PazCitasWA.ServiciosWS.HorarioTrabajoWS)(this)).eliminarHorarioAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]

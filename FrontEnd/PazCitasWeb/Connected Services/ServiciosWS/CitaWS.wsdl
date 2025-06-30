@@ -5,11 +5,11 @@
       <xsd:import schemaLocation="http://localhost:8080/PazCitasWeb/CitaWS?xsd=1" namespace="http://services.pucp.edu.pe" />
     </xsd:schema>
   </types>
-  <message name="listarXPaciente">
-    <part name="parameters" element="tns:listarXPaciente" />
+  <message name="listarCita">
+    <part name="parameters" element="tns:listarCita" />
   </message>
-  <message name="listarXPacienteResponse">
-    <part name="parameters" element="tns:listarXPacienteResponse" />
+  <message name="listarCitaResponse">
+    <part name="parameters" element="tns:listarCitaResponse" />
   </message>
   <message name="modificarCita">
     <part name="parameters" element="tns:modificarCita" />
@@ -17,11 +17,11 @@
   <message name="modificarCitaResponse">
     <part name="parameters" element="tns:modificarCitaResponse" />
   </message>
-  <message name="obtenerCita">
-    <part name="parameters" element="tns:obtenerCita" />
+  <message name="listaCitaPorMedico">
+    <part name="parameters" element="tns:listaCitaPorMedico" />
   </message>
-  <message name="obtenerCitaResponse">
-    <part name="parameters" element="tns:obtenerCitaResponse" />
+  <message name="listaCitaPorMedicoResponse">
+    <part name="parameters" element="tns:listaCitaPorMedicoResponse" />
   </message>
   <message name="modificarFechaCita">
     <part name="parameters" element="tns:modificarFechaCita" />
@@ -35,23 +35,23 @@
   <message name="insertarCitaResponse">
     <part name="parameters" element="tns:insertarCitaResponse" />
   </message>
+  <message name="listarXPaciente">
+    <part name="parameters" element="tns:listarXPaciente" />
+  </message>
+  <message name="listarXPacienteResponse">
+    <part name="parameters" element="tns:listarXPacienteResponse" />
+  </message>
+  <message name="obtenerCita">
+    <part name="parameters" element="tns:obtenerCita" />
+  </message>
+  <message name="obtenerCitaResponse">
+    <part name="parameters" element="tns:obtenerCitaResponse" />
+  </message>
   <message name="eliminarCita">
     <part name="parameters" element="tns:eliminarCita" />
   </message>
   <message name="eliminarCitaResponse">
     <part name="parameters" element="tns:eliminarCitaResponse" />
-  </message>
-  <message name="listaCitaPorMedico">
-    <part name="parameters" element="tns:listaCitaPorMedico" />
-  </message>
-  <message name="listaCitaPorMedicoResponse">
-    <part name="parameters" element="tns:listaCitaPorMedicoResponse" />
-  </message>
-  <message name="listarXPacienteCompletoSinDatosPaciente">
-    <part name="parameters" element="tns:listarXPacienteCompletoSinDatosPaciente" />
-  </message>
-  <message name="listarXPacienteCompletoSinDatosPacienteResponse">
-    <part name="parameters" element="tns:listarXPacienteCompletoSinDatosPacienteResponse" />
   </message>
   <message name="obtenerXIdCompletoSinDatosPaciente">
     <part name="parameters" element="tns:obtenerXIdCompletoSinDatosPaciente" />
@@ -59,24 +59,30 @@
   <message name="obtenerXIdCompletoSinDatosPacienteResponse">
     <part name="parameters" element="tns:obtenerXIdCompletoSinDatosPacienteResponse" />
   </message>
-  <message name="listarCita">
-    <part name="parameters" element="tns:listarCita" />
+  <message name="listaCitaPorMedicoXestado">
+    <part name="parameters" element="tns:listaCitaPorMedicoXestado" />
   </message>
-  <message name="listarCitaResponse">
-    <part name="parameters" element="tns:listarCitaResponse" />
+  <message name="listaCitaPorMedicoXestadoResponse">
+    <part name="parameters" element="tns:listaCitaPorMedicoXestadoResponse" />
+  </message>
+  <message name="listarXPacienteCompletoSinDatosPaciente">
+    <part name="parameters" element="tns:listarXPacienteCompletoSinDatosPaciente" />
+  </message>
+  <message name="listarXPacienteCompletoSinDatosPacienteResponse">
+    <part name="parameters" element="tns:listarXPacienteCompletoSinDatosPacienteResponse" />
   </message>
   <portType name="CitaWS">
-    <operation name="listarXPaciente">
-      <input wsam:Action="http://services.pucp.edu.pe/CitaWS/listarXPacienteRequest" message="tns:listarXPaciente" />
-      <output wsam:Action="http://services.pucp.edu.pe/CitaWS/listarXPacienteResponse" message="tns:listarXPacienteResponse" />
+    <operation name="listarCita">
+      <input wsam:Action="http://services.pucp.edu.pe/CitaWS/listarCitaRequest" message="tns:listarCita" />
+      <output wsam:Action="http://services.pucp.edu.pe/CitaWS/listarCitaResponse" message="tns:listarCitaResponse" />
     </operation>
     <operation name="modificarCita">
       <input wsam:Action="http://services.pucp.edu.pe/CitaWS/modificarCitaRequest" message="tns:modificarCita" />
       <output wsam:Action="http://services.pucp.edu.pe/CitaWS/modificarCitaResponse" message="tns:modificarCitaResponse" />
     </operation>
-    <operation name="obtenerCita">
-      <input wsam:Action="http://services.pucp.edu.pe/CitaWS/obtenerCitaRequest" message="tns:obtenerCita" />
-      <output wsam:Action="http://services.pucp.edu.pe/CitaWS/obtenerCitaResponse" message="tns:obtenerCitaResponse" />
+    <operation name="listaCitaPorMedico">
+      <input wsam:Action="http://services.pucp.edu.pe/CitaWS/listaCitaPorMedicoRequest" message="tns:listaCitaPorMedico" />
+      <output wsam:Action="http://services.pucp.edu.pe/CitaWS/listaCitaPorMedicoResponse" message="tns:listaCitaPorMedicoResponse" />
     </operation>
     <operation name="modificarFechaCita">
       <input wsam:Action="http://services.pucp.edu.pe/CitaWS/modificarFechaCitaRequest" message="tns:modificarFechaCita" />
@@ -86,30 +92,34 @@
       <input wsam:Action="http://services.pucp.edu.pe/CitaWS/insertarCitaRequest" message="tns:insertarCita" />
       <output wsam:Action="http://services.pucp.edu.pe/CitaWS/insertarCitaResponse" message="tns:insertarCitaResponse" />
     </operation>
+    <operation name="listarXPaciente">
+      <input wsam:Action="http://services.pucp.edu.pe/CitaWS/listarXPacienteRequest" message="tns:listarXPaciente" />
+      <output wsam:Action="http://services.pucp.edu.pe/CitaWS/listarXPacienteResponse" message="tns:listarXPacienteResponse" />
+    </operation>
+    <operation name="obtenerCita">
+      <input wsam:Action="http://services.pucp.edu.pe/CitaWS/obtenerCitaRequest" message="tns:obtenerCita" />
+      <output wsam:Action="http://services.pucp.edu.pe/CitaWS/obtenerCitaResponse" message="tns:obtenerCitaResponse" />
+    </operation>
     <operation name="eliminarCita">
       <input wsam:Action="http://services.pucp.edu.pe/CitaWS/eliminarCitaRequest" message="tns:eliminarCita" />
       <output wsam:Action="http://services.pucp.edu.pe/CitaWS/eliminarCitaResponse" message="tns:eliminarCitaResponse" />
-    </operation>
-    <operation name="listaCitaPorMedico">
-      <input wsam:Action="http://services.pucp.edu.pe/CitaWS/listaCitaPorMedicoRequest" message="tns:listaCitaPorMedico" />
-      <output wsam:Action="http://services.pucp.edu.pe/CitaWS/listaCitaPorMedicoResponse" message="tns:listaCitaPorMedicoResponse" />
-    </operation>
-    <operation name="listarXPacienteCompletoSinDatosPaciente">
-      <input wsam:Action="http://services.pucp.edu.pe/CitaWS/listarXPacienteCompletoSinDatosPacienteRequest" message="tns:listarXPacienteCompletoSinDatosPaciente" />
-      <output wsam:Action="http://services.pucp.edu.pe/CitaWS/listarXPacienteCompletoSinDatosPacienteResponse" message="tns:listarXPacienteCompletoSinDatosPacienteResponse" />
     </operation>
     <operation name="obtenerXIdCompletoSinDatosPaciente">
       <input wsam:Action="http://services.pucp.edu.pe/CitaWS/obtenerXIdCompletoSinDatosPacienteRequest" message="tns:obtenerXIdCompletoSinDatosPaciente" />
       <output wsam:Action="http://services.pucp.edu.pe/CitaWS/obtenerXIdCompletoSinDatosPacienteResponse" message="tns:obtenerXIdCompletoSinDatosPacienteResponse" />
     </operation>
-    <operation name="listarCita">
-      <input wsam:Action="http://services.pucp.edu.pe/CitaWS/listarCitaRequest" message="tns:listarCita" />
-      <output wsam:Action="http://services.pucp.edu.pe/CitaWS/listarCitaResponse" message="tns:listarCitaResponse" />
+    <operation name="listaCitaPorMedicoXestado">
+      <input wsam:Action="http://services.pucp.edu.pe/CitaWS/listaCitaPorMedicoXestadoRequest" message="tns:listaCitaPorMedicoXestado" />
+      <output wsam:Action="http://services.pucp.edu.pe/CitaWS/listaCitaPorMedicoXestadoResponse" message="tns:listaCitaPorMedicoXestadoResponse" />
+    </operation>
+    <operation name="listarXPacienteCompletoSinDatosPaciente">
+      <input wsam:Action="http://services.pucp.edu.pe/CitaWS/listarXPacienteCompletoSinDatosPacienteRequest" message="tns:listarXPacienteCompletoSinDatosPaciente" />
+      <output wsam:Action="http://services.pucp.edu.pe/CitaWS/listarXPacienteCompletoSinDatosPacienteResponse" message="tns:listarXPacienteCompletoSinDatosPacienteResponse" />
     </operation>
   </portType>
   <binding name="CitaWSPortBinding" type="tns:CitaWS">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
-    <operation name="listarXPaciente">
+    <operation name="listarCita">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />
@@ -127,7 +137,7 @@
         <soap:body use="literal" />
       </output>
     </operation>
-    <operation name="obtenerCita">
+    <operation name="listaCitaPorMedico">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />
@@ -154,25 +164,25 @@
         <soap:body use="literal" />
       </output>
     </operation>
+    <operation name="listarXPaciente">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="obtenerCita">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
     <operation name="eliminarCita">
-      <soap:operation soapAction="" />
-      <input>
-        <soap:body use="literal" />
-      </input>
-      <output>
-        <soap:body use="literal" />
-      </output>
-    </operation>
-    <operation name="listaCitaPorMedico">
-      <soap:operation soapAction="" />
-      <input>
-        <soap:body use="literal" />
-      </input>
-      <output>
-        <soap:body use="literal" />
-      </output>
-    </operation>
-    <operation name="listarXPacienteCompletoSinDatosPaciente">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />
@@ -190,7 +200,16 @@
         <soap:body use="literal" />
       </output>
     </operation>
-    <operation name="listarCita">
+    <operation name="listaCitaPorMedicoXestado">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="listarXPacienteCompletoSinDatosPaciente">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />

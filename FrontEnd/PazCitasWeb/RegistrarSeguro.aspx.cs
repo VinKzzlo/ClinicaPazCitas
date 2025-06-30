@@ -1,6 +1,7 @@
 ﻿using PazCitasWA.ServiciosWS;
 using System;
 using System.Linq;
+using System.Web.UI;
 using System.Web.UI.WebControls;
 
 namespace PazCitasWA
@@ -79,6 +80,17 @@ namespace PazCitasWA
             {
                 if (estado == Estado.Nuevo)
                 {
+                    var lista = wsSeguro.listarSeguro();
+
+                    bool nombreRepetido = lista.Any(s => s.nombreSeguro == objSeguro.nombreSeguro);
+
+                    if (nombreRepetido)
+                    {
+                        string mensaje = "Ya existe un seguro con ese nombre";
+
+                        lanzarMensajedeError(mensaje.Trim());
+                        return; // salir del método
+                    }
                     wsSeguro.insertarSeguro(objSeguro);
                 }
                 else if (estado == Estado.Modificar)
@@ -88,14 +100,17 @@ namespace PazCitasWA
             }
             catch (Exception ex)
             {
-                /*lblMensajeError.Text = ex.Message;
-                string script =
-                    "mostrarModalError();";
-                ScriptManager.RegisterStartupScript
-                    (this, GetType(), "modalError", script, true);
-                return;*/
+                lanzarMensajedeError(ex.Message);
+                return;
             }
             Response.Redirect("ListarSeguros.aspx");
+        }
+
+        public void lanzarMensajedeError(String mensaje)
+        {
+            lblMensajeError.Text = mensaje;
+            string script = "mostrarModalError();";
+            ScriptManager.RegisterStartupScript(this, GetType(), "modalError", script, true);
         }
     }
 }

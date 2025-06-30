@@ -8,5 +8,10 @@ namespace PazCitasWA
         {
 
         }
+
+        protected void btnGenerarReporte_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("VisualizarReporte.aspx");
+        }
     }
 }

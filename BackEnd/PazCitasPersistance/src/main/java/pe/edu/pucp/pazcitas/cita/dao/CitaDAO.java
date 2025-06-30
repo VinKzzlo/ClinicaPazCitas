@@ -22,4 +22,5 @@ public interface CitaDAO extends ICrud<Cita>{
     public ArrayList<Cita> listarCitaXPacienteCompletoSinPaciente(int idPaciente);
     public Cita obtenerPorIdCompletoSinPaciente(int idCita);
     public int modificarFechaCita(int idCita, Date fecha,Time hora, int idMedico);
+    ArrayList<Cita> listarXMedicoXEstado(int idMed, String estado);
 }

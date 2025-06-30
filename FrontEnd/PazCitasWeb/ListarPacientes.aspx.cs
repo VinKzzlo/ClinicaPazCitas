@@ -13,10 +13,18 @@ namespace PazCitasWA
         private BindingList<paciente> pacientes;
         protected void Page_Load(object sender, EventArgs e)
         {
-            wsPaciente = new PacienteWSClient();
-            pacientes = new BindingList<paciente>(wsPaciente.listarPaciente());
-            gvPacientes.DataSource = pacientes;
-            gvPacientes.DataBind();
+            if (!IsPostBack)
+            {
+                wsPaciente = new PacienteWSClient();
+                pacientes = new BindingList<paciente>(wsPaciente.listarPaciente());
+                ViewState["pacientes"] = pacientes;
+                gvPacientes.DataSource = pacientes;
+                gvPacientes.DataBind();
+            }
+            else
+            {
+                pacientes = (BindingList<paciente>)ViewState["pacientes"];
+            }
         }
 
         protected void gvPacientes_RowDataBound(object sender, GridViewRowEventArgs e)
@@ -35,11 +43,9 @@ namespace PazCitasWA
         protected void gvPacientes_PageIndexChanging(object sender, GridViewPageEventArgs e)
         {
             gvPacientes.PageIndex = e.NewPageIndex;
+            gvPacientes.DataSource = (BindingList<paciente>)ViewState["pacientes"];
             gvPacientes.DataBind();
         }
-
-
-
 
         protected void btnModificar_Click(object sender, EventArgs e)
         {
@@ -63,7 +69,19 @@ namespace PazCitasWA
 
         protected void btnVer_Click(object sender, EventArgs e)
         {
+            int idPaciente = Int32.Parse(((LinkButton)sender).CommandArgument);
+            paciente pacienteSeleccionado = pacientes.SingleOrDefault(x => x.idUsuario == idPaciente);
+            Session["pacienteSeleccionado"] = pacienteSeleccionado;
+            Response.Redirect("RegistrarPaciente.aspx?accion=ver");
+        }
 
+        protected void btnBuscar_Click(object sender, EventArgs e)
+        {
+            wsPaciente = new PacienteWSClient();
+            BindingList<paciente> pacientesFiltrados = new BindingList<paciente>(wsPaciente.listarPacienteXCadena(txtCadena.Text));
+            ViewState["pacientes"] = pacientesFiltrados;
+            gvPacientes.DataSource = pacientesFiltrados;
+            gvPacientes.DataBind();
         }
     }
 }

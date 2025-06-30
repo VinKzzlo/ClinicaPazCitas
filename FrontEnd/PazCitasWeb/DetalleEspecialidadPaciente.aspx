@@ -16,15 +16,11 @@
         .specialty-main-image {
             max-width: 100%;
             height: auto;
-            border-radius: 150px 150px 150px 150px / 250px 250px 150px 150px; /* Forma ovalada/pill más pronunciada en la parte superior */
-            object-fit: cover; /* Asegura que la imagen cubra el área sin distorsionarse */
-            max-height: 400px; /* Limita la altura de la imagen */
+            border-radius: 150px 150px 150px 150px / 250px 250px 150px 150px; 
+            object-fit: cover; 
+            max-height: 400px;
             box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
         }
-
-        /* Para el texto curvo, sería más complejo y podría requerir SVG o JS. 
-           Una simplificación es ponerlo como parte de la imagen o texto plano.
-           Aquí lo omitimos para enfocarnos en la estructura. */
 
         .doctors-section-title {
             font-weight: bold;
@@ -34,10 +30,10 @@
         }
 
         .doctor-card-container {
-            overflow-x: auto; /* Permite scroll horizontal */
-            white-space: nowrap; /* Evita que las tarjetas salten a la siguiente línea */
-            padding-bottom: 15px; /* Espacio para la barra de scroll si aparece */
-            margin-left: -12px; /* Compensa padding de columnas Bootstrap */
+            overflow-x: auto;
+            white-space: nowrap;
+            padding-bottom: 15px; 
+            margin-left: -12px;
             margin-right: -12px;
         }
 
@@ -45,8 +41,8 @@
             display: inline-block; /* Para que las tarjetas se alineen horizontalmente */
             width: 280px; /* Ancho fijo para cada tarjeta */
             vertical-align: top;
-            margin-right: 1rem; /* Espacio entre tarjetas */
-            white-space: normal; /* Restaura el normal wrapping del texto dentro de la tarjeta */
+            margin-right: 1rem; 
+            white-space: normal; 
         }
 
             .doctor-card-wrapper:last-child {
@@ -173,7 +169,6 @@
                     </p>
                 </div>
                 <div class="col-lg-5 col-md-6 order-md-2 specialty-image-container">
-                    <%--<asp:Image ID="imgEspecialidad" runat="server" CssClass="specialty-main-image" AlternateText="Imagen de la especialidad" />--%>
                     <img src="/images/doctorGenericImage.png" class="img-fluid"/>
                 </div>
             </div>
@@ -192,7 +187,6 @@
                             <div class="card doctor-card">
                                 <asp:PlaceHolder ID="phDoctorImage" runat="server">
                                     <img src="/images/genericDoctor.png" />
-                                    <%--<asp:Image ID="imgDoctor" runat="server" ImageUrl='<%# Eval("UrlFotoMedico") %>' CssClass="card-img-top" AlternateText='<%# "Foto de " + Eval("NombreCompletoMedico") %>' />--%>
                                 </asp:PlaceHolder>
                                 <asp:PlaceHolder ID="phDoctorPlaceholder" runat="server" Visible="false">
                                     <div class="doctor-placeholder">
@@ -206,7 +200,6 @@
                                         <h5 class="card-title"><%# Eval("nombre") %></h5>
                                         <p class="cmp-text">CMP: <%# Eval("codigoMedico") %></p>
                                     </div>
-                                    <%--<a href='<%# Eval("UrlPerfilMedico", "PerfilMedico.aspx?idMedico={0}") %>' class="btn-know-doctor">--%>
                                     <a href='#' class="btn-know-doctor">
                                         Conoce al médico <i class="fas fa-arrow-right arrow-icon"></i>
                                     </a>
@@ -216,9 +209,7 @@
                     </ItemTemplate>
                 </asp:Repeater>
             </div>
-             <%-- Las flechas necesitarían JavaScript para funcionar como un carrusel --%>
-             <%-- Por ahora, el scroll horizontal es la funcionalidad principal --%>
-            <div class="nav-arrows d-none"> <%-- Ocultas por defecto, habilitar si implementas JS --%>
+            <div class="nav-arrows d-none">
                 <button class="btn btn-arrow" onclick="scrollDoctors(-1)"><i class="fas fa-arrow-left"></i></button>
                 <button class="btn btn-arrow" onclick="scrollDoctors(1)"><i class="fas fa-arrow-right"></i></button>
             </div>
@@ -236,10 +227,9 @@
     </asp:Panel>
 
     <script type="text/javascript">
-        // Script simple para scroll, si se habilitan los botones.
         function scrollDoctors(direction) {
             const scroller = document.getElementById('doctorCardScroller');
-            const cardWidth = 280 + 16; // Ancho de la tarjeta + margen derecho (1rem = 16px aprox)
+            const cardWidth = 280 + 16;
             if (scroller) {
                 scroller.scrollBy({ left: direction * cardWidth, behavior: 'smooth' });
             }

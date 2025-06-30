@@ -32,11 +32,9 @@ namespace PazCitasWA
         protected void Page_Load(object sender, EventArgs e)
         {
 
-            if (!IsPostBack)
-            {
-                accion = Request.QueryString["accion"];
+            accion = Request.QueryString["accion"];
 
-            }
+            
 
             if (accion == null)
             {
@@ -118,10 +116,9 @@ namespace PazCitasWA
                 e.Row.Cells[1].Text = ((medicamento)DataBinder.Eval(e.Row.DataItem, "Medicamento")).presentacion;
                 e.Row.Cells[2].Text = DataBinder.Eval(e.Row.DataItem, "cantidad").ToString();
 
-
                 if (accion == "ver")
                 {
-                    LinkButton btnTrash = (LinkButton)e.Row.FindControl("lbltrash");
+                    LinkButton btnTrash = (LinkButton)e.Row.FindControl("btnTrash");
                     if (btnTrash != null)
                     {
                         btnTrash.Visible = false;
@@ -241,7 +238,7 @@ namespace PazCitasWA
                 lbAgregarMedicamento.Visible = true;
                 gvLineasMedicamento.DataSource = null;
 
-                Response.Redirect("ListarCitasMedico.aspx");
+                Response.Redirect("MisPacientes.aspx");
             }
 
         }

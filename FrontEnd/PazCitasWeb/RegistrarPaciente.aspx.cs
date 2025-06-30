@@ -1,5 +1,7 @@
 ﻿using PazCitasWA.ServiciosWS;
 using System;
+using System.Linq;
+using System.Web.UI;
 using System.Web.UI.WebControls;
 
 namespace PazCitasWA
@@ -10,6 +12,7 @@ namespace PazCitasWA
         private SeguroWSClient wsSeguro;
         private Estado estado;
         private paciente paciente;
+        private HistorialMedicoWSClient wsHistorial;
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
@@ -45,26 +48,55 @@ namespace PazCitasWA
                 paciente = (paciente)Session["pacienteSeleccionado"];
                 if (!IsPostBack)
                 {
-                    txtIDUsuario.Text = paciente.idUsuario.ToString();
-                    txtDNI.Text = paciente.dni;
-                    txtNombre.Text = paciente.nombre;
-                    txtPaterno.Text = paciente.apellidoPaterno;
-                    txtMaterno.Text = paciente.apellidoMaterno;
-                    if (paciente.genero.Equals('M')) rbMasculino.Checked = true;
-                    else rbFemenino.Checked = true;
-                    dtpFechaNacimiento.Value = paciente.fechaNacimiento.ToString("yyyy-MM-dd");
-                    txtEmail.Text = paciente.email;
-                    ddlSeguro.SelectedValue = paciente.seguro.idSeguro.ToString();
-                    txtDireccion.Text = paciente.direccion;
-                    txtTelefono.Text = paciente.telefono.ToString();
-
+                    AsignarValores();
                     txtUsername.Enabled = false;
                     txtPassword.Enabled = false;
+                    rfvUsername.Enabled = false;
+                    rfvPassword.Enabled = false;
                 }
+            }
+            else if(accion == "ver")
+            {
+                lblTitulo.Text = "Ver Paciente";
+                paciente = (paciente)Session["pacienteSeleccionado"];
+                AsignarValores();
+                txtDNI.Enabled= false;
+                txtDireccion.Enabled = false;
+                txtUsername.Text = "-- Solo visible para usuario --";
+                txtPassword.Text = "-- Solo visible para usuario --";
+                txtUsername.Enabled = false;
+                txtPassword.Enabled = false;
+                txtNombre.Enabled = false;
+                txtPaterno.Enabled = false;
+                txtMaterno.Enabled = false;
+                txtTelefono.Enabled = false;
+                txtEmail.Enabled = false;
+                dtpFechaNacimiento.Disabled = true;
+                ddlSeguro.Enabled = false;
+                btnGuardar.Visible = false;
+                rbMasculino.Disabled = true;
+                rbFemenino.Disabled = true;
+                rfvUsername.Enabled = false;
+                rfvPassword.Enabled = false;
             }
 
         }
 
+        protected void AsignarValores()
+        {
+            txtIDUsuario.Text = paciente.idUsuario.ToString();
+            txtDNI.Text = paciente.dni;
+            txtNombre.Text = paciente.nombre;
+            txtPaterno.Text = paciente.apellidoPaterno;
+            txtMaterno.Text = paciente.apellidoMaterno;
+            if (paciente.genero.Equals('M')) rbMasculino.Checked = true;
+            else rbFemenino.Checked = true;
+            dtpFechaNacimiento.Value = paciente.fechaNacimiento.ToString("yyyy-MM-dd");
+            txtEmail.Text = paciente.email;
+            ddlSeguro.SelectedValue = paciente.seguro.idSeguro.ToString();
+            txtDireccion.Text = paciente.direccion;
+            txtTelefono.Text = paciente.telefono.ToString();
+        }
 
         protected void btnRegresar_Click(object sender, EventArgs e)
         {
@@ -106,9 +138,27 @@ namespace PazCitasWA
             {
                 if (estado == Estado.Nuevo)
                 {
+                    var lista = wsPaciente.listarPaciente(); 
+
+                    bool dniRepetido = lista.Any(p => p.dni == paciente.dni);
+                    bool usernameRepetido = wsCuenta.usernameExiste(txtUsername.Text);
+
+                    if (dniRepetido  || usernameRepetido)
+                    {
+                        string mensaje = "Ya existe un paciente con ";
+                        if (dniRepetido) mensaje += "el mismo DNI. ";
+                        if (usernameRepetido) mensaje += "el mismo nombre de usuario.";
+
+                        lanzarMensajedeError(mensaje.Trim());
+                        return; // salir del método
+                    }
                     int idInsertado = wsPaciente.insertarPaciente(paciente);
                     cuenta.usuario.idUsuario = idInsertado;
                     wsCuenta.insertarCuenta(cuenta);
+                    wsHistorial = new HistorialMedicoWSClient();
+                    historialMedico historial = new historialMedico();
+                    historial.paciente = paciente;
+                    wsHistorial.insertarHistorial(historial);
                 }
                 else if (estado == Estado.Modificar)
                 {
@@ -117,13 +167,25 @@ namespace PazCitasWA
             }
             catch (Exception ex)
             {
-                throw;
+                lanzarMensajedeError(ex.Message);
+                return;
             }
 
             Response.Redirect("ListarPacientes.aspx");
         }
 
+        public void lanzarMensajedeError(String mensaje)
+        {
+            lblMensajeError.Text = mensaje;
+            string script = "mostrarModalError();";
+            ScriptManager.RegisterStartupScript(this, GetType(), "modalError", script, true);
+        }
 
+        protected void cvGenero_ServerValidate(object source, ServerValidateEventArgs args)
+        {
+            // Verificar si algún radio button está seleccionado
+            args.IsValid = rbMasculino.Checked || rbFemenino.Checked;
+        }
 
     }
 }

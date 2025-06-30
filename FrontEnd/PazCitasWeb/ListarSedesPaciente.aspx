@@ -5,7 +5,6 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="cph_Scripts" runat="server">
     <style>
-        /* Variables de Color Tema Amarillo */
         :root {
             --sede-amarillo-base: #FFC300;
             --sede-amarillo-oscuro: #E6B000;
@@ -13,11 +12,8 @@
             --sede-amarillo-muy-claro: #FFF8E1;
             --sede-texto-principal: #424242; /* Para buen contraste sobre amarillo */
             --sede-texto-secundario: #757575;
-            --sede-fondo-pagina: #fefdf9; /* Fondo muy sutil, casi blanco con tinte amarillo #fefdf9*/
+            --sede-fondo-pagina: #fefdf9; 
         }
-
-        /* Aplicar un fondo general sutil a la página de contenido si se desea */
-        /* #cph_Contenido > div { background-color: var(--sede-fondo-pagina); } */
 
 
         .sede-header {
@@ -35,13 +31,12 @@
                 font-size: 2.8rem;
                 font-weight: bold;
                 color: var(--sede-amarillo-oscuro); /* Usar el amarillo oscuro para destacar */
-                /* Efecto de texto con degradado */
                 background: linear-gradient(90deg, var(--sede-amarillo-oscuro), var(--sede-amarillo-base));
                 -webkit-background-clip: text;
                 -webkit-text-fill-color: transparent;
                 background-clip: text;
                 text-fill-color: transparent;
-                display: inline-block; /* Necesario para que el background-clip funcione bien */
+                display: inline-block; 
             }
 
             .sede-header p.subtitle-text {
@@ -51,15 +46,14 @@
             }
 
         .sede-card {
-            background: linear-gradient(145deg, #ffffff, #ffffff); /* Degradado sutil para la tarjeta 145deg, #ffffff, #fff9e6*/
-            border: 1px solid #FFE082; /* Borde amarillo claro */
+            background: linear-gradient(145deg, #ffffff, #ffffff); 
+            border: 1px solid #FFE082; 
             border-radius: 15px;
-            box-shadow: 0 6px 20px rgba(255, 195, 0, 0.15); /* Sombra con tinte amarillo */
+            box-shadow: 0 6px 20px rgba(255, 195, 0, 0.15);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             height: 100%;
             display: flex;
             flex-direction: column;
-            /* justify-content: center; No siempre se quiere centrar verticalmente si hay descripción */
             padding: 1.5rem;
             text-align: center;
         }
@@ -132,8 +126,6 @@
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="cph_Contenido" runat="server">
     <div class="container mt-4 position-relative pb-5">
-        <%-- pb-5 para espacio si se usan decorative-waves --%>
-        <%-- <div class="decorative-waves"></div> --%> <%-- Descomentar si quieres las ondas de fondo --%>
 
         <div class="sede-header position-relative" style="z-index: 1;">
             <h1 class="main-title">Encuentra Nuestras</h1>
@@ -147,11 +139,10 @@
             </HeaderTemplate>
             <ItemTemplate>
                 <div class="col-lg-4 col-md-6 col-sm-6 col-12 mb-4 d-flex">
-                    <%-- El enlace puede ir a una página de detalle de la sede o a un mapa --%>
                     <a href='#' class="text-decoration-none w-100">
                         <div class="card sede-card">
                             <div class="icon-circle-sede mx-auto">
-                                <i class="fas fa-hospital-alt sede-icon"></i><%-- Icono de hospital, puedes cambiarlo --%>
+                                <i class="fas fa-hospital-alt sede-icon"></i>
                             </div>
                             <h5 class="card-title"><%# Eval("nombre") %></h5>
                             <p class="card-address"><%# Eval("direccion") %></p>
@@ -162,13 +153,6 @@
             <FooterTemplate>
                 </div>
             </FooterTemplate>
-            <%--<emptydatatemplate>
-                <div class="col-12 text-center py-5 position-relative" style="z-index: 1;">
-                    <div class="alert alert-warning d-inline-block" role="alert" style="background-color: var(--sede-amarillo-muy-claro); border-color: var(--sede-amarillo-base); color: var(--sede-texto-principal);">
-                        <i class="fas fa-info-circle me-2"></i>Actualmente no hay sedes disponibles para mostrar.
-                    </div>
-                </div>
-            </emptydatatemplate>--%>
         </asp:Repeater>
 
         <asp:Label ID="lblMensaje" runat="server" CssClass="text-danger mt-3 d-block text-center" Visible="false"></asp:Label>

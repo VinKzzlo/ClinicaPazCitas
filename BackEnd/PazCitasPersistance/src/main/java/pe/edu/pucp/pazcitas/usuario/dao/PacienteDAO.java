@@ -4,6 +4,7 @@
  */
 package pe.edu.pucp.pazcitas.usuario.dao;
 
+import java.util.ArrayList;
 import pe.edu.pucp.pazcitas.dao.ICrud;
 import pe.edu.pucp.pazcitas.usuario.model.Paciente;
 
@@ -14,4 +15,5 @@ import pe.edu.pucp.pazcitas.usuario.model.Paciente;
 public interface PacienteDAO extends ICrud<Paciente>{
     public Paciente obtenerPorID(int idPaciente);
     public Paciente obtenerPorDNI(String dni);
+    ArrayList<Paciente> obtenerPorCadena(String cadena);
 }

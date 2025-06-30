@@ -46,4 +46,8 @@ public class PacienteBO {
         {
             return daoPaciente.obtenerPorDNI(dni);
         }
+        
+        public ArrayList<Paciente> listarXCadena(String cadena){
+            return daoPaciente.obtenerPorCadena(cadena);
+        }
 }

@@ -36,4 +36,8 @@ public class CuentaUsuarioBO {
     public int verificarCuenta(String identificador, String password, String rol) {
         return daocuenta.verificarCuenta(identificador, password, rol);
     }
+    
+    public boolean usernameExiste(String username){
+        return daocuenta.verificarUsernameExiste(username) != 0;
+    }
 }

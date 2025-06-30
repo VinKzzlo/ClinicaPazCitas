@@ -1,5 +1,6 @@
 ﻿using PazCitasWA.ServiciosWS;
 using System;
+using System.Web.UI.WebControls;
 
 namespace PazCitasWA
 {
@@ -8,6 +9,7 @@ namespace PazCitasWA
         private SedeWSClient wsSede;
         private Estado estado;
         private sede objSede;
+        private ReporteWSClient boReporte;
         protected void Page_Load(object sender, EventArgs e)
         {
             string accion = Request.QueryString["accion"];
@@ -16,6 +18,10 @@ namespace PazCitasWA
                 estado = Estado.Nuevo;
                 objSede = new sede();
                 lblTitulo.Text = "Registrar Sede";
+
+
+                pnlReporteSede.Visible = false;
+                
             }
             else if (accion == "modificar")
             {
@@ -28,12 +34,30 @@ namespace PazCitasWA
                     txtNombre.Text = objSede.nombre;
                     txtDireccion.Text = objSede.direccion;
                 }
+                pnlReporteSede.Visible = false;
+
+            }
+            else if (accion == "ver")
+            {
+                estado = Estado.Ver;
+                lblTitulo.Text = "Ver Sede";
+                objSede = (sede)Session["sedeSeleccionada"];
+                if (!IsPostBack)
+                {
+                    txtIDSede.Text = objSede.idSede.ToString();
+
+                    txtNombre.Text = objSede.nombre;
+                    txtNombre.Enabled = false;
+                    txtDireccion.Text = objSede.direccion;
+                    txtDireccion.Enabled = false;
+
+
+                }
             }
         }
-
         protected void btnRegresar_Click(object sender, EventArgs e)
         {
-            Response.Redirect("ListarEspecialidades.aspx");
+            Response.Redirect("ListarSedes.aspx");
         }
 
         protected void btnGuardar_Click(object sender, EventArgs e)
@@ -62,6 +86,25 @@ namespace PazCitasWA
                 return;*/
             }
             Response.Redirect("ListarSedes.aspx");
+        }
+
+        protected void btnReporteSede_Click(object sender, EventArgs e)
+        {
+            boReporte = new ReporteWSClient();
+
+            /*if (Session["medico"] != null)
+            {
+                medico med = (medico)Session["medico"];
+                
+            }*/
+            administrador admin = (administrador)Session["admin"];
+            objSede = (sede)Session["sedeSeleccionada"];
+            byte[] reporte = boReporte.generarReporteCitasXSede(admin.nombre,objSede);
+            Response.Clear();
+            Response.ContentType = "application/pdf";
+            Response.AddHeader("Content-Disposition", "inline;filename=ReporteCitasProgramadas");
+            Response.BinaryWrite(reporte);
+            Response.End();
         }
     }
 }

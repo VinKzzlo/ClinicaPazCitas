@@ -186,4 +186,47 @@ public class PacienteImpl implements PacienteDAO {
         return p;
     }
 
+    @Override
+    public ArrayList<Paciente> obtenerPorCadena(String cadena) {
+        ArrayList<Paciente> pacientes = null;
+        Map<Integer, Object> parametrosEntrada = new HashMap<>();
+        parametrosEntrada.put(1, cadena);
+        rs = DBManager.getInstance().ejecutarProcedimientoLectura("OBTENER_PACIENTE_X_CADENA", parametrosEntrada);
+        try {
+            while (rs.next()) {
+                if (pacientes == null) {
+                    pacientes = new ArrayList<>();
+                }
+                Paciente p = new Paciente();
+                p.setIdUsuario(rs.getInt("id_usuario"));
+                p.setNombre(rs.getString("nombre"));
+                p.setApellidoPaterno(rs.getString("apellido_paterno"));
+                p.setApellidoMaterno(rs.getString("apellido_materno"));
+                p.setDni(rs.getString("dni"));
+                p.setEmail(rs.getString("email"));
+                p.setFechaNacimiento(rs.getDate("fecha_nacimiento"));
+                p.setGenero(rs.getString("genero").charAt(0));
+                p.setDireccion(rs.getString("direccion"));
+                p.setTelefono(rs.getString("telefono"));
+
+                Seguro s = new Seguro();
+                s.setIdSeguro(rs.getInt("id_seguro"));
+                s.setNombreSeguro(rs.getString("nombre_seguro"));
+
+                TipoSeguro estadoAtencion = TipoSeguro.valueOf(rs.getString("tipo").toUpperCase());
+                s.setTipo(estadoAtencion);
+                s.setPorcentajeCobertura(rs.getDouble("porcentaje_cobertura"));
+                s.setVigencia(rs.getDate("vigencia"));
+
+                p.setSeguro(s);
+                pacientes.add(p);
+            }
+        } catch (SQLException ex) {
+            System.out.println(ex.getMessage());
+        } finally {
+            DBManager.getInstance().cerrarConexion();
+        }
+        return pacientes;
+    }
+    
 }

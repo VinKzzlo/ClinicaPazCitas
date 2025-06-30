@@ -68,7 +68,7 @@ namespace PazCitasWA
 
         protected void btnRegresar_Click(object sender, EventArgs e)
         {
-
+            Response.Redirect("HomeMedico.aspx");
         }
 
         protected void dgvNotas_RowDataBound(object sender, GridViewRowEventArgs e)
@@ -84,26 +84,38 @@ namespace PazCitasWA
 
         protected void dgvNotas_PageIndexChanging(object sender, GridViewPageEventArgs e)
         {
-            /*dgvNotas.PageIndex = e.NewPageIndex;
+            // Establecer la nueva página
+            dgvNotas.PageIndex = e.NewPageIndex;
 
-            bopac = new PacienteWSClient();
-            bohist = new HistorialMedicoWSClient();
+            // Volver a cargar las notas desde Session y enlazar el GridView
+            CargarNotas();
+        }
 
-            paciente pac = bopac.obtenerPacientexDNI(txtDni.Text);
-            if (pac != null)
+        private void CargarNotas()
+        {
+            try
             {
-                pac.historialMedico = bohist.obtenerHistorial(pac.idUsuario);
+                // Recuperar las notas desde Session
+                BindingList<notaClinica> notas = (BindingList<notaClinica>)Session["notas"];
 
-                bonota = new NotaClinicaWSClient();
-                var notasList = bonota.listarNotaClinicaXHistorial(pac.historialMedico.idhistorial);
-
-                if (notasList != null)
+                if (notas != null && notas.Count > 0)
                 {
-                    BindingList<notaClinica> notas = new BindingList<notaClinica>(notasList);
                     dgvNotas.DataSource = notas;
                     dgvNotas.DataBind();
                 }
-            }*/
+                else
+                {
+                    dgvNotas.DataSource = null;
+                    dgvNotas.DataBind();
+                }
+            }
+            catch (Exception ex)
+            {
+                // Manejo de errores, por ejemplo mostrar modal
+                lblMensajeError.Text = "Error al cargar las notas médicas: " + ex.Message;
+                string script = "showModalFormError();";
+                ScriptManager.RegisterStartupScript(this, GetType(), "ShowModalFormError", script, true);
+            }
         }
 
         protected void lbModificar_Click(object sender, EventArgs e)

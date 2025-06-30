@@ -41,12 +41,34 @@
                 background-color: #e2f8e2;
             }
 
-        /* Paginador */
-        .pagination-container a,
-        .pagination-container span {
-            padding: 0.25rem 0.5rem;
-            font-size: 0.8rem;
+        /* Paginación */
+        .pagination-container {
+            text-align: center;
+            margin-top: 1rem;
         }
+
+            .pagination-container a,
+            .pagination-container span {
+                display: inline-block;
+                padding: 6px 12px;
+                margin: 0 3px;
+                border-radius: 5px;
+                border: 1px solid #ccc;
+                background-color: #f4f4f4;
+                color: #333;
+                text-decoration: none;
+            }
+
+            .pagination-container span {
+                background-color: #198754;
+                color: white;
+                font-weight: bold;
+                border-color: #198754;
+            }
+
+            .pagination-container a:hover {
+                background-color: #d9ffd9;
+            }
 
         .Center {
             text-align: center;
@@ -71,13 +93,27 @@
                 Registrar Paciente
                 </asp:LinkButton>
             </div>
+
             <!-- Cuerpo de la card -->
             <div class="card-body p-3">
+                <div class="row align-items-center mb-3">
+                    <div class="col-auto">
+                        <asp:Label ID="lblCadena" CssClass="form-label" runat="server" Text="Ingrese nombre, apellido o DNI"></asp:Label>
+                    </div>
+                    <div class="col-sm-3">
+                        <asp:TextBox ID="txtCadena" CssClass="form-control" runat="server"></asp:TextBox>
+                    </div>
+                    <div class="col-sm-2">
+                        <asp:LinkButton ID="btnBuscar" CssClass="btn btn-success"
+                            runat="server" Text="<i class='fa-solid fa-magnifying-glass pe-2'></i> Buscar"
+                            OnClick="btnBuscar_Click" />
+                    </div>
+                </div>
                 <asp:GridView ID="gvPacientes" runat="server" AutoGenerateColumns="false"
                     CssClass="table table-hover table-striped table-bordered"
                     OnRowDataBound="gvPacientes_RowDataBound"
-                    AllowPaging="true" PageSize="7" OnPageIndexChanging="gvPacientes_PageIndexChanging"
-                    PagerStyle-CssClass="pagination-container text-center"
+                    AllowPaging="true" PageSize="9" OnPageIndexChanging="gvPacientes_PageIndexChanging"
+                    PagerStyle-CssClass="pagination-container"
                     PagerStyle-HorizontalAlign="Center">
                     <Columns>
                         <asp:BoundField HeaderText="DNI"

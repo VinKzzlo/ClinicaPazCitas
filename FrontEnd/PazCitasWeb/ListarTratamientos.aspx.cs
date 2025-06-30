@@ -44,30 +44,17 @@ namespace PazCitasWA
         {
             if (e.Row.RowType == DataControlRowType.DataRow)
             {
-                // Index de columna Stock, cuenta desde 0
                 int stock = Convert.ToInt32(DataBinder.Eval(e.Row.DataItem, "stock"));
-                TableCell cell = e.Row.Cells[3]; // ← Columna "Stock" (ajusta si cambia el orden)
+                Label lblStock = (Label)e.Row.FindControl("lblStock");
 
-                // Crear un contenedor div para el stock
-                var div = new System.Web.UI.WebControls.Literal();
-                div.Text = $"<div class='stock-box'>{stock}</div>";  // Se muestra el valor del stock
-
-                // Limpiar la celda y agregar el div con el texto
-                cell.Controls.Clear();
-                cell.Controls.Add(div);
-
-                // Agregar clases según el stock
-                if (stock <= 10)
+                if (lblStock != null)
                 {
-                    cell.CssClass += " bg-danger";
-                }
-                else if (stock <= 30)
-                {
-                    cell.CssClass += " bg-warning";
-                }
-                else
-                {
-                    cell.CssClass += " bg-success";
+                    if (stock <= 10)
+                        lblStock.CssClass += " bg-danger";
+                    else if (stock <= 50)
+                        lblStock.CssClass += " bg-warning";
+                    else
+                        lblStock.CssClass += " bg-success";
                 }
             }
         }

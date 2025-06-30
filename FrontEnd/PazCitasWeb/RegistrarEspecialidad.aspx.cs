@@ -1,5 +1,7 @@
 ﻿using PazCitasWA.ServiciosWS;
 using System;
+using System.Linq;
+using System.Web.UI;
 
 namespace PazCitasWA
 {
@@ -40,6 +42,17 @@ namespace PazCitasWA
             {
                 if (estado == Estado.Nuevo)
                 {
+                    var lista = wsEspecialidad.listarEspecialidad();
+
+                    bool nombreRepetido = lista.Any(esp => esp.nombre == objEspecialidad.nombre);
+
+                    if (nombreRepetido)
+                    {
+                        string mensaje = "Ya existe una especialidad con ese nombre";
+
+                        lanzarMensajedeError(mensaje.Trim());
+                        return; // salir del método
+                    }
                     wsEspecialidad.insertarEspecialidad(objEspecialidad);
                 }
                 else if (estado == Estado.Modificar)
@@ -49,14 +62,16 @@ namespace PazCitasWA
             }
             catch (Exception ex)
             {
-                /*lblMensajeError.Text = ex.Message;
-                string script =
-                    "mostrarModalError();";
-                ScriptManager.RegisterStartupScript
-                    (this, GetType(), "modalError", script, true);
-                return;*/
+                lanzarMensajedeError(ex.Message);
+                return;
             }
             Response.Redirect("ListarEspecialidades.aspx");
+        }
+        public void lanzarMensajedeError(String mensaje)
+        {
+            lblMensajeError.Text = mensaje;
+            string script = "mostrarModalError();";
+            ScriptManager.RegisterStartupScript(this, GetType(), "modalError", script, true);
         }
 
         protected void btnRegresar_Click(object sender, EventArgs e)

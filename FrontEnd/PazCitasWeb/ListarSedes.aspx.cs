@@ -50,5 +50,13 @@ namespace PazCitasWA
             int idSede = Int32.Parse(((LinkButton)sender).CommandArgument);
             Response.Redirect($"AsignarEspecialidades.aspx?idSede={idSede}");
         }
+
+        protected void btnVizualisar_Click(object sender, EventArgs e)
+        {
+            int idSede = Int32.Parse(((LinkButton)sender).CommandArgument);
+            sede sedeSeleccionada = sedes.SingleOrDefault(x => x.idSede == idSede);
+            Session["sedeSeleccionada"] = sedeSeleccionada;
+            Response.Redirect("RegistrarSede.aspx?accion=ver");
+        }
     }
 }

@@ -56,6 +56,12 @@ public class ConsultorioWS {
         return boconsultorio.listarXSede(idSede);
     }
     
+    @WebMethod(operationName = "listarConsulPorSedeNoAsig")
+    public ArrayList<Consultorio> listarConsulPorSedeNoAsig(@WebParam(name = "idSede")int idSede){
+        boconsultorio = new ConsultorioBO();
+        return boconsultorio.listarXSedeNoAsignados(idSede);
+    }
+    
     @WebMethod(operationName = "marcarAsignado")
     public int marcarAsignado(@WebParam(name = "idConsultorio") int idconsultorio) {
         boconsultorio = new ConsultorioBO();
@@ -66,6 +72,13 @@ public class ConsultorioWS {
     public int marcarNoAsignado(@WebParam(name = "idConsultorio") int idconsultorio) {
         boconsultorio = new ConsultorioBO();
         return boconsultorio.marcarNoAsignado(idconsultorio);
+    }
+    
+    @WebMethod(operationName = "consultorioExiste")
+    public boolean consultorioExiste(@WebParam(name = "nombre") String nombre,
+            @WebParam(name = "idSede") int idSede) {
+        boconsultorio = new ConsultorioBO();
+        return boconsultorio.consultorioExisteEnSede(nombre, idSede);
     }
     
 }

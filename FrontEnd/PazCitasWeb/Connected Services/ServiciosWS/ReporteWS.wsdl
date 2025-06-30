@@ -11,15 +11,34 @@
   <message name="generarReporteCitaResponse">
     <part name="parameters" element="tns:generarReporteCitaResponse" />
   </message>
+  <message name="generarReporteCitasXSede">
+    <part name="parameters" element="tns:generarReporteCitasXSede" />
+  </message>
+  <message name="generarReporteCitasXSedeResponse">
+    <part name="parameters" element="tns:generarReporteCitasXSedeResponse" />
+  </message>
   <portType name="ReporteWS">
     <operation name="generarReporteCita">
       <input wsam:Action="http://services.pucp.edu.pe/ReporteWS/generarReporteCitaRequest" message="tns:generarReporteCita" />
       <output wsam:Action="http://services.pucp.edu.pe/ReporteWS/generarReporteCitaResponse" message="tns:generarReporteCitaResponse" />
     </operation>
+    <operation name="generarReporteCitasXSede">
+      <input wsam:Action="http://services.pucp.edu.pe/ReporteWS/generarReporteCitasXSedeRequest" message="tns:generarReporteCitasXSede" />
+      <output wsam:Action="http://services.pucp.edu.pe/ReporteWS/generarReporteCitasXSedeResponse" message="tns:generarReporteCitasXSedeResponse" />
+    </operation>
   </portType>
   <binding name="ReporteWSPortBinding" type="tns:ReporteWS">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
     <operation name="generarReporteCita">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="generarReporteCitasXSede">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />

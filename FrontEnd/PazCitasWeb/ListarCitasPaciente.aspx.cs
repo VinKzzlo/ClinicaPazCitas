@@ -29,21 +29,6 @@ namespace PazCitasWA
                 return;
             }
 
-            if (!IsPostBack)
-            {
-                //wsCita = new CitaWSClient();
-                //BindingList<cita> citas = new BindingList<cita>(wsCita.listarXPaciente(IdPacienteLogueado));
-                //if (citas != null)
-                //{
-                //    rptMisCitas.DataSource = citas;
-                //    rptMisCitas.DataBind();
-                //}
-                //else
-                //{
-                //    lblMensajeGeneral.Text = "Error al cargar tus citas: ";
-                //    lblMensajeGeneral.Visible = true;
-                //}
-            }
             try
             {
                 wsCita = new CitaWSClient();
@@ -55,7 +40,7 @@ namespace PazCitasWA
             }
             catch (Exception ex)
             {
-                lblMensajeGeneral.Text = "Error al cargar tus citas: " + ex.Message;
+                lblMensajeGeneral.Text = "Parece que no tienes citas. ";
                 lblMensajeGeneral.Visible = true;
             }
         }
@@ -63,13 +48,13 @@ namespace PazCitasWA
         {
             get
             {
-                if (Session["IdPaciente"] != null && int.TryParse(Session["IdPaciente"].ToString(), out int id))
+                if (Session["id_usuario"] != null && int.TryParse(Session["id_usuario"].ToString(), out int id))
                 {
                     return id;
                 }
                 // Redirigir a login si no hay sesión o devolver un valor que indique error
-                // Response.Redirect("Login.aspx"); 
-                return 1; //Para la prueba
+                Response.Redirect("Login.aspx"); 
+                return -1; //Para la prueba
             }
         }
 
