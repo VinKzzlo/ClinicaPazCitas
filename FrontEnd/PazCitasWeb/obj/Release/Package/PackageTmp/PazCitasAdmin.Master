@@ -1,0 +1,561 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="PazCitasAdmin.Master.cs" Inherits="PazCitasWA.PazCitas" %>
+
+<!DOCTYPE html>
+<html lang="es">
+<head runat="server">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <link href="Content/bootstrap.css" rel="stylesheet" />
+    <link href="Content/Fonts/css/all.css" rel="stylesheet" />
+    <link href="Content/style.css" rel="stylesheet" />
+
+    <script src="Scripts/jquery-3.7.1.js"></script>
+    <script src="Scripts/bootstrap.bundle.js"></script>
+
+    <style>
+        /* ===== 1 · Global ======================================================== */
+        html, body {
+            height: 100%;
+            width: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            overflow-x: hidden;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        }
+
+        .navbar .dropdown-menu {
+            right: 0;
+            left: auto;
+            border: none;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+
+        /* ===== 2 · Barra superior =============================================== */
+        .navbar-clinica {
+            background: linear-gradient(135deg, #34a853 0%, #4ba851 100%) !important;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            min-height: 60px;
+        }
+
+            .navbar-clinica .container-fluid {
+                flex-wrap: nowrap;
+                padding: 0.5rem 1rem;
+            }
+
+            .navbar-clinica .btn-outline-light {
+                border-color: rgba(255,255,255,0.3);
+                transition: all 0.3s ease;
+            }
+
+                .navbar-clinica .btn-outline-light:hover {
+                    background-color: rgba(255,255,255,0.1);
+                    border-color: rgba(255,255,255,0.5);
+                }
+
+        /* ===== 3 · Barra lateral CON ANIMACIONES ================================= */
+        .sidebar-clinica {
+            background: #fff !important;
+            border-right: 2px solid #e9ecef;
+            box-shadow: 2px 0 8px rgba(0,0,0,0.1);
+            width: 260px;
+            flex: 0 0 260px;
+            transition: all 0.3s ease;
+            z-index: 1040;
+        }
+
+            /* Links del sidebar - TAMAÑO ORIGINAL CON 2 LÍNEAS */
+            .sidebar-clinica .nav-link {
+                display: grid;
+                grid-template-columns: 24px 1fr;
+                column-gap: 12px;
+                align-items: center;
+                color: #495057 !important;
+                padding: 12px 16px;
+                border-radius: 8px;
+                margin-bottom: 4px;
+                line-height: 1.25;
+                transition: all 0.3s ease;
+                text-decoration: none;
+                min-height: 44px;
+            }
+
+                .sidebar-clinica .nav-link:hover {
+                    background: #e8f5e8 !important;
+                    color: #34a853 !important;
+                    transform: translateX(3px);
+                }
+
+                .sidebar-clinica .nav-link.active {
+                    background: #34a853 !important;
+                    color: #fff !important;
+                    box-shadow: 0 2px 4px rgba(52, 168, 83, 0.3);
+                }
+
+                /* Iconos con animación - GRID LAYOUT */
+                .sidebar-clinica .nav-link i {
+                    width: 20px;
+                    min-width: 20px;
+                    text-align: center;
+                    font-size: 16px;
+                    transition: transform 0.3s ease;
+                    justify-self: center;
+                    align-self: center;
+                }
+
+                .sidebar-clinica .nav-link:hover i {
+                    transform: scale(1.1);
+                }
+
+            /* Texto con 2 líneas y tamaño original - FONT-WEIGHT CORREGIDO */
+            .sidebar-clinica .link-text {
+                white-space: normal;
+                word-wrap: break-word;
+                line-height: 1.25;
+                display: -webkit-box;
+                -webkit-line-clamp: 2;
+                -webkit-box-orient: vertical;
+                overflow: hidden;
+                align-self: center;
+                font-size: 16px;
+                font-weight: 400; /* Cambiado de 500 a 600 para texto más grueso */
+                transition: opacity 0.3s ease;
+            }
+
+            .sidebar-clinica hr {
+                border-color: #dee2e6;
+                margin: 1rem 0;
+            }
+
+        /* Logo - CORREGIDO CON HOVER */
+        .clinica-brand {
+            color: #4ba851 !important;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            transition: color 0.3s ease;
+            padding: 10px 0;
+            margin-bottom: 10px;
+        }
+
+            .clinica-brand:hover {
+                color: #34a853 !important;
+            }
+
+            .clinica-brand i {
+                color: #e91e63;
+                flex-shrink: 0;
+                margin-right: 12px;
+                font-size: 2rem;
+                transition: transform 0.3s ease;
+            }
+
+            .clinica-brand:hover i {
+                transform: scale(1.1);
+            }
+
+            .clinica-brand .brand-text {
+                flex: 1;
+                transition: opacity 0.3s ease;
+            }
+
+                .clinica-brand .brand-text .main-title {
+                    font-size: 1.8rem;
+                    line-height: 1;
+                    margin: 0;
+                }
+
+                .clinica-brand .brand-text .sub-title {
+                    font-size: 0.8rem;
+                    color: #6c757d;
+                    margin: 0;
+                }
+
+        /* Footer del sidebar */
+        .clinica-footer {
+            color: #6c757d;
+            font-size: .9rem;
+        }
+
+        /* ===== 4 · Colapsado CON ANIMACIONES SUAVES ============================= */
+        @media (min-width: 768px) {
+            .sidebar-clinica.collapsed {
+                width: 70px !important;
+                flex: 0 0 70px !important;
+            }
+
+                .sidebar-clinica.collapsed .nav-link {
+                    justify-content: center;
+                    align-items: center;
+                    display: flex;
+                    padding: 12px 0; /* Padding solo vertical, sin horizontal */
+                    margin: 0 auto; /* Centrar el elemento */
+                }
+
+                    .sidebar-clinica.collapsed .nav-link i {
+                        margin: 0 !important; /* Eliminar todos los márgenes */
+                        padding: 0 !important; /* Eliminar todos los paddings */
+                        width: auto !important; /* Ancho automático */
+                        min-width: auto !important; /* Min-width automático */
+                    }
+
+                .sidebar-clinica.collapsed .link-text,
+                .sidebar-clinica.collapsed .clinica-footer,
+                .sidebar-clinica.collapsed .brand-text {
+                    opacity: 0;
+                    visibility: hidden;
+                    width: 0;
+                    overflow: hidden;
+                    transition: opacity 0.3s ease, visibility 0.3s ease;
+                }
+
+                /* Animación del logo cuando se colapsa */
+                .sidebar-clinica.collapsed .clinica-brand {
+                    justify-content: center;
+                    padding: 10px 0;
+                }
+
+                    .sidebar-clinica.collapsed .clinica-brand i {
+                        margin-right: 0;
+                    }
+        }
+
+        /* ===== 5 · Sidebar más angosta en 768-991 px ================= */
+        @media (min-width:768px) and (max-width:991.98px) {
+            .sidebar-clinica {
+                flex: 0 0 200px;
+                width: 200px;
+            }
+
+                .sidebar-clinica.collapsed {
+                    flex: 0 0 64px;
+                    width: 64px;
+                }
+        }
+
+        /* Móviles (< 768px) */
+        @media (max-width: 767.98px) {
+            .sidebar-clinica {
+                position: fixed;
+                top: 0;
+                left: -100%;
+                height: 100vh;
+                width: 280px;
+                z-index: 1050;
+                transition: left 0.3s ease;
+                transform: translateX(-100%);
+            }
+
+                .sidebar-clinica.show {
+                    left: 0;
+                    transform: translateX(0);
+                }
+
+            .offcanvas-backdrop {
+                background-color: rgba(0,0,0,0.5);
+                z-index: 1040;
+            }
+
+            .main-content {
+                width: 100%;
+                margin-left: 0;
+            }
+        }
+
+        /* ===== Contenido principal =========================================== */
+        .main-content {
+            flex: 1;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .content-wrapper {
+            flex: 1;
+            overflow-y: auto;
+            padding: 1.5rem;
+        }
+
+        /* ===== Dropdown del usuario ========================================== */
+        .user-dropdown .dropdown-toggle {
+            border: 1px solid rgba(255,255,255,0.3);
+            transition: all 0.3s ease;
+        }
+
+            .user-dropdown .dropdown-toggle:hover {
+                background-color: rgba(255,255,255,0.1);
+                border-color: rgba(255,255,255,0.5);
+            }
+
+        .user-dropdown .dropdown-menu {
+            min-width: 200px;
+            border-radius: 8px;
+            padding: 0.5rem 0;
+        }
+
+        .user-dropdown .dropdown-item {
+            padding: 0.5rem 1rem;
+            transition: background-color 0.3s ease;
+        }
+
+            .user-dropdown .dropdown-item:hover {
+                background-color: #f8f9fa;
+            }
+
+            .user-dropdown .dropdown-item.text-danger:hover {
+                background-color: #f8d7da;
+            }
+    </style>
+
+    <title>
+        <asp:ContentPlaceHolder ID="cph_Title" runat="server">
+        </asp:ContentPlaceHolder>
+    </title>
+    <asp:ContentPlaceHolder ID="cph_Scripts" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <div class="container-fluid d-flex p-0 h-100">
+        <!-- Barra lateral de la clínica -->
+        <div id="bdSidebar" class="d-flex flex-column flex-shrink-0 p-3 sidebar-clinica offcanvas-md offcanvas-start">
+            <a href="HomeAdmin.aspx" class="clinica-brand navbar-brand">
+                <i class="fa-solid fa-heartbeat"></i>
+                <div class="brand-text">
+                    <div class="main-title">Pazcitas</div>
+                    <div class="sub-title">Clínica Médica</div>
+                </div>
+            </a>
+            <hr />
+            <ul class="mynav nav nav-pills flex-column mb-auto">
+                <li class="nav-item mb-1">
+                    <a href="ListarPacientes.aspx" class="nav-link" data-bs-toggle="tooltip" data-bs-placement="right">
+                        <i class="fa-solid fa-user-injured pe-2"></i>
+                        <span class="link-text">Gestionar Pacientes</span>
+                    </a>
+                </li>
+                <li class="nav-item mb-1">
+                    <a href="GestionarSedesConsultorios.aspx" class="nav-link" data-bs-toggle="tooltip" data-bs-placement="right">
+                        <i class="fa-solid fa-hospital"></i>
+                        <span class="link-text">Gestionar Sedes y Consultorios</span>
+                    </a>
+                </li>
+                <li class="nav-item mb-1">
+                    <a href="GestionarEmpleados.aspx" class="nav-link" data-bs-toggle="tooltip" data-bs-placement="right">
+                        <i class="fa-solid fa-user-doctor pe-2"></i>
+                        <span class="link-text">Gestionar Empleados</span>
+                    </a>
+                </li>
+                <li class="nav-item mb-1">
+                    <a href="ListarEspecialidades.aspx" class="nav-link" data-bs-toggle="tooltip" data-bs-placement="right">
+                        <i class="fa-solid fa-stethoscope pe-2"></i>
+                        <span class="link-text">Gestionar Especialidades</span>
+                    </a>
+                </li>
+                <li class="nav-item mb-1">
+                    <a href="ListarSeguros.aspx" class="nav-link" data-bs-toggle="tooltip" data-bs-placement="right">
+                        <i class="fa-solid fa-shield-halved pe-2"></i>
+                        <span class="link-text">Gestionar Seguros</span>
+                    </a>
+                </li>
+                <li class="nav-item mb-1">
+                    <a href="ListarTratamientos.aspx" class="nav-link" data-bs-toggle="tooltip" data-bs-placement="right">
+                        <i class="fa-solid fa-pills pe-2"></i>
+                        <span class="link-text">Tratamientos</span>
+                    </a>
+                </li>
+                <li class="nav-item mb-1">
+                    <a href="HistorialesMedicos.aspx" class="nav-link" data-bs-toggle="tooltip" data-bs-placement="right">
+                        <i class="fa-solid fa-file-medical pe-2"></i>
+                        <span class="link-text">Historial Médico</span>
+                    </a>
+                </li>
+                <li class="nav-item mb-1">
+                    <a href="Reportes.aspx" class="nav-link" data-bs-toggle="tooltip" data-bs-placement="right">
+                        <i class="fa-solid fa-chart-line pe-2"></i>
+                        <span class="link-text">Reportes</span>
+                    </a>
+                </li>
+            </ul>
+            <hr />
+            <div class="d-flex align-items-center clinica-footer">
+                <i class="fa-solid fa-hospital me-2"></i>
+                <div>
+                    <h6 class="mt-1 mb-0">Sistema Clínico</h6>
+                    <small>Pazcitas v2.0</small>
+                </div>
+            </div>
+        </div>
+
+        <!-- Contenido principal -->
+        <div class="main-content bg-light flex-fill overflow-auto">
+            <!-- Barra de usuario -->
+            <nav class="navbar navbar-dark navbar-clinica">
+                <div class="container-fluid">
+                    <!-- Botón colapsar (≥ md) -->
+                    <button class="btn btn-outline-light me-3 d-none d-md-inline-flex"
+                        id="btnToggleSidebar" type="button">
+                        <i class="fa-solid fa-bars"></i>
+                    </button>
+
+                    <!-- Botón off-canvas + logo (< md) -->
+                    <button class="btn btn-outline-light d-md-none"
+                        type="button" id="btnMobileToggle">
+                        <i class="fa-solid fa-bars me-2"></i>Pazcitas
+                    </button>
+
+                    <!-- Título grande (≥ md) -->
+                    <div class="navbar-brand d-none d-md-flex align-items-center flex-grow-1 overflow-hidden mb-0">
+                        <i class="fa-solid fa-heartbeat me-2 flex-shrink-0"></i>
+                        <span class="d-none d-lg-inline">Sistema de Gestión Clínica&nbsp;–&nbsp;</span>
+                        <span>Clínica Pazcitas</span>
+                    </div>
+
+                    <!-- Dropdown del usuario -->
+                    <div class="dropdown user-dropdown ms-auto">
+                        <button class="btn btn-outline-light dropdown-toggle" type="button"
+                            id="btnUsuario" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="fa-solid fa-user-gear me-1"></i>
+                            <asp:Label ID="lblNombreCompleto" runat="server" Text="Cargando..."></asp:Label>
+                        </button>
+                        <ul class="dropdown-menu" aria-labelledby="btnUsuario">
+                            <li><a href="Inicio.aspx?logout=true" class="dropdown-item text-danger">
+                                <i class="fa-solid fa-right-from-bracket me-2"></i>Cerrar Sesión</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+
+            <!-- Contenido de la página -->
+            <div class="content-wrapper">
+                <form runat="server">
+                    <asp:ContentPlaceHolder ID="cph_Contenido" runat="server">
+                    </asp:ContentPlaceHolder>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Backdrop para móvil -->
+    <div id="sidebarBackdrop" class="offcanvas-backdrop fade d-none"></div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const sidebar = document.getElementById('bdSidebar');
+            const btnToggle = document.getElementById('btnToggleSidebar');
+            const btnMobileToggle = document.getElementById('btnMobileToggle');
+            const backdrop = document.getElementById('sidebarBackdrop');
+
+            /* —  tooltips — RESTAURADO */
+            document.querySelectorAll('#bdSidebar .nav-link').forEach(a => {
+                const t = a.querySelector('.link-text').textContent.trim();
+                a.setAttribute('title', t);
+                const tip = new bootstrap.Tooltip(a);
+                tip.disable(); // inactivos por defecto
+            });
+
+            // Función para cerrar sidebar en móvil
+            function closeMobileSidebar() {
+                sidebar.classList.remove('show');
+                backdrop.classList.remove('show');
+                backdrop.classList.add('d-none');
+                document.body.style.overflow = '';
+            }
+
+            // Función para abrir sidebar en móvil
+            function openMobileSidebar() {
+                sidebar.classList.add('show');
+                backdrop.classList.remove('d-none');
+                backdrop.classList.add('show');
+                document.body.style.overflow = 'hidden';
+            }
+
+            /* —  colapsar / off-canvas — RESTAURADO CON TOOLTIPS */
+            if (btnToggle) {
+                btnToggle.addEventListener('click', function () {
+                    const desktop = matchMedia('(min-width:768px)').matches;
+
+                    if (desktop) {
+                        /* lógica de colapso con tooltips */
+                        sidebar.classList.toggle('collapsed');
+                        const enable = sidebar.classList.contains('collapsed');
+                        document.querySelectorAll('#bdSidebar .nav-link')
+                            .forEach(l => bootstrap.Tooltip.getInstance(l)[enable ? 'enable' : 'disable']());
+                    }
+                });
+            }
+
+            // Manejar toggle en móvil
+            if (btnMobileToggle) {
+                btnMobileToggle.addEventListener('click', function () {
+                    const desktop = matchMedia('(min-width:768px)').matches;
+
+                    if (!desktop) {
+                        /* --- MÓVIL ---  */
+                        sidebar.classList.remove('collapsed'); // ① asegura ancho completo
+                        document.querySelectorAll('#bdSidebar .nav-link') // ② tooltips siempre off en móvil
+                            .forEach(l => bootstrap.Tooltip.getInstance(l).disable());
+
+                        if (sidebar.classList.contains('show')) {
+                            closeMobileSidebar();
+                        } else {
+                            openMobileSidebar();
+                        }
+                    }
+                });
+            }
+
+            // Cerrar al hacer click en el backdrop
+            if (backdrop) {
+                backdrop.addEventListener('click', closeMobileSidebar);
+            }
+
+            // Cerrar al hacer click en un enlace del sidebar en móvil
+            const navLinks = document.querySelectorAll('.sidebar-clinica .nav-link');
+            navLinks.forEach(function (link) {
+                link.addEventListener('click', function () {
+                    const isDesktop = window.matchMedia('(min-width: 768px)').matches;
+                    if (!isDesktop) {
+                        closeMobileSidebar();
+                    }
+                });
+            });
+
+            /* —  marcar link activo — */
+            const current = location.pathname.split('/').pop();
+            navLinks.forEach(function (link) {
+                if (link.href.includes(current)) {
+                    link.classList.add('active');
+                }
+            });
+
+            // Manejar resize de ventana
+            window.addEventListener('resize', function () {
+                const isDesktop = window.matchMedia('(min-width: 768px)').matches;
+
+                if (isDesktop) {
+                    closeMobileSidebar();
+                } else {
+                    sidebar.classList.remove('collapsed');
+                    // Deshabilitar tooltips en móvil
+                    document.querySelectorAll('#bdSidebar .nav-link')
+                        .forEach(l => bootstrap.Tooltip.getInstance(l).disable());
+                }
+            });
+
+            // Cerrar con tecla Escape
+            document.addEventListener('keydown', function (e) {
+                if (e.key === 'Escape') {
+                    const isDesktop = window.matchMedia('(min-width: 768px)').matches;
+                    if (!isDesktop && sidebar.classList.contains('show')) {
+                        closeMobileSidebar();
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>

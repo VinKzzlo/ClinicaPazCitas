@@ -50,6 +50,7 @@ namespace PazCitasWA
 
         protected void btnEliminar_Click(object sender, EventArgs e)
         {
+            wsAdmin = new AdministradorWSClient();
             int idAdmin = Int32.Parse(((LinkButton)sender).CommandArgument);
             wsAdmin.eliminarAdministrador(idAdmin);
             Response.Redirect("ListarAdministradores.aspx");

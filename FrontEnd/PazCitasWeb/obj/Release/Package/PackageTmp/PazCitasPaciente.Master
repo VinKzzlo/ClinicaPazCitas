@@ -1,0 +1,438 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="PazCitasPaciente.master.cs" Inherits="PazCitasWA.PazCitasPaciente" %>
+
+<!DOCTYPE html>
+<html lang="es">
+<head runat="server">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* ======================================================================== */
+        /*             PARÁMETROS DE DISEÑO                                         */
+        /* ======================================================================== */
+        :root {
+            --contenedor-border-radius: 1.25rem;
+            --contenedor-bg-color: rgba(255, 255, 255, 0.85);
+            --layout-padding: 1.25rem; 
+            --layout-gap: 1.25rem;
+            --color-principal: #FFC300;
+            --color-principal-hover: #FFB000;
+            --color-principal-claro: #fff9e6;
+            --color-fondo-pagina: linear-gradient( 135deg, rgb(246, 192, 19, 0.3) 0%, /* Color 1: Azulado sutil en la esquina superior izquierda */
+            rgba(240, 240, 240, 0.15) 50%, /* Color 2: Blanco neutro en el centro */
+            rgb(246, 192, 19, 0.5) 100% /* Color 3: Amarillo sutil en la esquina inferior derecha */
+            );
+            /* --- Otros colores --- */
+            --color-texto-primario: #343a40;
+            --color-texto-secundario: #6c757d;
+            --color-borde-suave: #e9ecef;
+        }
+
+        /* ======================================================================== */
+        /*                                   CONTENEDOR ESTILIZADO                  */
+        /* ======================================================================== */
+        .contenedor-estilizado {
+            background-color: var(--contenedor-bg-color);
+            border-radius: var(--contenedor-border-radius);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.07);
+        }
+
+        /* Previene bordes extra de Bootstrap en modo offcanvas */
+        .offcanvas.sidebar {
+            border-right: none;
+        }
+
+        @media (prefers-reduced-motion: no-preference) {
+            .offcanvas {
+                transition: transform 0.4s ease-in-out !important;
+            }
+        }
+
+        .offcanvas {
+            transition: transform 0.4s ease-in-out !important;
+        }
+
+        /* ======================================================================== */
+        /*           ESTILOS DE ESTRUCTURA Y COMPONENTES (NO TOCAR)                 */
+        /* ======================================================================== */
+        html, body {
+            height: 100%;
+            width: 100%;
+        }
+
+        body {
+            background: var(--color-fondo-pagina);
+            font-family: 'Segoe UI', 'Roboto', 'Helvetica Neue', sans-serif;
+            overflow: hidden;
+        }
+
+        .page-wrapper {
+            display: flex;
+            height: 100%;
+            width: 100%;
+            padding: var(--layout-padding);
+            gap: var(--layout-gap);
+        }
+
+        /* --- Barra Lateral (Sidebar) --- */
+        .sidebar {
+            width: 260px;
+            flex-shrink: 0;
+            padding: 0;
+            transition: width 0.3s ease;
+            background-color: transparent;
+            border: none;
+        }
+
+            .sidebar.collapsed {
+                width: calc(68px + var(--layout-gap));
+            }
+
+                .sidebar.collapsed .sidebar-brand-text,
+                .sidebar.collapsed .nav-link .link-text {
+                    opacity: 0;
+                    pointer-events: none;
+                    transition: opacity 0.2s ease;
+                }
+
+                .sidebar.collapsed .sidebar-brand,
+                .sidebar.collapsed .nav-link {
+                }
+
+        .main-content {
+            flex-grow: 1; 
+            display: flex;
+            flex-direction: column;
+            overflow: hidden; 
+        }
+
+        .page-content {
+            overflow-y: auto;
+            flex-grow: 1;
+        }
+
+        .sidebar-brand {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 0 0.5rem 1.5rem 0.5rem;
+            color: var(--color-principal) !important;
+            font-size: 1.75rem;
+            font-weight: 700;
+            text-decoration: none;
+        }
+            .sidebar-brand:hover {
+                color: var(--color-principal-hover) !important;
+            }
+
+            .sidebar-brand .fa-book-medical {
+                font-size: 2rem;
+            }
+        .sidebar-nav {
+            list-style: none;
+            padding-left: 0;
+            margin: 0;
+        }
+
+            .sidebar-nav .nav-link {
+                display: flex;
+                align-items: center;
+                gap: 0.85rem;
+                padding: 12px 16px;
+                color: var(--color-texto-secundario);
+                font-weight: 500;
+                border-radius: 8px;
+                margin-bottom: 0.25rem;
+                transition: all 0.2s ease;
+            }
+
+                .sidebar-nav .nav-link .link-icon {
+                    width: 20px;
+                    text-align: center;
+                    font-size: 1.1rem;
+                }
+
+                .sidebar-nav .nav-link:hover {
+                    background-color: var(--color-principal-claro);
+                    color: var(--color-principal-hover);
+                }
+
+                .sidebar-nav .nav-link.active {
+                    background-color: var(--color-principal);
+                    color: white;
+                    box-shadow: 0 4px 10px -2px rgba(255, 195, 0, 0.5);
+                }
+
+        .sidebar-footer {
+            margin-top: auto; 
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--color-texto-secundario);
+            transition: all 0.3s ease; 
+        }
+        /* --- 2. ESTILOS CUANDO EL SIDEBAR ESTÁ COLAPSADO --- */
+        .sidebar.collapsed .sidebar-footer {
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            gap: 0.75rem; 
+            padding: 0.5rem 0;
+        }
+
+
+        .top-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+            flex-shrink: 0;
+        }
+
+            .top-bar .page-title {
+                font-size: 1.5rem;
+                font-weight: 600;
+                color: var(--color-texto-primario);
+            }
+
+        .sidebar-toggle-btn {
+            background: none;
+            border: 1px solid var(--color-borde-suave);
+            color: var(--color-texto-secundario);
+            border-radius: 8px;
+            width: 40px;
+            height: 40px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s ease;
+        }
+
+            .sidebar-toggle-btn:hover {
+                background-color: var(--color-principal-claro);
+                border-color: var(--color-principal);
+                color: var(--color-principal-hover);
+            }
+
+        .user-profile .dropdown-toggle {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            text-decoration: none;
+            color: var(--color-texto-primario);
+        }
+
+            .user-profile .dropdown-toggle::after {
+                display: none;
+            }
+
+        .user-profile img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .user-profile .user-info {
+            line-height: 1.2;
+            text-align: right;
+        }
+
+        .user-profile .user-name {
+            font-weight: 600;
+        }
+
+        .user-profile .user-role {
+            font-size: 0.8rem;
+            color: var(--color-texto-secundario);
+        }
+
+        .user-profile .dropdown-menu {
+            border: 1px solid var(--color-borde-suave);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            border-radius: 8px;
+            padding: 0.5rem 0;
+        }
+
+        .user-profile .dropdown-item {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 0.5rem 1rem;
+        }
+
+
+
+        /* ======================================================================== */
+        /*      ESTILO CONDICIONAL PARA EL OFF-CANVAS EN MODO MÓVIL                 */
+        /* ======================================================================== */
+
+        @media (max-width: 767.98px) {
+            .sidebar .contenedor-estilizado {
+                background-color: #ffffff; 
+            }
+        }
+        /* ======================================================================== */
+        /* ======   ESTILOS PARA LINK ACTIVO EN MODO COLAPSADO               ====== */
+        /* ======================================================================== */
+        .sidebar.collapsed .nav-link .link-text {
+            opacity: 0;
+            pointer-events: none;
+            white-space: nowrap;
+            overflow: hidden;
+            width: 0;
+            transition: opacity 0.2s ease, width 0.3s ease;
+        }
+
+        .sidebar.collapsed .sidebar-nav .nav-link {
+            justify-content: center;
+            padding-left: 16px;
+            padding-right: 2px;
+        }
+
+            .sidebar.collapsed .sidebar-nav .nav-link.active {
+                width: 55px;  
+                height: 44px; 
+                border-radius: 25%; 
+                background-color: var(--color-principal);
+                box-shadow: 0 4px 10px -2px rgba(255, 195, 0, 0.5);
+                & > .link-icon{
+                    color: white;
+                }
+        }
+        .icon-wrapper-soft-yellow {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: var(--color-principal-claro);
+            color: var(--color-principal-hover);
+            border-radius: 50%;
+        }
+    </style>
+
+    <title>
+        <asp:ContentPlaceHolder ID="cph_Title" runat="server"></asp:ContentPlaceHolder>
+    </title>
+    <asp:ContentPlaceHolder ID="cph_Scripts" runat="server"></asp:ContentPlaceHolder>
+</head>
+<body>
+    <div class="page-wrapper">
+        <!-- ========================== BARRA LATERAL ========================== -->
+        <aside id="sidebar" class="sidebar offcanvas-md offcanvas-start">
+            <div class="contenedor-estilizado d-flex flex-column h-100" style="padding: 1.5rem 1rem;">
+                <a href="ListarCitasPaciente.aspx" class="sidebar-brand">
+                    <i class="fa-solid fa-heartbeat" style="font-size: 2rem; color: #e91e63;"></i>
+                    <span class="sidebar-brand-text">PazCitas</span>
+                </a>
+
+                <ul class="sidebar-nav nav flex-column">
+                    <li class="nav-item"><a href="ListarCitasPaciente.aspx" class="nav-link"><i class="fa-solid fa-calendar-days"></i><span class="link-text">Mis Citas</span></a></li>
+                    <li class="nav-item"><a href="RegistrarCitaPaciente.aspx" class="nav-link"><i class="fa-solid fa-calendar-plus link-icon"></i><span class="link-text">Registrar Cita</span></a></li>
+                    <li class="nav-item"><a href="ListarSedesPaciente.aspx" class="nav-link"><i class="fa-solid fa-hospital link-icon"></i><span class="link-text">Ver Sedes</span></a></li>
+                    <li class="nav-item"><a href="ListarEspecialidadesPaciente.aspx" class="nav-link"><i class="fa-solid fa-stethoscope link-icon"></i><span class="link-text">Especialidades</span></a></li>
+                    <li class="nav-item"><a href="ListarMedicosPaciente.aspx" class="nav-link"><i class="fa-solid fa-user-doctor link-icon"></i><span class="link-text">Ver Médicos</span></a></li>
+                </ul>
+
+                <div class="sidebar-footer">
+                    <i class="fa-solid fa-hospital"></i>
+                    <div>
+                        <h6 class="mt-1 mb-0">Sistema Clínico</h6>
+                        <small>Pazcitas v2.0</small>
+                    </div>
+                </div>
+
+            </div>
+        </aside>
+
+        <!-- ========================== CONTENIDO PRINCIPAL ========================== -->
+        <div class="flex-grow-1 d-flex flex-column" style="gap: var(--layout-gap)">
+            <header class="top-bar contenedor-estilizado">
+                <div class="d-flex align-items-center gap-3">
+
+                    <!-- ========= BOTÓN 1: PARA ESCRITORIO (md y superior) ========= -->
+                    <button id="sidebar-toggle-btn-desktop" class="sidebar-toggle-btn d-none d-md-inline-flex">
+                        <i class="fa-solid fa-bars"></i>
+                    </button>
+
+                    <!-- ========= BOTÓN 2: PARA MÓVIL (sm e inferior) ========= -->
+                    <button id="sidebar-toggle-btn-mobile" class="sidebar-toggle-btn d-md-none" data-bs-toggle="offcanvas" data-bs-target="#sidebar">
+                        <i class="fa-solid fa-bars"></i>
+                    </button>
+
+                    <!-- Título de la página -->
+                    <h1 class="page-title mb-0">
+                        <asp:Label ID="lblCabeceraSaludo" runat="server"></asp:Label>
+                        <asp:ContentPlaceHolder ID="cph_PageTitle" runat="server">
+                        </asp:ContentPlaceHolder>
+                    </h1>
+                </div>
+
+                <!-- Perfil de Usuario (sin cambios) -->
+                <div class="dropdown user-profile">
+                    <a href="#" class="dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <span class="icon-wrapper-soft-yellow">
+                            <i class="fa-solid fa-user fa-lg"></i>
+                        </span>
+                        <div class="user-info d-none d-md-block">
+                            <div class="user-name">
+                                <asp:Label ID="lblNombreCompleto" runat="server"></asp:Label>
+                            </div>
+                            <div class="user-role">Paciente</div>
+                        </div>
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-end">
+                        <li><a href="Inicio.aspx?logout=true" class="nav-link text-danger">
+                                <i class="fa-solid fa-right-from-bracket pe-2"></i>
+                                <span class="link-text">Cerrar Sesión</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </header>
+
+            <!-- Área de Contenido Principal -->
+            <main class="main-content contenedor-estilizado">
+                <div class="page-content">
+                    <form id="form1" runat="server">
+                        <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
+                        <asp:ContentPlaceHolder ID="cph_Contenido" runat="server">
+                        </asp:ContentPlaceHolder>
+                    </form>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const sidebar = document.getElementById('sidebar');
+            const desktopToggleButton = document.getElementById('sidebar-toggle-btn-desktop');
+
+            if (desktopToggleButton) {
+                desktopToggleButton.addEventListener('click', function () {
+                    sidebar.classList.toggle('collapsed');
+                });
+            }
+
+            const currentPage = location.pathname.split('/').pop();
+            if (currentPage) {
+                document.querySelectorAll('.sidebar-nav .nav-link').forEach(link => {
+                    if (link.getAttribute('href').includes(currentPage)) {
+                        link.classList.add('active');
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+</html>

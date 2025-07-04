@@ -1,0 +1,863 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- https://go.microsoft.com/fwlink/?LinkID=208121. -->
+<Project>
+  <PropertyGroup>
+    <_PublishTargetUrl>C:\Instaladores\CSharp</_PublishTargetUrl>
+    <History>True|2025-07-03T17:58:49.9661192Z||;</History>
+    <LastFailureDetails />
+  </PropertyGroup>
+  <ItemGroup>
+    <File Include="AsignarEspecialidades.aspx">
+      <publishTime>06/25/2025 00:51:32</publishTime>
+    </File>
+    <File Include="AsignarTurnos.aspx">
+      <publishTime>06/18/2025 02:51:54</publishTime>
+    </File>
+    <File Include="bin/PazCitasWA.dll">
+      <publishTime>07/03/2025 12:58:48</publishTime>
+    </File>
+    <File Include="bin/PazCitasWA.pdb">
+      <publishTime>07/03/2025 12:58:48</publishTime>
+    </File>
+    <File Include="Connected Services/ServiciosWS/PazCitasWA.ServiciosWS.administrador.datasource">
+      <publishTime>06/30/2025 01:03:23</publishTime>
+    </File>
+    <File Include="Connected Services/ServiciosWS/PazCitasWA.ServiciosWS.cita.datasource">
+      <publishTime>06/30/2025 01:03:23</publishTime>
+    </File>
+    <File Include="Connected Services/ServiciosWS/PazCitasWA.ServiciosWS.consultorio.datasource">
+      <publishTime>06/30/2025 01:03:23</publishTime>
+    </File>
+    <File Include="Connected Services/ServiciosWS/PazCitasWA.ServiciosWS.consultorioExisteResponse.datasource">
+      <publishTime>06/30/2025 01:03:24</publishTime>
+    </File>
+    <File Include="Connected Services/ServiciosWS/PazCitasWA.ServiciosWS.eliminarAdministradorResponse.datasource">
+      <publishTime>06/30/2025 01:03:24</publishTime>
+    </File>
+    <File Include="Connected Services/ServiciosWS/PazCitasWA.ServiciosWS.eliminarCitaResponse.datasource">
+      <publishTime>06/30/2025 01:03:24</publishTime>
+    </File>
+    <File Include="Connected Services/ServiciosWS/PazCitasWA.ServiciosWS.eliminarConsultorioResponse.datasource">
+      <publishTime>06/30/2025 01:03:24</publishTime>
+    </File>
+    <File Include="Connected Services/ServiciosWS/PazCitasWA.ServiciosWS.eliminarEspecialidadResponse.datasource">
+      <publishTime>06/30/2025 01:03:25</publishTime>
+    </File>
+    <File Include="Connected Services/ServiciosWS/PazCitasWA.ServiciosWS.eliminarHistorialResponse.datasource">
+      <publishTime>06/30/2025 01:03:25</publishTime>
+    </File>
+    <File Include="Connected Services/ServiciosWS/PazCitasWA.ServiciosWS.eliminarHorarioPorMedicoResponse.datasource">
+      <publishTime>06/30/2025 01:03:25</publishTime>
+    </File>
+    <File Include="Connected Services/ServiciosWS/PazCitasWA.ServiciosWS.eliminarHorarioResponse.datasource">
+      <publishTime>06/30/2025 01:03:25</publishTime>
+    </File>
+    <File Include="Connected Services/ServiciosWS/PazCitasWA.ServiciosWS.eliminarLineaRecetaResponse.datasource">
+      <publishTime>06/30/2025 01:03:24</publishTime>
+    </File>
+    <File Include="Connected Services/ServiciosWS/PazCitasWA.ServiciosWS.eliminarMedicamentoResponse.datasource">
+      <publishTime>06/30/2025 01:03:24</publishTime>
+    </File>
+    <File Include="Connected Services/ServiciosWS/PazCitasWA.ServiciosWS.eliminarMedicoResponse.datasource">
+      <publishTime>06/30/2025 01:03:24</publishTime>
+    </File>
+    <File Include="Connected Services/ServiciosWS/PazCitasWA.ServiciosWS.eliminarPacienteResponse.datasource">
+      <publishTime>06/30/2025 01:03:25</publishTime>
+    </File>
+    <File Include="Connected Services/ServiciosWS/PazCitasWA.ServiciosWS.eliminarPagoResponse.datasource">
+      <publishTime>06/30/2025 01:03:24</publishTime>
+    </File>
+    <File Include="Connected Services/ServiciosWS/PazCitasWA.ServiciosWS.eliminarSedeEspecialidadResponse.datasource">
+      <publishTime>06/30/2025 01:03:25</publishTime>
+    </File>
+    <File Include="Connected Services/ServiciosWS/PazCitasWA.ServiciosWS.eliminarSedeEspecialidadXSedeResponse.datasource">
+      <publishTime>06/30/2025 01:03:25</publishTime>
+    </File>
+    <File Include="Connected Services/ServiciosWS/PazCitasWA.ServiciosWS.eliminarSedeResponse.datasource">
+      <publishTime>06/30/2025 01:03:24</publishTime>
+    </File>
+    <File Include="Connected Services/ServiciosWS/PazCitasWA.ServiciosWS.eliminarSeguroResponse.datasource">
+      <publishTime>06/30/2025 01:03:24</publishTime>
+    </File>
+    <File Include="Connected Services/ServiciosWS/PazCitasWA.ServiciosWS.eliminarTurnoResponse.datasource">
+      <publishTime>06/30/2025 01:03:24</publishTime>
+    </File>
+    <File Include="Connected Services/ServiciosWS/PazCitasWA.ServiciosWS.especialidad.datasource">
+      <publishTime>06/30/2025 01:03:23</publishTime>
+    </File>
+    <File Include="Connected Services/ServiciosWS/PazCitasWA.ServiciosWS.generarReporteCitaResponse.datasource">
+      <publishTime>06/30/2025 01:03:24</publishTime>
+    </File>
+    <File Include="Connected Services/ServiciosWS/PazCitasWA.ServiciosWS.generarReporteCitasXSedeResponse.datasource">
+      <publishTime>06/30/2025 01:03:24</publishTime>
+    </File>
+    <File Include="Connected Services/ServiciosWS/PazCitasWA.ServiciosWS.historialMedico.datasource">
+      <publishTime>06/30/2025 01:03:23</publishTime>
+    </File>
+    <File Include="Connected Services/ServiciosWS/PazCitasWA.ServiciosWS.horarioTrabajo.datasource">
+      <publishTime>06/30/2025 01:03:23</publishTime>
+    </File>
+    <File Include="Connected Services/ServiciosWS/PazCitasWA.ServiciosWS.insertaHorarioResponse.datasource">
+      <publishTime>06/30/2025 01:03:25</publishTime>
+    </File>
+    <File Include="Connected Services/ServiciosWS/PazCitasWA.ServiciosWS.insertarAdministradorResponse.datasource">
+      <publishTime>06/30/2025 01:03:24</publishTime>
+    </File>
+    <File Include="Connected Services/ServiciosWS/PazCitasWA.ServiciosWS.insertarCitaResponse.datasource">
+      <publishTime>06/30/2025 01:03:24</publishTime>
+    </File>
+    <File Include="Connected Services/ServiciosWS/PazCitasWA.ServiciosWS.insertarConsultorioResponse.datasource">
+      <publishTime>06/30/2025 01:03:24</publishTime>
+    </File>
+    <File Include="Connected Services/ServiciosWS/PazCitasWA.ServiciosWS.insertarCuentaResponse.datasource">
+      <publishTime>06/30/2025 01:03:25</publishTime>
+    </File>
+    <File Include="Connected Services/ServiciosWS/PazCitasWA.ServiciosWS.insertarEspecialidadResponse.datasource">
+      <publishTime>06/30/2025 01:03:25</publishTime>
+    </File>
+    <File Include="Connected Services/ServiciosWS/PazCitasWA.ServiciosWS.insertarHistorialResponse.datasource">
+      <publishTime>06/30/2025 01:03:25</publishTime>
+    </File>
+    <File Include="Connected Services/ServiciosWS/PazCitasWA.ServiciosWS.insertarLineaRecetaResponse.datasource">
+      <publishTime>06/30/2025 01:03:24</publishTime>
+    </File>
+    <File Include="Connected Services/ServiciosWS/PazCitasWA.ServiciosWS.insertarMedicamentoResponse.datasource">
+      <publishTime>06/30/2025 01:03:24</publishTime>
+    </File>
+    <File Include="Connected Services/ServiciosWS/PazCitasWA.ServiciosWS.insertarMedicoResponse.datasource">
+      <publishTime>06/30/2025 01:03:24</publishTime>
+    </File>
+    <File Include="Connected Services/ServiciosWS/PazCitasWA.ServiciosWS.insertarNotaClinicaResponse.datasource">
+      <publishTime>06/30/2025 01:03:24</publishTime>
+    </File>
+    <File Include="Connected Services/ServiciosWS/PazCitasWA.ServiciosWS.insertarPacienteResponse.datasource">
+      <publishTime>06/30/2025 01:03:25</publishTime>
+    </File>
+    <File Include="Connected Services/ServiciosWS/PazCitasWA.ServiciosWS.insertarPagoResponse.datasource">
+      <publishTime>06/30/2025 01:03:24</publishTime>
+    </File>
+    <File Include="Connected Services/ServiciosWS/PazCitasWA.ServiciosWS.insertarRecetaResponse.datasource">
+      <publishTime>06/30/2025 01:03:25</publishTime>
+    </File>
+    <File Include="Connected Services/ServiciosWS/PazCitasWA.ServiciosWS.insertarSedeEspecialidadResponse.datasource">
+      <publishTime>06/30/2025 01:03:25</publishTime>
+    </File>
+    <File Include="Connected Services/ServiciosWS/PazCitasWA.ServiciosWS.insertarSedeResponse.datasource">
+      <publishTime>06/30/2025 01:03:25</publishTime>
+    </File>
+    <File Include="Connected Services/ServiciosWS/PazCitasWA.ServiciosWS.insertarSeguroResponse.datasource">
+      <publishTime>06/30/2025 01:03:24</publishTime>
+    </File>
+    <File Include="Connected Services/ServiciosWS/PazCitasWA.ServiciosWS.insertaTurnoResponse.datasource">
+      <publishTime>06/30/2025 01:03:24</publishTime>
+    </File>
+    <File Include="Connected Services/ServiciosWS/PazCitasWA.ServiciosWS.lineaRecetaMedicamento.datasource">
+      <publishTime>06/30/2025 01:03:23</publishTime>
+    </File>
+    <File Include="Connected Services/ServiciosWS/PazCitasWA.ServiciosWS.listaCitaPorMedicoResponse.datasource">
+      <publishTime>06/30/2025 01:03:24</publishTime>
+    </File>
+    <File Include="Connected Services/ServiciosWS/PazCitasWA.ServiciosWS.listaCitaPorMedicoXestadoResponse.datasource">
+      <publishTime>06/30/2025 01:03:24</publishTime>
+    </File>
+    <File Include="Connected Services/ServiciosWS/PazCitasWA.ServiciosWS.listarAdministradorResponse.datasource">
+      <publishTime>06/30/2025 01:03:24</publishTime>
+    </File>
+    <File Include="Connected Services/ServiciosWS/PazCitasWA.ServiciosWS.listarCitaResponse.datasource">
+      <publishTime>06/30/2025 01:03:24</publishTime>
+    </File>
+    <File Include="Connected Services/ServiciosWS/PazCitasWA.ServiciosWS.listarConsulPorSedeNoAsigResponse.datasource">
+      <publishTime>06/30/2025 01:03:24</publishTime>
+    </File>
+    <File Include="Connected Services/ServiciosWS/PazCitasWA.ServiciosWS.listarConsultorioResponse.datasource">
+      <publishTime>06/30/2025 01:03:24</publishTime>
+    </File>
+    <File Include="Connected Services/ServiciosWS/PazCitasWA.ServiciosWS.listarConsultPorSedeResponse.datasource">
+      <publishTime>06/30/2025 01:03:24</publishTime>
+    </File>
+    <File Include="Connected Services/ServiciosWS/PazCitasWA.ServiciosWS.listarEspecialidadResponse.datasource">
+      <publishTime>06/30/2025 01:03:25</publishTime>
+    </File>
+    <File Include="Connected Services/ServiciosWS/PazCitasWA.ServiciosWS.listarHistorialResponse.datasource">
+      <publishTime>06/30/2025 01:03:25</publishTime>
+    </File>
+    <File Include="Connected Services/ServiciosWS/PazCitasWA.ServiciosWS.listarHorarioResponse.datasource">
+      <publishTime>06/30/2025 01:03:25</publishTime>
+    </File>
+    <File Include="Connected Services/ServiciosWS/PazCitasWA.ServiciosWS.listarMedicamentoResponse.datasource">
+      <publishTime>06/30/2025 01:03:24</publishTime>
+    </File>
+    <File Include="Connected Services/ServiciosWS/PazCitasWA.ServiciosWS.listarMedicamentoXnombreResponse.datasource">
+      <publishTime>06/30/2025 01:03:24</publishTime>
+    </File>
+    <File Include="Connected Services/ServiciosWS/PazCitasWA.ServiciosWS.listarMedicoResponse.datasource">
+      <publishTime>06/30/2025 01:03:24</publishTime>
+    </File>
+    <File Include="Connected Services/ServiciosWS/PazCitasWA.ServiciosWS.listarMedicoXCadenaResponse.datasource">
+      <publishTime>06/30/2025 01:03:23</publishTime>
+    </File>
+    <File Include="Connected Services/ServiciosWS/PazCitasWA.ServiciosWS.listarMedicoXEspXSedeResponse.datasource">
+      <publishTime>06/30/2025 01:03:23</publishTime>
+    </File>
+    <File Include="Connected Services/ServiciosWS/PazCitasWA.ServiciosWS.listarNotaClinicaResponse.datasource">
+      <publishTime>06/30/2025 01:03:24</publishTime>
+    </File>
+    <File Include="Connected Services/ServiciosWS/PazCitasWA.ServiciosWS.listarNotaClinicaXHistorialResponse.datasource">
+      <publishTime>06/30/2025 01:03:24</publishTime>
+    </File>
+    <File Include="Connected Services/ServiciosWS/PazCitasWA.ServiciosWS.listarPacienteResponse.datasource">
+      <publishTime>06/30/2025 01:03:25</publishTime>
+    </File>
+    <File Include="Connected Services/ServiciosWS/PazCitasWA.ServiciosWS.listarPacienteXCadenaResponse.datasource">
+      <publishTime>06/30/2025 01:03:25</publishTime>
+    </File>
+    <File Include="Connected Services/ServiciosWS/PazCitasWA.ServiciosWS.listarPagoResponse.datasource">
+      <publishTime>06/30/2025 01:03:24</publishTime>
+    </File>
+    <File Include="Connected Services/ServiciosWS/PazCitasWA.ServiciosWS.listarPorMedicoResponse.datasource">
+      <publishTime>06/30/2025 01:03:25</publishTime>
+    </File>
+    <File Include="Connected Services/ServiciosWS/PazCitasWA.ServiciosWS.listarRecetaResponse.datasource">
+      <publishTime>06/30/2025 01:03:25</publishTime>
+    </File>
+    <File Include="Connected Services/ServiciosWS/PazCitasWA.ServiciosWS.listarSedeResponse.datasource">
+      <publishTime>06/30/2025 01:03:24</publishTime>
+    </File>
+    <File Include="Connected Services/ServiciosWS/PazCitasWA.ServiciosWS.listarSeguroResponse.datasource">
+      <publishTime>06/30/2025 01:03:24</publishTime>
+    </File>
+    <File Include="Connected Services/ServiciosWS/PazCitasWA.ServiciosWS.listarTurnoResponse.datasource">
+      <publishTime>06/30/2025 01:03:24</publishTime>
+    </File>
+    <File Include="Connected Services/ServiciosWS/PazCitasWA.ServiciosWS.listarTurnosSemanaResponse.datasource">
+      <publishTime>06/30/2025 01:03:24</publishTime>
+    </File>
+    <File Include="Connected Services/ServiciosWS/PazCitasWA.ServiciosWS.listarXEspecialidadResponse.datasource">
+      <publishTime>06/30/2025 01:03:24</publishTime>
+    </File>
+    <File Include="Connected Services/ServiciosWS/PazCitasWA.ServiciosWS.listarXPacienteCompletoSinDatosPacienteResponse.datasource">
+      <publishTime>06/30/2025 01:03:24</publishTime>
+    </File>
+    <File Include="Connected Services/ServiciosWS/PazCitasWA.ServiciosWS.listarXPacienteResponse.datasource">
+      <publishTime>06/30/2025 01:03:24</publishTime>
+    </File>
+    <File Include="Connected Services/ServiciosWS/PazCitasWA.ServiciosWS.listarXSedeResponse.datasource">
+      <publishTime>06/30/2025 01:03:25</publishTime>
+    </File>
+    <File Include="Connected Services/ServiciosWS/PazCitasWA.ServiciosWS.listar_lineas_x_recetaResponse.datasource">
+      <publishTime>06/30/2025 01:03:24</publishTime>
+    </File>
+    <File Include="Connected Services/ServiciosWS/PazCitasWA.ServiciosWS.marcarAsignadoResponse.datasource">
+      <publishTime>06/30/2025 01:03:24</publishTime>
+    </File>
+    <File Include="Connected Services/ServiciosWS/PazCitasWA.ServiciosWS.marcarNoAsignadoResponse.datasource">
+      <publishTime>06/30/2025 01:03:24</publishTime>
+    </File>
+    <File Include="Connected Services/ServiciosWS/PazCitasWA.ServiciosWS.medicamento.datasource">
+      <publishTime>06/30/2025 01:03:23</publishTime>
+    </File>
+    <File Include="Connected Services/ServiciosWS/PazCitasWA.ServiciosWS.medico.datasource">
+      <publishTime>06/30/2025 01:03:23</publishTime>
+    </File>
+    <File Include="Connected Services/ServiciosWS/PazCitasWA.ServiciosWS.modificarAdministradorResponse.datasource">
+      <publishTime>06/30/2025 01:03:24</publishTime>
+    </File>
+    <File Include="Connected Services/ServiciosWS/PazCitasWA.ServiciosWS.modificarCitaResponse.datasource">
+      <publishTime>06/30/2025 01:03:24</publishTime>
+    </File>
+    <File Include="Connected Services/ServiciosWS/PazCitasWA.ServiciosWS.modificarConsultorioResponse.datasource">
+      <publishTime>06/30/2025 01:03:24</publishTime>
+    </File>
+    <File Include="Connected Services/ServiciosWS/PazCitasWA.ServiciosWS.modificarEspecialidadResponse.datasource">
+      <publishTime>06/30/2025 01:03:25</publishTime>
+    </File>
+    <File Include="Connected Services/ServiciosWS/PazCitasWA.ServiciosWS.modificarFechaCitaResponse.datasource">
+      <publishTime>06/30/2025 01:03:24</publishTime>
+    </File>
+    <File Include="Connected Services/ServiciosWS/PazCitasWA.ServiciosWS.modificarHorarioResponse.datasource">
+      <publishTime>06/30/2025 01:03:25</publishTime>
+    </File>
+    <File Include="Connected Services/ServiciosWS/PazCitasWA.ServiciosWS.modificarMedicamentoResponse.datasource">
+      <publishTime>06/30/2025 01:03:24</publishTime>
+    </File>
+    <File Include="Connected Services/ServiciosWS/PazCitasWA.ServiciosWS.modificarMedicoResponse.datasource">
+      <publishTime>06/30/2025 01:03:23</publishTime>
+    </File>
+    <File Include="Connected Services/ServiciosWS/PazCitasWA.ServiciosWS.modificarNotaClinicaResponse.datasource">
+      <publishTime>06/30/2025 01:03:24</publishTime>
+    </File>
+    <File Include="Connected Services/ServiciosWS/PazCitasWA.ServiciosWS.modificarPacienteResponse.datasource">
+      <publishTime>06/30/2025 01:03:25</publishTime>
+    </File>
+    <File Include="Connected Services/ServiciosWS/PazCitasWA.ServiciosWS.modificarPagoResponse.datasource">
+      <publishTime>06/30/2025 01:03:24</publishTime>
+    </File>
+    <File Include="Connected Services/ServiciosWS/PazCitasWA.ServiciosWS.modificarRecetaResponse.datasource">
+      <publishTime>06/30/2025 01:03:25</publishTime>
+    </File>
+    <File Include="Connected Services/ServiciosWS/PazCitasWA.ServiciosWS.modificarSedeResponse.datasource">
+      <publishTime>06/30/2025 01:03:24</publishTime>
+    </File>
+    <File Include="Connected Services/ServiciosWS/PazCitasWA.ServiciosWS.modificarSeguroResponse.datasource">
+      <publishTime>06/30/2025 01:03:24</publishTime>
+    </File>
+    <File Include="Connected Services/ServiciosWS/PazCitasWA.ServiciosWS.modificarTurnoResponse.datasource">
+      <publishTime>06/30/2025 01:03:24</publishTime>
+    </File>
+    <File Include="Connected Services/ServiciosWS/PazCitasWA.ServiciosWS.notaClinica.datasource">
+      <publishTime>06/30/2025 01:03:23</publishTime>
+    </File>
+    <File Include="Connected Services/ServiciosWS/PazCitasWA.ServiciosWS.obtenerCitaResponse.datasource">
+      <publishTime>06/30/2025 01:03:24</publishTime>
+    </File>
+    <File Include="Connected Services/ServiciosWS/PazCitasWA.ServiciosWS.obtenerConsultorioPorIdResponse.datasource">
+      <publishTime>06/30/2025 01:03:24</publishTime>
+    </File>
+    <File Include="Connected Services/ServiciosWS/PazCitasWA.ServiciosWS.obtenerEspecialidadPorIdResponse.datasource">
+      <publishTime>06/30/2025 01:03:25</publishTime>
+    </File>
+    <File Include="Connected Services/ServiciosWS/PazCitasWA.ServiciosWS.obtenerHistorialResponse.datasource">
+      <publishTime>06/30/2025 01:03:25</publishTime>
+    </File>
+    <File Include="Connected Services/ServiciosWS/PazCitasWA.ServiciosWS.obtenerMedicoResponse.datasource">
+      <publishTime>06/30/2025 01:03:24</publishTime>
+    </File>
+    <File Include="Connected Services/ServiciosWS/PazCitasWA.ServiciosWS.obtenerPacientexDNIResponse.datasource">
+      <publishTime>06/30/2025 01:03:25</publishTime>
+    </File>
+    <File Include="Connected Services/ServiciosWS/PazCitasWA.ServiciosWS.obtenerPacienteXiDResponse.datasource">
+      <publishTime>06/30/2025 01:03:25</publishTime>
+    </File>
+    <File Include="Connected Services/ServiciosWS/PazCitasWA.ServiciosWS.obtenerPorIDAdministradorResponse.datasource">
+      <publishTime>06/30/2025 01:03:24</publishTime>
+    </File>
+    <File Include="Connected Services/ServiciosWS/PazCitasWA.ServiciosWS.obtenerSedePorIdResponse.datasource">
+      <publishTime>06/30/2025 01:03:24</publishTime>
+    </File>
+    <File Include="Connected Services/ServiciosWS/PazCitasWA.ServiciosWS.obtenerTurnosLibresResponse.datasource">
+      <publishTime>06/30/2025 01:03:24</publishTime>
+    </File>
+    <File Include="Connected Services/ServiciosWS/PazCitasWA.ServiciosWS.obtenerXIdCompletoSinDatosPacienteResponse.datasource">
+      <publishTime>06/30/2025 01:03:24</publishTime>
+    </File>
+    <File Include="Connected Services/ServiciosWS/PazCitasWA.ServiciosWS.obtenerXIdResponse.datasource">
+      <publishTime>06/30/2025 01:03:24</publishTime>
+    </File>
+    <File Include="Connected Services/ServiciosWS/PazCitasWA.ServiciosWS.paciente.datasource">
+      <publishTime>06/30/2025 01:03:23</publishTime>
+    </File>
+    <File Include="Connected Services/ServiciosWS/PazCitasWA.ServiciosWS.pago.datasource">
+      <publishTime>06/30/2025 01:03:23</publishTime>
+    </File>
+    <File Include="Connected Services/ServiciosWS/PazCitasWA.ServiciosWS.receta.datasource">
+      <publishTime>06/30/2025 01:03:23</publishTime>
+    </File>
+    <File Include="Connected Services/ServiciosWS/PazCitasWA.ServiciosWS.sede.datasource">
+      <publishTime>06/30/2025 01:03:23</publishTime>
+    </File>
+    <File Include="Connected Services/ServiciosWS/PazCitasWA.ServiciosWS.seguro.datasource">
+      <publishTime>06/30/2025 01:03:23</publishTime>
+    </File>
+    <File Include="Connected Services/ServiciosWS/PazCitasWA.ServiciosWS.turno.datasource">
+      <publishTime>06/30/2025 01:03:23</publishTime>
+    </File>
+    <File Include="Connected Services/ServiciosWS/PazCitasWA.ServiciosWS.turnoDisponibleDTO.datasource">
+      <publishTime>06/30/2025 01:03:23</publishTime>
+    </File>
+    <File Include="Connected Services/ServiciosWS/PazCitasWA.ServiciosWS.usernameExisteResponse.datasource">
+      <publishTime>06/30/2025 01:03:25</publishTime>
+    </File>
+    <File Include="Connected Services/ServiciosWS/PazCitasWA.ServiciosWS.verificarCuentaAdministradorResponse.datasource">
+      <publishTime>06/30/2025 01:03:25</publishTime>
+    </File>
+    <File Include="Connected Services/ServiciosWS/PazCitasWA.ServiciosWS.verificarCuentaMedicoResponse.datasource">
+      <publishTime>06/30/2025 01:03:25</publishTime>
+    </File>
+    <File Include="Connected Services/ServiciosWS/PazCitasWA.ServiciosWS.verificarCuentaPacienteResponse.datasource">
+      <publishTime>06/30/2025 01:03:25</publishTime>
+    </File>
+    <File Include="Connected Services/ServiciosWS/PazCitasWA.ServiciosWS.verificarCuentaResponse.datasource">
+      <publishTime>06/30/2025 01:03:25</publishTime>
+    </File>
+    <File Include="Content/bootstrap-grid.css">
+      <publishTime>06/18/2025 02:51:54</publishTime>
+    </File>
+    <File Include="Content/bootstrap-grid.css.map">
+      <publishTime>06/18/2025 02:51:54</publishTime>
+    </File>
+    <File Include="Content/bootstrap-grid.min.css">
+      <publishTime>06/18/2025 02:51:54</publishTime>
+    </File>
+    <File Include="Content/bootstrap-grid.min.css.map">
+      <publishTime>06/18/2025 02:51:54</publishTime>
+    </File>
+    <File Include="Content/bootstrap-grid.rtl.css">
+      <publishTime>06/18/2025 02:51:54</publishTime>
+    </File>
+    <File Include="Content/bootstrap-grid.rtl.css.map">
+      <publishTime>06/18/2025 02:51:54</publishTime>
+    </File>
+    <File Include="Content/bootstrap-grid.rtl.min.css">
+      <publishTime>06/18/2025 02:51:54</publishTime>
+    </File>
+    <File Include="Content/bootstrap-grid.rtl.min.css.map">
+      <publishTime>06/18/2025 02:51:54</publishTime>
+    </File>
+    <File Include="Content/bootstrap-reboot.css">
+      <publishTime>06/18/2025 02:51:54</publishTime>
+    </File>
+    <File Include="Content/bootstrap-reboot.css.map">
+      <publishTime>06/18/2025 02:51:54</publishTime>
+    </File>
+    <File Include="Content/bootstrap-reboot.min.css">
+      <publishTime>06/18/2025 02:51:54</publishTime>
+    </File>
+    <File Include="Content/bootstrap-reboot.min.css.map">
+      <publishTime>06/18/2025 02:51:54</publishTime>
+    </File>
+    <File Include="Content/bootstrap-reboot.rtl.css">
+      <publishTime>06/18/2025 02:51:54</publishTime>
+    </File>
+    <File Include="Content/bootstrap-reboot.rtl.css.map">
+      <publishTime>06/18/2025 02:51:54</publishTime>
+    </File>
+    <File Include="Content/bootstrap-reboot.rtl.min.css">
+      <publishTime>06/18/2025 02:51:54</publishTime>
+    </File>
+    <File Include="Content/bootstrap-reboot.rtl.min.css.map">
+      <publishTime>06/18/2025 02:51:54</publishTime>
+    </File>
+    <File Include="Content/bootstrap-utilities.css">
+      <publishTime>06/18/2025 02:51:54</publishTime>
+    </File>
+    <File Include="Content/bootstrap-utilities.css.map">
+      <publishTime>06/18/2025 02:51:54</publishTime>
+    </File>
+    <File Include="Content/bootstrap-utilities.min.css">
+      <publishTime>06/18/2025 02:51:54</publishTime>
+    </File>
+    <File Include="Content/bootstrap-utilities.min.css.map">
+      <publishTime>06/18/2025 02:51:54</publishTime>
+    </File>
+    <File Include="Content/bootstrap-utilities.rtl.css">
+      <publishTime>06/18/2025 02:51:54</publishTime>
+    </File>
+    <File Include="Content/bootstrap-utilities.rtl.css.map">
+      <publishTime>06/18/2025 02:51:54</publishTime>
+    </File>
+    <File Include="Content/bootstrap-utilities.rtl.min.css">
+      <publishTime>06/18/2025 02:51:54</publishTime>
+    </File>
+    <File Include="Content/bootstrap-utilities.rtl.min.css.map">
+      <publishTime>06/18/2025 02:51:54</publishTime>
+    </File>
+    <File Include="Content/bootstrap.css">
+      <publishTime>06/18/2025 02:51:54</publishTime>
+    </File>
+    <File Include="Content/bootstrap.css.map">
+      <publishTime>06/18/2025 02:51:54</publishTime>
+    </File>
+    <File Include="Content/bootstrap.min.css">
+      <publishTime>06/18/2025 02:51:54</publishTime>
+    </File>
+    <File Include="Content/bootstrap.min.css.map">
+      <publishTime>06/18/2025 02:51:54</publishTime>
+    </File>
+    <File Include="Content/bootstrap.rtl.css">
+      <publishTime>06/18/2025 02:51:54</publishTime>
+    </File>
+    <File Include="Content/bootstrap.rtl.css.map">
+      <publishTime>06/18/2025 02:51:54</publishTime>
+    </File>
+    <File Include="Content/bootstrap.rtl.min.css">
+      <publishTime>06/18/2025 02:51:54</publishTime>
+    </File>
+    <File Include="Content/bootstrap.rtl.min.css.map">
+      <publishTime>06/18/2025 02:51:54</publishTime>
+    </File>
+    <File Include="Content/Fonts/css/all.css">
+      <publishTime>06/18/2025 02:51:54</publishTime>
+    </File>
+    <File Include="Content/Fonts/css/all.min.css">
+      <publishTime>06/18/2025 02:51:54</publishTime>
+    </File>
+    <File Include="Content/Fonts/css/brands.css">
+      <publishTime>06/18/2025 02:51:54</publishTime>
+    </File>
+    <File Include="Content/Fonts/css/brands.min.css">
+      <publishTime>06/18/2025 02:51:54</publishTime>
+    </File>
+    <File Include="Content/Fonts/css/duotone.css">
+      <publishTime>06/18/2025 02:51:54</publishTime>
+    </File>
+    <File Include="Content/Fonts/css/duotone.min.css">
+      <publishTime>06/18/2025 02:51:54</publishTime>
+    </File>
+    <File Include="Content/Fonts/css/fontawesome.css">
+      <publishTime>06/18/2025 02:51:54</publishTime>
+    </File>
+    <File Include="Content/Fonts/css/fontawesome.min.css">
+      <publishTime>06/18/2025 02:51:54</publishTime>
+    </File>
+    <File Include="Content/Fonts/css/light.css">
+      <publishTime>06/18/2025 02:51:54</publishTime>
+    </File>
+    <File Include="Content/Fonts/css/light.min.css">
+      <publishTime>06/18/2025 02:51:54</publishTime>
+    </File>
+    <File Include="Content/Fonts/css/regular.css">
+      <publishTime>06/18/2025 02:51:54</publishTime>
+    </File>
+    <File Include="Content/Fonts/css/regular.min.css">
+      <publishTime>06/18/2025 02:51:54</publishTime>
+    </File>
+    <File Include="Content/Fonts/css/solid.css">
+      <publishTime>06/18/2025 02:51:54</publishTime>
+    </File>
+    <File Include="Content/Fonts/css/solid.min.css">
+      <publishTime>06/18/2025 02:51:54</publishTime>
+    </File>
+    <File Include="Content/Fonts/css/svg-with-js.css">
+      <publishTime>06/18/2025 02:51:54</publishTime>
+    </File>
+    <File Include="Content/Fonts/css/svg-with-js.min.css">
+      <publishTime>06/18/2025 02:51:54</publishTime>
+    </File>
+    <File Include="Content/Fonts/css/thin.css">
+      <publishTime>06/18/2025 02:51:54</publishTime>
+    </File>
+    <File Include="Content/Fonts/css/thin.min.css">
+      <publishTime>06/18/2025 02:51:54</publishTime>
+    </File>
+    <File Include="Content/Fonts/css/v4-font-face.css">
+      <publishTime>06/18/2025 02:51:54</publishTime>
+    </File>
+    <File Include="Content/Fonts/css/v4-font-face.min.css">
+      <publishTime>06/18/2025 02:51:54</publishTime>
+    </File>
+    <File Include="Content/Fonts/css/v4-shims.css">
+      <publishTime>06/18/2025 02:51:54</publishTime>
+    </File>
+    <File Include="Content/Fonts/css/v4-shims.min.css">
+      <publishTime>06/18/2025 02:51:54</publishTime>
+    </File>
+    <File Include="Content/Fonts/css/v5-font-face.css">
+      <publishTime>06/18/2025 02:51:54</publishTime>
+    </File>
+    <File Include="Content/Fonts/css/v5-font-face.min.css">
+      <publishTime>06/18/2025 02:51:54</publishTime>
+    </File>
+    <File Include="Content/Fonts/webfonts/fa-brands-400.ttf">
+      <publishTime>06/18/2025 02:51:54</publishTime>
+    </File>
+    <File Include="Content/Fonts/webfonts/fa-brands-400.woff">
+      <publishTime>06/18/2025 02:51:54</publishTime>
+    </File>
+    <File Include="Content/Fonts/webfonts/fa-brands-400.woff2">
+      <publishTime>06/18/2025 02:51:54</publishTime>
+    </File>
+    <File Include="Content/Fonts/webfonts/fa-duotone-900.ttf">
+      <publishTime>06/18/2025 02:51:54</publishTime>
+    </File>
+    <File Include="Content/Fonts/webfonts/fa-duotone-900.woff">
+      <publishTime>06/18/2025 02:51:54</publishTime>
+    </File>
+    <File Include="Content/Fonts/webfonts/fa-duotone-900.woff2">
+      <publishTime>06/18/2025 02:51:54</publishTime>
+    </File>
+    <File Include="Content/Fonts/webfonts/fa-light-300.ttf">
+      <publishTime>06/18/2025 02:51:54</publishTime>
+    </File>
+    <File Include="Content/Fonts/webfonts/fa-light-300.woff">
+      <publishTime>06/18/2025 02:51:54</publishTime>
+    </File>
+    <File Include="Content/Fonts/webfonts/fa-light-300.woff2">
+      <publishTime>06/18/2025 02:51:54</publishTime>
+    </File>
+    <File Include="Content/Fonts/webfonts/fa-regular-400.ttf">
+      <publishTime>06/18/2025 02:51:54</publishTime>
+    </File>
+    <File Include="Content/Fonts/webfonts/fa-regular-400.woff">
+      <publishTime>06/18/2025 02:51:54</publishTime>
+    </File>
+    <File Include="Content/Fonts/webfonts/fa-regular-400.woff2">
+      <publishTime>06/18/2025 02:51:54</publishTime>
+    </File>
+    <File Include="Content/Fonts/webfonts/fa-solid-900.ttf">
+      <publishTime>06/18/2025 02:51:54</publishTime>
+    </File>
+    <File Include="Content/Fonts/webfonts/fa-solid-900.woff">
+      <publishTime>06/18/2025 02:51:54</publishTime>
+    </File>
+    <File Include="Content/Fonts/webfonts/fa-solid-900.woff2">
+      <publishTime>06/18/2025 02:51:54</publishTime>
+    </File>
+    <File Include="Content/Fonts/webfonts/fa-thin-100.ttf">
+      <publishTime>06/18/2025 02:51:54</publishTime>
+    </File>
+    <File Include="Content/Fonts/webfonts/fa-thin-100.woff">
+      <publishTime>06/18/2025 02:51:54</publishTime>
+    </File>
+    <File Include="Content/Fonts/webfonts/fa-thin-100.woff2">
+      <publishTime>06/18/2025 02:51:54</publishTime>
+    </File>
+    <File Include="Content/Fonts/webfonts/fa-v4compatibility.ttf">
+      <publishTime>06/18/2025 02:51:54</publishTime>
+    </File>
+    <File Include="Content/Fonts/webfonts/fa-v4compatibility.woff2">
+      <publishTime>06/18/2025 02:51:54</publishTime>
+    </File>
+    <File Include="Content/LoginModern/login-modern.css">
+      <publishTime>06/23/2025 21:44:40</publishTime>
+    </File>
+    <File Include="Content/sidebars.css">
+      <publishTime>06/18/2025 02:51:54</publishTime>
+    </File>
+    <File Include="Content/styleAdmin.css">
+      <publishTime>06/18/2025 02:51:54</publishTime>
+    </File>
+    <File Include="DetalleCitaPaciente.aspx">
+      <publishTime>06/29/2025 23:06:41</publishTime>
+    </File>
+    <File Include="DetalleEspecialidadPaciente.aspx">
+      <publishTime>06/29/2025 23:06:54</publishTime>
+    </File>
+    <File Include="EmitirExamen.aspx">
+      <publishTime>06/18/2025 02:51:54</publishTime>
+    </File>
+    <File Include="EmitirReceta.aspx">
+      <publishTime>06/29/2025 21:11:47</publishTime>
+    </File>
+    <File Include="GestionarEmpleados.aspx">
+      <publishTime>06/18/2025 02:51:54</publishTime>
+    </File>
+    <File Include="GestionarMedicos.aspx">
+      <publishTime>06/18/2025 02:51:54</publishTime>
+    </File>
+    <File Include="GestionarSedesConsultorios.aspx">
+      <publishTime>06/18/2025 02:51:54</publishTime>
+    </File>
+    <File Include="Global.asax">
+      <publishTime>06/18/2025 02:51:54</publishTime>
+    </File>
+    <File Include="HistorialesMedicos.aspx">
+      <publishTime>06/30/2025 00:37:07</publishTime>
+    </File>
+    <File Include="HomeAdmin.aspx">
+      <publishTime>06/29/2025 21:34:32</publishTime>
+    </File>
+    <File Include="HomeMedico.aspx">
+      <publishTime>06/30/2025 01:16:00</publishTime>
+    </File>
+    <File Include="HomePaciente.aspx">
+      <publishTime>06/18/2025 02:51:54</publishTime>
+    </File>
+    <File Include="Images/doctorGenericImage.png">
+      <publishTime>06/18/2025 02:51:54</publishTime>
+    </File>
+    <File Include="Images/genericDoctor.png">
+      <publishTime>06/18/2025 02:51:54</publishTime>
+    </File>
+    <File Include="Images/imagen-clinica.jpg">
+      <publishTime>06/29/2025 21:25:09</publishTime>
+    </File>
+    <File Include="Images/WarningPerson.png">
+      <publishTime>06/18/2025 02:51:54</publishTime>
+    </File>
+    <File Include="Inicio.aspx">
+      <publishTime>06/18/2025 19:30:52</publishTime>
+    </File>
+    <File Include="ListarAdministradores.aspx">
+      <publishTime>06/29/2025 22:24:24</publishTime>
+    </File>
+    <File Include="ListarCitasMedico.aspx">
+      <publishTime>06/29/2025 21:09:55</publishTime>
+    </File>
+    <File Include="ListarCitasPaciente.aspx">
+      <publishTime>06/29/2025 23:07:25</publishTime>
+    </File>
+    <File Include="ListarConsultorios.aspx">
+      <publishTime>06/29/2025 22:20:11</publishTime>
+    </File>
+    <File Include="ListarEspecialidades.aspx">
+      <publishTime>06/29/2025 22:26:01</publishTime>
+    </File>
+    <File Include="ListarEspecialidadesPaciente.aspx">
+      <publishTime>06/29/2025 23:07:36</publishTime>
+    </File>
+    <File Include="ListarMedicos.aspx">
+      <publishTime>06/29/2025 22:13:23</publishTime>
+    </File>
+    <File Include="ListarMedicosPaciente.aspx">
+      <publishTime>06/29/2025 23:07:48</publishTime>
+    </File>
+    <File Include="ListarPacientes.aspx">
+      <publishTime>06/29/2025 22:13:22</publishTime>
+    </File>
+    <File Include="ListarSedes.aspx">
+      <publishTime>06/29/2025 22:18:46</publishTime>
+    </File>
+    <File Include="ListarSedesPaciente.aspx">
+      <publishTime>06/29/2025 23:07:56</publishTime>
+    </File>
+    <File Include="ListarSeguros.aspx">
+      <publishTime>06/29/2025 22:29:30</publishTime>
+    </File>
+    <File Include="ListarTratamientos.aspx">
+      <publishTime>06/30/2025 00:40:05</publishTime>
+    </File>
+    <File Include="ListarTurnos.aspx">
+      <publishTime>06/18/2025 02:51:54</publishTime>
+    </File>
+    <File Include="Login.aspx">
+      <publishTime>06/24/2025 17:49:48</publishTime>
+    </File>
+    <File Include="MisPacientes.aspx">
+      <publishTime>06/29/2025 21:10:53</publishTime>
+    </File>
+    <File Include="PazCitasAdmin.Master">
+      <publishTime>06/29/2025 23:17:10</publishTime>
+    </File>
+    <File Include="PazCitasMedico.Master">
+      <publishTime>06/29/2025 23:59:36</publishTime>
+    </File>
+    <File Include="PazCitasPaciente.Master">
+      <publishTime>06/29/2025 23:17:15</publishTime>
+    </File>
+    <File Include="RegistrarAdministrador.aspx">
+      <publishTime>06/29/2025 17:50:57</publishTime>
+    </File>
+    <File Include="RegistrarCitaPaciente.aspx">
+      <publishTime>06/29/2025 22:37:28</publishTime>
+    </File>
+    <File Include="RegistrarConsultorio.aspx">
+      <publishTime>06/29/2025 20:25:31</publishTime>
+    </File>
+    <File Include="RegistrarEspecialidad.aspx">
+      <publishTime>06/29/2025 19:05:19</publishTime>
+    </File>
+    <File Include="RegistrarMedico.aspx">
+      <publishTime>06/29/2025 15:14:10</publishTime>
+    </File>
+    <File Include="RegistrarPaciente.aspx">
+      <publishTime>06/29/2025 17:44:03</publishTime>
+    </File>
+    <File Include="RegistrarSede.aspx">
+      <publishTime>06/29/2025 23:35:15</publishTime>
+    </File>
+    <File Include="RegistrarSeguro.aspx">
+      <publishTime>06/29/2025 19:06:40</publishTime>
+    </File>
+    <File Include="RegistrarTratamiento.aspx">
+      <publishTime>06/29/2025 22:48:26</publishTime>
+    </File>
+    <File Include="RegistrarTurnosMedico.aspx">
+      <publishTime>06/29/2025 21:57:51</publishTime>
+    </File>
+    <File Include="Reportes.aspx">
+      <publishTime>06/29/2025 22:53:57</publishTime>
+    </File>
+    <File Include="Scripts/bootstrap.bundle.js">
+      <publishTime>06/18/2025 02:51:54</publishTime>
+    </File>
+    <File Include="Scripts/bootstrap.bundle.js.map">
+      <publishTime>06/18/2025 02:51:54</publishTime>
+    </File>
+    <File Include="Scripts/bootstrap.bundle.min.js">
+      <publishTime>06/18/2025 02:51:54</publishTime>
+    </File>
+    <File Include="Scripts/bootstrap.bundle.min.js.map">
+      <publishTime>06/18/2025 02:51:54</publishTime>
+    </File>
+    <File Include="Scripts/bootstrap.esm.js">
+      <publishTime>06/18/2025 02:51:54</publishTime>
+    </File>
+    <File Include="Scripts/bootstrap.esm.js.map">
+      <publishTime>06/18/2025 02:51:54</publishTime>
+    </File>
+    <File Include="Scripts/bootstrap.esm.min.js">
+      <publishTime>06/18/2025 02:51:54</publishTime>
+    </File>
+    <File Include="Scripts/bootstrap.esm.min.js.map">
+      <publishTime>06/18/2025 02:51:54</publishTime>
+    </File>
+    <File Include="Scripts/bootstrap.js">
+      <publishTime>06/18/2025 02:51:54</publishTime>
+    </File>
+    <File Include="Scripts/bootstrap.js.map">
+      <publishTime>06/18/2025 02:51:54</publishTime>
+    </File>
+    <File Include="Scripts/bootstrap.min.js">
+      <publishTime>06/18/2025 02:51:54</publishTime>
+    </File>
+    <File Include="Scripts/bootstrap.min.js.map">
+      <publishTime>06/18/2025 02:51:54</publishTime>
+    </File>
+    <File Include="Scripts/jquery-3.7.1.js">
+      <publishTime>06/18/2025 02:51:54</publishTime>
+    </File>
+    <File Include="Scripts/jquery-3.7.1.min.js">
+      <publishTime>06/18/2025 02:51:54</publishTime>
+    </File>
+    <File Include="Scripts/jquery-3.7.1.min.map">
+      <publishTime>06/18/2025 02:51:54</publishTime>
+    </File>
+    <File Include="Scripts/jquery-3.7.1.slim.js">
+      <publishTime>06/18/2025 02:51:54</publishTime>
+    </File>
+    <File Include="Scripts/jquery-3.7.1.slim.min.js">
+      <publishTime>06/18/2025 02:51:54</publishTime>
+    </File>
+    <File Include="Scripts/jquery-3.7.1.slim.min.map">
+      <publishTime>06/18/2025 02:51:54</publishTime>
+    </File>
+    <File Include="Scripts/jquery.signalR-2.2.2.js">
+      <publishTime>06/29/2025 13:13:09</publishTime>
+    </File>
+    <File Include="Scripts/jquery.signalR-2.2.2.min.js">
+      <publishTime>06/29/2025 13:13:09</publishTime>
+    </File>
+    <File Include="Scripts/LoginModern/login-modern.js">
+      <publishTime>06/24/2025 17:06:16</publishTime>
+    </File>
+    <File Include="Scripts/PazCitasS/RegistrarAdmin.js">
+      <publishTime>06/29/2025 17:49:44</publishTime>
+    </File>
+    <File Include="Scripts/PazCitasS/RegistrarConsultorio.js">
+      <publishTime>06/29/2025 18:58:57</publishTime>
+    </File>
+    <File Include="Scripts/PazCitasS/RegistrarEspecialidad.js">
+      <publishTime>06/29/2025 19:04:35</publishTime>
+    </File>
+    <File Include="Scripts/PazCitasS/RegistrarLineaMedicamento.js">
+      <publishTime>06/18/2025 02:51:54</publishTime>
+    </File>
+    <File Include="Scripts/PazCitasS/RegistrarMedico.js">
+      <publishTime>06/29/2025 13:15:09</publishTime>
+    </File>
+    <File Include="Scripts/PazCitasS/RegistrarPaciente.js">
+      <publishTime>06/29/2025 17:00:31</publishTime>
+    </File>
+    <File Include="Scripts/PazCitasS/RegistrarSede.js">
+      <publishTime>06/29/2025 19:06:28</publishTime>
+    </File>
+    <File Include="Scripts/PazCitasS/RegistrarSeguro.js">
+      <publishTime>06/29/2025 19:06:08</publishTime>
+    </File>
+    <File Include="Scripts/scriptAdmin.js">
+      <publishTime>06/18/2025 02:51:54</publishTime>
+    </File>
+    <File Include="Scripts/sidebars.js">
+      <publishTime>06/18/2025 02:51:54</publishTime>
+    </File>
+    <File Include="VerCitaMedico.aspx">
+      <publishTime>06/29/2025 21:10:22</publishTime>
+    </File>
+    <File Include="VisualizarReporte.aspx">
+      <publishTime>06/29/2025 22:56:03</publishTime>
+    </File>
+    <File Include="Web.config">
+      <publishTime>07/03/2025 12:58:48</publishTime>
+    </File>
+  </ItemGroup>
+</Project>

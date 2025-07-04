@@ -67,6 +67,7 @@ namespace PazCitasWA
 
         protected void btnEliminar_Click(object sender, EventArgs e)
         {
+            wsMedico = new MedicoWSClient(); 
             int idMedico = Int32.Parse(((LinkButton)sender).CommandArgument);
             wsMedico.eliminarMedico(idMedico);
             Response.Redirect("ListarMedicos.aspx");

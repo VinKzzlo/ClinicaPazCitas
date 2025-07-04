@@ -57,6 +57,7 @@ namespace PazCitasWA
 
         protected void btnEliminar_Click(object sender, EventArgs e)
         {
+            wsPaciente = new PacienteWSClient();
             int idPaciente = Int32.Parse(((LinkButton)sender).CommandArgument);
             wsPaciente.eliminarPaciente(idPaciente);
             Response.Redirect("ListarPacientes.aspx");
